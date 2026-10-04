@@ -36,6 +36,8 @@ cd "D:\codex\project\我的世界"
 
 常规 `main.py` 和 `individual.core` 入口拒绝另一个 `--db` 路径；主线文件缺失或 ID 不符时拒绝启动，不自动生成替代身份。ACore 的常规构造也要求已提交的生命周期历史。仅测试夹具或第一次显式初始化可使用 `initialize_lifetime=True`；正常运行入口不提供这个选项。
 
+旧数据库已经缺失而选择文件仍存在时，默认 `initialize` 也拒绝。实验者若明确要另建新的 A，可执行 `python -m individual.lifetime initialize --replace-missing-selection --label "新一轮测试"`。旧选择文件原样保存在新目录的 `previous-selection.json`；初始化报告标记 previous_database_missing=true、original_individual_resumed=false。该入口不删除原目录其他文件，不绕过已有数据库的身份校验或活动租约，也不表示旧 A 连续恢复。此选项只存在于外部初始化命令，正常 Core / Supervisor 不自动调用。
+
 | 控制命令 | 效果 |
 | --- | --- |
 | pause / resume | 暂停或恢复动作，保持当前 Session 和个体状态 |

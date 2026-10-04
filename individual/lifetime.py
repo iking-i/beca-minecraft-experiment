@@ -183,6 +183,8 @@ def main():
     commands = parser.add_subparsers(dest='command', required=True)
     initialize = commands.add_parser('initialize', help='Explicitly create and select a NEW individual in its own directory; retain old history')
     initialize.add_argument('--label', default='')
+    initialize.add_argument('--replace-missing-selection', action='store_true',
+        help='Explicit NEW A when the selected old database is missing; archive the old pointer, never claim resume')
     commands.add_parser('history')
     commands.add_parser('migrate')
     snap = commands.add_parser('snapshot')
@@ -196,7 +198,7 @@ def main():
         if args.db:
             parser.error('initialize allocates a new individual directory; do not supply --db')
         from .storage import create_lifetime
-        result = create_lifetime(label=args.label)
+        result = create_lifetime(label=args.label, replace_missing_selection=args.replace_missing_selection)
         print(json.dumps(result, ensure_ascii=False, indent=2))
         return
     database = Path(args.db).resolve() if args.db else resolve_runtime_database()

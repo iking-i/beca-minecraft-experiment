@@ -79,6 +79,51 @@ class StorageTests(unittest.TestCase):
         finally:
             core.shutdown()
 
+    def test_missing_selected_database_requires_explicit_new_individual_option(self):
+        old = {'database': str(self.directory / 'absent.db'), 'individual_id':'A-missing', 'role':'mainline'}
+        self.config.write_text(json.dumps(old), encoding='utf-8')
+        before = self.config.read_bytes()
+        with self.assertRaisesRegex(ValueError, 'replace-missing-selection'):
+            self.create()
+        self.assertEqual(self.config.read_bytes(), before)
+        self.assertFalse(self.storage.exists())
+        with self.assertRaisesRegex(ValueError, 'database is missing'):
+            resolve_runtime_database(config=self.config)
+
+    def test_explicit_missing_pointer_replacement_preserves_pin_and_other_data(self):
+        old_db = self.directory / 'missing-individual' / 'individual.db'
+        old_db.parent.mkdir()
+        retained = old_db.parent / 'retained-history.txt'
+        retained.write_bytes(b'old auxiliary data remains')
+        old = {'database': str(old_db), 'individual_id':'A-missing', 'role':'mainline'}
+        self.config.write_text(json.dumps(old), encoding='utf-8')
+        pin = self.config.read_bytes()
+        result = create_lifetime(self.storage, self.config, 'new test', replace_missing_selection=True)
+        self.assertNotEqual(result['individual_id'], old['individual_id'])
+        self.assertTrue(result['previous_database_missing'])
+        self.assertFalse(result['previous_history_preserved'])
+        self.assertFalse(result['original_individual_resumed'])
+        self.assertEqual((Path(result['directory']) / 'previous-selection.json').read_bytes(), pin)
+        self.assertEqual(retained.read_bytes(), b'old auxiliary data remains')
+        self.assertFalse(old_db.exists())
+        self.assertEqual(resolve_runtime_database(config=self.config), Path(result['database']))
+        self.assertEqual(verify(result['database'])['last_state_version'], 0)
+
+    def test_missing_option_cannot_bypass_existing_identity_mismatch_or_running_lease(self):
+        first = self.create()
+        core = ACore(first['database'], FakeBridge())
+        try:
+            with self.assertRaises(ExperimentInUse):
+                create_lifetime(self.storage, self.config, replace_missing_selection=True)
+        finally: core.shutdown()
+        pin = json.loads(self.config.read_text(encoding='utf-8'))
+        pin['individual_id'] = 'A-wrong'
+        self.config.write_text(json.dumps(pin), encoding='utf-8')
+        before = self.config.read_bytes()
+        with self.assertRaisesRegex(ValueError, 'individual_id differs'):
+            create_lifetime(self.storage, self.config, replace_missing_selection=True)
+        self.assertEqual(self.config.read_bytes(), before)
+
     def test_snapshot_branch_is_separate_and_never_switches_mainline(self):
         first = self.create()
         database = Path(first['database'])

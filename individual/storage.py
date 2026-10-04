@@ -30,26 +30,46 @@ def _finish_directory(staging, storage_root, identity):
     return destination
 
 
-def create_lifetime(storage_root=INDIVIDUALS, config=None, label=''):
+def create_lifetime(storage_root=INDIVIDUALS, config=None, label='', replace_missing_selection=False):
     """Explicitly register a NEW A, retain the previous directory, and select the new A."""
     from .lifetime import CONFIG, initialize_lifetime, resolve_runtime_database
     config = Path(config) if config is not None else CONFIG
     storage_root = Path(storage_root).resolve()
     previous_lease = None
     previous = None
+    previous_pin = None
+    previous_missing = False
     if config.exists():
-        previous = resolve_runtime_database(config=config)
-        # A running Core holds this lease: replacing its pointer is forbidden.
-        previous_lease = ExperimentLease(previous).acquire()
+        previous_pin = config.read_bytes()
+        selection = json.loads(previous_pin.decode('utf-8'))
+        previous = (ROOT / selection['database']).resolve()
+        previous_missing = not previous.exists()
+        if previous_missing:
+            if not replace_missing_selection:
+                raise ValueError('Selected lifetime database is missing. To explicitly register a NEW A, use initialize --replace-missing-selection; ordinary startup never replaces A.')
+            # A stale pointer is not a resumable individual. Preserve it for audit.
+            # An existing lease still protects a carrier using that original path.
+            if Path(str(previous) + '.lock').is_file():
+                previous_lease = ExperimentLease(previous).acquire()
+        else:
+            previous = resolve_runtime_database(config=config)
+            # A running Core holds this lease: replacing its pointer is forbidden.
+            previous_lease = ExperimentLease(previous).acquire()
     try:
         staging = storage_root / f'.initializing-{uuid4()}'
         staging.mkdir(parents=True, exist_ok=False)
         result = initialize_lifetime(staging / 'individual.db')
         directory = _finish_directory(staging, storage_root, result['individual_id'])
         database = directory / 'individual.db'
+        if previous_pin is not None:
+            (directory / 'previous-selection.json').write_bytes(previous_pin)
         result.update(database=str(database), directory=str(directory), label=label,
                       created_at=utc_now(), previous_database=str(previous) if previous else None,
-                      previous_history_preserved=True, role='mainline')
+                      previous_history_preserved=not previous_missing, existing_history_untouched=True,
+                      previous_database_missing=previous_missing,
+                      previous_selection_backup='previous-selection.json' if previous_pin is not None else None,
+                      registration_kind='explicit_new_individual', original_individual_resumed=False,
+                      role='mainline')
         write_json(directory / 'lifetime-initialization-report.json', result)
         write_json(directory / 'lifetime.json', {
             'individual_id': result['individual_id'], 'database': 'individual.db',
