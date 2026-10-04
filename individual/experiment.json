@@ -1,0 +1,9 @@
+{
+  "processes": 8,
+  "units": 64,
+  "relations": 96,
+  "history": 6,
+  "evidence_window": 4,
+  "condition_channels": 16,
+  "outcomes_per_relation": 64
+}

@@ -1,0 +1,10 @@
+# External limits. CPU 100% means one fully used logical CPU.
+sample_interval_seconds: 0.5
+max_core_ram_mb: 512
+max_bridge_ram_mb: 1024
+max_total_cpu_percent: 200
+cpu_violation_samples: 5
+heartbeat_timeout_seconds: 45
+shutdown_grace_seconds: 6
+max_runtime_seconds: 0
+max_lifetime_storage_mb: 65536

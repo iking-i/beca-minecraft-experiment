@@ -1,0 +1,63 @@
+# Dependencies and generated caches
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.test-tmp/
+
+# Credentials and machine-local configuration (templates remain tracked)
+.env
+.env.*
+!.env.example
+!.env.template
+*.local.json
+*.local.yaml
+*.local.yml
+minecraft/.auth/
+.auth/
+minecraft/config.json
+individual/lifetime.json
+*.pem
+*.key
+*.p12
+*.pfx
+credentials.json
+secrets.json
+
+# Individual lifetime data and operational reports stay on this computer.
+# Keep only the storage guide and historical maintenance source files.
+/storage/*
+!/storage/README.md
+!/storage/admin/
+/storage/admin/*
+!/storage/admin/organize-20261004.ps1
+!/storage/admin/split-legacy-archives.py
+
+# Databases, backups, archives, logs and temporary files anywhere in the project
+*.db
+*.db-*
+*.sqlite
+*.sqlite3
+*.sqlite-*
+*.sqlite3-*
+*.log
+*.log.*
+*.zip
+*.7z
+*.tar
+*.tar.gz
+*.bak
+*.tmp
+
+# Editor and OS artifacts
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+Desktop.ini

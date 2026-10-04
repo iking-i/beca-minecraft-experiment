@@ -1,0 +1,20 @@
+{
+  "host": "127.0.0.1",
+  "port": 25565,
+  "username": "BECA_Body",
+  "auth": "offline",
+  "version": false,
+  "connectTimeoutMs": 30000,
+  "actionTimeoutMs": 15000,
+  "reconnect": {
+    "enabled": true,
+    "initialDelayMs": 1000,
+    "maxDelayMs": 30000
+  },
+  "observation": {
+    "blockRadius": 4,
+    "entityRadius": 16,
+    "maxBlocks": 64,
+    "maxEntities": 64
+  }
+}

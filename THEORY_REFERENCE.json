@@ -1,0 +1,10 @@
+{
+  "theory_repository": "https://github.com/iking-i/beca-architecture",
+  "theory_version": "Perfect Recursion / BER v0.8",
+  "theory_main_commit_at_publication": "45d8869245fb210202a7e7982486d7f723bc6680",
+  "implementation_design_reference_commit": "867e1f192f7f21298450a553a4a733ec8f15a999",
+  "checked_on": "2026-10-04",
+  "scope": "L0 within-layer recursion and current effective limit feedback; no validated upward recursion",
+  "publication_changes_experiment_behavior": false,
+  "note": "The later theory commit adds stage-perfect structures and asymmetric layer compatibility. Recording it does not claim these have been implemented or experimentally validated. Local synchronized theory documents retain their original source commit."
+}
