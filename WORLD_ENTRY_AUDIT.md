@@ -1,5 +1,7 @@
 # World-entry initialization audit
 
+Current decision: **WORLD_ENTRY_FREEZE = passed** for the six foundational live causal chains, reviewed on 2026-10-04. Exact frozen components are in [WORLD_ENTRY_FREEZE.json](WORLD_ENTRY_FREEZE.json). Earlier partial acceptance below is retained as history and superseded only for these six chains. Conditional interfaces and carrier limitations remain bounded.
+
 ## Audit before modification
 
 2026-10-04: the actual LAN server at `127.0.0.1:55005` reports Java **26.1**, protocol **775**. Installed: Mineflayer 4.39.0, minecraft-data 3.117.0. Read-only status ping showed the human player `one`, no BECA_Body. The original lifetime selection remains unchanged. The user subsequently authorized **independent new test databases**; the live acceptance uses a separately labeled test A, not the original A.
@@ -91,7 +93,7 @@ Local evidence: `reports/world-entry-validation.json` (first attempt) and `repor
 
 **not live-validated**: manual respawn positive path (user chose not to test death), positive sleep/wake/mount/dismount, swimming/climbing, real GUI slot effects, explicit completed dig / actual placed-block or consumed-item effects, and real entity input. Unit/protocol tests do not upgrade these to live claims. No destructive death injection, teleport, pathfinding or automated equip was used.
 
-## Startup decision
+## Historical startup decision — before live causal acceptance
 
 The bounded **ground movement / input / honest consequence / renewed-perception loop runs in the real world**, and identified basic interface defects have been corrected. **Full ordinary-player causal World-entry acceptance is not yet complete.** Remaining gates are positive live validation of the above untested foundational/conditional consequences, and faithful channels for the listed carrier limitations when those states occur. Do not declare unrestricted Minecraft participation, learned behavior, V0-C, architecture recognition, L1 or upward recursion from these results. This task stops at the documented body boundary; it does not prescribe solutions to A's future problems.
 
@@ -106,3 +108,67 @@ The bounded **ground movement / input / honest consequence / renewed-perception 
 | Documentation | new `WORLD_ENTRY_AUDIT.md`, `BODY_CAPABILITIES.md`, `EXPERIMENTAL_IMPLEMENTATION_BOUNDARY.md`, `README.md`, `VALIDATION.md`, `VALIDATION_STAGE3.md` |
 
 The previously authorized missing-lifetime initialization fix in `individual/lifetime.py`, `individual/storage.py`, `tests/test_storage.py`, `LIFETIME_STORAGE.md` is preserved as a separate preceding commit, not a recursion/body behavior change. Its README explanation accompanies the current documentation update. Real configuration, original selection, databases, logs and reports are not staged.
+
+## Live causal acceptance — 2026-10-04
+
+Input HEAD: `f82b94e37b5775e0e44c31b3308128168efb8b6b`, including independent database registration. Actual Java **26.1 / protocol 775**, Mineflayer **4.39.0**, minecraft-data **3.117.0** were verified locally. No production Body, ActionSpace, observation codec, sampler, recursion, limit handling or Supervisor source changed. New code is external TEST_ONLY choreography, passive wire recording, evidence review and tests.
+
+Validation A: **A-8b475080-da9d-46d5-a2be-e4bd7fc8b214**, separate `storage/individuals/<id>/individual.db`. Session: `S-60240d02-923e-4959-b639-9810ff21ab6b`. Minecraft account **BECA_Validate** did not reuse the canonical body's account. The run retained **A0..A130 / 131 snapshots**, **22 observation frames** and **19 explicit numeric requests**, all with decision authorship **TEST_ONLY**. Test selection/configuration/reports are separate.
+
+Canonical **A-9ea5abde-7fa2-4313-a102-254d4664fd49** remained at **A14828**, event sequence **92506**, **one session**, unchanged selection, latest snapshot hash, resource/sensor configuration and capacity lock. No canonical runtime, lease, Session or SQLite write connection was opened. Because its WAL contained uncheckpointed records, read audit used a temporary full database/WAL copy, subsequently removed. Original database/sidecar sizes/mtimes and small-file hashes matched before/after. Test identity, capacity lock and every source/renewed frame also matched its append-only DB states/events.
+
+The wire sequence numbers below refer to packets actually received/sent by the real connection. The passive recorder exists only in the experimenter adapter. It adds no public body operation, supplies no diagnostic packets to A and alters neither packet contents nor world state. Human labels below are auditor metadata.
+
+| Chain | Source -> explicit input -> renewed perception | Server evidence | Class |
+|---|---|---|---|
+| Ground movement | A30 -> 34 press; A34 -> 34 release -> A39 | OUT 6344/6706; server Pos replies 6104/7154: (-1240.5,80,342.5) -> (-1240.5,80,342.7), matching renewed position | LIVE_CAUSAL_VALIDATED |
+| Completed dig | A47 -> 37 start -> A54; A54 -> 39 finish -> A59 | Explicit **1.5 s experimenter wait**; OUT 8067/8791; IN `block_change` 8794 at (-1241,80,343): dirt type 9 -> air type 0, absent in renewed complete bounded sample | LIVE_CAUSAL_VALIDATED |
+| Placement | A69 -> 15, held slot 36 / support ref / face 1 -> A74 | OUT `block_place` 9718; IN 9720/9721 at (-1240,80,342), block type 12; renewed frame sees cobblestone and held count 4 -> 3 | LIVE_CAUSAL_VALIDATED |
+| Item use | A79 -> 35 main hand -> A84; A84 -> 36 release -> A88 | OUT 10305/10559; IN `set_player_inventory` 10308, slot 37 snowball type 1017 count **3 -> 2**, also in renewed slots | LIVE_CAUSAL_VALIDATED |
+| Entity consequence | A93 -> 24, observed entity ref -> A100 | OUT `attack` 10978 on entity 1112; IN `entity_destroy` 11171 for that ID; renewed entity sample no longer contains it | LIVE_CAUSAL_VALIDATED |
+| Container consequence | A104 -> 44 open -> A109; A109 -> 43 mode 1 slot 0 -> A114; A114 -> 28 close -> A119; A119 -> 44 reopen -> A124 | Initial IN `window_items` 11562 has diamond type 899 x3 in slot 0; OUT click 11772; **fresh server** `window_items` 12172 after reopen confirms empty slot 0 and transferred player slots. A114's prediction alone does not pass | LIVE_CAUSAL_VALIDATED |
+
+Each chain retains source/renewed `ObservationFrame`, parameters, action ID, request/execution events, TEST_ONLY provenance, packet bounds and measured frame changes. Server Pos verification reads were immediately before/after movement; the post-frame read confirms renewed coordinates, not a per-input ACK. Placement's existing codec derives cursor coordinates from the already explicit view/face, recorded with the outbound hit point. There was no auto equip/approach/aim correction/alternative target/retry/local air edit. Container mode 1 is one native shift-click; its destination follows native UI behavior, not a debug transfer/search macro.
+
+### Retained evidence and corrected auditor error
+
+Local evidence: the test individual's `reports/live-95f558dc/` contains original `live-report.json`, `wire-events.jsonl`, `canonical-before.json`, `canonical-after.json`, `formal-audit.json`, `policy-audit.json` and final `live-reviewed-3d6d692d.json`. Runtime data stays ignored by Git. A small labeled excerpt is [tests/fixtures/world-entry-live-summary.json](tests/fixtures/world-entry-live-summary.json), with report/wire SHA-256 references, frame/version/input/packet links and consequences. It is not a simulator.
+
+The original report retained `blocked: ground_movement`: the first parser searched serialized JSON, but 26.1 separates server Pos numbers/suffixes into colored NBT components. Those server replies were already present. The corrected reviewer decodes components only for `commands.data.entity.query` on the test account. It writes a **new report**, changes neither original report nor history and performs **zero new live actions**. Original verdict and correction are both retained. Regression tests cover the observed native component shape.
+
+### Fixture and actual world changes
+
+Everything prepared was **TEST_FIXTURE / TEST_ONLY**, not A knowledge or formal environment evolution. In the allowed LAN world, bounded region **x -1243..-1239, y 79..81, z 340..344** above the test spawn received a 25-block `keep` floor, a `keep` perimeter barrier, dirt, a chest with three diamonds, cobblestone/snowballs in explicit test hotbar slots and one no-AI one-health chicken. Only the test account was placed in survival and positioned there. The command list is retained. No world rule, canonical player or canonical history changed.
+
+Actual consequences: dirt removed, one cobblestone placed, one snowball consumed, fixture chicken removed by attack and chest diamonds transferred by native slot input. Fixture structures and remaining inventory persist; world evidence was not automatically erased. No formal A was killed and no conditional state forced for completeness.
+
+### Acceptance classes
+
+| Scope | Evidence class |
+|---|---|
+| Six bounded foundation chains above | LIVE_CAUSAL_VALIDATED |
+| Prior offhand start/release, hand swap, dig cancellation; release input without sustained-use-item consequences | INPUT_ONLY_VALIDATED; no consumption/cancellation/proficiency claim |
+| Supported slot modes other than live mode 1; invalid/stale conditions; wake/dismount/respawn codecs | UNIT_PROTOCOL_VALIDATED |
+| Positive death/respawn, sleep/wake, mount/dismount, swimming/climbing and ordinary special GUI conditions | CONDITIONAL_NOT_TESTED |
+| Full vehicle/boat physics; slot modes 3/5/6; unsupported offhand number-key swap | CARRIER_LIMITATION |
+| Books/signs editing, trade/enchant/anvil controls, specialized properties/progress, creative flight/edit, special collision/range/client GUI details | CARRIER_LIMITATION when required; generic slots/block input do not establish support |
+
+Slots may still be predicted immediately after a click (`slot_feedback_kind=0`). This container proof uses **fresh server contents** after explicit reopening. No general per-click ACK facility was added or claimed.
+
+### Regression and baseline audits
+
+- Python full suite: **133 passed** (123 retained plus 10 evidence/freeze tests); Node full suite: **42 passed**. Node's initial sandbox run failed localhost access; the unchanged suite passed with local transport allowed, without weakening assertions.
+- Existing JavaScript syntax checks and the external recorder's syntax check passed.
+- Numeric formal fixture: **V0-A/V0-B baseline observed = true**; capacity lock retained; architecture-recognition candidate = false; later full-stage goal = false.
+- Real test audit: persistent capacity lock, separated raw consequences, action authorship consistency = true; Policy audit boundary checks = true. **BEHAVIORALLY_BINDING_LIMIT = false** in this body run, not misrepresented as a new baseline/recursion success. Recognition remained `not_observed`.
+- Retained history checks pass for requests, executions, source/renewed frames, numeric formal dispatch and TEST_ONLY authorship. Production source hashes and canonical isolation remain unchanged.
+
+## World-entry freeze decision
+
+**WORLD_ENTRY_FREEZE = passed** for the six foundation chains at these versions. **No foundational startup blocker remains.** Conditional gates and carrier limitations above continue to apply; this is not every Minecraft interface passing acceptance.
+
+Frozen: Java **26.1**, protocol **775**, Mineflayer **4.39.0**, ActionSpace **v2 / 39 formal codes / 8 debug-only macros**, body package interface **0.1.0**. Exact formal codes, Body/ActionSpace/FrameEncoder component hashes are in [WORLD_ENTRY_FREEZE.json](WORLD_ENTRY_FREEZE.json). SHA-256 hashes normalize CRLF to LF for ordinary Git checkouts. FrameEncoder has no pre-existing version field; its implementation hash is the precise codec version identifier.
+
+Future difficulty is not permission to expand A's body. Body may change only as documented **experimenter-side carrier correction**: (A) a missing native basic interaction, or (B) a causal-fidelity engineering bug. Keep old evidence, update version/hash records and revalidate affected chains. Such corrections are not autonomous ability growth or learned structure.
+
+Formal action policy remains unchanged and external. This acceptance adds no goal/reward/LLM, relation-driven action choice, architecture recognition, self-inspection, V0-C, L1 or capacity solution. Work stops at this startup boundary.

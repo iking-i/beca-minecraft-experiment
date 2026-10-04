@@ -1,0 +1,113 @@
+{
+  "WORLD_ENTRY_FREEZE": "passed",
+  "scope": "six foundational live causal chains; not every conditional Minecraft interface",
+  "validated_implementation_commit": "f82b94e37b5775e0e44c31b3308128168efb8b6b",
+  "minecraft": {
+    "edition": "Java",
+    "version": "26.1",
+    "protocol": 775,
+    "mineflayer": "4.39.0",
+    "minecraft_data": "3.117.0"
+  },
+  "action_space": {
+    "version": 2,
+    "sha256_lf_normalized": "c6687f63d7b96f540f277c8f3a06c8da2580994032f5fbc8489569f9553eefa8",
+    "formal_codes": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      22,
+      23,
+      24,
+      28,
+      29,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46
+    ],
+    "debug_only_codes": [
+      19,
+      20,
+      21,
+      25,
+      26,
+      27,
+      30,
+      31
+    ]
+  },
+  "body_interface_version": "0.1.0; exact implementation fixed by component hashes",
+  "observation_codec": {
+    "name": "FrameEncoder",
+    "version_id": "sha256:3ec369f35123d8ee3106149ce7a1800df1102eacb6d3a5dd497616fe7aa0632f",
+    "encoding_namespace": "26.1",
+    "representation": "numeric and opaque; raw auditor diagnostics are outside interpreter input"
+  },
+  "hash_convention": "SHA-256 of UTF-8 source bytes with CRLF normalized to LF",
+  "component_hashes": {
+    "minecraft/action-space.json": "c6687f63d7b96f540f277c8f3a06c8da2580994032f5fbc8489569f9553eefa8",
+    "minecraft/package.json": "7ea2986776f49ce2cdfd7ebf67bfbaa7adb00faf05fc6b093b92e081cd8ec442",
+    "minecraft/package-lock.json": "34feb5d3c139e4a3c4d24062a1ad520e7fbe9eba5478cbed68f389f1765234ed",
+    "minecraft/src/body.js": "9c6b2f99d2749398fe0fddf2303bff39ccb8ed8e4060297438106bcc52884d41",
+    "minecraft/src/capabilities.js": "65e060ea833717c87ed5ad775693b36d47630b8be7386310d5858ce7d02979a6",
+    "minecraft/src/native_inputs.js": "4c99d4afde7fa6df399f521c46d1c46e7fc6c673b1b1b1f4e11af67e1b9c9c5b",
+    "minecraft/src/index.js": "ef26df549c770eeecd5e697b9bd788078c08a6542a05dafc759314e91605e178",
+    "individual/observation.py": "3ec369f35123d8ee3106149ce7a1800df1102eacb6d3a5dd497616fe7aa0632f",
+    "individual/action_space.py": "11c3aa773a9877c42db9fda3b586fbe3f40fad56bf2aaf9d8c0de17546f19e7c",
+    "individual/formal_l0.py": "1b6abea5d568c349bf7c181ecd771fc6f08cd0f1791fa49be7434c4acd354b62",
+    "individual/formal_boundary.py": "6bb8232a675a808ba050d13131edcd4d159716a7f1acb30ed3811211eee6206a",
+    "individual/experiment.json": "1eb5e69f2a7a1cd2a637779989424e8840edef9f23f76468c22df87bd60666b2",
+    "supervisor/limits.yaml": "8a2aa79264f1e9689dddde9ea5e45d78a09dcc06437efe48e0d09beb7d86093d"
+  },
+  "evidence": "tests/fixtures/world-entry-live-summary.json",
+  "conditional_not_tested": [
+    "positive manual respawn",
+    "positive sleep/wake",
+    "positive mount/dismount",
+    "swimming",
+    "climbing",
+    "special GUIs"
+  ],
+  "carrier_limitations": [
+    "complete vehicle/client boat physics",
+    "slot modes 3/5/6 and offhand number-key swap outside supported model",
+    "specialized window properties/progress, trade/enchant/anvil selection",
+    "book/sign text editor state/commit",
+    "special collision shapes, modified interaction ranges and client GUI input capture",
+    "creative flight/native creative edit"
+  ],
+  "future_body_changes_allowed_only": [
+    "experimenter-side correction of a missing native basic interaction",
+    "experimenter-side causal-fidelity bug correction"
+  ],
+  "future_changes_are_not": "autonomous capability growth",
+  "formal_action_policy": "unchanged; not learned; no V0-C, L1, architecture recognition or limit resolution added"
+}

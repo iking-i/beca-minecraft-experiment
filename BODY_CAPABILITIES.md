@@ -2,6 +2,8 @@
 
 当前审计条件：Java 26.1 / protocol 775 / Mineflayer 4.39.0。身体安装属于 BODY_CAPABILITY / EXTERNAL_FIXED_MECHANISM，不是 A 学会了 Minecraft。完整矩阵与真实验收见 [WORLD_ENTRY_AUDIT.md](WORLD_ENTRY_AUDIT.md)。
 
+六条基础 live causal chain 已验收，`WORLD_ENTRY_FREEZE = passed`，精确版本见 [WORLD_ENTRY_FREEZE.json](WORLD_ENTRY_FREEZE.json)。仅冻结基础启动范围；以下条件性未验收项和载体限制仍保留。未来只允许补齐缺失原生基础交互或修复因果保真 bug 的实验者载体修正，不视为 A 自主能力增长。
+
 ## 正式表示
 
 唯一动作定义源为 minecraft/action-space.json v2。共登记 47 项，其中 39 项可进入正式低层通道，8 项多步便利接口保留为调试兼容接口。可用性仍取决于当前身体、对象和窗口状态，不保证成功或安全。

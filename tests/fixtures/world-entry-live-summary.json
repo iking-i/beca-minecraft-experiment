@@ -1,0 +1,1067 @@
+{
+  "source": "TEST_ONLY_LIVE_REPORT_EXCERPT",
+  "real_minecraft": true,
+  "input_head": "f82b94e37b5775e0e44c31b3308128168efb8b6b",
+  "validation_individual_id": "A-8b475080-da9d-46d5-a2be-e4bd7fc8b214",
+  "session_id": "S-60240d02-923e-4959-b639-9810ff21ab6b",
+  "state_versions": [
+    0,
+    130
+  ],
+  "observations": 22,
+  "explicit_requests": 19,
+  "canonical_unchanged": true,
+  "canonical_state_version": 14828,
+  "canonical_last_event_sequence": 92506,
+  "canonical_sessions": 1,
+  "identity_preserved": true,
+  "capacity_boundary_preserved": true,
+  "history_checks": {
+    "requested_events_match": true,
+    "executed_events_match": true,
+    "frames_match_states": true,
+    "numeric_formal_path": true,
+    "test_only_authorship": true
+  },
+  "world_entry_freeze": "passed",
+  "new_actions_in_offline_review": 0,
+  "original_report_sha256": "1903c022f0b3bc52494999b6a6bbc22c940d2d5e0e2bd53d0e217dd6c1ac3bfc",
+  "reviewed_report_sha256": "d2e47d8df5c9cb5b742d1a149c83ef0e155c3ed3ce3c48ce3ff2ef9d0151c396",
+  "wire_sha256": "41b481609fce096a9d1b708bc38aa80ba415390dc88018dc2d4b0398c3e98ba9",
+  "chains": {
+    "ground_movement": {
+      "status": "LIVE_CAUSAL_VALIDATED",
+      "step_ids": [
+        "input-1",
+        "input-2"
+      ],
+      "server_wire_sequences": [
+        7154
+      ],
+      "measurable_difference": {
+        "server_before": {
+          "x": -1240.5,
+          "y": 80.0,
+          "z": 342.5
+        },
+        "server_after": {
+          "x": -1240.5,
+          "y": 80.0,
+          "z": 342.7
+        },
+        "renewed_position": {
+          "x": -1240.5,
+          "y": 80,
+          "z": 342.7
+        }
+      },
+      "reason": "Server Pos query decoded from colored NBT components. Post-frame read confirms renewed-frame coordinates; not a per-input ACK.",
+      "inputs": [
+        {
+          "step_id": "input-1",
+          "action_code": 34,
+          "parameters": {
+            "control": 0,
+            "pressed": 1
+          },
+          "source_version": 30,
+          "observation_version": 34,
+          "authorship": "TEST_ONLY",
+          "out_wire_sequences": [
+            6344
+          ],
+          "source_frame_id": "A-8b475080-da9d-46d5-a2be-e4bd7fc8b214:E2",
+          "renewed_frame_id": "A-8b475080-da9d-46d5-a2be-e4bd7fc8b214:E3"
+        },
+        {
+          "step_id": "input-2",
+          "action_code": 34,
+          "parameters": {
+            "control": 0,
+            "pressed": 0
+          },
+          "source_version": 34,
+          "observation_version": 39,
+          "authorship": "TEST_ONLY",
+          "out_wire_sequences": [
+            6706
+          ],
+          "source_frame_id": "A-8b475080-da9d-46d5-a2be-e4bd7fc8b214:E3",
+          "renewed_frame_id": "A-8b475080-da9d-46d5-a2be-e4bd7fc8b214:E4"
+        }
+      ],
+      "server_evidence": [
+        {
+          "wire_sequence": 7154,
+          "direction": "IN",
+          "name": "system_chat",
+          "timestamp": "2026-10-04T11:02:35.181Z",
+          "normalized": null
+        }
+      ]
+    },
+    "completed_dig": {
+      "status": "LIVE_CAUSAL_VALIDATED",
+      "step_ids": [
+        "input-4",
+        "input-5"
+      ],
+      "server_wire_sequences": [
+        8794
+      ],
+      "measurable_difference": {
+        "old_type_id": 9,
+        "server_new_type_id": 0,
+        "absent_in_renewed_sample": true
+      },
+      "reason": "Explicit 1.5 s wait, finish input, inbound block update; no local air edit",
+      "inputs": [
+        {
+          "step_id": "input-4",
+          "action_code": 37,
+          "parameters": {
+            "block_ref": "o55073c21_1_65"
+          },
+          "source_version": 47,
+          "observation_version": 54,
+          "authorship": "TEST_ONLY",
+          "out_wire_sequences": [
+            8067
+          ],
+          "source_frame_id": "A-8b475080-da9d-46d5-a2be-e4bd7fc8b214:E6",
+          "renewed_frame_id": "A-8b475080-da9d-46d5-a2be-e4bd7fc8b214:E7"
+        },
+        {
+          "step_id": "input-5",
+          "action_code": 39,
+          "parameters": {},
+          "source_version": 54,
+          "observation_version": 59,
+          "authorship": "TEST_ONLY",
+          "out_wire_sequences": [
+            8791
+          ],
+          "source_frame_id": "A-8b475080-da9d-46d5-a2be-e4bd7fc8b214:E7",
+          "renewed_frame_id": "A-8b475080-da9d-46d5-a2be-e4bd7fc8b214:E8"
+        }
+      ],
+      "server_evidence": [
+        {
+          "wire_sequence": 8794,
+          "direction": "IN",
+          "name": "block_change",
+          "timestamp": "2026-10-04T11:02:39.508Z",
+          "normalized": {
+            "blocks": [
+              {
+                "position": {
+                  "x": -1241,
+                  "z": 343,
+                  "y": 80
+                },
+                "state_id": 0,
+                "block_type_id": 0
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "placement": {
+      "status": "LIVE_CAUSAL_VALIDATED",
+      "step_ids": [
+        "input-8"
+      ],
+      "server_wire_sequences": [
+        9720,
+        9721
+      ],
+      "measurable_difference": {
+        "new_type_id": 12,
+        "held_before": {
+          "slot": 36,
+          "item_type_id": 35,
+          "count": 4,
+          "metadata": 0,
+          "durability": null
+        },
+        "held_after": {
+          "slot": 36,
+          "item_type_id": 35,
+          "count": 3,
+          "metadata": 0,
+          "durability": null
+        }
+      },
+      "reason": "Explicit held slot/reference/top face, inbound block update and renewed occupied target",
+      "inputs": [
+        {
+          "step_id": "input-8",
+          "action_code": 15,
+          "parameters": {
+            "inventory_slot": 36,
+            "reference_block": "o55073c21_1_68",
+            "face": 1
+          },
+          "source_version": 69,
+          "observation_version": 74,
+          "authorship": "TEST_ONLY",
+          "out_wire_sequences": [
+            9718
+          ],
+          "source_frame_id": "A-8b475080-da9d-46d5-a2be-e4bd7fc8b214:E10",
+          "renewed_frame_id": "A-8b475080-da9d-46d5-a2be-e4bd7fc8b214:E11"
+        }
+      ],
+      "server_evidence": [
+        {
+          "wire_sequence": 9720,
+          "direction": "IN",
+          "name": "block_change",
+          "timestamp": "2026-10-04T11:02:42.505Z",
+          "normalized": {
+            "blocks": [
+              {
+                "position": {
+                  "x": -1240,
+                  "z": 342,
+                  "y": 80
+                },
+                "state_id": 14,
+                "block_type_id": 12
+              }
+            ]
+          }
+        },
+        {
+          "wire_sequence": 9721,
+          "direction": "IN",
+          "name": "block_change",
+          "timestamp": "2026-10-04T11:02:42.510Z",
+          "normalized": {
+            "blocks": [
+              {
+                "position": {
+                  "x": -1240,
+                  "z": 342,
+                  "y": 80
+                },
+                "state_id": 14,
+                "block_type_id": 12
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "item_use": {
+      "status": "LIVE_CAUSAL_VALIDATED",
+      "step_ids": [
+        "input-10",
+        "input-11"
+      ],
+      "server_wire_sequences": [
+        10308
+      ],
+      "measurable_difference": {
+        "before": {
+          "slot": 37,
+          "item_type_id": 1017,
+          "count": 3,
+          "metadata": 0,
+          "durability": null
+        },
+        "after": {
+          "slot": 37,
+          "item_type_id": 1017,
+          "count": 2,
+          "metadata": 0,
+          "durability": null
+        }
+      },
+      "reason": "Explicit main-hand held use and release; actual server inventory decrement",
+      "inputs": [
+        {
+          "step_id": "input-10",
+          "action_code": 35,
+          "parameters": {
+            "hand": 0
+          },
+          "source_version": 79,
+          "observation_version": 84,
+          "authorship": "TEST_ONLY",
+          "out_wire_sequences": [
+            10305
+          ],
+          "source_frame_id": "A-8b475080-da9d-46d5-a2be-e4bd7fc8b214:E12",
+          "renewed_frame_id": "A-8b475080-da9d-46d5-a2be-e4bd7fc8b214:E13"
+        },
+        {
+          "step_id": "input-11",
+          "action_code": 36,
+          "parameters": {},
+          "source_version": 84,
+          "observation_version": 88,
+          "authorship": "TEST_ONLY",
+          "out_wire_sequences": [
+            10559
+          ],
+          "source_frame_id": "A-8b475080-da9d-46d5-a2be-e4bd7fc8b214:E13",
+          "renewed_frame_id": "A-8b475080-da9d-46d5-a2be-e4bd7fc8b214:E14"
+        }
+      ],
+      "server_evidence": [
+        {
+          "wire_sequence": 10308,
+          "direction": "IN",
+          "name": "window_items",
+          "timestamp": "2026-10-04T11:02:44.556Z",
+          "normalized": {
+            "window_id": 0,
+            "slots": [
+              {
+                "slot": 0,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 1,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 2,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 3,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 4,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 5,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 6,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 7,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 8,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 9,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 10,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 11,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 12,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 13,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 14,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 15,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 16,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 17,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 18,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 19,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 20,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 21,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 22,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 23,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 24,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 25,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 26,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 27,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 28,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 29,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 30,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 31,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 32,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 33,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 34,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 35,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 36,
+                "item_type_id": 35,
+                "count": 3
+              },
+              {
+                "slot": 37,
+                "item_type_id": 1017,
+                "count": 2
+              },
+              {
+                "slot": 38,
+                "item_type_id": 28,
+                "count": 1
+              },
+              {
+                "slot": 39,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 40,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 41,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 42,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 43,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 44,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 45,
+                "item_type_id": null,
+                "count": 0
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "entity": {
+      "status": "LIVE_CAUSAL_VALIDATED",
+      "step_ids": [
+        "input-13"
+      ],
+      "server_wire_sequences": [
+        11171
+      ],
+      "measurable_difference": {
+        "entity_id": 1112,
+        "old_ref": "o55073c21_1_124",
+        "absent_in_renewed_sample": true
+      },
+      "reason": "Single explicit attack, server removal and renewed bounded entity sample",
+      "inputs": [
+        {
+          "step_id": "input-13",
+          "action_code": 24,
+          "parameters": {
+            "entity_ref": "o55073c21_1_124"
+          },
+          "source_version": 93,
+          "observation_version": 100,
+          "authorship": "TEST_ONLY",
+          "out_wire_sequences": [
+            10978
+          ],
+          "source_frame_id": "A-8b475080-da9d-46d5-a2be-e4bd7fc8b214:E15",
+          "renewed_frame_id": "A-8b475080-da9d-46d5-a2be-e4bd7fc8b214:E16"
+        }
+      ],
+      "server_evidence": [
+        {
+          "wire_sequence": 11171,
+          "direction": "IN",
+          "name": "entity_destroy",
+          "timestamp": "2026-10-04T11:02:48.312Z",
+          "normalized": null,
+          "entity_ids": [
+            1112
+          ]
+        }
+      ]
+    },
+    "container": {
+      "status": "LIVE_CAUSAL_VALIDATED",
+      "step_ids": [
+        "input-15",
+        "input-16",
+        "input-17",
+        "input-18"
+      ],
+      "server_wire_sequences": [
+        12172
+      ],
+      "measurable_difference": {
+        "initial_server_slot": {
+          "slot": 0,
+          "item_type_id": 899,
+          "count": 3,
+          "metadata": 0,
+          "durability": null
+        },
+        "predicted_after_click": {
+          "slot": 0,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        "server_reopened_slot": {
+          "slot": 0,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        "old_opaque_window": "w55073c21_1_2",
+        "new_opaque_window": "w55073c21_1_4",
+        "initial_server_wire_sequences": [
+          11562
+        ]
+      },
+      "reason": "Single shift-click plus explicit close/reopen; fresh inbound window_items verifies server contents",
+      "inputs": [
+        {
+          "step_id": "input-15",
+          "action_code": 44,
+          "parameters": {
+            "block_ref": "o55073c21_1_70",
+            "hand": 0,
+            "face": 1,
+            "cursor_x": 0.8362292125209478,
+            "cursor_y": 0.875,
+            "cursor_z": 0.49999999999982947
+          },
+          "source_version": 104,
+          "observation_version": 109,
+          "authorship": "TEST_ONLY",
+          "out_wire_sequences": [
+            11560
+          ],
+          "source_frame_id": "A-8b475080-da9d-46d5-a2be-e4bd7fc8b214:E17",
+          "renewed_frame_id": "A-8b475080-da9d-46d5-a2be-e4bd7fc8b214:E18"
+        },
+        {
+          "step_id": "input-16",
+          "action_code": 43,
+          "parameters": {
+            "container_id": "w55073c21_1_2",
+            "slot": 0,
+            "mode": 1,
+            "button": 0
+          },
+          "source_version": 109,
+          "observation_version": 114,
+          "authorship": "TEST_ONLY",
+          "out_wire_sequences": [
+            11772
+          ],
+          "source_frame_id": "A-8b475080-da9d-46d5-a2be-e4bd7fc8b214:E18",
+          "renewed_frame_id": "A-8b475080-da9d-46d5-a2be-e4bd7fc8b214:E19"
+        },
+        {
+          "step_id": "input-17",
+          "action_code": 28,
+          "parameters": {
+            "container_id": "w55073c21_1_2"
+          },
+          "source_version": 114,
+          "observation_version": 119,
+          "authorship": "TEST_ONLY",
+          "out_wire_sequences": [
+            11978
+          ],
+          "source_frame_id": "A-8b475080-da9d-46d5-a2be-e4bd7fc8b214:E19",
+          "renewed_frame_id": "A-8b475080-da9d-46d5-a2be-e4bd7fc8b214:E20"
+        },
+        {
+          "step_id": "input-18",
+          "action_code": 44,
+          "parameters": {
+            "block_ref": "o55073c21_1_70",
+            "hand": 0,
+            "face": 1,
+            "cursor_x": 0.8362292125209478,
+            "cursor_y": 0.875,
+            "cursor_z": 0.49999999999982947
+          },
+          "source_version": 119,
+          "observation_version": 124,
+          "authorship": "TEST_ONLY",
+          "out_wire_sequences": [
+            12170
+          ],
+          "source_frame_id": "A-8b475080-da9d-46d5-a2be-e4bd7fc8b214:E20",
+          "renewed_frame_id": "A-8b475080-da9d-46d5-a2be-e4bd7fc8b214:E21"
+        }
+      ],
+      "server_evidence": [
+        {
+          "wire_sequence": 12172,
+          "direction": "IN",
+          "name": "window_items",
+          "timestamp": "2026-10-04T11:02:52.854Z",
+          "normalized": {
+            "window_id": 2,
+            "slots": [
+              {
+                "slot": 0,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 1,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 2,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 3,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 4,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 5,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 6,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 7,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 8,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 9,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 10,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 11,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 12,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 13,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 14,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 15,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 16,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 17,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 18,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 19,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 20,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 21,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 22,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 23,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 24,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 25,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 26,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 27,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 28,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 29,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 30,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 31,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 32,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 33,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 34,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 35,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 36,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 37,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 38,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 39,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 40,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 41,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 42,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 43,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 44,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 45,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 46,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 47,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 48,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 49,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 50,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 51,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 52,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 53,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 54,
+                "item_type_id": 35,
+                "count": 3
+              },
+              {
+                "slot": 55,
+                "item_type_id": 1017,
+                "count": 2
+              },
+              {
+                "slot": 56,
+                "item_type_id": 28,
+                "count": 1
+              },
+              {
+                "slot": 57,
+                "item_type_id": 1113,
+                "count": 1
+              },
+              {
+                "slot": 58,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 59,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 60,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 61,
+                "item_type_id": null,
+                "count": 0
+              },
+              {
+                "slot": 62,
+                "item_type_id": 899,
+                "count": 3
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "world_fixture": {
+    "source": "TEST_FIXTURE",
+    "region": {
+      "x": [
+        -1243,
+        -1239
+      ],
+      "y": [
+        79,
+        81
+      ],
+      "z": [
+        340,
+        344
+      ]
+    },
+    "prepared": "25-block kept floor, kept perimeter barrier, dirt, chest with three diamonds, selected hotbar cobblestone/snowballs, one one-health no-AI chicken",
+    "consequences": "dirt removed, one cobblestone placed, one snowball consumed, fixture chicken removed by attack, chest diamonds transferred by one native shift-click",
+    "retained_in_world": true,
+    "not_formal_environment_evolution": true
+  }
+}

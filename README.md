@@ -274,3 +274,15 @@ npm --prefix minecraft test
 ```
 
 报告在新个体目录的 reports/，独立测试选择记录为 storage/world-entry-selection.local.json；不会覆盖 individual/lifetime.json。正式系统仍以数字 code 和低语义感知交互，动作采样策略未改。
+
+六条基础身体交互已完成真实因果验收，当前 `WORLD_ENTRY_FREEZE = passed`。范围、条件性未验收项和载体限制见 [WORLD_ENTRY_AUDIT.md](WORLD_ENTRY_AUDIT.md)；冻结版本/哈希见 [WORLD_ENTRY_FREEZE.json](WORLD_ENTRY_FREEZE.json)。身体、ActionSpace、正式采样与递归实现均未因本轮验收改变。
+
+需要重新验收时，可显式运行独立 TEST_ONLY 测试（会在小区域布置材料；测试世界需允许命令）：
+
+```powershell
+.\.venv\Scripts\python.exe -m debug.world_entry_live --new-test --port 当前端口
+```
+
+入口使用 `BECA_Validate` 及独立测试选择/配置/数据库；原 canonical A 不进入运行。源帧、数字动作、真实服务器包和更新后的帧均保存。编排、等待时机与材料用途属于实验者，不是 A 的策略；服务器包仅供审计，正式 A 没有查询接口。
+
+后续仅允许为补齐原生基础交互或修复因果保真 bug 进行带版本记录的载体修正；不要因为 A 遇到困难随意增加身体能力，也不要将修正记为自主能力增长。
