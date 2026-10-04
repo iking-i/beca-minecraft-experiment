@@ -342,7 +342,7 @@ class ACore:
             raise BridgeError('BRIDGE_EXITED', 'Bridge process is not alive')
         if not self._session_active:
             return
-        if not self._bridge_status.get('connected') or self._bridge_status.get('lastError'):
+        if (not self._bridge_status.get('connected') and self._bridge_status.get('state') != 'dead') or self._bridge_status.get('lastError'):
             return
         if now >= self._next_observation:
             self._observe()

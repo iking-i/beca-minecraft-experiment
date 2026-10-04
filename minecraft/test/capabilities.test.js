@@ -15,10 +15,10 @@ function fixture(t, options = {}) {
     entity: () => body.observe().nearbyEntities[0].entity_ref }
 }
 
-test('formal registry has 34 low-level capabilities with schemas and honest availability', async t => {
+test('formal registry has 47 registered capabilities with schemas and honest availability', async t => {
   const { body, execute } = fixture(t)
   const raw = body.observe(), actions = raw.actionSpace
-  assert.equal(actions.length, 34)
+  assert.equal(actions.length, 47)
   assert.ok(actions.every(a => a.category === 'BODY_CAPABILITY' && a.parameter_schema && Array.isArray(a.environment_requirements)))
   assert.equal(actions.find(a => a.action_id === 'TAKE_CONTAINER_ITEM').currently_available, false)
   assert.ok(raw.inventorySlots.some(s => s.slot === 36 && s.item_type_id === 1 && s.count === 8))
@@ -38,7 +38,7 @@ test('returned references and registry schemas are detached from the owned body 
   const next = body.observe()
   assert.equal(next.actionSpace.find(a => a.action_id === 'DIG').currently_available, true)
   await execute('DIG', { block_ref: ref })
-  assert.equal(bot.calls.find(c => c[0] === 'dig')[1].x, 1)
+  assert.equal(bot.calls.find(c => c[0] === 'packet' && c[1] === 'block_dig')[2].location.x, 1)
 })
 
 test('dig uses an observed opaque ref, never auto-aims or equips, and records world/slot changes', async t => {
@@ -49,7 +49,8 @@ test('dig uses an observed opaque ref, never auto-aims or equips, and records wo
   assert.ok(result.started_at && result.finished_at)
   assert.equal(result.before.blocks.length, 1); assert.equal(result.after.blocks.length, 0)
   assert.equal(result.after.inventory_slots[11].count, 1)
-  assert.ok(bot.calls.some(c => c[0] === 'dig' && c[2] === 'ignore'))
+  assert.deepEqual(bot.calls.filter(c => c[1] === 'block_dig').map(c => c[2].status), [0, 2])
+  assert.ok(!bot.calls.some(c => c[0] === 'dig'))
   assert.ok(!bot.calls.some(c => ['lookAt', 'look', 'equip', 'control'].includes(c[0])))
 })
 
@@ -61,10 +62,10 @@ test('placement preserves chosen-slot operation and uses the specified face with
   const result = await execute('PLACE_BLOCK', { inventory_slot: 36, reference_block: target, face: 1 })
   assert.equal(result.after.blocks.length, 2)
   assert.equal(result.after.inventory_slots[36].count, 7)
-  assert.equal(bot.calls[0][3].forceLook, 'ignore')
-  const next = await execute('PLACE_BLOCK', { inventory_slot: 10, reference_block: target, face: 2 })
-  assert.deepEqual(next.explicit_slot_transfer, { source_slot: 10, hand_slot: 36 })
-  assert.equal(bot.inventory.slots[36].count, 3)
+  assert.equal(bot.calls[0][1], 'block_place')
+  await assert.rejects(execute('PLACE_BLOCK', { inventory_slot: 10, reference_block: target, face: 2 }), { code: 'HELD_SLOT_MISMATCH' })
+  assert.equal(bot.inventory.slots[10].count, 4)
+  assert.equal(bot.inventory.slots[36].count, 7)
 })
 
 test('select, use, swing and exact-slot drop do not interpret item names', async t => {
@@ -97,7 +98,7 @@ test('block use works with empty hands; entity interaction and attack use only r
   await execute('INTERACT_ENTITY', { entity_ref: entity() })
   await execute('ATTACK_ENTITY', { entity_ref: entity() })
   assert.ok(bot.calls.some(c => c[0] === 'packet' && c[1] === 'block_place'))
-  assert.ok(bot.calls.some(c => c[0] === 'interact_entity' && c[1] === 2))
+  assert.ok(bot.calls.some(c => c[0] === 'packet' && c[1] === 'use_entity' && c[2].target === 2))
   assert.ok(bot.calls.some(c => c[0] === 'attack' && c[1] === 2))
   assert.ok(!bot.calls.some(c => c[0] === 'lookAt'))
   const ref = body.observe().nearbyEntities[0].entity_ref

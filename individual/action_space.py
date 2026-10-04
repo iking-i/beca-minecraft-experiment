@@ -25,7 +25,7 @@ def provision(internal, entries, version, journal):
         definition = DEFINITIONS.get(entry['code'])
         if not definition or entry['action_id'] != definition['action_id'] or entry['category'] != BODY_CAPABILITY:
             raise ValueError('Bridge supplied an unregistered body action')
-        definitions.append({key: deepcopy(entry[key]) for key in ('code', 'action_id', 'category', 'parameter_schema', 'environment_requirements')})
+        definitions.append({key: deepcopy(entry[key]) for key in ('code', 'category', 'parameter_schema', 'environment_requirement_codes', 'formal_enabled')})
     record = {'version': CATALOG_DATA['version'], 'category': BODY_CAPABILITY, 'actions': definitions,
         'layer_boundaries': {'capabilities': BODY_CAPABILITY, 'availability': ENVIRONMENT_CONSTRAINT,
                             'experience_data': LEARNED_STRUCTURE},
@@ -136,6 +136,16 @@ def bind_parameters(code, frame, internal, selection):
     elif name == 'CLICK_SLOT':
         p = {'container_id': win['container_id'], 'slot': choose('slot', [s['slot'] for s in slots]),
              'mouse_button': choose('mouse_button', [0, 1])}
+    elif code >= 34:
+        # Codec-domain binding only. Selection policy and its parameters are unchanged.
+        for key, schema in DEFINITIONS[code]['parameters'].items():
+            if key == 'container_id': domain = [win['container_id']]
+            elif key == 'block_ref': domain = blocks
+            elif key == 'entity_ref': domain = entities
+            elif key == 'slot': domain = [-999] + [s['slot'] for s in slots]
+            elif schema['type'] == 'integer': domain = list(range(schema['minimum'], schema['maximum'] + 1))
+            else: domain = [schema['minimum'], (schema['minimum'] + schema['maximum']) / 2, schema['maximum']]
+            p[key] = choose(key, domain)
     selection['parameter_binding'] = {'source': registry.reference('action.parameter_binding'),
         'parameters': registry.parameter_references('action.parameter_binding'), 'choices': choices,
         'frame_id': frame['frame_id'], 'item_semantics_used': False, 'learned': False}
@@ -143,4 +153,4 @@ def bind_parameters(code, frame, internal, selection):
 
 
 def formal_command(code, parameters):
-    return {'method': 'perform', 'args': {'action_id': DEFINITIONS[code]['action_id'], 'parameters': deepcopy(parameters)}}
+    return {'method': 'perform', 'args': {'code': code, 'parameters': deepcopy(parameters)}}

@@ -60,6 +60,14 @@ Copy-Item minecraft/config.example.json minecraft/config.json
 .\.venv\Scripts\python.exe main.py
 ```
 
+如果旧数据库已被移走或删除，但 `individual/lifetime.json` 仍指向它，普通启动会拒绝，默认初始化也会提示缺失。只有明确要创建**新的 A**时，使用：
+
+```powershell
+.\.venv\Scripts\python.exe -m individual.lifetime initialize --replace-missing-selection --label "新一轮测试"
+```
+
+这个显式入口把旧选择文件原样备份到新 A 目录的 `previous-selection.json`，记录原数据库缺失，创建新身份；不会宣称恢复了旧 A。其他已有数据保持原样。该选项不绕过已有数据库的身份校验或正在运行的写入租约。之后只运行 `main.py`，不要每次初始化。
+
 默认启动使用 formal_l0。只读审计本阶段证据：
 
 ```powershell
@@ -156,7 +164,7 @@ last_information_sequence
 
 向下反馈修改当前 `default_quantity`、按模式的数量、条件分辨率。下一次生成从这些内部参数读取数量，并记录源整合 ID、源状态版本、请求数量和实际获配数量。实际数量还受外部容量制约，不能把配额不足造成的减少误认为内部策略变化。
 
-正式 Minecraft 身体现提供 34 项基础操作，包括移动、视角、挖掘、放置、手持物、背包、方块/实体交互、容器与合成格。旧编码 0、1、2 保留原义；新增能力通过数字槽位和当前对象引用调用，全部标记 BODY_CAPABILITY，能力清单和底层对应见 [BODY_CAPABILITIES.md](BODY_CAPABILITIES.md)。该评分说明仅适用于历史 legacy_policy_debug：未解程度和尝试次数参与评分，平分用随机序列。正式 formal_l0 使用 uniform available capability sampling（既有 LCG 模运算），不读取 attempts / unresolved，也不根据 limit 决定动作。参数取样明确登记为 INITIAL_EXTERNAL_POLICY，不冒称为学习结果。没有对象名称规则、健康奖励、死亡扣分、配方查询或高级任务。
+正式 Minecraft 身体清单现登记 47 项：39 项低层通道及 8 项保留的调试便利接口。包括独立保持/释放按键、主副手、挖掘开始/中止/结束、手动重生、原生槽位输入及条件性离床/下坐骑。旧编码 0、1、2 保留原义；新增能力通过数字槽位和当前对象引用调用，全部标记 BODY_CAPABILITY，能力清单和底层对应见 [BODY_CAPABILITIES.md](BODY_CAPABILITIES.md)。World-entry 保真边界、启动阻塞及真实验收见 [WORLD_ENTRY_AUDIT.md](WORLD_ENTRY_AUDIT.md)，尚不能宣称覆盖全部普通玩家条件界面。该评分说明仅适用于历史 legacy_policy_debug：未解程度和尝试次数参与评分，平分用随机序列。正式 formal_l0 使用 uniform available capability sampling（既有 LCG 模运算），不读取 attempts / unresolved，也不根据 limit 决定动作。参数取样明确登记为 INITIAL_EXTERNAL_POLICY，不冒称为学习结果。没有对象名称规则、健康奖励、死亡扣分、配方查询或高级任务。
 
 完整链路记录帧 ID、变化 ID、动作 ID、过程 ID、部分输出 ID、整合 ID、生成 ID、源状态版本。记录的是时序关联和候选条件，当前不自动宣称发现了因果定律。
 
@@ -256,3 +264,13 @@ npm --prefix minecraft test
 
 本轮没有实现新策略的自主生成与采纳，没有据此宣布理论结构升阶。
 
+
+## World-entry 身体验收
+
+当前阶段允许明确创建独立新测试生命周期，每个个体仍单独存储；新测试 A 不是原主线延续。原主线的数据库、选择记录与容量锁不自动重置。实验者验收入口如下（TEST_ONLY，不是自主策略）：
+
+```powershell
+.\.venv\Scripts\python.exe -m debug.world_entry_validation --new-test --port 当前端口
+```
+
+报告在新个体目录的 reports/，独立测试选择记录为 storage/world-entry-selection.local.json；不会覆盖 individual/lifetime.json。正式系统仍以数字 code 和低语义感知交互，动作采样策略未改。

@@ -1,5 +1,7 @@
 # 第二阶段验收记录
 
+当前 World-entry 接口与 2026-10-04 验收见 [WORLD_ENTRY_AUDIT.md](WORLD_ENTRY_AUDIT.md)。本文以下内容是历史记录；其中旧自动重生、接口集合或固定脚本不能作为当前手动输入的验收证据。用户本轮允许独立新测试数据库，记录与原主线分开，不合并身份或历史。
+
 以下保留当时的验收结果。当前生命周期和重启规则见 [LIFETIME_STORAGE.md](LIFETIME_STORAGE.md)，旧版新建实验数据库的运行说明不再适用于后续 Session。
 
 日期：2026-10-03，用户时区 Asia/Shanghai。事件时间使用带 `+00:00` 的 UTC 时间。

@@ -110,11 +110,11 @@ test('movement presses direction/jump then releases all controls; explicit stop 
   await assert.rejects(body.move({ direction: 'left' }), { code: 'BUSY' })
   assert.equal((await body.move({ direction: 'stop' })).stopped, true)
   assert.equal((await moving).stopped, true)
-  assert.deepEqual(bots[0].controls, {})
+  assert.ok(Object.values(bots[0].controls).every(v => !v))
   for (const direction of ['back', 'left', 'right', 'jump']) {
     const result = await body.move({ direction, durationMs: 1 })
     assert.equal(result.direction, direction)
-    assert.deepEqual(bots[0].controls, {})
+    assert.ok(Object.values(bots[0].controls).every(v => !v))
   }
 })
 
@@ -168,7 +168,7 @@ test('disconnect cancels active motion; reconnect never replays the action', asy
   await Promise.resolve()
   bots[0].emit('end', 'network lost')
   await rejected
-  assert.deepEqual(bots[0].controls, {})
+  assert.ok(Object.values(bots[0].controls).every(v => !v))
   await until(() => bots.length === 2)
   spawn()
   assert.deepEqual(bots[1].controls, {})
@@ -223,7 +223,7 @@ test('death rejects motion and respawn restores the same facade', async t => {
   await Promise.resolve()
   bots[0].emit('death')
   await rejected
-  assert.throws(() => body.observe(), { code: 'NOT_READY' })
+  assert.equal(body.observe().bodyState, 0)
   bots[0].emit('respawn')
   assert.equal(body.status().state, 'spawning')
   spawn()

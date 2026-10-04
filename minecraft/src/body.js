@@ -3,6 +3,7 @@ import { fileURLToPath } from 'node:url'
 import { validateConfig } from './config.js'
 import { BodyError, integer, requireObject } from './errors.js'
 import { createCapabilities } from './capabilities.js'
+import { controls, setInput, endDig } from './native_inputs.js'
 
 const position = p => ({ x: p.x, y: p.y, z: p.z })
 const distance = (a, b) => Math.hypot(a.x - b.x, a.y - b.y, a.z - b.z)
@@ -49,11 +50,16 @@ export function createBody(input, { createBot, logger = console }) {
     if (preserveModes) {
       for (const [mode, value] of Object.entries(session.modes ?? {})) session.bot.setControlState(mode, value)
     } else session.modes = {}
+    if (!preserveModes) {
+      try { if ((session.useHand ?? -1) >= 0 || session.bot.usingHeldItem) session.bot.deactivateItem() } catch { /* Retired body. */ }
+      session.useHand = -1
+    }
   }
 
   function retire(session, reason) {
     clearTimeout(session.timer)
     session.abort.abort(new BodyError('DISCONNECTED', reason))
+    try { if (session.dig) endDig(session, false) } catch { /* Retired transport. */ }
     clearControls(session)
     try { session.bot.stopDigging?.() } catch { /* Digging may already have ended. */ }
     try { session.bot.end(reason) } catch { /* Already disconnected. */ }
@@ -92,11 +98,15 @@ export function createBody(input, { createBot, logger = console }) {
     log('info', `连接 ${config.host}:${config.port}，第 ${attempt} 次尝试。`)
     try {
       const bot = createBot({ host: config.host, port: config.port, username: config.username,
-        auth: config.auth, version: config.version, logErrors: false,
+        auth: config.auth, version: config.version, logErrors: false, respawn: false,
         profilesFolder: fileURLToPath(new URL('../.auth', import.meta.url)),
         onMsaCode: data => log('info', `Microsoft 登录：${data.verification_uri}，代码 ${data.user_code}`) })
-      const session = { bot, abort: new AbortController(), timer: null }
+      const session = { bot, abort: new AbortController(), timer: null, useHand: -1 }
       current = session
+      session.inventoryServerSequence = 0
+      for (const packet of ['window_items', 'set_slot', 'set_player_inventory', 'set_cursor_item']) {
+        bot._client?.on?.(packet, () => { session.inventoryServerSequence++ })
+      }
       session.timer = setTimeout(() => fail(session, new BodyError('CONNECT_TIMEOUT', '连接超时')), config.connectTimeoutMs)
       bot.on('error', error => fail(session, error))
       bot.on('kicked', reason => fail(session, new BodyError('KICKED', `被服务器断开：${typeof reason === 'string' ? reason : JSON.stringify(reason)}`)))
@@ -117,7 +127,9 @@ export function createBody(input, { createBot, logger = console }) {
         state = 'dead'
         session.abort.abort(new BodyError('DEAD', '游戏角色死亡，等待服务器重生。'))
         clearControls(session)
-        log('warn', '游戏角色死亡；等待 Mineflayer/服务器的重生流程。')
+        clearTimeout(session.timer)
+        session.dig = null
+        log('warn', '游戏角色死亡；等待明确的重生输入，不自动请求重生。')
       })
       bot.on('respawn', () => {
         if (current !== session) return
@@ -125,6 +137,7 @@ export function createBody(input, { createBot, logger = console }) {
         session.abort.abort(new BodyError('RESPAWNING', '世界或维度切换，等待重新生成。'))
         clearControls(session)
         try { bot.stopDigging?.() } catch { /* World may already be unloaded. */ }
+        session.dig = null
         clearTimeout(session.timer)
         session.timer = setTimeout(() => fail(session, new BodyError('CONNECT_TIMEOUT', '重新生成超时')), config.connectTimeoutMs)
       })
@@ -141,6 +154,18 @@ export function createBody(input, { createBot, logger = console }) {
   function ready() {
     if (!current || state !== 'ready' || !current.bot.entity) throw new BodyError('NOT_READY', `机器人尚未进入可操作状态：${state}`)
     return current
+  }
+
+  function observable() {
+    if (!current || !['ready', 'dead'].includes(state) || !current.bot.entity) throw new BodyError('NOT_READY', 'No observable world body')
+    return current
+  }
+
+  function respawn() {
+    const session = observable()
+    if (state !== 'dead') throw new BodyError('INVALID_STATE', 'Respawn input requires a dead body')
+    session.bot.respawn()
+    return { confirmation: 'sent; verify by subsequent observation' }
   }
 
   function ensureSession(session, signal) {
@@ -181,7 +206,7 @@ export function createBody(input, { createBot, logger = console }) {
 
   function observe(options = {}) {
     requireObject(options, 'observe options')
-    const session = ready()
+    const session = observable()
     const { bot } = session
     const defaults = config.observation
     const blockRadius = integer(options.blockRadius ?? defaults.blockRadius, 'blockRadius', 1, 8)
@@ -210,7 +235,7 @@ export function createBody(input, { createBot, logger = console }) {
         position: position(e.position), distance: distance(origin, e.position) }))
       .sort((a, b) => a.distance - b.distance)
     return capabilities.describe(session, { timestamp: new Date().toISOString(), encoding: { protocol_version: bot.version ?? null }, position: position(origin),
-      orientation: { yaw: bot.entity.yaw, pitch: bot.entity.pitch },
+      orientation: { yaw: bot.entity.yaw, pitch: bot.entity.pitch }, bodyState: state === 'dead' ? 0 : 1,
       health: bot.health ?? null, hunger: bot.food ?? null,
       time: { timeOfDay: bot.time?.timeOfDay ?? null, day: bot.time?.day ?? null, isDay: bot.time?.isDay ?? null },
       dimension: bot.game?.dimension ?? null,
@@ -245,9 +270,10 @@ export function createBody(input, { createBot, logger = console }) {
       let finish
       let stopped = false
       try {
-        clearControls(session, true)
-        bot.setControlState(direction, true)
-        if (jump && direction !== 'jump') bot.setControlState('jump', true)
+        const prior = { ...session.modes }
+        token.priorControls = prior
+        setInput(session, controls.indexOf(direction), 1)
+        if (jump && direction !== 'jump') setInput(session, 4, 1)
         await new Promise((resolve, reject) => {
           finish = () => { stopped = true; resolve() }
           token.cancel = finish
@@ -261,7 +287,8 @@ export function createBody(input, { createBot, logger = console }) {
         clearTimeout(timer)
         if (onAbort) signal.removeEventListener('abort', onAbort)
         token.cancel = null
-        clearControls(session, true)
+        if (current !== session || state !== 'ready' || stopped) clearControls(session)
+        else for (const key of [direction, ...(jump && direction !== 'jump' ? ['jump'] : [])]) setInput(session, controls.indexOf(key), Number(!!token.priorControls?.[key]))
       }
     })
   }
@@ -313,7 +340,7 @@ export function createBody(input, { createBot, logger = console }) {
     return { sent: true }
   }
 
-  const capabilities = createCapabilities({ action, ready, ensureSession, move, observe })
+  const capabilities = createCapabilities({ action, ready, ensureSession, move, observe, respawn })
   return Object.freeze({
     start() {
       if (!running) { running = true; connect() }

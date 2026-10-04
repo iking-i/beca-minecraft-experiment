@@ -1,5 +1,7 @@
 # BECA-V0 第三阶段验收记录
 
+当前身体接口审计与真实验收范围见 [WORLD_ENTRY_AUDIT.md](WORLD_ENTRY_AUDIT.md)。本文件的旧测试数量、身体自动化与接口范围是历史条件，不覆盖新增低层通道，不证明其全部真实游戏效果。
+
 本文件是旧固定策略驱动的工程反馈验收，不证明 v0.8 upward recursion，不能作为当前 V0-A / V0-B 干净基线或 architecture-limit recognition 的验证。以下旧名称“向上整合”只指信息整合，旧“五项通过”不能作为当前正式阶段通过依据。当前范围见 [FORMAL_L0_EXPERIMENT.md](FORMAL_L0_EXPERIMENT.md)。
 
 以下是旧版独立实验的历史证据。当前主线使用个体生命周期数据库，规则见 [LIFETIME_STORAGE.md](LIFETIME_STORAGE.md)，不把这些不同身份的历史合并到新 A。

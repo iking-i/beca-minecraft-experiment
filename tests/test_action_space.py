@@ -45,19 +45,40 @@ class ActionSpaceTests(unittest.TestCase):
             return [json.loads(row[0]) for row in connection.execute('SELECT payload FROM events WHERE event_type=? ORDER BY rowid', (kind,))]
 
     def run_action(self, name, parameters=None, success=True):
+        if name in ('DROP_ITEM','MOVE_INVENTORY_ITEM','EQUIP_FROM_SLOT','MOVE_CONTAINER_ITEM','TAKE_CONTAINER_ITEM','PUT_CONTAINER_ITEM','MOVE_ITEM_TO_CRAFT_SLOT','TAKE_CRAFT_RESULT'):
+            p = parameters
+            body = self.core.state.observation_frame['nearby_data']['body']
+            win = body.get('container') or body['inventory_screen']
+            def click(slot,button=0,mode=0,ok=True):
+                return self.run_action('SLOT_INPUT', {'container_id':win['container_id'],'slot':slot,'mode':mode,'button':button},success=ok)
+            if name == 'DROP_ITEM':
+                for _ in range(p['amount']): final=click(p['slot'],mode=4)
+                return final
+            if name == 'EQUIP_FROM_SLOT':
+                dest = [36+body['selected_hotbar_slot'],5,6,7,8,45][p['equipment_slot']]
+                click(p['source_slot']); return click(dest)
+            source = win['result_slot'] if name == 'TAKE_CRAFT_RESULT' else p['source_slot']
+            if not success: return click(source,ok=False)
+            click(source)
+            if name == 'TAKE_CRAFT_RESULT': return click(p['target_slot'])
+            for _ in range(p['amount']): final=click(p['target_slot'],button=1)
+            cursor = self.core.state.observation_frame['nearby_data']['body']['inventory_screen']['cursor']
+            if body.get('container'): cursor=self.core.state.observation_frame['nearby_data']['body']['container']['cursor']
+            if cursor['count']: final=click(source)
+            return final
         code = next(c for c, definition in DEFINITIONS.items() if definition['action_id'] == name)
         self.assertEqual(self.core.execute_discrete_action(code, parameters), success)
         final = self.core.state.latest_action
         self.assertEqual(final['method'], 'perform')
-        self.assertEqual(final['args']['action_id'], name)
+        self.assertEqual(final['args']['code'], code)
         self.refresh()
         self.assertIn(final['action_id'], self.core.state.observation_frame['delta']['after_action_ids'])
         return final
 
-    def new_fixture_session(self, window):
+    def new_fixture_session(self, window, die=False):
         self.core.shutdown()
         config = Path(self.temp.name) / 'fixture.json'
-        config.write_text(json.dumps({'fixture_window': window}), encoding='utf-8')
+        config.write_text(json.dumps({'fixture_window': window, 'fixture_die_after_observation': die}), encoding='utf-8')
         self.bridge = MinecraftBridge(config, adapter=ROOT / 'tests/fixtures/capability_body.js')
         self.core = ACore(self.db, self.bridge)
         self.addCleanup(self.core.shutdown)
@@ -71,7 +92,7 @@ class ActionSpaceTests(unittest.TestCase):
 
     def test_preserved_identity_and_immutable_capability_provisioning(self):
         before = self.core.state
-        self.assertEqual(len(before.internal_state['body_capabilities']['actions']), 34)
+        self.assertEqual(len(before.internal_state['body_capabilities']['actions']), len(DEFINITIONS))
         event = self.events('BODY_CAPABILITIES_PROVISIONED')[0]
         self.assertEqual(event['source'], 'BODY_CAPABILITY')
         self.assertFalse(event['learned'])
@@ -157,7 +178,7 @@ class ActionSpaceTests(unittest.TestCase):
         self.run_action('OPEN_CRAFTING_INTERFACE')
         self.run_action('MOVE_ITEM_TO_CRAFT_SLOT', {'source_slot': 10, 'target_slot': 1, 'amount': 1})
         failed = self.run_action('TAKE_CRAFT_RESULT', {'target_slot': 13}, success=False)
-        self.assertEqual(failed['reason_code'], 'EMPTY_SLOT')
+        self.assertEqual(failed['reason_code'], 'NO_EFFECT')
         self.run_action('CLOSE_CRAFTING_INTERFACE')
 
     def test_failures_have_reason_trace_and_do_not_replace_the_individual(self):
@@ -222,6 +243,9 @@ class ActionSpaceTests(unittest.TestCase):
         changed = deepcopy(raw)
         for row in changed['inventory'] + changed['nearbyBlocks'] + changed['nearbyEntities']:
             row['name'] = 'unrelated_human_word'; row['displayName'] = 'unrelated'; row['username'] = 'unrelated'
+        for action in changed['actionSpace']:
+            action['action_id'] = 'human_label_changed'
+            action['environment_requirements'] = ['human_usage_changed']
         b = encoded.encode(changed, 1).to_dict()
         self.assertEqual(a, b)
         ia = InternalState.from_dict(self.core.state.internal_state)
@@ -229,12 +253,65 @@ class ActionSpaceTests(unittest.TestCase):
         for code in (13, 14, 15, 20, 21, 23, 24):
             self.assertEqual(bind_parameters(code, a, ia, {}), bind_parameters(code, b, ib, {}))
 
+    def test_new_body_inputs_cross_rpc_with_numeric_codec_and_external_provisioning(self):
+        marker = self.core.state.individual_id
+        initial = self.core.state.state_version
+        self.run_action('CONTROL_INPUT', {'control': 0, 'pressed': 1})
+        self.run_action('CONTROL_INPUT', {'control': 4, 'pressed': 1})
+        body = self.core.state.observation_frame['nearby_data']['body']
+        self.assertTrue(body['control_modes']['0'])
+        self.assertTrue(body['control_modes']['4'])
+        self.run_action('CONTROL_INPUT', {'control': 0, 'pressed': 0})
+        self.run_action('CONTROL_INPUT', {'control': 4, 'pressed': 0})
+        self.run_action('USE_START', {'hand': 1})
+        self.assertEqual(self.core.state.observation_frame['nearby_data']['body']['inputs']['using_item'], 1)
+        self.run_action('USE_RELEASE')
+        ref = self.core.state.observation_frame['nearby_data']['body']['crosshair']['target_ref']
+        self.run_action('DIG_START', {'block_ref': ref})
+        self.run_action('DIG_CANCEL')
+        self.run_action('DIG_START', {'block_ref': ref})
+        self.run_action('DIG_FINISH')
+        self.run_action('SWAP_HANDS')
+        self.assertEqual(self.core.state.individual_id, marker)
+        self.assertGreater(self.core.state.state_version, initial)
+        actions = self.core.state.internal_state['body_capabilities']['actions']
+        self.assertTrue(all('action_id' not in a and 'environment_requirements' not in a for a in actions))
+        self.assertTrue(all(not p['learned'] and p['source'] == 'BODY_CAPABILITY' for p in self.events('BODY_CAPABILITIES_PROVISIONED')))
+        self.assertTrue(verify(self.db)['valid_state_chain'])
+
+    def test_formal_macros_refuse_execution_and_preserve_history(self):
+        failed = self.run_action('PLACE_BLOCK', {'inventory_slot': 10,
+            'reference_block': self.core.state.observation_frame['nearby_data']['blocks'][0]['target_ref'], 'face': 1}, success=False)
+        self.assertEqual(failed['reason_code'], 'HELD_SLOT_MISMATCH')
+        body = self.core.state.observation_frame['nearby_data']['body']
+        self.assertEqual(body['inventory_slots'][10]['count'], 4)
+        for code, definition in DEFINITIONS.items():
+            if definition.get('formal_enabled') is False:
+                self.assertFalse(next(a for a in body['action_space'] if a['code'] == code)['currently_available'])
+                self.assertFalse(self.core.execute_discrete_action(code, {}))
+                self.assertEqual(self.core.state.latest_action['reason_code'], 'MACRO_NOT_FORMAL')
+                self.refresh()
+
+    def test_dead_body_observation_and_normal_tick_can_request_respawn_without_a_new_identity(self):
+        marker = self.core.state.individual_id
+        self.new_fixture_session(None, die=True)
+        deadline = time.monotonic() + 5
+        while not self.events('BODY_RESPAWNED'):
+            self.core.tick()
+            if time.monotonic() > deadline:
+                self.fail('Dead-state input channel did not permit explicit respawn')
+            time.sleep(0.05)
+        requests = self.events('ACTION_REQUESTED')
+        self.assertTrue(any(a.get('action_code') == 40 for a in requests))
+        self.assertTrue(self.events('BODY_DIED'))
+        self.assertEqual(self.core.state.individual_id, marker)
+        self.assertTrue(verify(self.db)['valid_state_chain'])
+
     def test_disabled_capabilities_are_excluded_without_semantic_safety_predictions(self):
         internal = InternalState.from_dict(self.core.state.internal_state)
         internal.exploration_state['random_state'] = 1
         chosen, selection = select_action(internal, 'sample', [18])
         self.assertEqual(chosen, 18)
         self.assertEqual(set(selection['scores']), {'18'})
-        names = {entry['action_id'] for entry in internal.body_capabilities['actions']}
-        self.assertFalse(names & {'craft_tool', 'pathfind_to_goal', 'equip_best_tool', 'survive_night', 'eat_when_hungry'})
+        self.assertTrue(all('action_id' not in entry for entry in internal.body_capabilities['actions']))
         self.assertEqual(PolicyRegistry(internal).reference('action.parameter_binding')['category'], 'INITIAL_EXTERNAL_POLICY')

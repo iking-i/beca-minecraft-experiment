@@ -102,8 +102,14 @@ class FrameEncoder:
                      'held_item': deepcopy(raw.get('heldItem')),
                      'inventory_screen': deepcopy(raw['inventoryScreen']),
                      'container': deepcopy(raw.get('container')), 'crafting': deepcopy(raw.get('crafting')),
-                     'action_space': deepcopy(raw['actionSpace']), 'control_modes': deepcopy(raw.get('controlModes', {})) }
+                     'action_space': [{k: deepcopy(a[k]) for k in ('code', 'category', 'parameter_schema', 'currently_available', 'environment_requirement_codes', 'formal_enabled') if k in a} for a in raw['actionSpace']], 'control_modes': {str(i): bool(value) for i, value in enumerate(raw.get('controlState', []))} }
+            body['inputs'] = deepcopy(raw.get('bodyInputs', {}))
+            body['crosshair'] = deepcopy(raw.get('crosshair'))
+            body['entity_crosshair'] = deepcopy(raw.get('entityCrosshair'))
             nearby['body'] = body
+            for label, value in body['inputs'].items():
+                if isinstance(value, (int, float)):
+                    add(f'input:{label}', value, f'input:{label}')
             add('s:9', body['selected_hotbar_slot'], 'selected_hotbar_slot')
             for label, value in body['control_modes'].items():
                 add(f'control:{label}', int(value), f'control:{label}')

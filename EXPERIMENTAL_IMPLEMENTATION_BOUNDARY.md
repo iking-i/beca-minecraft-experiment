@@ -1,5 +1,15 @@
 # Experimental Implementation Boundary — v0.8
 
+## World-entry audit update (2026-10-04)
+
+See [WORLD_ENTRY_AUDIT.md](WORLD_ENTRY_AUDIT.md) and [BODY_CAPABILITIES.md](BODY_CAPABILITIES.md). Java 26.1 / protocol 775 is the audited carrier. ActionSpace v2 retains 47 entries; 39 use the formal low-level path and eight multi-click conveniences remain debug-only. Formal frames/provisioning use numeric codes and numeric requirement IDs, not action names or use descriptions.
+
+Held controls, both hands, explicit item release, dig start/cancel/finish, manual respawn, dismount, wake and supported raw slot modes are external fixed mechanisms. Placement never implicitly equips; target inputs check current view/face. Formal dig/place send native packets without fabricated world edits. Slot prediction is labeled carrier feedback, not server acknowledgment.
+
+No recursive engine, resource capacity, higher layer, architecture recognition, reward, goal or selection algorithm is changed. Death remains observable through the existing explicit action channel; no survival rule is installed. Complete vehicle physics, editors, specialized GUI feedback and unsupported slot modes remain carrier limitations.
+
+The user explicitly allowed independent new test databases for this phase. The acceptance runner uses a separate selection file and per-individual directory; the original canonical selection/history remain unchanged. Reports identify the test individual and TEST_ONLY authorship; they never claim a new A continues the original A.
+
 ## 当前 BECA-V0 阶段范围（2026-10-04）
 
 本地实验阶段说明；以下范围限制实验目标，不改变 Perfect Recursion / BER v0.8 的核心定义。本文基于 [仓库提交 867e1f1](https://github.com/iking-i/beca-architecture/commit/867e1f192f7f21298450a553a4a733ec8f15a999) 同步，仅为实验仓库的本地阶段说明，不修改理论仓库。

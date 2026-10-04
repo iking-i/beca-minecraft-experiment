@@ -10,6 +10,12 @@ let bot
 const body = createBody({ host: '127.0.0.1', port: 25565, username: 'TestBody', auth: 'offline', reconnect: { enabled: false } },
   { logger: { info() {}, warn() {}, error() {} }, createBot: () => {
     bot = new CapabilityBot()
+    if (fixtureOptions.fixture_die_after_observation) {
+      bot.respawn = () => {
+        bot.calls.push(['respawn'])
+        queueMicrotask(() => { bot.emit('respawn'); bot.health = 20; bot.emit('spawn') })
+      }
+    }
     if (fixtureOptions.fixture_window === 'container') {
       bot.nextWindow = bot.makeContainer(); bot.setItem(bot.nextWindow, 0, 1, 3)
     } else if (fixtureOptions.fixture_window === 'crafting') {
@@ -19,4 +25,9 @@ const body = createBody({ host: '127.0.0.1', port: 25565, username: 'TestBody', 
     }
     queueMicrotask(() => bot.emit('spawn')); return bot
   } })
-serveBody(body)
+let needsDeath = !!fixtureOptions.fixture_die_after_observation
+serveBody({ ...body, observe(...args) {
+  const observation = body.observe(...args)
+  if (needsDeath) { needsDeath = false; bot.health = 0; bot.emit('death') }
+  return observation
+} })
