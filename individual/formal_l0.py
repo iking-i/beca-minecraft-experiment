@@ -16,6 +16,8 @@ from .internal_state import InternalState
 from .observation import ObservationFrame
 from .policies import CATALOG, PolicyRegistry
 from .structure import pattern_id
+from .formal_boundary import boundary_for, validate_boundary, normalize_resource_caps
+from .limit_consequences import PORT_IDS, OP_IDS, raw_consequence, auditor_metadata
 
 
 @dataclass(frozen=True)
@@ -44,23 +46,32 @@ def digest(value):
 
 
 class FormalL0Engine:
-    def __init__(self, caps=None):
-        self.caps = (caps if isinstance(caps, FormalLimits) else FormalLimits(**asdict(caps))) if caps is not None else FormalLimits.load()
+    def __init__(self, caps=None, resource_caps=None):
+        self._caps = (caps if isinstance(caps, FormalLimits) else FormalLimits(**asdict(caps))) if caps is not None else FormalLimits.load()
+        self.resource_caps = normalize_resource_caps(resource_caps)
+
+    @property
+    def caps(self):
+        return self._caps
 
     def advance(self, current, frame, state_version, pending_actions):
+        validate_boundary(current, self.caps, self.resource_caps)
         internal = InternalState.from_dict(current) if current else InternalState()
         local = internal.l0_state
+        local.update(boundary_for(current, self.caps, self.resource_caps))
         journal, new_limits = [], []
 
         def failure(code, resource, operation, used, capacity, requested, refs=()):
-            record = {'limit_id': str(uuid4()), 'code': code, 'resource': resource,
-                      'operation': operation, 'used': used, 'capacity': capacity,
+            record = {'limit_id': str(uuid4()), 'resource_port_id': PORT_IDS[resource],
+                      'operation_id': OP_IDS[operation], 'used': used, 'capacity': capacity,
                       'requested': requested, 'operation_performed': False,
                       'source_state_version': state_version, 'frame_id': frame.frame_id,
-                      'object_refs': list(refs), 'source': 'ENVIRONMENT_CONSTRAINT',
-                      'organization_ref': f'L0.{resource}', 'representation': 'bounded_keyed_records_v1'}
+                      'object_refs': list(refs)}
+            record = raw_consequence(record)
             new_limits.append(record)
-            journal.append(('CURRENT_LIMIT_ENCOUNTER', deepcopy(record)))
+            journal.append(('CURRENT_LIMIT_ENCOUNTER', {
+                'limit_id': record['limit_id'], 'a_facing_payload': deepcopy(record),
+                'auditor_metadata': auditor_metadata(code, resource, operation)}))
             return record
 
         if local.get('profile') != 'formal_l0':
@@ -79,11 +90,6 @@ class FormalL0Engine:
             journal.append(('EXTERNAL_POLICY_EFFECT', {'policy_id': 'formal.process_initialization',
                 'source': 'EXTERNAL_FIXED_POLICY', 'effect': 'initial_single_process',
                 'quantity': 1, 'dynamic_branching': False, 'profile': 'formal_l0'}))
-        old_caps = local.get('physical_caps')
-        if old_caps is not None and old_caps != asdict(self.caps):
-            journal.append(('EXTERNAL_CAPACITY_CONFIGURATION_CHANGED', {
-                'before': old_caps, 'after': asdict(self.caps), 'source': 'ENVIRONMENT_CONSTRAINT'}))
-        local['physical_caps'] = asdict(self.caps)
         registry = PolicyRegistry(internal)
         for key in ('formal.process_initialization', 'formal.action_sampling'):
             if key not in internal.policy_registry:
@@ -136,7 +142,7 @@ class FormalL0Engine:
         # Two live input registers are explicitly separate from retained episodic memory.
         # They are replaced by incoming signals, never used to evict a retained record.
         local['current_pattern'] = unit_id
-        prior_limits = deepcopy(local.get('pending_consequences', []))
+        prior_limits = [raw_consequence(value) for value in local.get('pending_consequences', [])]
         frame.internal_observations = prior_limits + deepcopy(new_limits)
 
         pid = local.get('process_id')

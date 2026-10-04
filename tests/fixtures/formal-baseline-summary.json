@@ -1,0 +1,78 @@
+{
+  "baseline_version": "formal_l0_v0_ab_2",
+  "test_only": true,
+  "real_minecraft": false,
+  "individual_id": "A-46bd2d85-236e-40db-bf9a-a629a60dc3be",
+  "state_range": [
+    0,
+    19
+  ],
+  "observations": 13,
+  "events": 190,
+  "counts": {
+    "FORMAL_CAPS_LOCKED": 1,
+    "EXPERIMENT_PROFILE_SELECTED": 1,
+    "EXTERNAL_POLICY_EFFECT": 2,
+    "RECURSIVE_PROCESS_CREATED": 1,
+    "RECURSION_GENERATED": 1,
+    "OBSERVATION_FRAME": 13,
+    "CURRENT_LIMIT_ENCOUNTER": 39,
+    "EXPERIENCE_FORMED": 12,
+    "RECURSIVE_PARTIAL_OUTPUT": 12,
+    "INTEGRATION_COMPLETED": 12,
+    "INTERNAL_VARIABLE_STRUCTURE_CHANGE": 4,
+    "RECURSIVE_FEEDBACK_STORED": 12,
+    "LIMIT_FEEDBACK_REENTERED_RECURSION": 11,
+    "ACTION_REQUESTED": 1
+  },
+  "classifications": {
+    "WITHIN_LAYER_RECURSION": true,
+    "CURRENT_LIMIT_ENCOUNTER": true,
+    "BEHAVIORALLY_BINDING_LIMIT": true,
+    "LIMIT_FEEDBACK_REENTERED_RECURSION": true,
+    "ARCHITECTURE_LIMIT_RECOGNITION_CANDIDATE": false,
+    "EXTERNAL_POLICY_EFFECT": true,
+    "INTERNAL_VARIABLE_STRUCTURE_CHANGE": true
+  },
+  "boundary_checks": {
+    "persistent_capacity_lock": true,
+    "raw_consequences_separated": true,
+    "action_authorship_consistent": true
+  },
+  "baseline_goal_observed": true,
+  "recognition_status": "not_observed",
+  "upward_recursion_observed": false,
+  "policy_boundary_checks_passed": true,
+  "verified_internal_policy_migrations": 0,
+  "action_decision_authors": {
+    "EXTERNAL_FIXED_POLICY": 1
+  },
+  "locked_conditions": {
+    "locked_caps": {
+      "processes": 8,
+      "units": 1,
+      "relations": 2,
+      "history": 2,
+      "evidence_window": 2,
+      "condition_channels": 16,
+      "outcomes_per_relation": 64
+    },
+    "locked_resource_caps": {},
+    "formal_condition_id": "C-d3a94ac4-bd07-4fd7-8134-a8a11bb87124",
+    "baseline_version": "formal_l0_v0_ab_2"
+  },
+  "binding_witness": {
+    "failed_write_state": 7,
+    "failed_write_event": 52,
+    "limit_id": "ffb76720-7c07-429e-bce1-d60110ed6f16",
+    "resource_port_id": 105,
+    "operation_id": 206,
+    "used": 2,
+    "capacity": 2,
+    "requested": 3,
+    "later_failed_read_state": 8,
+    "later_failed_read_event": 64,
+    "object_ref": "U-4f53cda18c2baa0c0354:-1"
+  },
+  "note": "Numeric fixture only; excludes full database, machine configuration, credentials and large logs. Resource/sensor locks tested separately; this fixture has no Supervisor."
+}

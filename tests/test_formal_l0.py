@@ -84,7 +84,7 @@ class FormalL0Tests(unittest.TestCase):
         self.assertEqual(state['observation_history_window'], first_memory)
         self.assertEqual(len(state['relations']), 1)
         self.assertEqual(len(state['active_processes']), 1)
-        codes = {p['code'] for _, p in self.events('CURRENT_LIMIT_ENCOUNTER')}
+        codes = {p['auditor_metadata']['semantic_code'] for _, p in self.events('CURRENT_LIMIT_ENCOUNTER')}
         self.assertTrue({'WRITE_FAILED_CAPACITY', 'ACTIVE_MEMORY_LIMIT', 'RELATION_CAPACITY_REACHED'} <= codes)
         for kind in ('UNIT_ARCHIVED', 'RELATION_ARCHIVED', 'DOWNWARD_FEEDBACK_UPDATED', 'POLICY_PARAMETER_UPDATED'):
             self.assertEqual(self.events(kind), [])
@@ -104,7 +104,7 @@ class FormalL0Tests(unittest.TestCase):
             for raw in partial['experience']['limit_consequences']:
                 old_version, original = limits[raw['limit_id']]
                 if old_version < version:
-                    self.assertEqual(raw, original)
+                    self.assertEqual(raw, original['a_facing_payload'])
                     self.assertIn(raw['limit_id'], partial['processing']['consumed_limit_ids'])
                     found.append(raw)
         self.assertTrue(found)
@@ -182,7 +182,7 @@ class FormalL0Tests(unittest.TestCase):
         result, _, journal = engine.advance(state.to_dict(), frame, 1, [])
         self.assertEqual(set(result.active_processes), {'old'})
         self.assertEqual(result.active_processes['old']['status'], 'PAUSED')
-        self.assertTrue(any(k=='CURRENT_LIMIT_ENCOUNTER' and p['code']=='PROCESS_SLOT_UNAVAILABLE' for k,p in journal))
+        self.assertTrue(any(k=='CURRENT_LIMIT_ENCOUNTER' and p['auditor_metadata']['semantic_code']=='PROCESS_SLOT_UNAVAILABLE' for k,p in journal))
         self.assertFalse(any(k=='RECURSIVE_PROCESS_CREATED' for k,_ in journal))
 
     def test_debug_old_policies_cannot_satisfy_formal_stage(self):

@@ -8,7 +8,13 @@
 
 唯一理论级个体定义约束仍为 `Continuity(A) != 0`。实验初始化策略不是理论约束，也不是 A 自己形成的策略。保持 UUID 和状态链是工程证据，不单独证明主体连续性的全部含义。
 
-## 实际结构
+## 本轮正式基线更正
+
+本页以下评分、2→3、分辨率更新及实例均是历史 legacy_policy_debug 的来源记录。正式 formal_l0 的动作代码用 uniform available capability sampling（既有 LCG 模运算），不读取尝试次数或 unresolved；参数绑定仍是 INITIAL_EXTERNAL_POLICY。请求、执行与失败事件统一保留 `initiator=external_fixed_policy` 和派生的 `decision_authorship`。TEST_ONLY 为 capability_test；内部选择搭配外部参数绑定只能标记 mixed_policy，不得整体标记为内部作者。
+
+正式路径保留的三个初始策略为 formal.process_initialization、formal.action_sampling、action.parameter_binding；本轮没有来源迁移。容量约束跨 Session 持久锁定，语义失败解释只在外部审计事件，递归实际输入为 opaque raw consequence。准确字段、固定采样边界和验证结果见 [BASELINE_CORRECTION_REPORT.md](BASELINE_CORRECTION_REPORT.md)。
+
+## 历史调试路径的结构
 
 ```text
 实验初始策略 CATALOG
@@ -84,7 +90,7 @@ CATALOG 不作为运行时的共享可变策略单例。不同实验、不同快
 
 **本轮没有实现内部策略提案的生成、真实引用验证、比较评估或采纳。** 后续必须建立这些证据链，才能登记一次真实来源迁移；不能通过换标签完成。旧实验没有回填或伪造来源，读旧快照时明确标注 legacy_untracked。
 
-## 动作评分与递归数量
+## 动作评分与递归数量（仅历史 legacy_policy_debug）
 
 每个动作记录四部分：
 
@@ -160,7 +166,7 @@ CATALOG 不作为运行时的共享可变策略单例。不同实验、不同快
 .\.venv\Scripts\python.exe main.py --minecraft-config storage/environments/legacy/policy-boundary.minecraft.json
 ```
 
-局域网重新开放时更新该配置中的 port。按用户后续选择，新一轮使用 storage/individuals/A-4369420c-26f2-49b1-bbde-dd2b55c6f1fe/individual.db 生命周期；之后的 Session 沿用此文件，ID 和全局版本不重置。live-002 保留为旧实验历史。验证模式 `--verify-loop` 仍只检验工程闭环，不检验自主策略形成。
+局域网重新开放时可用 `--port <当前端口>` 临时覆盖，不必编辑配置。按用户后续选择，新一轮使用 storage/individuals/A-4369420c-26f2-49b1-bbde-dd2b55c6f1fe/individual.db 生命周期；之后的 Session 沿用此文件，ID 和全局版本不重置。live-002 保留为旧实验历史。当前正式 `--verify-loop` 只检验 V0-A / V0-B 基线，不检验自主策略形成或 architecture-limit recognition。旧调试路径不能通过这个正式判据。
 
 SQLite 中直接查看：
 

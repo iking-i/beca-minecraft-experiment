@@ -206,7 +206,7 @@ class NormalCoreTests(unittest.TestCase):
 
     def test_default_scheduler_pause_and_resume_use_structural_actions(self):
         self.core.tick(10)
-        self.assertEqual(self.core.state.latest_action['initiator'], 'internal_structure')
+        self.assertEqual(self.core.state.latest_action['initiator'], 'external_fixed_policy')
         before = self.core.state.environment_sequence
         self.core.pause()
         self.assertEqual(self.core.state.status, 'paused')
@@ -217,7 +217,7 @@ class NormalCoreTests(unittest.TestCase):
         self.assertEqual(self.core.state.latest_action['initiator'], 'supervisor_pause')
         self.core.resume()
         self.core.tick(10000000001)
-        self.assertEqual(self.core.state.latest_action['initiator'], 'internal_structure')
+        self.assertEqual(self.core.state.latest_action['initiator'], 'external_fixed_policy')
 
     def test_atomic_structural_events_roll_back_with_snapshot(self):
         before = self.core.state

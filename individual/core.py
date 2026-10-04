@@ -14,7 +14,7 @@ import threading
 import time
 from uuid import uuid4
 
-from .bridge import BridgeError, MinecraftBridge, ROOT
+from .bridge import BridgeError, MinecraftBridge, ROOT, parse_minecraft_port
 from .events import EventStore
 from .identity import ExperimentLease
 from .actions import body_command, select_action
@@ -24,6 +24,8 @@ from .policies import PolicyRegistry
 from .observation import FrameEncoder
 from .structure import StructuralEngine
 from .formal_l0 import FormalL0Engine, FormalLimits, select_uniform_action
+from .formal_boundary import preflight, validate_boundary, normalize_resource_caps, sensor_caps
+from .decision_provenance import decision_authorship
 from .state import observation_fields, utc_now
 
 
@@ -31,16 +33,26 @@ class ACore:
     ACTION_METHODS = frozenset({'move', 'interact', 'chat'})
 
     def __init__(self, database, bridge, policy=None, observation_interval=1.0, session_context=None,
-                 session_label='Minecraft', initialize_lifetime=False, experiment_profile='formal_l0', physical_caps=None):
+                 session_label='Minecraft', initialize_lifetime=False, experiment_profile='formal_l0', physical_caps=None,
+                 resource_caps=None):
         if experiment_profile not in ('formal_l0', 'legacy_policy_debug'):
             raise ValueError('Unknown experiment profile')
         if not math.isfinite(observation_interval) or observation_interval <= 0:
             raise ValueError('Observation interval must be positive')
         if not initialize_lifetime and not Path(database).is_file():
             raise ValueError('An existing individual lifetime is required; session startup cannot create a replacement A')
+        self._experiment_profile = 'legacy_policy_debug' if policy is not None else experiment_profile
+        self._engine = (FormalL0Engine(physical_caps, normalize_resource_caps(resource_caps))
+                        if self._experiment_profile == 'formal_l0' else StructuralEngine(physical_caps))
+        if self._experiment_profile == 'formal_l0':
+            preflight(database, self._engine.caps, self._engine.resource_caps)
+        else:
+            preflight(database, None)  # Refuse sealed formal history before any writes.
         self._lease = ExperimentLease(database).acquire()
         self._store = None
         try:
+            preflight(database, self._engine.caps if self._experiment_profile == 'formal_l0' else None,
+                      self._engine.resource_caps if self._experiment_profile == 'formal_l0' else None)
             self._store = EventStore(database)
             if not initialize_lifetime and self._store.latest_state() is None:
                 raise ValueError('Session startup requires committed lifetime history')
@@ -48,7 +60,9 @@ class ACore:
             if (experiment_profile == 'legacy_policy_debug' or policy is not None) and previous and previous.internal_state.get('l0_state', {}).get('profile') == 'formal_l0':
                 raise ValueError('Formal lifetime cannot resume through legacy adaptation; use an independent debug fixture')
             self._state = self._store.open_session({**(session_context or {}),
-                'experiment_profile': 'legacy_policy_debug' if policy is not None else experiment_profile}, session_label)
+                'experiment_profile': self._experiment_profile}, session_label,
+                formal_caps=self._engine.caps if self._experiment_profile == 'formal_l0' else None,
+                resource_caps=self._engine.resource_caps if self._experiment_profile == 'formal_l0' else None)
         except BaseException:
             if self._store:
                 self._store.close()
@@ -57,8 +71,6 @@ class ACore:
         self._bridge = bridge
         self._policy = policy  # Explicit debug injection only; absent in normal A.
         self._encoder = FrameEncoder(self._state.individual_id)
-        self._experiment_profile = 'legacy_policy_debug' if policy is not None else experiment_profile
-        self._engine = (FormalL0Engine(physical_caps) if self._experiment_profile == 'formal_l0' else StructuralEngine(physical_caps))
         self._body_epoch = self._state.carrier_epoch
         self._session_active = True
         self._await_fresh_observation = True
@@ -79,6 +91,9 @@ class ACore:
     def _transition(self, event_type, payload, additional_events=(), **changes):
         if self._closed:
             raise RuntimeError('A Core is closed')
+        if self._experiment_profile == 'formal_l0':
+            validate_boundary(self._state.internal_state, self._engine.caps, self._engine.resource_caps)
+            validate_boundary(changes.get('internal_state', self._state.internal_state), self._engine.caps, self._engine.resource_caps)
         if not self._session_active:
             changes.setdefault('session_id', None)
         next_state = replace(self._state, state_version=self._state.state_version + 1,
@@ -218,13 +233,15 @@ class ACore:
             action_code, selection = selector(internal, pattern, (0, 1, 2))
             command = body_command(action_code, PolicyRegistry(internal).parameters('body.actions')['duration_ms'])
         duration_ms = PolicyRegistry(internal).parameters('body.actions')['duration_ms']
+        authorship = decision_authorship(selection)
         requested = {'action_id': str(uuid4()), 'action_code': action_code, 'status': 'requested',
-            'initiator': 'capability_test' if selection.get('category') == 'TEST_ONLY' else 'internal_structure',
+            'initiator': authorship['initiator'],
             'method': command['method'] if command else 'wait',
             'args': deepcopy(command['args']) if command else {'durationMs': duration_ms},
             'provenance': {'source_state_version': self._state.state_version,
                 'internal_state_before_version': self._state.state_version,
                 'capability_category': 'BODY_CAPABILITY',
+                'decision_authorship': authorship,
                 'source_structure_revision': self._state.internal_state['structure_revision'],
                 'frame_id': self._state.observation_frame['frame_id'],
                 'integration_id': internal.latest_integration.get('integration_id'),
@@ -232,9 +249,10 @@ class ACore:
         internal.latest_action = deepcopy(requested)
         internal.structure_revision += 1
         effects = []
-        if selection.get('category') != 'TEST_ONLY':
+        if authorship['aggregate_source'] in ('EXTERNAL_FIXED_POLICY', 'MIXED_POLICY'):
             effects.append(('EXTERNAL_POLICY_EFFECT', {
-                'action_id': requested['action_id'], 'source': 'EXTERNAL_FIXED_POLICY',
+                'action_id': requested['action_id'], 'source': authorship['aggregate_source'],
+                'decision_authorship': deepcopy(authorship),
                 'selection': deepcopy(selection), 'profile': self._experiment_profile,
                 'parameter_binding': deepcopy(selection.get('parameter_binding'))}))
         self._transition('ACTION_REQUESTED', requested, additional_events=effects, latest_action=requested, internal_state=internal.to_dict())
@@ -355,7 +373,9 @@ class ACore:
     def begin_session(self, environment=None, label='Minecraft'):
         if self._closed or self._session_active:
             raise RuntimeError('End the current session before opening another')
-        self._state = self._store.open_session(environment, label, carrier_restart=False,
+        self._state = self._store.open_session({**(environment or {}), 'experiment_profile': self._experiment_profile}, label, carrier_restart=False,
+            formal_caps=self._engine.caps if self._experiment_profile == 'formal_l0' else None,
+            resource_caps=self._engine.resource_caps if self._experiment_profile == 'formal_l0' else None,
             runtime_status='paused' if self._paused else 'running' if self._bridge_status.get('connected') else 'waiting_for_bridge')
         self._session_active = True
         self._body_epoch = self._state.carrier_epoch
@@ -388,10 +408,13 @@ def main():
     parser.add_argument('--branch-db', help='Explicitly run a labeled snapshot branch, never the original mainline')
     parser.add_argument('--session-label', default='Minecraft')
     parser.add_argument('--minecraft-config', default=str(ROOT / 'minecraft/config.json'))
+    parser.add_argument('--minecraft-port', type=parse_minecraft_port,
+                        help='External connection override for this carrier run only')
     parser.add_argument('--observe-interval', type=float, default=0.5)
     parser.add_argument('--smoke-policy', action='store_true', help='Explicit stage-2 debug probe; not normal A')
     parser.add_argument('--legacy-policy-debug', action='store_true', help='Explicit old fixed-policy debug path; not formal evidence')
     parser.add_argument('--physical-caps', default=str(ROOT / 'individual/experiment.json'))
+    parser.add_argument('--environment-caps', type=json.loads, default={}, help='External Supervisor resource ceilings for this condition')
     parser.add_argument('--policy-wait', type=float, default=1.0)
     parser.add_argument('--move-ms', type=int, default=200)
     args = parser.parse_args()
@@ -419,7 +442,8 @@ def main():
                 pass
         controls.put({'command': 'terminate'})  # Parent disappearing ends this experiment.
 
-    bridge = MinecraftBridge(args.minecraft_config, log=lambda text: print(text, file=sys.stderr, flush=True))
+    bridge = MinecraftBridge(args.minecraft_config, port=args.minecraft_port,
+                             log=lambda text: print(text, file=sys.stderr, flush=True))
     core = None
     reason = 'manual_terminate'
     try:
@@ -429,8 +453,13 @@ def main():
             policy = DeterministicPolicy(args.policy_wait, args.move_ms)
         config_text = Path(args.minecraft_config).read_text(encoding='utf-8')
         config = json.loads(config_text)
+        if 'body_observation_caps' in args.environment_caps and args.environment_caps['body_observation_caps'] != sensor_caps(args.minecraft_config):
+            raise ValueError('Body sensor capacities changed between Supervisor preflight and Core startup')
+        if args.minecraft_port is not None:
+            config['port'] = args.minecraft_port
         context = {'minecraft_config': str(Path(args.minecraft_config).resolve()),
                    'configuration_hash': sha256(config_text.encode()).hexdigest(),
+                   'minecraft_port_override': args.minecraft_port,
                    'minecraft_connection': {key: config.get(key) for key in ('host', 'port', 'username', 'version')},
                    'body_observation_config': config.get('observation', {}),
                    'observe_interval': args.observe_interval, 'smoke_policy': args.smoke_policy,
@@ -438,7 +467,8 @@ def main():
                    'physical_caps': asdict(FormalLimits.load(args.physical_caps))}
         core = ACore(args.db, bridge, policy, args.observe_interval, context, args.session_label,
                      experiment_profile=context['experiment_profile'],
-                     physical_caps=FormalLimits.load(args.physical_caps) if context['experiment_profile']=='formal_l0' else None)
+                     physical_caps=FormalLimits.load(args.physical_caps) if context['experiment_profile']=='formal_l0' else None,
+                     resource_caps=args.environment_caps)
         emit('CORE_STARTED', individual_id=core.state.individual_id, state_version=core.state.state_version,
              session_id=core.state.session_id, lifetime_role='snapshot_branch' if args.branch_db else 'mainline')
         threading.Thread(target=read_controls, daemon=True).start()

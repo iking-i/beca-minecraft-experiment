@@ -6,6 +6,7 @@ import json
 import math
 from pathlib import Path
 import sqlite3
+from .decision_provenance import decision_authorship
 
 
 def audit_policies(database):
@@ -27,6 +28,7 @@ def audit_policies(database):
         counts = Counter()
         changes, integrations, partials, linked = {}, {}, {}, []
         action_checks, generation_checks = [], []
+        authors, attribution_errors = Counter(), []
         for seq, version, kind, payload in rows:
             p = json.loads(payload)
             counts[kind] += 1
@@ -37,14 +39,27 @@ def audit_policies(database):
                 partials[p['partial_id']] = record
             elif kind == 'POLICY_PARAMETER_UPDATED':
                 changes[p['change_id']] = record
-            elif kind == 'ACTION_REQUESTED' and p.get('initiator') == 'internal_structure':
+            elif kind == 'ACTION_REQUESTED' and p.get('provenance', {}).get('selection') is not None:
                 selection = p['provenance']['selection']
+                expected = decision_authorship(selection)
+                authors[expected['aggregate_source']] += 1
+                consistent = (p.get('initiator') == expected['initiator'] and
+                              p['provenance'].get('decision_authorship') == expected)
+                if not consistent:
+                    attribution_errors.append({'event_sequence': seq, 'recorded_initiator': p.get('initiator'),
+                                               'expected_authorship': expected})
+                if selection.get('category') == 'TEST_ONLY':
+                    action_checks.append(consistent)
+                    continue
                 if selection.get('policy_id') == 'formal.action_sampling':
-                    action_checks.append(selection.get('source') == 'EXTERNAL_FIXED_POLICY'
+                    binder = selection.get('parameter_binding')
+                    action_checks.append(consistent and expected['initiator'] == 'external_fixed_policy'
+                        and (not binder or expected['parameter_binding_source'] == 'INITIAL_EXTERNAL_POLICY')
+                        and selection.get('source') == 'EXTERNAL_FIXED_POLICY'
                         and selection.get('uses_attempt_count') is False and selection.get('uses_unresolved') is False)
                     continue
                 components = selection.get('score_components', {})
-                valid = set(components) == set(selection['scores']) and bool(selection.get('policy_provenance'))
+                valid = consistent and set(components) == set(selection.get('scores', {})) and bool(selection.get('policy_provenance'))
                 for code, parts in components.items():
                     total = sum(parts[key]['value'] for key in ('initial_policy_component',
                         'internal_structure_component', 'temporary_evaluation_component'))
@@ -82,6 +97,7 @@ def audit_policies(database):
         checks = {'one_marker_and_contiguous_versions': marker_rows == (last_version + 1, 1, 0, last_version),
                   'initialized_registry_recorded': counts['POLICY_REGISTRY_INITIALIZED'] + counts['POLICY_REGISTRY_INHERITED'] == 1,
                   'action_components_traceable': bool(action_checks) and all(action_checks),
+                  'action_authorship_consistent': not attribution_errors,
                   'generation_three_inputs_traceable': bool(generation_checks) and all(generation_checks),
                   'internal_parameter_change_used_later': bool(linked),
                   'fixed_updates_not_falsely_promoted': all(
@@ -104,6 +120,7 @@ def audit_policies(database):
                 'linked_parameter_updates_used_later': len(linked),
                 'verified_internal_policy_migrations': 0,
                 'autonomous_policy_formation_proven': False,
+                'action_decision_authors': dict(authors), 'action_attribution_errors': attribution_errors,
                 'sample': sample,
                 'note': 'Parameter changes and source migrations are measured separately from attribution validity. Formal mode disables legacy adaptation; remaining sampling is external policy.'}
     finally:

@@ -1,4 +1,5 @@
 import { createInterface } from 'node:readline'
+import { parseArgs } from 'node:util'
 import { loadConfig, createMinecraftBody } from './index.js'
 
 const help = `命令：
@@ -38,10 +39,10 @@ async function execute(body, line) {
 }
 
 try {
-  const args = process.argv.slice(2)
-  if (args.length && (args.length !== 2 || args[0] !== '--config')) throw new Error('用法：node src/cli.js [--config config.local.json]')
+  const { values } = parseArgs({ options: { config: { type: 'string' }, port: { type: 'string' } } })
+  const override = values.port === undefined ? {} : { port: Number(values.port) }
   const logger = Object.fromEntries(['info', 'warn', 'error'].map(level => [level, message => console.error(`${new Date().toISOString()} ${level.toUpperCase()} ${message}`)]))
-  const body = createMinecraftBody(await loadConfig(args[1]), { logger })
+  const body = createMinecraftBody(await loadConfig(values.config, override), { logger })
   const input = createInterface({ input: process.stdin, terminal: false })
   let closing = false
   const shutdown = () => {

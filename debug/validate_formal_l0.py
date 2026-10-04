@@ -28,11 +28,13 @@ def main():
         for index in range(12):
             bridge.x = [0, 1, 1, 0][index % 4]
             core.accept_observation(bridge.call('observe'))
+        core.execute_discrete_action()  # Exercise actual external sampler/provenance, not a TEST_ONLY action.
+        core.accept_observation(bridge.call('observe'))
     finally:
         core.shutdown('test_only_numeric_validation')
     result = audit(database, include_sample=True)
     result['validation_context'] = {'test_only': True, 'real_minecraft': False,
-                                    'mainline_identity_changed': False, 'observations': 12}
+                                    'mainline_identity_changed': False, 'observations': 13}
     report = save_report(database, 'formal-l0-validation', result)
     write_json(directory / 'lifetime.json', {'individual_id': registration['individual_id'],
         'database': database.name, 'role': 'test_fixture', 'label': 'formal-l0-numeric-validation',
@@ -41,6 +43,8 @@ def main():
     print(f'Report: {report}')
     print(f'Classifications: {result["classifications"]}')
     print(f'Full stage goal observed: {result["formal_stage_goal_observed"]}')
+    print(f'V0-A/V0-B baseline observed: {result["baseline_goal_observed"]}')
+    print(f'Database: {database}')
 
 
 if __name__ == '__main__':

@@ -262,10 +262,10 @@ class Supervisor:
                         proof = audit(self.database, check_chain=False, session_id=self._session_id)
                     except (sqlite3.Error, ValueError):
                         proof = None  # Database initialization may still be in progress.
-                    if proof and proof.get('formal_stage_goal_observed'):
+                    if proof and proof.get('baseline_goal_observed'):
                         self._record('EXPERIMENT_ACCEPTED', {key: proof[key] for key in (
                             'checks', 'counts', 'processes_with_repeated_publications', 'recognition_status')})
-                        self.log('L0 limit-feedback and a reviewable recognition candidate recorded; no upward recursion is inferred.')
+                        self.log('V0-A/V0-B baseline evidence recorded; architecture recognition remains not_observed.')
                         self._request_termination('verification_complete')
                     next_verification = now + 2.0
                 heartbeat_at = self._last_heartbeat or self._started_at
@@ -318,18 +318,24 @@ class Supervisor:
 
 
 def cli():
-    parser = argparse.ArgumentParser(description='BECA-V0 formal L0: within-layer recursion, finite memory consequences and recognition audit')
+    parser = argparse.ArgumentParser(description='BECA-V0 formal L0: V0-A/V0-B baseline')
     parser.add_argument('--db', help='Compatibility: must name the pinned lifetime database')
     parser.add_argument('--branch-db', help='Explicit snapshot branch; never the original A mainline')
     parser.add_argument('--session-label', default='Minecraft')
     parser.add_argument('--minecraft-config', default=str(ROOT / 'minecraft/config.json'))
+    from individual.bridge import parse_minecraft_port
+    connection = parser.add_mutually_exclusive_group()
+    connection.add_argument('--minecraft-port', '--port', type=parse_minecraft_port,
+                            help='本次连接端口，不修改配置文件；指定后不再询问')
+    connection.add_argument('--use-config-port', action='store_true',
+                            help='直接使用配置文件中的端口，不在启动时询问')
     parser.add_argument('--limits', default=str(ROOT / 'supervisor/limits.yaml'))
     parser.add_argument('--duration', type=float, default=0, help='0 keeps running; positive value ends this experiment')
     parser.add_argument('--observe-interval', type=float, default=0.5)
     parser.add_argument('--smoke-policy', action='store_true', help='Explicit stage-2 debug path')
     parser.add_argument('--legacy-policy-debug', action='store_true', help='Old fixed-policy debug mode; excluded from formal evidence')
     parser.add_argument('--physical-caps', default=str(ROOT / 'individual/experiment.json'))
-    parser.add_argument('--verify-loop', action='store_true', help='External verification: require L0 recursion, binding limit, reentered consequence and a reviewable recognition candidate; no ascent inferred')
+    parser.add_argument('--verify-loop', action='store_true', help='External verification of V0-A/V0-B only; no recognition or ascent inferred')
     parser.add_argument('--policy-wait', type=float, default=1.0)
     parser.add_argument('--move-ms', type=int, default=200)
     args = parser.parse_args()
@@ -340,12 +346,22 @@ def cli():
         from individual.lifetime import resolve_runtime_database
         args.db = str(resolve_runtime_database(args.db, args.branch_db))
         from individual.formal_l0 import FormalLimits
-        FormalLimits.load(args.physical_caps)  # Reject invalid resource configuration before launching Core.
-        supervisor = Supervisor(args.db, load_limits(args.limits))
+        caps = FormalLimits.load(args.physical_caps)
+        limits = load_limits(args.limits)
+        from individual.formal_boundary import preflight, RESOURCE_CAP_KEYS, sensor_caps
+        resource_caps = {key: limits[key] for key in RESOURCE_CAP_KEYS}
+        resource_caps['body_observation_caps'] = sensor_caps(args.minecraft_config)
+        preflight(args.db, None if args.legacy_policy_debug or args.smoke_policy else caps, resource_caps)
+        from .connection import choose_minecraft_port
+        port = choose_minecraft_port(args.minecraft_config, args.minecraft_port, args.use_config_port)
+        supervisor = Supervisor(args.db, limits)
         core_args = ['--minecraft-config', str(Path(args.minecraft_config).resolve()),
                      '--observe-interval', str(args.observe_interval), '--policy-wait', str(args.policy_wait),
                      '--move-ms', str(args.move_ms), '--session-label', args.session_label,
-                     '--physical-caps', str(Path(args.physical_caps).resolve())]
+                     '--physical-caps', str(Path(args.physical_caps).resolve()),
+                     '--environment-caps', json.dumps(resource_caps)]
+        if port is not None:
+            core_args.extend(['--minecraft-port', str(port)])
         if args.legacy_policy_debug:
             core_args.append('--legacy-policy-debug')
         if args.branch_db:

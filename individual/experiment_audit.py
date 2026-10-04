@@ -62,7 +62,7 @@ def audit_legacy(database, include_sample=False, check_chain=True, session_id=No
                         payload['parameters']['condition_resolution'] == after['condition_resolution'] != before['condition_resolution']):
                         feedback_generations.append({'feedback': prior, 'generation': record,
                             'previous_requested_quantity': old_q, 'actual_requested_quantity': new_q})
-            elif kind == 'ACTION_EXECUTED' and payload.get('initiator') == 'internal_structure':
+            elif kind == 'ACTION_EXECUTED' and payload.get('initiator') in ('internal_structure', 'external_fixed_policy', 'mixed_policy'):
                 actions[payload['action_id']] = record
             elif kind == 'OBSERVATION_FRAME':
                 frames[payload['frame_id']] = record

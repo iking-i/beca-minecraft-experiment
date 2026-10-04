@@ -11,6 +11,13 @@ import time
 ROOT = Path(__file__).resolve().parents[1]
 
 
+def parse_minecraft_port(value):
+    text = str(value).strip()
+    if not text.isascii() or not text.isdecimal() or not 1 <= int(text) <= 65535:
+        raise ValueError('端口必须是 1 到 65535 的整数')
+    return int(text)
+
+
 class BridgeError(RuntimeError):
     def __init__(self, code, message, details=None):
         super().__init__(message)
@@ -21,10 +28,11 @@ class BridgeError(RuntimeError):
 class MinecraftBridge:
     METHODS = frozenset({'start', 'status', 'observe', 'perform', 'move', 'interact', 'chat', 'close'})
 
-    def __init__(self, config, adapter=None, timeout=20.0, log=None):
+    def __init__(self, config, adapter=None, timeout=20.0, log=None, port=None):
         self.config = str(Path(config).resolve())
         self.adapter = str(Path(adapter or ROOT / 'bridge/server.js').resolve())
         self.timeout = timeout
+        self.port = parse_minecraft_port(port) if port is not None else None
         self.log = log or (lambda message: None)
         self.process = None
         self._events = queue.Queue()
@@ -45,7 +53,10 @@ class MinecraftBridge:
     def launch(self):
         if self.process is not None:
             raise RuntimeError('Bridge process is already launched')
-        self.process = subprocess.Popen(['node', self.adapter, self.config], cwd=ROOT,
+        argv = ['node', self.adapter, self.config]
+        if self.port is not None:
+            argv.append(str(self.port))
+        self.process = subprocess.Popen(argv, cwd=ROOT,
                                         stdin=subprocess.PIPE, stdout=subprocess.PIPE,
                                         stderr=subprocess.PIPE, text=True, encoding='utf-8', bufsize=1)
         for target in (self._read_output, self._read_errors):

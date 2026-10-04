@@ -2,7 +2,7 @@
 
 本仓库是 [beca-architecture](https://github.com/iking-i/beca-architecture) **Perfect Recursion / BER v0.8** 的独立 Minecraft 实验实现。发布时核对的理论 `main` 提交为 [`45d8869245fb210202a7e7982486d7f723bc6680`](https://github.com/iking-i/beca-architecture/commit/45d8869245fb210202a7e7982486d7f723bc6680)（2026-10-04）。现有实现及本地同步的实验文档原先依据 [`867e1f192f7f21298450a553a4a733ec8f15a999`](https://github.com/iking-i/beca-architecture/commit/867e1f192f7f21298450a553a4a733ec8f15a999)；后续理论增加的阶段完美结构和层间非对称兼容性并未因此自动获得实现或验证。来源机器可读记录见 [THEORY_REFERENCE.json](THEORY_REFERENCE.json)。
 
-当前范围是 **L0 层内持续递归和当前有效极限反馈**，不声称已经验证向上递归、L1 或无限递归。仓库整理不改变实验行为。真实 A 的数据库、本机配置、凭据和运行日志保留在本地，不上传；完整清单见 [REPOSITORY_CONTENTS.md](REPOSITORY_CONTENTS.md)。
+当前范围是 **L0 层内持续递归和当前有效极限反馈**，不声称已经验证向上递归、L1 或无限递归。本轮进行正式 V0-A / V0-B 基线边界修正；详情见 [BASELINE_CORRECTION_REPORT.md](BASELINE_CORRECTION_REPORT.md)。真实 A 的数据库、本机配置、凭据和运行日志保留在本地，不上传；完整清单见 [REPOSITORY_CONTENTS.md](REPOSITORY_CONTENTS.md)。
 
 ## 新克隆的首次安装
 
@@ -17,7 +17,7 @@ npm --prefix minecraft ci
 Copy-Item minecraft/config.example.json minecraft/config.json
 ```
 
-编辑生成的 `minecraft/config.json`，填写服务器地址、局域网当前端口和独立身体账号。模板的 `25565` 是常见服务器示例端口，不是当前电脑的运行端口。
+首次编辑生成的 `minecraft/config.json`，填写服务器地址和独立身体账号即可。局域网当前端口可以在启动时输入或通过 `--port` 指定。模板的 `25565` 是常见服务器示例端口，不是当前电脑的运行端口。
 
 **仅在新克隆尚无个体时**，显式创建自己的 A，然后启动：
 
@@ -30,18 +30,26 @@ Copy-Item minecraft/config.example.json minecraft/config.json
 
 在第一、二阶段的身体接口、唯一实验身份、连续状态链、SQLite 和外部 Supervisor 上增加最小内部递归。正常运行路径不使用原来的固定前进脚本。没有引入 LLM、语言知识、Minecraft 攻略、高级任务、自我修改、自我复制或自主联网。
 
-当前阶段允许始终只有一个 recursive process，不要求 upward recursion。目标是 L0 内的结果反馈、真实有限记忆后果进入递归，以及是否出现可追踪的 architecture-limit recognition candidate。正式路径已经禁用旧的固定分化、分辨率减半、淘汰和探索评分，能力接口保留。完整审计与能力边界见 [FORMAL_L0_EXPERIMENT.md](FORMAL_L0_EXPERIMENT.md)。
+当前是外部初始化 k_actual=1 的单过程正式基线，容量 N 并不提供自主分化能力，不能称为 A 自主选择不分化。本轮目标仅为 V0-A / V0-B：L0 内的结果反馈和真实有限记忆后果进入递归；architecture-limit recognition=not_observed，不进入 V0-C。正式路径已经禁用旧的固定分化、分辨率减半、淘汰和探索评分，能力接口保留。完整审计与能力边界见 [FORMAL_L0_EXPERIMENT.md](FORMAL_L0_EXPERIMENT.md)。
 
 程序、进程、数据库、游戏角色都是承载或能力结构。`individual_id` 是工程标记；`A0 → A1 → A2` 表示同一个体的连续状态变化。数据库属于 A 的生命周期，Experiment Session 是其中一段运行记录。当前 A 的身份和数据库由 `individual/lifetime.json` 固定。
 
 ## 启动和验收
 
-完成上述安装后，无需重复安装依赖或 Minecraft。在 Java 26.1 测试世界开放局域网，将当前端口写入 `minecraft/config.json`。局域网重新开放后端口可能改变。不要同时启动使用同一个身体账号的其他工具。
+完成上述安装后，无需重复安装依赖或 Minecraft。在 Java 26.1 测试世界开放局域网，然后正常启动项目。终端会询问当前端口：输入聊天栏显示的数字即可；回车沿用配置端口，输入 `q` 取消。局域网重新开放后端口可能改变，**无需修改配置文件**。不要同时启动使用同一个身体账号的其他工具。
 
 ```powershell
 # 在仓库根目录运行
 .\.venv\Scripts\python.exe main.py
 ```
+
+也可以直接指定本次端口，省去启动询问（把示例数字替换为游戏显示的端口）：
+
+```powershell
+.\.venv\Scripts\python.exe main.py --port 50102
+```
+
+`--port` 与 `--minecraft-port` 等价。`--use-config-port` 跳过询问，直接使用配置文件。没有交互终端的脚本启动也沿用配置端口；自动运行需要切换端口时显式传入 `--port`。端口覆盖只用于当前启动及其身体重连，原配置和 A 的身份、状态版本不重置。Session 环境记录实际连接端口及 `minecraft_port_override`；`configuration_hash` 仍是原配置文件的哈希。当前运行中再次开放局域网改变端口时，应结束当前运行，再以新端口启动并沿用同一 A。
 
 默认持续运行并记录完整历史，没有 1000 次状态变化的停止门槛。每个 A 的数据单独放在 `storage/individuals/A-<uuid>/`，同一 A 的多个 Session 共用该文件夹。当前路径由本地生成的 `individual/lifetime.json` 指定，结束 Session 或重启沿用同一身份和全局版本。本地目录索引为 `storage/index.json`，不随 GitHub 发布；说明见 [storage/README.md](storage/README.md)。
 
@@ -58,7 +66,7 @@ Copy-Item minecraft/config.example.json minecraft/config.json
 .\.venv\Scripts\python.exe -m individual.experiment_audit --session-id latest --sample
 ```
 
-审计分别输出层内递归、真实容量失败、后果再次进入递归、外部策略影响、内部关系证据变化和架构识别候选。单过程的前次结果影响下次关系读取即可有层内递归；信息整合不算升层。当前解释器没有组织层问题表示生成器，因此原始失败不能让整个阶段自动通过。`--verify-loop` 已改为要求本轮全部目标证据，缺识别候选时不会自动结束；不要用长时间运行假装补齐缺失能力。
+审计输出层内递归、真实容量失败、行为上绑定的极限、后果重入、外部策略影响和内部关系证据变化。`baseline_goal_observed` 只验收 V0-A / V0-B，并要求容量锁、raw 分离和动作归属检查有效；`--verify-loop` 使用此基线判据。`recognition_status=not_observed`、`formal_stage_goal_observed=false` 和 `upward_recursion_observed=false` 保留，明确更强理论目标未验证。信息整合不算升层。
 
 | 命令 | 作用 |
 | --- | --- |
@@ -70,6 +78,14 @@ Copy-Item minecraft/config.example.json minecraft/config.json
 | `terminate` / `exit` / Ctrl+C | 结束当前 Session 并关闭载体；下次仍读取此生命周期 |
 
 正常退出先停止新动作，追加 SESSION_ENDED 并保留内部结构与递归过程，随后关闭 Bridge 和 Core。`--duration` 是实验者设定的 Session 时间限制，默认 0（无限制）。`--verify-loop` 只检查当前 Session 的证据，不拿以前的闭环直接验收新 Session。`--smoke-policy` 才会使用第二阶段的调试脚本；其余路径不加载该策略。
+
+## 正式条件锁与旧历史
+
+第一次正式 Session 会把七项逻辑容量保存到 `InternalState.l0_state.locked_caps`，并保存 `locked_resource_caps`、`formal_condition_id`、`baseline_version=formal_l0_v0_ab_2`。正常启动由 Supervisor 提供四项 CPU/RAM/磁盘阈值及四项身体采样容量，一并锁定。默认采样值与 Mineflayer 配置校验一致。端口变化不改变这些容量。
+
+重启和切换 Session 必须沿用这些条件。修改容量会在开启 Session、记录中断恢复或 Supervisor 日志前被拒绝，不自动迁移、扩容、缩容、删数据或创建替代 A；请恢复原配置后继续。尚未保存新锁的旧正式历史保留并明确拒绝自动升级，本轮不会替你改变主线选择。另设条件应由实验者明确安排；当前没有同一 A 解锁条件的运行接口。
+
+原始容量后果与审计解释严格分开，字段清单见 [FORMAL_L0_EXPERIMENT.md](FORMAL_L0_EXPERIMENT.md)。游戏能力属于 A 可用载体能力，但正式动作代码和参数仍由外部初始采样规则选择；因此 `initiator=external_fixed_policy`，不能称为自主形成策略。
 
 ## A0 的最小结构
 
@@ -140,13 +156,13 @@ last_information_sequence
 
 向下反馈修改当前 `default_quantity`、按模式的数量、条件分辨率。下一次生成从这些内部参数读取数量，并记录源整合 ID、源状态版本、请求数量和实际获配数量。实际数量还受外部容量制约，不能把配额不足造成的减少误认为内部策略变化。
 
-正式 Minecraft 身体现提供 34 项基础操作，包括移动、视角、挖掘、放置、手持物、背包、方块/实体交互、容器与合成格。旧编码 0、1、2 保留原义；新增能力通过数字槽位和当前对象引用调用，全部标记 BODY_CAPABILITY，能力清单和底层对应见 [BODY_CAPABILITIES.md](BODY_CAPABILITIES.md)。选择仍参考当前关系的未解程度和尝试次数，平分时使用内部记录的随机序列。参数取样明确登记为 INITIAL_EXTERNAL_POLICY，不冒称为学习结果。没有对象名称规则、健康奖励、死亡扣分、配方查询或高级任务。
+正式 Minecraft 身体现提供 34 项基础操作，包括移动、视角、挖掘、放置、手持物、背包、方块/实体交互、容器与合成格。旧编码 0、1、2 保留原义；新增能力通过数字槽位和当前对象引用调用，全部标记 BODY_CAPABILITY，能力清单和底层对应见 [BODY_CAPABILITIES.md](BODY_CAPABILITIES.md)。该评分说明仅适用于历史 legacy_policy_debug：未解程度和尝试次数参与评分，平分用随机序列。正式 formal_l0 使用 uniform available capability sampling（既有 LCG 模运算），不读取 attempts / unresolved，也不根据 limit 决定动作。参数取样明确登记为 INITIAL_EXTERNAL_POLICY，不冒称为学习结果。没有对象名称规则、健康奖励、死亡扣分、配方查询或高级任务。
 
 完整链路记录帧 ID、变化 ID、动作 ID、过程 ID、部分输出 ID、整合 ID、生成 ID、源状态版本。记录的是时序关联和候选条件，当前不自动宣称发现了因果定律。
 
 ## 实际日志和验证
 
-第三阶段旧版曾在固定玻璃区域通过真实 Java 26.1 验收；历史数据与日志样例见 [VALIDATION_STAGE3.md](VALIDATION_STAGE3.md)，数据库为 `storage/individuals/A-2eb28d2a-d5f6-4ef3-9ade-91e24f803eab/stage3-final.db`。这些独立 ID 的旧实验保留，不合并成新 A 的过去。当前主线为新注册的 `storage/individuals/A-4369420c-26f2-49b1-bbde-dd2b55c6f1fe/individual.db`，后续 Session 在此生命周期继续。
+第三阶段旧版曾在固定玻璃区域通过真实 Java 26.1 验收；历史数据与日志样例见 [VALIDATION_STAGE3.md](VALIDATION_STAGE3.md)，数据库为 `storage/individuals/A-2eb28d2a-d5f6-4ef3-9ade-91e24f803eab/stage3-final.db`。这些独立 ID 的旧实验保留，不合并成新 A 的过去。这些是历史记录位置，不能据此判断本机当前主线或文件仍存在；当前选择只以本机 `individual/lifetime.json` 为准。
 
 ```powershell
 .\.venv\Scripts\python.exe -m individual.inspect --db storage/individuals/A-2eb28d2a-d5f6-4ef3-9ade-91e24f803eab/stage3-final.db --history --limit 40
@@ -224,9 +240,9 @@ tests/
 npm --prefix minecraft test
 ```
 
-生命周期修正时 Python 61 项、Node 15 项测试通过。身体扩展的测试与能力边界见 [BODY_CAPABILITIES.md](BODY_CAPABILITIES.md)。数值模拟和 Node 测试适配器只作为测试证据；真实游戏验收单独标明，未用模拟结果替代游戏运行。
+上述历史测试数量不表示当前基线结果；本轮完整结果见 [BASELINE_CORRECTION_REPORT.md](BASELINE_CORRECTION_REPORT.md)。身体扩展的测试与能力边界见 [BODY_CAPABILITIES.md](BODY_CAPABILITIES.md)。数值模拟和 Node 测试适配器只作为测试证据；真实游戏验收单独标明，未用模拟结果替代游戏运行。
 
-## 外部策略边界修正
+## 外部策略边界修正（历史 legacy_policy_debug）
 
 本轮新增 PolicyRegistry、参数来源和 policy_migration_status；将初始策略复制到 A0，由当前 InternalState 提供运行参数，分别记录动作评分四部分和递归数量的资源/状态/初始策略三项来源。
 

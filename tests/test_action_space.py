@@ -16,6 +16,7 @@ from individual.inspect import verify
 from individual.internal_state import InternalState
 from individual.observation import FrameEncoder
 from individual.policies import PolicyRegistry
+from individual.policy_audit import audit_policies
 
 
 class ActionSpaceTests(unittest.TestCase):
@@ -80,6 +81,24 @@ class ActionSpaceTests(unittest.TestCase):
         self.assertGreater(self.core.state.state_version, before.state_version)
         self.assertTrue(self.core.state.continuity_required)
         self.assertTrue(verify(self.db)['valid_state_chain'])
+
+    def test_formal_sampler_and_parameter_binding_have_external_authorship_across_rpc(self):
+        self.core.execute_discrete_action()
+        action = self.core.state.latest_action
+        self.assertEqual(action['initiator'], 'external_fixed_policy')
+        selection = action['provenance']['selection']
+        self.assertEqual(selection['source'], 'EXTERNAL_FIXED_POLICY')
+        self.assertEqual(selection['parameter_binding']['source']['category'], 'INITIAL_EXTERNAL_POLICY')
+        self.assertEqual(action['provenance']['decision_authorship']['aggregate_source'], 'EXTERNAL_FIXED_POLICY')
+        proof = audit_policies(self.db)
+        self.assertTrue(proof['boundary_checks_passed'])
+        self.assertNotIn('INTERNAL_VARIABLE_STRUCTURE', proof['action_decision_authors'])
+        self.assertFalse(proof['autonomous_policy_formation_proven'])
+
+    def test_explicit_capability_test_remains_test_authorship(self):
+        final = self.run_action('SWING_ARM')
+        self.assertEqual(final['initiator'], 'capability_test')
+        self.assertEqual(final['provenance']['decision_authorship']['aggregate_source'], 'TEST_ONLY')
 
     def test_existing_lifetime_schema_gets_an_append_only_upgrade_without_resetting_history(self):
         marker = self.core.state.individual_id

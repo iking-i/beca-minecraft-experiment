@@ -11,6 +11,7 @@ from .identity import new_individual_id
 from .internal_state import InternalState
 from .policies import PolicyRegistry
 from .state import AState, utc_now
+from .formal_boundary import boundary_for
 
 
 def encode(value):
@@ -49,6 +50,19 @@ BEGIN SELECT RAISE(ABORT, 'individual identity cannot change'); END;
 CREATE TRIGGER IF NOT EXISTS matching_event_identity BEFORE INSERT ON events
 WHEN NEW.individual_id != (SELECT individual_id FROM states WHERE state_version = NEW.state_version)
 BEGIN SELECT RAISE(ABORT, 'event identity must match its state'); END;
+CREATE TRIGGER IF NOT EXISTS immutable_formal_boundary BEFORE INSERT ON states
+WHEN (SELECT json_extract(snapshot,'$.internal_state.l0_state.locked_caps') FROM states ORDER BY state_version DESC LIMIT 1) IS NOT NULL
+AND (
+ json_extract(NEW.snapshot,'$.internal_state.l0_state.locked_caps') IS NOT
+ (SELECT json_extract(snapshot,'$.internal_state.l0_state.locked_caps') FROM states ORDER BY state_version DESC LIMIT 1)
+ OR json_extract(NEW.snapshot,'$.internal_state.l0_state.locked_resource_caps') IS NOT
+ (SELECT json_extract(snapshot,'$.internal_state.l0_state.locked_resource_caps') FROM states ORDER BY state_version DESC LIMIT 1)
+ OR json_extract(NEW.snapshot,'$.internal_state.l0_state.formal_condition_id') IS NOT
+ (SELECT json_extract(snapshot,'$.internal_state.l0_state.formal_condition_id') FROM states ORDER BY state_version DESC LIMIT 1)
+ OR json_extract(NEW.snapshot,'$.internal_state.l0_state.baseline_version') IS NOT
+ (SELECT json_extract(snapshot,'$.internal_state.l0_state.baseline_version') FROM states ORDER BY state_version DESC LIMIT 1)
+)
+BEGIN SELECT RAISE(ABORT, 'locked formal capacities cannot change'); END;
 """
 
 LIFETIME_SCHEMA = """
@@ -179,13 +193,20 @@ class EventStore:
             self._insert_event(state, 'STATE_UPDATED', {'from_version': None, 'to_version': 0, 'state': state.to_dict()})
         return state
 
-    def open_session(self, environment=None, label='Minecraft', carrier_restart=True, runtime_status='starting'):
+    def open_session(self, environment=None, label='Minecraft', carrier_restart=True, runtime_status='starting',
+                     formal_caps=None, resource_caps=None):
         """Continue the lifetime; only the first opening creates an identity and A0."""
         environment = {} if environment is None else environment
         encode(environment)
         with self.connection:
             self.connection.execute('BEGIN IMMEDIATE')
             previous = self.latest_state()
+            boundary = None
+            first_lock = False
+            if formal_caps is not None:
+                prior_internal = previous.internal_state if previous else {}
+                first_lock = not prior_internal.get('l0_state', {}).get('locked_caps')
+                boundary = boundary_for(prior_internal, formal_caps, resource_caps)
             first_carrier = previous is not None and previous.status == 'registered'
             now = utc_now()
             open_row = self.connection.execute('SELECT s.session_id FROM sessions s LEFT JOIN session_ends e USING(session_id) WHERE e.session_id IS NULL').fetchone()
@@ -211,6 +232,10 @@ class EventStore:
                 epoch = max(previous.carrier_epoch, (previous.observation_frame or {}).get('body_epoch', 0)) + 1
                 state = replace(previous, state_version=previous.state_version + 1, last_update_at=now,
                     session_id=session_id, carrier_epoch=epoch, status=runtime_status)
+            if boundary is not None:
+                sealed = json.loads(encode(state.internal_state))
+                sealed.setdefault('l0_state', {}).update(boundary)
+                state = replace(state, internal_state=sealed)
             self.connection.execute('INSERT INTO sessions VALUES(?,?,?,?,?,?,?,?)',
                 (session_id, state.individual_id, now, state.state_version, label,
                  encode(environment), state.carrier_epoch, 'carrier_restart' if previous and carrier_restart and not first_carrier else 'session_start'))
@@ -226,10 +251,14 @@ class EventStore:
                     'registry': internal.policy_registry, 'parameter_sources': internal.parameter_sources,
                     'policy_migration_status': internal.policy_migration_status})
                 self._insert_event(state, 'SESSION_STARTED', payload)
+                if first_lock:
+                    self._insert_event(state, 'FORMAL_CAPS_LOCKED', boundary)
                 self._insert_event(state, 'STATE_UPDATED', {'from_version': None, 'to_version': 0, 'state': state.to_dict()})
             else:
-                self._append_transition(previous, state, 'SESSION_STARTED', payload,
-                    [('INDIVIDUAL_STARTED', {'first_runtime_session': True})] if first_carrier else [])
+                extra = [('INDIVIDUAL_STARTED', {'first_runtime_session': True})] if first_carrier else []
+                if first_lock:
+                    extra.append(('FORMAL_CAPS_LOCKED', boundary))
+                self._append_transition(previous, state, 'SESSION_STARTED', payload, extra)
         return state
 
     def create_initial_state(self):

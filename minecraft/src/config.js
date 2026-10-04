@@ -39,9 +39,11 @@ export function validateConfig(input) {
   return config
 }
 
-export async function loadConfig(path = defaultConfigPath) {
+export async function loadConfig(path = defaultConfigPath, { port } = {}) {
   try {
-    return validateConfig(JSON.parse((await readFile(path, 'utf8')).replace(/^\uFEFF/, '')))
+    const config = JSON.parse((await readFile(path, 'utf8')).replace(/^\uFEFF/, ''))
+    if (port !== undefined) config.port = port
+    return validateConfig(config)
   } catch (error) {
     throw new BodyError('INVALID_CONFIG', `无法读取配置 ${path}: ${error.message}`)
   }

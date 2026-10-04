@@ -73,7 +73,8 @@ if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.ur
       process.stderr.write(`${message}\n`)
       adapter?.statusChanged()
     }]))
-    const body = createMinecraftBody(await loadConfig(process.argv[2]), { logger })
+    const override = process.argv[3] === undefined ? {} : { port: Number(process.argv[3]) }
+    const body = createMinecraftBody(await loadConfig(process.argv[2], override), { logger })
     adapter = serveBody(body)
     process.on('SIGINT', adapter.shutdown)
     process.on('SIGTERM', adapter.shutdown)

@@ -2,16 +2,16 @@
 
 ## 当前 BECA-V0 阶段范围（2026-10-04）
 
-本地实验阶段说明；以下范围限制实验目标，不改变 Perfect Recursion / BER v0.8 的核心定义。本文基于 [仓库提交 867e1f1](https://github.com/iking-i/beca-architecture/commit/867e1f192f7f21298450a553a4a733ec8f15a999) 同步，远端主分支尚未修改。
+本地实验阶段说明；以下范围限制实验目标，不改变 Perfect Recursion / BER v0.8 的核心定义。本文基于 [仓库提交 867e1f1](https://github.com/iking-i/beca-architecture/commit/867e1f192f7f21298450a553a4a733ec8f15a999) 同步，仅为实验仓库的本地阶段说明，不修改理论仓库。
 
-- 本阶段允许不分化；默认一个持续的 recursive process，物理 process capacity 固定且有限。新结果、未解释差异或 novelty 均不自动增加过程数量。
+- 本轮限定 V0-A / V0-B 单过程正式基线：外部初始化 k_actual=1，process capacity=N。当前没有内生 create_process 能力，因此不能称为 A 自主选择不分化。新结果或 novelty 不自动增加数量。
 - 本阶段不要求 upward recursion，也不预建 L1。唯一 active recursive layer 为 L0。
-- 本阶段目标是观察 architecture-limit recognition：先验证 previous recursive result 影响后续处理，再验证真实 current effective limit 的原始后果进入后续递归；识别候选需要独立、可追踪的问题表示与来源证据。
-- 固定物理资源不允许自行扩展。活动记忆、关系与过程槽容量由外部配置给定；资源不足不得自动触发淘汰、压缩、分化、升层或资源申请。
-- 极限只产生问题，不预设解决方案。正式路径采用容量写入拒绝，保留原记录；失败以 operation、used、capacity、requested、object references 与 provenance 进入观察和 canonical lifetime history。
+- 本轮只验证 previous recursive result 对后续处理的作用、真实容量极限及其 raw 后果重入。architecture-limit recognition 固定报告 not_observed，不进入 V0-C，也不生成识别候选或 L1。
+- 首次正式 Session 原子保存 locked_caps、locked_resource_caps、formal_condition_id 和 baseline_version。七项逻辑容量、正式启动的四项 Supervisor 容量及四项身体采样容量跨重启/Session 锁定；不一致时在任何 A 写入前拒绝。无自动迁移、扩缩容或解锁接口。
+- 极限只提供原始后果，不预设解决方案。递归输入仅允许 limit_id、opaque resource_port_id / operation_id、used、capacity、requested、operation_performed=false、object_refs、source_state_version、frame_id。语义代码、资源名称及架构标签只保留在 auditor_metadata。
 - information integration != upward recursion。structure_revision 只表示状态/证据版本变化。新增记录、分支、进程、数据库大小或资源变化均不算升层。
 - 旧固定分化、固定分辨率调整、固定压力减预算、固定淘汰与动作评分仅在显式 legacy_policy_debug 路径可执行，不能通过本阶段验收。
-- 本地实现的当前边界：已有单过程递归与极限反馈通路，但数值解释器尚无由内部经历生成组织层问题表示的机制。原始失败或关系计数不能代替 architecture-limit recognition；无候选时必须报告 not_observed，不得宣布本阶段整体成功。
+- 本轮可验证 V0-A / V0-B 基线，不验证组织方式改变、自主策略、自主分化或升层。INTERNAL_VARIABLE_STRUCTURE_CHANGE 当前只是数据/关系证据变化；不得改称架构重构。两个基线通过不代表 v0.8 强形式整体通过。
 
 具体能力、固定策略审计、测试与判据见本地 [FORMAL_L0_EXPERIMENT.md](FORMAL_L0_EXPERIMENT.md)。以下原有 v0.8 内容保留；其中向上递归、层持续及 L0→L1→L2 是后续阶段目标，不是本轮自动验收条件。
 
