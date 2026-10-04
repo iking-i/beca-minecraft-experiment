@@ -1,5 +1,13 @@
 # 第三阶段修正：外部策略与内部结构边界
 
+## 当前行为闭合审计补充（v0.9 引用）
+
+当前引用已在 THEORY_REFERENCE.json 更新到 v0.9。下面原文仍是历史审计，尤其“唯一理论级个体定义约束”保留为当时表述；按当前 v0.9，`Continuity(A) != 0` 是本实验延续条件，不是通用核心公理。本轮不修改连续性或死亡处理。
+
+`formal.action_sampling` 与 `action.parameter_binding` 仍实际决定正式行为，不能永久冒称仅初始化 bootstrap。新离线审计只在无 prior EXPERIENCE_FORMED 时标记 PURE_EXTERNAL_BOOTSTRAP；经历形成后仍由其驱动则如实保留 EXTERNAL_FIXED_POLICY（ongoing_external_author=true），不能改成 INTERNAL_VARIABLE_STRUCTURE 或以 MIXED_POLICY 淡化。真正内部选择配外部参数仍为 MIXED_POLICY，TEST_ONLY 单列；未来只提供内部来源标签的动作记 UNVERIFIED_AUTHORSHIP，不计闭合。
+
+新增审计是 EXTERNAL_FIXED_MECHANISM，仅观察来源，不参与正式选择，不提供 A-facing journal 记忆接口、不新增策略、不激活提案。已解析历史引用不等于已证明行为依赖。详见 [BEHAVIORAL_CAUSAL_CLOSURE.md](BEHAVIORAL_CAUSAL_CLOSURE.md)。
+
 2026-10-04 后续阶段已改变实验目标：本文的分化调整、分辨率调整、淘汰、评分等仅保留为历史/独立调试引擎，不再用于 formal_l0。当前执行边界与全部分类见 [FORMAL_L0_EXPERIMENT.md](FORMAL_L0_EXPERIMENT.md)。政策登记存在不等于运行中启用，当前来源与 `formal_path_enabled` 分开记录，并用不同解释器及回归测试验证禁用。
 
 此文保留策略边界修正时的历史验证结果。随后已改为个体生命周期数据库；当前启动和 Session / 快照规则见 [LIFETIME_STORAGE.md](LIFETIME_STORAGE.md)，不再每次实验创建新 A。

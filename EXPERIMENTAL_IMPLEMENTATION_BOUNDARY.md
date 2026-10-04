@@ -1,5 +1,7 @@
 # Experimental Implementation Boundary — v0.8
 
+Historical local synchronization: this v0.8 document and its results are retained with their original source commit. Current theory-reference metadata is v0.9 at `89a56ad7ce236adfcb52b13d3e6fe7014ff88ddd`; see THEORY_REFERENCE.json and BEHAVIORAL_CAUSAL_CLOSURE.md. In particular, the old CORE_IDENTITY_CONSTRAINT/one-hard-constraint wording below is not a universal v0.9 core invariant: Continuity(A) != 0 is an experimental continuation condition. No runtime continuity/death rule changes in this reference update.
+
 ## World-entry audit update (2026-10-04)
 
 See [WORLD_ENTRY_AUDIT.md](WORLD_ENTRY_AUDIT.md) and [BODY_CAPABILITIES.md](BODY_CAPABILITIES.md). Java 26.1 / protocol 775 is the audited carrier. ActionSpace v2 retains 47 entries; 39 use the formal low-level path and eight multi-click conveniences remain debug-only. Formal frames/provisioning use numeric codes and numeric requirement IDs, not action names or use descriptions.

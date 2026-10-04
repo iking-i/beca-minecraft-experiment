@@ -1,0 +1,1074 @@
+{
+  "BEHAVIORAL_CAUSAL_CLOSURE": "failed",
+  "implementation_scope": "diagnostic_partial",
+  "BEHAVIORALLY_BINDING_LIMIT": "not_tested_in_this_fixture",
+  "real_minecraft": false,
+  "fixture_body_rpc": true,
+  "test_only": true,
+  "validation_individual_ids": [
+    "A-6a7d5918-6711-4b3c-a3d8-f63866cd7262",
+    "A-434ac31a-24c2-4703-a1ad-126401e685dd"
+  ],
+  "canonical_guard_kind": "file metadata and small-file hashes; no canonical SQLite connection",
+  "canonical_unchanged": true,
+  "history_offsets": [
+    [
+      0,
+      1,
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      2,
+      4,
+      6,
+      0
+    ]
+  ],
+  "history_formation": "Both histories passed ACore observation → FormalL0Engine experience → partial → integration; no behavior fields hand-written.",
+  "current_frame_equal_except_identity_and_audit_delta": true,
+  "same_bootstrap_state": true,
+  "same_caps": true,
+  "internal_relation_contents_differ": true,
+  "substantive_relation_contents": [
+    {
+      "U-2839dfa06092e4f2fdfe:-1": {
+        "antecedent": "U-2839dfa06092e4f2fdfe",
+        "action_code": -1,
+        "evidence_count": 1,
+        "outcomes": {
+          "U-ee9cd61aee438f8f69d4": 1
+        }
+      },
+      "U-ee9cd61aee438f8f69d4:-1": {
+        "antecedent": "U-ee9cd61aee438f8f69d4",
+        "action_code": -1,
+        "evidence_count": 2,
+        "outcomes": {
+          "U-0294313806f11063b38a": 2
+        }
+      },
+      "U-0294313806f11063b38a:-1": {
+        "antecedent": "U-0294313806f11063b38a",
+        "action_code": -1,
+        "evidence_count": 2,
+        "outcomes": {
+          "U-ee9cd61aee438f8f69d4": 1,
+          "U-4f53cda18c2baa0c0354": 1
+        }
+      }
+    },
+    {
+      "U-2839dfa06092e4f2fdfe:-1": {
+        "antecedent": "U-2839dfa06092e4f2fdfe",
+        "action_code": -1,
+        "evidence_count": 1,
+        "outcomes": {
+          "U-ee9cd61aee438f8f69d4": 1
+        }
+      },
+      "U-ee9cd61aee438f8f69d4:-1": {
+        "antecedent": "U-ee9cd61aee438f8f69d4",
+        "action_code": -1,
+        "evidence_count": 3,
+        "outcomes": {
+          "U-ee9cd61aee438f8f69d4": 2,
+          "U-0294313806f11063b38a": 1
+        }
+      },
+      "U-0294313806f11063b38a:-1": {
+        "antecedent": "U-0294313806f11063b38a",
+        "action_code": -1,
+        "evidence_count": 1,
+        "outcomes": {
+          "U-4f53cda18c2baa0c0354": 1
+        }
+      }
+    }
+  ],
+  "action_commands_equal": true,
+  "actual_formal_commands_equal": true,
+  "missing": [
+    "internal behavioral expression producer",
+    "history-formed choice/binding control",
+    "internally authored necessary parameters",
+    "real Minecraft closure consequence"
+  ],
+  "WORLD_ENTRY_FREEZE_changed": false,
+  "L1_claimed": false,
+  "implementation_input_commit": "1c165168cd5845e43d4dd334e6491cbc36118c9e",
+  "theory_reference_commit": "89a56ad7ce236adfcb52b13d3e6fe7014ff88ddd",
+  "full_local_report_sha256": "9d99affb7586135459578ec0e224cd186103892a6934eed28439d7cfc7f76ce6",
+  "local_reports": [
+    "storage/individuals/A-6a7d5918-6711-4b3c-a3d8-f63866cd7262/reports/behavioral-negative-control.json",
+    "storage/individuals/A-434ac31a-24c2-4703-a1ad-126401e685dd/reports/behavioral-negative-control.json"
+  ],
+  "audited_actions": [
+    {
+      "action_id": "ee7087a3-62e8-408d-8ab3-471b4b7ec226",
+      "action_code": 46,
+      "source_state_version": 8,
+      "source_structure_revision": 6,
+      "current_frame_id": "A-6a7d5918-6711-4b3c-a3d8-f63866cd7262:E6",
+      "reported_authorship": {
+        "initiator": "external_fixed_policy",
+        "selection_source": "EXTERNAL_FIXED_POLICY",
+        "parameter_binding_source": "INITIAL_EXTERNAL_POLICY",
+        "aggregate_source": "EXTERNAL_FIXED_POLICY"
+      },
+      "audited_authorship": "EXTERNAL_FIXED_POLICY",
+      "bootstrap_eligible": false,
+      "ongoing_external_author": true,
+      "code_provenance": {
+        "author": "INITIAL_EXTERNAL_POLICY",
+        "policy_id": "formal.action_sampling",
+        "seed_before": 0,
+        "seed_after": 1013904223,
+        "available_codes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          22,
+          23,
+          24,
+          29,
+          33,
+          34,
+          35,
+          36,
+          37,
+          43,
+          44,
+          45,
+          46
+        ],
+        "internal_history_dependency_proven": false
+      },
+      "parameter_provenance": {},
+      "resolved_history": [
+        {
+          "integration_id": "1ddd80a4-10c0-40b8-a93d-06ea128861d4",
+          "partial_id": "0eb50cf0-6bcb-4bac-b23f-717dc6004b3a",
+          "experience_id": "335195be-040a-4d38-9684-923550cc8e81",
+          "process_id": "52406637-0e2c-4bb1-810e-2e0240e05cc8",
+          "relation_refs": [
+            "U-0294313806f11063b38a:-1"
+          ],
+          "frame_ids": [
+            "A-6a7d5918-6711-4b3c-a3d8-f63866cd7262:E5",
+            "A-6a7d5918-6711-4b3c-a3d8-f63866cd7262:E6"
+          ],
+          "references_resolved": true,
+          "behavioral_dependency_proven": false
+        }
+      ],
+      "integration_reference_present": true,
+      "integration_reference_resolved": true,
+      "prior_experiences": 5,
+      "external_mechanism_contribution": [
+        "numeric encoding",
+        "legal-domain exposure",
+        "perform transport",
+        "append-only recording"
+      ],
+      "behavioral_causal_closure_proven": false,
+      "reason": "Formal sampler and binder do not read history to determine behavioral content."
+    },
+    {
+      "action_id": "1f20f01e-8362-4273-a366-98dc4e6319b7",
+      "action_code": 46,
+      "source_state_version": 8,
+      "source_structure_revision": 6,
+      "current_frame_id": "A-434ac31a-24c2-4703-a1ad-126401e685dd:E6",
+      "reported_authorship": {
+        "initiator": "external_fixed_policy",
+        "selection_source": "EXTERNAL_FIXED_POLICY",
+        "parameter_binding_source": "INITIAL_EXTERNAL_POLICY",
+        "aggregate_source": "EXTERNAL_FIXED_POLICY"
+      },
+      "audited_authorship": "EXTERNAL_FIXED_POLICY",
+      "bootstrap_eligible": false,
+      "ongoing_external_author": true,
+      "code_provenance": {
+        "author": "INITIAL_EXTERNAL_POLICY",
+        "policy_id": "formal.action_sampling",
+        "seed_before": 0,
+        "seed_after": 1013904223,
+        "available_codes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          22,
+          23,
+          24,
+          29,
+          33,
+          34,
+          35,
+          36,
+          37,
+          43,
+          44,
+          45,
+          46
+        ],
+        "internal_history_dependency_proven": false
+      },
+      "parameter_provenance": {},
+      "resolved_history": [
+        {
+          "integration_id": "a8682c49-52a3-4164-b558-b6bd5271829d",
+          "partial_id": "c4350d0f-87b5-4c47-ada5-df43b3be562a",
+          "experience_id": "4287905c-7a5f-4fe1-bf80-3b858598e183",
+          "process_id": "c6a2275e-a19e-49bf-b556-e97b35ca3142",
+          "relation_refs": [
+            "U-0294313806f11063b38a:-1"
+          ],
+          "frame_ids": [
+            "A-434ac31a-24c2-4703-a1ad-126401e685dd:E5",
+            "A-434ac31a-24c2-4703-a1ad-126401e685dd:E6"
+          ],
+          "references_resolved": true,
+          "behavioral_dependency_proven": false
+        }
+      ],
+      "integration_reference_present": true,
+      "integration_reference_resolved": true,
+      "prior_experiences": 5,
+      "external_mechanism_contribution": [
+        "numeric encoding",
+        "legal-domain exposure",
+        "perform transport",
+        "append-only recording"
+      ],
+      "behavioral_causal_closure_proven": false,
+      "reason": "Formal sampler and binder do not read history to determine behavioral content."
+    }
+  ],
+  "detached_readout_commands": [
+    {
+      "method": "perform",
+      "args": {
+        "code": 46,
+        "parameters": {}
+      }
+    },
+    {
+      "method": "perform",
+      "args": {
+        "code": 46,
+        "parameters": {}
+      }
+    }
+  ],
+  "parameter_probe_scope": "Every currently available code; detached TEST_ONLY binding probes, not dispatched commands.",
+  "parameter_probes": [
+    {
+      "code": 0,
+      "parameters": [
+        {},
+        {}
+      ],
+      "sources": [
+        {
+          "policy_id": "action.parameter_binding",
+          "category": "INITIAL_EXTERNAL_POLICY",
+          "revision": 0
+        },
+        {
+          "policy_id": "action.parameter_binding",
+          "category": "INITIAL_EXTERNAL_POLICY",
+          "revision": 0
+        }
+      ],
+      "parameters_equal": true
+    },
+    {
+      "code": 1,
+      "parameters": [
+        {},
+        {}
+      ],
+      "sources": [
+        {
+          "policy_id": "action.parameter_binding",
+          "category": "INITIAL_EXTERNAL_POLICY",
+          "revision": 0
+        },
+        {
+          "policy_id": "action.parameter_binding",
+          "category": "INITIAL_EXTERNAL_POLICY",
+          "revision": 0
+        }
+      ],
+      "parameters_equal": true
+    },
+    {
+      "code": 2,
+      "parameters": [
+        {},
+        {}
+      ],
+      "sources": [
+        {
+          "policy_id": "action.parameter_binding",
+          "category": "INITIAL_EXTERNAL_POLICY",
+          "revision": 0
+        },
+        {
+          "policy_id": "action.parameter_binding",
+          "category": "INITIAL_EXTERNAL_POLICY",
+          "revision": 0
+        }
+      ],
+      "parameters_equal": true
+    },
+    {
+      "code": 3,
+      "parameters": [
+        {},
+        {}
+      ],
+      "sources": [
+        {
+          "policy_id": "action.parameter_binding",
+          "category": "INITIAL_EXTERNAL_POLICY",
+          "revision": 0
+        },
+        {
+          "policy_id": "action.parameter_binding",
+          "category": "INITIAL_EXTERNAL_POLICY",
+          "revision": 0
+        }
+      ],
+      "parameters_equal": true
+    },
+    {
+      "code": 4,
+      "parameters": [
+        {},
+        {}
+      ],
+      "sources": [
+        {
+          "policy_id": "action.parameter_binding",
+          "category": "INITIAL_EXTERNAL_POLICY",
+          "revision": 0
+        },
+        {
+          "policy_id": "action.parameter_binding",
+          "category": "INITIAL_EXTERNAL_POLICY",
+          "revision": 0
+        }
+      ],
+      "parameters_equal": true
+    },
+    {
+      "code": 5,
+      "parameters": [
+        {},
+        {}
+      ],
+      "sources": [
+        {
+          "policy_id": "action.parameter_binding",
+          "category": "INITIAL_EXTERNAL_POLICY",
+          "revision": 0
+        },
+        {
+          "policy_id": "action.parameter_binding",
+          "category": "INITIAL_EXTERNAL_POLICY",
+          "revision": 0
+        }
+      ],
+      "parameters_equal": true
+    },
+    {
+      "code": 6,
+      "parameters": [
+        {},
+        {}
+      ],
+      "sources": [
+        {
+          "policy_id": "action.parameter_binding",
+          "category": "INITIAL_EXTERNAL_POLICY",
+          "revision": 0
+        },
+        {
+          "policy_id": "action.parameter_binding",
+          "category": "INITIAL_EXTERNAL_POLICY",
+          "revision": 0
+        }
+      ],
+      "parameters_equal": true
+    },
+    {
+      "code": 7,
+      "parameters": [
+        {},
+        {}
+      ],
+      "sources": [
+        {
+          "policy_id": "action.parameter_binding",
+          "category": "INITIAL_EXTERNAL_POLICY",
+          "revision": 0
+        },
+        {
+          "policy_id": "action.parameter_binding",
+          "category": "INITIAL_EXTERNAL_POLICY",
+          "revision": 0
+        }
+      ],
+      "parameters_equal": true
+    },
+    {
+      "code": 8,
+      "parameters": [
+        {
+          "yaw_delta": 0.0,
+          "pitch_delta": 0.15
+        },
+        {
+          "yaw_delta": 0.0,
+          "pitch_delta": 0.15
+        }
+      ],
+      "sources": [
+        {
+          "policy_id": "action.parameter_binding",
+          "category": "INITIAL_EXTERNAL_POLICY",
+          "revision": 0
+        },
+        {
+          "policy_id": "action.parameter_binding",
+          "category": "INITIAL_EXTERNAL_POLICY",
+          "revision": 0
+        }
+      ],
+      "parameters_equal": true
+    },
+    {
+      "code": 9,
+      "parameters": [
+        {},
+        {}
+      ],
+      "sources": [
+        {
+          "policy_id": "action.parameter_binding",
+          "category": "INITIAL_EXTERNAL_POLICY",
+          "revision": 0
+        },
+        {
+          "policy_id": "action.parameter_binding",
+          "category": "INITIAL_EXTERNAL_POLICY",
+          "revision": 0
+        }
+      ],
+      "parameters_equal": true
+    },
+    {
+      "code": 10,
+      "parameters": [
+        {},
+        {}
+      ],
+      "sources": [
+        {
+          "policy_id": "action.parameter_binding",
+          "category": "INITIAL_EXTERNAL_POLICY",
+          "revision": 0
+        },
+        {
+          "policy_id": "action.parameter_binding",
+          "category": "INITIAL_EXTERNAL_POLICY",
+          "revision": 0
+        }
+      ],
+      "parameters_equal": true
+    },
+    {
+      "code": 11,
+      "parameters": [
+        {},
+        {}
+      ],
+      "sources": [
+        {
+          "policy_id": "action.parameter_binding",
+          "category": "INITIAL_EXTERNAL_POLICY",
+          "revision": 0
+        },
+        {
+          "policy_id": "action.parameter_binding",
+          "category": "INITIAL_EXTERNAL_POLICY",
+          "revision": 0
+        }
+      ],
+      "parameters_equal": true
+    },
+    {
+      "code": 12,
+      "parameters": [
+        {},
+        {}
+      ],
+      "sources": [
+        {
+          "policy_id": "action.parameter_binding",
+          "category": "INITIAL_EXTERNAL_POLICY",
+          "revision": 0
+        },
+        {
+          "policy_id": "action.parameter_binding",
+          "category": "INITIAL_EXTERNAL_POLICY",
+          "revision": 0
+        }
+      ],
+      "parameters_equal": true
+    },
+    {
+      "code": 13,
+      "parameters": [
+        {
+          "object_ref": "o62ebaa9a_1_2"
+        },
+        {
+          "object_ref": "o62ebaa9a_1_2"
+        }
+      ],
+      "sources": [
+        {
+          "policy_id": "action.parameter_binding",
+          "category": "INITIAL_EXTERNAL_POLICY",
+          "revision": 0
+        },
+        {
+          "policy_id": "action.parameter_binding",
+          "category": "INITIAL_EXTERNAL_POLICY",
+          "revision": 0
+        }
+      ],
+      "parameters_equal": true
+    },
+    {
+      "code": 14,
+      "parameters": [
+        {
+          "block_ref": "o62ebaa9a_1_1"
+        },
+        {
+          "block_ref": "o62ebaa9a_1_1"
+        }
+      ],
+      "sources": [
+        {
+          "policy_id": "action.parameter_binding",
+          "category": "INITIAL_EXTERNAL_POLICY",
+          "revision": 0
+        },
+        {
+          "policy_id": "action.parameter_binding",
+          "category": "INITIAL_EXTERNAL_POLICY",
+          "revision": 0
+        }
+      ],
+      "parameters_equal": true
+    },
+    {
+      "code": 15,
+      "parameters": [
+        {
+          "inventory_slot": 36,
+          "reference_block": "o62ebaa9a_1_1",
+          "face": 1
+        },
+        {
+          "inventory_slot": 36,
+          "reference_block": "o62ebaa9a_1_1",
+          "face": 1
+        }
+      ],
+      "sources": [
+        {
+          "policy_id": "action.parameter_binding",
+          "category": "INITIAL_EXTERNAL_POLICY",
+          "revision": 0
+        },
+        {
+          "policy_id": "action.parameter_binding",
+          "category": "INITIAL_EXTERNAL_POLICY",
+          "revision": 0
+        }
+      ],
+      "parameters_equal": true
+    },
+    {
+      "code": 16,
+      "parameters": [
+        {
+          "slot": 7
+        },
+        {
+          "slot": 7
+        }
+      ],
+      "sources": [
+        {
+          "policy_id": "action.parameter_binding",
+          "category": "INITIAL_EXTERNAL_POLICY",
+          "revision": 0
+        },
+        {
+          "policy_id": "action.parameter_binding",
+          "category": "INITIAL_EXTERNAL_POLICY",
+          "revision": 0
+        }
+      ],
+      "parameters_equal": true
+    },
+    {
+      "code": 17,
+      "parameters": [
+        {
+          "duration_ms": 2000
+        },
+        {
+          "duration_ms": 2000
+        }
+      ],
+      "sources": [
+        {
+          "policy_id": "action.parameter_binding",
+          "category": "INITIAL_EXTERNAL_POLICY",
+          "revision": 0
+        },
+        {
+          "policy_id": "action.parameter_binding",
+          "category": "INITIAL_EXTERNAL_POLICY",
+          "revision": 0
+        }
+      ],
+      "parameters_equal": true
+    },
+    {
+      "code": 18,
+      "parameters": [
+        {},
+        {}
+      ],
+      "sources": [
+        {
+          "policy_id": "action.parameter_binding",
+          "category": "INITIAL_EXTERNAL_POLICY",
+          "revision": 0
+        },
+        {
+          "policy_id": "action.parameter_binding",
+          "category": "INITIAL_EXTERNAL_POLICY",
+          "revision": 0
+        }
+      ],
+      "parameters_equal": true
+    },
+    {
+      "code": 22,
+      "parameters": [
+        {
+          "block_ref": "o62ebaa9a_1_1"
+        },
+        {
+          "block_ref": "o62ebaa9a_1_1"
+        }
+      ],
+      "sources": [
+        {
+          "policy_id": "action.parameter_binding",
+          "category": "INITIAL_EXTERNAL_POLICY",
+          "revision": 0
+        },
+        {
+          "policy_id": "action.parameter_binding",
+          "category": "INITIAL_EXTERNAL_POLICY",
+          "revision": 0
+        }
+      ],
+      "parameters_equal": true
+    },
+    {
+      "code": 23,
+      "parameters": [
+        {
+          "entity_ref": "o62ebaa9a_1_2"
+        },
+        {
+          "entity_ref": "o62ebaa9a_1_2"
+        }
+      ],
+      "sources": [
+        {
+          "policy_id": "action.parameter_binding",
+          "category": "INITIAL_EXTERNAL_POLICY",
+          "revision": 0
+        },
+        {
+          "policy_id": "action.parameter_binding",
+          "category": "INITIAL_EXTERNAL_POLICY",
+          "revision": 0
+        }
+      ],
+      "parameters_equal": true
+    },
+    {
+      "code": 24,
+      "parameters": [
+        {
+          "entity_ref": "o62ebaa9a_1_2"
+        },
+        {
+          "entity_ref": "o62ebaa9a_1_2"
+        }
+      ],
+      "sources": [
+        {
+          "policy_id": "action.parameter_binding",
+          "category": "INITIAL_EXTERNAL_POLICY",
+          "revision": 0
+        },
+        {
+          "policy_id": "action.parameter_binding",
+          "category": "INITIAL_EXTERNAL_POLICY",
+          "revision": 0
+        }
+      ],
+      "parameters_equal": true
+    },
+    {
+      "code": 29,
+      "parameters": [
+        {},
+        {}
+      ],
+      "sources": [
+        {
+          "policy_id": "action.parameter_binding",
+          "category": "INITIAL_EXTERNAL_POLICY",
+          "revision": 0
+        },
+        {
+          "policy_id": "action.parameter_binding",
+          "category": "INITIAL_EXTERNAL_POLICY",
+          "revision": 0
+        }
+      ],
+      "parameters_equal": true
+    },
+    {
+      "code": 33,
+      "parameters": [
+        {
+          "container_id": "w62ebaa9a_1_1",
+          "slot": 7,
+          "mouse_button": 0
+        },
+        {
+          "container_id": "w62ebaa9a_1_1",
+          "slot": 7,
+          "mouse_button": 0
+        }
+      ],
+      "sources": [
+        {
+          "policy_id": "action.parameter_binding",
+          "category": "INITIAL_EXTERNAL_POLICY",
+          "revision": 0
+        },
+        {
+          "policy_id": "action.parameter_binding",
+          "category": "INITIAL_EXTERNAL_POLICY",
+          "revision": 0
+        }
+      ],
+      "parameters_equal": true
+    },
+    {
+      "code": 34,
+      "parameters": [
+        {
+          "control": 3,
+          "pressed": 0
+        },
+        {
+          "control": 3,
+          "pressed": 0
+        }
+      ],
+      "sources": [
+        {
+          "policy_id": "action.parameter_binding",
+          "category": "INITIAL_EXTERNAL_POLICY",
+          "revision": 0
+        },
+        {
+          "policy_id": "action.parameter_binding",
+          "category": "INITIAL_EXTERNAL_POLICY",
+          "revision": 0
+        }
+      ],
+      "parameters_equal": true
+    },
+    {
+      "code": 35,
+      "parameters": [
+        {
+          "hand": 1
+        },
+        {
+          "hand": 1
+        }
+      ],
+      "sources": [
+        {
+          "policy_id": "action.parameter_binding",
+          "category": "INITIAL_EXTERNAL_POLICY",
+          "revision": 0
+        },
+        {
+          "policy_id": "action.parameter_binding",
+          "category": "INITIAL_EXTERNAL_POLICY",
+          "revision": 0
+        }
+      ],
+      "parameters_equal": true
+    },
+    {
+      "code": 36,
+      "parameters": [
+        {},
+        {}
+      ],
+      "sources": [
+        {
+          "policy_id": "action.parameter_binding",
+          "category": "INITIAL_EXTERNAL_POLICY",
+          "revision": 0
+        },
+        {
+          "policy_id": "action.parameter_binding",
+          "category": "INITIAL_EXTERNAL_POLICY",
+          "revision": 0
+        }
+      ],
+      "parameters_equal": true
+    },
+    {
+      "code": 37,
+      "parameters": [
+        {
+          "block_ref": "o62ebaa9a_1_1"
+        },
+        {
+          "block_ref": "o62ebaa9a_1_1"
+        }
+      ],
+      "sources": [
+        {
+          "policy_id": "action.parameter_binding",
+          "category": "INITIAL_EXTERNAL_POLICY",
+          "revision": 0
+        },
+        {
+          "policy_id": "action.parameter_binding",
+          "category": "INITIAL_EXTERNAL_POLICY",
+          "revision": 0
+        }
+      ],
+      "parameters_equal": true
+    },
+    {
+      "code": 43,
+      "parameters": [
+        {
+          "container_id": "w62ebaa9a_1_1",
+          "slot": 1,
+          "mode": 0,
+          "button": 4
+        },
+        {
+          "container_id": "w62ebaa9a_1_1",
+          "slot": 1,
+          "mode": 0,
+          "button": 4
+        }
+      ],
+      "sources": [
+        {
+          "policy_id": "action.parameter_binding",
+          "category": "INITIAL_EXTERNAL_POLICY",
+          "revision": 0
+        },
+        {
+          "policy_id": "action.parameter_binding",
+          "category": "INITIAL_EXTERNAL_POLICY",
+          "revision": 0
+        }
+      ],
+      "parameters_equal": true
+    },
+    {
+      "code": 44,
+      "parameters": [
+        {
+          "block_ref": "o62ebaa9a_1_1",
+          "hand": 0,
+          "face": 1,
+          "cursor_x": 1,
+          "cursor_y": 0.5,
+          "cursor_z": 0
+        },
+        {
+          "block_ref": "o62ebaa9a_1_1",
+          "hand": 0,
+          "face": 1,
+          "cursor_x": 1,
+          "cursor_y": 0.5,
+          "cursor_z": 0
+        }
+      ],
+      "sources": [
+        {
+          "policy_id": "action.parameter_binding",
+          "category": "INITIAL_EXTERNAL_POLICY",
+          "revision": 0
+        },
+        {
+          "policy_id": "action.parameter_binding",
+          "category": "INITIAL_EXTERNAL_POLICY",
+          "revision": 0
+        }
+      ],
+      "parameters_equal": true
+    },
+    {
+      "code": 45,
+      "parameters": [
+        {
+          "entity_ref": "o62ebaa9a_1_2",
+          "hand": 0,
+          "x": 0.0,
+          "y": 4,
+          "z": 0.0
+        },
+        {
+          "entity_ref": "o62ebaa9a_1_2",
+          "hand": 0,
+          "x": 0.0,
+          "y": 4,
+          "z": 0.0
+        }
+      ],
+      "sources": [
+        {
+          "policy_id": "action.parameter_binding",
+          "category": "INITIAL_EXTERNAL_POLICY",
+          "revision": 0
+        },
+        {
+          "policy_id": "action.parameter_binding",
+          "category": "INITIAL_EXTERNAL_POLICY",
+          "revision": 0
+        }
+      ],
+      "parameters_equal": true
+    },
+    {
+      "code": 46,
+      "parameters": [
+        {},
+        {}
+      ],
+      "sources": [
+        {
+          "policy_id": "action.parameter_binding",
+          "category": "INITIAL_EXTERNAL_POLICY",
+          "revision": 0
+        },
+        {
+          "policy_id": "action.parameter_binding",
+          "category": "INITIAL_EXTERNAL_POLICY",
+          "revision": 0
+        }
+      ],
+      "parameters_equal": true
+    }
+  ],
+  "ablation": {
+    "scope": "TEST_ONLY detached state; original DB never rewritten",
+    "removed": "relations",
+    "held_constant": [
+      "frame",
+      "bootstrap state",
+      "body",
+      "caps",
+      "feedback reference"
+    ],
+    "recursive_read_changed": true,
+    "action_changed": false,
+    "read_before": {
+      "requested_relation_ref": "U-0294313806f11063b38a:-1",
+      "read_succeeded": true,
+      "expected_outcomes": [
+        "U-ee9cd61aee438f8f69d4",
+        "U-4f53cda18c2baa0c0354"
+      ]
+    },
+    "read_after": {
+      "requested_relation_ref": "U-0294313806f11063b38a:-1",
+      "read_succeeded": false,
+      "expected_outcomes": []
+    }
+  },
+  "tests": {
+    "python_full": 141,
+    "python_new": 8,
+    "node_full": 42,
+    "javascript_syntax": "passed",
+    "node_sandbox_transport_retry": "Original assertions passed after permitting localhost TCP; sandbox EACCES failures retained in task output."
+  }
+}

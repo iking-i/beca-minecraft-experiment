@@ -1,6 +1,12 @@
 # BECA-V0 正式 L0：V0-A / V0-B 基线
 
-本轮基线版本 `formal_l0_v0_ab_2`。理论仍为 Perfect Recursion / BER v0.8；理论来源提交见 THEORY_REFERENCE.json。本轮只修正实验边界和 provenance，不修改理论、游戏能力、递归组织算法或已有生命周期历史。
+本轮基线版本 `formal_l0_v0_ab_2`。该基线原设计参考 Perfect Recursion / BER v0.8；当前理论引用元数据已核对到 v0.9，准确来源见 THEORY_REFERENCE.json。元数据更新不是行为验证、实验结果或 L1。本基线行为、游戏能力、递归组织算法及已有生命周期历史不因此变化。
+
+## 行为因果闭合诊断（v0.9 引用）
+
+正式动作代码与参数仍来自外部 LCG，内部整合引用只是 provenance 元数据，不能当作行为原因。新增 `python -m debug.behavioral_validation` 产生两个独立 TEST_ONLY 历史，保留正式 Core、解释器和 perform RPC；不是 Minecraft 实测。`python -m individual.behavioral_audit --db <已关闭的夹具数据库>` 解析实际经历/partial/integration 引用并单独输出代码、参数作者权，不自动选择 canonical，不打开有未提交 WAL 的原库。
+
+在相同当前输入、bootstrap、身体和容量下，不同历史形成不同关系，但正式动作/参数不因此改变；关系消融改变递归读取，却不改变动作。缺少的是内生行为表达与控制/参数绑定的形成过程，本轮没有以重放旧动作等固定策略替代。完整图、反事实与结论见 [BEHAVIORAL_CAUSAL_CLOSURE.md](BEHAVIORAL_CAUSAL_CLOSURE.md)。这不改变原 V0-A/V0-B 判据，不声称 V0-C 或 L1。
 
 当前是外部初始化的 single-process L0 baseline：k_actual=1，process capacity=N。不是 A 自主选择不分化。当前没有内生 create_process 能力，不进入 V0-C，不实现 architecture-limit recognition 或 L1。
 

@@ -1,5 +1,13 @@
 # Experimental Validation Scope — v0.8
 
+## Current behavioral closure scope — v0.9 reference (2026-10-04)
+
+THEORY_REFERENCE.json now records current theory commit `89a56ad7ce236adfcb52b13d3e6fe7014ff88ddd`. The v0.8 text below remains historical guidance, not the current v0.9 specification. In v0.9, Continuity(A) != 0 is an experimental continuation condition; causal lineage alone is not individual identity. This reference update changes no runtime rule and proves no behavior or L1.
+
+The present audit/negative-control validation demonstrates history → retained relations → later recursive read, while rejecting history → internally authored body behavior. Two isolated fixture lifetimes use equal current input, capabilities, ceilings and bootstrap state. Different legitimate recursive histories and an isolated relation ablation do not change formal code/parameter selection. This is diagnostic partial implementation; BEHAVIORAL_CAUSAL_CLOSURE is failed for the unchanged formal path. The fixture is not real Minecraft evidence. Prior world-entry server evidence remains body acceptance only and cannot be borrowed to complete this missing behavior chain.
+
+Reproduce: `python -m debug.behavioral_validation`; inspect a closed fixture with `python -m individual.behavioral_audit --db <fixture.db>`. No canonical selection is replaced. Full proof, classification and minimum missing structures are in [BEHAVIORAL_CAUSAL_CLOSURE.md](BEHAVIORAL_CAUSAL_CLOSURE.md). No fabricated pass, semantic strategy, capacity expansion or higher layer was added.
+
 ## 当前 BECA-V0 阶段范围（2026-10-04）
 
 本地实验阶段说明；以下范围限制实验目标，不改变 Perfect Recursion / BER v0.8 的核心定义。本文基于 [仓库提交 867e1f1](https://github.com/iking-i/beca-architecture/commit/867e1f192f7f21298450a553a4a733ec8f15a999) 同步，仅为实验仓库的本地阶段说明，不修改理论仓库。
