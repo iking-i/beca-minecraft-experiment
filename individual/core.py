@@ -142,28 +142,28 @@ class ACore:
         if self._froi:
             from integration.froi import OrganizationSession, history_from_store
             organization = OrganizationSession(history_from_store(self._store, self._state), self._froi_caps)
+            organization.session_id = self._state.session_id
             if self._froi_async:
-                continuation = self._engine.advance_steps(self._state.internal_state, frame,
+                checkpoint = self._engine.prepare_read_checkpoint(self._state.internal_state, frame,
                     self._state.state_version + 1, self._pending_actions, organization=organization)
-                try:
-                    read_frame, feedback, version = next(continuation)
-                except StopIteration as done:
-                    internal, frame, journal = done.value
-                else:
+                if checkpoint.requires_read:
                     from integration.froi_worker import JobSpec
-                    job = JobSpec.create(organization.history, read_frame, feedback, version,
+                    job = JobSpec.create(organization.history, checkpoint.frame, checkpoint.feedback,
+                                         checkpoint.payload['state_version'],
                                          self._state.session_id, organization.caps)
+                    checkpoint = checkpoint.bind_job(job)
                     try:
                         worker = self._worker_factory(job)
                     except Exception as error:
-                        continuation.close()
                         self._transition('FROI_JOB_EXECUTION', {'job': job.audit(),
                             'execution_status': 'WORKER_FAILED', 'reason': str(error), 'partial_published': False})
                         raise RuntimeError('FROI host execution: WORKER_FAILED') from error
-                    self._computation = {'job': job, 'worker': worker, 'continuation': continuation,
+                    self._computation = {'job': job, 'worker': worker, 'checkpoint': checkpoint,
                         'observation': deepcopy(observation), 'fields': fields, 'sequence': sequence,
                         'base_version': self._state.state_version, 'base_internal': deepcopy(self._state.internal_state)}
                     return self.state
+                else:
+                    internal, frame, journal = self._engine.resume_from_read_checkpoint(checkpoint, None, None, {})
             else:
                 internal, frame, journal = self._engine.advance(self._state.internal_state, frame,
                     self._state.state_version + 1, self._pending_actions, organization=organization)
@@ -189,7 +189,6 @@ class ACore:
         if pending is None:
             return
         pending['worker'].cancel()
-        pending['continuation'].close()
         self._computation = None
         self._transition('FROI_JOB_EXECUTION', {'job': pending['job'].audit(),
             'execution_status': classification, 'reason': reason, 'partial_published': False},
@@ -214,13 +213,8 @@ class ACore:
             raise RuntimeError('FROI host execution: ' + classification)
         handle = result.handle
         read = consume(handle, handle.request) if handle else ReadResult('INVALID', (), (), (), (), ())
-        try:
-            pending['continuation'].send((handle, read, {'reason': result.diagnostic} if result.diagnostic else {}))
-        except StopIteration as done:
-            internal, frame, journal = done.value
-        else:
-            self._cancel_computation('Unexpected second checkpoint', 'WORKER_FAILED')
-            raise RuntimeError('ONE_IN_FLIGHT_JOB: unexpected second read')
+        internal, frame, journal = self._engine.resume_from_read_checkpoint(
+            pending['checkpoint'], handle, read, {'reason': result.diagnostic} if result.diagnostic else {})
         pending['worker'].thread.join(timeout=0)
         self._computation = None
         journal.extend([('FROI_JOB_SUBMITTED', job.audit()), ('FROI_JOB_EXECUTION', {
