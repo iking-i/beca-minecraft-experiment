@@ -34,7 +34,7 @@ class ACore:
 
     def __init__(self, database, bridge, policy=None, observation_interval=1.0, session_context=None,
                  session_label='Minecraft', initialize_lifetime=False, experiment_profile='formal_l0', physical_caps=None,
-                 resource_caps=None):
+                 resource_caps=None, froi=False, froi_caps=None):
         if experiment_profile not in ('formal_l0', 'legacy_policy_debug'):
             raise ValueError('Unknown experiment profile')
         if not math.isfinite(observation_interval) or observation_interval <= 0:
@@ -42,8 +42,18 @@ class ACore:
         if not initialize_lifetime and not Path(database).is_file():
             raise ValueError('An existing individual lifetime is required; session startup cannot create a replacement A')
         self._experiment_profile = 'legacy_policy_debug' if policy is not None else experiment_profile
-        self._engine = (FormalL0Engine(physical_caps, normalize_resource_caps(resource_caps))
-                        if self._experiment_profile == 'formal_l0' else StructuralEngine(physical_caps))
+        if froi and self._experiment_profile != 'formal_l0':
+            raise ValueError('FROI requires the formal_l0 path')
+        self._froi = froi
+        from integration.froi import load_caps, preflight as froi_preflight
+        self._froi_caps = froi_caps if froi_caps is not None else load_caps()
+        froi_preflight(database, froi, self._froi_caps)
+        if froi:
+            from .formal_froi import FormalFROIEngine
+            self._engine = FormalFROIEngine(physical_caps, normalize_resource_caps(resource_caps), self._froi_caps)
+        else:
+            self._engine = (FormalL0Engine(physical_caps, normalize_resource_caps(resource_caps))
+                            if self._experiment_profile == 'formal_l0' else StructuralEngine(physical_caps))
         if self._experiment_profile == 'formal_l0':
             preflight(database, self._engine.caps, self._engine.resource_caps)
         else:
@@ -60,7 +70,8 @@ class ACore:
             if (experiment_profile == 'legacy_policy_debug' or policy is not None) and previous and previous.internal_state.get('l0_state', {}).get('profile') == 'formal_l0':
                 raise ValueError('Formal lifetime cannot resume through legacy adaptation; use an independent debug fixture')
             self._state = self._store.open_session({**(session_context or {}),
-                'experiment_profile': self._experiment_profile}, session_label,
+                'experiment_profile': self._experiment_profile, 'froi_enabled': froi,
+                'froi_caps': asdict(self._froi_caps) if froi else None}, session_label,
                 formal_caps=self._engine.caps if self._experiment_profile == 'formal_l0' else None,
                 resource_caps=self._engine.resource_caps if self._experiment_profile == 'formal_l0' else None)
         except BaseException:
@@ -91,6 +102,8 @@ class ACore:
     def _transition(self, event_type, payload, additional_events=(), **changes):
         if self._closed:
             raise RuntimeError('A Core is closed')
+        if changes.get('internal_state', {}).get('l0_state', {}).get('froi_detached_test_only'):
+            raise ValueError('Detached FROI test state cannot be persisted to formal A')
         if self._experiment_profile == 'formal_l0':
             validate_boundary(self._state.internal_state, self._engine.caps, self._engine.resource_caps)
             validate_boundary(changes.get('internal_state', self._state.internal_state), self._engine.caps, self._engine.resource_caps)
@@ -118,8 +131,14 @@ class ACore:
         fields = observation_fields(observation)
         sequence = self._state.environment_sequence + 1
         frame = self._encoder.encode(observation, sequence, self._body_epoch)
-        internal, frame, journal = self._engine.advance(self._state.internal_state, frame,
-                                 self._state.state_version + 1, self._pending_actions)
+        if self._froi:
+            from integration.froi import OrganizationSession, history_from_store
+            organization = OrganizationSession(history_from_store(self._store, self._state), self._froi_caps)
+            internal, frame, journal = self._engine.advance(self._state.internal_state, frame,
+                self._state.state_version + 1, self._pending_actions, organization=organization)
+        else:
+            internal, frame, journal = self._engine.advance(self._state.internal_state, frame,
+                                     self._state.state_version + 1, self._pending_actions)
         provision(internal, observation.get('actionSpace'), self._state.state_version + 1, journal)
         if self._experiment_profile == 'formal_l0' and 'action.parameter_binding' in internal.policy_registry:
             internal.policy_registry['action.parameter_binding']['formal_path_enabled'] = True
@@ -414,6 +433,8 @@ def main():
     parser.add_argument('--smoke-policy', action='store_true', help='Explicit stage-2 debug probe; not normal A')
     parser.add_argument('--legacy-policy-debug', action='store_true', help='Explicit old fixed-policy debug path; not formal evidence')
     parser.add_argument('--physical-caps', default=str(ROOT / 'individual/experiment.json'))
+    parser.add_argument('--froi', action='store_true', help='FROI-1 organization relation-read integration; no action authorship claim')
+    parser.add_argument('--froi-caps', help='External frozen GSC-0 capacity JSON for this lifetime')
     parser.add_argument('--environment-caps', type=json.loads, default={}, help='External Supervisor resource ceilings for this condition')
     parser.add_argument('--policy-wait', type=float, default=1.0)
     parser.add_argument('--move-ms', type=int, default=200)
@@ -465,10 +486,12 @@ def main():
                    'observe_interval': args.observe_interval, 'smoke_policy': args.smoke_policy,
                    'experiment_profile': 'legacy_policy_debug' if args.legacy_policy_debug or args.smoke_policy else 'formal_l0',
                    'physical_caps': asdict(FormalLimits.load(args.physical_caps))}
+        from integration.froi import load_caps as load_froi_caps
         core = ACore(args.db, bridge, policy, args.observe_interval, context, args.session_label,
                      experiment_profile=context['experiment_profile'],
                      physical_caps=FormalLimits.load(args.physical_caps) if context['experiment_profile']=='formal_l0' else None,
-                     resource_caps=args.environment_caps)
+                     resource_caps=args.environment_caps, froi=args.froi,
+                     froi_caps=load_froi_caps(args.froi_caps))
         emit('CORE_STARTED', individual_id=core.state.individual_id, state_version=core.state.state_version,
              session_id=core.state.session_id, lifetime_role='snapshot_branch' if args.branch_db else 'mainline')
         threading.Thread(target=read_controls, daemon=True).start()

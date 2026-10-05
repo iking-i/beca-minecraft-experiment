@@ -335,6 +335,8 @@ def cli():
     parser.add_argument('--smoke-policy', action='store_true', help='Explicit stage-2 debug path')
     parser.add_argument('--legacy-policy-debug', action='store_true', help='Old fixed-policy debug mode; excluded from formal evidence')
     parser.add_argument('--physical-caps', default=str(ROOT / 'individual/experiment.json'))
+    parser.add_argument('--froi', action='store_true', help='Enable frozen FROI-1 organization consumer')
+    parser.add_argument('--froi-caps', help='Frozen external GSC-0 capacity JSON')
     parser.add_argument('--verify-loop', action='store_true', help='External verification of V0-A/V0-B only; no recognition or ascent inferred')
     parser.add_argument('--policy-wait', type=float, default=1.0)
     parser.add_argument('--move-ms', type=int, default=200)
@@ -352,6 +354,10 @@ def cli():
         resource_caps = {key: limits[key] for key in RESOURCE_CAP_KEYS}
         resource_caps['body_observation_caps'] = sensor_caps(args.minecraft_config)
         preflight(args.db, None if args.legacy_policy_debug or args.smoke_policy else caps, resource_caps)
+        from integration.froi import preflight as froi_preflight, load_caps as load_froi_caps
+        if args.froi and (args.legacy_policy_debug or args.smoke_policy):
+            raise ValueError('FROI cannot run through a debug policy')
+        froi_preflight(args.db, args.froi, load_froi_caps(args.froi_caps))
         from .connection import choose_minecraft_port
         port = choose_minecraft_port(args.minecraft_config, args.minecraft_port, args.use_config_port)
         supervisor = Supervisor(args.db, limits)
@@ -362,6 +368,10 @@ def cli():
                      '--environment-caps', json.dumps(resource_caps)]
         if port is not None:
             core_args.extend(['--minecraft-port', str(port)])
+        if args.froi:
+            core_args.append('--froi')
+        if args.froi_caps:
+            core_args.extend(['--froi-caps', str(Path(args.froi_caps).resolve())])
         if args.legacy_policy_debug:
             core_args.append('--legacy-policy-debug')
         if args.branch_db:
