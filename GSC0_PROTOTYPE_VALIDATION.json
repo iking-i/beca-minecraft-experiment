@@ -1,0 +1,290 @@
+{
+  "GSC0_PROTOTYPE": "passed",
+  "scope": "Independent TEST_ONLY GSC-0; no runtime/Minecraft/A execution",
+  "baseline_commit": "6491e8588795e44eba9e1da5161fe0eaed391b1f",
+  "tests": {
+    "run": 23,
+    "passed": 23,
+    "failures": 0,
+    "errors": 0
+  },
+  "core_checks": {
+    "generation": "passed",
+    "history_ablation": "passed",
+    "difference_ablation": "passed",
+    "order_independence": "passed",
+    "idempotence": "passed",
+    "conflict_preservation": "passed",
+    "no_semantic_shortcut": "passed",
+    "resource_limit": "passed",
+    "lineage_completeness": "passed"
+  },
+  "r4": {
+    "formed": true,
+    "present_before_difference": false,
+    "members": [
+      [
+        "Bind",
+        [
+          "Node",
+          "fixture",
+          "q",
+          "variable",
+          "X"
+        ],
+        [
+          "Value",
+          "Int",
+          3
+        ]
+      ],
+      [
+        "Relation",
+        "fixture",
+        "q",
+        "R1"
+      ],
+      [
+        "Relation",
+        "fixture",
+        "q",
+        "R2"
+      ],
+      [
+        "Relation",
+        "fixture",
+        "q",
+        "R3"
+      ]
+    ],
+    "input_roots": [
+      "D1",
+      "D2",
+      "R1",
+      "R2",
+      "R3"
+    ],
+    "direct_support_count": 138
+  },
+  "core_fixture": {
+    "status": "COMPLETE",
+    "closure_complete": true,
+    "leaf_count": 16,
+    "composite_count": 5368,
+    "rule_instance_count": 788693218,
+    "lineage_edge_count": 2365844080,
+    "closure_rounds": 19,
+    "stored_support_index_entries": 5729,
+    "operations": 66054
+  },
+  "core_canonical_digest": "fd04abf2f03ea160062feee7b66defb3c4f63398ec8b740d05cb1c596e815f17",
+  "semantic_shortcut_count": 0,
+  "support_storage": "Lossless finite join index. Logical COMPOSE supports/edges are counted exactly, not individually materialized. Every direct support can be enumerated. Independent tiny-fixture proof graph matches the index and counts.",
+  "growth_caps": {
+    "structures": 10000,
+    "provenance_entries": 10000,
+    "workspace_items": 30000,
+    "operations": 20000000,
+    "rounds": 100,
+    "nodes": 16,
+    "values": 16,
+    "relation_types": 16,
+    "inputs": 64
+  },
+  "growth": [
+    {
+      "seed_relation_count": 1,
+      "status": "COMPLETE",
+      "closure_complete": true,
+      "leaf_count": 3,
+      "composite_count": 3,
+      "rule_instance_count": 113,
+      "lineage_edge_count": 277,
+      "closure_rounds": 6,
+      "stored_support_index_entries": 39,
+      "operations": 43,
+      "seconds": 0.000468,
+      "resource_limit": null
+    },
+    {
+      "seed_relation_count": 2,
+      "status": "COMPLETE",
+      "closure_complete": true,
+      "leaf_count": 5,
+      "composite_count": 14,
+      "rule_instance_count": 1402,
+      "lineage_edge_count": 3988,
+      "closure_rounds": 8,
+      "stored_support_index_entries": 77,
+      "operations": 114,
+      "seconds": 0.001063,
+      "resource_limit": null
+    },
+    {
+      "seed_relation_count": 3,
+      "status": "COMPLETE",
+      "closure_complete": true,
+      "leaf_count": 7,
+      "composite_count": 41,
+      "rule_instance_count": 12275,
+      "lineage_edge_count": 36131,
+      "closure_rounds": 10,
+      "stored_support_index_entries": 131,
+      "operations": 277,
+      "seconds": 0.001844,
+      "resource_limit": null
+    },
+    {
+      "seed_relation_count": 4,
+      "status": "COMPLETE",
+      "closure_complete": true,
+      "leaf_count": 9,
+      "composite_count": 100,
+      "rule_instance_count": 85460,
+      "lineage_edge_count": 254362,
+      "closure_rounds": 12,
+      "stored_support_index_entries": 217,
+      "operations": 748,
+      "seconds": 0.003713,
+      "resource_limit": null
+    },
+    {
+      "seed_relation_count": 5,
+      "status": "COMPLETE",
+      "closure_complete": true,
+      "leaf_count": 11,
+      "composite_count": 223,
+      "rule_instance_count": 515477,
+      "lineage_edge_count": 1540977,
+      "closure_rounds": 14,
+      "stored_support_index_entries": 367,
+      "operations": 2391,
+      "seconds": 0.008154,
+      "resource_limit": null
+    },
+    {
+      "seed_relation_count": 6,
+      "status": "COMPLETE",
+      "closure_complete": true,
+      "leaf_count": 13,
+      "composite_count": 474,
+      "rule_instance_count": 2831670,
+      "lineage_edge_count": 8481064,
+      "closure_rounds": 16,
+      "stored_support_index_entries": 645,
+      "operations": 8662,
+      "seconds": 0.021644,
+      "resource_limit": null
+    },
+    {
+      "seed_relation_count": 7,
+      "status": "COMPLETE",
+      "closure_complete": true,
+      "leaf_count": 15,
+      "composite_count": 981,
+      "rule_instance_count": 14595287,
+      "lineage_edge_count": 43751647,
+      "closure_rounds": 18,
+      "stored_support_index_entries": 1179,
+      "operations": 33385,
+      "seconds": 0.06833,
+      "resource_limit": null
+    },
+    {
+      "seed_relation_count": 8,
+      "status": "COMPLETE",
+      "closure_complete": true,
+      "leaf_count": 17,
+      "composite_count": 2000,
+      "rule_instance_count": 71914744,
+      "lineage_edge_count": 215662870,
+      "closure_rounds": 20,
+      "stored_support_index_entries": 2225,
+      "operations": 131856,
+      "seconds": 0.249084,
+      "resource_limit": null
+    },
+    {
+      "seed_relation_count": 9,
+      "status": "COMPLETE",
+      "closure_complete": true,
+      "leaf_count": 19,
+      "composite_count": 4043,
+      "rule_instance_count": 342873881,
+      "lineage_edge_count": 1028432717,
+      "closure_rounds": 22,
+      "stored_support_index_entries": 4295,
+      "operations": 525259,
+      "seconds": 0.955124,
+      "resource_limit": null
+    },
+    {
+      "seed_relation_count": 10,
+      "status": "COMPLETE",
+      "closure_complete": true,
+      "leaf_count": 21,
+      "composite_count": 8134,
+      "rule_instance_count": 1594842938,
+      "lineage_edge_count": 4784098180,
+      "closure_rounds": 24,
+      "stored_support_index_entries": 8413,
+      "operations": 2098330,
+      "seconds": 3.844787,
+      "resource_limit": null
+    },
+    {
+      "seed_relation_count": 11,
+      "status": "RESOURCE_LIMIT",
+      "closure_complete": false,
+      "leaf_count": 23,
+      "composite_count": 8205,
+      "rule_instance_count": 1367469519,
+      "lineage_edge_count": 4102025403,
+      "closure_rounds": 16,
+      "stored_support_index_entries": 8511,
+      "operations": 7979754,
+      "seconds": 13.938627,
+      "resource_limit": {
+        "phase": "composition",
+        "resource_port": "provenance_entries",
+        "used": 8511,
+        "capacity": 10000,
+        "requested_or_lower_bound": 10001,
+        "closure_complete": false,
+        "rule_version": "GSC-0-TEST_ONLY-v1"
+      }
+    },
+    {
+      "seed_relation_count": 12,
+      "status": "RESOURCE_LIMIT",
+      "closure_complete": false,
+      "leaf_count": 25,
+      "composite_count": 5499,
+      "rule_instance_count": 462312385,
+      "lineage_edge_count": 1386718935,
+      "closure_rounds": 14,
+      "stored_support_index_entries": 5832,
+      "operations": 20000001,
+      "seconds": 30.446795,
+      "resource_limit": {
+        "phase": "composition",
+        "resource_port": "operations",
+        "used": 20000000,
+        "capacity": 20000000,
+        "requested_or_lower_bound": 20000001,
+        "closure_complete": false,
+        "rule_version": "GSC-0-TEST_ONLY-v1"
+      }
+    }
+  ],
+  "boundary_guard": {
+    "tracked_baseline_files_verified": 113,
+    "unchanged": true
+  },
+  "limitations": [
+    "Rules are externally supplied structural mechanisms, not self-invented rules.",
+    "RESOURCE_LIMIT rows are incomplete, never successful closures.",
+    "No claim of behavioral causal closure, individual continuity or L1.",
+    "Growth timing is diagnostic, not a hard OS quota or benchmarking guarantee."
+  ]
+}
