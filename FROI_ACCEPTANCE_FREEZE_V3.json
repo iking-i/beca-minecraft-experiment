@@ -1,0 +1,55 @@
+{
+  "schema": "FROI-1-ACCEPTANCE-FREEZE-v3",
+  "base_commit": "9f7a8b7a4186ff58b7ed279f9f64071999644814",
+  "freeze_commit_binding": "Git commit containing this manifest; measurement HEAD recorded and PRE/POST checked",
+  "status": "FROI-1 ACCEPTANCE HARNESS v3 FROZEN",
+  "measurement_tool_hashes": {
+    "tools/froi_acceptance_v3/__init__.py": "a1482cc23357d89241ceb58f6bcf3fe60ec8a7b33cc74f2f28ae1e213cafa875",
+    "tools/froi_acceptance_v3/__main__.py": "5389e40eedf4628e9bd1efbd6eaccfb98ccdba278977b5bd5007574ac7e148dd",
+    "tools/froi_acceptance_v3/checks.py": "66c1cfba9ca808ecadbc54c3963cdd832a5eb3d1919977b131a14980c6a52d88",
+    "tools/froi_acceptance_v3/test_facility.py": "08bee3f8c18b957cab5984f381c32662b814e0e4aae060f69489206af86532f0"
+  },
+  "v2_historical_file_hashes": {
+    "artifact-A16.json": "b2204e44358327ba42c8c11308281551ebccb8042b3ad6da908463ba8082c664",
+    "artifact-A20.json": "4abb1827b05f04e82c2d7a6961ab925583950c91459cc8b4cd925a1adc00fb9f",
+    "artifact-A22.json": "dc59528b4ed60fd35fb8c30cee41ca41d1b7d5e547de45edc452ec9ba106aca9",
+    "artifact-A25.json": "fe6cde7f48194bcc37988eaa19f38c973424815a4895fc36e41688417c70c062",
+    "evidence-A16.json": "f63a55c35e8204bca2d76abe720bf84ea8a64f828b55d3bd2d4b24ab33d1450d",
+    "evidence-A20.json": "e6475922f7d65e8b262f07548c205765166b17689ef3b8ff9e4c0625ac34f1c9",
+    "evidence-A22.json": "8f03aff5e2a7b1883bd8ea233839b105bab0bfc763b586e75e91e2bd3d412a52",
+    "evidence-A25.json": "a42094ebadbd94aecc0b8b73a7b9fdc0a16fdee859c7334ab7148c7894124d98",
+    "FINAL_VALIDATION.json": "e8247e2e7a1faf911b40aab936a74275ccae834e88be0a1faea14298c2617c90",
+    "FINAL_VALIDATION.md": "719480b020cf3d59a0a08aefeeddb5bc066f85e06d3e97150ea3e71a49933d6a",
+    "measurement-plan.json": "81e8aa0d670f8e1f5702295e69575c5f05dd42e271c7703061d798bb08c97c35",
+    "report.json": "3b4ead7aef70a3e7a2231dd28bb500cad0e15a49019506ec936d5671e6a017b6",
+    "report.md": "05dbdd36671a35cf68723c4da98334f1a4e4e1772cc3ba3fb8fce2f4962c3f58",
+    "T5-A16.json": "f1072d4a9d6e26002bb7d0c0d9faee3402c03d1bcd743e5d58a5879dc952573e",
+    "T5-A20.json": "cece7e89f586583d1e55092ab19d2908ee48c38d47fb56e5e56769e24409b81e",
+    "T5-A22.json": "6003d2faf6a6b4e39617399da18a360881104357bee938d7ace9668952326234",
+    "T5-A25.json": "8024d22880df7991b825fa045ba1b988665f5a6aa6226a34ef33250a09a7f958"
+  },
+  "regression": {
+    "passed": true,
+    "tests": 7,
+    "grouped_negative_scenarios": 27,
+    "additional_negative_controls": [
+      "reselected plan",
+      "duplicate failure",
+      "T5 incomplete gate"
+    ],
+    "producer_closure_advance_resume_forbidden": true,
+    "source": "python -B -m unittest tools.froi_acceptance_v3.test_facility -v"
+  },
+  "selection": {
+    "checkpoint": 16,
+    "pair_versions": [
+      15,
+      12
+    ],
+    "failure_branch_index": 1,
+    "next_observation": "v2 predetermined next real recorded WORLD_OBSERVATION",
+    "witness": "TEST_ONLY HISTORICAL COUNTERFACTUAL WITNESS"
+  },
+  "v1_v2_modified": false,
+  "runtime_modified": false
+}
