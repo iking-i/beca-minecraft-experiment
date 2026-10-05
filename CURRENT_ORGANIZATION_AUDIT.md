@@ -1,5 +1,7 @@
 # Current Organization — Source and Existing-Evidence Audit
 
+> **CURRENT STATUS NOTICE (2026-10-05):** This file preserves the original mechanism-level audit and its evidence. Its combined mechanism scores and "共同最早未解决项 C3" summary are **historical** because `CURRENT_ORGANIZATION_SCOPE_AUDIT.md` later found object-scope mismatches and rescored each concrete O separately. Use the scope audit and `RESEARCH_STATUS.md` for the current interpretation. The original evidence below is retained rather than rewritten.
+
 日期：2026-10-05。标准：[CURRENT_ORGANIZATION_CRITERION.md](CURRENT_ORGANIZATION_CRITERION.md)，CO-WAC-1。
 
 仓库读取基线：`8a4df339dd3576cd5930a71630eda8830ea30087`。本轮只新增标准与审计两个文档，不运行测试/closure、启动正式 A 或连接游戏，不修改源码、原型、测试、数据或理论仓库。GSC-2 不在审计范围，不提出后续机制。
