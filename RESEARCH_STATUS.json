@@ -1,13 +1,13 @@
 {
   "status_date": "2026-10-05",
+  "evidence_checkpoint": "7ce8203023cac40fab8c05f3ca181c3a05495e2d",
   "theory": {
     "version": "Perfect Recursion / BER v0.9",
     "repository": "iking-i/beca-architecture",
     "commit": "075335e0ee2d04d12351ec9e6087a10b1abfe428",
     "classification": "conceptual_architecture",
-    "complete_generative_dynamics_specified": false
+    "complete_general_generative_dynamics_established": false
   },
-  "experiment_head_before_status_commit": "8a4df339dd3576cd5930a71630eda8830ea30087",
   "world_entry": {
     "status": "passed",
     "scope": "declared_frozen_foundation_chains"
@@ -22,9 +22,25 @@
     "status": "failed",
     "implementation_scope": "diagnostic_partial"
   },
-  "current_main_checkpoint": "CURRENT_STRUCTURE_GENERATION_AUDIT.md",
-  "generative_dynamics": "unresolved",
-  "unresolved_edge": "current reality + recursive history + current organization -> ? -> newly formed current organization",
+  "organization_working_criterion": {
+    "version": "CO-WAC-1",
+    "status": "frozen",
+    "scope_rule": "evaluate C1-C5 on the same audited object",
+    "old_mechanism_level_common_c3_summary": "superseded_by_scope_audit"
+  },
+  "organization_evidence": {
+    "object": "O-G0-1 derived structural graph",
+    "scope": "TEST_ONLY finite GSC-0 / CO-WAC-1",
+    "c1_novelty": "pass",
+    "c2_provenance": "pass",
+    "c3_organization": "pass",
+    "c4_causal_efficacy": "pass",
+    "c5_non_prescription": "pass",
+    "classification": "finite_positive_example_of_new_causally_effective_organization",
+    "new_organizational_method_established": false,
+    "behavioral_authorship_established": false,
+    "upward_recursion_established": false
+  },
   "gsc": {
     "classification": "candidate_research_branch",
     "establishes_perfect_recursion_core": false,
@@ -44,14 +60,58 @@
       "universal_role_module_required": false
     }
   },
+  "gsc0_recursive_continuity": {
+    "rc1_persistence": "evidenced",
+    "rc2_reentry": "partial",
+    "rc3_history_conditioned_future_generation_at_audit_checkpoint": "unresolved",
+    "rc4_incremental_structural_input_coupling": "evidenced",
+    "rc5_revision_semantics": "partial",
+    "rc6_domain_continuity": "partial"
+  },
+  "persisted_result_counterfactual": {
+    "scope": "two finite TEST_ONLY fixtures",
+    "comparison": "A_FULL_PREVIOUS = B_DERIVED_ABLATION = C_FRESH_RECOMPUTE",
+    "classification": "DERIVED_RESULT_NOT_CAUSALLY_NECESSARY",
+    "history_irrelevant": false,
+    "invalidates_og0_1_organization_result": false
+  },
+  "current_checkpoint": {
+    "document": "FORMAL_RECURSIVE_ORGANIZATION_INTEGRATION_SPEC.md",
+    "version": "FROI-1",
+    "status": "ready_for_implementation",
+    "claim": "real accumulated history + current structural read input -> fixed GSC-0 -> O-G0-1 organization -> actual FormalL0 internal consumer -> measurable internal processing difference"
+  },
+  "current_blocker": {
+    "classification": "CURRENT_BLOCKER",
+    "description": "FROI-1 is specified but not yet integrated or executed in the formal A path"
+  },
+  "next_work": [
+    "implement FROI-1 without changing GSC-0 production rules or adding semantic routing",
+    "run the predeclared T1-T5 validation set",
+    "report actual result without moving the criterion"
+  ],
+  "not_current_prerequisites_unless_independently_shown_necessary": [
+    "adaptive forgetting or memory compression",
+    "open-domain expansion",
+    "generator G0 plasticity",
+    "GSC-2 Role formation",
+    "L1 or upward recursion",
+    "internally authored Minecraft action"
+  ],
+  "complete_general_generative_dynamics": "unresolved",
+  "internally_authored_action": "not_validated",
   "upward_recursion_validated": false,
   "cross_environment_core_invariance_demonstrated": false,
   "do_not_assume": [
-    "Closure is the universal generative law",
+    "GSC-0 is the universal generative law of Perfect Recursion",
+    "Closure is a required universal recursion primitive",
     "Composite is sufficient current organization",
     "OutwardSchema is universally required",
     "Role formation is a universal Perfect Recursion requirement",
     "one-to-many or many-to-one is a fundamental law without separate evidence",
-    "GSC resource exhaustion is a current effective limit of the running A"
+    "GSC resource exhaustion is a current effective limit of the running A",
+    "A=B=C means history is irrelevant or organization is non-recursive",
+    "FROI-1 READY_FOR_IMPLEMENTATION means FROI-1 has passed",
+    "an internal-effect FROI result would automatically pass behavioral causal closure"
   ]
 }
