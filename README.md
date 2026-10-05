@@ -41,14 +41,13 @@ Copy-Item minecraft/config.example.json minecraft/config.json
 
 首次编辑生成的 `minecraft/config.json`，填写服务器地址和独立身体账号即可。局域网当前端口可以在启动时输入或通过 `--port` 指定。模板的 `25565` 是常见服务器示例端口，不是当前电脑的运行端口。
 
-**仅在新克隆尚无个体时**，显式创建自己的 A，然后启动：
+安装后直接打开图形启动器。在窗口中选择已有 A；**仅在需要新个体时**点击“新建个体 A”并输入名称：
 
 ```powershell
-.\.venv\Scripts\python.exe -m individual.lifetime initialize --label "首次本地实验"
 .\.venv\Scripts\python.exe main.py
 ```
 
-初始化会生成 `individual/lifetime.json` 和 `storage/individuals/A-<uuid>/`。`individual/lifetime.example.json` 只说明格式，**不要复制成运行身份**。已有 A 的电脑正常重启只执行 `main.py`，不要为每次 Session 重新初始化。Linux/macOS 使用 `python3` 创建环境，并把后续 Python 路径改为 `.venv/bin/python`。
+“新建个体 A”复用正式初始化，生成 `individual/lifetime.json` 和 `storage/individuals/A-<uuid>/`，保留旧历史。`individual/lifetime.example.json` 只说明格式，**不要复制成运行身份**。已有 A 的电脑正常重启只执行 `main.py`，不要为每次 Session 重新初始化。Linux/macOS 使用 `python3` 创建环境，并把后续 Python 路径改为 `.venv/bin/python`；无图形环境使用显式 CLI 参数。
 
 在第一、二阶段的身体接口、唯一实验身份、连续状态链、SQLite 和外部 Supervisor 上增加最小内部递归。正常运行路径不使用原来的固定前进脚本。没有引入 LLM、语言知识、Minecraft 攻略、高级任务、自我修改、自我复制或自主联网。
 
@@ -58,20 +57,24 @@ Copy-Item minecraft/config.example.json minecraft/config.json
 
 ## 启动和验收
 
-完成上述安装后，无需重复安装依赖或 Minecraft。在 Java 26.1 测试世界开放局域网，然后正常启动项目。终端会询问当前端口：输入聊天栏显示的数字即可；回车沿用配置端口，输入 `q` 取消。局域网重新开放后端口可能改变，**无需修改配置文件**。不要同时启动使用同一个身体账号的其他工具。
+完成上述安装后，无需重复安装依赖或 Minecraft。在 Java 26.1 测试世界开放局域网，然后正常启动项目。无参数运行会显示中文启动器：选择已有 A 或新建 A，填入聊天栏显示的端口，点击“启动实验”。局域网重新开放后端口可能改变，**无需修改配置文件**。不要同时启动使用同一个身体账号的其他工具。
 
 ```powershell
 # 在仓库根目录运行
 .\.venv\Scripts\python.exe main.py
 ```
 
+启动器默认勾选 **FROI-1**，端口默认读取 `minecraft/config.json`。本次端口不会写回配置。列表显示名称、身份、角色、最新 A 状态版本、Session 数量、创建时间和路径；★ 表示当前已固定选择。切换只改变外部选择指针与目录索引，不初始化或改写目标数据库。有活动个体锁时拒绝切换；FROI 已锁定的个体不能取消 FROI 后启动。取消窗口不会启动 Core；此前明确点击新建所创建的 A 仍会保留。
+
+数据库缺失时，创建新 A 需要单独确认，不自动替换原身份。这些 GUI 操作均属于实验者管理，不是 A 的递归或自主决策。详情与验证见 [WINDOWS_LAUNCHER_REPORT.md](WINDOWS_LAUNCHER_REPORT.md)。
+
 也可以直接指定本次端口，省去启动询问（把示例数字替换为游戏显示的端口）：
 
 ```powershell
-.\.venv\Scripts\python.exe main.py --port 50102
+.\.venv\Scripts\python.exe main.py --froi --port 50102
 ```
 
-`--port` 与 `--minecraft-port` 等价。`--use-config-port` 跳过询问，直接使用配置文件。没有交互终端的脚本启动也沿用配置端口；自动运行需要切换端口时显式传入 `--port`。端口覆盖只用于当前启动及其身体重连，原配置和 A 的身份、状态版本不重置。Session 环境记录实际连接端口及 `minecraft_port_override`；`configuration_hash` 仍是原配置文件的哈希。当前运行中再次开放局域网改变端口时，应结束当前运行，再以新端口启动并沿用同一 A。
+任何显式 CLI 参数均跳过 GUI，保持原命令行为：`--port` 与 `--minecraft-port` 等价，`--use-config-port` 使用配置端口，显式 `--froi` 仍可走原终端端口询问。无图形环境请使用这些显式参数；无参数且无法打开 GUI 时会报错退出，不等待不可见窗口。CLI 不传 `--froi` 仍是原 FormalL0，已锁定 FROI 的生命周期需保留该选项。端口覆盖只用于当前启动及其身体重连，原配置和 A 的身份、状态版本不重置。Session 环境记录实际连接端口及 `minecraft_port_override`；`configuration_hash` 仍是原配置文件的哈希。当前运行中再次开放局域网改变端口时，应结束当前运行，再以新端口启动并沿用同一 A。
 
 默认持续运行并记录完整历史，没有 1000 次状态变化的停止门槛。每个 A 的数据单独放在 `storage/individuals/A-<uuid>/`，同一 A 的多个 Session 共用该文件夹。当前路径由本地生成的 `individual/lifetime.json` 指定，结束 Session 或重启沿用同一身份和全局版本。本地目录索引为 `storage/index.json`，不随 GitHub 发布；说明见 [storage/README.md](storage/README.md)。
 

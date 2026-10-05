@@ -23,6 +23,7 @@ minecraft/.auth/
 .auth/
 minecraft/config.json
 individual/lifetime.json
+individual/lifetime.json.lock
 *.pem
 *.key
 *.p12
