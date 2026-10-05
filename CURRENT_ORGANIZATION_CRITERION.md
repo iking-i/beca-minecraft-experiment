@@ -1,5 +1,7 @@
 # Current Organization — Working Acceptance Criterion
 
+> **CURRENT STATUS NOTICE (2026-10-05):** CO-WAC-1 itself remains the frozen working criterion. However, the mechanism-level matrix and the "共同最早未解决项 C3" summary in §9 are **historical results from the original mixed-object audit**. `CURRENT_ORGANIZATION_SCOPE_AUDIT.md` later enforced same-object scope and supersedes that summary for current interpretation. In particular, O-G0-1 is currently C1–C5 PASS within its finite TEST_ONLY scope. Do not rewrite the frozen criterion or delete the historical matrix; use `RESEARCH_STATUS.md` for the current project state.
+
 版本：CO-WAC-1。冻结日期：2026-10-05。适用仓库：beca-minecraft-experiment。
 
 本文件冻结 **C1 Novelty、C2 Provenance、C3 Organization、C4 Causal efficacy、C5 Non-prescription** 五项实验工作标准。它们用于比较本仓库机制的证据范围，**不是 Perfect Recursion 的普遍公理、理论定义或充要条件**，不修改理论仓库，也不改变既有实验的原验收规格。
