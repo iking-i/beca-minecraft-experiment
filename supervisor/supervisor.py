@@ -48,6 +48,7 @@ class Supervisor:
         self.process = None
         self._core = None
         self._bridge = None
+        self._workers = {}
         self._owned_children = {}
         self._messages = queue.Queue()
         self._controls = queue.Queue()
@@ -169,26 +170,38 @@ class Supervisor:
                 child.cpu_percent()
                 self._owned_children[child.pid] = child
             try:
+                if 'integration.froi_worker' in child.cmdline() or 'tests.fixtures.froi_worker_hook' in child.cmdline():
+                    self._workers[child.pid] = self._owned_children[child.pid]
                 if child.name().lower() in ('node', 'node.exe'):
                     self._bridge = self._owned_children[child.pid]
-            except psutil.NoSuchProcess:
+            except (psutil.NoSuchProcess, psutil.AccessDenied):
                 pass
+        worker_pids = set(self._workers)
+        for worker in self._workers.values():
+            try:
+                worker_pids.update(p.pid for p in worker.children(recursive=True))
+            except (psutil.NoSuchProcess, psutil.AccessDenied):
+                pass
+        worker_samples = [self._process_sample(p) for pid,p in self._owned_children.items() if pid in worker_pids]
+        worker = {'alive': any(p['alive'] for p in worker_samples), 'processes': worker_samples,
+                  'cpu_percent': sum(p['cpu_percent'] for p in worker_samples),
+                  'ram_mb': sum(p['ram_mb'] for p in worker_samples), 'subject': False}
         core = self._process_sample(self._core)
         # Include a possible Windows venv launcher/real Python child in Core usage.
         for process in self._owned_children.values():
-            if self._bridge and process.pid == self._bridge.pid:
+            if process.pid in worker_pids or (self._bridge and process.pid == self._bridge.pid):
                 continue
             extra = self._process_sample(process)
             core['cpu_percent'] += extra['cpu_percent']
             core['ram_mb'] += extra['ram_mb']
         bridge = self._process_sample(self._bridge)
-        self._sample = {'timestamp': utc_now(), 'core': core, 'bridge': bridge}
+        self._sample = {'timestamp': utc_now(), 'core': core, 'bridge': bridge, 'computation_worker': worker}
         self._sample['storage'] = {'used_mb': sum(p.stat().st_size for p in self.database.parent.iterdir()
             if p.is_file() and (p.name.startswith(self.database.name) or p.name.startswith(self._audit_path.name))) / (1024 * 1024),
             'max_mb': self.limits['max_lifetime_storage_mb'], 'source': 'ENVIRONMENT_CONSTRAINT'}
-        self._sample['pressure'] = max(core['ram_mb'] / self.limits['max_core_ram_mb'],
+        self._sample['pressure'] = max((core['ram_mb'] + worker['ram_mb']) / self.limits['max_core_ram_mb'],
             bridge['ram_mb'] / self.limits['max_bridge_ram_mb'],
-            (core['cpu_percent'] + bridge['cpu_percent']) / self.limits['max_total_cpu_percent'])
+            (core['cpu_percent'] + bridge['cpu_percent'] + worker['cpu_percent']) / self.limits['max_total_cpu_percent'])
         self._record('RESOURCE_SAMPLE', self._sample)
         if self._stopping_at is None:
             self._send('resource_sample', self._sample)
@@ -200,7 +213,8 @@ class Supervisor:
         self._stop_reason = reason
         self._stopping_at = time.monotonic()
         self._record('TERMINATION_REQUESTED', {'reason': reason})
-        self._send('terminate')
+        self._send('terminate', {'reason': reason,
+            'worker_execution_status': 'HOST_RESOURCE_LIMIT' if reason in ('worker_host_ram_limit', 'cpu_limit') else 'CANCELLED'})
 
     def _enforce(self, sample):
         core, bridge = sample['core'], sample['bridge']
@@ -208,9 +222,12 @@ class Supervisor:
             self._request_termination('lifetime_storage_limit')
         if core['ram_mb'] > self.limits['max_core_ram_mb']:
             self._request_termination('core_ram_limit')
+        elif core['ram_mb'] + sample.get('computation_worker', {}).get('ram_mb', 0) > self.limits['max_core_ram_mb']:
+            self._record('WORKER_HOST_FAILURE', {'execution_status': 'HOST_RESOURCE_LIMIT', 'resource': 'ram'})
+            self._request_termination('worker_host_ram_limit')
         elif bridge['ram_mb'] > self.limits['max_bridge_ram_mb']:
             self._request_termination('bridge_ram_limit')
-        if core['cpu_percent'] + bridge['cpu_percent'] > self.limits['max_total_cpu_percent']:
+        if core['cpu_percent'] + bridge['cpu_percent'] + sample.get('computation_worker', {}).get('cpu_percent', 0) > self.limits['max_total_cpu_percent']:
             self._cpu_violations += 1
         else:
             self._cpu_violations = 0

@@ -26,6 +26,16 @@ class FormalFROIEngine(FormalL0Engine):
         self.froi_caps = froi_caps if froi_caps is not None else load_caps()
 
     def advance(self, current, frame, state_version, pending_actions, *, organization=None):
+        """Synchronous compatibility entry; runtime drives the same continuation."""
+        steps = self.advance_steps(current, frame, state_version, pending_actions, organization=organization)
+        try:
+            checkpoint = next(steps)
+            while True:
+                checkpoint = steps.send(organization.read(*checkpoint))
+        except StopIteration as done:
+            return done.value
+
+    def advance_steps(self, current, frame, state_version, pending_actions, *, organization=None):
         validate_boundary(current, self.caps, self.resource_caps)
         internal = InternalState.from_dict(current) if current else InternalState()
         local = internal.l0_state
@@ -184,7 +194,7 @@ class FormalFROIEngine(FormalL0Engine):
             reference = feedback.get('next_relation_ref')
             organization_read = None
             if organization is not None and reference:
-                handle, read, diagnostics = organization.read(frame, feedback, state_version)
+                handle, read, diagnostics = yield (deepcopy(frame), deepcopy(feedback), state_version)
                 organization_read = {'status': read.status,
                     'organization_status': handle.status if handle else 'INVALID',
                     'closure_complete': bool(handle and handle.complete),
