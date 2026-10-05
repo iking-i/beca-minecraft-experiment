@@ -1,10 +1,30 @@
 # BECA-V0：L0 持续递归与当前极限反馈实验
 
-本仓库是 [beca-architecture](https://github.com/iking-i/beca-architecture) 的独立 Minecraft 实验实现，当前理论引用为 **Perfect Recursion / BER v0.9**，已核对理论 `main` 提交 [`89a56ad7ce236adfcb52b13d3e6fe7014ff88ddd`](https://github.com/iking-i/beca-architecture/commit/89a56ad7ce236adfcb52b13d3e6fe7014ff88ddd)（2026-10-04）。现有实现及本地同步的 v0.8 文档仍保留原来源和历史结果。此次理论元数据更新不改变运行行为，不等于实验结果、行为验证或 L1；v0.9 将 `Continuity(A) != 0` 区分为实验延续条件，不能提升为通用核心公理。机器可读来源见 [THEORY_REFERENCE.json](THEORY_REFERENCE.json)。
+本仓库是 [beca-architecture](https://github.com/iking-i/beca-architecture) 的独立 Minecraft 实验实现，当前理论引用为 **Perfect Recursion / BER v0.9**，已核对理论 `main` 提交 [`075335e0ee2d04d12351ec9e6087a10b1abfe428`](https://github.com/iking-i/beca-architecture/commit/075335e0ee2d04d12351ec9e6087a10b1abfe428)（2026-10-05）。现有实现及本地同步的 v0.8 文档仍保留原来源和历史结果。此次理论元数据更新不改变运行行为，不等于实验结果、行为验证或 L1；v0.9 将 `Continuity(A) != 0` 区分为实验延续条件，不能提升为通用核心公理。机器可读来源见 [THEORY_REFERENCE.json](THEORY_REFERENCE.json)。
 
 行为因果闭合审计见 [BEHAVIORAL_CAUSAL_CLOSURE.md](BEHAVIORAL_CAUSAL_CLOSURE.md)。当前内部历史可影响后续递归证据读取，**尚不能成为正式动作代码及参数的作者**。本轮只实现不足情形下可严格验证的审计与独立对照，未添加行为策略，未宣称闭合通过。WORLD_ENTRY_FREEZE 的既有身体验收保持不变。
 
 当前范围是 **L0 层内持续递归和当前有效极限反馈**，不声称已经验证向上递归、L1 或无限递归。本轮进行正式 V0-A / V0-B 基线边界修正；详情见 [BASELINE_CORRECTION_REPORT.md](BASELINE_CORRECTION_REPORT.md)。真实 A 的数据库、本机配置、凭据和运行日志保留在本地，不上传；完整清单见 [REPOSITORY_CONTENTS.md](REPOSITORY_CONTENTS.md)。
+
+## 当前研究状态
+
+当前权威状态索引是 [RESEARCH_STATUS.md](RESEARCH_STATUS.md) / [RESEARCH_STATUS.json](RESEARCH_STATUS.json)。研究证据已经越过早期 `CURRENT_STRUCTURE_GENERATION_AUDIT.md` 的“尚未找到新组织 producer”检查点：在冻结的 CO-WAC-1 下，后续 [CURRENT_ORGANIZATION_SCOPE_AUDIT.md](CURRENT_ORGANIZATION_SCOPE_AUDIT.md) 将对象边界拆开后，`O-G0-1 derived structural graph` 在有限 TEST_ONLY GSC-0 范围内取得 **C1–C5 全部 PASS**，可作为“新因果有效组织实例”的有限正例；这不等于新的组织方式、行为作者权、L1 或 Perfect Recursion 的普遍生成律。
+
+随后 [GSC0_RECURSIVE_RESULT_DEPENDENCE.md](GSC0_RECURSIVE_RESULT_DEPENDENCE.md) 对两个有限 fixture 做 `A_FULL_PREVIOUS / B_DERIVED_ABLATION / C_FRESH_RECOMPUTE` 反事实，实际得到 `A=B=C`，分类为 `DERIVED_RESULT_NOT_CAUSALLY_NECESSARY`：前轮已物化派生结果在这两个案例中不是下一轮结果的独立必要条件，保留的原始历史材料足以由固定机制重算同一组织。该结果不表示历史无关，也不推翻 O-G0-1 的组织效力。
+
+当前真正的主线检查点是 [FORMAL_RECURSIVE_ORGANIZATION_INTEGRATION_SPEC.md](FORMAL_RECURSIVE_ORGANIZATION_INTEGRATION_SPEC.md)，版本 **FROI-1**，状态 `READY_FOR_IMPLEMENTATION`。下一限定目标是：
+
+```text
+real accumulated history + current structural read input
+→ fixed GSC-0
+→ O-G0-1 derived structural organization
+→ actual FormalL0 internal consumer
+→ measurable internal-processing difference
+```
+
+FROI-1 还**没有实现或验收通过**。当前 blocker 是把这条已经写清的接口真正接入 FormalL0 并执行预先冻结的 T1–T5 验证，而不是继续把遗忘/压缩、开放域、G0 可塑性、GSC-2 Role、L1 或自主动作作者权提前升级成当前前置条件。行为动作采样和参数绑定仍为 `EXTERNAL_FIXED_POLICY`，所以即使未来 FROI-1 内部效力通过，也不能自动把 `BEHAVIORAL_CAUSAL_CLOSURE` 从失败改成通过。
+
+旧的 `CURRENT_ORGANIZATION_CRITERION.md` / `CURRENT_ORGANIZATION_AUDIT.md` 机制级矩阵作为历史证据保留；其中“共同最早未解决 C3”已经被后续对象一致性审计取代，不能再作为当前总状态。后续工作也不得预设 Closure、Composite、OutwardPort、Role、一对多或多对一就是 Perfect Recursion 的普遍答案。
 
 ## 新克隆的首次安装
 
@@ -21,14 +41,13 @@ Copy-Item minecraft/config.example.json minecraft/config.json
 
 首次编辑生成的 `minecraft/config.json`，填写服务器地址和独立身体账号即可。局域网当前端口可以在启动时输入或通过 `--port` 指定。模板的 `25565` 是常见服务器示例端口，不是当前电脑的运行端口。
 
-**仅在新克隆尚无个体时**，显式创建自己的 A，然后启动：
+安装后直接打开图形启动器。在窗口中选择已有 A；**仅在需要新个体时**点击“新建个体 A”并输入名称：
 
 ```powershell
-.\.venv\Scripts\python.exe -m individual.lifetime initialize --label "首次本地实验"
 .\.venv\Scripts\python.exe main.py
 ```
 
-初始化会生成 `individual/lifetime.json` 和 `storage/individuals/A-<uuid>/`。`individual/lifetime.example.json` 只说明格式，**不要复制成运行身份**。已有 A 的电脑正常重启只执行 `main.py`，不要为每次 Session 重新初始化。Linux/macOS 使用 `python3` 创建环境，并把后续 Python 路径改为 `.venv/bin/python`。
+“新建个体 A”复用正式初始化，生成 `individual/lifetime.json` 和 `storage/individuals/A-<uuid>/`，保留旧历史。`individual/lifetime.example.json` 只说明格式，**不要复制成运行身份**。已有 A 的电脑正常重启只执行 `main.py`，不要为每次 Session 重新初始化。Linux/macOS 使用 `python3` 创建环境，并把后续 Python 路径改为 `.venv/bin/python`；无图形环境使用显式 CLI 参数。
 
 在第一、二阶段的身体接口、唯一实验身份、连续状态链、SQLite 和外部 Supervisor 上增加最小内部递归。正常运行路径不使用原来的固定前进脚本。没有引入 LLM、语言知识、Minecraft 攻略、高级任务、自我修改、自我复制或自主联网。
 
@@ -38,20 +57,24 @@ Copy-Item minecraft/config.example.json minecraft/config.json
 
 ## 启动和验收
 
-完成上述安装后，无需重复安装依赖或 Minecraft。在 Java 26.1 测试世界开放局域网，然后正常启动项目。终端会询问当前端口：输入聊天栏显示的数字即可；回车沿用配置端口，输入 `q` 取消。局域网重新开放后端口可能改变，**无需修改配置文件**。不要同时启动使用同一个身体账号的其他工具。
+完成上述安装后，无需重复安装依赖或 Minecraft。在 Java 26.1 测试世界开放局域网，然后正常启动项目。无参数运行会显示中文启动器：选择已有 A 或新建 A，填入聊天栏显示的端口，点击“启动实验”。局域网重新开放后端口可能改变，**无需修改配置文件**。不要同时启动使用同一个身体账号的其他工具。
 
 ```powershell
 # 在仓库根目录运行
 .\.venv\Scripts\python.exe main.py
 ```
 
+启动器默认勾选 **FROI-1**，端口默认读取 `minecraft/config.json`。本次端口不会写回配置。列表显示名称、身份、角色、最新 A 状态版本、Session 数量、创建时间和路径；★ 表示当前已固定选择。切换只改变外部选择指针与目录索引，不初始化或改写目标数据库。有活动个体锁时拒绝切换；FROI 已锁定的个体不能取消 FROI 后启动。取消窗口不会启动 Core；此前明确点击新建所创建的 A 仍会保留。
+
+数据库缺失时，创建新 A 需要单独确认，不自动替换原身份。这些 GUI 操作均属于实验者管理，不是 A 的递归或自主决策。详情与验证见 [WINDOWS_LAUNCHER_REPORT.md](WINDOWS_LAUNCHER_REPORT.md)。
+
 也可以直接指定本次端口，省去启动询问（把示例数字替换为游戏显示的端口）：
 
 ```powershell
-.\.venv\Scripts\python.exe main.py --port 50102
+.\.venv\Scripts\python.exe main.py --froi --port 50102
 ```
 
-`--port` 与 `--minecraft-port` 等价。`--use-config-port` 跳过询问，直接使用配置文件。没有交互终端的脚本启动也沿用配置端口；自动运行需要切换端口时显式传入 `--port`。端口覆盖只用于当前启动及其身体重连，原配置和 A 的身份、状态版本不重置。Session 环境记录实际连接端口及 `minecraft_port_override`；`configuration_hash` 仍是原配置文件的哈希。当前运行中再次开放局域网改变端口时，应结束当前运行，再以新端口启动并沿用同一 A。
+任何显式 CLI 参数均跳过 GUI，保持原命令行为：`--port` 与 `--minecraft-port` 等价，`--use-config-port` 使用配置端口，显式 `--froi` 仍可走原终端端口询问。无图形环境请使用这些显式参数；无参数且无法打开 GUI 时会报错退出，不等待不可见窗口。CLI 不传 `--froi` 仍是原 FormalL0，已锁定 FROI 的生命周期需保留该选项。端口覆盖只用于当前启动及其身体重连，原配置和 A 的身份、状态版本不重置。Session 环境记录实际连接端口及 `minecraft_port_override`；`configuration_hash` 仍是原配置文件的哈希。当前运行中再次开放局域网改变端口时，应结束当前运行，再以新端口启动并沿用同一 A。
 
 默认持续运行并记录完整历史，没有 1000 次状态变化的停止门槛。每个 A 的数据单独放在 `storage/individuals/A-<uuid>/`，同一 A 的多个 Session 共用该文件夹。当前路径由本地生成的 `individual/lifetime.json` 指定，结束 Session 或重启沿用同一身份和全局版本。本地目录索引为 `storage/index.json`，不随 GitHub 发布；说明见 [storage/README.md](storage/README.md)。
 
