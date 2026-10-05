@@ -1,12 +1,13 @@
 {
   "status_date": "2026-10-05",
-  "evidence_checkpoint": "7ce8203023cac40fab8c05f3ca181c3a05495e2d",
+  "evidence_checkpoint": "326dbb165f41c2ff32c43230810148990fbf0daf",
   "theory": {
     "version": "Perfect Recursion / BER v0.9",
     "repository": "iking-i/beca-architecture",
     "commit": "075335e0ee2d04d12351ec9e6087a10b1abfe428",
     "classification": "conceptual_architecture",
-    "complete_general_generative_dynamics_established": false
+    "complete_general_generative_dynamics_established": false,
+    "universal_generative_law_status": "NOT_ESTABLISHED"
   },
   "world_entry": {
     "status": "passed",
@@ -78,25 +79,24 @@
   "current_checkpoint": {
     "document": "FORMAL_RECURSIVE_ORGANIZATION_INTEGRATION_SPEC.md",
     "version": "FROI-1",
-    "status": "ready_for_implementation",
-    "claim": "real accumulated history + current structural read input -> fixed GSC-0 -> O-G0-1 organization -> actual FormalL0 internal consumer -> measurable internal processing difference"
+    "status": "IMPLEMENTED",
+    "claim": "real accumulated history + current structural read input -> fixed GSC-0 -> formed COMPLETE O-G0-1 organization -> actual FormalL0 internal consumer -> measurable causal internal-processing difference -> read-failure consequence can enter later FormalL0 processing"
   },
   "current_blocker": {
-    "classification": "CURRENT_BLOCKER",
-    "description": "FROI-1 is specified but not yet integrated or executed in the formal A path"
+    "classification": "CURRENT_EVIDENCE_GAP",
+    "description": "Internal recursive organization -> internally authored complete body expression (action code + all required parameters) -> Minecraft consequence -> renewed observation -> recursive processing is not yet validated; FROI-1 is no longer a blocker"
   },
   "next_work": [
-    "implement FROI-1 without changing GSC-0 production rules or adding semantic routing",
-    "run the predeclared T1-T5 validation set",
-    "report actual result without moving the criterion"
+    "Study the internally authored complete body-expression causal chain; direction only, no mechanism designed in this update",
+    "Keep formal action sampler and parameter binding classified EXTERNAL_FIXED_POLICY until independently validated",
+    "Preserve frozen FROI-1 spec, v2 PARTIAL, v3 scoped PASS and all historical results"
   ],
   "not_current_prerequisites_unless_independently_shown_necessary": [
     "adaptive forgetting or memory compression",
     "open-domain expansion",
     "generator G0 plasticity",
     "GSC-2 Role formation",
-    "L1 or upward recursion",
-    "internally authored Minecraft action"
+    "L1 or upward recursion"
   ],
   "complete_general_generative_dynamics": "unresolved",
   "internally_authored_action": "not_validated",
@@ -111,7 +111,46 @@
     "one-to-many or many-to-one is a fundamental law without separate evidence",
     "GSC resource exhaustion is a current effective limit of the running A",
     "A=B=C means history is irrelevant or organization is non-recursive",
-    "FROI-1 READY_FOR_IMPLEMENTATION means FROI-1 has passed",
-    "an internal-effect FROI result would automatically pass behavioral causal closure"
-  ]
+    "an internal-effect FROI result would automatically pass behavioral causal closure",
+    "FROI-1 v3 T4 historical counterfactual witness is a formal-live natural failure",
+    "FROI-1 v3 PASS retroactively upgrades v2 PARTIAL",
+    "FROI-1 v3 PASS establishes a universal Perfect Recursion generative law"
+  ],
+  "froi1": {
+    "implementation": "IMPLEMENTED",
+    "historical_acceptance": {
+      "harness": "v2",
+      "status": "PARTIAL",
+      "frozen_commit": "9f7a8b7a4186ff58b7ed279f9f64071999644814",
+      "result_preserved": true
+    },
+    "current_acceptance": {
+      "harness": "v3",
+      "status": "PASS",
+      "frozen_commit": "326dbb165f41c2ff32c43230810148990fbf0daf",
+      "T1": "PASS",
+      "T2": "PASS",
+      "T3": "PASS",
+      "T4": "PASS",
+      "T5": "PASS",
+      "session_id": "S-09272552-fb87-4078-871b-1c752b1d4862",
+      "individual_id": "A-71bc612c-8f2c-4f70-8d4d-3d38bed52942",
+      "checkpoint": 16,
+      "history_prefixes": [
+        15,
+        12
+      ],
+      "T4_witness_source": "TEST_ONLY HISTORICAL COUNTERFACTUAL WITNESS",
+      "T4_formal_live_natural_failure": false,
+      "all_used_organizations_COMPLETE": true,
+      "new_Minecraft_run": false,
+      "new_A": false,
+      "world_facing_behavioral_authorship_established": false,
+      "saved_v2_executed_evidence_reused": true,
+      "producer_or_continuation_rerun": false,
+      "runtime_commit": "MATERIAL_UNAVAILABLE",
+      "local_report": "storage/acceptance/froi-v3-326dbb1/report.json"
+    },
+    "is_current_blocker": false
+  }
 }

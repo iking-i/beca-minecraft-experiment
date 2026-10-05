@@ -12,17 +12,35 @@
 
 随后 [GSC0_RECURSIVE_RESULT_DEPENDENCE.md](GSC0_RECURSIVE_RESULT_DEPENDENCE.md) 对两个有限 fixture 做 `A_FULL_PREVIOUS / B_DERIVED_ABLATION / C_FRESH_RECOMPUTE` 反事实，实际得到 `A=B=C`，分类为 `DERIVED_RESULT_NOT_CAUSALLY_NECESSARY`：前轮已物化派生结果在这两个案例中不是下一轮结果的独立必要条件，保留的原始历史材料足以由固定机制重算同一组织。该结果不表示历史无关，也不推翻 O-G0-1 的组织效力。
 
-当前真正的主线检查点是 [FORMAL_RECURSIVE_ORGANIZATION_INTEGRATION_SPEC.md](FORMAL_RECURSIVE_ORGANIZATION_INTEGRATION_SPEC.md)，版本 **FROI-1**，状态 `READY_FOR_IMPLEMENTATION`。下一限定目标是：
+FROI-1 已实现：`implementation = IMPLEMENTED`。历史验收 **v2 = PARTIAL**，冻结提交 `9f7a8b7a4186ff58b7ed279f9f64071999644814`，结果保留不变；当前验收 **v3 = PASS**，冻结提交 `326dbb165f41c2ff32c43230810148990fbf0daf`，**T1–T5 全部 PASS**。原 [FROI-1 spec](FORMAL_RECURSIVE_ORGANIZATION_INTEGRATION_SPEC.md) 保持冻结；测量边界见 [v3 harness](FROI_ACCEPTANCE_HARNESS_V3.md) 和 [v3 freeze](FROI_ACCEPTANCE_FREEZE_V3.json)。
+
+已建立的限定因果链为：
 
 ```text
 real accumulated history + current structural read input
 → fixed GSC-0
-→ O-G0-1 derived structural organization
+→ formed COMPLETE O-G0-1 organization
 → actual FormalL0 internal consumer
-→ measurable internal-processing difference
+→ measurable causal internal-processing difference
+→ read-failure consequence can enter later FormalL0 processing
 ```
 
-FROI-1 还**没有实现或验收通过**。当前 blocker 是把这条已经写清的接口真正接入 FormalL0 并执行预先冻结的 T1–T5 验证，而不是继续把遗忘/压缩、开放域、G0 可塑性、GSC-2 Role、L1 或自主动作作者权提前升级成当前前置条件。行为动作采样和参数绑定仍为 `EXTERNAL_FIXED_POLICY`，所以即使未来 FROI-1 内部效力通过，也不能自动把 `BEHAVIORAL_CAUSAL_CLOSURE` 从失败改成通过。
+v3 T4 使用 **TEST_ONLY HISTORICAL COUNTERFACTUAL WITNESS**：原 A16 T2 的固定真实历史前缀 15 / 12、已保存的 COMPLETE / UNRESOLVED_REFERENCE 分支及其 detached continuation，下一输入来自已记录的真实 WORLD_OBSERVATION。它不是 formal-live natural failure、不是新的 Minecraft run 或新的 A，也不证明 world-facing behavioral authorship。v3 复用并核验已有执行证据，没有重新执行 producer 或 continuation；所有实际用于验收的组织均 COMPLETE。v2 PARTIAL 未被追溯改写。原运行 commit 仍为 `MATERIAL_UNAVAILABLE`。
+
+本机报告为 `storage/acceptance/froi-v3-326dbb1/report.md` / `report.json`；原数据库和 v2 报告保持不变，运行数据不随仓库发布。
+
+FROI-1 不再是当前 blocker。下一正式研究方向仅记录为：
+
+```text
+internal recursive organization
+→ internally authored complete body expression
+→ action code + all required parameters
+→ Minecraft consequence
+→ renewed observation
+→ recursive processing
+```
+
+本次状态收口不设计或实现这条行为作者权机制。`BEHAVIORAL_CAUSAL_CLOSURE = FAILED / NOT YET PASSED`；formal action sampler 和 parameter binding 仍为 `EXTERNAL_FIXED_POLICY`；internally authored Minecraft action、L1 / upward recursion 均 `NOT VALIDATED`；Perfect Recursion universal generative law 仍 `NOT ESTABLISHED`。
 
 旧的 `CURRENT_ORGANIZATION_CRITERION.md` / `CURRENT_ORGANIZATION_AUDIT.md` 机制级矩阵作为历史证据保留；其中“共同最早未解决 C3”已经被后续对象一致性审计取代，不能再作为当前总状态。后续工作也不得预设 Closure、Composite、OutwardPort、Role、一对多或多对一就是 Perfect Recursion 的普遍答案。
 

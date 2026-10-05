@@ -1,7 +1,7 @@
 # BECA-V0 — Current Research Status
 
 **Status date:** 2026-10-05  
-**Evidence checkpoint indexed through:** `7ce8203023cac40fab8c05f3ca181c3a05495e2d` (`Specify formal recursive organization integration boundary`)  
+**Evidence checkpoint indexed through:** `326dbb165f41c2ff32c43230810148990fbf0daf` (frozen FROI-1 Acceptance Harness v3; existing-session acceptance PASS)
 **Purpose:** authoritative research-state index for the experiment repository. This document does not alter runtime behavior, historical validation results, or the Perfect Recursion theory.
 
 > **Reading rule:** historical audits remain evidence for the scope they actually tested. When a later scope audit or counterfactual narrows an earlier summary, use the later document for the current interpretation rather than rewriting the older result.
@@ -212,51 +212,75 @@ Precise interpretation:
 
 This is compatible with the theory's separate allowance that operational consequences may persist without requiring permanent materialization or full provenance replay.
 
-## 10. Current main checkpoint: FROI-1
-
-The current main implementation checkpoint is:
+## 10. FROI-1 stage closure
 
 ```text
-FORMAL_RECURSIVE_ORGANIZATION_INTEGRATION_SPEC.md
-FROI-1
-READY_FOR_IMPLEMENTATION
-source checkpoint: 7ce8203023cac40fab8c05f3ca181c3a05495e2d
+FROI-1 implementation = IMPLEMENTED
+Historical acceptance v2 = PARTIAL
+v2 frozen commit = 9f7a8b7a4186ff58b7ed279f9f64071999644814
+Current acceptance v3 = PASS
+v3 frozen commit = 326dbb165f41c2ff32c43230810148990fbf0daf
+v3 T1 = PASS
+v3 T2 = PASS
+v3 T3 = PASS
+v3 T4 = PASS
+v3 T5 = PASS
 ```
 
-FROI-1 freezes the next limited claim:
+The frozen `FORMAL_RECURSIVE_ORGANIZATION_INTEGRATION_SPEC.md` remains unchanged. Its original implementation-readiness statement is a historical specification outcome, not the current implementation/acceptance status. v1/v2 harnesses, original data, caps, codec and runtime were not changed for v3. See `FROI_ACCEPTANCE_HARNESS_V3.md` and `FROI_ACCEPTANCE_FREEZE_V3.json` for the frozen external measurement boundary.
+
+v3 reuses session `S-09272552-fb87-4078-871b-1c752b1d4862`, individual `A-71bc612c-8f2c-4f70-8d4d-3d38bed52942`. It uses the pre-fixed A16 T2 pair of real historical prefixes **15 / 12**, the saved COMPLETE / UNRESOLVED_REFERENCE failure branch, and its already executed detached continuation with the next recorded real WORLD_OBSERVATION. Its T4 source is:
+
+```text
+TEST_ONLY HISTORICAL COUNTERFACTUAL WITNESS
+```
+
+This is not a formal-live natural failure, a new Minecraft run, a new A, or world-facing behavioral authorship. v3 validates saved v2 T2/T3 execution evidence and the saved continuation; it does not rerun producer, closure or FormalL0 continuation. All organizations actually used by v3 acceptance are COMPLETE; detached status provides no exemption. The original session's 117 RESOURCE_LIMIT outcomes remain in the source inventory. v2 PARTIAL and its original A27/A30 T4 result remain unchanged and are not retroactively upgraded.
+
+Local reports (not distributed as runtime data): `storage/acceptance/froi-v3-326dbb1/report.md` and `report.json`; the preserved v2 reports remain under the individual/session's `v2-9f7a8b7` directory. PRE/POST whole-database and source summaries matched. The original runtime commit remains `MATERIAL_UNAVAILABLE`; the v3 measurement commit does not fill that missing historical fact.
+
+The established limited causal chain is:
 
 ```text
 real accumulated history + current structural read input
 -> fixed GSC-0
--> O-G0-1 derived structural organization
+-> formed COMPLETE O-G0-1 organization
 -> actual FormalL0 internal consumer
--> measurable later internal processing difference
+-> measurable causal internal-processing difference
+-> read-failure consequence can enter later FormalL0 processing
 ```
 
-The initial memory condition for this version is simply: **retain the raw historical inputs required by the finite experiment.** That is an experimental startup condition, not a universal memory theory. FROI-1 does not require the previous materialized closure object to persist unchanged.
+The final edge is evidenced by the explicitly TEST_ONLY historical counterfactual witness. The consumer is the actual relation-read/check/failure-feedback path. Action sampler and parameter binder are outside this causal acceptance chain.
 
-The planned consumer is the existing FormalL0 relation-read/check/failure-feedback path. The action sampler/binder is intentionally **not** part of this acceptance target, so FROI-1 cannot be used to claim internally authored Minecraft behavior.
+The initial memory condition remains retention of the raw historical inputs required by the finite experiment; it is not a universal memory law and does not require preserving the materialized closure object unchanged.
 
-## 11. Current blocker and next work
+## 11. Current blocker and next research direction
 
-The current blocking gap is now implementation/evidence, not another general theory-design question:
+FROI-1 implementation and its scoped v3 acceptance are **no longer a blocker**. The next formal research question is the still-unvalidated chain:
 
 ```text
-CURRENT_BLOCKER:
-FROI-1 is specified but not implemented or executed in the formal A path.
+internal recursive organization
+-> internally authored complete body expression
+-> action code + all required parameters
+-> Minecraft consequence
+-> renewed observation
+-> recursive processing
 ```
 
-The next work is therefore:
+This records a research direction only. No behavioral-authorship mechanism is designed or implemented in this stage closure.
+
+The remaining boundary is explicit:
 
 ```text
-implement FROI-1
--> execute its predeclared T1–T5 validations
--> report the actual result without moving the criterion
+BEHAVIORAL_CAUSAL_CLOSURE = FAILED / NOT YET PASSED
+formal action sampler = EXTERNAL_FIXED_POLICY
+parameter binding = EXTERNAL_FIXED_POLICY
+internally authored Minecraft action = NOT VALIDATED
+L1 / upward recursion = NOT VALIDATED
+Perfect Recursion universal generative law = NOT ESTABLISHED
 ```
 
-T1–T5 cover real-input/mechanical representation, controlled history counterfactual, formed-organization effect screening, real downstream internal processing, and completeness/pollution controls.
-
-Do **not** replace this current blocker with speculative prerequisites such as adaptive forgetting, open-domain expansion, G0 plasticity, Role formation, L1, or autonomous action authorship unless an independent argument shows one of them is required for the FROI-1 claim itself.
+The next blocker is evidence of internally authored complete body expression and the full world-facing causal chain, not reimplementation of FROI-1. No particular mechanism, routing, selector, memory strategy or higher layer is prescribed here.
 
 ## 12. Generative-dynamics wording
 
@@ -283,10 +307,7 @@ O-G0-1 C1–C5 PASS
 A=B=C persisted-result counterfactual
 => organization is not recursive / history is irrelevant
 
-FROI-1 READY_FOR_IMPLEMENTATION
-=> FROI-1 has passed
-
-FROI-1 internal-effect pass (if later observed)
+FROI-1 v3 internal-effect PASS
 => behavioral causal closure has passed
 
 GSC-2 unresolved
@@ -332,12 +353,15 @@ GSC-1                                   PASSED candidate prototype
 GSC-2                                   UNRESOLVED candidate branch
 Persisted derived-result necessity      NOT NECESSARY in two tested fixtures (A=B=C)
 Current checkpoint                      FROI-1
-FROI-1                                  READY_FOR_IMPLEMENTATION, not yet validated
-Current blocker                         FROI-1 not integrated/executed in formal path
+FROI-1 implementation                   IMPLEMENTED
+FROI-1 historical v2                    PARTIAL (preserved)
+FROI-1 current v3                       PASS; T1-T5 PASS
+FROI-1 T4 witness                       TEST_ONLY historical counterfactual
+Current blocker                         Internally authored complete body expression not validated
 Complete/general generative dynamics    UNRESOLVED
 Internally authored action              NOT VALIDATED
 L1 / upward recursion                   NOT VALIDATED
 Cross-environment core invariance       NOT YET DEMONSTRATED
 ```
 
-> **Current research position:** the project has a validated world-facing substrate, genuine history-dependent recursive processing, and a finite TEST_ONLY positive example of newly formed causally effective organization. The immediate research task is no longer to invent another abstract organization criterion; it is to implement the already specified FROI-1 boundary and test whether real FormalL0 history can form that organization and make it causally effective in the actual internal consumer without adding semantic routing or changing the predeclared acceptance conditions.
+> **Current research position:** FROI-1 is implemented and v3 acceptance has passed within its fixed internal-processing scope. The next research question is whether internal recursive organization can author a complete body expression (action code and every required parameter), produce a Minecraft consequence, and return through renewed observation to recursive processing. Behavioral causal closure remains failed/not yet passed; no behavior mechanism is proposed by this status update.
