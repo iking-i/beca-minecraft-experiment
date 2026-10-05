@@ -8,9 +8,23 @@
 
 ## 当前研究状态
 
-当前主线断点是 [CURRENT_STRUCTURE_GENERATION_AUDIT.md](CURRENT_STRUCTURE_GENERATION_AUDIT.md)：`reality + recursive history + current organization -> ? -> newly formed current organization` 仍为 **UNRESOLVED**。[GSC-0/GSC-1/GSC-2](RESEARCH_STATUS.md) 保留为候选机制研究分支；其局部验证结果继续有效，但不等于已经确定 Perfect Recursion 的生成核心，也不能把 GSC 的 TEST_ONLY 资源极限直接解释为正式 A 的 current effective limit。
+当前权威状态索引是 [RESEARCH_STATUS.md](RESEARCH_STATUS.md) / [RESEARCH_STATUS.json](RESEARCH_STATUS.json)。研究证据已经越过早期 `CURRENT_STRUCTURE_GENERATION_AUDIT.md` 的“尚未找到新组织 producer”检查点：在冻结的 CO-WAC-1 下，后续 [CURRENT_ORGANIZATION_SCOPE_AUDIT.md](CURRENT_ORGANIZATION_SCOPE_AUDIT.md) 将对象边界拆开后，`O-G0-1 derived structural graph` 在有限 TEST_ONLY GSC-0 范围内取得 **C1–C5 全部 PASS**，可作为“新因果有效组织实例”的有限正例；这不等于新的组织方式、行为作者权、L1 或 Perfect Recursion 的普遍生成律。
 
-完整的当前状态、禁止倒推边界与机器可读状态见 [RESEARCH_STATUS.md](RESEARCH_STATUS.md) 和 [RESEARCH_STATUS.json](RESEARCH_STATUS.json)。后续工作不得预设 Closure、Composite、OutwardPort、Role、一对多或多对一就是未解生成机制的答案。
+随后 [GSC0_RECURSIVE_RESULT_DEPENDENCE.md](GSC0_RECURSIVE_RESULT_DEPENDENCE.md) 对两个有限 fixture 做 `A_FULL_PREVIOUS / B_DERIVED_ABLATION / C_FRESH_RECOMPUTE` 反事实，实际得到 `A=B=C`，分类为 `DERIVED_RESULT_NOT_CAUSALLY_NECESSARY`：前轮已物化派生结果在这两个案例中不是下一轮结果的独立必要条件，保留的原始历史材料足以由固定机制重算同一组织。该结果不表示历史无关，也不推翻 O-G0-1 的组织效力。
+
+当前真正的主线检查点是 [FORMAL_RECURSIVE_ORGANIZATION_INTEGRATION_SPEC.md](FORMAL_RECURSIVE_ORGANIZATION_INTEGRATION_SPEC.md)，版本 **FROI-1**，状态 `READY_FOR_IMPLEMENTATION`。下一限定目标是：
+
+```text
+real accumulated history + current structural read input
+→ fixed GSC-0
+→ O-G0-1 derived structural organization
+→ actual FormalL0 internal consumer
+→ measurable internal-processing difference
+```
+
+FROI-1 还**没有实现或验收通过**。当前 blocker 是把这条已经写清的接口真正接入 FormalL0 并执行预先冻结的 T1–T5 验证，而不是继续把遗忘/压缩、开放域、G0 可塑性、GSC-2 Role、L1 或自主动作作者权提前升级成当前前置条件。行为动作采样和参数绑定仍为 `EXTERNAL_FIXED_POLICY`，所以即使未来 FROI-1 内部效力通过，也不能自动把 `BEHAVIORAL_CAUSAL_CLOSURE` 从失败改成通过。
+
+旧的 `CURRENT_ORGANIZATION_CRITERION.md` / `CURRENT_ORGANIZATION_AUDIT.md` 机制级矩阵作为历史证据保留；其中“共同最早未解决 C3”已经被后续对象一致性审计取代，不能再作为当前总状态。后续工作也不得预设 Closure、Composite、OutwardPort、Role、一对多或多对一就是 Perfect Recursion 的普遍答案。
 
 ## 新克隆的首次安装
 
