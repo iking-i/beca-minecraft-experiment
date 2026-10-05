@@ -5,10 +5,10 @@ from copy import deepcopy
 # These opaque port/op addresses are fixed independently of human audit labels.
 PORT_IDS = {'active_memory_units': 101, 'observation_history': 102, 'process_slots': 103,
             'condition_channels': 104, 'relation_memory': 105,
-            'relation_outcomes': 106, 'evidence_references': 107}
+            'relation_outcomes': 106, 'evidence_references': 107, 'organization_memory': 108}
 OP_IDS = {'insert_unit': 201, 'retain_frame': 202, 'create_initial_process': 203,
           'read_context': 204, 'read_relation': 205, 'insert_relation': 206,
-          'insert_outcome': 207, 'retain_evidence_reference': 208}
+          'insert_outcome': 207, 'retain_evidence_reference': 208, 'read_organization': 209}
 RAW_FIELDS = frozenset({'limit_id', 'resource_port_id', 'operation_id', 'used', 'capacity',
                        'requested', 'operation_performed', 'object_refs', 'source_state_version', 'frame_id'})
 
