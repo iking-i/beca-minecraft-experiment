@@ -1,10 +1,16 @@
 # BECA-V0：L0 持续递归与当前极限反馈实验
 
-本仓库是 [beca-architecture](https://github.com/iking-i/beca-architecture) 的独立 Minecraft 实验实现，当前理论引用为 **Perfect Recursion / BER v0.9**，已核对理论 `main` 提交 [`89a56ad7ce236adfcb52b13d3e6fe7014ff88ddd`](https://github.com/iking-i/beca-architecture/commit/89a56ad7ce236adfcb52b13d3e6fe7014ff88ddd)（2026-10-04）。现有实现及本地同步的 v0.8 文档仍保留原来源和历史结果。此次理论元数据更新不改变运行行为，不等于实验结果、行为验证或 L1；v0.9 将 `Continuity(A) != 0` 区分为实验延续条件，不能提升为通用核心公理。机器可读来源见 [THEORY_REFERENCE.json](THEORY_REFERENCE.json)。
+本仓库是 [beca-architecture](https://github.com/iking-i/beca-architecture) 的独立 Minecraft 实验实现，当前理论引用为 **Perfect Recursion / BER v0.9**，已核对理论 `main` 提交 [`075335e0ee2d04d12351ec9e6087a10b1abfe428`](https://github.com/iking-i/beca-architecture/commit/075335e0ee2d04d12351ec9e6087a10b1abfe428)（2026-10-05）。现有实现及本地同步的 v0.8 文档仍保留原来源和历史结果。此次理论元数据更新不改变运行行为，不等于实验结果、行为验证或 L1；v0.9 将 `Continuity(A) != 0` 区分为实验延续条件，不能提升为通用核心公理。机器可读来源见 [THEORY_REFERENCE.json](THEORY_REFERENCE.json)。
 
 行为因果闭合审计见 [BEHAVIORAL_CAUSAL_CLOSURE.md](BEHAVIORAL_CAUSAL_CLOSURE.md)。当前内部历史可影响后续递归证据读取，**尚不能成为正式动作代码及参数的作者**。本轮只实现不足情形下可严格验证的审计与独立对照，未添加行为策略，未宣称闭合通过。WORLD_ENTRY_FREEZE 的既有身体验收保持不变。
 
 当前范围是 **L0 层内持续递归和当前有效极限反馈**，不声称已经验证向上递归、L1 或无限递归。本轮进行正式 V0-A / V0-B 基线边界修正；详情见 [BASELINE_CORRECTION_REPORT.md](BASELINE_CORRECTION_REPORT.md)。真实 A 的数据库、本机配置、凭据和运行日志保留在本地，不上传；完整清单见 [REPOSITORY_CONTENTS.md](REPOSITORY_CONTENTS.md)。
+
+## 当前研究状态
+
+当前主线断点是 [CURRENT_STRUCTURE_GENERATION_AUDIT.md](CURRENT_STRUCTURE_GENERATION_AUDIT.md)：`reality + recursive history + current organization -> ? -> newly formed current organization` 仍为 **UNRESOLVED**。[GSC-0/GSC-1/GSC-2](RESEARCH_STATUS.md) 保留为候选机制研究分支；其局部验证结果继续有效，但不等于已经确定 Perfect Recursion 的生成核心，也不能把 GSC 的 TEST_ONLY 资源极限直接解释为正式 A 的 current effective limit。
+
+完整的当前状态、禁止倒推边界与机器可读状态见 [RESEARCH_STATUS.md](RESEARCH_STATUS.md) 和 [RESEARCH_STATUS.json](RESEARCH_STATUS.json)。后续工作不得预设 Closure、Composite、OutwardPort、Role、一对多或多对一就是未解生成机制的答案。
 
 ## 新克隆的首次安装
 
