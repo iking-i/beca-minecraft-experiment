@@ -1,0 +1,192 @@
+{
+  "schema": "FROI_ACCEPTANCE_INFRASTRUCTURE_REPORT-v1",
+  "freeze_source_commit": "06f3b3150e060f872392d67d8e72ef4aa2d5d629",
+  "FROI_ACCEPTANCE_INFRASTRUCTURE": "COMPLETE",
+  "T1_INFRASTRUCTURE": "READY",
+  "T2_INFRASTRUCTURE": "READY",
+  "T3_INFRASTRUCTURE": "READY",
+  "T4_INFRASTRUCTURE": "READY",
+  "T5_INFRASTRUCTURE": "READY",
+  "LIVE_RUNTIME_SEMANTICS_CHANGED": "NO",
+  "A_CAPABILITIES_CHANGED": "NO",
+  "GSC_RULES_CHANGED": "NO",
+  "FROI_CODEC_CHANGED": "NO",
+  "CAPS_CHANGED": "NO",
+  "formal_acceptance": {
+    "T1": {
+      "status": "NOT_EXECUTED"
+    },
+    "T2": {
+      "status": "NOT_EXECUTED"
+    },
+    "T3": {
+      "status": "NOT_EXECUTED"
+    },
+    "T4": {
+      "status": "NOT_EXECUTED"
+    },
+    "T5": {
+      "status": "NOT_EXECUTED"
+    }
+  },
+  "engineering_regression": {
+    "passed": true,
+    "python": {
+      "run": 226,
+      "passed": true,
+      "failures": [],
+      "errors": []
+    },
+    "new_facility_controls": {
+      "run": 30,
+      "passed": true
+    },
+    "frozen_gsc": {
+      "run": 44,
+      "passed": true
+    },
+    "result_dependence": {
+      "run": 8,
+      "passed": true
+    },
+    "result_dependence_classifications": [
+      "DERIVED_RESULT_NOT_CAUSALLY_NECESSARY",
+      "DERIVED_RESULT_NOT_CAUSALLY_NECESSARY"
+    ],
+    "minecraft_body": {
+      "run": 42,
+      "passed": true,
+      "local_fixture_transport_permission": "authorized rerun; no Minecraft world"
+    },
+    "isolated_supervisor_recheck": {
+      "run": 1,
+      "passed": true
+    },
+    "intermediate_run": {
+      "run": 226,
+      "passed": false,
+      "failures": [],
+      "errors": [
+        [
+          "tests.test_froi_scheduling.SchedulingTests.test_actual_core_main_heartbeat_pause_termination_separate_accounting",
+          "Traceback (most recent call last):\n  File \"D:\\codex\\project\\\u6211\u7684\u4e16\u754c\\tests\\test_froi_scheduling.py\", line 230, in test_actual_core_main_heartbeat_pause_termination_separate_accounting\n    self.assertEqual(sup.run(duration=12),0)\n                     ^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\codex\\project\\\u6211\u7684\u4e16\u754c\\supervisor\\supervisor.py\", line 272, in run\n    sample = self._collect()\n             ^^^^^^^^^^^^^^^\n  File \"D:\\codex\\project\\\u6211\u7684\u4e16\u754c\\supervisor\\supervisor.py\", line 199, in _collect\n    self._sample['storage'] = {'used_mb': sum(p.stat().st_size for p in self.database.parent.iterdir()\n                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\codex\\project\\\u6211\u7684\u4e16\u754c\\supervisor\\supervisor.py\", line 199, in <genexpr>\n    self._sample['storage'] = {'used_mb': sum(p.stat().st_size for p in self.database.parent.iterdir()\n                                              ^^^^^^^^\n  File \"C:\\Users\\i\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\pathlib.py\", line 840, in stat\n    return os.stat(self, follow_symlinks=follow_symlinks)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileNotFoundError: [WinError 2] \u7cfb\u7edf\u627e\u4e0d\u5230\u6307\u5b9a\u7684\u6587\u4ef6\u3002: 'D:\\\\codex\\\\project\\\\\u6211\u7684\u4e16\u754c\\\\.test-tmp\\\\tmpst9i3zsd\\\\0.db-shm'\n"
+        ]
+      ]
+    }
+  },
+  "protected_sha256": {
+    "bridge/package.json": "a90fc33418afa2b9cbf4768524b021135b965ecdf993457505bfae3ac44a8428",
+    "bridge/server.js": "3d36b7ba3b629da48c22d53ddbeb642a17ef9e8000024b9939b19d11b53c87b1",
+    "debug/__init__.py": "159b1047c82be2e9b3d101787d8842c5b45735f4594ec74c69299fb19ce108dd",
+    "debug/behavioral_validation.py": "7c3b8fa875a8736b94435a1268e65be76e8a0f16ba37a72f9d60891895a70610",
+    "debug/froi_acceptance.py": "fc3a7d39048b921a37be755a10e5ec4137641a774175eb01676e61fecf2f2906",
+    "debug/froi_acceptance_checks.py": "a7d67893d21a96a4b81ecb41b56d7c6e01abf1be78134562b3f08d6b289a3e32",
+    "debug/froi_acceptance_material.py": "6d2b3016931c94b19dee66e160984551ab00f05b79c364a2a11125191cda6eb1",
+    "debug/froi_validation.py": "9a4c73eab3064c1828e5aed72ee848480273162c42b652916c6b5fc81dada613",
+    "debug/live_evidence.py": "81bd08a5ec0830733b68586d0e568b5fe8f501cc55deb8309b49d4237f5d41ee",
+    "debug/run_fixture.py": "84f6043ad4efaca29dfdef9829469a12901cbdc875b18c9c4da6930db7fe3a3d",
+    "debug/smoke_policy.py": "14861dc639ac955a45d566ad8c9e3b617274d46ccc2d967bbdd412965c86737d",
+    "debug/validate_formal_l0.py": "6aae56e7082130c83306641689bbb062d344a57c55e75437a746470eea9efbbe",
+    "debug/world_entry_live.py": "3106a928219720ff65609b41da521e4002e02e26fd83630aa25ac86246c1d63a",
+    "debug/world_entry_validation.py": "03cac6f78b4b9ec4d514a9cfaacb54384e733d03c6d6b5c9040e025aee814aec",
+    "experimental/gsc0/__init__.py": "847c8dbcdd8121bd93333a1ecc5313cb7eed58233723d2709887f50e8fe577c4",
+    "experimental/gsc0/engine.py": "9cf667adbd9aa2e93ca60e60b8c0c301eb2f33bcc6de52f93a8189461b886c62",
+    "experimental/gsc0/fixtures.py": "616a7946ad9ee6be32b31a867246388fe58cfb5284ae9f8e700ee1902f1041c1",
+    "experimental/gsc0/model.py": "faff3ae603053e072bf30ae9cab4cdb89f58e4ba68bb4441396c8b14956870e5",
+    "experimental/gsc0/tests.py": "fd77476af236d570b447fc2523e8d1643193cbc78a7c4b608142002d1f7879c2",
+    "experimental/gsc0/validate.py": "04c3d9f8f3d671d8cf18a16b42c85621687448c095d762b37e3a3db6b8d3c01e",
+    "FORMAL_RECURSIVE_ORGANIZATION_INTEGRATION_SPEC.md": "5bfadce90dffbaa0696ea3e1631d9743d29eceaf777f64ed8c6d75c95254b57d",
+    "individual/__init__.py": "dbc1467d7e78e8f805ace7bd395dfbb8df0b5f6307dacac2f8f8450bd8b793ce",
+    "individual/action_space.py": "1148708b0fca48040aab7b1cc3104e8a46dc5459e8faa4a85003a51508dd959b",
+    "individual/actions.py": "31beabe39379c0a74d6d1651dfeef59f1bf7cdb9990b5855ff76075a06e17fc2",
+    "individual/behavioral_audit.py": "379fa546c09b9cd01967869bddca259d0b9049df382a483d0ec41a6fd6e5ff4a",
+    "individual/bridge.py": "5e8c528c36b60d1531f9dbe897f873939f43a93057ef81e388cbad50b1f53fe3",
+    "individual/change_detection.py": "7803f4480236cc8be24f1432c91531c976ce76f579a0c36cda84b30640c30fff",
+    "individual/core.py": "7b90c795205d2101054c090ce439c0a6a5e3beb36c6246005985d1fede16d5e5",
+    "individual/decision_provenance.py": "6d2666a1a6f0e21488164aee3254f34b835c288bf55b5ceee77553348982c7bd",
+    "individual/events.py": "61fa23e81b2f36685b7d2351bd7242ddb30cbdec9e2a3c825612b83f1f3b28ed",
+    "individual/experiment.json": "1eb5e69f2a7a1cd2a637779989424e8840edef9f23f76468c22df87bd60666b2",
+    "individual/experiment_audit.py": "68e79626b5fc80ec4508212f5b57f7295e08125b45d2a05ff1c7597a72a2c2dc",
+    "individual/formal_boundary.py": "6bb8232a675a808ba050d13131edcd4d159716a7f1acb30ed3811211eee6206a",
+    "individual/formal_froi.py": "8468377e06eccb0413a2b3028cb34e30cf6c1c89156b6c371ab6b72d9ef57e12",
+    "individual/formal_l0.py": "1b6abea5d568c349bf7c181ecd771fc6f08cd0f1791fa49be7434c4acd354b62",
+    "individual/identity.py": "5d3c718dd760c1a1d242c142a6198106280b57139f62f3d3415b19646a0b442d",
+    "individual/inspect.py": "33a631fbe7be7aad4ac626ea3157774581c54489fb47928c36174cfec5e6d1df",
+    "individual/integration.py": "7be13b5c250eef1333dab7ae39dfc260c0cc60be098abed459f9925a473b421b",
+    "individual/internal_state.py": "bbbc0c39c236dc5d21e3cf11d028a9a0497606d71efcbf87c631fcddc987986c",
+    "individual/l0_audit.py": "4aa4525394640234ddd73f14a8eb102ede6ca90806916d6f6a950430d6343a74",
+    "individual/lifetime.example.json": "557b0365ebd49802028c153d286e5175856368402a5620a4b231e5edd98800fc",
+    "individual/lifetime.py": "2f2c9c0e0b7402da511e074dbf292121e39cf8b656b2a1f28f2abd13d80bdc81",
+    "individual/limit_consequences.py": "31016249d5f8f374344c88355308cc2a5813c054d4473bffa25c4fdbaee58b01",
+    "individual/observation.py": "d0bc8f74494593424c6e947c5bdb8e93bc80fc356d9cb1dc53730711977959db",
+    "individual/policies.py": "040afd47b8e8d1e5d97fa01543de2179945ba30fd264d9ba6d3d5d3cea0ca185",
+    "individual/policy.py": "cd3834e9174cd37d53f40d25910efcc775bf73262717349717065939feba9ab8",
+    "individual/policy_audit.py": "f574c7edd25db423aca98ce3724fbaba4289f7c0f87636b4ef3e9271a9cbfd64",
+    "individual/recursion.py": "fcf1d8f41dbe0d520197e485e658817df5082d7fea1dbd97f50b93c70c6fd126",
+    "individual/state.py": "0d57a22352e1478ea550353b16f499133d7807ac8884a1a9afa9fa06095bc50f",
+    "individual/storage.py": "d93b98784491b93a4a6d85abf0d8904b819db5160d07952a89e1ca619796774a",
+    "individual/structure.py": "b8068ac2cc6166027d1615d249207d2b277f553a20318d6bbfdaf64ce33705c2",
+    "integration/__init__.py": "5e1a50190295da344916f14b2357ca3cb9875bd0dba42976dadb449378657373",
+    "integration/froi.py": "b871be19e13c08c5e941ee6afb2373fe50ffc6265fb026cb731ca4c253feea29",
+    "integration/froi_worker.py": "07c325d2eb6149aa5be22e62c389a5ddd1db4ffef5caecf74cb3413f748f6767",
+    "integration/read_checkpoint.py": "36ab1792db64019bb902404fde29119f7267be7201aa677b7fc46f0e8c43c338",
+    "minecraft/action-space.json": "25f3b95319594fee7d6b76d618b091e9c41166e426d59d3853fffbcb08b6426e",
+    "minecraft/config.example.json": "6e448e0368dc36a742af4e1345b3b3dfcd98c1aa063b7ef0b7454ee4d048d452",
+    "minecraft/package-lock.json": "34feb5d3c139e4a3c4d24062a1ad520e7fbe9eba5478cbed68f389f1765234ed",
+    "minecraft/package.json": "41264ea9ae1f10ffd29b9c24c00a5edd74546d50a82686076ad1898702561f09",
+    "minecraft/scripts/smoke.js": "b4766e819eedb80611ad926b05161ca1ceec761f5114d8f9619922eaa94d40bd",
+    "minecraft/src/body.js": "9c6b2f99d2749398fe0fddf2303bff39ccb8ed8e4060297438106bcc52884d41",
+    "minecraft/src/capabilities.js": "f2dc0fa1ba250d2cabae743eaa03761c6c0be0e452ec0c4371fd737c5b2012cb",
+    "minecraft/src/cli.js": "f7fbd2d87ab7f469063d35095dc04d04f80a1f306d8ddba8f5f798f34c9e2a9f",
+    "minecraft/src/config.js": "886a0ee9a159bb3b97ce0ab812a48efb76c0eff23da3cb5904fd5f26202e4fec",
+    "minecraft/src/errors.js": "24dc105e1d2d4d492f52e6c62e7b5d3dd9d176e6c0bed6777f3c2b7bdfbe47ed",
+    "minecraft/src/index.js": "ef26df549c770eeecd5e697b9bd788078c08a6542a05dafc759314e91605e178",
+    "minecraft/src/native_inputs.js": "9c4a47c276193a4bf91888a7ff4e866c71caa4b985636b43c780e2b0fd7a26c8",
+    "minecraft/test/body.test.js": "d805c762d910249cc2b1ab49a6928ba91b530900fb1c7e6116861866ffd641d5",
+    "minecraft/test/capabilities.test.js": "f527c9322f39dbb72aa1a0f120ec6831646fe938b38ffcbfca02b652b1170e20",
+    "minecraft/test/config.test.js": "e9e9b083b8dc8a5e3af40ede01134935562cb4e786e4670f5a7622de63cc6d98",
+    "minecraft/test/transport.test.js": "ab66778b524421cb06633bd9e02a17f9d9fc4d160d495593b2361582bcde0444",
+    "minecraft/test/world-entry.test.js": "8702914bebe2bbaa42ad96cfc2256b1dfd907a7ecd703ae3846a3a1fa652c8fd",
+    "minecraft/testing/capability_bot.js": "0ee16021c4b6f2061c2f8d1c7e1821ed00f0cee68a9c800b5b15767c5ff7e844",
+    "supervisor/__init__.py": "122e22cd9e927840bfa659b9e5749124ed59458af2db462d906fd3c7a2a8c601",
+    "supervisor/connection.py": "85258d03cf3a3278a139afd938811cd28db720379b4df655dfe030d2248c1dbc",
+    "supervisor/limits.yaml": "8a2aa79264f1e9689dddde9ea5e45d78a09dcc06437efe48e0d09beb7d86093d",
+    "supervisor/supervisor.py": "e2692e5952714028b96c63d1a0999652e90ea484770cbc4c733d7bd3224d27b7",
+    "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tests/fixtures/body.js": "4d930ad0e2879eafde7bd1b2d895c01fd864ff3a2668581b63e433cb1da8901d",
+    "tests/fixtures/capability_body.js": "e2b63fd7e2e92c11bc120bb19442c66024d5e99afa9745a999261f91344fc6d8",
+    "tests/fixtures/core_child.py": "6a9d3495599a0b385b348d85480bb2735e499d0980f8327dbf3a35260f2d9525",
+    "tests/fixtures/formal-baseline-summary.json": "570055fa72afda68cbb3fda6d879c81fde3e37dc7eed4199e12cea2cc73648f9",
+    "tests/fixtures/froi_scheduling_core.py": "c5b42b7df0f948d2fc4256d9282a807377e48b42ded796dcdd9e8f94623aef7e",
+    "tests/fixtures/froi_worker_hook.py": "89c58c652bcdef410f74384def9f6c7904b55aec86a1bab32aa6c5f433bb3d2f",
+    "tests/fixtures/package.json": "a90fc33418afa2b9cbf4768524b021135b965ecdf993457505bfae3ac44a8428",
+    "tests/fixtures/world-entry-live-summary.json": "3ce804817896556fc7ef27415a65410607b50e6c5c37463eeb56a34201c06c46",
+    "tests/test_action_space.py": "88fa88bea439c791eb06b93006cca978acaf1379ab911aef9e3a6d9ba9b98686",
+    "tests/test_behavioral_audit.py": "7492cbb73a7c0ebd130ea71b89cbd72c358da9c87f92b2ba2f5111b1b61f9b0e",
+    "tests/test_connection.py": "edaa7c1a6defa9d468b6bd915a80b0e6a2399dadb921067bd2b88cc30358f7ba",
+    "tests/test_core.py": "1e8a87f979d42067800aea1486dd8814bbfe4ee45d1497a135786b0e61ade1e7",
+    "tests/test_formal_boundary.py": "cdc7a6c0ba019e1f569b354a8c9d6edad179719ba5100e92f9e508a47d4b0c1d",
+    "tests/test_formal_l0.py": "4f4efe339a4ecda01f4e1f7f1141d2d91e9a2c172afc81be8df2b5fddc776567",
+    "tests/test_froi.py": "f6dd89e5e82fd5d1a4d2a24035558cc15a0c3a1b9fa2a786dc6c170f894ade4f",
+    "tests/test_froi_acceptance.py": "985f606934fcbcfc395b760fabdc26bffe2d4d00094aaa68fb6412fa4d76f5e8",
+    "tests/test_froi_scheduling.py": "6eff500b975db754c0f33620f6032893d75da553bec8eb5188dfea35daafd32d",
+    "tests/test_launcher.py": "926cc68eef788b0cf239b2e0c5610d4f1eee66367776c90dd50e662cfd73adfa",
+    "tests/test_lifetime.py": "198695e6dfbc23f0450acc05e9df57d9389c08de87446bfdc816e1cb991458ed",
+    "tests/test_live_evidence.py": "9b0a739c65929642a7194d24159d6cbd57023a93c4bb57ec5769e05986681a2a",
+    "tests/test_policies.py": "9e93dad4a0ae14aeb058d7e674f3de1ee7ac0218a273509597c6df3477b15fdb",
+    "tests/test_read_checkpoint.py": "f89b4d8f1728fb53f9b56bc291c83ba8d0f55131b087118f173d54524ddf16f8",
+    "tests/test_storage.py": "eb83a929f7870a86812aacaccd08d822a96aa01c1a937397db0018e88f3bba91",
+    "tests/test_structure.py": "4ed323c2765cc77c7903272c34a607d16c8d0a0f74b9f10fc15be0fa1101b00c",
+    "tests/test_supervisor.py": "eeaa6cbc9763873c324b105515f6d8b5b19484b8b8e893c8bf119dff056e2c60"
+  },
+  "protection": {
+    "received_runtime_files": 78,
+    "received_database_files": 6,
+    "changed_runtime_files": [],
+    "changed_database_files": []
+  },
+  "initial_pending_checkpoint_work_preserved": true,
+  "harness_freeze_manifest": "FROI_ACCEPTANCE_FREEZE.json",
+  "classification": "FROI-1 ACCEPTANCE HARNESS FROZEN",
+  "remaining_prerequisites": "Actual recorded exact checkpoint/COMPLETE handle, explicit real paired prefixes and next real observation; missing material is never fabricated."
+}

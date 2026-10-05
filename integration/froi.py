@@ -327,30 +327,30 @@ def preflight(database, enabled, caps):
         raise ValueError('FROI lifetime requires its locked FROI profile/capacities; no legacy fallback')
 
 
+def resume_detached(engine, checkpoint, handle, *, screen_effect=False):
+    """TEST_ONLY exact-boundary entry: no prefix, producer, or EventStore call."""
+    if not handle.complete or not checkpoint.requires_read:
+        raise ValueError('Detached effect screening requires a COMPLETE read checkpoint')
+    checkpoint.verify_handle(handle)
+    result = (ReadResult('TEST_ONLY_EFFECT_SCREENED', (), (), (), (), ())
+              if screen_effect else consume(handle, checkpoint.request))
+    return engine.resume_from_read_checkpoint(checkpoint, handle, result,
+        {'category': 'TEST_ONLY', 'effect_screened': screen_effect}, detached=True)
+
+
 def advance_detached(engine, current, frame, state_version, pending_actions, handle, *, screen_effect=False):
-    """TEST_ONLY: same already formed handle, no producer call and no A/EventStore.
+    """Legacy TEST_ONLY preparation convenience, not historical checkpoint recovery.
 
-The returned state is marked detached and rejected by ACore's persistence boundary.
-"""
-    from copy import deepcopy
-    if not handle.complete:
-        raise ValueError('Detached effect screening requires an already COMPLETE organization')
-
-    class DetachedSession:
+    Exact post-hoc T3 must use resume_detached with the saved ReadCheckpoint.
+    This compatibility entry still prepares a new prefix and therefore cannot
+    recover a live frame whose prefix has already generated consequence UUIDs.
+    """
+    class Preparation:
         test_only = True
         caps = engine.froi_caps
+        checkpoint_request = handle.request
+        history_cutoff = handle.history_cutoff
 
-        def read(self, current_frame, feedback, version):
-            request = ReadRequest(handle.request.individual_id, version, canonical(current_frame.to_dict()),
-                                  feedback['next_relation_ref'], handle.request.origin)
-            if request != handle.request:
-                result = ReadResult('BOUNDARY_MISMATCH', (), (), (), (), ())
-            elif screen_effect:
-                # Preserve the full handle; only consumer access is screened.
-                result = ReadResult('TEST_ONLY_EFFECT_SCREENED', (), (), (), (), ())
-            else:
-                result = consume(handle, request)
-            return handle, result, {'category': 'TEST_ONLY', 'effect_screened': screen_effect}
-
-    return engine.advance(deepcopy(current), deepcopy(frame), state_version, deepcopy(pending_actions),
-                          organization=DetachedSession())
+    checkpoint = engine.prepare_read_checkpoint(current, frame, state_version, pending_actions,
+                                                organization=Preparation())
+    return resume_detached(engine, checkpoint, handle, screen_effect=screen_effect)

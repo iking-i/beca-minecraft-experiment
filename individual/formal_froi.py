@@ -26,16 +26,39 @@ class FormalFROIEngine(FormalL0Engine):
         self.froi_caps = froi_caps if froi_caps is not None else load_caps()
 
     def advance(self, current, frame, state_version, pending_actions, *, organization=None):
-        """Synchronous compatibility entry; runtime drives the same continuation."""
-        steps = self.advance_steps(current, frame, state_version, pending_actions, organization=organization)
-        try:
-            checkpoint = next(steps)
-            while True:
-                checkpoint = steps.send(organization.read(*checkpoint))
-        except StopIteration as done:
-            return done.value
+        checkpoint = self.prepare_read_checkpoint(current, frame, state_version, pending_actions,
+                                                  organization=organization)
+        result = organization.read(checkpoint.frame, checkpoint.feedback, state_version) if checkpoint.requires_read else (None, None, {})
+        return self.resume_from_read_checkpoint(checkpoint, *result)
 
     def advance_steps(self, current, frame, state_version, pending_actions, *, organization=None):
+        """Compatibility adapter only; all post-read logic is in resume()."""
+        checkpoint = self.prepare_read_checkpoint(current, frame, state_version, pending_actions,
+                                                  organization=organization)
+        result = (yield (checkpoint.frame, checkpoint.feedback, state_version)) if checkpoint.requires_read else (None, None, {})
+        return self.resume_from_read_checkpoint(checkpoint, *result)
+
+    def _failure(self, frame, state_version, journal, new_limits):
+        def failure(code, resource, operation, used, capacity, requested, refs=(), metadata=None):
+            record = {'limit_id': str(uuid4()), 'resource_port_id': PORT_IDS[resource],
+                      'operation_id': OP_IDS[operation], 'used': used, 'capacity': capacity,
+                      'requested': requested, 'operation_performed': False,
+                      'source_state_version': state_version, 'frame_id': frame.frame_id,
+                      'object_refs': list(refs)}
+            record = raw_consequence(record)
+            new_limits.append(record)
+            journal.append(('CURRENT_LIMIT_ENCOUNTER', {
+                'limit_id': record['limit_id'], 'a_facing_payload': deepcopy(record),
+                'auditor_metadata': metadata if metadata is not None else auditor_metadata(code, resource, operation)}))
+            return record
+
+        return failure
+
+    def prepare_read_checkpoint(self, current, frame, state_version, pending_actions, *, organization=None):
+        """Run the prefix once; capture all continuation-live values as immutable JSON."""
+        from integration.read_checkpoint import ReadCheckpoint
+        frame = deepcopy(frame)
+        experience, feedback, root, action_code = None, {}, None, None
         validate_boundary(current, self.caps, self.resource_caps)
         internal = InternalState.from_dict(current) if current else InternalState()
         local = internal.l0_state
@@ -59,18 +82,7 @@ class FormalFROIEngine(FormalL0Engine):
             if organization.test_only:
                 local['froi_detached_test_only'] = True
 
-        def failure(code, resource, operation, used, capacity, requested, refs=(), metadata=None):
-            record = {'limit_id': str(uuid4()), 'resource_port_id': PORT_IDS[resource],
-                      'operation_id': OP_IDS[operation], 'used': used, 'capacity': capacity,
-                      'requested': requested, 'operation_performed': False,
-                      'source_state_version': state_version, 'frame_id': frame.frame_id,
-                      'object_refs': list(refs)}
-            record = raw_consequence(record)
-            new_limits.append(record)
-            journal.append(('CURRENT_LIMIT_ENCOUNTER', {
-                'limit_id': record['limit_id'], 'a_facing_payload': deepcopy(record),
-                'auditor_metadata': metadata if metadata is not None else auditor_metadata(code, resource, operation)}))
-            return record
+        failure = self._failure(frame, state_version, journal, new_limits)
 
         if local.get('profile') != 'formal_l0':
             # Preserve legacy history/lineage. Suspend its execution, never erase or repurpose it.
@@ -192,15 +204,48 @@ class FormalFROIEngine(FormalL0Engine):
             process['status'] = 'ACTIVE'
             feedback = deepcopy(local.get('feedback', {}))
             reference = feedback.get('next_relation_ref')
+        elif previous and delta['sample_gap']:
+            journal.append(('TEMPORAL_LINK_UNRESOLVED', {'frame_ids': [previous.frame_id, frame.frame_id],
+                'reason': 'carrier_epoch_or_encoding_changed', 'action_ids': delta['after_action_ids']}))
+            if pid:
+                internal.active_processes[pid]['status'] = 'PAUSED'
+            # Never turn a world/body sampling gap into a consecutive-world experience.
+
+
+        return ReadCheckpoint.capture(self, organization, internal, frame, state_version,
+            journal, experience, feedback, prior_limits, new_limits, retained_frame,
+            delta, unit_id, pid, root, action_code)
+
+    def resume_from_read_checkpoint(self, checkpoint, handle, read, diagnostics, *, detached=False):
+        """The sole post-read interpreter for live and TEST_ONLY consumers."""
+        checkpoint.verify_engine(self)
+        checkpoint.verify_handle(handle)
+        saved = checkpoint.payload
+        internal = InternalState.from_dict(saved['internal'])
+        local = internal.l0_state
+        frame = ObservationFrame(**saved['frame'])
+        state_version = saved['state_version']
+        journal = [(kind, payload) for kind, payload in saved['journal']]
+        new_limits, prior_limits = saved['new_limits'], saved['prior_limits']
+        retained_frame, delta = saved['retained_frame'], saved['delta']
+        unit_id, pid = saved['unit_id'], saved['pid']
+        experience, feedback = saved['experience'], saved['feedback']
+        root, action_code = saved['root'], saved['action_code']
+        reference = feedback.get('next_relation_ref')
+        test_only = detached or saved['test_only']
+        if test_only:
+            local['froi_detached_test_only'] = True
+        failure = self._failure(frame, state_version, journal, new_limits)
+        if experience is not None:
+            process = internal.active_processes[pid]
             organization_read = None
-            if organization is not None and reference:
-                handle, read, diagnostics = yield (deepcopy(frame), deepcopy(feedback), state_version)
+            if reference:
                 organization_read = {'status': read.status,
                     'organization_status': handle.status if handle else 'INVALID',
                     'closure_complete': bool(handle and handle.complete),
                     'consumed_keys': read.consumed_keys, 'direct_supports': read.supports,
                     'root_witnesses': read.roots, 'conflicts': read.conflicts,
-                    'diagnostics': diagnostics, 'test_only': organization.test_only}
+                    'diagnostics': diagnostics, 'test_only': test_only}
                 journal.append(('FROI_ORGANIZATION_FORMED', handle.audit() if handle else {
                     'status': 'INVALID', 'closure_complete': False, 'diagnostic': diagnostics}))
                 journal.append(('FROI_ORGANIZATION_CONSUMED', deepcopy(organization_read)))
@@ -208,15 +253,15 @@ class FormalFROIEngine(FormalL0Engine):
                 expected = list(read.outcomes)
                 if not read.succeeded:
                     failure('FROI_' + read.status, 'organization_memory', 'read_organization',
-                        len(handle.graph) if handle else 0, organization.caps.structures, 1, [reference],
+                        len(handle.graph) if handle else 0, self.froi_caps.structures, 1, [reference],
                         metadata={'semantic_code': 'FROI_' + read.status,
-                            'classification': 'TEST_ONLY_INTERVENTION' if organization.test_only else 'READ_OPERATION_UNAVAILABLE',
-                            'source': 'TEST_ONLY' if organization.test_only else 'EXTERNAL_FIXED_MECHANISM',
+                            'classification': 'TEST_ONLY_INTERVENTION' if test_only else 'READ_OPERATION_UNAVAILABLE',
+                            'source': 'TEST_ONLY' if test_only else 'EXTERNAL_FIXED_MECHANISM',
                             'organization_status': handle.status if handle else 'INVALID',
                             'physical_capacity_exhaustion_claimed': bool(handle and handle.status == 'RESOURCE_LIMIT')})
                     frame.internal_observations = prior_limits + deepcopy(new_limits)
                     experience['limit_consequences'] = deepcopy(frame.internal_observations)
-            elif organization is not None:
+            else:
                 # No real reference: no manufactured query, value or read failure.
                 read_relation, expected = None, []
             journal.append(('EXPERIENCE_FORMED', deepcopy(experience)))
@@ -229,8 +274,7 @@ class FormalFROIEngine(FormalL0Engine):
                     'outcome_previously_observed': unit_id in expected if reference == root else None,
                     'consumed_limit_ids': [x['limit_id'] for x in frame.internal_observations]},
                 'provisional': True, 'source': 'EXTERNAL_FIXED_MECHANISM'}
-            if organization is not None:
-                partial['processing']['organization_read'] = organization_read
+            partial['processing']['organization_read'] = organization_read
             process['last_information_sequence'] = frame.sequence_id
             process['output'] = {'partial_id': partial['partial_id'], 'publication_number': process['attempts']}
             journal.append(('RECURSIVE_PARTIAL_OUTPUT', deepcopy(partial)))
@@ -294,13 +338,6 @@ class FormalFROIEngine(FormalL0Engine):
                 'observed_limit_ids': partial['processing']['consumed_limit_ids']}
             internal.latest_feedback = deepcopy(local['feedback'])
             journal.append(('RECURSIVE_FEEDBACK_STORED', deepcopy(local['feedback'])))
-        elif previous and delta['sample_gap']:
-            journal.append(('TEMPORAL_LINK_UNRESOLVED', {'frame_ids': [previous.frame_id, frame.frame_id],
-                'reason': 'carrier_epoch_or_encoding_changed', 'action_ids': delta['after_action_ids']}))
-            if pid:
-                internal.active_processes[pid]['status'] = 'PAUSED'
-            # Never turn a world/body sampling gap into a consecutive-world experience.
-
         # Failures created during integration become the NEXT input, not a solved problem.
         local['pending_consequences'] = deepcopy(new_limits)
         local['previous_frame'] = {**retained_frame, 'self_channels': {}, 'spatial_data': {}, 'nearby_data': {}}
@@ -310,4 +347,9 @@ class FormalFROIEngine(FormalL0Engine):
         internal.latest_structure_changes = {'new': [], 'removed': [], 'merged': []}
         journal.append(('OBSERVATION_FRAME', frame.to_dict()))
         journal.append(('CHANGE_DETECTED', delta))
+        if checkpoint.requires_read:
+            from integration.read_checkpoint import AUDIT_EVENT
+            artifact = checkpoint.artifact(handle)
+            artifact['test_only'] = test_only
+            journal.append((AUDIT_EVENT, artifact))
         return internal, frame, journal

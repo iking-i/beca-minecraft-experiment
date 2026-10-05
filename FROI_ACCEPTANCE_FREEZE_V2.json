@@ -1,0 +1,59 @@
+{
+  "schema": "FROI-1-ACCEPTANCE-FREEZE-v2",
+  "harness_version": "v2",
+  "status": "FROI-1 ACCEPTANCE HARNESS v2 FROZEN",
+  "base_acceptance_commit": "550b4bc46647371ca34f9d94043c051cde42263e",
+  "freeze_commit_binding": "Git commit containing this manifest; measured HEAD recorded and PRE/POST checked in every acceptance run",
+  "v1_manifest_sha256": "5cc80c6fe99a00dc8495f9b62927931359d16c855e6ac688a9614c07ae55e369",
+  "measurement_tool_hashes": {
+    "tools/froi_acceptance_v2/__init__.py": "084e6b917b78bfdd8e4b7d2c658d46e38666fd37cc80ddc289f65504b93661b9",
+    "tools/froi_acceptance_v2/__main__.py": "a58c00a0b7e8cf9737c53f4554217786ad0b311fe92146f3444733bd1b2e3fb9",
+    "tools/froi_acceptance_v2/checks.py": "67d07426c2da3430f62c5ecf9565a6763ceb8ed3b14aad01f3ff973866740cdc",
+    "tools/froi_acceptance_v2/material.py": "54fad62aa6ccafdfaa2837e55b71a9e2881ac65db5850dda896a2afa18ced204",
+    "tools/froi_acceptance_v2/test_facility.py": "eb66adf351101e4be55a0012a562d28a5cdab812dc45620a7a8d862248fe7d22"
+  },
+  "engineering_regression": {
+    "passed": true,
+    "python_existing": {
+      "run": 270,
+      "passed": true
+    },
+    "v2_equivalence_and_negative_controls": {
+      "run": 12,
+      "passed": true
+    },
+    "independent_result_dependence": {
+      "run": 8,
+      "passed": true
+    },
+    "minecraft_interface": {
+      "run": 42,
+      "passed": true,
+      "transport": "authorized isolated localhost fixtures, no Minecraft world"
+    },
+    "initial_invocation_issues": [
+      "Node sandbox localhost EACCES: authorized rerun passed42",
+      "Result-dependence bare ControlTests lacks populated data: existing validation entry passed8"
+    ]
+  },
+  "streaming_probe": {
+    "database_bytes": 4304048128,
+    "peak_rss_bytes": 166670336,
+    "largest_single_decoded_event_bytes": 30707256,
+    "rows_scanned": 4022,
+    "bytes_streamed": 8638430781,
+    "duration_seconds": 221.46799999999348,
+    "memory_budget_bytes": 536870912,
+    "bounded_memory_status": "PASS"
+  },
+  "protections": {
+    "LIVE_RUNTIME_SEMANTICS_CHANGED": "NO",
+    "A_CAPABILITIES_CHANGED": "NO",
+    "GSC_RULES_CHANGED": "NO",
+    "FROI_CODEC_CHANGED": "NO",
+    "CAPS_CHANGED": "NO",
+    "ACCEPTANCE_CRITERIA_CHANGED": "NO"
+  },
+  "V1_V2_ACCEPTANCE_SEMANTICS_EQUIVALENT": "PASS",
+  "runtime_commit": "MATERIAL_UNAVAILABLE"
+}
