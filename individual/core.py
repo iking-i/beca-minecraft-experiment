@@ -34,7 +34,7 @@ class ACore:
 
     def __init__(self, database, bridge, policy=None, observation_interval=1.0, session_context=None,
                  session_label='Minecraft', initialize_lifetime=False, experiment_profile='formal_l0', physical_caps=None,
-                 resource_caps=None, froi=False, froi_caps=None):
+                 resource_caps=None, froi=False, froi_caps=None, froi_async=False, worker_factory=None):
         if experiment_profile not in ('formal_l0', 'legacy_policy_debug'):
             raise ValueError('Unknown experiment profile')
         if not math.isfinite(observation_interval) or observation_interval <= 0:
@@ -44,6 +44,12 @@ class ACore:
         self._experiment_profile = 'legacy_policy_debug' if policy is not None else experiment_profile
         if froi and self._experiment_profile != 'formal_l0':
             raise ValueError('FROI requires the formal_l0 path')
+        self._froi_async = froi and froi_async
+        from integration.froi_worker import Worker
+        self._worker_factory = worker_factory or Worker
+        self._computation = None
+        self._external_resources = None
+        self._wait_controls = []
         self._froi = froi
         from integration.froi import load_caps, preflight as froi_preflight
         self._froi_caps = froi_caps if froi_caps is not None else load_caps()
@@ -128,17 +134,45 @@ class ACore:
     def accept_observation(self, observation):
         if not self._session_active:
             raise RuntimeError('Open a session before accepting environment observations')
+        if self._computation is not None:
+            raise RuntimeError('ONE_IN_FLIGHT_JOB: recursive checkpoint is frozen')
         fields = observation_fields(observation)
         sequence = self._state.environment_sequence + 1
         frame = self._encoder.encode(observation, sequence, self._body_epoch)
         if self._froi:
             from integration.froi import OrganizationSession, history_from_store
             organization = OrganizationSession(history_from_store(self._store, self._state), self._froi_caps)
-            internal, frame, journal = self._engine.advance(self._state.internal_state, frame,
-                self._state.state_version + 1, self._pending_actions, organization=organization)
+            if self._froi_async:
+                continuation = self._engine.advance_steps(self._state.internal_state, frame,
+                    self._state.state_version + 1, self._pending_actions, organization=organization)
+                try:
+                    read_frame, feedback, version = next(continuation)
+                except StopIteration as done:
+                    internal, frame, journal = done.value
+                else:
+                    from integration.froi_worker import JobSpec
+                    job = JobSpec.create(organization.history, read_frame, feedback, version,
+                                         self._state.session_id, organization.caps)
+                    try:
+                        worker = self._worker_factory(job)
+                    except Exception as error:
+                        continuation.close()
+                        self._transition('FROI_JOB_EXECUTION', {'job': job.audit(),
+                            'execution_status': 'WORKER_FAILED', 'reason': str(error), 'partial_published': False})
+                        raise RuntimeError('FROI host execution: WORKER_FAILED') from error
+                    self._computation = {'job': job, 'worker': worker, 'continuation': continuation,
+                        'observation': deepcopy(observation), 'fields': fields, 'sequence': sequence,
+                        'base_version': self._state.state_version, 'base_internal': deepcopy(self._state.internal_state)}
+                    return self.state
+            else:
+                internal, frame, journal = self._engine.advance(self._state.internal_state, frame,
+                    self._state.state_version + 1, self._pending_actions, organization=organization)
         else:
             internal, frame, journal = self._engine.advance(self._state.internal_state, frame,
                                      self._state.state_version + 1, self._pending_actions)
+        return self._commit_observation(observation, fields, sequence, internal, frame, journal)
+
+    def _commit_observation(self, observation, fields, sequence, internal, frame, journal):
         provision(internal, observation.get('actionSpace'), self._state.state_version + 1, journal)
         if self._experiment_profile == 'formal_l0' and 'action.parameter_binding' in internal.policy_registry:
             internal.policy_registry['action.parameter_binding']['formal_path_enabled'] = True
@@ -150,12 +184,67 @@ class ACore:
         self._await_fresh_observation = False
         return result
 
+    def _cancel_computation(self, reason, classification='CANCELLED'):
+        pending = self._computation
+        if pending is None:
+            return
+        pending['worker'].cancel()
+        pending['continuation'].close()
+        self._computation = None
+        self._transition('FROI_JOB_EXECUTION', {'job': pending['job'].audit(),
+            'execution_status': classification, 'reason': reason, 'partial_published': False},
+            additional_events=self._wait_controls)
+        self._wait_controls = []
+
+    def _poll_computation(self):
+        pending = self._computation
+        result = pending['worker'].poll()
+        if result is None:
+            return
+        from integration.froi_worker import validate_result
+        from integration.froi import ReadResult, consume
+        job = pending['job']
+        classification = validate_result(job, result)
+        if (self._state.individual_id != job.individual_id or self._state.session_id != job.session_id
+            or self._state.state_version != pending['base_version']
+            or self._state.internal_state != pending['base_internal']):
+            classification = 'STALE_RESULT'
+        if classification != 'RETURNED':
+            self._cancel_computation(result.diagnostic or classification, classification)
+            raise RuntimeError('FROI host execution: ' + classification)
+        handle = result.handle
+        read = consume(handle, handle.request) if handle else ReadResult('INVALID', (), (), (), (), ())
+        try:
+            pending['continuation'].send((handle, read, {'reason': result.diagnostic} if result.diagnostic else {}))
+        except StopIteration as done:
+            internal, frame, journal = done.value
+        else:
+            self._cancel_computation('Unexpected second checkpoint', 'WORKER_FAILED')
+            raise RuntimeError('ONE_IN_FLIGHT_JOB: unexpected second read')
+        pending['worker'].thread.join(timeout=0)
+        self._computation = None
+        journal.extend([('FROI_JOB_SUBMITTED', job.audit()), ('FROI_JOB_EXECUTION', {
+            'job_id': job.job_id, 'execution_status': 'RETURNED',
+            'computation_status': handle.status if handle else 'INVALID', 'exact_identity_verified': True}),
+            *self._wait_controls])
+        self._wait_controls = []
+        self._commit_observation(pending['observation'], pending['fields'], pending['sequence'], internal, frame, journal)
+        if pending.get('after_action'):
+            self._next_observation = self._next_action = time.monotonic() + self._observation_interval
+        else:
+            # Resume the original tick's action stage. Starting another observation
+            # first would starve that stage whenever every read requires a worker.
+            self._next_observation = float('inf')
+            self._next_action = time.monotonic()
+
     def accept_bridge_status(self, status, source=None):
         if not isinstance(status, dict) or 'state' not in status:
             raise ValueError('Invalid bridge status')
         previous = self._bridge_status
         if status == previous:
             return self.state
+        if self._computation is not None:
+            self._cancel_computation('bridge_status_changed')
         self._bridge_status = deepcopy(status)
         event_type = 'BRIDGE_STATE_CHANGED'
         runtime_status = 'waiting_for_bridge'
@@ -197,6 +286,8 @@ class ACore:
         return result
 
     def execute_action(self, action, initiator='policy'):
+        if self._computation is not None:
+            raise RuntimeError('No actions while computation checkpoint is frozen')
         if not self._session_active:
             raise RuntimeError('Actions require an active session')
         if self._policy is None and initiator != 'supervisor_pause':
@@ -226,6 +317,8 @@ class ACore:
         return True
 
     def execute_discrete_action(self, action_code=None, parameters=None):
+        if self._computation is not None:
+            raise RuntimeError('No actions while computation checkpoint is frozen')
         if self._paused or self._closed or not self._session_active:
             raise RuntimeError('Actions are paused or stopped')
         if not self._state.observation_frame or self._await_fresh_observation:
@@ -299,6 +392,9 @@ class ACore:
         if not isinstance(resources, dict):
             raise ValueError('Invalid external resource sample')
         internal = InternalState.from_dict(self._state.internal_state) if self._state.internal_state else InternalState()
+        if self._computation is not None:
+            self._external_resources = deepcopy(resources)
+            return self.state
         internal.resource_state = deepcopy(resources)
         internal.structure_revision += 1
         return self._transition('RESOURCE_OBSERVED', resources, internal_state=internal.to_dict())
@@ -315,6 +411,10 @@ class ACore:
                 'revision_meaning': 'state_and_evidence_revision_not_layer_ascent',
                 'experiment_profile': self._experiment_profile, 'active_recursive_layer': 'L0',
                 'upward_recursion_observed': False,
+                'computation_worker': self._computation['worker'].telemetry() if self._computation else None,
+                'computation_wait': self._computation is not None,
+                'external_resources_while_waiting': self._external_resources,
+                'manual_paused': self._paused,
                 'new_structures': structures.get('new', []),
                 'removed_or_merged': structures.get('removed', []) + structures.get('merged', []),
                 'observation_delta': {'change_id': delta.get('change_id'), 'changed': len(delta.get('changes', [])),
@@ -328,6 +428,10 @@ class ACore:
     def pause(self):
         if not self._paused:
             self._paused = True
+            if self._computation is not None:
+                self._wait_controls.append(('SUPERVISOR_PAUSED', {'recursive_checkpoint_frozen': True,
+                    'source': 'EXTERNAL_FIXED_MECHANISM'}))
+                return
             self._transition('SUPERVISOR_PAUSED', {'observations_continue': True}, status='paused')
             if self._session_active and self._bridge_status.get('connected'):
                 self.execute_action({'method': 'move', 'args': {'direction': 'stop'}}, initiator='supervisor_pause')
@@ -335,6 +439,9 @@ class ACore:
     def resume(self):
         if self._paused:
             self._paused = False
+            if self._computation is not None:
+                self._wait_controls.append(('SUPERVISOR_RESUMED', {'recursive_checkpoint_frozen': True}))
+                return
             self._transition('SUPERVISOR_RESUMED', {}, status=('between_sessions' if not self._session_active else
                 'running' if self._bridge_status.get('connected') else 'waiting_for_bridge'))
 
@@ -359,6 +466,9 @@ class ACore:
                 raise BridgeError('BRIDGE_EXITED', 'Bridge process stopped; experiment will terminate without restarting A')
         if not self._bridge.alive:
             raise BridgeError('BRIDGE_EXITED', 'Bridge process is not alive')
+        if self._computation is not None:
+            self._poll_computation()
+            return
         if not self._session_active:
             return
         if (not self._bridge_status.get('connected') and self._bridge_status.get('state') != 'dead') or self._bridge_status.get('lastError'):
@@ -366,20 +476,27 @@ class ACore:
         if now >= self._next_observation:
             self._observe()
             self._next_observation = now + self._observation_interval
+        if self._computation is not None:
+            return
         if not self._paused and not self._await_fresh_observation and self._policy is not None:
             action = self._policy.next_action(self.state, now)
             if action:
                 success = self.execute_action(action)
                 self._policy.action_finished(success, self.state)
                 self._observe()
+                if self._computation is not None:
+                    self._computation['after_action'] = True
                 self._next_observation = time.monotonic() + self._observation_interval
         elif not self._paused and now >= self._next_action and self._state.observation_frame and not self._await_fresh_observation:
             self.execute_discrete_action()
             self._observe()
+            if self._computation is not None:
+                self._computation['after_action'] = True
             self._next_action = time.monotonic() + self._observation_interval
             self._next_observation = self._next_action
 
     def end_session(self, reason='manual_session_end', carrier_stop=False):
+        self._cancel_computation(reason)
         if self._closed:
             raise RuntimeError('A Core is closed')
         if self._session_active:
@@ -491,7 +608,7 @@ def main():
                      experiment_profile=context['experiment_profile'],
                      physical_caps=FormalLimits.load(args.physical_caps) if context['experiment_profile']=='formal_l0' else None,
                      resource_caps=args.environment_caps, froi=args.froi,
-                     froi_caps=load_froi_caps(args.froi_caps))
+                     froi_caps=load_froi_caps(args.froi_caps), froi_async=True)
         emit('CORE_STARTED', individual_id=core.state.individual_id, state_version=core.state.state_version,
              session_id=core.state.session_id, lifetime_role='snapshot_branch' if args.branch_db else 'mainline')
         threading.Thread(target=read_controls, daemon=True).start()
@@ -506,6 +623,9 @@ def main():
                 message = controls.get_nowait()
                 command = message['command']
                 if command == 'terminate':
+                    termination = message.get('payload') or {}
+                    reason = termination.get('reason', 'manual_terminate')
+                    core._cancel_computation(reason, termination.get('worker_execution_status', 'CANCELLED'))
                     terminate = True
                     break
                 if command == 'resource_sample':
@@ -532,7 +652,7 @@ def main():
                 snapshot = core.state
                 emit('HEARTBEAT', individual_id=snapshot.individual_id, state_version=snapshot.state_version,
                      session_id=snapshot.session_id if core._session_active else None,
-                     environment_sequence=snapshot.environment_sequence, status=snapshot.status, bridge_pid=bridge.pid,
+                     environment_sequence=snapshot.environment_sequence, status='paused' if core._paused else snapshot.status, bridge_pid=bridge.pid,
                      structure=core.telemetry())
                 heartbeat_at = time.monotonic() + 1.0
             time.sleep(0.05)
