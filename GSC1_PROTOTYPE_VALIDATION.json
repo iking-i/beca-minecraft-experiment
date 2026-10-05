@@ -1,0 +1,2461 @@
+{
+  "GSC1_PROTOTYPE": "passed",
+  "scope": "Independent TEST_ONLY read-only GSC-0 consumer",
+  "frozen_gsc0_commit": "8801ca88093e5c66fa11ba6eb4c084608a1bd690",
+  "tests": {
+    "gsc1": {
+      "run": 21,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "successful": true
+    },
+    "frozen_gsc0_regression": {
+      "run": 23,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "successful": true
+    }
+  },
+  "core_checks": {
+    "complete_unique_grounding": "passed",
+    "unresolved": "passed",
+    "conflict": "passed",
+    "paired_history_causality": "passed",
+    "history_ablation": "passed",
+    "current_input_ablation": "passed",
+    "order_independence": "passed",
+    "idempotence": "passed",
+    "upstream_resource_limit_rejection": "passed",
+    "no_selector": "passed",
+    "no_default_filling": "passed",
+    "lineage_completeness": "passed",
+    "read_only_checker": "passed",
+    "isolation": "passed"
+  },
+  "condition": {
+    "nodes": [
+      [
+        "Node",
+        "gsc1",
+        "q",
+        "variable",
+        "h0"
+      ],
+      [
+        "Node",
+        "gsc1",
+        "q",
+        "variable",
+        "h1"
+      ],
+      [
+        "Node",
+        "gsc1",
+        "q",
+        "variable",
+        "h2"
+      ],
+      [
+        "Node",
+        "gsc1",
+        "q",
+        "variable",
+        "p0"
+      ],
+      [
+        "Node",
+        "gsc1",
+        "q",
+        "variable",
+        "p1"
+      ],
+      [
+        "Node",
+        "gsc1",
+        "q",
+        "variable",
+        "p2"
+      ]
+    ],
+    "values": [
+      [
+        "Value",
+        "TypeA",
+        "A0"
+      ],
+      [
+        "Value",
+        "TypeA",
+        "A1"
+      ],
+      [
+        "Value",
+        "TypeB",
+        "B0"
+      ],
+      [
+        "Value",
+        "TypeB",
+        "B1"
+      ],
+      [
+        "Value",
+        "TypeC",
+        "C0"
+      ],
+      [
+        "Value",
+        "TypeC",
+        "C1"
+      ]
+    ],
+    "signatures": [],
+    "version": "GSC-0-TEST_ONLY-v1"
+  },
+  "schema": [
+    "OutwardSchema",
+    "O",
+    [
+      [
+        "p0",
+        [
+          "Node",
+          "gsc1",
+          "q",
+          "variable",
+          "p0"
+        ],
+        "TypeA"
+      ],
+      [
+        "p1",
+        [
+          "Node",
+          "gsc1",
+          "q",
+          "variable",
+          "p1"
+        ],
+        "TypeB"
+      ],
+      [
+        "p2",
+        [
+          "Node",
+          "gsc1",
+          "q",
+          "variable",
+          "p2"
+        ],
+        "TypeC"
+      ]
+    ]
+  ],
+  "shared_current_input": [
+    {
+      "key": [
+        "Eq",
+        [
+          "Node",
+          "gsc1",
+          "q",
+          "variable",
+          "h0"
+        ],
+        [
+          "Node",
+          "gsc1",
+          "q",
+          "variable",
+          "p0"
+        ]
+      ],
+      "sources": [
+        "D0"
+      ],
+      "rule": "INPUT"
+    },
+    {
+      "key": [
+        "Eq",
+        [
+          "Node",
+          "gsc1",
+          "q",
+          "variable",
+          "h1"
+        ],
+        [
+          "Node",
+          "gsc1",
+          "q",
+          "variable",
+          "p1"
+        ]
+      ],
+      "sources": [
+        "D1"
+      ],
+      "rule": "INPUT"
+    },
+    {
+      "key": [
+        "Eq",
+        [
+          "Node",
+          "gsc1",
+          "q",
+          "variable",
+          "h2"
+        ],
+        [
+          "Node",
+          "gsc1",
+          "q",
+          "variable",
+          "p2"
+        ]
+      ],
+      "sources": [
+        "D2"
+      ],
+      "rule": "INPUT"
+    }
+  ],
+  "shared_current_input_digest": "4059203a686188146842d885304aa1be51bce6b1e9b870878372415f68158db1",
+  "history_changed_records": [
+    0,
+    2
+  ],
+  "cases": {
+    "A": {
+      "history": [
+        {
+          "key": [
+            "Bind",
+            [
+              "Node",
+              "gsc1",
+              "q",
+              "variable",
+              "h0"
+            ],
+            [
+              "Value",
+              "TypeA",
+              "A0"
+            ]
+          ],
+          "sources": [
+            "H0"
+          ],
+          "rule": "INPUT"
+        },
+        {
+          "key": [
+            "Bind",
+            [
+              "Node",
+              "gsc1",
+              "q",
+              "variable",
+              "h1"
+            ],
+            [
+              "Value",
+              "TypeB",
+              "B0"
+            ]
+          ],
+          "sources": [
+            "H1"
+          ],
+          "rule": "INPUT"
+        },
+        {
+          "key": [
+            "Bind",
+            [
+              "Node",
+              "gsc1",
+              "q",
+              "variable",
+              "h2"
+            ],
+            [
+              "Value",
+              "TypeC",
+              "C0"
+            ]
+          ],
+          "sources": [
+            "H2"
+          ],
+          "rule": "INPUT"
+        }
+      ],
+      "initial_grounding": {
+        "status": "UNRESOLVED",
+        "complete": false,
+        "outward": null,
+        "closure_digest": "5069f8971a0013f6ab2107297c7bea7e3ca3bc6e038923e3bf11f227b75431e3",
+        "reason": null,
+        "ports": [
+          {
+            "name": "p0",
+            "status": "UNRESOLVED",
+            "values": [],
+            "evidence": []
+          },
+          {
+            "name": "p1",
+            "status": "UNRESOLVED",
+            "values": [],
+            "evidence": []
+          },
+          {
+            "name": "p2",
+            "status": "UNRESOLVED",
+            "values": [],
+            "evidence": []
+          }
+        ]
+      },
+      "closure": {
+        "status": "COMPLETE",
+        "closure_complete": true,
+        "leaf_count": 18,
+        "composite_count": 171,
+        "rule_instance_count": 133632,
+        "lineage_edge_count": 397362,
+        "closure_rounds": 21,
+        "stored_support_index_entries": 660,
+        "operations": 263214
+      },
+      "grounding": {
+        "status": "COMPLETE_GROUNDED",
+        "complete": true,
+        "outward": {
+          "key": [
+            "GroundedOutwardStructure",
+            [
+              "OutwardSchema",
+              "O",
+              [
+                [
+                  "p0",
+                  [
+                    "Node",
+                    "gsc1",
+                    "q",
+                    "variable",
+                    "p0"
+                  ],
+                  "TypeA"
+                ],
+                [
+                  "p1",
+                  [
+                    "Node",
+                    "gsc1",
+                    "q",
+                    "variable",
+                    "p1"
+                  ],
+                  "TypeB"
+                ],
+                [
+                  "p2",
+                  [
+                    "Node",
+                    "gsc1",
+                    "q",
+                    "variable",
+                    "p2"
+                  ],
+                  "TypeC"
+                ]
+              ]
+            ],
+            [
+              [
+                "p0",
+                [
+                  "Value",
+                  "TypeA",
+                  "A0"
+                ]
+              ],
+              [
+                "p1",
+                [
+                  "Value",
+                  "TypeB",
+                  "B0"
+                ]
+              ],
+              [
+                "p2",
+                [
+                  "Value",
+                  "TypeC",
+                  "C0"
+                ]
+              ]
+            ]
+          ],
+          "fields": {
+            "p0": {
+              "type": "TypeA",
+              "value": "A0"
+            },
+            "p1": {
+              "type": "TypeB",
+              "value": "B0"
+            },
+            "p2": {
+              "type": "TypeC",
+              "value": "C0"
+            }
+          }
+        },
+        "closure_digest": "f6bd9a368b44452a5d94ffd4e2201f6f1e4de75580177679bb1393d6425398dc",
+        "reason": null,
+        "ports": [
+          {
+            "name": "p0",
+            "status": "GROUNDED",
+            "values": [
+              [
+                "Value",
+                "TypeA",
+                "A0"
+              ]
+            ],
+            "evidence": [
+              {
+                "binding_key": [
+                  "Bind",
+                  [
+                    "Node",
+                    "gsc1",
+                    "q",
+                    "variable",
+                    "p0"
+                  ],
+                  [
+                    "Value",
+                    "TypeA",
+                    "A0"
+                  ]
+                ],
+                "input_roots": [
+                  [
+                    "Root",
+                    "D0"
+                  ],
+                  [
+                    "Root",
+                    "DECL:[\"Node\",\"gsc1\",\"q\",\"variable\",\"h0\"]"
+                  ],
+                  [
+                    "Root",
+                    "DECL:[\"Node\",\"gsc1\",\"q\",\"variable\",\"p0\"]"
+                  ],
+                  [
+                    "Root",
+                    "H0"
+                  ]
+                ],
+                "all_direct_supports": [
+                  {
+                    "rule": "PROP-ALIAS",
+                    "premises": [
+                      [
+                        "Bind",
+                        [
+                          "Node",
+                          "gsc1",
+                          "q",
+                          "variable",
+                          "h0"
+                        ],
+                        [
+                          "Value",
+                          "TypeA",
+                          "A0"
+                        ]
+                      ],
+                      [
+                        "Eq",
+                        [
+                          "Node",
+                          "gsc1",
+                          "q",
+                          "variable",
+                          "h0"
+                        ],
+                        [
+                          "Node",
+                          "gsc1",
+                          "q",
+                          "variable",
+                          "p0"
+                        ]
+                      ]
+                    ]
+                  },
+                  {
+                    "rule": "PROP-ALIAS",
+                    "premises": [
+                      [
+                        "Bind",
+                        [
+                          "Node",
+                          "gsc1",
+                          "q",
+                          "variable",
+                          "p0"
+                        ],
+                        [
+                          "Value",
+                          "TypeA",
+                          "A0"
+                        ]
+                      ],
+                      [
+                        "Eq",
+                        [
+                          "Node",
+                          "gsc1",
+                          "q",
+                          "variable",
+                          "p0"
+                        ],
+                        [
+                          "Node",
+                          "gsc1",
+                          "q",
+                          "variable",
+                          "p0"
+                        ]
+                      ]
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "p1",
+            "status": "GROUNDED",
+            "values": [
+              [
+                "Value",
+                "TypeB",
+                "B0"
+              ]
+            ],
+            "evidence": [
+              {
+                "binding_key": [
+                  "Bind",
+                  [
+                    "Node",
+                    "gsc1",
+                    "q",
+                    "variable",
+                    "p1"
+                  ],
+                  [
+                    "Value",
+                    "TypeB",
+                    "B0"
+                  ]
+                ],
+                "input_roots": [
+                  [
+                    "Root",
+                    "D1"
+                  ],
+                  [
+                    "Root",
+                    "DECL:[\"Node\",\"gsc1\",\"q\",\"variable\",\"h1\"]"
+                  ],
+                  [
+                    "Root",
+                    "DECL:[\"Node\",\"gsc1\",\"q\",\"variable\",\"p1\"]"
+                  ],
+                  [
+                    "Root",
+                    "H1"
+                  ]
+                ],
+                "all_direct_supports": [
+                  {
+                    "rule": "PROP-ALIAS",
+                    "premises": [
+                      [
+                        "Bind",
+                        [
+                          "Node",
+                          "gsc1",
+                          "q",
+                          "variable",
+                          "h1"
+                        ],
+                        [
+                          "Value",
+                          "TypeB",
+                          "B0"
+                        ]
+                      ],
+                      [
+                        "Eq",
+                        [
+                          "Node",
+                          "gsc1",
+                          "q",
+                          "variable",
+                          "h1"
+                        ],
+                        [
+                          "Node",
+                          "gsc1",
+                          "q",
+                          "variable",
+                          "p1"
+                        ]
+                      ]
+                    ]
+                  },
+                  {
+                    "rule": "PROP-ALIAS",
+                    "premises": [
+                      [
+                        "Bind",
+                        [
+                          "Node",
+                          "gsc1",
+                          "q",
+                          "variable",
+                          "p1"
+                        ],
+                        [
+                          "Value",
+                          "TypeB",
+                          "B0"
+                        ]
+                      ],
+                      [
+                        "Eq",
+                        [
+                          "Node",
+                          "gsc1",
+                          "q",
+                          "variable",
+                          "p1"
+                        ],
+                        [
+                          "Node",
+                          "gsc1",
+                          "q",
+                          "variable",
+                          "p1"
+                        ]
+                      ]
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "p2",
+            "status": "GROUNDED",
+            "values": [
+              [
+                "Value",
+                "TypeC",
+                "C0"
+              ]
+            ],
+            "evidence": [
+              {
+                "binding_key": [
+                  "Bind",
+                  [
+                    "Node",
+                    "gsc1",
+                    "q",
+                    "variable",
+                    "p2"
+                  ],
+                  [
+                    "Value",
+                    "TypeC",
+                    "C0"
+                  ]
+                ],
+                "input_roots": [
+                  [
+                    "Root",
+                    "D2"
+                  ],
+                  [
+                    "Root",
+                    "DECL:[\"Node\",\"gsc1\",\"q\",\"variable\",\"h2\"]"
+                  ],
+                  [
+                    "Root",
+                    "DECL:[\"Node\",\"gsc1\",\"q\",\"variable\",\"p2\"]"
+                  ],
+                  [
+                    "Root",
+                    "H2"
+                  ]
+                ],
+                "all_direct_supports": [
+                  {
+                    "rule": "PROP-ALIAS",
+                    "premises": [
+                      [
+                        "Bind",
+                        [
+                          "Node",
+                          "gsc1",
+                          "q",
+                          "variable",
+                          "h2"
+                        ],
+                        [
+                          "Value",
+                          "TypeC",
+                          "C0"
+                        ]
+                      ],
+                      [
+                        "Eq",
+                        [
+                          "Node",
+                          "gsc1",
+                          "q",
+                          "variable",
+                          "h2"
+                        ],
+                        [
+                          "Node",
+                          "gsc1",
+                          "q",
+                          "variable",
+                          "p2"
+                        ]
+                      ]
+                    ]
+                  },
+                  {
+                    "rule": "PROP-ALIAS",
+                    "premises": [
+                      [
+                        "Bind",
+                        [
+                          "Node",
+                          "gsc1",
+                          "q",
+                          "variable",
+                          "p2"
+                        ],
+                        [
+                          "Value",
+                          "TypeC",
+                          "C0"
+                        ]
+                      ],
+                      [
+                        "Eq",
+                        [
+                          "Node",
+                          "gsc1",
+                          "q",
+                          "variable",
+                          "p2"
+                        ],
+                        [
+                          "Node",
+                          "gsc1",
+                          "q",
+                          "variable",
+                          "p2"
+                        ]
+                      ]
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "B": {
+      "history": [
+        {
+          "key": [
+            "Bind",
+            [
+              "Node",
+              "gsc1",
+              "q",
+              "variable",
+              "h0"
+            ],
+            [
+              "Value",
+              "TypeA",
+              "A1"
+            ]
+          ],
+          "sources": [
+            "H0"
+          ],
+          "rule": "INPUT"
+        },
+        {
+          "key": [
+            "Bind",
+            [
+              "Node",
+              "gsc1",
+              "q",
+              "variable",
+              "h1"
+            ],
+            [
+              "Value",
+              "TypeB",
+              "B0"
+            ]
+          ],
+          "sources": [
+            "H1"
+          ],
+          "rule": "INPUT"
+        },
+        {
+          "key": [
+            "Bind",
+            [
+              "Node",
+              "gsc1",
+              "q",
+              "variable",
+              "h2"
+            ],
+            [
+              "Value",
+              "TypeC",
+              "C1"
+            ]
+          ],
+          "sources": [
+            "H2"
+          ],
+          "rule": "INPUT"
+        }
+      ],
+      "initial_grounding": {
+        "status": "UNRESOLVED",
+        "complete": false,
+        "outward": null,
+        "closure_digest": "beec7a683a2ccec6810905ada0736ad14ae2bbf75068ab770a5fce9d795997ca",
+        "reason": null,
+        "ports": [
+          {
+            "name": "p0",
+            "status": "UNRESOLVED",
+            "values": [],
+            "evidence": []
+          },
+          {
+            "name": "p1",
+            "status": "UNRESOLVED",
+            "values": [],
+            "evidence": []
+          },
+          {
+            "name": "p2",
+            "status": "UNRESOLVED",
+            "values": [],
+            "evidence": []
+          }
+        ]
+      },
+      "closure": {
+        "status": "COMPLETE",
+        "closure_complete": true,
+        "leaf_count": 18,
+        "composite_count": 171,
+        "rule_instance_count": 133632,
+        "lineage_edge_count": 397362,
+        "closure_rounds": 21,
+        "stored_support_index_entries": 660,
+        "operations": 263214
+      },
+      "grounding": {
+        "status": "COMPLETE_GROUNDED",
+        "complete": true,
+        "outward": {
+          "key": [
+            "GroundedOutwardStructure",
+            [
+              "OutwardSchema",
+              "O",
+              [
+                [
+                  "p0",
+                  [
+                    "Node",
+                    "gsc1",
+                    "q",
+                    "variable",
+                    "p0"
+                  ],
+                  "TypeA"
+                ],
+                [
+                  "p1",
+                  [
+                    "Node",
+                    "gsc1",
+                    "q",
+                    "variable",
+                    "p1"
+                  ],
+                  "TypeB"
+                ],
+                [
+                  "p2",
+                  [
+                    "Node",
+                    "gsc1",
+                    "q",
+                    "variable",
+                    "p2"
+                  ],
+                  "TypeC"
+                ]
+              ]
+            ],
+            [
+              [
+                "p0",
+                [
+                  "Value",
+                  "TypeA",
+                  "A1"
+                ]
+              ],
+              [
+                "p1",
+                [
+                  "Value",
+                  "TypeB",
+                  "B0"
+                ]
+              ],
+              [
+                "p2",
+                [
+                  "Value",
+                  "TypeC",
+                  "C1"
+                ]
+              ]
+            ]
+          ],
+          "fields": {
+            "p0": {
+              "type": "TypeA",
+              "value": "A1"
+            },
+            "p1": {
+              "type": "TypeB",
+              "value": "B0"
+            },
+            "p2": {
+              "type": "TypeC",
+              "value": "C1"
+            }
+          }
+        },
+        "closure_digest": "5f9f0ca1dddc376440f48449c6e30c3afb2076e133646a7dfdbe0f8119a10a28",
+        "reason": null,
+        "ports": [
+          {
+            "name": "p0",
+            "status": "GROUNDED",
+            "values": [
+              [
+                "Value",
+                "TypeA",
+                "A1"
+              ]
+            ],
+            "evidence": [
+              {
+                "binding_key": [
+                  "Bind",
+                  [
+                    "Node",
+                    "gsc1",
+                    "q",
+                    "variable",
+                    "p0"
+                  ],
+                  [
+                    "Value",
+                    "TypeA",
+                    "A1"
+                  ]
+                ],
+                "input_roots": [
+                  [
+                    "Root",
+                    "D0"
+                  ],
+                  [
+                    "Root",
+                    "DECL:[\"Node\",\"gsc1\",\"q\",\"variable\",\"h0\"]"
+                  ],
+                  [
+                    "Root",
+                    "DECL:[\"Node\",\"gsc1\",\"q\",\"variable\",\"p0\"]"
+                  ],
+                  [
+                    "Root",
+                    "H0"
+                  ]
+                ],
+                "all_direct_supports": [
+                  {
+                    "rule": "PROP-ALIAS",
+                    "premises": [
+                      [
+                        "Bind",
+                        [
+                          "Node",
+                          "gsc1",
+                          "q",
+                          "variable",
+                          "h0"
+                        ],
+                        [
+                          "Value",
+                          "TypeA",
+                          "A1"
+                        ]
+                      ],
+                      [
+                        "Eq",
+                        [
+                          "Node",
+                          "gsc1",
+                          "q",
+                          "variable",
+                          "h0"
+                        ],
+                        [
+                          "Node",
+                          "gsc1",
+                          "q",
+                          "variable",
+                          "p0"
+                        ]
+                      ]
+                    ]
+                  },
+                  {
+                    "rule": "PROP-ALIAS",
+                    "premises": [
+                      [
+                        "Bind",
+                        [
+                          "Node",
+                          "gsc1",
+                          "q",
+                          "variable",
+                          "p0"
+                        ],
+                        [
+                          "Value",
+                          "TypeA",
+                          "A1"
+                        ]
+                      ],
+                      [
+                        "Eq",
+                        [
+                          "Node",
+                          "gsc1",
+                          "q",
+                          "variable",
+                          "p0"
+                        ],
+                        [
+                          "Node",
+                          "gsc1",
+                          "q",
+                          "variable",
+                          "p0"
+                        ]
+                      ]
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "p1",
+            "status": "GROUNDED",
+            "values": [
+              [
+                "Value",
+                "TypeB",
+                "B0"
+              ]
+            ],
+            "evidence": [
+              {
+                "binding_key": [
+                  "Bind",
+                  [
+                    "Node",
+                    "gsc1",
+                    "q",
+                    "variable",
+                    "p1"
+                  ],
+                  [
+                    "Value",
+                    "TypeB",
+                    "B0"
+                  ]
+                ],
+                "input_roots": [
+                  [
+                    "Root",
+                    "D1"
+                  ],
+                  [
+                    "Root",
+                    "DECL:[\"Node\",\"gsc1\",\"q\",\"variable\",\"h1\"]"
+                  ],
+                  [
+                    "Root",
+                    "DECL:[\"Node\",\"gsc1\",\"q\",\"variable\",\"p1\"]"
+                  ],
+                  [
+                    "Root",
+                    "H1"
+                  ]
+                ],
+                "all_direct_supports": [
+                  {
+                    "rule": "PROP-ALIAS",
+                    "premises": [
+                      [
+                        "Bind",
+                        [
+                          "Node",
+                          "gsc1",
+                          "q",
+                          "variable",
+                          "h1"
+                        ],
+                        [
+                          "Value",
+                          "TypeB",
+                          "B0"
+                        ]
+                      ],
+                      [
+                        "Eq",
+                        [
+                          "Node",
+                          "gsc1",
+                          "q",
+                          "variable",
+                          "h1"
+                        ],
+                        [
+                          "Node",
+                          "gsc1",
+                          "q",
+                          "variable",
+                          "p1"
+                        ]
+                      ]
+                    ]
+                  },
+                  {
+                    "rule": "PROP-ALIAS",
+                    "premises": [
+                      [
+                        "Bind",
+                        [
+                          "Node",
+                          "gsc1",
+                          "q",
+                          "variable",
+                          "p1"
+                        ],
+                        [
+                          "Value",
+                          "TypeB",
+                          "B0"
+                        ]
+                      ],
+                      [
+                        "Eq",
+                        [
+                          "Node",
+                          "gsc1",
+                          "q",
+                          "variable",
+                          "p1"
+                        ],
+                        [
+                          "Node",
+                          "gsc1",
+                          "q",
+                          "variable",
+                          "p1"
+                        ]
+                      ]
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "p2",
+            "status": "GROUNDED",
+            "values": [
+              [
+                "Value",
+                "TypeC",
+                "C1"
+              ]
+            ],
+            "evidence": [
+              {
+                "binding_key": [
+                  "Bind",
+                  [
+                    "Node",
+                    "gsc1",
+                    "q",
+                    "variable",
+                    "p2"
+                  ],
+                  [
+                    "Value",
+                    "TypeC",
+                    "C1"
+                  ]
+                ],
+                "input_roots": [
+                  [
+                    "Root",
+                    "D2"
+                  ],
+                  [
+                    "Root",
+                    "DECL:[\"Node\",\"gsc1\",\"q\",\"variable\",\"h2\"]"
+                  ],
+                  [
+                    "Root",
+                    "DECL:[\"Node\",\"gsc1\",\"q\",\"variable\",\"p2\"]"
+                  ],
+                  [
+                    "Root",
+                    "H2"
+                  ]
+                ],
+                "all_direct_supports": [
+                  {
+                    "rule": "PROP-ALIAS",
+                    "premises": [
+                      [
+                        "Bind",
+                        [
+                          "Node",
+                          "gsc1",
+                          "q",
+                          "variable",
+                          "h2"
+                        ],
+                        [
+                          "Value",
+                          "TypeC",
+                          "C1"
+                        ]
+                      ],
+                      [
+                        "Eq",
+                        [
+                          "Node",
+                          "gsc1",
+                          "q",
+                          "variable",
+                          "h2"
+                        ],
+                        [
+                          "Node",
+                          "gsc1",
+                          "q",
+                          "variable",
+                          "p2"
+                        ]
+                      ]
+                    ]
+                  },
+                  {
+                    "rule": "PROP-ALIAS",
+                    "premises": [
+                      [
+                        "Bind",
+                        [
+                          "Node",
+                          "gsc1",
+                          "q",
+                          "variable",
+                          "p2"
+                        ],
+                        [
+                          "Value",
+                          "TypeC",
+                          "C1"
+                        ]
+                      ],
+                      [
+                        "Eq",
+                        [
+                          "Node",
+                          "gsc1",
+                          "q",
+                          "variable",
+                          "p2"
+                        ],
+                        [
+                          "Node",
+                          "gsc1",
+                          "q",
+                          "variable",
+                          "p2"
+                        ]
+                      ]
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "history_ablation_example": {
+    "status": "UNRESOLVED",
+    "complete": false,
+    "outward": null,
+    "closure_digest": "7396f9ec99d1d01bf7a68f6d400c2dc4b766fff7c938c28ee7903a289ce314c3",
+    "reason": null,
+    "ports": [
+      {
+        "name": "p0",
+        "status": "GROUNDED",
+        "values": [
+          [
+            "Value",
+            "TypeA",
+            "A0"
+          ]
+        ],
+        "evidence": [
+          {
+            "binding_key": [
+              "Bind",
+              [
+                "Node",
+                "gsc1",
+                "q",
+                "variable",
+                "p0"
+              ],
+              [
+                "Value",
+                "TypeA",
+                "A0"
+              ]
+            ],
+            "input_roots": [
+              [
+                "Root",
+                "D0"
+              ],
+              [
+                "Root",
+                "DECL:[\"Node\",\"gsc1\",\"q\",\"variable\",\"h0\"]"
+              ],
+              [
+                "Root",
+                "DECL:[\"Node\",\"gsc1\",\"q\",\"variable\",\"p0\"]"
+              ],
+              [
+                "Root",
+                "H0"
+              ]
+            ],
+            "all_direct_supports": [
+              {
+                "rule": "PROP-ALIAS",
+                "premises": [
+                  [
+                    "Bind",
+                    [
+                      "Node",
+                      "gsc1",
+                      "q",
+                      "variable",
+                      "h0"
+                    ],
+                    [
+                      "Value",
+                      "TypeA",
+                      "A0"
+                    ]
+                  ],
+                  [
+                    "Eq",
+                    [
+                      "Node",
+                      "gsc1",
+                      "q",
+                      "variable",
+                      "h0"
+                    ],
+                    [
+                      "Node",
+                      "gsc1",
+                      "q",
+                      "variable",
+                      "p0"
+                    ]
+                  ]
+                ]
+              },
+              {
+                "rule": "PROP-ALIAS",
+                "premises": [
+                  [
+                    "Bind",
+                    [
+                      "Node",
+                      "gsc1",
+                      "q",
+                      "variable",
+                      "p0"
+                    ],
+                    [
+                      "Value",
+                      "TypeA",
+                      "A0"
+                    ]
+                  ],
+                  [
+                    "Eq",
+                    [
+                      "Node",
+                      "gsc1",
+                      "q",
+                      "variable",
+                      "p0"
+                    ],
+                    [
+                      "Node",
+                      "gsc1",
+                      "q",
+                      "variable",
+                      "p0"
+                    ]
+                  ]
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "p1",
+        "status": "UNRESOLVED",
+        "values": [],
+        "evidence": []
+      },
+      {
+        "name": "p2",
+        "status": "GROUNDED",
+        "values": [
+          [
+            "Value",
+            "TypeC",
+            "C0"
+          ]
+        ],
+        "evidence": [
+          {
+            "binding_key": [
+              "Bind",
+              [
+                "Node",
+                "gsc1",
+                "q",
+                "variable",
+                "p2"
+              ],
+              [
+                "Value",
+                "TypeC",
+                "C0"
+              ]
+            ],
+            "input_roots": [
+              [
+                "Root",
+                "D2"
+              ],
+              [
+                "Root",
+                "DECL:[\"Node\",\"gsc1\",\"q\",\"variable\",\"h2\"]"
+              ],
+              [
+                "Root",
+                "DECL:[\"Node\",\"gsc1\",\"q\",\"variable\",\"p2\"]"
+              ],
+              [
+                "Root",
+                "H2"
+              ]
+            ],
+            "all_direct_supports": [
+              {
+                "rule": "PROP-ALIAS",
+                "premises": [
+                  [
+                    "Bind",
+                    [
+                      "Node",
+                      "gsc1",
+                      "q",
+                      "variable",
+                      "h2"
+                    ],
+                    [
+                      "Value",
+                      "TypeC",
+                      "C0"
+                    ]
+                  ],
+                  [
+                    "Eq",
+                    [
+                      "Node",
+                      "gsc1",
+                      "q",
+                      "variable",
+                      "h2"
+                    ],
+                    [
+                      "Node",
+                      "gsc1",
+                      "q",
+                      "variable",
+                      "p2"
+                    ]
+                  ]
+                ]
+              },
+              {
+                "rule": "PROP-ALIAS",
+                "premises": [
+                  [
+                    "Bind",
+                    [
+                      "Node",
+                      "gsc1",
+                      "q",
+                      "variable",
+                      "p2"
+                    ],
+                    [
+                      "Value",
+                      "TypeC",
+                      "C0"
+                    ]
+                  ],
+                  [
+                    "Eq",
+                    [
+                      "Node",
+                      "gsc1",
+                      "q",
+                      "variable",
+                      "p2"
+                    ],
+                    [
+                      "Node",
+                      "gsc1",
+                      "q",
+                      "variable",
+                      "p2"
+                    ]
+                  ]
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "current_ablation_example": {
+    "status": "UNRESOLVED",
+    "complete": false,
+    "outward": null,
+    "closure_digest": "3994d4939747d7fba2406d79c6241f9e0da2a2c3e747c5091cb91475599f3a93",
+    "reason": null,
+    "ports": [
+      {
+        "name": "p0",
+        "status": "GROUNDED",
+        "values": [
+          [
+            "Value",
+            "TypeA",
+            "A0"
+          ]
+        ],
+        "evidence": [
+          {
+            "binding_key": [
+              "Bind",
+              [
+                "Node",
+                "gsc1",
+                "q",
+                "variable",
+                "p0"
+              ],
+              [
+                "Value",
+                "TypeA",
+                "A0"
+              ]
+            ],
+            "input_roots": [
+              [
+                "Root",
+                "D0"
+              ],
+              [
+                "Root",
+                "DECL:[\"Node\",\"gsc1\",\"q\",\"variable\",\"h0\"]"
+              ],
+              [
+                "Root",
+                "DECL:[\"Node\",\"gsc1\",\"q\",\"variable\",\"p0\"]"
+              ],
+              [
+                "Root",
+                "H0"
+              ]
+            ],
+            "all_direct_supports": [
+              {
+                "rule": "PROP-ALIAS",
+                "premises": [
+                  [
+                    "Bind",
+                    [
+                      "Node",
+                      "gsc1",
+                      "q",
+                      "variable",
+                      "h0"
+                    ],
+                    [
+                      "Value",
+                      "TypeA",
+                      "A0"
+                    ]
+                  ],
+                  [
+                    "Eq",
+                    [
+                      "Node",
+                      "gsc1",
+                      "q",
+                      "variable",
+                      "h0"
+                    ],
+                    [
+                      "Node",
+                      "gsc1",
+                      "q",
+                      "variable",
+                      "p0"
+                    ]
+                  ]
+                ]
+              },
+              {
+                "rule": "PROP-ALIAS",
+                "premises": [
+                  [
+                    "Bind",
+                    [
+                      "Node",
+                      "gsc1",
+                      "q",
+                      "variable",
+                      "p0"
+                    ],
+                    [
+                      "Value",
+                      "TypeA",
+                      "A0"
+                    ]
+                  ],
+                  [
+                    "Eq",
+                    [
+                      "Node",
+                      "gsc1",
+                      "q",
+                      "variable",
+                      "p0"
+                    ],
+                    [
+                      "Node",
+                      "gsc1",
+                      "q",
+                      "variable",
+                      "p0"
+                    ]
+                  ]
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "p1",
+        "status": "UNRESOLVED",
+        "values": [],
+        "evidence": []
+      },
+      {
+        "name": "p2",
+        "status": "GROUNDED",
+        "values": [
+          [
+            "Value",
+            "TypeC",
+            "C0"
+          ]
+        ],
+        "evidence": [
+          {
+            "binding_key": [
+              "Bind",
+              [
+                "Node",
+                "gsc1",
+                "q",
+                "variable",
+                "p2"
+              ],
+              [
+                "Value",
+                "TypeC",
+                "C0"
+              ]
+            ],
+            "input_roots": [
+              [
+                "Root",
+                "D2"
+              ],
+              [
+                "Root",
+                "DECL:[\"Node\",\"gsc1\",\"q\",\"variable\",\"h2\"]"
+              ],
+              [
+                "Root",
+                "DECL:[\"Node\",\"gsc1\",\"q\",\"variable\",\"p2\"]"
+              ],
+              [
+                "Root",
+                "H2"
+              ]
+            ],
+            "all_direct_supports": [
+              {
+                "rule": "PROP-ALIAS",
+                "premises": [
+                  [
+                    "Bind",
+                    [
+                      "Node",
+                      "gsc1",
+                      "q",
+                      "variable",
+                      "h2"
+                    ],
+                    [
+                      "Value",
+                      "TypeC",
+                      "C0"
+                    ]
+                  ],
+                  [
+                    "Eq",
+                    [
+                      "Node",
+                      "gsc1",
+                      "q",
+                      "variable",
+                      "h2"
+                    ],
+                    [
+                      "Node",
+                      "gsc1",
+                      "q",
+                      "variable",
+                      "p2"
+                    ]
+                  ]
+                ]
+              },
+              {
+                "rule": "PROP-ALIAS",
+                "premises": [
+                  [
+                    "Bind",
+                    [
+                      "Node",
+                      "gsc1",
+                      "q",
+                      "variable",
+                      "p2"
+                    ],
+                    [
+                      "Value",
+                      "TypeC",
+                      "C0"
+                    ]
+                  ],
+                  [
+                    "Eq",
+                    [
+                      "Node",
+                      "gsc1",
+                      "q",
+                      "variable",
+                      "p2"
+                    ],
+                    [
+                      "Node",
+                      "gsc1",
+                      "q",
+                      "variable",
+                      "p2"
+                    ]
+                  ]
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "conflict_example": {
+    "status": "CONFLICT",
+    "complete": false,
+    "outward": null,
+    "closure_digest": "44be39796060957bcd1724b92adfa79f5b6dd52a9b0e788661e3020c750af78a",
+    "reason": null,
+    "ports": [
+      {
+        "name": "p0",
+        "status": "GROUNDED",
+        "values": [
+          [
+            "Value",
+            "TypeA",
+            "A0"
+          ]
+        ],
+        "evidence": [
+          {
+            "binding_key": [
+              "Bind",
+              [
+                "Node",
+                "gsc1",
+                "q",
+                "variable",
+                "p0"
+              ],
+              [
+                "Value",
+                "TypeA",
+                "A0"
+              ]
+            ],
+            "input_roots": [
+              [
+                "Root",
+                "D0"
+              ],
+              [
+                "Root",
+                "DECL:[\"Node\",\"gsc1\",\"q\",\"variable\",\"h0\"]"
+              ],
+              [
+                "Root",
+                "DECL:[\"Node\",\"gsc1\",\"q\",\"variable\",\"p0\"]"
+              ],
+              [
+                "Root",
+                "H0"
+              ]
+            ],
+            "all_direct_supports": [
+              {
+                "rule": "PROP-ALIAS",
+                "premises": [
+                  [
+                    "Bind",
+                    [
+                      "Node",
+                      "gsc1",
+                      "q",
+                      "variable",
+                      "h0"
+                    ],
+                    [
+                      "Value",
+                      "TypeA",
+                      "A0"
+                    ]
+                  ],
+                  [
+                    "Eq",
+                    [
+                      "Node",
+                      "gsc1",
+                      "q",
+                      "variable",
+                      "h0"
+                    ],
+                    [
+                      "Node",
+                      "gsc1",
+                      "q",
+                      "variable",
+                      "p0"
+                    ]
+                  ]
+                ]
+              },
+              {
+                "rule": "PROP-ALIAS",
+                "premises": [
+                  [
+                    "Bind",
+                    [
+                      "Node",
+                      "gsc1",
+                      "q",
+                      "variable",
+                      "p0"
+                    ],
+                    [
+                      "Value",
+                      "TypeA",
+                      "A0"
+                    ]
+                  ],
+                  [
+                    "Eq",
+                    [
+                      "Node",
+                      "gsc1",
+                      "q",
+                      "variable",
+                      "p0"
+                    ],
+                    [
+                      "Node",
+                      "gsc1",
+                      "q",
+                      "variable",
+                      "p0"
+                    ]
+                  ]
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "p1",
+        "status": "CONFLICT",
+        "values": [
+          [
+            "Value",
+            "TypeB",
+            "B0"
+          ],
+          [
+            "Value",
+            "TypeB",
+            "B1"
+          ]
+        ],
+        "evidence": [
+          {
+            "binding_key": [
+              "Bind",
+              [
+                "Node",
+                "gsc1",
+                "q",
+                "variable",
+                "p1"
+              ],
+              [
+                "Value",
+                "TypeB",
+                "B0"
+              ]
+            ],
+            "input_roots": [
+              [
+                "Root",
+                "D1"
+              ],
+              [
+                "Root",
+                "DECL:[\"Node\",\"gsc1\",\"q\",\"variable\",\"h1\"]"
+              ],
+              [
+                "Root",
+                "DECL:[\"Node\",\"gsc1\",\"q\",\"variable\",\"p1\"]"
+              ],
+              [
+                "Root",
+                "H1"
+              ]
+            ],
+            "all_direct_supports": [
+              {
+                "rule": "PROP-ALIAS",
+                "premises": [
+                  [
+                    "Bind",
+                    [
+                      "Node",
+                      "gsc1",
+                      "q",
+                      "variable",
+                      "h1"
+                    ],
+                    [
+                      "Value",
+                      "TypeB",
+                      "B0"
+                    ]
+                  ],
+                  [
+                    "Eq",
+                    [
+                      "Node",
+                      "gsc1",
+                      "q",
+                      "variable",
+                      "h1"
+                    ],
+                    [
+                      "Node",
+                      "gsc1",
+                      "q",
+                      "variable",
+                      "p1"
+                    ]
+                  ]
+                ]
+              },
+              {
+                "rule": "PROP-ALIAS",
+                "premises": [
+                  [
+                    "Bind",
+                    [
+                      "Node",
+                      "gsc1",
+                      "q",
+                      "variable",
+                      "p1"
+                    ],
+                    [
+                      "Value",
+                      "TypeB",
+                      "B0"
+                    ]
+                  ],
+                  [
+                    "Eq",
+                    [
+                      "Node",
+                      "gsc1",
+                      "q",
+                      "variable",
+                      "p1"
+                    ],
+                    [
+                      "Node",
+                      "gsc1",
+                      "q",
+                      "variable",
+                      "p1"
+                    ]
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "binding_key": [
+              "Bind",
+              [
+                "Node",
+                "gsc1",
+                "q",
+                "variable",
+                "p1"
+              ],
+              [
+                "Value",
+                "TypeB",
+                "B1"
+              ]
+            ],
+            "input_roots": [
+              [
+                "Root",
+                "D1"
+              ],
+              [
+                "Root",
+                "DECL:[\"Node\",\"gsc1\",\"q\",\"variable\",\"h1\"]"
+              ],
+              [
+                "Root",
+                "DECL:[\"Node\",\"gsc1\",\"q\",\"variable\",\"p1\"]"
+              ],
+              [
+                "Root",
+                "H1-conflict"
+              ]
+            ],
+            "all_direct_supports": [
+              {
+                "rule": "PROP-ALIAS",
+                "premises": [
+                  [
+                    "Bind",
+                    [
+                      "Node",
+                      "gsc1",
+                      "q",
+                      "variable",
+                      "h1"
+                    ],
+                    [
+                      "Value",
+                      "TypeB",
+                      "B1"
+                    ]
+                  ],
+                  [
+                    "Eq",
+                    [
+                      "Node",
+                      "gsc1",
+                      "q",
+                      "variable",
+                      "h1"
+                    ],
+                    [
+                      "Node",
+                      "gsc1",
+                      "q",
+                      "variable",
+                      "p1"
+                    ]
+                  ]
+                ]
+              },
+              {
+                "rule": "PROP-ALIAS",
+                "premises": [
+                  [
+                    "Bind",
+                    [
+                      "Node",
+                      "gsc1",
+                      "q",
+                      "variable",
+                      "p1"
+                    ],
+                    [
+                      "Value",
+                      "TypeB",
+                      "B1"
+                    ]
+                  ],
+                  [
+                    "Eq",
+                    [
+                      "Node",
+                      "gsc1",
+                      "q",
+                      "variable",
+                      "p1"
+                    ],
+                    [
+                      "Node",
+                      "gsc1",
+                      "q",
+                      "variable",
+                      "p1"
+                    ]
+                  ]
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "p2",
+        "status": "GROUNDED",
+        "values": [
+          [
+            "Value",
+            "TypeC",
+            "C0"
+          ]
+        ],
+        "evidence": [
+          {
+            "binding_key": [
+              "Bind",
+              [
+                "Node",
+                "gsc1",
+                "q",
+                "variable",
+                "p2"
+              ],
+              [
+                "Value",
+                "TypeC",
+                "C0"
+              ]
+            ],
+            "input_roots": [
+              [
+                "Root",
+                "D2"
+              ],
+              [
+                "Root",
+                "DECL:[\"Node\",\"gsc1\",\"q\",\"variable\",\"h2\"]"
+              ],
+              [
+                "Root",
+                "DECL:[\"Node\",\"gsc1\",\"q\",\"variable\",\"p2\"]"
+              ],
+              [
+                "Root",
+                "H2"
+              ]
+            ],
+            "all_direct_supports": [
+              {
+                "rule": "PROP-ALIAS",
+                "premises": [
+                  [
+                    "Bind",
+                    [
+                      "Node",
+                      "gsc1",
+                      "q",
+                      "variable",
+                      "h2"
+                    ],
+                    [
+                      "Value",
+                      "TypeC",
+                      "C0"
+                    ]
+                  ],
+                  [
+                    "Eq",
+                    [
+                      "Node",
+                      "gsc1",
+                      "q",
+                      "variable",
+                      "h2"
+                    ],
+                    [
+                      "Node",
+                      "gsc1",
+                      "q",
+                      "variable",
+                      "p2"
+                    ]
+                  ]
+                ]
+              },
+              {
+                "rule": "PROP-ALIAS",
+                "premises": [
+                  [
+                    "Bind",
+                    [
+                      "Node",
+                      "gsc1",
+                      "q",
+                      "variable",
+                      "p2"
+                    ],
+                    [
+                      "Value",
+                      "TypeC",
+                      "C0"
+                    ]
+                  ],
+                  [
+                    "Eq",
+                    [
+                      "Node",
+                      "gsc1",
+                      "q",
+                      "variable",
+                      "p2"
+                    ],
+                    [
+                      "Node",
+                      "gsc1",
+                      "q",
+                      "variable",
+                      "p2"
+                    ]
+                  ]
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "resource_limit_example": {
+    "upstream": {
+      "status": "RESOURCE_LIMIT",
+      "closure_complete": false,
+      "leaf_count": 18,
+      "composite_count": 0,
+      "rule_instance_count": 306,
+      "lineage_edge_count": 654,
+      "closure_rounds": 3,
+      "stored_support_index_entries": 306,
+      "operations": 1013
+    },
+    "limit": {
+      "phase": "composition",
+      "resource_port": "structures",
+      "used": 195,
+      "capacity": 200,
+      "requested_or_lower_bound": 201,
+      "closure_complete": false,
+      "rule_version": "GSC-0-TEST_ONLY-v1"
+    },
+    "all_required_bindings_already_present": true,
+    "grounding": {
+      "status": "RESOURCE_LIMIT",
+      "complete": false,
+      "outward": null,
+      "closure_digest": null,
+      "reason": "Upstream closure is not COMPLETE",
+      "ports": []
+    }
+  },
+  "authorship": {
+    "schema": "EXTERNAL_FIXED_MECHANISM",
+    "gsc_rules": "EXTERNAL_FIXED_MECHANISM",
+    "historical_bindings_and_current_equality": "EXPLICIT_FIXTURE_INPUT",
+    "output_binding": "PROP-ALIAS consequence of history + current input",
+    "tuple": "MECHANICAL_SINGLETON_PACKAGING",
+    "selector_count": 0,
+    "default_or_fallback_filling_count": 0
+  },
+  "limits": [
+    "No new primitive values, rules, schema discovery, body output or L1.",
+    "Packaging determinacy is conditional on a truthful COMPLETE GSC-0 Result.",
+    "Tuple is a read-only external representation, not a new GSC-0 relation.",
+    "The fixture supplies equality declarations; it does not discover them."
+  ],
+  "boundary_guard": {
+    "baseline_files_verified": 123,
+    "unchanged": true,
+    "changed_paths": [],
+    "frozen_gsc0_file_hashes": {
+      "GENERATIVE_STRUCTURAL_CLOSURE_SPEC.md": "fe818d516051a357ef712753b6ad2abaf9039855f536dc6febe5d6f453cae5f9",
+      "GSC0_PROTOTYPE_VALIDATION.json": "462bc3bb982d9369a042cd8d7482dd9d3ee846a0ca5dcd25a03239d7f23c4478",
+      "GSC0_PROTOTYPE_VALIDATION.md": "663abff34bd98a66e83f71d324075efdd9d8e8d581d3ee1a631af7388857c456",
+      "experimental/gsc0/README.md": "1a1f7fc603793327e4e09af29d860377f65b8a9351dd40b272346d6d4f70447e",
+      "experimental/gsc0/__init__.py": "847c8dbcdd8121bd93333a1ecc5313cb7eed58233723d2709887f50e8fe577c4",
+      "experimental/gsc0/engine.py": "9cf667adbd9aa2e93ca60e60b8c0c301eb2f33bcc6de52f93a8189461b886c62",
+      "experimental/gsc0/fixtures.py": "616a7946ad9ee6be32b31a867246388fe58cfb5284ae9f8e700ee1902f1041c1",
+      "experimental/gsc0/model.py": "faff3ae603053e072bf30ae9cab4cdb89f58e4ba68bb4441396c8b14956870e5",
+      "experimental/gsc0/tests.py": "fd77476af236d570b447fc2523e8d1643193cbc78a7c4b608142002d1f7879c2",
+      "experimental/gsc0/validate.py": "04c3d9f8f3d671d8cf18a16b42c85621687448c095d762b37e3a3db6b8d3c01e"
+    },
+    "gsc0_modified": false,
+    "formal_l0_minecraft_a_modified": false
+  },
+  "validation_seconds": 30.43245
+}
