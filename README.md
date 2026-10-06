@@ -37,7 +37,19 @@ Cross-actor saved-real-data 中有 588 条 external change、39 条 self change 
 
 `CURRENT_COMBINATORIAL_EXPLOSION_CLASS = GSC0_REALIZATION_LIMIT`；`NEW_GENERATIVE_MECHANISM_REQUIRED = UNRESOLVED`；`GSC2_REACHED = NOT_YET`。GSC-0 保持有限 TEST_ONLY prototype PASSED，并已完成**本研究线中作为有限穷尽闭包原型的当前角色**；这不排除未来实验用途。Exhaustive composition、global enumerative closure、flat all-composite generation 和 full logical provenance enumeration 属于该 realization 的具体实验选择，不是普遍理论要求；必要因果来源仍须可核对。当前不继续扩容或优化其 exhaustive closure，也不替换正式运行时。
 
-FROI-1 不再是当前 blocker。当前研究方向为 `SUCCESSOR_REALIZATION_DIRECTION`：怎样只形成当前执行所需要的结构，同时既不穷尽所有组合，也不由程序员替 A 选择应该形成什么。
+**Successor-0 已独立实现并验收 PASS**：冻结实现提交 `91eac86632af528251d73ecf4c80f283c87fe019`，单元测试 **16/16 PASS**，**S0-T1–T10 全部 PASS**。范围严格为 TEST_ONLY、externally supplied opaque `RequireBound`、unique producer、typed `Transfer`、acyclic fixture、requirement-rooted local formation。证据见 [Successor-0 报告](experimental/successor0/SUCCESSOR0_VALIDATION.md) / [JSON](experimental/successor0/SUCCESSOR0_VALIDATION.json)。
+
+| 条件 | 实际证据 |
+|---|---|
+| A | activated=2，derived bindings=2，formed supports=6；consumer `RESOLVED(q,V)` |
+| B | 无 requirement root；activated=0，derived bindings=0；无 S |
+| C | 移除必要 relation；activated=1，derived bindings=0；consumer `UNRESOLVED` |
+| D10 / D100 / D1000 | S 内容与 identity 均与 A 相同；distractor activation / derived facts 均为 0 |
+| Consumer / necessary support ablation | 均 PASS；屏蔽形成组织或必要支持后 `UNRESOLVED`，不重跑 formation |
+
+限定结论：在冻结 Successor-0 TEST_ONLY 范围内，外部提供的 opaque requirement 能通过 exact structural incidence 因果地驱动局部形成，产生随后被实际消费的组织，无需全局穷尽结构枚举。这证明一个具体候选 realization，不证明 Perfect Recursion 唯一或通用生成机制；不改写 GSC-0、CEC-0 或 FROI 历史结果。GSC-0 继续保留为已验证的 finite exhaustive-closure prototype，Successor-0 是独立的非穷尽局部形成候选，不修改正式 runtime。
+
+Successor-0 和 FROI-1 均不再列为当前 blocker。下一阶段仅记录三个候选方向，不设计机制或指定优先级：multiple-producer / multiple-valid-formation condition、internally formed requirement、local formed organization → complete body expression。更广泛的 `SUCCESSOR_REALIZATION_DIRECTION` 仍未解决：怎样只形成当前执行所需要的结构，同时既不穷尽所有组合，也不由程序员替 A 选择应该形成什么。
 
 ```text
 reality/history
@@ -47,7 +59,9 @@ reality/history
 → renewed reality/history
 ```
 
-这只是 working realization direction，不是已验证机制或新理论定律。`successor_unresolved_boundary` 包括 requirement origin、“enough” 的机械判定、“executable” 的定义和 external selector / semantic policy leakage；四项目前是研究问题，不能未经独立证据直接称为已确认 blocker。本次不设计或实现 successor、selector、relevance score、similarity、reward、top-k、nearest、priority、goal planner、imitation module 或新 GSC production rules。
+上述广泛方向仍是 working realization direction，不是新理论定律。Successor-0 的有限 PASS 不解决一般意义的 requirement origin、“enough”、“executable” 或 selector leakage；这些 `successor_unresolved_boundary` 仍是研究问题，不自动成为已确认 blocker。本次只记录结果，不再设计或实现机制。
+
+`INTERNAL_REQUIREMENT_ORIGIN`、`MULTIPLE_PRODUCER_FORMATION`、`CYCLIC_FORMATION`、`RECURSIVE_FORMATION_OF_RELATIONS_OR_MECHANICS` 均为 `UNRESOLVED`；`INTERNALLY_AUTHORED_COMPLETE_BODY_EXPRESSION`、`MINECRAFT_WORLD_FACING_SUCCESSOR` 均为 `NOT VALIDATED`；`UNIVERSAL_GENERATIVE_DYNAMICS = NOT ESTABLISHED`。外部提供 requirement 不等于内部目标形成，单 producer 不等于多方案自主选择，本轮未运行 Minecraft。
 
 `BEHAVIORAL_CAUSAL_CLOSURE = FAILED / NOT YET PASSED`；formal action sampler 和 parameter binding 仍为 `EXTERNAL_FIXED_POLICY`；internally authored Minecraft action、L1 / upward recursion 均 `NOT VALIDATED`；Perfect Recursion universal generative law 仍 `NOT ESTABLISHED`。冻结规格及所有历史 PASS / RESOURCE_LIMIT / PARTIAL 结果不改写。
 

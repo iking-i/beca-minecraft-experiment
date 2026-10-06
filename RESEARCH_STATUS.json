@@ -109,9 +109,10 @@
     "claim": "real accumulated history + current structural read input -> fixed GSC-0 -> formed COMPLETE O-G0-1 organization -> actual FormalL0 internal consumer -> measurable causal internal-processing difference -> read-failure consequence can enter later FormalL0 processing"
   },
   "current_checkpoint": {
-    "version": "SUCCESSOR_REALIZATION_DIRECTION",
-    "status": "UNRESOLVED",
-    "classification": "WORKING_RESEARCH_DIRECTION_NOT_VALIDATED_MECHANISM"
+    "version": "SUCCESSOR-0",
+    "status": "PASS",
+    "classification": "VALIDATED_CANDIDATE_TEST_ONLY_UNIQUE_PRODUCER_ACYCLIC_SCOPE",
+    "implementation_commit": "91eac86632af528251d73ecf4c80f283c87fe019"
   },
   "successor_unresolved_boundary": {
     "classification": "UNRESOLVED_RESEARCH_QUESTIONS",
@@ -122,14 +123,28 @@
       "definition of executable",
       "external selector / semantic policy leakage prevention"
     ],
-    "blocker_classification_requires_independent_evidence": true
+    "blocker_classification_requires_independent_evidence": true,
+    "explicit_remaining_statuses": {
+      "INTERNAL_REQUIREMENT_ORIGIN": "UNRESOLVED",
+      "MULTIPLE_PRODUCER_FORMATION": "UNRESOLVED",
+      "CYCLIC_FORMATION": "UNRESOLVED",
+      "RECURSIVE_FORMATION_OF_RELATIONS_OR_MECHANICS": "UNRESOLVED",
+      "BEHAVIORAL_CAUSAL_CLOSURE": "NOT YET PASSED",
+      "INTERNALLY_AUTHORED_COMPLETE_BODY_EXPRESSION": "NOT VALIDATED",
+      "MINECRAFT_WORLD_FACING_SUCCESSOR": "NOT VALIDATED",
+      "L1_UPWARD_RECURSION": "NOT VALIDATED",
+      "UNIVERSAL_GENERATIVE_DYNAMICS": "NOT ESTABLISHED"
+    }
   },
   "next_work": [
-    "Study how a recursive realization can form only the structure required for the currently executable causal process without exhaustive enumeration or an external semantic/policy selector; working direction only",
-    "Record requirement origin, enough, executable and selector leakage as successor_unresolved_boundary, not confirmed current blockers",
-    "Do not implement a successor, increase GSC capacities or optimize exhaustive closure in this update",
+    "Candidate only: multiple-producer / multiple-valid-formation condition",
+    "Candidate only: internally formed requirement",
+    "Candidate only: local formed organization -> complete body expression",
+    "No priority or implementation mechanism selected among these directions",
+    "Successor-0 scoped PASS is no longer a blocker; general successor questions remain unresolved without automatic blocker classification",
     "Keep formal action sampler and parameter binding classified EXTERNAL_FIXED_POLICY until independently validated",
-    "Preserve frozen FROI-1 spec, v2 PARTIAL, v3 scoped PASS, CEC-0 minimal real witness PASS and all historical RESOURCE_LIMIT results"
+    "Preserve frozen FROI-1 spec, v2 PARTIAL, v3 scoped PASS, CEC-0 minimal real witness PASS and all historical GSC PASS / RESOURCE_LIMIT results",
+    "No further mechanism, GSC capacity increase, or exhaustive-closure optimization in this status update"
   ],
   "cec0_minimal_real_witness": {
     "status": "PASS",
@@ -200,7 +215,7 @@
   "successor_realization": {
     "classification": "SUCCESSOR_REALIZATION_DIRECTION",
     "status": "UNRESOLVED",
-    "implemented": false,
+    "implemented": true,
     "universal_theory_law": false,
     "question": "How can a recursive realization form only the structure required for the currently executable causal process without exhaustively enumerating all possible structures or introducing an external semantic/policy selector?",
     "working_chain": [
@@ -210,7 +225,10 @@
       "action / further recursion",
       "renewed reality/history"
     ],
-    "unresolved_boundary_reference": "successor_unresolved_boundary"
+    "unresolved_boundary_reference": "successor_unresolved_boundary",
+    "implemented_scope": "Only frozen Successor-0 TEST_ONLY candidate; general successor realization remains UNRESOLVED",
+    "general_realization_validated": false,
+    "validated_candidate_reference": "successor0"
   },
   "not_current_prerequisites_unless_independently_shown_necessary": [
     "adaptive forgetting or memory compression",
@@ -273,5 +291,94 @@
       "local_report": "storage/acceptance/froi-v3-326dbb1/report.json"
     },
     "is_current_blocker": false
+  },
+  "successor0": {
+    "status": "PASS",
+    "implementation_commit": "91eac86632af528251d73ecf4c80f283c87fe019",
+    "unit_tests": {
+      "passed": 16,
+      "total": 16,
+      "status": "PASS"
+    },
+    "S0_T1_TO_T10": "PASS",
+    "criteria": {
+      "S0_T1_REQUIREMENT_NON_PRESCRIPTION": "PASS",
+      "S0_T2_UNIQUE_PRODUCER_SCOPE": "PASS",
+      "S0_T3_REQUIREMENT_CAUSALITY": "PASS",
+      "S0_T4_LOCAL_FORMATION": "PASS",
+      "S0_T5_NON_EXHAUSTIVE_D10": "PASS",
+      "S0_T6_NON_EXHAUSTIVE_D100": "PASS",
+      "S0_T7_NON_EXHAUSTIVE_D1000": "PASS",
+      "S0_T8_NECESSARY_EDGE_ABLATION": "PASS",
+      "S0_T9_FORMED_ORGANIZATION_CONSUMPTION": "PASS",
+      "S0_T10_CONSUMER_ABLATION": "PASS"
+    },
+    "scope": [
+      "TEST_ONLY",
+      "externally supplied opaque RequireBound",
+      "unique producer",
+      "typed Transfer",
+      "acyclic fixture",
+      "requirement-rooted local formation"
+    ],
+    "cases": {
+      "A": {
+        "activated_relation_count": 2,
+        "derived_binding_count": 2,
+        "formed_support_count": 6,
+        "consumer": "RESOLVED(q,V)"
+      },
+      "B": {
+        "requirement_root_present": false,
+        "activated_relation_count": 0,
+        "derived_binding_count": 0,
+        "organization_formed": false
+      },
+      "C": {
+        "necessary_relation_removed": true,
+        "activated_relation_count": 1,
+        "derived_binding_count": 0,
+        "consumer": "UNRESOLVED"
+      },
+      "D10": {
+        "same_S_content_as_A": true,
+        "same_S_identity_as_A": true,
+        "activated_relation_count": 2,
+        "derived_binding_count": 2,
+        "formed_support_count": 6,
+        "distractor_activated_count": 0,
+        "distractor_derived_fact_count": 0
+      },
+      "D100": {
+        "same_S_content_as_A": true,
+        "same_S_identity_as_A": true,
+        "activated_relation_count": 2,
+        "derived_binding_count": 2,
+        "formed_support_count": 6,
+        "distractor_activated_count": 0,
+        "distractor_derived_fact_count": 0
+      },
+      "D1000": {
+        "same_S_content_as_A": true,
+        "same_S_identity_as_A": true,
+        "activated_relation_count": 2,
+        "derived_binding_count": 2,
+        "formed_support_count": 6,
+        "distractor_activated_count": 0,
+        "distractor_derived_fact_count": 0
+      }
+    },
+    "consumer_ablation": "PASS",
+    "necessary_support_ablation": "PASS",
+    "ablation_reruns_formation": false,
+    "claim": "Within the frozen Successor-0 TEST_ONLY scope, an externally supplied opaque requirement can causally root local structural formation through exact structural incidence, producing a formed organization that is subsequently consumed, without requiring global exhaustive structural enumeration.",
+    "specific_candidate_realization": true,
+    "unique_or_universal_perfect_recursion_mechanism_established": false,
+    "is_current_blocker": false,
+    "formal_runtime_replaced": false,
+    "Minecraft_executed": false,
+    "report": "experimental/successor0/SUCCESSOR0_VALIDATION.md",
+    "machine_report": "experimental/successor0/SUCCESSOR0_VALIDATION.json",
+    "historical_GSC_CEC_FROI_results_preserved": true
   }
 }

@@ -267,9 +267,39 @@ The final edge is evidenced by the explicitly TEST_ONLY historical counterfactua
 
 The initial memory condition remains retention of the raw historical inputs required by the finite experiment; it is not a universal memory law and does not require preserving the materialized closure object unchanged.
 
-## 11. Current research question and successor unresolved boundary
+## 11. Successor-0 stage closure and successor unresolved boundary
 
-FROI-1 implementation and its scoped v3 acceptance are **no longer a blocker**. The current question is:
+```text
+SUCCESSOR0_STATUS = PASS
+implementation_commit = 91eac86632af528251d73ecf4c80f283c87fe019
+unit_tests = 16/16 PASS
+S0_T1_TO_T10 = PASS
+```
+
+Scope is strictly **TEST_ONLY**, externally supplied opaque `RequireBound`, unique producer, typed `Transfer`, acyclic fixture, and requirement-rooted local formation. The frozen implementation and evidence are under `experimental/successor0/`; see `SUCCESSOR0_VALIDATION.md` / `SUCCESSOR0_VALIDATION.json` and `tests/test_successor0.py`. No Minecraft or formal A was run for this experiment.
+
+| Condition | Actual evidence |
+|---|---|
+| A | 2 activated relations; 2 derived bindings; 6 formed supports; consumer `RESOLVED(q,V)` |
+| B | No requirement root; 0 activations; 0 derived bindings; no S |
+| C | Necessary relation removed; 1 activation; 0 derived bindings; consumer `UNRESOLVED` |
+| D10 / D100 / D1000 | Same S canonical content and identity as A; distractor activation and derived-fact counts both 0 |
+| Consumer ablation | PASS: inaccessible formed organization produces `UNRESOLVED` |
+| Necessary support ablation | PASS: detached removal of necessary derived support produces `UNRESOLVED`, without rerunning formation |
+
+The strongest accepted conclusion is:
+
+> Within the frozen Successor-0 TEST_ONLY scope, an externally supplied opaque requirement can causally root local structural formation through exact structural incidence, producing a formed organization that is subsequently consumed, without requiring global exhaustive structural enumeration.
+
+This establishes a specific candidate realization, not the unique or universal generative mechanism of Perfect Recursion. Transfer declarations and the requirement are external fixture conditions; the experiment does not establish their endogenous formation. GSC-0 remains a validated finite exhaustive-closure prototype. Successor-0 is a separate non-exhaustive local-formation candidate, not deletion, replacement or negation of historical GSC-0 evidence.
+
+Successor-0 implementation and its scoped acceptance are **no longer a blocker**. Candidate next directions, with no priority or mechanism prescribed here, are:
+
+- multiple-producer / multiple-valid-formation condition;
+- internally formed requirement;
+- local formed organization -> complete body expression.
+
+FROI-1 implementation and its scoped v3 acceptance are also **no longer a blocker**. The broader, still unresolved research direction remains:
 
 ```text
 How can a recursive realization form only the structure required for the
@@ -295,7 +325,7 @@ reality/history
 - definition of “executable”;
 - prevention of external selector / semantic policy leakage.
 
-These are current research questions, **not independently confirmed current blockers**. They must not become prerequisites merely by being listed; a blocker claim needs independent evidence. This is a working realization direction, not an implemented mechanism, validated result, or universal generative law. No successor algorithm, selector, relevance score, similarity, reward, top-k, nearest, priority, goal planner, imitation module, or new GSC production rule is designed or implemented by this update.
+These are general research questions, **not independently confirmed current blockers**. They must not become prerequisites merely by being listed; a blocker claim needs independent evidence. Successor-0 now supplies a validated limited example of requirement-rooted executable support and subsequent consumption. That does not resolve the general meanings of “enough” and “executable”, requirement origin, or leakage prevention across other realizations. This status update records the frozen candidate only; it designs or implements no further mechanism and changes no GSC production rule.
 
 CEC-0 is stopped after its minimal real witness PASS. GSC-0/GSC-0C capacity extension and exhaustive-closure optimization are stopped. The broader internally authored body-expression causal chain remains unvalidated, but is not the direct task prescribed by this status update.
 
@@ -303,6 +333,13 @@ The remaining boundary is explicit:
 
 ```text
 BEHAVIORAL_CAUSAL_CLOSURE = FAILED / NOT YET PASSED
+INTERNAL_REQUIREMENT_ORIGIN = UNRESOLVED
+MULTIPLE_PRODUCER_FORMATION = UNRESOLVED
+CYCLIC_FORMATION = UNRESOLVED
+RECURSIVE_FORMATION_OF_RELATIONS_OR_MECHANICS = UNRESOLVED
+INTERNALLY_AUTHORED_COMPLETE_BODY_EXPRESSION = NOT VALIDATED
+MINECRAFT_WORLD_FACING_SUCCESSOR = NOT VALIDATED
+UNIVERSAL_GENERATIVE_DYNAMICS = NOT ESTABLISHED
 formal action sampler = EXTERNAL_FIXED_POLICY
 parameter binding = EXTERNAL_FIXED_POLICY
 internally authored Minecraft action = NOT VALIDATED
@@ -432,6 +469,7 @@ Persisted derived-result necessity      NOT NECESSARY in two tested fixtures (A=
 CEC-0 minimal real witness              PASS; T1-T6 PASS; temporal-association scope
 Cross-actor real exact pairs             4; correspondence not validated
 GSC-0 cross-actor / GSC-0C                RESOURCE_LIMIT / RESOURCE_LIMIT; extension stopped
+Successor-0                              PASS; S0-T1-T10 PASS; 16/16 tests; unique-producer acyclic TEST_ONLY scope
 Current research direction               SUCCESSOR_REALIZATION_DIRECTION; UNRESOLVED
 FROI-1 implementation                   IMPLEMENTED
 FROI-1 historical v2                    PARTIAL (preserved)
@@ -444,4 +482,4 @@ L1 / upward recursion                   NOT VALIDATED
 Cross-environment core invariance       NOT YET DEMONSTRATED
 ```
 
-> **Current research position:** FROI-1 remains implemented with scoped v3 acceptance PASS. CEC-0 has a minimal real witness PASS without causal-law, generalization, authorship or imitation claims. Cross-actor exact real pairs exist, but GSC-0/GSC-0C exhausted their frozen capacities before COMPLETE. GSC-0 has completed its current role as the finite exhaustive-closure prototype in this research line, without excluding future uses. The current direction is non-exhaustive causal structural formation without an external semantic/policy selector. Requirement origin, “enough”, “executable”, and selector leakage are unresolved boundaries, not confirmed blockers. Behavioral causal closure remains failed/not yet passed; no successor mechanism is implemented by this status update.
+> **Current research position:** FROI-1 scoped v3 PASS, CEC-0 minimal real witness PASS, and historical GSC-0/GSC-0C RESOURCE_LIMIT results remain unchanged. Successor-0 is implemented and PASS in its externally rooted, unique-producer, acyclic TEST_ONLY scope; formed support is causally consumed without global exhaustive enumeration. General successor dynamics remain unresolved. Requirement origin, multiple producers, cycles, recursively formed relations/mechanics, body expression and world-facing integration are not established. Candidate next directions are recorded without choosing priority or design. Behavioral causal closure remains failed/not yet passed; no code is changed by this status update.
