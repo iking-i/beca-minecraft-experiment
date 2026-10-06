@@ -349,3 +349,237 @@ When the current claim is testable, test it.
 ```
 
 > **The project should advance by allowing reality and experiment to expose the next binding problem, not by trying to anticipate and solve the indefinitely many problems that a recursively developing system may one day encounter.**
+
+---
+
+## 16. Formal phase lifecycle and mandatory closeout
+
+A formal research phase SHOULD have an explicit lifecycle:
+
+```text
+question freeze
+-> pre-registered acceptance / falsification boundary
+-> implementation
+-> experiment
+-> result classification
+-> phase closeout audit
+-> current-state update
+-> freeze
+-> next phase
+```
+
+A phase MUST NOT silently roll into the next phase merely because the immediate experiment passed.
+
+Before a new formal phase is treated as active, the completed phase MUST have a closeout that records:
+
+- the exact object and claim tested;
+- the accepted scope of the result;
+- the strongest justified conclusion;
+- explicit non-claims;
+- remaining unresolved boundaries;
+- implementation, test, report, and state-closure commits or equivalent evidence anchors;
+- current regression status;
+- whether any theory-level change is actually justified.
+
+The closeout is a research-state operation. It does not retroactively change what the experiment tested.
+
+---
+
+## 17. Stage closeout audit is mandatory; full-repository audit is milestone-triggered
+
+Every completed formal research stage MUST receive a **stage closeout audit** before the next stage is treated as active.
+
+A normal stage closeout SHOULD update only current-state/index material that is actually stale, for example:
+
+```text
+README.md
+RESEARCH_STATUS.md
+RESEARCH_STATUS.json
+THEORY_REFERENCE.json   # only when the theory reference actually changed
+```
+
+A **full repository audit** is stronger and is NOT required after every small experiment.
+
+Use a full repository audit when at least one of the following applies:
+
+1. a major research milestone has completed;
+2. the active realization strategy changed materially;
+3. multiple historical stages accumulated and current-state wording may have drifted;
+4. a cross-cutting theory boundary changed;
+5. a regression or status inconsistency makes the current baseline uncertain;
+6. the repository is about to begin a new long-running research line and a stable snapshot is needed.
+
+This distinction exists to avoid both failure modes:
+
+```text
+never auditing -> stale repository state
+audit after every small step -> process overhead replaces research
+```
+
+---
+
+## 18. Current-state normalization must not rewrite historical evidence
+
+Current-state documents may be updated when later work supersedes an earlier "current blocker", "next step", or working interpretation.
+
+Historical experiment artifacts MUST remain historical.
+
+Do not retrospectively rewrite:
+
+- frozen specifications;
+- raw validation reports;
+- earlier PASS / FAIL / PARTIAL / RESOURCE_LIMIT outcomes;
+- commit-specific research-state snapshots;
+- historical acceptance criteria.
+
+If an older document was correct at the time but is no longer the current state, preserve it and update the current index/status layer to explain its historical scope.
+
+```text
+later evidence changes the current interpretation
+!=
+erase or rewrite the earlier evidence
+```
+
+---
+
+## 19. Separate research completion from repository maintenance
+
+A completed research result MUST NOT be reopened merely because a later full regression exposes an unrelated or pre-existing infrastructure/test problem.
+
+When a regression appears after phase integration, first classify its causal relation to the completed phase.
+
+Possible classes include:
+
+```text
+PHASE_REGRESSION
+PRE_EXISTING_MAINTENANCE_ISSUE
+HISTORICAL_EXPECTATION_DRIFT
+INTEGRATION_BUG
+UNRESOLVED
+```
+
+Only reopen the completed research claim if there is evidence that the new failure invalidates the experiment, its evidence, its acceptance boundary, or its causal chain.
+
+A maintenance fix MUST NOT silently alter frozen research semantics merely to make the test suite green.
+
+---
+
+## 20. Completed realizations do not require indefinite optimization
+
+When a realization has completed its declared experimental role, later limits caused by realization-specific design choices do not automatically justify continued optimization of that realization.
+
+Examples include:
+
+```text
+capacity increase
+workspace increase
+closure-engine optimization
+memory tuning
+enumeration acceleration
+```
+
+Before extending a completed realization, ask:
+
+1. Is this limit required by the current theory claim?
+2. Does it invalidate the already accepted result?
+3. Is the next research question genuinely about this realization?
+4. Would versioning, freezing, or retiring the realization preserve the evidence while allowing a better successor realization?
+
+If the answer shows that the limitation is implementation-specific and not theory-required, prefer:
+
+```text
+freeze evidence
+-> classify the realization limit
+-> version / retire the realization for its completed role
+-> design the next discriminating realization
+```
+
+rather than indefinite capacity escalation.
+
+---
+
+## 21. Theory updates require an independent theory-level justification
+
+An experimental PASS, FAIL, or RESOURCE_LIMIT does not by itself modify the core theory.
+
+Update the theory repository only when the result supports a genuine theory-level boundary change, invariant, removal of an alleged requirement, or explicit unresolved distinction.
+
+Keep the following separation:
+
+```text
+experiment demonstrates one realization
+!=
+theory requires that realization
+
+one realization hits a limit
+!=
+theory has the same limit
+
+one candidate mechanism works
+!=
+universal generative dynamics established
+```
+
+When theory does change, synchronize the experiment repository's current theory reference explicitly and preserve older theory SHAs only as historical references.
+
+---
+
+## 22. Evidence anchors and commit structure
+
+Where practical, preserve phase evidence in separate commits by role.
+
+Preferred pattern:
+
+```text
+implementation / validation commit
+-> research-state closeout commit
+-> optional repository-normalization commit
+-> optional maintenance commit
+```
+
+These commits need not always be separate when the change is trivial, but research evidence and later interpretation SHOULD remain distinguishable in history.
+
+A phase closeout SHOULD identify the concrete evidence anchors used to justify its current status.
+
+Do not treat a clean narrative in `README.md` as a substitute for test output, validation artifacts, or commit-level evidence.
+
+---
+
+## 23. Stable baseline before the next formal phase
+
+Before beginning a new formal research phase, establish a known baseline.
+
+At minimum, record:
+
+```text
+current phase = closed
+current-state documents = internally consistent
+theory reference = known
+tracked worktree state = known
+regression status = known
+remaining unresolved boundaries = explicit
+next research question = not yet silently implemented
+```
+
+"Known regression status" does not necessarily mean every test must pass. A documented pre-existing maintenance failure may exist. What matters is that the failure is classified and is not being confused with the new research question.
+
+The next phase SHOULD begin from this baseline rather than from an ambiguous mixture of unfinished experiments, stale status documents, and unclassified maintenance work.
+
+---
+
+## 24. Phase-closeout compact rule
+
+```text
+Finish the experiment.
+Freeze the result.
+Audit claim, object, evidence, and scope.
+Record the strongest justified conclusion and explicit non-claims.
+Keep unresolved issues unresolved unless the phase actually resolved them.
+Update current state; do not rewrite historical evidence.
+Run the appropriate regression checks.
+Separate research failures from maintenance failures.
+Do not optimize a completed realization indefinitely.
+Change theory only for theory-level reasons.
+Establish a known baseline.
+Then begin the next formal phase.
+```
