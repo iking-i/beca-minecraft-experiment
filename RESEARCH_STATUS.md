@@ -16,16 +16,16 @@ Current theory reference:
 ```text
 Perfect Recursion / BER v0.9
 beca-architecture main:
-075335e0ee2d04d12351ec9e6087a10b1abfe428
+546363ffd9e3f55cd22cd73ad2e91cc57f93bae3
 ```
 
 Perfect Recursion currently provides a conceptual recursive architecture and audit boundaries for recursive layers, current effective limits, reconstruction, causal provenance, subject-continuity separation, functional openness, and upward-recursion claims.
 
 The theory does **not** specify one complete universal generative dynamics for all possible realizations. The experimental sequence `Difference / Alignment / Propagation / Composition / Closure` remains a candidate L0 realization, not a universal axiom set.
 
-Additional theory boundary reference: branch `non-exhaustive-realization-boundary`, commit [`546363ffd9e3f55cd22cd73ad2e91cc57f93bae3`](https://github.com/iking-i/beca-architecture/commit/546363ffd9e3f55cd22cd73ad2e91cc57f93bae3), checked 2026-10-06. `SPEC.md` PR-I37 and `EXPERIMENTAL_IMPLEMENTATION_BOUNDARY.md` §16.1 distinguish theory from realization: Perfect Recursion does not require exhaustive composition, enumeration of all possible structures, or global enumerative least-fixed-point closure before recursion or reality-facing action may continue. The origin of the current goal/execution requirement, the mechanical meaning of “enough”, the definition of “executable”, and prevention of hidden selection remain unresolved realization-level questions.
+The non-exhaustive realization boundary is now part of the official theory reference: repository `iking-i/beca-architecture`, branch `main`, commit [`546363ffd9e3f55cd22cd73ad2e91cc57f93bae3`](https://github.com/iking-i/beca-architecture/commit/546363ffd9e3f55cd22cd73ad2e91cc57f93bae3), checked 2026-10-06. `SPEC.md` PR-I37 and `EXPERIMENTAL_IMPLEMENTATION_BOUNDARY.md` §16.1 distinguish theory from realization: Perfect Recursion does not require exhaustive composition, enumeration of all possible structures, or global enumerative least-fixed-point closure before recursion or reality-facing action may continue. The origin of the current goal/execution requirement, the mechanical meaning of “enough”, the definition of “executable”, and prevention of hidden selection remain unresolved realization-level questions.
 
-This is a supplementary branch reference, not a claim that the branch has already been merged into theory main. The existing main reference remains unchanged.
+This update synchronizes references to theory main; it does not change experimental conclusions, runtime behavior, or historical results.
 
 `Continuity(A) != 0` is an experimental continuation condition for the first-individual experiment, not a universal theory invariant, reward, survival objective, immortality rule, or automatic repair/respawn rule.
 

@@ -15,14 +15,14 @@
   "theory": {
     "version": "Perfect Recursion / BER v0.9",
     "repository": "iking-i/beca-architecture",
-    "commit": "075335e0ee2d04d12351ec9e6087a10b1abfe428",
+    "branch": "main",
+    "commit": "546363ffd9e3f55cd22cd73ad2e91cc57f93bae3",
     "classification": "conceptual_architecture",
     "complete_general_generative_dynamics_established": false,
     "universal_generative_law_status": "NOT_ESTABLISHED",
-    "supplementary_boundary_reference": {
-      "branch": "non-exhaustive-realization-boundary",
+    "main_boundary_reference": {
+      "branch": "main",
       "commit": "546363ffd9e3f55cd22cd73ad2e91cc57f93bae3",
-      "merged_into_theory_main_claimed": false,
       "exhaustive_composition_required": false,
       "all_possible_structures_required": false,
       "global_enumerative_closure_required_before_continuation": false
