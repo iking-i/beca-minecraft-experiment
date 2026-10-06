@@ -1,13 +1,32 @@
 {
-  "status_date": "2026-10-05",
+  "status_date": "2026-10-06",
   "evidence_checkpoint": "326dbb165f41c2ff32c43230810148990fbf0daf",
+  "evidence_checkpoint_scope": "historical frozen FROI-1 v3 acceptance",
+  "subsequent_evidence": {
+    "working_tree_base": "d308a27aacff9d371e2ff21fb9cd90f160f5f7a8",
+    "measurement_source_state": "LOCAL_WORKING_TREE",
+    "new_frozen_implementation_commit_claimed": false,
+    "local_reports": [
+      "storage/validation/CEC0-REAL-MINIMAL-WITNESS-001/validation.json",
+      "storage/validation/CROSS-ACTOR-REIFICATION-002/validation.json",
+      "storage/validation/GSC0C-CAPACITY-EXTENSION-001/validation.json"
+    ]
+  },
   "theory": {
     "version": "Perfect Recursion / BER v0.9",
     "repository": "iking-i/beca-architecture",
     "commit": "075335e0ee2d04d12351ec9e6087a10b1abfe428",
     "classification": "conceptual_architecture",
     "complete_general_generative_dynamics_established": false,
-    "universal_generative_law_status": "NOT_ESTABLISHED"
+    "universal_generative_law_status": "NOT_ESTABLISHED",
+    "supplementary_boundary_reference": {
+      "branch": "non-exhaustive-realization-boundary",
+      "commit": "546363ffd9e3f55cd22cd73ad2e91cc57f93bae3",
+      "merged_into_theory_main_claimed": false,
+      "exhaustive_composition_required": false,
+      "all_possible_structures_required": false,
+      "global_enumerative_closure_required_before_continuation": false
+    }
   },
   "world_entry": {
     "status": "passed",
@@ -48,7 +67,14 @@
     "gsc0": {
       "status": "passed",
       "scope": "TEST_ONLY finite structural closure",
-      "resource_limit_classification": "candidate_algorithm_or_representation_limit_not_current_A_limit"
+      "resource_limit_classification": "GSC0_REALIZATION_LIMIT",
+      "current_role_completed": "finite exhaustive-closure prototype in this research line",
+      "future_experimental_uses_excluded": false,
+      "required_current_or_general_recursive_core": false,
+      "capacity_extension_stopped": true,
+      "exhaustive_closure_optimization_stopped": true,
+      "formal_runtime_replaced": false,
+      "historical_positive_evidence_preserved": true
     },
     "gsc1": {
       "status": "passed",
@@ -76,21 +102,116 @@
     "history_irrelevant": false,
     "invalidates_og0_1_organization_result": false
   },
-  "current_checkpoint": {
+  "froi1_implementation_checkpoint": {
     "document": "FORMAL_RECURSIVE_ORGANIZATION_INTEGRATION_SPEC.md",
     "version": "FROI-1",
     "status": "IMPLEMENTED",
     "claim": "real accumulated history + current structural read input -> fixed GSC-0 -> formed COMPLETE O-G0-1 organization -> actual FormalL0 internal consumer -> measurable causal internal-processing difference -> read-failure consequence can enter later FormalL0 processing"
   },
-  "current_blocker": {
-    "classification": "CURRENT_EVIDENCE_GAP",
-    "description": "Internal recursive organization -> internally authored complete body expression (action code + all required parameters) -> Minecraft consequence -> renewed observation -> recursive processing is not yet validated; FROI-1 is no longer a blocker"
+  "current_checkpoint": {
+    "version": "SUCCESSOR_REALIZATION_DIRECTION",
+    "status": "UNRESOLVED",
+    "classification": "WORKING_RESEARCH_DIRECTION_NOT_VALIDATED_MECHANISM"
+  },
+  "successor_unresolved_boundary": {
+    "classification": "UNRESOLVED_RESEARCH_QUESTIONS",
+    "confirmed_current_blockers": false,
+    "questions": [
+      "origin of current goal/execution requirement",
+      "mechanical criterion for enough",
+      "definition of executable",
+      "external selector / semantic policy leakage prevention"
+    ],
+    "blocker_classification_requires_independent_evidence": true
   },
   "next_work": [
-    "Study the internally authored complete body-expression causal chain; direction only, no mechanism designed in this update",
+    "Study how a recursive realization can form only the structure required for the currently executable causal process without exhaustive enumeration or an external semantic/policy selector; working direction only",
+    "Record requirement origin, enough, executable and selector leakage as successor_unresolved_boundary, not confirmed current blockers",
+    "Do not implement a successor, increase GSC capacities or optimize exhaustive closure in this update",
     "Keep formal action sampler and parameter binding classified EXTERNAL_FIXED_POLICY until independently validated",
-    "Preserve frozen FROI-1 spec, v2 PARTIAL, v3 scoped PASS and all historical results"
+    "Preserve frozen FROI-1 spec, v2 PARTIAL, v3 scoped PASS, CEC-0 minimal real witness PASS and all historical RESOURCE_LIMIT results"
   ],
+  "cec0_minimal_real_witness": {
+    "status": "PASS",
+    "scope": "TEST_ONLY real Minecraft temporal-association correspondence",
+    "frozen_real_experiences": 10,
+    "T0": "PASS",
+    "minimum_cardinality": 2,
+    "selected_experience_ids": [
+      "5a94b573-e7ca-4d37-94d2-e9c86852e536",
+      "bbf6ef60-9113-491c-ada4-fb72bff72afe"
+    ],
+    "selection_rule": "Original T1/T2 input prerequisites; minimum cardinality; canonical stable experience identity ordering; before closure",
+    "GSC_STATUS": "COMPLETE",
+    "T1": "PASS",
+    "T2": "PASS",
+    "T3": "PASS",
+    "T4": "PASS",
+    "T5": "PASS",
+    "T6": "PASS",
+    "consequence_identity": "unchanged CEC-0 UnitRef/change-shape identity, not complete raw numerical world outcome",
+    "causal_law_established": false,
+    "generalization_established": false,
+    "action_authorship_established": false,
+    "imitation_established": false,
+    "original_formal_session_status": "INSUFFICIENT_CLEAN_HISTORY",
+    "full_ten_record_batch_status": "RESOURCE_LIMIT",
+    "historical_results_preserved": true,
+    "further_cec0_work_stopped": true,
+    "local_report": "storage/validation/CEC0-REAL-MINIMAL-WITNESS-001/validation.json"
+  },
+  "cross_actor_reification": {
+    "scope": "preregistered saved-real-data scope; not all possible history",
+    "real_external_change_count": 588,
+    "real_self_change_count": 39,
+    "exact_axis_delta_pairs": 4,
+    "representation_only_reification_possible": true,
+    "external_displacement_source": "fixed mechanical differences of observed absolute world coordinates; not relative displacement",
+    "gsc0": {
+      "node_cap": 16,
+      "original_node_count": 17,
+      "irreducible_node_count": 17,
+      "semantically_lossless_reduction_possible": false,
+      "status": "RESOURCE_LIMIT",
+      "phase": "input"
+    },
+    "gsc0c": {
+      "node_cap": 32,
+      "input_accepted": true,
+      "sole_cap_change": "nodes 16 -> 32",
+      "workspace_cap": 300000,
+      "workspace_requested_lower_bound": 300002,
+      "status": "RESOURCE_LIMIT",
+      "phase": "composition"
+    },
+    "CR_T1": "PASS",
+    "CR_T2": "PASS",
+    "CR_T3": "NOT_TESTABLE",
+    "CR_T4": "NOT_TESTABLE",
+    "CR_T5": "NOT_TESTABLE",
+    "CR_T6": "NOT_TESTABLE",
+    "complete_correspondence_formation_and_consumption_validated": false,
+    "classification": "GSC0_REALIZATION_LIMIT",
+    "new_generative_mechanism_required": "UNRESOLVED",
+    "gsc2_reached": "NOT_YET",
+    "capacity_extension_stopped": true,
+    "historical_results_preserved": true
+  },
+  "successor_realization": {
+    "classification": "SUCCESSOR_REALIZATION_DIRECTION",
+    "status": "UNRESOLVED",
+    "implemented": false,
+    "universal_theory_law": false,
+    "question": "How can a recursive realization form only the structure required for the currently executable causal process without exhaustively enumerating all possible structures or introducing an external semantic/policy selector?",
+    "working_chain": [
+      "reality/history",
+      "causally formed current structure",
+      "enough structure for the present executable causal process",
+      "action / further recursion",
+      "renewed reality/history"
+    ],
+    "unresolved_boundary_reference": "successor_unresolved_boundary"
+  },
   "not_current_prerequisites_unless_independently_shown_necessary": [
     "adaptive forgetting or memory compression",
     "open-domain expansion",

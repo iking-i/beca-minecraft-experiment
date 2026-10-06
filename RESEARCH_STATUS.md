@@ -1,7 +1,10 @@
 # BECA-V0 — Current Research Status
 
-**Status date:** 2026-10-05  
-**Evidence checkpoint indexed through:** `326dbb165f41c2ff32c43230810148990fbf0daf` (frozen FROI-1 Acceptance Harness v3; existing-session acceptance PASS)
+**Status date:** 2026-10-06
+
+**Historical FROI-1 acceptance checkpoint:** `326dbb165f41c2ff32c43230810148990fbf0daf` (frozen v3; existing-session acceptance PASS)
+
+**Subsequent experimental evidence:** CEC-0 minimal real witness and cross-actor GSC-0/GSC-0C local reports, measured from the working tree based on `d308a27aacff9d371e2ff21fb9cd90f160f5f7a8`. These measurements are not assigned an invented frozen implementation commit.
 **Purpose:** authoritative research-state index for the experiment repository. This document does not alter runtime behavior, historical validation results, or the Perfect Recursion theory.
 
 > **Reading rule:** historical audits remain evidence for the scope they actually tested. When a later scope audit or counterfactual narrows an earlier summary, use the later document for the current interpretation rather than rewriting the older result.
@@ -19,6 +22,10 @@ beca-architecture main:
 Perfect Recursion currently provides a conceptual recursive architecture and audit boundaries for recursive layers, current effective limits, reconstruction, causal provenance, subject-continuity separation, functional openness, and upward-recursion claims.
 
 The theory does **not** specify one complete universal generative dynamics for all possible realizations. The experimental sequence `Difference / Alignment / Propagation / Composition / Closure` remains a candidate L0 realization, not a universal axiom set.
+
+Additional theory boundary reference: branch `non-exhaustive-realization-boundary`, commit [`546363ffd9e3f55cd22cd73ad2e91cc57f93bae3`](https://github.com/iking-i/beca-architecture/commit/546363ffd9e3f55cd22cd73ad2e91cc57f93bae3), checked 2026-10-06. `SPEC.md` PR-I37 and `EXPERIMENTAL_IMPLEMENTATION_BOUNDARY.md` §16.1 distinguish theory from realization: Perfect Recursion does not require exhaustive composition, enumeration of all possible structures, or global enumerative least-fixed-point closure before recursion or reality-facing action may continue. The origin of the current goal/execution requirement, the mechanical meaning of “enough”, the definition of “executable”, and prevention of hidden selection remain unresolved realization-level questions.
+
+This is a supplementary branch reference, not a claim that the branch has already been merged into theory main. The existing main reference remains unchanged.
 
 `Continuity(A) != 0` is an experimental continuation condition for the first-individual experiment, not a universal theory invariant, reward, survival objective, immortality rule, or automatic repair/respawn rule.
 
@@ -154,6 +161,12 @@ scope = TEST_ONLY finite structural closure
 
 Established in its finite model: selector-free exhaustive closure, order independence under COMPLETE closure, idempotence, conflict preservation, provenance preservation, explicit derived organization, and honest RESOURCE_LIMIT handling.
 
+**GSC-0 has completed its current role as the finite exhaustive-closure prototype in this research line.** This does not rule out future experimental uses or revoke any finite positive evidence, including CO-WAC-1 O-G0-1 and FROI-1 scoped internal effects.
+
+GSC-0 is not the required current/general RecursiveCore realization. Its exhaustive closure semantics are not to be extended indefinitely merely to support richer reality-facing structure. Exhaustive composition, global enumerative closure, flat all-composite generation, and enumeration of all logical direct supports are choices of the GSC-0 experimental realization, not universal theory requirements. This does not remove the requirement to disclose actual causal provenance.
+
+The formal runtime still uses its existing frozen mechanisms. This interpretation does not replace or modify that runtime, the GSC-0 specification, or its historical acceptance criteria.
+
 ### GSC-1
 
 ```text
@@ -254,20 +267,37 @@ The final edge is evidenced by the explicitly TEST_ONLY historical counterfactua
 
 The initial memory condition remains retention of the raw historical inputs required by the finite experiment; it is not a universal memory law and does not require preserving the materialized closure object unchanged.
 
-## 11. Current blocker and next research direction
+## 11. Current research question and successor unresolved boundary
 
-FROI-1 implementation and its scoped v3 acceptance are **no longer a blocker**. The next formal research question is the still-unvalidated chain:
+FROI-1 implementation and its scoped v3 acceptance are **no longer a blocker**. The current question is:
 
 ```text
-internal recursive organization
--> internally authored complete body expression
--> action code + all required parameters
--> Minecraft consequence
--> renewed observation
--> recursive processing
+How can a recursive realization form only the structure required for the
+currently executable causal process, without:
+1. exhaustively enumerating all possible structures; or
+2. introducing an external semantic/policy selector?
 ```
 
-This records a research direction only. No behavioral-authorship mechanism is designed or implemented in this stage closure.
+```text
+SUCCESSOR_REALIZATION_DIRECTION = UNRESOLVED
+
+reality/history
+-> causally formed current structure
+-> enough structure for the present executable causal process
+-> action / further recursion
+-> renewed reality/history
+```
+
+`successor_unresolved_boundary` comprises:
+
+- origin of the current goal/execution requirement;
+- mechanical criterion for “enough”;
+- definition of “executable”;
+- prevention of external selector / semantic policy leakage.
+
+These are current research questions, **not independently confirmed current blockers**. They must not become prerequisites merely by being listed; a blocker claim needs independent evidence. This is a working realization direction, not an implemented mechanism, validated result, or universal generative law. No successor algorithm, selector, relevance score, similarity, reward, top-k, nearest, priority, goal planner, imitation module, or new GSC production rule is designed or implemented by this update.
+
+CEC-0 is stopped after its minimal real witness PASS. GSC-0/GSC-0C capacity extension and exhaustive-closure optimization are stopped. The broader internally authored body-expression causal chain remains unvalidated, but is not the direct task prescribed by this status update.
 
 The remaining boundary is explicit:
 
@@ -280,7 +310,7 @@ L1 / upward recursion = NOT VALIDATED
 Perfect Recursion universal generative law = NOT ESTABLISHED
 ```
 
-The next blocker is evidence of internally authored complete body expression and the full world-facing causal chain, not reimplementation of FROI-1. No particular mechanism, routing, selector, memory strategy or higher layer is prescribed here.
+No particular mechanism, routing, selector, memory strategy or higher layer is prescribed here. Current unresolved questions do not override the frozen evidence boundaries above.
 
 ## 12. Generative-dynamics wording
 
@@ -339,6 +369,53 @@ current interpretation of theoretical significance
 
 Older files that contain a superseded current-summary paragraph should carry a visible historical-status notice pointing here or to the later scope audit, while preserving the original body/result.
 
+### CEC-0 real-world minimal witness
+
+```text
+CEC0_MINIMAL_REAL_WITNESS = PASS
+GSC_STATUS = COMPLETE
+CEC0_T1-T6 = PASS
+minimum real witness cardinality = 2
+```
+
+Ten T0-valid real Minecraft experiences were collected by an independent TEST_ONLY individual using `EXPLICIT_CAPABILITY_TEST` controls. The minimum subset was selected before closure by frozen T1/T2 input prerequisites, minimum cardinality, and canonical experience-identity ordering. The unchanged CEC-0/GSC-0 producer and consumer formed and consumed:
+
+```text
+opaque control <-> exact experienced consequence
+```
+
+The consequence identity is the unchanged CEC-0 UnitRef/change-shape identity, not equality of complete raw numerical world outcomes. This establishes temporal-association correspondence in the declared scope. It does **not** establish causal law, generalization, action authorship, or imitation.
+
+The original formal-session `INSUFFICIENT_CLEAN_HISTORY` and the full ten-record batch's `RESOURCE_LIMIT` remain separate, unchanged historical results. The minimum subset's PASS does not upgrade the whole batch or the earlier formal session. Original controls passed 17/17 separately; fixture validation is not substituted for real-world acceptance.
+
+Local evidence: `storage/validation/CEC0-REAL-MINIMAL-WITNESS-001/validation.json` and `validation.md`. Full-batch evidence remains in `storage/validation/TEST_ONLY-CEC0-a7b02655-09e7-43aa-9328-4d1ac18bfc1f/validation.json`.
+
+### Cross-actor reification and realization limits
+
+```text
+REAL_EXTERNAL_CHANGE_COUNT = 588
+REAL_SELF_CHANGE_COUNT = 39
+EXACT_AXIS_DELTA_PAIRS = 4
+REPRESENTATION_ONLY_REIFICATION_POSSIBLE = YES
+```
+
+These counts apply to the fixed saved-real-data scope, not all possible history. External absolute displacement was mechanically differenced from observed world coordinates; relative-position change was not relabeled entity movement. Real exact axis/signed-delta R/Y pairs exist.
+
+| Realization | Frozen condition and actual result |
+|---|---|
+| GSC-0 | Node cap 16; selected exact witness, including negative control, requires 17 irreducible nodes; `RESOURCE_LIMIT` at input. No semantically lossless reduction was found within the frozen representation. |
+| GSC-0C | Same witness, codec, consumer, criteria, provenance and production rules; sole cap change nodes 16 → 32; input accepted; composition workspace lower bound 300002 > 300000; `RESOURCE_LIMIT`. |
+
+```text
+CURRENT_COMBINATORIAL_EXPLOSION_CLASS = GSC0_REALIZATION_LIMIT
+NEW_GENERATIVE_MECHANISM_REQUIRED = UNRESOLVED
+GSC2_REACHED = NOT_YET
+```
+
+Both experiments retain `CR-T1 = PASS`, `CR-T2 = PASS`; `CR-T3-T6 = NOT_TESTABLE` because no COMPLETE organization was available for the acceptance chain. Resource interruption is not proof of generative impossibility or of a new-mechanism requirement. Cross-actor correspondence formation and consumption are **not validated**. No new pair selection, sample collection, or further capacity increase follows these frozen results.
+
+Local evidence: `storage/validation/CROSS-ACTOR-REIFICATION-002/validation.json`, its `selected-witness.json`, and `storage/validation/GSC0C-CAPACITY-EXTENSION-001/validation.json`. Real data and local reports remain outside the published runtime data.
+
 ## 15. Compact status
 
 ```text
@@ -348,20 +425,23 @@ FormalL0 history -> recursive read      VALIDATED
 Behavioral Causal Closure               FAILED / diagnostic_partial
 CO-WAC-1                                FROZEN working criterion
 O-G0-1 C1–C5                            PASS in finite TEST_ONLY scope
-GSC-0                                   PASSED candidate prototype
+GSC-0                                   PASSED finite prototype; current exhaustive-closure role completed in this research line
 GSC-1                                   PASSED candidate prototype
 GSC-2                                   UNRESOLVED candidate branch
 Persisted derived-result necessity      NOT NECESSARY in two tested fixtures (A=B=C)
-Current checkpoint                      FROI-1
+CEC-0 minimal real witness              PASS; T1-T6 PASS; temporal-association scope
+Cross-actor real exact pairs             4; correspondence not validated
+GSC-0 cross-actor / GSC-0C                RESOURCE_LIMIT / RESOURCE_LIMIT; extension stopped
+Current research direction               SUCCESSOR_REALIZATION_DIRECTION; UNRESOLVED
 FROI-1 implementation                   IMPLEMENTED
 FROI-1 historical v2                    PARTIAL (preserved)
 FROI-1 current v3                       PASS; T1-T5 PASS
 FROI-1 T4 witness                       TEST_ONLY historical counterfactual
-Current blocker                         Internally authored complete body expression not validated
+Successor unresolved boundary            requirement origin / enough / executable / selector leakage; not confirmed blockers
 Complete/general generative dynamics    UNRESOLVED
 Internally authored action              NOT VALIDATED
 L1 / upward recursion                   NOT VALIDATED
 Cross-environment core invariance       NOT YET DEMONSTRATED
 ```
 
-> **Current research position:** FROI-1 is implemented and v3 acceptance has passed within its fixed internal-processing scope. The next research question is whether internal recursive organization can author a complete body expression (action code and every required parameter), produce a Minecraft consequence, and return through renewed observation to recursive processing. Behavioral causal closure remains failed/not yet passed; no behavior mechanism is proposed by this status update.
+> **Current research position:** FROI-1 remains implemented with scoped v3 acceptance PASS. CEC-0 has a minimal real witness PASS without causal-law, generalization, authorship or imitation claims. Cross-actor exact real pairs exist, but GSC-0/GSC-0C exhausted their frozen capacities before COMPLETE. GSC-0 has completed its current role as the finite exhaustive-closure prototype in this research line, without excluding future uses. The current direction is non-exhaustive causal structural formation without an external semantic/policy selector. Requirement origin, “enough”, “executable”, and selector leakage are unresolved boundaries, not confirmed blockers. Behavioral causal closure remains failed/not yet passed; no successor mechanism is implemented by this status update.

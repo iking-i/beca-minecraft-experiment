@@ -2,6 +2,8 @@
 
 本仓库是 [beca-architecture](https://github.com/iking-i/beca-architecture) 的独立 Minecraft 实验实现，当前理论引用为 **Perfect Recursion / BER v0.9**，已核对理论 `main` 提交 [`075335e0ee2d04d12351ec9e6087a10b1abfe428`](https://github.com/iking-i/beca-architecture/commit/075335e0ee2d04d12351ec9e6087a10b1abfe428)（2026-10-05）。现有实现及本地同步的 v0.8 文档仍保留原来源和历史结果。此次理论元数据更新不改变运行行为，不等于实验结果、行为验证或 L1；v0.9 将 `Continuity(A) != 0` 区分为实验延续条件，不能提升为通用核心公理。机器可读来源见 [THEORY_REFERENCE.json](THEORY_REFERENCE.json)。
 
+补充理论边界来自 `non-exhaustive-realization-boundary` 分支提交 [`546363ffd9e3f55cd22cd73ad2e91cc57f93bae3`](https://github.com/iking-i/beca-architecture/commit/546363ffd9e3f55cd22cd73ad2e91cc57f93bae3)（2026-10-06 核对）：理论不要求穷尽组合、枚举全部 possible structures 或完成 global enumerative least-fixed-point closure 后才允许递归或现实行动继续。这是独立分支引用，不声称已合入理论 main。
+
 行为因果闭合审计见 [BEHAVIORAL_CAUSAL_CLOSURE.md](BEHAVIORAL_CAUSAL_CLOSURE.md)。当前内部历史可影响后续递归证据读取，**尚不能成为正式动作代码及参数的作者**。本轮只实现不足情形下可严格验证的审计与独立对照，未添加行为策略，未宣称闭合通过。WORLD_ENTRY_FREEZE 的既有身体验收保持不变。
 
 当前范围是 **L0 层内持续递归和当前有效极限反馈**，不声称已经验证向上递归、L1 或无限递归。本轮进行正式 V0-A / V0-B 基线边界修正；详情见 [BASELINE_CORRECTION_REPORT.md](BASELINE_CORRECTION_REPORT.md)。真实 A 的数据库、本机配置、凭据和运行日志保留在本地，不上传；完整清单见 [REPOSITORY_CONTENTS.md](REPOSITORY_CONTENTS.md)。
@@ -29,18 +31,25 @@ v3 T4 使用 **TEST_ONLY HISTORICAL COUNTERFACTUAL WITNESS**：原 A16 T2 的固
 
 本机报告为 `storage/acceptance/froi-v3-326dbb1/report.md` / `report.json`；原数据库和 v2 报告保持不变，运行数据不随仓库发布。
 
-FROI-1 不再是当前 blocker。下一正式研究方向仅记录为：
+`CEC0_MINIMAL_REAL_WITNESS = PASS`：独立 TEST_ONLY 个体采集的 10 条 T0-valid 真实 Minecraft experiences 中，按事前冻结的最小子集规则选出的 2 条真实 witness 已通过原 CEC-0 T1–T6，形成并消费 `opaque control ↔ exact experienced consequence`。其范围是原 UnitRef/change-shape identity 的 temporal association，不证明 causal law、generalization、action authorship 或 imitation。原正式 session 的 `INSUFFICIENT_CLEAN_HISTORY` 与完整 10-record batch 的 `RESOURCE_LIMIT` 均保留，不被最小 witness 的 PASS 覆盖。本机证据见 `storage/validation/CEC0-REAL-MINIMAL-WITNESS-001/validation.json`。
+
+Cross-actor saved-real-data 中有 588 条 external change、39 条 self change 和 4 对 exact axis/signed-delta pair，`REPRESENTATION_ONLY_REIFICATION_POSSIBLE = YES`。但同一选定真实 witness（包含负对照）需要 17 个不可约 node：GSC-0 在 16-node 条件下返回 `RESOURCE_LIMIT`；独立 GSC-0C 仅将 nodes 固定倍增至 32 后，在 composition workspace `300002 > 300000` 处返回 `RESOURCE_LIMIT`。两者 CR-T1/CR-T2 为 PASS，CR-T3–T6 为 NOT_TESTABLE，尚未验证 cross-actor correspondence 的完整形成与消费。
+
+`CURRENT_COMBINATORIAL_EXPLOSION_CLASS = GSC0_REALIZATION_LIMIT`；`NEW_GENERATIVE_MECHANISM_REQUIRED = UNRESOLVED`；`GSC2_REACHED = NOT_YET`。GSC-0 保持有限 TEST_ONLY prototype PASSED，并已完成**本研究线中作为有限穷尽闭包原型的当前角色**；这不排除未来实验用途。Exhaustive composition、global enumerative closure、flat all-composite generation 和 full logical provenance enumeration 属于该 realization 的具体实验选择，不是普遍理论要求；必要因果来源仍须可核对。当前不继续扩容或优化其 exhaustive closure，也不替换正式运行时。
+
+FROI-1 不再是当前 blocker。当前研究方向为 `SUCCESSOR_REALIZATION_DIRECTION`：怎样只形成当前执行所需要的结构，同时既不穷尽所有组合，也不由程序员替 A 选择应该形成什么。
 
 ```text
-internal recursive organization
-→ internally authored complete body expression
-→ action code + all required parameters
-→ Minecraft consequence
-→ renewed observation
-→ recursive processing
+reality/history
+→ causally formed current structure
+→ enough structure for the present executable causal process
+→ action / further recursion
+→ renewed reality/history
 ```
 
-本次状态收口不设计或实现这条行为作者权机制。`BEHAVIORAL_CAUSAL_CLOSURE = FAILED / NOT YET PASSED`；formal action sampler 和 parameter binding 仍为 `EXTERNAL_FIXED_POLICY`；internally authored Minecraft action、L1 / upward recursion 均 `NOT VALIDATED`；Perfect Recursion universal generative law 仍 `NOT ESTABLISHED`。
+这只是 working realization direction，不是已验证机制或新理论定律。`successor_unresolved_boundary` 包括 requirement origin、“enough” 的机械判定、“executable” 的定义和 external selector / semantic policy leakage；四项目前是研究问题，不能未经独立证据直接称为已确认 blocker。本次不设计或实现 successor、selector、relevance score、similarity、reward、top-k、nearest、priority、goal planner、imitation module 或新 GSC production rules。
+
+`BEHAVIORAL_CAUSAL_CLOSURE = FAILED / NOT YET PASSED`；formal action sampler 和 parameter binding 仍为 `EXTERNAL_FIXED_POLICY`；internally authored Minecraft action、L1 / upward recursion 均 `NOT VALIDATED`；Perfect Recursion universal generative law 仍 `NOT ESTABLISHED`。冻结规格及所有历史 PASS / RESOURCE_LIMIT / PARTIAL 结果不改写。
 
 旧的 `CURRENT_ORGANIZATION_CRITERION.md` / `CURRENT_ORGANIZATION_AUDIT.md` 机制级矩阵作为历史证据保留；其中“共同最早未解决 C3”已经被后续对象一致性审计取代，不能再作为当前总状态。后续工作也不得预设 Closure、Composite、OutwardPort、Role、一对多或多对一就是 Perfect Recursion 的普遍答案。
 
