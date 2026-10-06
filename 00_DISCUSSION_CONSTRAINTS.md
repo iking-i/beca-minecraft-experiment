@@ -10,6 +10,64 @@ It SHOULD be read before proposing the next research step for this project.
 
 ---
 
+## 0. Mandatory conversation handoff after every completed formal stage
+
+To prevent research continuity from depending on an indefinitely growing conversation context, **every completed formal research stage MUST be followed by one formal conversation handoff before the next formal stage begins.**
+
+The required lifecycle is:
+
+```text
+stage work
+-> result classification
+-> phase closeout audit
+-> current-state update
+-> formal conversation handoff
+-> freeze completed stage
+-> begin the next stage in a new conversation
+```
+
+The handoff MUST be generated from the repository's actual current state after closeout. It MUST NOT be reconstructed from conversation memory alone when repository evidence is available.
+
+At minimum, the handoff MUST record:
+
+- repository and branch;
+- exact current HEAD / LOCAL_HEAD when relevant;
+- whether the current baseline has been pushed;
+- tracked worktree status and intentionally excluded untracked files;
+- current completed stage and next-stage status;
+- strongest accepted result and its exact scope;
+- explicit non-claims;
+- unresolved boundaries;
+- relevant implementation, validation, closeout, normalization, and maintenance evidence anchors;
+- current regression/test status;
+- current theory reference;
+- the exact next research question;
+- completed stages that MUST NOT be reopened without direct contrary evidence;
+- the first task to perform in the new conversation.
+
+A handoff is a **continuity operation**, not a new research result.
+
+It MUST NOT:
+
+- reinterpret or strengthen completed evidence;
+- reopen a frozen stage without new contrary evidence;
+- silently modify theory;
+- invent missing repository state;
+- begin implementation of the next stage.
+
+After the handoff is complete, the next formal research stage MUST begin in a new conversation using that handoff as the authoritative starting context.
+
+Compact rule:
+
+```text
+one completed formal stage
+-> one closeout
+-> one formal handoff
+-> next formal stage in a new conversation
+```
+
+---
+
 ## 1. Primary objective
 
 The project does **not** attempt to pre-solve every future form of recursion.
@@ -364,8 +422,9 @@ question freeze
 -> result classification
 -> phase closeout audit
 -> current-state update
+-> formal conversation handoff
 -> freeze
--> next phase
+-> next phase in a new conversation
 ```
 
 A phase MUST NOT silently roll into the next phase merely because the immediate experiment passed.
@@ -581,5 +640,6 @@ Separate research failures from maintenance failures.
 Do not optimize a completed realization indefinitely.
 Change theory only for theory-level reasons.
 Establish a known baseline.
-Then begin the next formal phase.
+Generate the formal conversation handoff.
+Then begin the next formal phase in a new conversation.
 ```
