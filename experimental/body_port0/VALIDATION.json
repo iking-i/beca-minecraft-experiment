@@ -1,0 +1,893 @@
+{
+  "status": "PASS",
+  "scope": "TEST_ONLY synthetic history; parameterless native body ports; unique supported endpoint",
+  "criteria": {
+    "BPC_T1_NEW_SUPPORTED_LINK": "PASS",
+    "BPC_T2_NATIVE_COMPLETE_EXPRESSION": "PASS",
+    "BPC_T3_NECESSARY_INPUT_ABLATION": "PASS",
+    "BPC_T4_FORMED_EFFECT_ABLATION": "PASS",
+    "BPC_T5_NO_SELECTOR_BINDER_RECOMPUTATION": "PASS",
+    "BPC_T6_HISTORY_CONDITIONED_PORT": "PASS",
+    "BPC_T7_DISTRACTOR_INVARIANCE": "PASS",
+    "BPC_T8_SECOND_OUTPUT_AND_REENTRY": "PASS",
+    "BPC_T9_AMBIGUITY_NO_ARBITRATION": "PASS"
+  },
+  "world_facing_status": "NOT_TESTABLE",
+  "distractor_controls": {
+    "10": true,
+    "100": true
+  },
+  "bootstrap_author": "TEST_ONLY_EXTERNAL_BOOTSTRAP",
+  "second_expression_content_source": "FORMED_SHARED_INCIDENCE",
+  "query_author": "TEST_ONLY_EXTERNAL_QUERY",
+  "formation_law_author": "EXTERNAL_FIXED_MECHANISM",
+  "policy_adoption_autonomy_established": false,
+  "material": {
+    "type": "Organization",
+    "facts": [
+      {
+        "type": "Execution",
+        "identity": "receipt-a",
+        "port": {
+          "type": "BodyPort",
+          "version": 2,
+          "code": 36
+        },
+        "before": {
+          "type": "Sample",
+          "sequence": 1,
+          "scope": "test-epoch-1",
+          "channels": [
+            [
+              101,
+              2
+            ]
+          ]
+        },
+        "after": {
+          "type": "Sample",
+          "sequence": 2,
+          "scope": "test-epoch-1",
+          "channels": [
+            [
+              101,
+              5
+            ]
+          ]
+        },
+        "source": "TEST_ONLY_BOOTSTRAP",
+        "completed": true,
+        "parameters": []
+      },
+      {
+        "type": "Pattern",
+        "scope": "test-epoch-1",
+        "changes": [
+          [
+            101,
+            2,
+            5,
+            3
+          ]
+        ]
+      },
+      {
+        "type": "Sample",
+        "sequence": 1,
+        "scope": "test-epoch-1",
+        "channels": [
+          [
+            101,
+            2
+          ]
+        ]
+      },
+      {
+        "type": "Sample",
+        "sequence": 2,
+        "scope": "test-epoch-1",
+        "channels": [
+          [
+            101,
+            5
+          ]
+        ]
+      },
+      {
+        "type": "BodyPort",
+        "version": 2,
+        "code": 36
+      },
+      {
+        "type": "Member",
+        "group": "receipt-a",
+        "object": {
+          "type": "Pattern",
+          "scope": "test-epoch-1",
+          "changes": [
+            [
+              101,
+              2,
+              5,
+              3
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Member",
+        "group": "receipt-a",
+        "object": {
+          "type": "BodyPort",
+          "version": 2,
+          "code": 36
+        }
+      }
+    ],
+    "supports": [
+      {
+        "type": "Support",
+        "conclusion": {
+          "type": "Execution",
+          "identity": "receipt-a",
+          "port": {
+            "type": "BodyPort",
+            "version": 2,
+            "code": 36
+          },
+          "before": {
+            "type": "Sample",
+            "sequence": 1,
+            "scope": "test-epoch-1",
+            "channels": [
+              [
+                101,
+                2
+              ]
+            ]
+          },
+          "after": {
+            "type": "Sample",
+            "sequence": 2,
+            "scope": "test-epoch-1",
+            "channels": [
+              [
+                101,
+                5
+              ]
+            ]
+          },
+          "source": "TEST_ONLY_BOOTSTRAP",
+          "completed": true,
+          "parameters": []
+        },
+        "rule": "INPUT",
+        "premises": []
+      },
+      {
+        "type": "Support",
+        "conclusion": {
+          "type": "Pattern",
+          "scope": "test-epoch-1",
+          "changes": [
+            [
+              101,
+              2,
+              5,
+              3
+            ]
+          ]
+        },
+        "rule": "DIFFERENCE",
+        "premises": [
+          {
+            "type": "Sample",
+            "sequence": 1,
+            "scope": "test-epoch-1",
+            "channels": [
+              [
+                101,
+                2
+              ]
+            ]
+          },
+          {
+            "type": "Sample",
+            "sequence": 2,
+            "scope": "test-epoch-1",
+            "channels": [
+              [
+                101,
+                5
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "type": "Support",
+        "conclusion": {
+          "type": "Sample",
+          "sequence": 1,
+          "scope": "test-epoch-1",
+          "channels": [
+            [
+              101,
+              2
+            ]
+          ]
+        },
+        "rule": "INPUT",
+        "premises": []
+      },
+      {
+        "type": "Support",
+        "conclusion": {
+          "type": "Sample",
+          "sequence": 2,
+          "scope": "test-epoch-1",
+          "channels": [
+            [
+              101,
+              5
+            ]
+          ]
+        },
+        "rule": "INPUT",
+        "premises": []
+      },
+      {
+        "type": "Support",
+        "conclusion": {
+          "type": "BodyPort",
+          "version": 2,
+          "code": 36
+        },
+        "rule": "INPUT",
+        "premises": []
+      },
+      {
+        "type": "Support",
+        "conclusion": {
+          "type": "Member",
+          "group": "receipt-a",
+          "object": {
+            "type": "Pattern",
+            "scope": "test-epoch-1",
+            "changes": [
+              [
+                101,
+                2,
+                5,
+                3
+              ]
+            ]
+          }
+        },
+        "rule": "RECORD_INCIDENCE",
+        "premises": [
+          {
+            "type": "Execution",
+            "identity": "receipt-a",
+            "port": {
+              "type": "BodyPort",
+              "version": 2,
+              "code": 36
+            },
+            "before": {
+              "type": "Sample",
+              "sequence": 1,
+              "scope": "test-epoch-1",
+              "channels": [
+                [
+                  101,
+                  2
+                ]
+              ]
+            },
+            "after": {
+              "type": "Sample",
+              "sequence": 2,
+              "scope": "test-epoch-1",
+              "channels": [
+                [
+                  101,
+                  5
+                ]
+              ]
+            },
+            "source": "TEST_ONLY_BOOTSTRAP",
+            "completed": true,
+            "parameters": []
+          },
+          {
+            "type": "Pattern",
+            "scope": "test-epoch-1",
+            "changes": [
+              [
+                101,
+                2,
+                5,
+                3
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "type": "Support",
+        "conclusion": {
+          "type": "Member",
+          "group": "receipt-a",
+          "object": {
+            "type": "BodyPort",
+            "version": 2,
+            "code": 36
+          }
+        },
+        "rule": "RECORD_INCIDENCE",
+        "premises": [
+          {
+            "type": "Execution",
+            "identity": "receipt-a",
+            "port": {
+              "type": "BodyPort",
+              "version": 2,
+              "code": 36
+            },
+            "before": {
+              "type": "Sample",
+              "sequence": 1,
+              "scope": "test-epoch-1",
+              "channels": [
+                [
+                  101,
+                  2
+                ]
+              ]
+            },
+            "after": {
+              "type": "Sample",
+              "sequence": 2,
+              "scope": "test-epoch-1",
+              "channels": [
+                [
+                  101,
+                  5
+                ]
+              ]
+            },
+            "source": "TEST_ONLY_BOOTSTRAP",
+            "completed": true,
+            "parameters": []
+          },
+          {
+            "type": "BodyPort",
+            "version": 2,
+            "code": 36
+          }
+        ]
+      }
+    ],
+    "complete": false
+  },
+  "formed_organization": {
+    "type": "Organization",
+    "facts": [
+      {
+        "type": "Execution",
+        "identity": "receipt-a",
+        "port": {
+          "type": "BodyPort",
+          "version": 2,
+          "code": 36
+        },
+        "before": {
+          "type": "Sample",
+          "sequence": 1,
+          "scope": "test-epoch-1",
+          "channels": [
+            [
+              101,
+              2
+            ]
+          ]
+        },
+        "after": {
+          "type": "Sample",
+          "sequence": 2,
+          "scope": "test-epoch-1",
+          "channels": [
+            [
+              101,
+              5
+            ]
+          ]
+        },
+        "source": "TEST_ONLY_BOOTSTRAP",
+        "completed": true,
+        "parameters": []
+      },
+      {
+        "type": "Pattern",
+        "scope": "test-epoch-1",
+        "changes": [
+          [
+            101,
+            2,
+            5,
+            3
+          ]
+        ]
+      },
+      {
+        "type": "Sample",
+        "sequence": 1,
+        "scope": "test-epoch-1",
+        "channels": [
+          [
+            101,
+            2
+          ]
+        ]
+      },
+      {
+        "type": "Sample",
+        "sequence": 2,
+        "scope": "test-epoch-1",
+        "channels": [
+          [
+            101,
+            5
+          ]
+        ]
+      },
+      {
+        "type": "BodyPort",
+        "version": 2,
+        "code": 36
+      },
+      {
+        "type": "Shared",
+        "endpoints": [
+          {
+            "type": "Pattern",
+            "scope": "test-epoch-1",
+            "changes": [
+              [
+                101,
+                2,
+                5,
+                3
+              ]
+            ]
+          },
+          {
+            "type": "BodyPort",
+            "version": 2,
+            "code": 36
+          }
+        ]
+      },
+      {
+        "type": "Member",
+        "group": "receipt-a",
+        "object": {
+          "type": "Pattern",
+          "scope": "test-epoch-1",
+          "changes": [
+            [
+              101,
+              2,
+              5,
+              3
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Member",
+        "group": "receipt-a",
+        "object": {
+          "type": "BodyPort",
+          "version": 2,
+          "code": 36
+        }
+      }
+    ],
+    "supports": [
+      {
+        "type": "Support",
+        "conclusion": {
+          "type": "Execution",
+          "identity": "receipt-a",
+          "port": {
+            "type": "BodyPort",
+            "version": 2,
+            "code": 36
+          },
+          "before": {
+            "type": "Sample",
+            "sequence": 1,
+            "scope": "test-epoch-1",
+            "channels": [
+              [
+                101,
+                2
+              ]
+            ]
+          },
+          "after": {
+            "type": "Sample",
+            "sequence": 2,
+            "scope": "test-epoch-1",
+            "channels": [
+              [
+                101,
+                5
+              ]
+            ]
+          },
+          "source": "TEST_ONLY_BOOTSTRAP",
+          "completed": true,
+          "parameters": []
+        },
+        "rule": "INPUT",
+        "premises": []
+      },
+      {
+        "type": "Support",
+        "conclusion": {
+          "type": "Pattern",
+          "scope": "test-epoch-1",
+          "changes": [
+            [
+              101,
+              2,
+              5,
+              3
+            ]
+          ]
+        },
+        "rule": "DIFFERENCE",
+        "premises": [
+          {
+            "type": "Sample",
+            "sequence": 1,
+            "scope": "test-epoch-1",
+            "channels": [
+              [
+                101,
+                2
+              ]
+            ]
+          },
+          {
+            "type": "Sample",
+            "sequence": 2,
+            "scope": "test-epoch-1",
+            "channels": [
+              [
+                101,
+                5
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "type": "Support",
+        "conclusion": {
+          "type": "Sample",
+          "sequence": 1,
+          "scope": "test-epoch-1",
+          "channels": [
+            [
+              101,
+              2
+            ]
+          ]
+        },
+        "rule": "INPUT",
+        "premises": []
+      },
+      {
+        "type": "Support",
+        "conclusion": {
+          "type": "Sample",
+          "sequence": 2,
+          "scope": "test-epoch-1",
+          "channels": [
+            [
+              101,
+              5
+            ]
+          ]
+        },
+        "rule": "INPUT",
+        "premises": []
+      },
+      {
+        "type": "Support",
+        "conclusion": {
+          "type": "BodyPort",
+          "version": 2,
+          "code": 36
+        },
+        "rule": "INPUT",
+        "premises": []
+      },
+      {
+        "type": "Support",
+        "conclusion": {
+          "type": "Shared",
+          "endpoints": [
+            {
+              "type": "Pattern",
+              "scope": "test-epoch-1",
+              "changes": [
+                [
+                  101,
+                  2,
+                  5,
+                  3
+                ]
+              ]
+            },
+            {
+              "type": "BodyPort",
+              "version": 2,
+              "code": 36
+            }
+          ]
+        },
+        "rule": "SHARED_INCIDENCE",
+        "premises": [
+          {
+            "type": "Member",
+            "group": "receipt-a",
+            "object": {
+              "type": "Pattern",
+              "scope": "test-epoch-1",
+              "changes": [
+                [
+                  101,
+                  2,
+                  5,
+                  3
+                ]
+              ]
+            }
+          },
+          {
+            "type": "Member",
+            "group": "receipt-a",
+            "object": {
+              "type": "BodyPort",
+              "version": 2,
+              "code": 36
+            }
+          }
+        ]
+      },
+      {
+        "type": "Support",
+        "conclusion": {
+          "type": "Member",
+          "group": "receipt-a",
+          "object": {
+            "type": "Pattern",
+            "scope": "test-epoch-1",
+            "changes": [
+              [
+                101,
+                2,
+                5,
+                3
+              ]
+            ]
+          }
+        },
+        "rule": "RECORD_INCIDENCE",
+        "premises": [
+          {
+            "type": "Execution",
+            "identity": "receipt-a",
+            "port": {
+              "type": "BodyPort",
+              "version": 2,
+              "code": 36
+            },
+            "before": {
+              "type": "Sample",
+              "sequence": 1,
+              "scope": "test-epoch-1",
+              "channels": [
+                [
+                  101,
+                  2
+                ]
+              ]
+            },
+            "after": {
+              "type": "Sample",
+              "sequence": 2,
+              "scope": "test-epoch-1",
+              "channels": [
+                [
+                  101,
+                  5
+                ]
+              ]
+            },
+            "source": "TEST_ONLY_BOOTSTRAP",
+            "completed": true,
+            "parameters": []
+          },
+          {
+            "type": "Pattern",
+            "scope": "test-epoch-1",
+            "changes": [
+              [
+                101,
+                2,
+                5,
+                3
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "type": "Support",
+        "conclusion": {
+          "type": "Member",
+          "group": "receipt-a",
+          "object": {
+            "type": "BodyPort",
+            "version": 2,
+            "code": 36
+          }
+        },
+        "rule": "RECORD_INCIDENCE",
+        "premises": [
+          {
+            "type": "Execution",
+            "identity": "receipt-a",
+            "port": {
+              "type": "BodyPort",
+              "version": 2,
+              "code": 36
+            },
+            "before": {
+              "type": "Sample",
+              "sequence": 1,
+              "scope": "test-epoch-1",
+              "channels": [
+                [
+                  101,
+                  2
+                ]
+              ]
+            },
+            "after": {
+              "type": "Sample",
+              "sequence": 2,
+              "scope": "test-epoch-1",
+              "channels": [
+                [
+                  101,
+                  5
+                ]
+              ]
+            },
+            "source": "TEST_ONLY_BOOTSTRAP",
+            "completed": true,
+            "parameters": []
+          },
+          {
+            "type": "BodyPort",
+            "version": 2,
+            "code": 36
+          }
+        ]
+      }
+    ],
+    "complete": true
+  },
+  "expression": {
+    "code": 36,
+    "parameters": {}
+  },
+  "second_receipt": {
+    "type": "Execution",
+    "identity": "second-receipt",
+    "port": {
+      "type": "BodyPort",
+      "version": 2,
+      "code": 36
+    },
+    "before": {
+      "type": "Sample",
+      "sequence": 2,
+      "scope": "test-epoch-1",
+      "channels": [
+        [
+          101,
+          5
+        ]
+      ]
+    },
+    "after": {
+      "type": "Sample",
+      "sequence": 3,
+      "scope": "test-epoch-1",
+      "channels": [
+        [
+          101,
+          8
+        ]
+      ]
+    },
+    "source": "TEST_ONLY_FORMED_CONNECTION",
+    "completed": true,
+    "parameters": []
+  },
+  "renewed_structure": {
+    "type": "Pattern",
+    "scope": "test-epoch-1",
+    "changes": [
+      [
+        101,
+        5,
+        8,
+        3
+      ]
+    ]
+  },
+  "first_failure": null,
+  "base_commit": "524197110ebaf7fb5f5dd565d2d6a49faf8a4c61",
+  "spec_sha256": "55f2fbeec15ceb8582394fd0834565646ea4de7513efd44256d00fdd28881a1a",
+  "unit_tests": {
+    "passed": 17,
+    "status": "PASS",
+    "command": "pytest tests/test_body_port0.py -q"
+  },
+  "source_sha256": {
+    "experimental\\body_port0\\prototype.py": "907d65086f413f7c046b4d8820d721ea7caee175454a4a49465d97278d12b35e",
+    "experimental\\body_port0\\validation.py": "80e76243cbf27baa3914aa4d23efcad50a5d3883f1f2b4db0b2886694a71b3c0",
+    "experimental\\body_port0\\__init__.py": "57095073a546ca7828a01533ca0f188683cf2fe2d1f886701e87fc600781c48c"
+  },
+  "regression": {
+    "command": "pytest -q --ignore=tests/test_successor0.py",
+    "passed": 292,
+    "subtests_passed": 90,
+    "duration_seconds": 266.35,
+    "successor0_revalidated": false
+  },
+  "closeout_audit": {
+    "date": "2026-10-06",
+    "status": "COMPLETED",
+    "freeze_anchor": "implementation/validation commit containing this artifact; exact SHA in subsequent stage-closeout index",
+    "spec_and_source_hashes_match": true,
+    "runtime_changed": false,
+    "old_frozen_results_changed": false,
+    "theory_repository_changed": false,
+    "consumer_trust_boundary": "Trusted producer; checks support reachability, not adversarial proof/receipt authenticity",
+    "world_effect_causal_law_established": false,
+    "general_parameters_established": false,
+    "endogenous_goals_established": false
+  },
+  "closeout_regression": {
+    "command": "pytest -q --ignore=tests/test_successor0.py",
+    "passed": 292,
+    "subtests_passed": 90,
+    "duration_seconds": 266.02,
+    "successor0_revalidated": false
+  },
+  "closeout_unit_tests": {
+    "command": "pytest tests/test_body_port0.py -q",
+    "passed": 17,
+    "subtests_passed": 12
+  }
+}
