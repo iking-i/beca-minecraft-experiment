@@ -1,0 +1,82 @@
+{
+  "stage": "BPC-R1",
+  "scope": "TEST_ONLY offline real formal history; formation only",
+  "classification": "PASS",
+  "witness": {
+    "individual_id": "A-71bc612c-8f2c-4f70-8d4d-3d38bed52942",
+    "session_id": "S-09272552-fb87-4078-871b-1c752b1d4862",
+    "experience_id": "03476345-ff88-4128-b64f-1adc22d8d1ad",
+    "action_id": "91b7ca9c-1881-4b01-b491-1a40aa5b4211",
+    "port": {
+      "version": 2,
+      "code": 0
+    },
+    "execution_status": "executed",
+    "action_authorship": {
+      "aggregate_source": "EXTERNAL_FIXED_POLICY",
+      "initiator": "external_fixed_policy",
+      "parameter_binding_source": "INITIAL_EXTERNAL_POLICY",
+      "selection_source": "EXTERNAL_FIXED_POLICY"
+    },
+    "before_frame_id": "A-71bc612c-8f2c-4f70-8d4d-3d38bed52942:E75",
+    "after_frame_id": "A-71bc612c-8f2c-4f70-8d4d-3d38bed52942:E76"
+  },
+  "source_database_sha256": "46a375aca6d9c81441c8968e7c377a546920caa8d4eef993b4276aa146d43053",
+  "cutoff": 3499,
+  "eligible_experiences": 26,
+  "source_event_digests": {
+    "5ebf5608-af0d-42a5-a835-30343ae34f1d": "2fb53e64c681eaa3838424415dc3c777694193e8389498581d368e84acafaad0",
+    "5ee5a95d-c376-4126-9516-147ee2e4bc08": "4174dcf4477c4aeca4922845149c22ed05bb2809a0eadf565d8ad70314fee4f4",
+    "c650c805-2c3a-4da7-8369-a0b08da8688a": "d24b2170637b46286c5fa746f7ba70ea839a76d6c916203ac3e571b831d7497f",
+    "3c635359-c248-449a-bd8f-fc833cb4b8a3": "6888a89ae092560c1f1e7ba017e05d724fc6082d4ba15fdeb4257b202fe5822e",
+    "90ace9df-4637-466d-b247-4058a24e1f95": "b333e423b6579cde9669f4c5a8435d30c61fc218198f44ddfd8133a8e9beee97",
+    "c0ef4b28-188e-4ced-938c-1b5d98afde50": "77124e2d6137cbeac477ec39ae55ec63c78c27410a46d571010a60e6f69bd9ba",
+    "5b6126ca-a8b1-4d54-bfab-4f0d46298bc3": "9821c809afff66cf99035b671ddb72d9e9bd71ed5788e9657438469ed280fd62",
+    "094fb8d0-2a54-4cc2-b508-2f1f66a04524": "ee9d8bce5d02b915172177ce187caf4be32e11a8d46846e40c3e2d7147ba49a8",
+    "S-09272552-fb87-4078-871b-1c752b1d4862": "8aaee30f4aa79224d45a737accd6e807c43ac09a2ca0f83011777e775cacebf4"
+  },
+  "negative_controls": {
+    "experience_deleted_before_formation": true,
+    "port_deleted_before_formation": true,
+    "observation_deleted_before_formation": true,
+    "input_experience_absent": true,
+    "input_port_absent": true,
+    "input_change_absent": true,
+    "experience_root_removed": true,
+    "port_identity_removed": true,
+    "necessary_observation_removed": true,
+    "formed_edge_removed": true,
+    "unrelated_distractor": true,
+    "multiple_ports_no_selection": true
+  },
+  "source_database_unchanged": true,
+  "Minecraft_started": false,
+  "formed_execution_connected": false,
+  "causality": "temporal_association_only",
+  "evidence_report": "storage/validation/BPC-R1-REAL-HISTORY-003/validation.json",
+  "implementation_source": "LOCAL_WORKTREE; not committed",
+  "base_commit": "ebdcbc73d060ce894513f35853ed01c5d47836ef",
+  "unit_tests": {
+    "passed": 29,
+    "result": "PASS",
+    "command": "pytest tests/test_body_port_real1.py -q"
+  },
+  "source_hashes": {
+    "experimental\\body_port_real1\\prototype.py": "d413bbd5ab201348a6bee65f6d4fb3a4afdad9e59350b7d2376d79d46ce84c16",
+    "experimental\\body_port_real1\\validation.py": "48e9713f5953edf4d149d4c54a20f9c2ed11424a0ed14ebd66663a397c6a4fee",
+    "experimental\\body_port_real1\\SPEC.md": "eddca7809f6d7e21af943a5209bee48f36b165c8fe0bed812483fa7ed7e6e230",
+    "tests\\test_body_port_real1.py": "af0a7bb2ea4e46776f3964c5a2657c31c21e5fa420f711d7495364ea6b764abf",
+    "experimental\\body_port0\\prototype.py": "907d65086f413f7c046b4d8820d721ea7caee175454a4a49465d97278d12b35e",
+    "individual\\observation.py": "d0bc8f74494593424c6e947c5bdb8e93bc80fc356d9cb1dc53730711977959db",
+    "individual\\change_detection.py": "7803f4480236cc8be24f1432c91531c976ce76f579a0c36cda84b30640c30fff",
+    "minecraft\\action-space.json": "25f3b95319594fee7d6b76d618b091e9c41166e426d59d3853fffbcb08b6426e"
+  },
+  "regression": {
+    "command": "pytest -q --ignore=tests/test_successor0.py",
+    "passed": 321,
+    "subtests_passed": 90,
+    "seconds": 270.76,
+    "status": "PASS",
+    "successor0_revalidated": false
+  }
+}
