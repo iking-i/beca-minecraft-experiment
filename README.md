@@ -4,9 +4,9 @@
 
 非穷尽 realization 边界已进入上述正式 theory `main`：理论不要求穷尽组合、枚举全部 possible structures 或完成 global enumerative least-fixed-point closure 后才允许递归或现实行动继续。本次只同步正式理论引用，不改变已记录的研究结论或历史结果。
 
-行为因果闭合审计见 [BEHAVIORAL_CAUSAL_CLOSURE.md](BEHAVIORAL_CAUSAL_CLOSURE.md)。当前内部历史可影响后续递归证据读取，**尚不能成为正式动作代码及参数的作者**。本轮只实现不足情形下可严格验证的审计与独立对照，未添加行为策略，未宣称闭合通过。WORLD_ENTRY_FREEZE 的既有身体验收保持不变。
+行为因果闭合审计见 [BEHAVIORAL_CAUSAL_CLOSURE.md](BEHAVIORAL_CAUSAL_CLOSURE.md)。当前内部历史可影响后续递归证据读取，**尚不能成为正式动作代码及参数的作者**。该历史审计只验证了限定的内部效应与独立对照，未宣称行为闭合通过。WORLD_ENTRY_FREEZE 的既有身体验收保持不变。
 
-当前范围是 **L0 层内持续递归和当前有效极限反馈**，不声称已经验证向上递归、L1 或无限递归。本轮进行正式 V0-A / V0-B 基线边界修正；详情见 [BASELINE_CORRECTION_REPORT.md](BASELINE_CORRECTION_REPORT.md)。真实 A 的数据库、本机配置、凭据和运行日志保留在本地，不上传；完整清单见 [REPOSITORY_CONTENTS.md](REPOSITORY_CONTENTS.md)。
+当前范围是 **L0 层内持续递归和当前有效极限反馈**，不声称已经验证向上递归、L1 或无限递归。正式 runtime 保留既有 V0-A / V0-B 基线边界；详情见 [BASELINE_CORRECTION_REPORT.md](BASELINE_CORRECTION_REPORT.md)。真实 A 的数据库、本机配置、凭据和运行日志保留在本地，不上传；完整清单见 [REPOSITORY_CONTENTS.md](REPOSITORY_CONTENTS.md)。
 
 ## 当前研究状态
 
@@ -31,13 +31,13 @@ v3 T4 使用 **TEST_ONLY HISTORICAL COUNTERFACTUAL WITNESS**：原 A16 T2 的固
 
 本机报告为 `storage/acceptance/froi-v3-326dbb1/report.md` / `report.json`；原数据库和 v2 报告保持不变，运行数据不随仓库发布。
 
-`CEC0_MINIMAL_REAL_WITNESS = PASS`：独立 TEST_ONLY 个体采集的 10 条 T0-valid 真实 Minecraft experiences 中，按事前冻结的最小子集规则选出的 2 条真实 witness 已通过原 CEC-0 T1–T6，形成并消费 `opaque control ↔ exact experienced consequence`。其范围是原 UnitRef/change-shape identity 的 temporal association，不证明 causal law、generalization、action authorship 或 imitation。原正式 session 的 `INSUFFICIENT_CLEAN_HISTORY` 与完整 10-record batch 的 `RESOURCE_LIMIT` 均保留，不被最小 witness 的 PASS 覆盖。本机证据见 `storage/validation/CEC0-REAL-MINIMAL-WITNESS-001/validation.json`。
+`CEC0_MINIMAL_REAL_WITNESS = PASS`：独立 TEST_ONLY 个体采集的 10 条 T0-valid 真实 Minecraft experiences 中，按事前冻结的最小子集规则选出的 2 条真实 witness 已通过原 CEC-0 T1–T6，形成并消费 `opaque control ↔ exact experienced consequence`。其范围是原 UnitRef/change-shape identity 的 temporal association，不证明 causal law、generalization、parameter semantics、action selection、action authorship 或 imitation。原正式 session 的 `INSUFFICIENT_CLEAN_HISTORY` 与完整 10-record batch 的 `RESOURCE_LIMIT` 均保留，不被最小 witness 的 PASS 覆盖。本机证据见 `storage/validation/CEC0-REAL-MINIMAL-WITNESS-001/validation.json`。
 
-Cross-actor saved-real-data 中有 588 条 external change、39 条 self change 和 4 对 exact axis/signed-delta pair，`REPRESENTATION_ONLY_REIFICATION_POSSIBLE = YES`。但同一选定真实 witness（包含负对照）需要 17 个不可约 node：GSC-0 在 16-node 条件下返回 `RESOURCE_LIMIT`；独立 GSC-0C 仅将 nodes 固定倍增至 32 后，在 composition workspace `300002 > 300000` 处返回 `RESOURCE_LIMIT`。两者 CR-T1/CR-T2 为 PASS，CR-T3–T6 为 NOT_TESTABLE，尚未验证 cross-actor correspondence 的完整形成与消费。
+Cross-actor saved-real-data 中有 588 条 external change、39 条 self change 和 4 对 exact axis/signed-delta pair，`REPRESENTATION_ONLY_REIFICATION_POSSIBLE = YES`。但同一选定真实 witness（包含负对照）需要 17 个不可约 node：GSC-0 在 16-node 条件下返回 `RESOURCE_LIMIT`；独立 GSC-0C 仅将 nodes 固定倍增至 32 后，在 composition workspace `300002 > 300000` 处返回 `RESOURCE_LIMIT`。两者 CR-T1/CR-T2 为 PASS，CR-T3–T6 为 NOT_TESTABLE，cross-actor correspondence 的完整形成与消费保持 **UNRESOLVED**，不能判为 FAILED 或 validated。
 
 `CURRENT_COMBINATORIAL_EXPLOSION_CLASS = GSC0_REALIZATION_LIMIT`；`NEW_GENERATIVE_MECHANISM_REQUIRED = UNRESOLVED`；`GSC2_REACHED = NOT_YET`。GSC-0 保持有限 TEST_ONLY prototype PASSED，并已完成**本研究线中作为有限穷尽闭包原型的当前角色**；这不排除未来实验用途。Exhaustive composition、global enumerative closure、flat all-composite generation 和 full logical provenance enumeration 属于该 realization 的具体实验选择，不是普遍理论要求；必要因果来源仍须可核对。当前不继续扩容或优化其 exhaustive closure，也不替换正式运行时。
 
-**Successor-0 已独立实现并验收 PASS**：冻结实现提交 `91eac86632af528251d73ecf4c80f283c87fe019`，单元测试 **16/16 PASS**，**S0-T1–T10 全部 PASS**。范围严格为 TEST_ONLY、externally supplied opaque `RequireBound`、unique producer、typed `Transfer`、acyclic fixture、requirement-rooted local formation。证据见 [Successor-0 报告](experimental/successor0/SUCCESSOR0_VALIDATION.md) / [JSON](experimental/successor0/SUCCESSOR0_VALIDATION.json)。
+**Successor-0 已独立实现并验收 PASS**：冻结实现提交 `91eac86632af528251d73ecf4c80f283c87fe019`，状态收口 `13337f47a44ace65cb1704978dee01f82791c22d`，维护回归提交 `e207c655e065f075a3235669bc6ce428b5140667`（完整 Python suite **291/291 PASS**），单元测试 **16/16 PASS**，**S0-T1–T10 全部 PASS**。范围严格为 TEST_ONLY、externally supplied opaque `RequireBound`、unique producer、typed `Transfer`、acyclic fixture、requirement-rooted local formation。证据见 [Successor-0 报告](experimental/successor0/SUCCESSOR0_VALIDATION.md) / [JSON](experimental/successor0/SUCCESSOR0_VALIDATION.json)。
 
 | 条件 | 实际证据 |
 |---|---|
@@ -49,19 +49,13 @@ Cross-actor saved-real-data 中有 588 条 external change、39 条 self change 
 
 限定结论：在冻结 Successor-0 TEST_ONLY 范围内，外部提供的 opaque requirement 能通过 exact structural incidence 因果地驱动局部形成，产生随后被实际消费的组织，无需全局穷尽结构枚举。这证明一个具体候选 realization，不证明 Perfect Recursion 唯一或通用生成机制；不改写 GSC-0、CEC-0 或 FROI 历史结果。GSC-0 继续保留为已验证的 finite exhaustive-closure prototype，Successor-0 是独立的非穷尽局部形成候选，不修改正式 runtime。
 
-Successor-0 和 FROI-1 均不再列为当前 blocker。下一阶段仅记录三个候选方向，不设计机制或指定优先级：multiple-producer / multiple-valid-formation condition、internally formed requirement、local formed organization → complete body expression。更广泛的 `SUCCESSOR_REALIZATION_DIRECTION` 仍未解决：怎样只形成当前执行所需要的结构，同时既不穷尽所有组合，也不由程序员替 A 选择应该形成什么。
+**当前 Successor-0 阶段已完成，下一阶段尚未开始。** 非穷尽局部形成已有具体候选 realization 的 scoped PASS，不再笼统标为 `SUCCESSOR_REALIZATION_DIRECTION = UNRESOLVED`。FROI-1 也已完成其限定实验角色。
 
-```text
-reality/history
-→ causally formed current structure
-→ enough structure for the present executable causal process
-→ action / further recursion
-→ renewed reality/history
-```
+下一候选研究边界仅记录为 **formed internal organization → complete primitive body expression**：当前尚缺内部组织到 action code 与全部 required parameters 的已验证因果边；此边界 **not yet designed / not started**，本次没有设计或实现新机制。Multiple producer、internal requirement origin、relation/mechanics recursive formation 保持开放，不规定优先级。
 
-上述广泛方向仍是 working realization direction，不是新理论定律。Successor-0 的有限 PASS 不解决一般意义的 requirement origin、“enough”、“executable” 或 selector leakage；这些 `successor_unresolved_boundary` 仍是研究问题，不自动成为已确认 blocker。本次只记录结果，不再设计或实现机制。
+Successor-0 不证明一般 requirement origin、“enough”、“executable” 或所有 realization 的 selector leakage 已解决；这些 `successor_unresolved_boundary` 是开放研究问题，不自动成为已确认 blocker。它也不证明 world-facing 链或普遍生成律。旧规格中的 READY、旧报告的 next step 和旧测试数量仅描述当时的实验/提交；其时间与对象范围见 [当前历史索引](RESEARCH_STATUS.md#14-historical-evidence-policy)，原文与冻结结果保留。
 
-`INTERNAL_REQUIREMENT_ORIGIN`、`MULTIPLE_PRODUCER_FORMATION`、`CYCLIC_FORMATION`、`RECURSIVE_FORMATION_OF_RELATIONS_OR_MECHANICS` 均为 `UNRESOLVED`；`INTERNALLY_AUTHORED_COMPLETE_BODY_EXPRESSION`、`MINECRAFT_WORLD_FACING_SUCCESSOR` 均为 `NOT VALIDATED`；`UNIVERSAL_GENERATIVE_DYNAMICS = NOT ESTABLISHED`。外部提供 requirement 不等于内部目标形成，单 producer 不等于多方案自主选择，本轮未运行 Minecraft。
+`INTERNAL_REQUIREMENT_ORIGIN`、`MULTIPLE_PRODUCER_FORMATION`、`CYCLIC_LOCAL_FORMATION`、`RECURSIVE_FORMATION_OF_RELATIONS_OR_MECHANICS` 均为 `UNRESOLVED`；`INTERNALLY_AUTHORED_COMPLETE_BODY_EXPRESSION`、`MINECRAFT_WORLD_FACING_SUCCESSOR` 均为 `NOT VALIDATED`；`UNIVERSAL_GENERATIVE_DYNAMICS = NOT ESTABLISHED`。外部提供 requirement 不等于内部目标形成，单 producer 不等于多方案自主选择，本轮未运行 Minecraft。
 
 `BEHAVIORAL_CAUSAL_CLOSURE = FAILED / NOT YET PASSED`；formal action sampler 和 parameter binding 仍为 `EXTERNAL_FIXED_POLICY`；internally authored Minecraft action、L1 / upward recursion 均 `NOT VALIDATED`；Perfect Recursion universal generative law 仍 `NOT ESTABLISHED`。冻结规格及所有历史 PASS / RESOURCE_LIMIT / PARTIAL 结果不改写。
 
@@ -92,7 +86,7 @@ Copy-Item minecraft/config.example.json minecraft/config.json
 
 在第一、二阶段的身体接口、唯一实验身份、连续状态链、SQLite 和外部 Supervisor 上增加最小内部递归。正常运行路径不使用原来的固定前进脚本。没有引入 LLM、语言知识、Minecraft 攻略、高级任务、自我修改、自我复制或自主联网。
 
-当前是外部初始化 k_actual=1 的单过程正式基线，容量 N 并不提供自主分化能力，不能称为 A 自主选择不分化。本轮目标仅为 V0-A / V0-B：L0 内的结果反馈和真实有限记忆后果进入递归；architecture-limit recognition=not_observed，不进入 V0-C。正式路径已经禁用旧的固定分化、分辨率减半、淘汰和探索评分，能力接口保留。完整审计与能力边界见 [FORMAL_L0_EXPERIMENT.md](FORMAL_L0_EXPERIMENT.md)。
+当前是外部初始化 k_actual=1 的单过程正式基线，容量 N 并不提供自主分化能力，不能称为 A 自主选择不分化。该正式 runtime 基线目标仅为 V0-A / V0-B：L0 内的结果反馈和真实有限记忆后果进入递归；architecture-limit recognition=not_observed，不进入 V0-C。正式路径已经禁用旧的固定分化、分辨率减半、淘汰和探索评分，能力接口保留。完整审计与能力边界见 [FORMAL_L0_EXPERIMENT.md](FORMAL_L0_EXPERIMENT.md)。
 
 程序、进程、数据库、游戏角色都是承载或能力结构。`individual_id` 是工程标记；`A0 → A1 → A2` 表示同一个体的连续状态变化。数据库属于 A 的生命周期，Experiment Session 是其中一段运行记录。当前 A 的身份和数据库由 `individual/lifetime.json` 固定。
 
@@ -314,7 +308,7 @@ tests/
 npm --prefix minecraft test
 ```
 
-上述历史测试数量不表示当前基线结果；本轮完整结果见 [BASELINE_CORRECTION_REPORT.md](BASELINE_CORRECTION_REPORT.md)。身体扩展的测试与能力边界见 [BODY_CAPABILITIES.md](BODY_CAPABILITIES.md)。数值模拟和 Node 测试适配器只作为测试证据；真实游戏验收单独标明，未用模拟结果替代游戏运行。
+上述历史测试数量不表示当前基线结果；当前维护基线完整 Python suite 为 291/291 PASS，各历史阶段的基线结果保留在 [BASELINE_CORRECTION_REPORT.md](BASELINE_CORRECTION_REPORT.md)。身体扩展的测试与能力边界见 [BODY_CAPABILITIES.md](BODY_CAPABILITIES.md)。数值模拟和 Node 测试适配器只作为测试证据；真实游戏验收单独标明，未用模拟结果替代游戏运行。
 
 ## 外部策略边界修正（历史 legacy_policy_debug）
 

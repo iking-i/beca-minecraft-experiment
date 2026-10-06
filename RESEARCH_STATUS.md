@@ -5,6 +5,19 @@
 **Historical FROI-1 acceptance checkpoint:** `326dbb165f41c2ff32c43230810148990fbf0daf` (frozen v3; existing-session acceptance PASS)
 
 **Subsequent experimental evidence:** CEC-0 minimal real witness and cross-actor GSC-0/GSC-0C local reports, measured from the working tree based on `d308a27aacff9d371e2ff21fb9cd90f160f5f7a8`. These measurements are not assigned an invented frozen implementation commit.
+**Current audit base:** `e207c655e065f075a3235669bc6ce428b5140667`; current Successor-0 stage completed, next stage not started.
+
+**Audit coverage:** 203 tracked files (46 Markdown, 26 JSON, 106 Python, 20 JavaScript/MJS, and five configuration/administrative files). Source/type/import paths, test controls, frozen specifications, machine reports, and Git ancestry were cross-checked rather than treating an old README PASS as current evidence. All tracked JSON is parsed; current full regression is 291/291 PASS, and the dedicated Successor-0 suite is 16/16 PASS. This normalization changes current indexes only.
+
+Direct causal boundaries used in this audit:
+
+- `individual/core.py::execute_discrete_action` still calls `select_uniform_action` and `bind_parameters`; no Successor-0 import enters formal runtime.
+- `integration/froi.py::consume` reads formed Shared/PortBind with exact request and COMPLETE gates; `FormalFROIEngine.resume_from_read_checkpoint` is the shared post-read interpreter.
+- `experimental/gsc0/engine.py::Engine.run` retains the frozen finite closure/resource semantics; GSC-0/1 controls and persisted-result reports retain their distinct claims.
+- `experimental/cec0/consumer.py::consume` reads formed Shared witnesses. The retained real reports distinguish the two-record COMPLETE witness from the ten-record RESOURCE_LIMIT.
+- `experimental/successor0/engine.py::form`, `consumer.py::consume`, `validation.py::run_validation` and `tests/test_successor0.py` establish the externally rooted local-support scope and its detached ablations.
+- The theory source at the exact main SHA (§1), frozen acceptance manifests, and implementation/status/maintenance commit diffs delimit which claims are historical and which are current. No historical freeze is regenerated for this HEAD.
+
 **Purpose:** authoritative research-state index for the experiment repository. This document does not alter runtime behavior, historical validation results, or the Perfect Recursion theory.
 
 > **Reading rule:** historical audits remain evidence for the scope they actually tested. When a later scope audit or counterfactual narrows an earlier summary, use the later document for the current interpretation rather than rewriting the older result.
@@ -85,7 +98,8 @@ The current formal action sampler and parameter binder remain `EXTERNAL_FIXED_PO
 ## 5. Behavioral causal closure
 
 ```text
-BEHAVIORAL_CAUSAL_CLOSURE = FAILED
+BEHAVIORAL_CAUSAL_CLOSURE = NOT YET PASSED
+historical diagnostic result = FAILED
 implementation_scope = diagnostic_partial
 ```
 
@@ -272,6 +286,9 @@ The initial memory condition remains retention of the raw historical inputs requ
 ```text
 SUCCESSOR0_STATUS = PASS
 implementation_commit = 91eac86632af528251d73ecf4c80f283c87fe019
+status_closure_commit = 13337f47a44ace65cb1704978dee01f82791c22d
+maintenance_regression_commit = e207c655e065f075a3235669bc6ce428b5140667
+full_repository_pytest = 291/291 PASS
 unit_tests = 16/16 PASS
 S0_T1_TO_T10 = PASS
 ```
@@ -293,30 +310,18 @@ The strongest accepted conclusion is:
 
 This establishes a specific candidate realization, not the unique or universal generative mechanism of Perfect Recursion. Transfer declarations and the requirement are external fixture conditions; the experiment does not establish their endogenous formation. GSC-0 remains a validated finite exhaustive-closure prototype. Successor-0 is a separate non-exhaustive local-formation candidate, not deletion, replacement or negation of historical GSC-0 evidence.
 
-Successor-0 implementation and its scoped acceptance are **no longer a blocker**. Candidate next directions, with no priority or mechanism prescribed here, are:
-
-- multiple-producer / multiple-valid-formation condition;
-- internally formed requirement;
-- local formed organization -> complete body expression.
-
-FROI-1 implementation and its scoped v3 acceptance are also **no longer a blocker**. The broader, still unresolved research direction remains:
+Successor-0 implementation and its scoped acceptance are **completed**, not a current blocker or merely hypothetical direction. FROI-1 implementation and scoped v3 acceptance are also completed within their stated bounds.
 
 ```text
-How can a recursive realization form only the structure required for the
-currently executable causal process, without:
-1. exhaustively enumerating all possible structures; or
-2. introducing an external semantic/policy selector?
+CURRENT_STAGE = SUCCESSOR0_COMPLETED
+SUCCESSOR_REALIZATION_DIRECTION = VALIDATED_SCOPED_CANDIDATE
+NEXT_STAGE = NOT_STARTED
+candidate next boundary = formed internal organization -> complete primitive body expression
+candidate design status = NOT_YET_DESIGNED
+missing validated edge = internal organization -> action code + all required parameters
 ```
 
-```text
-SUCCESSOR_REALIZATION_DIRECTION = UNRESOLVED
-
-reality/history
--> causally formed current structure
--> enough structure for the present executable causal process
--> action / further recursion
--> renewed reality/history
-```
+This records a boundary, not a new architecture or implementation plan. Multiple producers, internal requirement origin and recursively formed relations/mechanics remain open without prescribing priority. The general reality/history -> current structure -> action/further recursion -> renewed reality/history direction is not a validated world-facing chain: Successor-0 ends at its formed-organization consumer.
 
 `successor_unresolved_boundary` comprises:
 
@@ -335,7 +340,7 @@ The remaining boundary is explicit:
 BEHAVIORAL_CAUSAL_CLOSURE = FAILED / NOT YET PASSED
 INTERNAL_REQUIREMENT_ORIGIN = UNRESOLVED
 MULTIPLE_PRODUCER_FORMATION = UNRESOLVED
-CYCLIC_FORMATION = UNRESOLVED
+CYCLIC_LOCAL_FORMATION = UNRESOLVED
 RECURSIVE_FORMATION_OF_RELATIONS_OR_MECHANICS = UNRESOLVED
 INTERNALLY_AUTHORED_COMPLETE_BODY_EXPRESSION = NOT VALIDATED
 MINECRAFT_WORLD_FACING_SUCCESSOR = NOT VALIDATED
@@ -404,7 +409,23 @@ historical experiment result
 current interpretation of theoretical significance
 ```
 
-Older files that contain a superseded current-summary paragraph should carry a visible historical-status notice pointing here or to the later scope audit, while preserving the original body/result.
+Historical files retain their original text. The following current index supplies their time/scope notice; neither old readiness wording nor old next-step recommendations prescribe the current task.
+
+| Historical record / frozen boundary | Current interpretation |
+|---|---|
+| `STAGE2.md`, `VALIDATION.md`, `VALIDATION_STAGE3.md`, `POLICY_BOUNDARIES.md`, `BASELINE_CORRECTION_REPORT.md` | Stage-specific implementation/results, including legacy external policies; not the current research-stage agenda. |
+| `MINIMAL_INDIVIDUAL_MODEL.md`, `TESTABLE_PREDICTIONS.md`, `EXPERIMENTAL_VALIDATION.md`, `EXPERIMENTAL_IMPLEMENTATION_BOUNDARY.md`, `FORMAL_L0_EXPERIMENT.md` | Retained v0.8/local experimental definitions and criteria; formal theory main is the reference in §1. |
+| `BEHAVIORAL_CAUSAL_CLOSURE.*`, `BEHAVIOR_EXPRESSION_DESIGN_AUDIT.md`, `CURRENT_STRUCTURE_GENERATION_AUDIT.md` | Historical diagnostic/design checkpoints; absence of behavioral authorship remains valid, while absence of any demonstrated organization producer is superseded. |
+| `CURRENT_ORGANIZATION_CRITERION.md`, `CURRENT_ORGANIZATION_AUDIT.md`, `CURRENT_ORGANIZATION_SCOPE_AUDIT.md` | Frozen CO-WAC-1 and object-scope evidence; use §6 rather than combining different objects into an overall score. |
+| GSC-0/1 specs, prototype validation reports, recursive-continuity and result-dependence reports | Their exact finite fixture claims remain valid; global exhaustive closure is their realization criterion, not a universal law or current blocker. |
+| GSC-2 audit and role-formation specification | Unresolved candidate architecture and historical recommendations; not mandatory successor prerequisites. |
+| FROI-1 spec, implementation/scheduling/infrastructure reports, harness v1/v2/v3 and freeze manifests | Readiness and partial states belong to those historical checkpoints. Implementation is now completed; v2 PARTIAL and v3 PASS remain separate. Frozen source guards apply to their original environments, not every later HEAD. |
+| `CEC0_CONTROL_EFFECT_CORRESPONDENCE.*` and retained local real-world reports | Original insufficient history, full ten-record RESOURCE_LIMIT and minimal real witness PASS are different datasets/scopes; none overwrites another. |
+| Cross-actor/GSC-0C local reports | Recorded runs remain RESOURCE_LIMIT; correspondence formation is UNRESOLVED, not failed or validated. |
+| `WORLD_ENTRY_AUDIT.md`, `WORLD_ENTRY_FREEZE.json`, `BODY_CAPABILITIES.md`, `WINDOWS_LAUNCHER_REPORT.md` | Interface/launcher evidence only; six live foundation chains do not establish internal behavior authorship. Historical test counts are not current regression counts. |
+| `experimental/successor0/SUCCESSOR0_VALIDATION.*` | Frozen scoped PASS at implementation `91eac866…`; status closure `13337f47…`; maintenance `e207c655…` changes an equivalence-test boundary only, not acceptance semantics. |
+
+Usage guides (`LIFETIME_STORAGE.md`, `REPOSITORY_CONTENTS.md`, component READMEs) describe operations or retained capabilities. Their operational “next step” is not a research mandate. `00_DISCUSSION_CONSTRAINTS.md` remains a method guardrail. No frozen report is relabeled as evidence from the present audit HEAD.
 
 ### CEC-0 real-world minimal witness
 
@@ -421,7 +442,7 @@ Ten T0-valid real Minecraft experiences were collected by an independent TEST_ON
 opaque control <-> exact experienced consequence
 ```
 
-The consequence identity is the unchanged CEC-0 UnitRef/change-shape identity, not equality of complete raw numerical world outcomes. This establishes temporal-association correspondence in the declared scope. It does **not** establish causal law, generalization, action authorship, or imitation.
+The consequence identity is the unchanged CEC-0 UnitRef/change-shape identity, not equality of complete raw numerical world outcomes. This establishes temporal-association correspondence in the declared scope. It does **not** establish causal law, generalization, parameter semantics, action selection, action authorship, or imitation.
 
 The original formal-session `INSUFFICIENT_CLEAN_HISTORY` and the full ten-record batch's `RESOURCE_LIMIT` remain separate, unchanged historical results. The minimum subset's PASS does not upgrade the whole batch or the earlier formal session. Original controls passed 17/17 separately; fixture validation is not substituted for real-world acceptance.
 
@@ -449,7 +470,7 @@ NEW_GENERATIVE_MECHANISM_REQUIRED = UNRESOLVED
 GSC2_REACHED = NOT_YET
 ```
 
-Both experiments retain `CR-T1 = PASS`, `CR-T2 = PASS`; `CR-T3-T6 = NOT_TESTABLE` because no COMPLETE organization was available for the acceptance chain. Resource interruption is not proof of generative impossibility or of a new-mechanism requirement. Cross-actor correspondence formation and consumption are **not validated**. No new pair selection, sample collection, or further capacity increase follows these frozen results.
+Both experiments retain `CR-T1 = PASS`, `CR-T2 = PASS`; `CR-T3-T6 = NOT_TESTABLE` because no COMPLETE organization was available for the acceptance chain. Resource interruption is not proof of generative impossibility or of a new-mechanism requirement. Cross-actor correspondence formation and consumption remain **UNRESOLVED**, not FAILED or validated. No new pair selection, sample collection, or further capacity increase follows these frozen results.
 
 Local evidence: `storage/validation/CROSS-ACTOR-REIFICATION-002/validation.json`, its `selected-witness.json`, and `storage/validation/GSC0C-CAPACITY-EXTENSION-001/validation.json`. Real data and local reports remain outside the published runtime data.
 
@@ -459,7 +480,7 @@ Local evidence: `storage/validation/CROSS-ACTOR-REIFICATION-002/validation.json`
 Perfect Recursion v0.9                 conceptual architecture; retained
 World Entry                             PASSED within frozen scope
 FormalL0 history -> recursive read      VALIDATED
-Behavioral Causal Closure               FAILED / diagnostic_partial
+Behavioral Causal Closure               NOT YET PASSED; historical FAILED / diagnostic_partial
 CO-WAC-1                                FROZEN working criterion
 O-G0-1 C1–C5                            PASS in finite TEST_ONLY scope
 GSC-0                                   PASSED finite prototype; current exhaustive-closure role completed in this research line
@@ -467,10 +488,11 @@ GSC-1                                   PASSED candidate prototype
 GSC-2                                   UNRESOLVED candidate branch
 Persisted derived-result necessity      NOT NECESSARY in two tested fixtures (A=B=C)
 CEC-0 minimal real witness              PASS; T1-T6 PASS; temporal-association scope
-Cross-actor real exact pairs             4; correspondence not validated
+Cross-actor real exact pairs             4; correspondence formation UNRESOLVED
 GSC-0 cross-actor / GSC-0C                RESOURCE_LIMIT / RESOURCE_LIMIT; extension stopped
 Successor-0                              PASS; S0-T1-T10 PASS; 16/16 tests; unique-producer acyclic TEST_ONLY scope
-Current research direction               SUCCESSOR_REALIZATION_DIRECTION; UNRESOLVED
+Current stage                            SUCCESSOR0_COMPLETED; scoped candidate PASS
+Next stage                               NOT_STARTED; body-expression boundary NOT_YET_DESIGNED
 FROI-1 implementation                   IMPLEMENTED
 FROI-1 historical v2                    PARTIAL (preserved)
 FROI-1 current v3                       PASS; T1-T5 PASS
@@ -482,4 +504,4 @@ L1 / upward recursion                   NOT VALIDATED
 Cross-environment core invariance       NOT YET DEMONSTRATED
 ```
 
-> **Current research position:** FROI-1 scoped v3 PASS, CEC-0 minimal real witness PASS, and historical GSC-0/GSC-0C RESOURCE_LIMIT results remain unchanged. Successor-0 is implemented and PASS in its externally rooted, unique-producer, acyclic TEST_ONLY scope; formed support is causally consumed without global exhaustive enumeration. General successor dynamics remain unresolved. Requirement origin, multiple producers, cycles, recursively formed relations/mechanics, body expression and world-facing integration are not established. Candidate next directions are recorded without choosing priority or design. Behavioral causal closure remains failed/not yet passed; no code is changed by this status update.
+> **Current research position:** FROI-1 scoped v3 PASS, CEC-0 minimal real witness PASS, and historical GSC-0/GSC-0C RESOURCE_LIMIT results remain unchanged. Successor-0 is implemented and PASS in its externally rooted, unique-producer, acyclic TEST_ONLY scope; formed support is causally consumed without global exhaustive enumeration. The concrete local-formation candidate is validated; universal dynamics remain unestablished. Requirement origin, multiple producers, cycles, recursively formed relations/mechanics, body expression and world-facing integration are not established. The candidate organization -> complete primitive body-expression boundary is not yet designed or started; other open questions remain without priority. Behavioral causal closure remains failed/not yet passed; no code is changed by this status update.
