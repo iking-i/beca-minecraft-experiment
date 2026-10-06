@@ -1,37 +1,66 @@
 # BECA-V0 — Current Research Status
 
-**Status date:** 2026-10-06
+**Status date:** 2026-10-07
 
-**Current stage: BPC-0 — History-Formed Body-Port Connection; COMPLETED / FROZEN.**
-Implementation/validation commit: `996b6fab6d055159f1336085ec80e5a7a4f07613`.
-Stage-closeout/handoff anchor: the separate commit containing `BPC0_CONVERSATION_HANDOFF.md`.
-Structural TEST_ONLY witness **PASS**; real body/world-facing result **NOT_TESTABLE**.
-See `experimental/body_port0/SPEC.md` and `VALIDATION.md` / `VALIDATION.json`.
-The opaque native parameterless port already exists; a new supported connection
-instance is formed through generic history incidence and consumed to produce
-`{code: O.code, parameters: {}}`. No internal value-to-code mapping, sampler or
-binder authors the second expression. Bootstrap, synthetic samples and query are
-externally supplied; the formation and unique-result adoption mechanisms are fixed.
-This does not establish formal A behavioral closure, learned adoption policy or
-Minecraft effect causality. 17 new tests and BPC-T1–T9 pass; regression excluding
-frozen Successor-0's 16 tests is 292 passed. No live adapter/experiment is run.
+**Current stage: BPC-R1 — Real-Experience Body-Port Connection Formation; COMPLETED / FROZEN; PASS.**
+Implementation/acceptance commit: `5fd85389e39801a0899eb0b1a4296796c2427783`.
+Freeze / phase-closeout anchor: the commit containing `BPC_R1_CONVERSATION_HANDOFF.md`.
+Resolve its exact SHA using `git log -1 --format=%H -- BPC_R1_CONVERSATION_HANDOFF.md`.
 
-The audit-base and Successor-0 `NEXT_STAGE = NOT_STARTED` entries below describe
-those historical closeout checkpoints. The newly completed BPC-0 structural stage
-is independent; its real-world measurement is not started and not yet ready for
-execution without an audited receipt/frame adapter. All older results remain
-unchanged. Implementation evidence is frozen at the exact commit above.
-The next question is: “真实 body execution receipt 与真实 ObservationFrame 能否进入同一历史/结构形成链，使真实经历形成 C ↔ O，并让形成后的连接再次直接激活已有 body port。”
-Its first task is read-only interface audit only; no implementation, live integration
-or Minecraft run is started. See `BPC0_CONVERSATION_HANDOFF.md` for the precise boundary.
+Strongest accepted claim:
 
+```text
+recorded real Minecraft experience
+→ formal history / RealExperience (offline TEST_ONLY adapter)
+→ generic shared-incidence formation
+→ supported C ↔ O
+```
+
+O is the existing native `(catalog version=2, numeric code=0)`, not a newly created
+capability or a mapped internal value. The source is formal individual
+`A-71bc612c-8f2c-4f70-8d4d-3d38bed52942`, session
+`S-09272552-fb87-4078-871b-1c752b1d4862`, experience
+`03476345-ff88-4128-b64f-1adc22d8d1ad`, frames `E75 → E76`.
+The fixed identity-order measurement procedure selected one of 26 eligible
+experiences before formation. Nine source roots and 15 direct supports are
+preserved. All 12 negative controls passed; no canonical database write occurred.
+
+Nonclaims: no internally authored historical action; no proof that O caused the
+observed change; no behavioral authorship, general parameter formation,
+autonomous goal, behavioral causal closure, or connection-controlled real body.
+Bootstrap code/binding authorship remains external; observation changes are
+recorded temporal association, including coverage/unobserved changes.
+No formal runtime, BPC-0 frozen evidence, caps or theory was changed. No
+Successor-0/FROI/GSC/CEC research result was reopened or rewritten.
+
+Original evidence: `experimental/body_port_real1/VALIDATION.md` / `VALIDATION.json`;
+full real material remains local at `storage/validation/BPC-R1-REAL-HISTORY-003/validation.json`.
+Closeout recheck and regression are indexed separately in
+`experimental/body_port_real1/CLOSEOUT_VALIDATION.json`, preserving prior reports.
+Formal handoff: `BPC_R1_CONVERSATION_HANDOFF.md`.
+Closeout dedicated tests: **29 passed** (0.18 s). Necessary regression:
+`pytest -q --ignore=tests/test_successor0.py` → **321 passed, 90 subtests passed**
+(275.10 s); Successor-0 was not revalidated. Diff/JSON/evidence checks passed.
+
+**Next stage: NOT_STARTED.** Boundary only:
+`real-history-formed C ↔ O → subsequent real body execution`.
+Question: “一个由真实 Minecraft 历史形成并验证的 C ↔ O，能否在不经过外部 sampler、binder 或人工 value-to-action mapping 的情况下，直接成为后续真实 primitive body expression 的动作来源？”
+No design, implementation, execution adapter, expression construction or Minecraft
+run for that next stage was performed or authorized by this closeout.
+
+BPC-0 remains independently frozen: implementation
+`996b6fab6d055159f1336085ec80e5a7a4f07613`, closeout
+`ebdcbc73d060ce894513f35853ed01c5d47836ef`. Its synthetic PASS and original
+real-world NOT_TESTABLE result remain unchanged. All Successor-0 audit-base,
+NEXT_STAGE and test-count entries below are historical checkpoint evidence;
+they do not supersede the current BPC-R1 phase and closeout regression above.
 
 **Historical FROI-1 acceptance checkpoint:** `326dbb165f41c2ff32c43230810148990fbf0daf` (frozen v3; existing-session acceptance PASS)
 
 **Subsequent experimental evidence:** CEC-0 minimal real witness and cross-actor GSC-0/GSC-0C local reports, measured from the working tree based on `d308a27aacff9d371e2ff21fb9cd90f160f5f7a8`. These measurements are not assigned an invented frozen implementation commit.
-**Current audit base:** `e207c655e065f075a3235669bc6ce428b5140667`; current Successor-0 stage completed, next stage not started.
+**Historical repository-audit base:** `e207c655e065f075a3235669bc6ce428b5140667`; Successor-0 was completed and the next stage was not started at that checkpoint.
 
-**Audit coverage:** 203 tracked files (46 Markdown, 26 JSON, 106 Python, 20 JavaScript/MJS, and five configuration/administrative files). Source/type/import paths, test controls, frozen specifications, machine reports, and Git ancestry were cross-checked rather than treating an old README PASS as current evidence. All tracked JSON is parsed; current full regression is 291/291 PASS, and the dedicated Successor-0 suite is 16/16 PASS. This normalization changes current indexes only.
+**Historical audit coverage at that checkpoint:** 203 tracked files (46 Markdown, 26 JSON, 106 Python, 20 JavaScript/MJS, and five configuration/administrative files). Source/type/import paths, test controls, frozen specifications, machine reports, and Git ancestry were cross-checked rather than treating an old README PASS as current evidence. At that checkpoint all tracked JSON was parsed, full regression was 291/291 PASS, and the dedicated Successor-0 suite was 16/16 PASS. Those historical measurements remain unchanged.
 
 Direct causal boundaries used in this audit:
 
@@ -336,6 +365,8 @@ This establishes a specific candidate realization, not the unique or universal g
 
 Successor-0 implementation and its scoped acceptance are **completed**, not a current blocker or merely hypothetical direction. FROI-1 implementation and scoped v3 acceptance are also completed within their stated bounds.
 
+Historical Successor-0 closeout checkpoint (not the current phase):
+
 ```text
 CURRENT_STAGE = SUCCESSOR0_COMPLETED
 SUCCESSOR_REALIZATION_DIRECTION = VALIDATED_SCOPED_CANDIDATE
@@ -515,8 +546,8 @@ CEC-0 minimal real witness              PASS; T1-T6 PASS; temporal-association s
 Cross-actor real exact pairs             4; correspondence formation UNRESOLVED
 GSC-0 cross-actor / GSC-0C                RESOURCE_LIMIT / RESOURCE_LIMIT; extension stopped
 Successor-0                              PASS; S0-T1-T10 PASS; 16/16 tests; unique-producer acyclic TEST_ONLY scope
-Current stage                            SUCCESSOR0_COMPLETED; scoped candidate PASS
-Next stage                               NOT_STARTED; body-expression boundary NOT_YET_DESIGNED
+Historical audit stage                   SUCCESSOR0_COMPLETED; scoped candidate PASS
+Historical audit next stage              NOT_STARTED; body-expression boundary NOT_YET_DESIGNED
 FROI-1 implementation                   IMPLEMENTED
 FROI-1 historical v2                    PARTIAL (preserved)
 FROI-1 current v3                       PASS; T1-T5 PASS

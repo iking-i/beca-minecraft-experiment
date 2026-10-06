@@ -1,5 +1,5 @@
 {
-  "status_date": "2026-10-06",
+  "status_date": "2026-10-07",
   "evidence_checkpoint": "326dbb165f41c2ff32c43230810148990fbf0daf",
   "evidence_checkpoint_scope": "historical frozen FROI-1 v3 acceptance",
   "subsequent_evidence": {
@@ -142,12 +142,10 @@
     }
   },
   "next_work": [
-    "Current Successor-0 stage completed; no further implementation in this normalization",
-    "Candidate next boundary only, not yet designed or started: formed internal organization -> complete primitive body expression",
-    "Keep multiple-producer formation, internal requirement origin and recursive formation of relations/mechanics open without prescribing priority",
-    "Keep formal sampler and parameter binder EXTERNAL_FIXED_POLICY; representation capacity is not causal formation or authorship",
-    "Preserve frozen FROI v2 PARTIAL / v3 PASS, CEC-0 minimal real PASS, and all historical GSC PASS / RESOURCE_LIMIT results",
-    "No GSC capacity extension, exhaustive-closure optimization or new mechanism"
+    "BPC-R1 COMPLETED / FROZEN; do not reopen the completed formation experiment",
+    "Next phase NOT_STARTED; record only real-history-formed C ↔ O -> subsequent real body execution",
+    "No next-phase mechanism design, runtime change, expression adapter or Minecraft run in this closeout",
+    "Retain external bootstrap authorship and all historical nonclaims / unresolved boundaries"
   ],
   "cec0_minimal_real_witness": {
     "status": "PASS",
@@ -420,36 +418,91 @@
     "implementation_or_priority_selected": false
   },
   "current_research_phase": {
-    "name": "BPC-0 — History-Formed Body-Port Connection",
+    "name": "BPC-R1 — Real-Experience Body-Port Connection Formation",
     "status": "PASS",
-    "evidence_source": "GIT_COMMIT",
-    "base_commit": "524197110ebaf7fb5f5dd565d2d6a49faf8a4c61",
-    "scope": "synthetic TEST_ONLY history; generic shared incidence; existing parameterless native body port; unique supported endpoint",
-    "world_facing_status": "NOT_TESTABLE",
-    "live_validation_ready": false,
-    "bootstrap_and_query_origin": "TEST_ONLY_EXTERNAL",
-    "fixed_formation_and_adoption_mechanism": true,
-    "formal_runtime_changed": false,
-    "behavioral_causal_closure_established": false,
-    "unit_tests_passed": 17,
-    "regression_tests_passed_excluding_successor0": 292,
-    "successor0_revalidated": false,
-    "report": "experimental/body_port0/VALIDATION.json",
     "lifecycle": "COMPLETED_FROZEN",
     "completed": true,
     "frozen": true,
-    "implementation_commit": "996b6fab6d055159f1336085ec80e5a7a4f07613",
-    "closeout_anchor": "commit containing BPC0_CONVERSATION_HANDOFF.md",
-    "closeout_regression_tests_passed_excluding_successor0": 292,
-    "handoff": "BPC0_CONVERSATION_HANDOFF.md"
+    "scope": "Independent TEST_ONLY offline real formal-history formation only; native parameterless capability identity; supported shared incidence",
+    "base_commit": "ebdcbc73d060ce894513f35853ed01c5d47836ef",
+    "accepted_claim": "recorded real Minecraft experience -> formal history / RealExperience -> generic shared-incidence formation -> supported C ↔ O",
+    "closeout_anchor": "commit containing BPC_R1_CONVERSATION_HANDOFF.md",
+    "handoff": "BPC_R1_CONVERSATION_HANDOFF.md",
+    "report": "experimental/body_port_real1/VALIDATION.json",
+    "closeout_validation": "experimental/body_port_real1/CLOSEOUT_VALIDATION.json",
+    "unit_tests_passed": 29,
+    "negative_controls_passed": 12,
+    "formal_runtime_changed": false,
+    "Minecraft_executed": false,
+    "formed_connection_execution_connected": false,
+    "source_database_changed": false,
+    "BPC0_frozen_evidence_changed": false,
+    "prior_research_results_reopened": false,
+    "theory_changed": false,
+    "nonclaims": [
+      "internally authored historical action",
+      "O caused the observed world change",
+      "behavioral authorship",
+      "general parameter formation",
+      "autonomous goal",
+      "behavioral causal closure",
+      "C ↔ O controls the real body"
+    ],
+    "implementation_commit": "5fd85389e39801a0899eb0b1a4296796c2427783",
+    "closeout_regression": {
+      "command": "pytest -q --ignore=tests/test_successor0.py",
+      "passed": 321,
+      "subtests_passed": 90,
+      "seconds": 275.1,
+      "successor0_revalidated": false
+    }
   },
-  "prior_closeout_index_scope": "current_checkpoint / repository_state_audit / next_research_boundary retain the Successor-0 closeout checkpoint; current_research_phase records the subsequent independent BPC-0 stage",
+  "prior_closeout_index_scope": "current_checkpoint / repository_state_audit / next_research_boundary retain the historical Successor-0 closeout; historical_research_phases.bpc0 retains BPC-0; current_research_phase records BPC-R1",
   "next_phase_boundary": {
-    "question": "真实 body execution receipt 与真实 ObservationFrame 能否进入同一历史/结构形成链，使真实经历形成 C ↔ O，并让形成后的连接再次直接激活已有 body port。",
-    "first_work": "READ_ONLY_INTERFACE_AUDIT",
     "status": "NOT_STARTED",
-    "implementation_authorized_in_handoff": false,
-    "runtime_changes_authorized_in_handoff": false,
-    "Minecraft_execution_authorized_in_handoff": false
+    "stage_started": false,
+    "chain": "real-history-formed C ↔ O -> subsequent real body execution",
+    "question": "一个由真实 Minecraft 历史形成并验证的 C ↔ O，能否在不经过外部 sampler、binder 或人工 value-to-action mapping 的情况下，直接成为后续真实 primitive body expression 的动作来源？",
+    "boundary_only": true,
+    "design_started": false,
+    "implementation_started": false,
+    "Minecraft_execution_started": false,
+    "implementation_authorized_in_handoff": false
+  },
+  "historical_research_phases": {
+    "bpc0": {
+      "name": "BPC-0 — History-Formed Body-Port Connection",
+      "status": "PASS",
+      "evidence_source": "GIT_COMMIT",
+      "base_commit": "524197110ebaf7fb5f5dd565d2d6a49faf8a4c61",
+      "scope": "synthetic TEST_ONLY history; generic shared incidence; existing parameterless native body port; unique supported endpoint",
+      "world_facing_status": "NOT_TESTABLE",
+      "live_validation_ready": false,
+      "bootstrap_and_query_origin": "TEST_ONLY_EXTERNAL",
+      "fixed_formation_and_adoption_mechanism": true,
+      "formal_runtime_changed": false,
+      "behavioral_causal_closure_established": false,
+      "unit_tests_passed": 17,
+      "regression_tests_passed_excluding_successor0": 292,
+      "successor0_revalidated": false,
+      "report": "experimental/body_port0/VALIDATION.json",
+      "lifecycle": "COMPLETED_FROZEN",
+      "completed": true,
+      "frozen": true,
+      "implementation_commit": "996b6fab6d055159f1336085ec80e5a7a4f07613",
+      "closeout_anchor": "commit containing BPC0_CONVERSATION_HANDOFF.md",
+      "closeout_regression_tests_passed_excluding_successor0": 292,
+      "handoff": "BPC0_CONVERSATION_HANDOFF.md"
+    }
+  },
+  "historical_next_phase_boundaries": {
+    "bpc0_closeout": {
+      "question": "真实 body execution receipt 与真实 ObservationFrame 能否进入同一历史/结构形成链，使真实经历形成 C ↔ O，并让形成后的连接再次直接激活已有 body port。",
+      "first_work": "READ_ONLY_INTERFACE_AUDIT",
+      "status": "NOT_STARTED",
+      "implementation_authorized_in_handoff": false,
+      "runtime_changes_authorized_in_handoff": false,
+      "Minecraft_execution_authorized_in_handoff": false
+    }
   }
 }

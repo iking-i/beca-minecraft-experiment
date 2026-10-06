@@ -10,20 +10,26 @@
 
 ## 当前研究状态
 
-**BPC-0 已完成并冻结：COMPLETED / FROZEN，结构 witness PASS。**
-实现/验证提交：`996b6fab6d055159f1336085ec80e5a7a4f07613`；状态/handoff 收口在独立后续提交中。
-见 [冻结问题与判据](experimental/body_port0/SPEC.md) 和
-[验收/作者权收口报告](experimental/body_port0/VALIDATION.md)。
-限定为 synthetic TEST_ONLY 经历与零参数已有 native body port；形成的共享
-incidence 连接实际决定后续 `{code: O.code, parameters: {}}`，无 sampler/binder
-fallback。Bootstrap、样本和查询根来自实验者，不证明自主目标/采纳策略。
-17 项新测试通过；排除不重验的 Successor-0 专项后，回归 292 passed。
-真实 body/world-facing 验证为 NOT_TESTABLE，尚无 audited live adapter。
-下一项工作只做真实接口的 read-only audit，不实现、不改 runtime、不运行 Minecraft；
-正式交接见 [BPC-0 conversation handoff](BPC0_CONVERSATION_HANDOFF.md)。
-以下阶段状态和“下一阶段尚未开始”属于先前 Successor-0 收口检查点；
-它的冻结结果不因 BPC-0 结构 PASS 而被改写，正式 runtime 仍无内部行为作者链。
+**BPC-R1 已完成并冻结：COMPLETED / FROZEN，真实历史 formation PASS。**
+限定结论：**真实 Minecraft 已记录经历 → 正式 history / RealExperience → generic shared-incidence formation → supported C ↔ O**。
+本阶段只在隔离 TEST_ONLY 模块离线读取既有正式历史；不是正式 runtime 接入，也没有重新运行 Minecraft。
+原生 O 为 `(catalog version=2, numeric code=0)`，来自已有 capability 身份，不经 value-to-action mapping。
+真实 witness 为 `03476345-ff88-4128-b64f-1adc22d8d1ad`，记录帧为 `E75 → E76`。
+规格、原验收及收口证据见 [BPC-R1](experimental/body_port_real1/README.md)、
+[VALIDATION.md](experimental/body_port_real1/VALIDATION.md)、[VALIDATION.json](experimental/body_port_real1/VALIDATION.json)
+及 [正式 conversation handoff](BPC_R1_CONVERSATION_HANDOFF.md)。实现/验收提交为 `5fd85389e39801a0899eb0b1a4296796c2427783`；冻结状态锚点为包含 handoff 的独立收口提交。
+收口专项 **29 passed**；排除不重验的 Successor-0 专项后，回归 **321 passed / 90 subtests passed**；12 项负对照全部通过。
 
+不证明历史动作由内部结构产生、O 导致观察到的世界变化、行为作者权、一般参数形成、自主目标、
+behavioral causal closure，或 C ↔ O 已能控制真实身体。历史 bootstrap 作者仍为外部策略。
+下一阶段 **NOT_STARTED**；只记录研究边界：`real-history-formed C ↔ O → subsequent real body execution`。
+本轮不设计、实现或运行这个下一阶段。
+
+BPC-0 继续保留 synthetic TEST_ONLY witness PASS：实现 `996b6fab6d055159f1336085ec80e5a7a4f07613`，
+收口 `ebdcbc73d060ce894513f35853ed01c5d47836ef`；原 synthetic 身体输出证据、17 项专项测试和
+292 项历史回归结果不改写。见 [BPC-0 handoff](BPC0_CONVERSATION_HANDOFF.md)。
+后文 Successor-0 阶段及其下一阶段说明是该历史收口检查点，不能替代上面的当前状态。
+正式 runtime 仍无已验证的内部行为作者链。
 
 当前权威状态索引是 [RESEARCH_STATUS.md](RESEARCH_STATUS.md) / [RESEARCH_STATUS.json](RESEARCH_STATUS.json)。研究证据已经越过早期 `CURRENT_STRUCTURE_GENERATION_AUDIT.md` 的“尚未找到新组织 producer”检查点：在冻结的 CO-WAC-1 下，后续 [CURRENT_ORGANIZATION_SCOPE_AUDIT.md](CURRENT_ORGANIZATION_SCOPE_AUDIT.md) 将对象边界拆开后，`O-G0-1 derived structural graph` 在有限 TEST_ONLY GSC-0 范围内取得 **C1–C5 全部 PASS**，可作为“新因果有效组织实例”的有限正例；这不等于新的组织方式、行为作者权、L1 或 Perfect Recursion 的普遍生成律。
 
@@ -64,9 +70,9 @@ Cross-actor saved-real-data 中有 588 条 external change、39 条 self change 
 
 限定结论：在冻结 Successor-0 TEST_ONLY 范围内，外部提供的 opaque requirement 能通过 exact structural incidence 因果地驱动局部形成，产生随后被实际消费的组织，无需全局穷尽结构枚举。这证明一个具体候选 realization，不证明 Perfect Recursion 唯一或通用生成机制；不改写 GSC-0、CEC-0 或 FROI 历史结果。GSC-0 继续保留为已验证的 finite exhaustive-closure prototype，Successor-0 是独立的非穷尽局部形成候选，不修改正式 runtime。
 
-**当前 Successor-0 阶段已完成，下一阶段尚未开始。** 非穷尽局部形成已有具体候选 realization 的 scoped PASS，不再笼统标为 `SUCCESSOR_REALIZATION_DIRECTION = UNRESOLVED`。FROI-1 也已完成其限定实验角色。
+**历史 Successor-0 收口检查点：当时阶段已完成、下一阶段尚未开始。** 非穷尽局部形成已有具体候选 realization 的 scoped PASS，不再笼统标为 `SUCCESSOR_REALIZATION_DIRECTION = UNRESOLVED`。FROI-1 也已完成其限定实验角色。
 
-下一候选研究边界仅记录为 **formed internal organization → complete primitive body expression**：当前尚缺内部组织到 action code 与全部 required parameters 的已验证因果边；此边界 **not yet designed / not started**，本次没有设计或实现新机制。Multiple producer、internal requirement origin、relation/mechanics recursive formation 保持开放，不规定优先级。
+该历史检查点的下一候选研究边界记录为 **formed internal organization → complete primitive body expression**：当前尚缺内部组织到 action code 与全部 required parameters 的已验证因果边；此边界 **not yet designed / not started**，本次没有设计或实现新机制。Multiple producer、internal requirement origin、relation/mechanics recursive formation 保持开放，不规定优先级。
 
 Successor-0 不证明一般 requirement origin、“enough”、“executable” 或所有 realization 的 selector leakage 已解决；这些 `successor_unresolved_boundary` 是开放研究问题，不自动成为已确认 blocker。它也不证明 world-facing 链或普遍生成律。旧规格中的 READY、旧报告的 next step 和旧测试数量仅描述当时的实验/提交；其时间与对象范围见 [当前历史索引](RESEARCH_STATUS.md#14-historical-evidence-policy)，原文与冻结结果保留。
 
