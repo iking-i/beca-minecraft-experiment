@@ -1,0 +1,550 @@
+{
+  "status": "PASS",
+  "scope": "TEST_ONLY unique-producer acyclic typed Transfer; external requirement",
+  "criteria": {
+    "S0_T1_REQUIREMENT_NON_PRESCRIPTION": "PASS",
+    "S0_T2_UNIQUE_PRODUCER_SCOPE": "PASS",
+    "S0_T3_REQUIREMENT_CAUSALITY": "PASS",
+    "S0_T4_LOCAL_FORMATION": "PASS",
+    "S0_T5_NON_EXHAUSTIVE_D10": "PASS",
+    "S0_T6_NON_EXHAUSTIVE_D100": "PASS",
+    "S0_T7_NON_EXHAUSTIVE_D1000": "PASS",
+    "S0_T8_NECESSARY_EDGE_ABLATION": "PASS",
+    "S0_T9_FORMED_ORGANIZATION_CONSUMPTION": "PASS",
+    "S0_T10_CONSUMER_ABLATION": "PASS"
+  },
+  "cases": {
+    "A": {
+      "status": "COMPLETE_LOCAL_SUPPORT",
+      "activated_relation_count": 2,
+      "derived_binding_count": 2,
+      "formed_support_count": 6,
+      "consumer": "RESOLVED",
+      "identity": "43d9de1c41d98fcae2b762f791aa95e44c82bfd214662f5914c9d529d98f7fd9"
+    },
+    "B": {
+      "status": "NO_REQUIREMENT",
+      "activated_relation_count": 0,
+      "derived_binding_count": 0,
+      "formed_support_count": 0,
+      "consumer": "UNRESOLVED",
+      "identity": null
+    },
+    "C": {
+      "status": "UNRESOLVED",
+      "activated_relation_count": 1,
+      "derived_binding_count": 0,
+      "formed_support_count": 3,
+      "consumer": "UNRESOLVED",
+      "identity": "1de4d7852ea23d27e23478cbe96a08c890044ba9ca2dfda258c5714370b81040"
+    },
+    "D10": {
+      "status": "COMPLETE_LOCAL_SUPPORT",
+      "activated_relation_count": 2,
+      "derived_binding_count": 2,
+      "formed_support_count": 6,
+      "identity": "43d9de1c41d98fcae2b762f791aa95e44c82bfd214662f5914c9d529d98f7fd9",
+      "distractor_component_count": 10,
+      "distractor_activated_count": 0,
+      "distractor_derived_fact_count": 0,
+      "trace": [
+        [
+          "LOOKUP",
+          "('q', 1)"
+        ],
+        [
+          "ACTIVATE",
+          "(Transfer(input='m', output='q'),)"
+        ],
+        [
+          "LOOKUP",
+          "('m', 1)"
+        ],
+        [
+          "ACTIVATE",
+          "(Transfer(input='u', output='m'),)"
+        ],
+        [
+          "DERIVE",
+          "(Bind(port='m', value='V'),)"
+        ],
+        [
+          "DERIVE",
+          "(Bind(port='q', value='V'),)"
+        ]
+      ]
+    },
+    "D100": {
+      "status": "COMPLETE_LOCAL_SUPPORT",
+      "activated_relation_count": 2,
+      "derived_binding_count": 2,
+      "formed_support_count": 6,
+      "identity": "43d9de1c41d98fcae2b762f791aa95e44c82bfd214662f5914c9d529d98f7fd9",
+      "distractor_component_count": 100,
+      "distractor_activated_count": 0,
+      "distractor_derived_fact_count": 0,
+      "trace": [
+        [
+          "LOOKUP",
+          "('q', 1)"
+        ],
+        [
+          "ACTIVATE",
+          "(Transfer(input='m', output='q'),)"
+        ],
+        [
+          "LOOKUP",
+          "('m', 1)"
+        ],
+        [
+          "ACTIVATE",
+          "(Transfer(input='u', output='m'),)"
+        ],
+        [
+          "DERIVE",
+          "(Bind(port='m', value='V'),)"
+        ],
+        [
+          "DERIVE",
+          "(Bind(port='q', value='V'),)"
+        ]
+      ]
+    },
+    "D1000": {
+      "status": "COMPLETE_LOCAL_SUPPORT",
+      "activated_relation_count": 2,
+      "derived_binding_count": 2,
+      "formed_support_count": 6,
+      "identity": "43d9de1c41d98fcae2b762f791aa95e44c82bfd214662f5914c9d529d98f7fd9",
+      "distractor_component_count": 1000,
+      "distractor_activated_count": 0,
+      "distractor_derived_fact_count": 0,
+      "trace": [
+        [
+          "LOOKUP",
+          "('q', 1)"
+        ],
+        [
+          "ACTIVATE",
+          "(Transfer(input='m', output='q'),)"
+        ],
+        [
+          "LOOKUP",
+          "('m', 1)"
+        ],
+        [
+          "ACTIVATE",
+          "(Transfer(input='u', output='m'),)"
+        ],
+        [
+          "DERIVE",
+          "(Bind(port='m', value='V'),)"
+        ],
+        [
+          "DERIVE",
+          "(Bind(port='q', value='V'),)"
+        ]
+      ]
+    }
+  },
+  "consumer_ablation": "UNRESOLVED",
+  "support_ablation": "UNRESOLVED",
+  "first_failure": null,
+  "case_a_organization": {
+    "requirement": {
+      "kind": "RequireBound",
+      "port": "q",
+      "type": "T",
+      "scope": "test"
+    },
+    "status": "COMPLETE_LOCAL_SUPPORT",
+    "facts": [
+      {
+        "kind": "Value",
+        "identity": "V",
+        "type": "T",
+        "scope": "test"
+      },
+      {
+        "kind": "Port",
+        "identity": "m",
+        "type": "T",
+        "scope": "test"
+      },
+      {
+        "kind": "Port",
+        "identity": "q",
+        "type": "T",
+        "scope": "test"
+      },
+      {
+        "kind": "Port",
+        "identity": "u",
+        "type": "T",
+        "scope": "test"
+      },
+      {
+        "kind": "Transfer",
+        "input": "m",
+        "output": "q"
+      },
+      {
+        "kind": "Transfer",
+        "input": "u",
+        "output": "m"
+      },
+      {
+        "kind": "Activation",
+        "relation": {
+          "input": "m",
+          "output": "q"
+        }
+      },
+      {
+        "kind": "Activation",
+        "relation": {
+          "input": "u",
+          "output": "m"
+        }
+      },
+      {
+        "kind": "Bind",
+        "port": "m",
+        "value": "V"
+      },
+      {
+        "kind": "Bind",
+        "port": "q",
+        "value": "V"
+      },
+      {
+        "kind": "Bind",
+        "port": "u",
+        "value": "V"
+      },
+      {
+        "kind": "Demand",
+        "port": "m"
+      },
+      {
+        "kind": "Demand",
+        "port": "q"
+      },
+      {
+        "kind": "RequireBound",
+        "port": "q",
+        "type": "T",
+        "scope": "test"
+      }
+    ],
+    "supports": [
+      {
+        "kind": "SupportEdge",
+        "conclusion": {
+          "kind": "Value",
+          "identity": "V",
+          "type": "T",
+          "scope": "test"
+        },
+        "rule": "INPUT",
+        "premises": []
+      },
+      {
+        "kind": "SupportEdge",
+        "conclusion": {
+          "kind": "Port",
+          "identity": "m",
+          "type": "T",
+          "scope": "test"
+        },
+        "rule": "INPUT",
+        "premises": []
+      },
+      {
+        "kind": "SupportEdge",
+        "conclusion": {
+          "kind": "Port",
+          "identity": "q",
+          "type": "T",
+          "scope": "test"
+        },
+        "rule": "INPUT",
+        "premises": []
+      },
+      {
+        "kind": "SupportEdge",
+        "conclusion": {
+          "kind": "Port",
+          "identity": "u",
+          "type": "T",
+          "scope": "test"
+        },
+        "rule": "INPUT",
+        "premises": []
+      },
+      {
+        "kind": "SupportEdge",
+        "conclusion": {
+          "kind": "Transfer",
+          "input": "m",
+          "output": "q"
+        },
+        "rule": "INPUT",
+        "premises": []
+      },
+      {
+        "kind": "SupportEdge",
+        "conclusion": {
+          "kind": "Transfer",
+          "input": "u",
+          "output": "m"
+        },
+        "rule": "INPUT",
+        "premises": []
+      },
+      {
+        "kind": "SupportEdge",
+        "conclusion": {
+          "kind": "Activation",
+          "relation": {
+            "input": "m",
+            "output": "q"
+          }
+        },
+        "rule": "ACTIVATE",
+        "premises": [
+          {
+            "kind": "Port",
+            "identity": "q",
+            "type": "T",
+            "scope": "test"
+          },
+          {
+            "kind": "Transfer",
+            "input": "m",
+            "output": "q"
+          },
+          {
+            "kind": "Demand",
+            "port": "q"
+          }
+        ]
+      },
+      {
+        "kind": "SupportEdge",
+        "conclusion": {
+          "kind": "Activation",
+          "relation": {
+            "input": "u",
+            "output": "m"
+          }
+        },
+        "rule": "ACTIVATE",
+        "premises": [
+          {
+            "kind": "Port",
+            "identity": "m",
+            "type": "T",
+            "scope": "test"
+          },
+          {
+            "kind": "Transfer",
+            "input": "u",
+            "output": "m"
+          },
+          {
+            "kind": "Demand",
+            "port": "m"
+          }
+        ]
+      },
+      {
+        "kind": "SupportEdge",
+        "conclusion": {
+          "kind": "Bind",
+          "port": "m",
+          "value": "V"
+        },
+        "rule": "TRANSFER",
+        "premises": [
+          {
+            "kind": "Value",
+            "identity": "V",
+            "type": "T",
+            "scope": "test"
+          },
+          {
+            "kind": "Port",
+            "identity": "m",
+            "type": "T",
+            "scope": "test"
+          },
+          {
+            "kind": "Transfer",
+            "input": "u",
+            "output": "m"
+          },
+          {
+            "kind": "Activation",
+            "relation": {
+              "input": "u",
+              "output": "m"
+            }
+          },
+          {
+            "kind": "Bind",
+            "port": "u",
+            "value": "V"
+          }
+        ]
+      },
+      {
+        "kind": "SupportEdge",
+        "conclusion": {
+          "kind": "Bind",
+          "port": "q",
+          "value": "V"
+        },
+        "rule": "TRANSFER",
+        "premises": [
+          {
+            "kind": "Value",
+            "identity": "V",
+            "type": "T",
+            "scope": "test"
+          },
+          {
+            "kind": "Port",
+            "identity": "q",
+            "type": "T",
+            "scope": "test"
+          },
+          {
+            "kind": "Transfer",
+            "input": "m",
+            "output": "q"
+          },
+          {
+            "kind": "Activation",
+            "relation": {
+              "input": "m",
+              "output": "q"
+            }
+          },
+          {
+            "kind": "Bind",
+            "port": "m",
+            "value": "V"
+          }
+        ]
+      },
+      {
+        "kind": "SupportEdge",
+        "conclusion": {
+          "kind": "Bind",
+          "port": "u",
+          "value": "V"
+        },
+        "rule": "INPUT",
+        "premises": []
+      },
+      {
+        "kind": "SupportEdge",
+        "conclusion": {
+          "kind": "Demand",
+          "port": "m"
+        },
+        "rule": "INPUT_DEMAND",
+        "premises": [
+          {
+            "kind": "Port",
+            "identity": "m",
+            "type": "T",
+            "scope": "test"
+          },
+          {
+            "kind": "Activation",
+            "relation": {
+              "input": "m",
+              "output": "q"
+            }
+          }
+        ]
+      },
+      {
+        "kind": "SupportEdge",
+        "conclusion": {
+          "kind": "Demand",
+          "port": "q"
+        },
+        "rule": "ROOT",
+        "premises": [
+          {
+            "kind": "Port",
+            "identity": "q",
+            "type": "T",
+            "scope": "test"
+          },
+          {
+            "kind": "RequireBound",
+            "port": "q",
+            "type": "T",
+            "scope": "test"
+          }
+        ]
+      },
+      {
+        "kind": "SupportEdge",
+        "conclusion": {
+          "kind": "RequireBound",
+          "port": "q",
+          "type": "T",
+          "scope": "test"
+        },
+        "rule": "INPUT",
+        "premises": []
+      }
+    ]
+  },
+  "case_a_trace": [
+    [
+      "LOOKUP",
+      "('q', 1)"
+    ],
+    [
+      "ACTIVATE",
+      "(Transfer(input='m', output='q'),)"
+    ],
+    [
+      "LOOKUP",
+      "('m', 1)"
+    ],
+    [
+      "ACTIVATE",
+      "(Transfer(input='u', output='m'),)"
+    ],
+    [
+      "DERIVE",
+      "(Bind(port='m', value='V'),)"
+    ],
+    [
+      "DERIVE",
+      "(Bind(port='q', value='V'),)"
+    ]
+  ],
+  "claim": "Given an externally supplied opaque requirement, a fixed non-semantic local formation rule can form and causally expose a requirement-bounded organization without global exhaustive structural enumeration, within the unique-producer acyclic TEST_ONLY scope.",
+  "implementation_base": "9dab7ebf4244fd3490291dfdb0e22c09c11547f6",
+  "tests": {
+    "command": ".venv/Scripts/python.exe -m unittest tests.test_successor0 -v",
+    "count": 16,
+    "result": "PASS"
+  },
+  "source_sha256": {
+    "experimental/successor0/__init__.py": "b0fbf84debc5812e344dd88ff1498bcb6f3762c807bfa6783c6c707886acf359",
+    "experimental/successor0/consumer.py": "0d466cffd73899f605e4b0f95d5ebe7ede39bd5dbfb4392d17224b7e81b00821",
+    "experimental/successor0/engine.py": "2b50124c0a4ce4b1670c4896f4d1f40b28e935d72edda5edea94365b2f86c477",
+    "experimental/successor0/model.py": "9c03f2baa44e6812ffe115224a06a445781036c43f5ef20311589ec6ad9e7038",
+    "experimental/successor0/validation.py": "e9b36e23650d96ebb8e385686086e293bccad9d2407c91e6c89f936f536b0f7f",
+    "tests/test_successor0.py": "ddf2ede16c17bfb9803f4e04f6c5f6b4eba4defd63d44e5f49ccfee6dfc9a02c"
+  }
+}
