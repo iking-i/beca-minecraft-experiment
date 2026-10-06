@@ -2,6 +2,30 @@
 
 **Status date:** 2026-10-06
 
+**Current stage: BPC-0 — History-Formed Body-Port Connection; COMPLETED / FROZEN.**
+Implementation/validation commit: `996b6fab6d055159f1336085ec80e5a7a4f07613`.
+Stage-closeout/handoff anchor: the separate commit containing `BPC0_CONVERSATION_HANDOFF.md`.
+Structural TEST_ONLY witness **PASS**; real body/world-facing result **NOT_TESTABLE**.
+See `experimental/body_port0/SPEC.md` and `VALIDATION.md` / `VALIDATION.json`.
+The opaque native parameterless port already exists; a new supported connection
+instance is formed through generic history incidence and consumed to produce
+`{code: O.code, parameters: {}}`. No internal value-to-code mapping, sampler or
+binder authors the second expression. Bootstrap, synthetic samples and query are
+externally supplied; the formation and unique-result adoption mechanisms are fixed.
+This does not establish formal A behavioral closure, learned adoption policy or
+Minecraft effect causality. 17 new tests and BPC-T1–T9 pass; regression excluding
+frozen Successor-0's 16 tests is 292 passed. No live adapter/experiment is run.
+
+The audit-base and Successor-0 `NEXT_STAGE = NOT_STARTED` entries below describe
+those historical closeout checkpoints. The newly completed BPC-0 structural stage
+is independent; its real-world measurement is not started and not yet ready for
+execution without an audited receipt/frame adapter. All older results remain
+unchanged. Implementation evidence is frozen at the exact commit above.
+The next question is: “真实 body execution receipt 与真实 ObservationFrame 能否进入同一历史/结构形成链，使真实经历形成 C ↔ O，并让形成后的连接再次直接激活已有 body port。”
+Its first task is read-only interface audit only; no implementation, live integration
+or Minecraft run is started. See `BPC0_CONVERSATION_HANDOFF.md` for the precise boundary.
+
+
 **Historical FROI-1 acceptance checkpoint:** `326dbb165f41c2ff32c43230810148990fbf0daf` (frozen v3; existing-session acceptance PASS)
 
 **Subsequent experimental evidence:** CEC-0 minimal real witness and cross-actor GSC-0/GSC-0C local reports, measured from the working tree based on `d308a27aacff9d371e2ff21fb9cd90f160f5f7a8`. These measurements are not assigned an invented frozen implementation commit.

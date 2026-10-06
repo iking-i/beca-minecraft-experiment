@@ -10,6 +10,21 @@
 
 ## 当前研究状态
 
+**BPC-0 已完成并冻结：COMPLETED / FROZEN，结构 witness PASS。**
+实现/验证提交：`996b6fab6d055159f1336085ec80e5a7a4f07613`；状态/handoff 收口在独立后续提交中。
+见 [冻结问题与判据](experimental/body_port0/SPEC.md) 和
+[验收/作者权收口报告](experimental/body_port0/VALIDATION.md)。
+限定为 synthetic TEST_ONLY 经历与零参数已有 native body port；形成的共享
+incidence 连接实际决定后续 `{code: O.code, parameters: {}}`，无 sampler/binder
+fallback。Bootstrap、样本和查询根来自实验者，不证明自主目标/采纳策略。
+17 项新测试通过；排除不重验的 Successor-0 专项后，回归 292 passed。
+真实 body/world-facing 验证为 NOT_TESTABLE，尚无 audited live adapter。
+下一项工作只做真实接口的 read-only audit，不实现、不改 runtime、不运行 Minecraft；
+正式交接见 [BPC-0 conversation handoff](BPC0_CONVERSATION_HANDOFF.md)。
+以下阶段状态和“下一阶段尚未开始”属于先前 Successor-0 收口检查点；
+它的冻结结果不因 BPC-0 结构 PASS 而被改写，正式 runtime 仍无内部行为作者链。
+
+
 当前权威状态索引是 [RESEARCH_STATUS.md](RESEARCH_STATUS.md) / [RESEARCH_STATUS.json](RESEARCH_STATUS.json)。研究证据已经越过早期 `CURRENT_STRUCTURE_GENERATION_AUDIT.md` 的“尚未找到新组织 producer”检查点：在冻结的 CO-WAC-1 下，后续 [CURRENT_ORGANIZATION_SCOPE_AUDIT.md](CURRENT_ORGANIZATION_SCOPE_AUDIT.md) 将对象边界拆开后，`O-G0-1 derived structural graph` 在有限 TEST_ONLY GSC-0 范围内取得 **C1–C5 全部 PASS**，可作为“新因果有效组织实例”的有限正例；这不等于新的组织方式、行为作者权、L1 或 Perfect Recursion 的普遍生成律。
 
 随后 [GSC0_RECURSIVE_RESULT_DEPENDENCE.md](GSC0_RECURSIVE_RESULT_DEPENDENCE.md) 对两个有限 fixture 做 `A_FULL_PREVIOUS / B_DERIVED_ABLATION / C_FRESH_RECOMPUTE` 反事实，实际得到 `A=B=C`，分类为 `DERIVED_RESULT_NOT_CAUSALLY_NECESSARY`：前轮已物化派生结果在这两个案例中不是下一轮结果的独立必要条件，保留的原始历史材料足以由固定机制重算同一组织。该结果不表示历史无关，也不推翻 O-G0-1 的组织效力。

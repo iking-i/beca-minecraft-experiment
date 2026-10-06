@@ -418,5 +418,38 @@
       "recursive formation of relations/mechanics"
     ],
     "implementation_or_priority_selected": false
+  },
+  "current_research_phase": {
+    "name": "BPC-0 — History-Formed Body-Port Connection",
+    "status": "PASS",
+    "evidence_source": "GIT_COMMIT",
+    "base_commit": "524197110ebaf7fb5f5dd565d2d6a49faf8a4c61",
+    "scope": "synthetic TEST_ONLY history; generic shared incidence; existing parameterless native body port; unique supported endpoint",
+    "world_facing_status": "NOT_TESTABLE",
+    "live_validation_ready": false,
+    "bootstrap_and_query_origin": "TEST_ONLY_EXTERNAL",
+    "fixed_formation_and_adoption_mechanism": true,
+    "formal_runtime_changed": false,
+    "behavioral_causal_closure_established": false,
+    "unit_tests_passed": 17,
+    "regression_tests_passed_excluding_successor0": 292,
+    "successor0_revalidated": false,
+    "report": "experimental/body_port0/VALIDATION.json",
+    "lifecycle": "COMPLETED_FROZEN",
+    "completed": true,
+    "frozen": true,
+    "implementation_commit": "996b6fab6d055159f1336085ec80e5a7a4f07613",
+    "closeout_anchor": "commit containing BPC0_CONVERSATION_HANDOFF.md",
+    "closeout_regression_tests_passed_excluding_successor0": 292,
+    "handoff": "BPC0_CONVERSATION_HANDOFF.md"
+  },
+  "prior_closeout_index_scope": "current_checkpoint / repository_state_audit / next_research_boundary retain the Successor-0 closeout checkpoint; current_research_phase records the subsequent independent BPC-0 stage",
+  "next_phase_boundary": {
+    "question": "真实 body execution receipt 与真实 ObservationFrame 能否进入同一历史/结构形成链，使真实经历形成 C ↔ O，并让形成后的连接再次直接激活已有 body port。",
+    "first_work": "READ_ONLY_INTERFACE_AUDIT",
+    "status": "NOT_STARTED",
+    "implementation_authorized_in_handoff": false,
+    "runtime_changes_authorized_in_handoff": false,
+    "Minecraft_execution_authorized_in_handoff": false
   }
 }
