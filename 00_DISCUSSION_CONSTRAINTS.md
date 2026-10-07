@@ -1017,3 +1017,126 @@ This section records only that conclusion. It does not yet define how memory str
 
 **Signed: 四号**
 
+---
+
+## 30. Need governs structure; purpose governs runtime allocation
+
+**Status:** confirmed discussion conclusions only  
+**Scope:** memory/runtime interpretation; implementation mechanism remains unspecified
+
+The following points are confirmed from the renewed discussion after §29.
+
+### 30.1 Structure is preserved by need, not by unlimited memory
+
+The user's confirmed formulation is:
+
+> 不是因为不会忘。记忆力无限。而是因为在不断调用。
+
+and:
+
+> 结构由需要保存。
+
+A structure remains stable because reality continues to require it and therefore continues to call it. Repeated use is not important merely as a count; what matters is that the structure is repeatedly needed in actual operation.
+
+Examples used in discussion:
+
+- Chinese remains highly available when daily life continuously requires Chinese communication.
+- English may remain weaker when it is used mainly for occasional exams, but can become more central if the living environment continuously requires English.
+- A mathematical formula can become structurally stable through repeated later use, rather than because every earlier exercise is retained.
+
+Compactly:
+
+```text
+reality needs a structure
+-> the structure is called
+-> it participates in current operation
+-> continued need keeps calling it
+-> the structure remains / strengthens
+```
+
+### 30.2 Purpose governs current runtime-memory allocation
+
+The user's confirmed formulation is:
+
+> 需要决定结构。目的决定内存分配。
+
+A current purpose determines which structures, intermediate results, and temporary processes receive runtime memory at that moment.
+
+For example, when solving a mathematics problem whose purpose is only to obtain the answer:
+
+```text
+problem
+-> temporary derivation
+-> answer
+-> purpose completed
+-> temporary derivation and answer need not remain active
+```
+
+If the purpose also includes checking the answer later, the answer may remain active because the process is still unfinished.
+
+### 30.3 An unfinished purpose is not guaranteed to remain active
+
+A pending process can lose runtime-memory allocation when another purpose requires more of the finite runtime memory.
+
+The user's confirmed example is that a person can suddenly forget what they were about to say or do.
+
+Conceptually:
+
+```text
+pending purpose
+-> temporarily retained access path
+-> another purpose consumes more runtime memory
+-> allocation to the pending path falls
+-> the path may cease to be actively accessible
+-> the unfinished task may be forgotten
+```
+
+This means "unfinished" does not guarantee continued active retention.
+
+### 30.4 Reduced need lowers structural share and can remove an active prediction/recall path
+
+The user's confirmed formulation is:
+
+> 占比逐渐降低，几乎彻底消失，失去推测通道。但不会真的消失。
+
+When a previously used structure is no longer regularly needed, its share in the currently usable structure can progressively decline. It may become difficult or impossible to actively derive/reproduce from a common current cue while still remaining recognizable when reality directly presents it.
+
+The example used in discussion:
+
+- frequently used Chinese and numbers remain easy to access;
+- rarely used mathematical formulas become difficult to actively recall from Chinese descriptions;
+- when the formula itself is shown, the residual structure can still support recognition or association back to familiar Chinese concepts.
+
+Thus:
+
+```text
+active recall failure
+!=
+complete structural erasure
+```
+
+and directional accessibility need not be symmetric:
+
+```text
+presented formula -> familiar associated meaning   may remain available
+familiar meaning -> reconstruct formula            may fail
+```
+
+### 30.5 What is not yet specified
+
+This section does **not** yet define:
+
+- a numeric weight-update rule;
+- a selector, ranking, or importance score;
+- a fixed decay function;
+- a concrete memory-allocation algorithm;
+- how "need" is generated;
+- how one need becomes a current purpose;
+- exact implementation data structures.
+
+Those remain open. Do not invent them from this section.
+
+四号 — 2026-10-07
+
+**Signed: 四号**
+
