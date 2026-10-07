@@ -29,6 +29,11 @@ class CapturingSession(OrganizationSession):
         return result
 
 
+def historical_test_organization(store, state, caps):
+    """Explicit frozen FROI-1 test source, never a production CLI fallback."""
+    return OrganizationSession(history_from_store(store, state), caps)
+
+
 class FroiTests(unittest.TestCase):
     def setUp(self):
         parent = Path('.test-tmp'); parent.mkdir(exist_ok=True)
@@ -43,6 +48,7 @@ class FroiTests(unittest.TestCase):
 
     def core(self, caps=None, physical=None):
         core = ACore(Path(self.temp.name) / f'{len(self.cores)}.db', FakeBridge(),
+                     organization_factory=historical_test_organization,
                      initialize_lifetime=True, froi=True, froi_caps=caps,
                      physical_caps=physical or FormalLimits(history=100, evidence_window=100))
         self.cores.append(core)

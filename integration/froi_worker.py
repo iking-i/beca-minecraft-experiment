@@ -46,7 +46,7 @@ class JobSpec:
         return 'FROI-J-' + sha256(self.identity.encode()).hexdigest()
 
     def audit(self):
-        return {'job_id': self.job_id, 'individual_id': self.individual_id,
+        audit = {'job_id': self.job_id, 'individual_id': self.individual_id,
                 'session_id': self.session_id, 'source_state_version': self.source_state_version,
                 'history_state_version': self.history.state_version,
                 'history_cutoff': self.history.event_cutoff,
@@ -56,6 +56,11 @@ class JobSpec:
                 'codec_version': self.codec_version, 'froi_version': self.froi_version,
                 'caps': json.loads(self.caps_json), 'immutable_input_identity': self.identity,
                 'source': 'EXTERNAL_FIXED_MECHANISM'}
+        if hasattr(self.history, 'encode_current'):
+            audit['runtime_source'] = {'version': self.history.version,
+                                     'external_history_loaded': False,
+                                     'cutoff_kind': 'state_version'}
+        return audit
 
 
 @dataclass(frozen=True)

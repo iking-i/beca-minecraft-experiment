@@ -77,7 +77,8 @@ class FormalFROIEngine(FormalL0Engine):
             if local.get('froi_boundary') is None:
                 local['froi_boundary'] = boundary
                 journal.append(('FROI_INITIAL_CONDITION', {'boundary': boundary,
-                    'raw_history_retained': True, 'source': 'EXTERNAL_FIXED_MECHANISM',
+                    'raw_history_retained': not hasattr(getattr(organization, 'history', None), 'encode_current'),
+                    'source': 'EXTERNAL_FIXED_MECHANISM',
                     'universal_memory_axiom': False}))
             if organization.test_only:
                 local['froi_detached_test_only'] = True

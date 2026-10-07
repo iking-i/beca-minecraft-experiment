@@ -35,7 +35,7 @@ class ACore:
     def __init__(self, database, bridge, policy=None, observation_interval=1.0, session_context=None,
                  session_label='Minecraft', initialize_lifetime=False, experiment_profile='formal_l0', physical_caps=None,
                  resource_caps=None, froi=False, froi_caps=None, froi_async=False, worker_factory=None,
-                 live_body_connection=False, live_body_control='CANONICAL'):
+                 live_body_connection=False, live_body_control='CANONICAL', organization_factory=None):
         self._live_body_connection = live_body_connection
         self._live_interrupted = False
         if live_body_connection:
@@ -56,6 +56,10 @@ class ACore:
         if froi and self._experiment_profile != 'formal_l0':
             raise ValueError('FROI requires the formal_l0 path')
         self._froi_async = froi and froi_async
+        from integration.current_structure import current_organization
+        # Explicit dependency injection is for offline audit/test callers only;
+        # neither the production CLI nor launcher exposes a history-source switch.
+        self._organization_factory = organization_factory or current_organization
         from integration.froi_worker import Worker
         self._worker_factory = worker_factory or Worker
         self._computation = None
@@ -180,8 +184,7 @@ class ACore:
             internal, frame, journal = self._engine.advance(self._state.internal_state, frame,
                 self._state.state_version + 1, self._pending_actions, ports=ports)
         elif self._froi:
-            from integration.froi import OrganizationSession, history_from_store
-            organization = OrganizationSession(history_from_store(self._store, self._state), self._froi_caps)
+            organization = self._organization_factory(self._store, self._state, self._froi_caps)
             organization.session_id = self._state.session_id
             if self._froi_async:
                 checkpoint = self._engine.prepare_read_checkpoint(self._state.internal_state, frame,

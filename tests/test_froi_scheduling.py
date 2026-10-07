@@ -20,6 +20,7 @@ from integration.froi_worker import JobSpec, Worker, execute, validate_result
 from supervisor.supervisor import Supervisor, DEFAULT_LIMITS
 from tests.test_core import FakeBridge
 from tests.test_structure import observation
+from tests.test_froi import historical_test_organization
 
 
 class SchedulingTests(unittest.TestCase):
@@ -34,6 +35,7 @@ class SchedulingTests(unittest.TestCase):
         factory = None if mode is None else lambda job: Worker(job,
             [sys.executable, '-m', 'tests.fixtures.froi_worker_hook', str(mode)])
         core = ACore(Path(self.temp.name)/f'{len(self.cores)}.db', FakeBridge(),
+            organization_factory=historical_test_organization,
             initialize_lifetime=True, froi=True, froi_async=True, worker_factory=factory,
             froi_caps=caps, physical_caps=FormalLimits(history=100, evidence_window=100))
         self.cores.append(core)

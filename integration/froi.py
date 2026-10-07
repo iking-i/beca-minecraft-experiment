@@ -147,6 +147,9 @@ class EncodedInput:
 
 
 def encode_input(history, request):
+    # Explicit current-state adapter; the historical codec below stays intact.
+    if hasattr(history, 'encode_current'):
+        return history.encode_current(request)
     if history.individual_id != request.individual_id or history.state_version >= request.source_state_version:
         raise ValueError('History identity/version does not precede this read')
     records, _, registry = history.material()
@@ -200,7 +203,8 @@ class OrganizationHandle:
 
     def audit(self):
         content = self.graph_content()
-        return {'codec_version': VERSION, 'individual_id': self.request.individual_id,
+        registry = json.loads(self.registry_json)
+        audit = {'codec_version': VERSION, 'individual_id': self.request.individual_id,
             'source_state_version': self.request.source_state_version, 'history_cutoff': self.history_cutoff,
             'current_frame_id': self.request.frame['frame_id'], 'requested_reference': self.request.reference,
             'reference_origin': asdict(self.request.origin), 'status': self.status,
@@ -208,7 +212,10 @@ class OrganizationHandle:
             'graph_content': content, 'graph_digest': sha256(canonical(content).encode()).hexdigest(),
             'direct_supports': self.supports, 'root_witnesses': self.root_witnesses,
             'roots': self.roots, 'input_records': self.input_records,
-            'input_registry': json.loads(self.registry_json), 'diagnostic': json.loads(self.diagnostic_json)}
+            'input_registry': registry, 'diagnostic': json.loads(self.diagnostic_json)}
+        if 'RUNTIME_SOURCE' in registry:
+            audit['runtime_source'] = registry['RUNTIME_SOURCE']
+        return audit
 
 
 def produce(history, request, caps, condition=None):
