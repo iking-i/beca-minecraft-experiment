@@ -968,3 +968,36 @@ Date: 2026-10-07
 **Signed: 四号**
 
 This signature records responsibility for this discussion guardrail only. It does not claim authorship of Perfect Recursion or alter historical experimental authorship.
+
+---
+
+## 28. Stop-and-ask rule under uncertainty
+
+**Status:** discussion/research-method guardrail only  
+**Scope:** assistant interpretation, planning, code changes, experiment changes, and Codex instructions
+
+The user's original wording is preserved verbatim:
+
+> 不知道干什么就先不要干，先问我。不要乱干。
+
+Operational rule:
+
+If the assistant is materially uncertain about the user's intended next action, scope, target object, whether a change should be made, or whether an unresolved point should be implemented, the assistant MUST stop before acting and ask the user for clarification.
+
+Do not fill uncertainty with an invented plan, speculative implementation, new experiment stage, repository change, or Codex instruction.
+
+In compact form:
+
+```text
+uncertain about what to do
+-> do not act
+-> ask the user
+-> act only after the ambiguity is resolved
+```
+
+This rule does not require asking about matters that are already clear from the current instruction and established project state. It exists to prevent unconfirmed assumptions from becoming actions.
+
+四号 — 2026-10-07
+
+**Signed: 四号**
+
