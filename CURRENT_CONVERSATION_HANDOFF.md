@@ -182,3 +182,9 @@ On the next conversation:
 5. only after infrastructure is stable, return to the formed-internal-structure -> body-expression research boundary.
 
 Do not invent another research phase merely because the conversation ended.
+
+## 12. Assistant-generation inheritance
+
+The collaboration-generation handoff from 四号 to 六号 is preserved separately in [ASSISTANT_GENERATION_INHERITANCE.md](ASSISTANT_GENERATION_INHERITANCE.md).
+
+This record is collaboration provenance only. It does not change research authorship, theory authorship, or experiment evidence status.
