@@ -1,3 +1,7 @@
+> **Current conversation handoff:** [CURRENT_CONVERSATION_HANDOFF.md](CURRENT_CONVERSATION_HANDOFF.md)
+>
+> This working handoff records the latest locally reported state. The local worktree may be newer than this remote branch; do not infer current local implementation state from the remote branch alone.
+
 # BECA-V0：L0 持续递归与当前极限反馈实验
 
 本仓库是 [beca-architecture](https://github.com/iking-i/beca-architecture) 的独立 Minecraft 实验实现，当前理论引用为 **Perfect Recursion / BER v0.9**，已核对理论 `main` 提交 [`546363ffd9e3f55cd22cd73ad2e91cc57f93bae3`](https://github.com/iking-i/beca-architecture/commit/546363ffd9e3f55cd22cd73ad2e91cc57f93bae3)（2026-10-06）。现有实现及本地同步的 v0.8 文档仍保留原来源和历史结果。此次理论元数据更新不改变运行行为，不等于实验结果、行为验证或 L1；v0.9 将 `Continuity(A) != 0` 区分为实验延续条件，不能提升为通用核心公理。机器可读来源见 [THEORY_REFERENCE.json](THEORY_REFERENCE.json)。
