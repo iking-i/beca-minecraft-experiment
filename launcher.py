@@ -1,11 +1,22 @@
 """Windows startup administration UI. No A behavior, inference or runtime loop."""
 from dataclasses import dataclass
 import json
+import os
 from pathlib import Path
+import subprocess
+import sys
 
 from individual.bridge import ROOT, parse_minecraft_port
 from individual.lifetime import CONFIG
 from individual.storage import INDIVIDUALS, create_lifetime, lifetime_entry, list_lifetimes, select_existing_lifetime
+
+
+def launch_runtime_monitor(config=CONFIG):
+    """Independent instrument process; launcher exit never stops it or controls A."""
+    options = ({'creationflags': subprocess.DETACHED_PROCESS | subprocess.CREATE_NEW_PROCESS_GROUP}
+               if os.name == 'nt' else {'start_new_session': True})
+    return subprocess.Popen([sys.executable, '-m', 'individual.runtime_monitor', '--selection', str(config)],
+        cwd=ROOT, stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, **options)
 
 
 @dataclass(frozen=True)
@@ -166,6 +177,13 @@ def show_launcher(service=None):
 
     ttk.Button(buttons, text='启动实验', command=start).pack(side='right')
     ttk.Button(buttons, text='取消', command=window.destroy).pack(side='right', padx=10)
+    def open_monitor():
+        try:
+            launch_runtime_monitor(service.config)
+        except Exception as error:
+            messagebox.showerror('无法打开运行监视器', str(error), parent=window)
+
+    ttk.Button(buttons, text='运行监视器', command=open_monitor).pack(side='left')
     table.bind('<<TreeviewSelect>>', describe)
     for initialize in (lambda: port.set(service.default_port()), refresh):
         try:
