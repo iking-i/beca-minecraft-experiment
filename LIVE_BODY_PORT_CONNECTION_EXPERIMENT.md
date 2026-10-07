@@ -151,8 +151,9 @@ A 内部状态的真实提交和后续实际读取；预注册 live 控制的执
 
 只读快照、日志、trace 和报告可作为外部核对证据，但只能记录已经发生的
 live 因果链，不能把离线计算结果喂回该链。既有历史可供背景审计，不能作为
-本阶段 formation source。若沿用已有 A，保留其 identity/lineage 与旧数据库，
-不得清空它们；须能区分本次运行中新形成材料与运行前材料。
+本阶段 formation source、connection source 或 query source。
+本阶段不沿用已有 individual 或已有数据库；其隔离规则见第 9 节。
+已有 identity/lineage 与旧数据库保持原样，仅保留为旧阶段历史证据 / audit material。
 
 **禁止：** 旧数据库/旧 witness reconstruction、同轮导出后再 formation、
 offline replay/query、detached BPC artifact、预写 C ↔ O、从 action record 事后
@@ -190,3 +191,78 @@ body action-space 元数据；`individual/action_space.py` 的 `provision` 验�
 这里只定位边界，不选择数据 schema、生成算法、consumer query 策略或代码方案。
 不修改冻结 FROI/GSC/BPC 实现来套用本定义，不预设哪套旧图可以直接写回。
 实现尚未开始；本阶段停在 **DEFINED / NOT_IMPLEMENTED**。
+
+## 9. Database and individual isolation — frozen rules
+
+### Canonical PASS run
+
+BPC-LIVE-1 canonical PASS 必须使用：
+
+- 全新初始化的实验数据库；
+- 全新的 individual identity；
+- 当前冻结 runtime / implementation；
+- 不导入任何旧数据库内容、旧 witness、旧 BPC artifact 或旧 relation。
+
+从 canonical run 启动开始，到以下完整链结束：
+
+```text
+O enters live formation space
+→ current C forms
+→ C ↔ O forms
+→ connection persists
+→ later recursive cycle
+→ later read
+```
+
+全过程必须使用同一个数据库、同一个 individual，并保持同一次连续 runtime。
+中途不得重建数据库、切换数据库、重启后重载历史或替换 individual。
+
+### Existing databases
+
+已有数据库保持原样，不清空、不覆盖、不迁移进 BPC-LIVE-1。
+不得作为本阶段 C、O、connection 或 query source；仅保留为旧阶段历史证据 / audit material。
+任何从运行前旧数据库读取并参与本阶段 formation 或 later read 的路径，
+直接违反本阶段定义。
+
+### Negative controls
+
+NC1–NC6 各自使用独立初始化的 fresh experimental database 和 fresh individual identity，
+并与 canonical run 隔离。例如：
+
+```text
+canonical → fresh DB / individual A
+NC1       → fresh DB / individual B
+NC2       → fresh DB / individual C
+NC3       → fresh DB / individual D
+...       → 各自独立的 fresh DB / fresh individual
+```
+
+所有控制必须：
+
+- 使用同一冻结实现和同一预注册判据；
+- 除对应控制变量外，不主动改变其他实验条件；
+- 不使用 historical replay、offline reconstruction 或 detached BPC artifact；
+- 不复用 canonical run 已形成的连接；
+- 在看到结果前固定控制条件，不得事后修改。
+
+每个 control run 内部仍必须保持同一个 fresh database、同一个 fresh individual
+和连续 runtime，直到该控制所需观测完成。NC1–NC6 的既有控制语义不变；
+独立控制不得用于拼接或替代 canonical PASS 主链。
+
+### Clarification
+
+“fresh database”只表示实验开始前为空、专用于本次 run 的新数据库，
+不表示运行过程中可以重置数据库。
+运行开始后，数据库本身就是 A 当前 live state persistence 的一部分，必须连续保留。
+
+### Isolation nonclaim
+
+使用 fresh database 只用于消除旧历史污染和 provenance 歧义，不证明：
+
+- A 在已有长期历史的数据库中也一定能形成相同连接；
+- persistence 与数据库实现无关；
+- fresh individual 与已有 individual 的行为等价。
+
+这些不属于 BPC-LIVE-1 当前研究问题。上述规则只冻结数据库与 individual 隔离边界，
+不改变既有 research question、exact causal chain、PASS/FAIL 判据、负对照语义或其他 nonclaims。
+本阶段仍为 **DEFINED / NOT_IMPLEMENTED**；implementation **NOT_STARTED**。
