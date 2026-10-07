@@ -1,3 +1,31 @@
+## Authoritative current interpretation — 2026-10-07
+
+**LATEST COMPLETED EXPERIMENT:** BPC-LIVE-1 = **PASS / COMPLETED / FROZEN**.
+
+Frozen closeout: `916ccf4f83243346341ea3e3cbf5e41e06991cff`.
+
+**CURRENT INTERPRETATION: CORRECTED.**
+
+| Current baseline | Evidence status |
+|---|---|
+| BPC represented relation formation / persistence / consumption | VALIDATED WITHIN FROZEN SCOPES |
+| BPC operative connection | NOT ESTABLISHED |
+| Generic operative structural mutation in FormalL0 | NOT ESTABLISHED |
+| Behavioral authorship | NOT ESTABLISHED |
+| L1 / upward recursion | NOT ESTABLISHED |
+| Next experimental phase | NOT_STARTED |
+
+See [Operative Connection Interpretation Erratum](OPERATIVE_CONNECTION_ERRATUM.md).
+`Shared(C,O)` is a **REPRESENTED_RELATION**, not an established
+**OPERATIVE_CONNECTION**. Formal L0's real history-dependent internal causal
+effects remain established within their frozen scopes. Historical “connection”
+terms and accepted claims below are retained as historical wording and governed
+by this correction; they cannot establish operative topology or internal
+behavioral authorship. BPC-R2's specialized unique-consumer / native-code / real
+receipt evidence and BPC-LIVE-1's saved-relation read evidence do not establish an
+operative live loop by concatenation. No historical PASS is retracted and no
+next stage is started.
+
 # BECA-V0 — Current Research Status
 
 **Status date:** 2026-10-07

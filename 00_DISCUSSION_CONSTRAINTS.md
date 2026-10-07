@@ -647,3 +647,51 @@ Change theory only for theory-level reasons.
 Establish a known baseline.
 Then begin the next formal phase.
 ```
+
+---
+
+## 26. Represented relation is not an operative connection
+
+This is a discussion/research-method guardrail, not a Perfect Recursion theory
+axiom, runtime rule, new mechanism or retroactive experimental acceptance change.
+
+Naming is not evidence. None of the following alone proves an operative connection:
+
+- An object, file or class is named Relation, Shared, Connection or Edge.
+- A record contains endpoints X and Y.
+- A relation has provenance/support or is persisted.
+- A later query can retrieve the relation.
+- A specialized consumer returns Y according to the relation.
+- Relation content is attached to process output.
+- Deleting a relation makes a query return fewer results.
+
+Before claiming an operative connection, audit the actual chain:
+
+```text
+formed edge
+→ enters actual running recursive organization
+→ changes normal downstream dependency/routing
+→ later recursion uses it under generic semantics
+→ edge ablation changes actual processing path
+→ edge remains structurally reusable
+```
+
+Generic interpreters, pointer dereference, graph engines and mechanical execution
+are permitted. Generic execution of a formed edge must be distinguished from a
+specialized consumer querying a relation record and then assigning its effect.
+
+```text
+REPRESENTATION != OPERATION
+RELATION_RECORD != OPERATIVE_CONNECTION
+SPECIALIZED_CONSUMPTION != TOPOLOGY_FORMATION
+NAMING != EVIDENCE
+```
+
+If a purported connection still needs another external selector/consumer to
+determine its effect, first re-audit whether the operative connection has actually
+formed. Do not default to adding another intermediate layer. Preserve historical
+names, evidence and scoped results; correct current interpretation explicitly.
+
+四号 — 2026-10-07
+
+operative-connection interpretation guardrail

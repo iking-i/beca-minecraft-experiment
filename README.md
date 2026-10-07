@@ -10,9 +10,23 @@
 
 ## 当前研究状态
 
+**研究解释已纠正（2026-10-07）：** BPC-LIVE-1 仍为历史限定范围内的
+**PASS / COMPLETED / FROZEN**，冻结提交为
+`916ccf4f83243346341ea3e3cbf5e41e06991cff`。但 `Shared(C,O)` 的准确分类是
+**REPRESENTED_RELATION**，不是已验证的 **OPERATIVE_CONNECTION**。
+已验证的是关系形成、保存及专用 consumer 的读取/记录输出效应；尚未建立
+generic operative structural mutation 或内部行为作者权。
+见 [正式解释纠错](OPERATIVE_CONNECTION_ERRATUM.md)。后文历史 “connection”
+是阶段/对象命名，不能作为 operative topology 已成立的证据。
+BPC-R2 的 fixed-witness 机械执行链与 BPC-LIVE-1 的 live 保存/读取链不能自动
+拼成未实际发生的 operative live loop。所有旧 PASS、失败记录和 evidence 保留；
+下一实验阶段仍为 **NOT_STARTED**。
+
 **BPC-LIVE-1 = PASS / COMPLETED / FROZEN。**
 真实观察到的原生 O 进入连续运行 A 的递归形成空间；当前真实输入形成 C，
-在线形成并保存 C ↔ O，后续真实轮次从同一 A 的内部状态读取原连接。
+在线形成并保存 represented C ↔ O，后续真实轮次由专用 consumer 从同一 A
+的内部状态读取原 relation；该结果进入记录的 processing/output，未建立普通
+FormalL0 经 C 自然运行到 O 的 operative dependency。
 Canonical 在 A7/E3 提交 47 条连接，A8/E4 实际消费这些连接；NC1–NC6 全部 PASS。
 没有 perform、sampler、binder、mapping、fallback、historical replay 或 detached BPC。
 

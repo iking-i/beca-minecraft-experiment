@@ -1,5 +1,23 @@
 {
   "status_date": "2026-10-07",
+  "operative_connection_interpretation": {
+    "status": "CORRECTED",
+    "correction_document": "OPERATIVE_CONNECTION_ERRATUM.md",
+    "frozen_bpc_live_1_closeout": "916ccf4f83243346341ea3e3cbf5e41e06991cff",
+    "historical_bpc_results_preserved": true,
+    "bpc_represented_relation": "VALIDATED_WITHIN_FROZEN_SCOPES",
+    "operative_connection": "NOT_ESTABLISHED",
+    "generic_operative_structural_mutation": "NOT_ESTABLISHED",
+    "behavioral_authorship": "NOT_ESTABLISHED",
+    "upward_recursion": "NOT_ESTABLISHED",
+    "next_experimental_phase": "NOT_STARTED",
+    "implementation_bug_established": false,
+    "theory_change_required": false,
+    "classification": [
+      "EVIDENCE_OVERCLAIM",
+      "EXPERIMENTAL_MODEL_MISMATCH"
+    ]
+  },
   "evidence_checkpoint": "326dbb165f41c2ff32c43230810148990fbf0daf",
   "evidence_checkpoint_scope": "historical frozen FROI-1 v3 acceptance",
   "subsequent_evidence": {
@@ -142,6 +160,8 @@
     }
   },
   "next_work": [
+    "Authoritative current interpretation: OPERATIVE_CONNECTION_ERRATUM.md; BPC Shared is REPRESENTED_RELATION, not an established operative connection",
+    "Generic operative structural mutation and internal behavioral authorship remain NOT_ESTABLISHED; this correction defines no solution or next experimental phase",
     "BPC-LIVE-1 PASS / COMPLETED / FROZEN; retain both NOT_TESTABLE attempts and final PASS",
     "A8 later new-formation RESOURCE_LIMIT remains a limitation, not a reversal of the target prior-connection read; do not raise caps",
     "Next phase NOT_STARTED; no new research question, mechanism or execution is defined by this closeout",
@@ -428,6 +448,13 @@
     "definition": "LIVE_BODY_PORT_CONNECTION_EXPERIMENT.md",
     "scope": "Fresh DB/individual per preregistered run; continuous observation-only live A; all observed native ports; shared current-record incidence; no action execution",
     "accepted_claim": "In the frozen BPC-LIVE-1 observation-only live scope, actually observed native body ports enter the running A recursive structure; a current real change forms supported C ↔ O in that same state chain; the connection is committed to A internal state and a later real recursive cycle consumes the exact saved connection through its endogenous saved reference, with persistence/access controls removing the corresponding read effect.",
+    "accepted_claim_interpretation": "Preserved frozen closeout wording; connection denotes REPRESENTED_RELATION and specialized saved-relation consumption, not established operative topology",
+    "current_interpretation_document": "OPERATIVE_CONNECTION_ERRATUM.md",
+    "current_relation_classification": "REPRESENTED_RELATION",
+    "operative_connection_established": false,
+    "generic_operative_structural_mutation_established": false,
+    "behavioral_authorship_established": false,
+    "current_scoped_claim": "Real current input forms C and a supported represented C/O relation online; the same A state preserves it; a later real cycle uses a specialized live consumer to read the saved relation and attach the read to recorded recursive processing/output",
     "handoff": "BPC_LIVE_1_CONVERSATION_HANDOFF.md",
     "report": "experimental/live_body_connection/LIVE_VALIDATION.json",
     "closeout_validation": "experimental/live_body_connection/CLOSEOUT_VALIDATION.json",
