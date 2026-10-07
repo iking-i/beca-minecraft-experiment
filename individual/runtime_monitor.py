@@ -11,6 +11,7 @@ import threading
 import time
 
 from .lifetime import CONFIG, ROOT
+from .current_state import current_metadata, ends_table, session_mode
 
 
 COUNT_TYPES = {
@@ -199,15 +200,16 @@ class MonitorReader:
                 owner = db.execute('SELECT individual_id FROM experiment WHERE singleton=1').fetchone()
                 if not owner or owner[0] != individual:
                     raise ValueError('selection / database identity 尚未一致')
-                latest = db.execute('SELECT state_version,timestamp FROM states ORDER BY state_version DESC LIMIT 1').fetchone()
-                session_row = db.execute("""SELECT s.session_id,se.ended_at,se.reason
-                    FROM sessions s LEFT JOIN session_ends se USING(session_id)
+                latest = current_metadata(db)
+                session_row = db.execute(f"""SELECT s.session_id,se.ended_at,se.reason
+                    FROM sessions s LEFT JOIN {ends_table(db)} se USING(session_id)
                     ORDER BY (se.session_id IS NULL) DESC,s.start_version DESC,s.rowid DESC LIMIT 1""").fetchone()
                 if not session_row:
                     self.attachment = None
                     return View(str(database), individual, version=latest[0] if latest else None,
                                 timestamp=latest[1] if latest else '—')
                 session, ended, reason = session_row
+                full_history_enabled = session_mode(db, session)
                 attachment = (str(database), individual, session)
                 initial = attachment != self.attachment
                 upper = db.execute('SELECT coalesce(max(event_sequence),0) FROM events').fetchone()[0]
@@ -238,6 +240,14 @@ class MonitorReader:
                 loop = 'UNKNOWN'
             counts_view = {label: self.counts[kind] for label, kind in COUNT_TYPES.items()}
             counts_view['Failures'] = sum(n for kind, n in self.counts.items() if is_failure(kind))
+            if not full_history_enabled:
+                counts_view = {key: '未记录' for key in counts_view}
+                loop, waiting = 'UNKNOWN', 'FULL HISTORY: OFF；逐轮闭环证据未记录'
+                message += ' / FULL HISTORY: OFF'
+                if ended:
+                    loop = 'ENDED'
+            else:
+                message += ' / FULL HISTORY: ON'
             return View(str(database), individual, session, latest[0] if latest else None,
                         latest[1] if latest else '—', state, message, loop, waiting,
                         list(self.loop.stages), counts_view, tuple(self.events))

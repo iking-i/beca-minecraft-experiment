@@ -7,6 +7,7 @@ from pathlib import Path
 import sqlite3
 
 from .inspect import verify
+from .current_state import current_query
 
 
 KINDS = ('RECURSIVE_PROCESS_CREATED', 'RECURSIVE_PARTIAL_OUTPUT', 'INTEGRATION_COMPLETED',
@@ -117,7 +118,7 @@ def audit_legacy(database, include_sample=False, check_chain=True, session_id=No
                         break
                 if sample:
                     break
-        final_row = db.execute('SELECT snapshot FROM states ORDER BY state_version DESC LIMIT 1').fetchone()
+        final_row = db.execute('SELECT snapshot FROM ' + current_query(db)).fetchone()
         final = json.loads(final_row[0])
         retained = 0
         archived = {}

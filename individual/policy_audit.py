@@ -7,13 +7,14 @@ import math
 from pathlib import Path
 import sqlite3
 from .decision_provenance import decision_authorship
+from .current_state import current_query, audit_gaps
 
 
 def audit_policies(database):
     db = sqlite3.connect(Path(database).resolve().as_uri() + '?mode=ro', uri=True)
     try:
         db.execute('BEGIN')
-        row = db.execute('SELECT state_version,snapshot FROM states ORDER BY state_version DESC LIMIT 1').fetchone()
+        row = db.execute('SELECT state_version,snapshot FROM ' + current_query(db)).fetchone()
         if row is None:
             raise ValueError('No experiment states')
         last_version, raw = row
@@ -94,7 +95,8 @@ def audit_policies(database):
                             'source_migrated': selected['source'] == 'INTERNAL_VARIABLE_POLICY',
                             'fixed_rule_is_still_the_updater': selected['source'] == 'INITIAL_EXTERNAL_POLICY'})
         marker_rows = db.execute('SELECT COUNT(*),COUNT(DISTINCT individual_id),MIN(state_version),MAX(state_version) FROM states').fetchone()
-        checks = {'one_marker_and_contiguous_versions': marker_rows == (last_version + 1, 1, 0, last_version),
+        gaps = audit_gaps(db)
+        checks = {'one_marker_and_contiguous_versions': None if gaps else marker_rows == (last_version + 1, 1, 0, last_version),
                   'initialized_registry_recorded': counts['POLICY_REGISTRY_INITIALIZED'] + counts['POLICY_REGISTRY_INHERITED'] == 1,
                   'action_components_traceable': bool(action_checks) and all(action_checks),
                   'action_authorship_consistent': not attribution_errors,
@@ -109,6 +111,7 @@ def audit_policies(database):
         return {**history_summary(database, db), 'audit_scope': 'lifetime',
                 'tracking_available': True, 'individual_id': state['individual_id'],
                 'last_state_version': last_version, 'counts': dict(counts), 'checks': checks,
+                'audit_history_complete': not bool(gaps),
                 'boundary_checks_passed': all(value for key, value in checks.items() if key != 'internal_parameter_change_used_later'),
                 'profile': internal.get('l0_state', {}).get('profile', 'legacy_policy_debug'),
                 'formal_enabled_initial_policies': [key for key, r in registry.items()

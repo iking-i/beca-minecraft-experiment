@@ -8,7 +8,7 @@ import sys
 
 from individual.bridge import ROOT, parse_minecraft_port
 from individual.lifetime import CONFIG
-from individual.storage import INDIVIDUALS, create_lifetime, lifetime_entry, list_lifetimes, select_existing_lifetime
+from individual.storage import INDIVIDUALS, create_lifetime, list_lifetimes, select_existing_lifetime
 
 
 def launch_runtime_monitor(config=CONFIG):
@@ -23,9 +23,11 @@ def launch_runtime_monitor(config=CONFIG):
 class LaunchConfig:
     port: int
     froi: bool
+    full_history_enabled: bool = True
 
     def arguments(self):
-        return ['--port', str(self.port), *(['--froi'] if self.froi else [])]
+        return ['--port', str(self.port), *(['--froi'] if self.froi else []),
+                *(['--no-full-history'] if not self.full_history_enabled else [])]
 
 
 class LauncherService:
@@ -53,21 +55,25 @@ class LauncherService:
         return create_lifetime(storage_root=self.storage_root, config=self.config, label=label,
                                replace_missing_selection=confirm_missing)
 
-    def prepare(self, directory, port, froi):
+    def prepare(self, directory, port, froi, full_history_enabled=True):
         # All preflights precede pointer switching. No --db bypass or EventStore.
-        entry = lifetime_entry(directory)
+        if type(full_history_enabled) is not bool:
+            raise ValueError('full_history_enabled must be boolean')
         port = parse_minecraft_port(port)
         from individual.formal_l0 import FormalLimits
-        from individual.formal_boundary import preflight, RESOURCE_CAP_KEYS, sensor_caps
+        from individual.formal_boundary import RESOURCE_CAP_KEYS, sensor_caps
+        from individual.startup_validation import preflight_current_caps as preflight
         from integration.froi import preflight as froi_preflight, load_caps
         from supervisor.supervisor import load_limits
         limits = load_limits(self.limits)
         resources = {key: limits[key] for key in RESOURCE_CAP_KEYS}
         resources['body_observation_caps'] = sensor_caps(self.minecraft_config)
-        preflight(entry['database'], FormalLimits.load(self.physical_caps), resources)
-        froi_preflight(entry['database'], bool(froi), load_caps())
-        select_existing_lifetime(directory, self.storage_root, self.config)
-        return LaunchConfig(port, bool(froi))
+        def startup_check(entry):
+            # Preflights run once under the same protected boundary, before pin writes.
+            preflight(entry['database'], FormalLimits.load(self.physical_caps), resources)
+            froi_preflight(entry['database'], bool(froi), load_caps())
+        select_existing_lifetime(directory, self.storage_root, self.config, startup_check=startup_check)
+        return LaunchConfig(port, bool(froi), full_history_enabled)
 
 
 def show_launcher(service=None):
@@ -81,7 +87,7 @@ def show_launcher(service=None):
     service = service or LauncherService()
     result = None
     window.title('BECA 实验启动器')
-    window.geometry('1080x570')
+    window.geometry('1080x610')
     window.minsize(800, 480)
     panel = ttk.Frame(window, padding=18)
     panel.pack(fill='both', expand=True)
@@ -160,6 +166,10 @@ def show_launcher(service=None):
     port, froi = tk.StringVar(), tk.BooleanVar(value=True)
     ttk.Entry(inputs, textvariable=port, width=12).pack(side='left', padx=8)
     ttk.Checkbutton(inputs, text='FROI-1', variable=froi).pack(side='left', padx=15)
+    full_history = tk.BooleanVar(value=True)
+    ttk.Checkbutton(inputs, text='保存完整历史', variable=full_history).pack(side='left', padx=15)
+    ttk.Label(panel, text='关闭后仍保存 A 的当前状态并可继续同一个 A，但不保存逐轮完整实验历史。',
+              wraplength=1000).pack(anchor='w')
     ttk.Label(panel, textvariable=details, wraplength=1000).pack(anchor='w', pady=8)
     ttk.Label(panel, textvariable=notice, wraplength=1000).pack(anchor='w')
     ttk.Label(panel, text='这些选择是实验者的启动操作，不是 A 的递归或自主决策。').pack(anchor='w', pady=8)
@@ -169,7 +179,7 @@ def show_launcher(service=None):
     def start():
         nonlocal result
         try:
-            result = service.prepare(selected()['directory'], port.get(), froi.get())
+            result = service.prepare(selected()['directory'], port.get(), froi.get(), full_history.get())
         except Exception as error:
             messagebox.showerror('无法启动实验', str(error), parent=window)
             return

@@ -24,7 +24,8 @@ from .policies import PolicyRegistry
 from .observation import FrameEncoder
 from .structure import StructuralEngine
 from .formal_l0 import FormalL0Engine, FormalLimits, select_uniform_action
-from .formal_boundary import preflight, validate_boundary, normalize_resource_caps, sensor_caps
+from .formal_boundary import validate_boundary, normalize_resource_caps, sensor_caps
+from .startup_validation import preflight_current_caps as preflight
 from .decision_provenance import decision_authorship
 from .state import observation_fields, utc_now
 
@@ -35,7 +36,8 @@ class ACore:
     def __init__(self, database, bridge, policy=None, observation_interval=1.0, session_context=None,
                  session_label='Minecraft', initialize_lifetime=False, experiment_profile='formal_l0', physical_caps=None,
                  resource_caps=None, froi=False, froi_caps=None, froi_async=False, worker_factory=None,
-                 live_body_connection=False, live_body_control='CANONICAL', organization_factory=None):
+                 live_body_connection=False, live_body_control='CANONICAL', organization_factory=None,
+                 full_history_enabled=True):
         self._live_body_connection = live_body_connection
         self._live_interrupted = False
         if live_body_connection:
@@ -86,7 +88,7 @@ class ACore:
                 raise ValueError('Fresh BPC-LIVE-1 database was created by another writer')
             preflight(database, self._engine.caps if self._experiment_profile == 'formal_l0' else None,
                       self._engine.resource_caps if self._experiment_profile == 'formal_l0' else None)
-            self._store = EventStore(database)
+            self._store = EventStore(database, full_history_enabled=full_history_enabled)
             if not initialize_lifetime and self._store.latest_state() is None:
                 raise ValueError('Session startup requires committed lifetime history')
             previous = self._store.latest_state()
@@ -594,6 +596,8 @@ def main():
     parser.add_argument('--db')
     parser.add_argument('--branch-db', help='Explicitly run a labeled snapshot branch, never the original mainline')
     parser.add_argument('--session-label', default='Minecraft')
+    parser.add_argument('--no-full-history', dest='full_history_enabled', action='store_false', default=True,
+                        help='EXPERIMENTER_RECORDING_OPTION: keep current state but omit per-round full audit history')
     parser.add_argument('--minecraft-config', default=str(ROOT / 'minecraft/config.json'))
     parser.add_argument('--minecraft-port', type=parse_minecraft_port,
                         help='External connection override for this carrier run only')
@@ -673,7 +677,7 @@ def main():
                      resource_caps=args.environment_caps, froi=args.froi,
                      froi_caps=load_froi_caps(args.froi_caps), froi_async=True,
                      initialize_lifetime=args.bpc_live_1, live_body_connection=args.bpc_live_1,
-                     live_body_control=args.bpc_live_control)
+                     live_body_control=args.bpc_live_control, full_history_enabled=args.full_history_enabled)
         emit('CORE_STARTED', individual_id=core.state.individual_id, state_version=core.state.state_version,
              session_id=core.state.session_id, lifetime_role='snapshot_branch' if args.branch_db else 'mainline')
         threading.Thread(target=read_controls, daemon=True).start()

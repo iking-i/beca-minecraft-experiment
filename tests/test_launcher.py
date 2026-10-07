@@ -120,7 +120,7 @@ class LauncherTests(unittest.TestCase):
     def test_prepare_uses_existing_preflights_and_run_only_port_no_db(self):
         a=self.create()
         original=self.service.minecraft_config.read_bytes()
-        with patch('individual.formal_boundary.preflight',wraps=__import__('individual.formal_boundary',fromlist=['preflight']).preflight) as formal, \
+        with patch('individual.startup_validation.preflight_current_caps',wraps=__import__('individual.startup_validation',fromlist=['preflight_current_caps']).preflight_current_caps) as formal, \
              patch('integration.froi.preflight',wraps=froi_preflight) as froi:
             result=self.service.prepare(a['directory'],'51234',True)
             formal.assert_called_once()
@@ -167,7 +167,7 @@ class LauncherTests(unittest.TestCase):
         before=self.config.read_bytes()
         # Formal conditions also differ between an unmonitored fixture and GUI.
         # Isolate the FROI guard, retaining its actual persisted database read.
-        with patch('individual.formal_boundary.preflight'):
+        with patch('individual.startup_validation.preflight_current_caps'):
             with self.assertRaisesRegex(ValueError,'locked FROI'):
                 self.service.prepare(a['directory'],'12345',False)
         self.assertEqual(self.config.read_bytes(),before)

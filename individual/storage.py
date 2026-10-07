@@ -1,7 +1,6 @@
 """External storage administration: one directory per individual, never per session."""
 
 import json
-from contextlib import closing
 from pathlib import Path
 import sqlite3
 from uuid import uuid4
@@ -133,9 +132,7 @@ def update_index(storage_root=INDIVIDUALS):
                'runtime_selection': 'individual/lifetime.json', 'grouping_key': 'individual_id'})
 
 
-def lifetime_entry(directory, selection=None):
-    """Read-only validated mainline catalog entry; never infer an identity."""
-    from .inspect import verify
+def _mainline_manifest(directory):
     directory = Path(directory).resolve()
     manifest = json.loads((directory / 'lifetime.json').read_text(encoding='utf-8'))
     if manifest['role'] != 'mainline' or manifest['database'] != 'individual.db':
@@ -143,23 +140,27 @@ def lifetime_entry(directory, selection=None):
     database = directory / 'individual.db'
     if not database.is_file() or directory.name != manifest['individual_id']:
         raise ValueError('Missing database or directory/manifest identity mismatch')
-    wal = Path(str(database) + '-wal')
-    flags = '?mode=ro' if wal.is_file() and wal.stat().st_size else '?mode=ro&immutable=1'
-    with closing(sqlite3.connect(database.as_uri() + flags, uri=True)) as db:
-        history = verify(database, connection=db)
-    lifetime = history['A_lifetime_history']
-    if lifetime['individual_id'] != manifest['individual_id'] or lifetime['role'] != 'mainline':
-        raise ValueError('Database identity/role differs from lifetime manifest')
+    return manifest, database
+
+
+def lifetime_entry(directory, selection=None):
+    """Read-only current boundary; full lifetime audit is explicitly NOT_RUN."""
+    from .startup_validation import verify_startup_boundary
+    directory = Path(directory).resolve()
+    manifest, database = _mainline_manifest(directory)
+    boundary = verify_startup_boundary(database, manifest['individual_id'])
     selected = bool(selection and selection.get('individual_id') == manifest['individual_id']
                     and (ROOT / selection.get('database', '')).resolve() == database)
     return {**manifest, 'directory': str(directory), 'database': str(database),
-            'created_at': manifest.get('created_at', lifetime['started_at']),
-            'state_version': history['last_state_version'],
-            'session_count': len(history['Experiment_session_history']), 'selected': selected}
+            'created_at': manifest.get('created_at', boundary['started_at']),
+            'state_version': boundary['state_version'],
+            'session_count': boundary['session_count'], 'session_id': boundary['session_id'],
+            'session_status': boundary['session_status'],
+            'full_history_verification': boundary['full_history_verification'], 'selected': selected}
 
 
 def list_lifetimes(storage_root=INDIVIDUALS, config=None):
-    """Scan manifests and verify histories. Index labels are catalog hints only."""
+    """Read current metadata only. Index labels are catalog hints, not audit PASS."""
     from .lifetime import CONFIG
     config = Path(config) if config is not None else CONFIG
     root = Path(storage_root).resolve()
@@ -185,20 +186,21 @@ def list_lifetimes(storage_root=INDIVIDUALS, config=None):
     return entries, rejected
 
 
-def select_existing_lifetime(directory, storage_root=INDIVIDUALS, config=None):
+def select_existing_lifetime(directory, storage_root=INDIVIDUALS, config=None, startup_check=None):
     """External pointer administration only. Both current and target must be idle."""
     from .lifetime import CONFIG
     config = Path(config) if config is not None else CONFIG
     root, directory = Path(storage_root).resolve(), Path(directory).resolve()
     if directory.parent != root:
         raise ValueError('Selected lifetime must be inside storage/individuals')
-    entry = lifetime_entry(directory)
+    # Only resolve the target before locking; validate its DB once, under leases.
+    manifest, target = _mainline_manifest(directory)
     leases = []
     try:
         leases.append(ExperimentLease(config).acquire())
         previous_bytes = config.read_bytes() if config.exists() else None
         previous = json.loads(previous_bytes.decode('utf-8')) if previous_bytes else None
-        databases = {Path(entry['database'])}
+        databases = {target}
         if previous:
             path = (ROOT / previous['database']).resolve()
             if path.exists() or Path(str(path) + '.lock').exists():
@@ -206,6 +208,13 @@ def select_existing_lifetime(directory, storage_root=INDIVIDUALS, config=None):
         for path in sorted(databases, key=str):
             leases.append(ExperimentLease(path).acquire())
         entry = lifetime_entry(directory)
+        if entry['individual_id'] != manifest['individual_id'] or Path(entry['database']) != target:
+            raise ValueError('Target lifetime changed concurrently; refusing switch')
+        if previous and (ROOT / previous['database']).resolve() == target:
+            if previous.get('individual_id') != entry['individual_id'] or previous.get('role') != 'mainline':
+                raise ValueError('Pinned individual identity/role differs from stored lifetime')
+        if startup_check is not None:
+            startup_check(entry)
         if (config.read_bytes() if config.exists() else None) != previous_bytes:
             raise ValueError('Runtime selection changed concurrently; refusing switch')
         database = Path(entry['database'])

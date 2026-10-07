@@ -21,6 +21,7 @@ import psutil
 import yaml
 
 from individual.state import utc_now
+from individual.current_state import current_query
 from .process_evidence import ProcessProbe, StreamCapture
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -100,7 +101,7 @@ class Supervisor:
             with closing(sqlite3.connect(self.database.as_uri() + '?mode=ro', uri=True, timeout=.1)) as db:
                 db.execute('PRAGMA query_only=ON')
                 row = db.execute("SELECT state_version,json_extract(snapshot,'$.individual_id'),"
-                    "json_extract(snapshot,'$.session_id') FROM states ORDER BY state_version DESC LIMIT 1").fetchone()
+                    "json_extract(snapshot,'$.session_id') FROM " + current_query(db)).fetchone()
                 if row:
                     context.update(state_version=row[0], individual_id=row[1], session_id=row[2])
         except sqlite3.Error as error:
@@ -502,6 +503,8 @@ def cli():
     parser.add_argument('--db', help='Compatibility: must name the pinned lifetime database')
     parser.add_argument('--branch-db', help='Explicit snapshot branch; never the original A mainline')
     parser.add_argument('--session-label', default='Minecraft')
+    parser.add_argument('--no-full-history', dest='full_history_enabled', action='store_false', default=True,
+                        help='EXPERIMENTER_RECORDING_OPTION: keep current state but omit per-round full audit history')
     parser.add_argument('--minecraft-config', default=str(ROOT / 'minecraft/config.json'))
     from individual.bridge import parse_minecraft_port
     connection = parser.add_mutually_exclusive_group()
@@ -530,7 +533,8 @@ def cli():
         from individual.formal_l0 import FormalLimits
         caps = FormalLimits.load(args.physical_caps)
         limits = load_limits(args.limits)
-        from individual.formal_boundary import preflight, RESOURCE_CAP_KEYS, sensor_caps
+        from individual.formal_boundary import RESOURCE_CAP_KEYS, sensor_caps
+        from individual.startup_validation import preflight_current_caps as preflight
         resource_caps = {key: limits[key] for key in RESOURCE_CAP_KEYS}
         resource_caps['body_observation_caps'] = sensor_caps(args.minecraft_config)
         preflight(args.db, None if args.legacy_policy_debug or args.smoke_policy else caps, resource_caps)
@@ -550,6 +554,8 @@ def cli():
             core_args.extend(['--minecraft-port', str(port)])
         if args.froi:
             core_args.append('--froi')
+        if not args.full_history_enabled:
+            core_args.append('--no-full-history')
         if args.froi_caps:
             core_args.extend(['--froi-caps', str(Path(args.froi_caps).resolve())])
         if args.legacy_policy_debug:

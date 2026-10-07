@@ -320,6 +320,7 @@ class OrganizationSession:
 
 
 def preflight(database, enabled, caps):
+    from individual.current_state import current_query
     path = Path(database).resolve()
     if not path.is_file():
         return
@@ -328,7 +329,7 @@ def preflight(database, enabled, caps):
     with closing(sqlite3.connect(path.as_uri() + flags, uri=True)) as db:
         if not db.execute("SELECT 1 FROM sqlite_master WHERE name='states'").fetchone():
             return
-        row = db.execute('SELECT snapshot FROM states ORDER BY state_version DESC LIMIT 1').fetchone()
+        row = db.execute('SELECT snapshot FROM ' + current_query(db)).fetchone()
         boundary = json.loads(row[0]).get('internal_state', {}).get('l0_state', {}).get('froi_boundary') if row else None
     if boundary is not None and (not enabled or boundary != {'version': VERSION, 'caps': asdict(caps)}):
         raise ValueError('FROI lifetime requires its locked FROI profile/capacities; no legacy fallback')

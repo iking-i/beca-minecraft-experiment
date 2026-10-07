@@ -12,6 +12,7 @@ from .internal_state import InternalState
 from .policies import PolicyRegistry
 from .state import AState, utc_now
 from .formal_boundary import boundary_for
+from .current_state import current_row, install, persist, session_mode
 
 
 def encode(value):
@@ -126,7 +127,10 @@ BEGIN SELECT RAISE(ABORT,'Snapshot must match its historical state'); END;
 
 
 class EventStore:
-    def __init__(self, path):
+    def __init__(self, path, full_history_enabled=True):
+        if type(full_history_enabled) is not bool:
+            raise ValueError('full_history_enabled must be boolean')
+        self._requested_history_mode = full_history_enabled
         self.path = Path(path).resolve()
         self.path.parent.mkdir(parents=True, exist_ok=True)
         self.connection = sqlite3.connect(self.path)
@@ -142,7 +146,12 @@ class EventStore:
                     BEFORE {operation} ON {table}
                     BEGIN SELECT RAISE(ABORT, 'append-only history'); END""")
         self.connection.commit()
-        self._import_legacy_lifetime()
+        try:
+            self._import_legacy_lifetime()
+            install(self.connection)
+        except BaseException:
+            self.connection.close()
+            raise
 
     def _import_legacy_lifetime(self):
         """Add metadata only; never rewrite old states, events, IDs or provenance."""
@@ -169,8 +178,19 @@ class EventStore:
                     (session_id, last['last_update_at'], row[0], 'legacy_experiment_stopped', 0))
 
     def latest_state(self):
-        row = self.connection.execute('SELECT snapshot FROM states ORDER BY state_version DESC LIMIT 1').fetchone()
-        return AState(**json.loads(row[0])) if row else None
+        row = current_row(self.connection)
+        return AState(**json.loads(row[3])) if row else None
+
+    def _history_mode(self, state):
+        if state.session_id:
+            return session_mode(self.connection, state.session_id)
+        row = self.connection.execute('SELECT full_history_enabled FROM current_state WHERE singleton=1').fetchone()
+        return bool(row[0]) if row else True
+
+    def _end_record(self, state, reason, interrupted):
+        table = 'session_ends' if self._history_mode(state) else 'reduced_session_ends'
+        self.connection.execute(f'INSERT INTO {table} VALUES(?,?,?,?,?)',
+            (state.session_id,state.last_update_at,state.state_version,reason,int(interrupted)))
 
     def register_lifetime(self):
         """Explicit one-time registration; no world session or running carrier is created."""
@@ -209,15 +229,14 @@ class EventStore:
                 boundary = boundary_for(prior_internal, formal_caps, resource_caps)
             first_carrier = previous is not None and previous.status == 'registered'
             now = utc_now()
-            open_row = self.connection.execute('SELECT s.session_id FROM sessions s LEFT JOIN session_ends e USING(session_id) WHERE e.session_id IS NULL').fetchone()
+            open_row = self.connection.execute('SELECT s.session_id FROM sessions s LEFT JOIN session_lifecycle_ends e USING(session_id) WHERE e.session_id IS NULL').fetchone()
             if open_row:
                 interrupted = replace(previous, state_version=previous.state_version + 1,
                     last_update_at=now, session_id=open_row[0], status='session_interrupted')
                 self._append_transition(previous, interrupted, 'SESSION_INTERRUPTED', {
                     'session_id': open_row[0], 'reason': 'previous_carrier_stopped_without_session_end',
                     'physical_continuity_proven': False})
-                self.connection.execute('INSERT INTO session_ends VALUES(?,?,?,?,?)',
-                    (open_row[0], now, interrupted.state_version, 'carrier_interruption', 1))
+                self._end_record(interrupted, 'carrier_interruption', True)
                 previous = interrupted
             session_id = f'S-{uuid4()}'
             if previous is None:
@@ -239,21 +258,25 @@ class EventStore:
             self.connection.execute('INSERT INTO sessions VALUES(?,?,?,?,?,?,?,?)',
                 (session_id, state.individual_id, now, state.state_version, label,
                  encode(environment), state.carrier_epoch, 'carrier_restart' if previous and carrier_restart and not first_carrier else 'session_start'))
+            self.connection.execute('INSERT INTO session_recording_modes VALUES(?,?)',
+                (session_id,int(self._requested_history_mode)))
             payload = {'session_id': session_id, 'environment': environment, 'label': label,
                        'resumed_lifetime': previous is not None,
                        'previous_state_version': previous.state_version if previous else None,
                        'carrier_restart': bool(previous and carrier_restart and not first_carrier),
                        'physical_continuity_proven': False if previous and carrier_restart and not first_carrier else None}
             if previous is None:
-                self._insert_state(state)
-                self._insert_event(state, 'INDIVIDUAL_STARTED', {'continuity_required': True, 'restored': False})
-                self._insert_event(state, 'POLICY_REGISTRY_INITIALIZED', {
-                    'registry': internal.policy_registry, 'parameter_sources': internal.parameter_sources,
-                    'policy_migration_status': internal.policy_migration_status})
-                self._insert_event(state, 'SESSION_STARTED', payload)
-                if first_lock:
-                    self._insert_event(state, 'FORMAL_CAPS_LOCKED', boundary)
-                self._insert_event(state, 'STATE_UPDATED', {'from_version': None, 'to_version': 0, 'state': state.to_dict()})
+                persist(self.connection, state, self._requested_history_mode, encode)
+                if self._requested_history_mode:
+                    self._insert_state(state)
+                    self._insert_event(state, 'INDIVIDUAL_STARTED', {'continuity_required': True, 'restored': False})
+                    self._insert_event(state, 'POLICY_REGISTRY_INITIALIZED', {
+                        'registry': internal.policy_registry, 'parameter_sources': internal.parameter_sources,
+                        'policy_migration_status': internal.policy_migration_status})
+                    self._insert_event(state, 'SESSION_STARTED', payload)
+                    if first_lock:
+                        self._insert_event(state, 'FORMAL_CAPS_LOCKED', boundary)
+                    self._insert_event(state, 'STATE_UPDATED', {'from_version': None, 'to_version': 0, 'state': state.to_dict()})
             else:
                 extra = [('INDIVIDUAL_STARTED', {'first_runtime_session': True})] if first_carrier else []
                 if first_lock:
@@ -266,11 +289,24 @@ class EventStore:
         return self.open_session()
 
     def _insert_state(self, state):
+        # Initial registration/snapshot branches also establish the current boundary.
+        if not self.connection.execute('SELECT 1 FROM current_state WHERE singleton=1').fetchone():
+            persist(self.connection, state, True, encode)
         self.connection.execute('INSERT INTO states VALUES (?, ?, ?, ?)',
                                 (state.state_version, state.individual_id, state.last_update_at, encode(state.to_dict())))
         self.connection.execute('INSERT INTO state_sessions VALUES(?,?)', (state.state_version, state.session_id))
 
     def _append_transition(self, previous, current, event_type, payload, additional_events=()):
+        additional_events = tuple(additional_events)
+        enabled = self._history_mode(current)
+        # Validate the same serialized inputs in both modes; OFF changes recording,
+        # not whether a malformed transition is accepted or an action can proceed.
+        encode(payload)
+        for _, details in additional_events:
+            encode(details)
+        persist(self.connection, current, enabled, encode)
+        if not enabled:
+            return
         self._insert_state(current)
         self._insert_event(current, event_type, payload)
         for kind, details in additional_events:
@@ -289,7 +325,7 @@ class EventStore:
             raise ValueError('state_version must increase by one')
         with self.connection:
             self.connection.execute('BEGIN IMMEDIATE')
-            last = self.connection.execute('SELECT MAX(state_version) FROM states').fetchone()[0]
+            last = current_row(self.connection)[0]
             if last != previous.state_version:
                 raise ValueError('Stale state transition')
             self._append_transition(previous, current, event_type, payload, additional_events)
@@ -299,7 +335,7 @@ class EventStore:
             self.connection.execute('BEGIN IMMEDIATE')
             if self.latest_state().state_version != previous.state_version:
                 raise ValueError('Stale session end')
-            if not previous.session_id or self.connection.execute('SELECT 1 FROM session_ends WHERE session_id=?', (previous.session_id,)).fetchone():
+            if not previous.session_id or self.connection.execute('SELECT 1 FROM session_lifecycle_ends WHERE session_id=?', (previous.session_id,)).fetchone():
                 return previous
             state = replace(previous, state_version=previous.state_version + 1, last_update_at=utc_now(),
                 status='dormant' if carrier_stop else 'between_sessions')
@@ -307,8 +343,7 @@ class EventStore:
                 'session_id': previous.session_id, 'reason': reason, 'carrier_stop': carrier_stop,
                 'internal_state_preserved': True, 'lifetime_ended': False,
                 'physical_continuity_after_carrier_stop': 'unproven' if carrier_stop else 'carrier_running'})
-            self.connection.execute('INSERT INTO session_ends VALUES(?,?,?,?,?)',
-                (previous.session_id, state.last_update_at, state.state_version, reason, 0))
+            self._end_record(state, reason, False)
         return state
 
     def save_snapshot(self, version=None, label=''):

@@ -12,6 +12,7 @@ from uuid import uuid4
 from .events import EventStore, encode
 from .identity import ExperimentLease, new_individual_id
 from .state import AState, utc_now
+from .current_state import current_metadata, ends_table, session_mode, audit_gaps
 
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG = ROOT / 'individual/lifetime.json'
@@ -85,15 +86,20 @@ def history_summary(database, connection=None):
             'states': state_count, 'first_state_version': first, 'last_state_version': last,
             'events': db.execute('SELECT COUNT(*) FROM events').fetchone()[0]},
             'Experiment_session_history': []}
+        current = current_metadata(db)
+        result['A_lifetime_history'].update(current_state_version=current[0] if current else None,
+            audit_coverage_end=last, audit_history_complete=not bool(audit_gaps(db)))
         if lifetime:
             for sid, label, env, start, end, began, ended, reason, interrupted, origin in db.execute(
                 'SELECT s.session_id,s.label,s.environment,s.start_version,e.end_version,s.started_at,e.ended_at,e.reason,e.interrupted,s.origin '
-                'FROM sessions s LEFT JOIN session_ends e USING(session_id) ORDER BY s.start_version,s.rowid'):
+                f'FROM sessions s LEFT JOIN {ends_table(db)} e USING(session_id) ORDER BY s.start_version,s.rowid'):
                 counts = dict(db.execute('SELECT e.event_type,COUNT(*) FROM events e JOIN state_sessions ss USING(state_version) WHERE ss.session_id=? GROUP BY e.event_type', (sid,)))
                 result['Experiment_session_history'].append({'session_id': sid, 'label': label,
                     'environment': json.loads(env), 'start_version': start, 'end_version': end,
                     'started_at': began, 'ended_at': ended, 'reason': reason,
-                    'interrupted': bool(interrupted), 'origin': origin, 'event_counts': counts})
+                    'interrupted': bool(interrupted), 'origin': origin,
+                    'full_history_enabled': session_mode(db, sid),
+                    'event_counts': counts if session_mode(db, sid) else None})
         return result
     finally:
         if owns:
