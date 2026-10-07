@@ -142,10 +142,10 @@
     }
   },
   "next_work": [
-    "BPC-R1 COMPLETED / FROZEN; do not reopen the completed formation experiment",
-    "Next phase NOT_STARTED; record only real-history-formed C ↔ O -> subsequent real body execution",
-    "No next-phase mechanism design, runtime change, expression adapter or Minecraft run in this closeout",
-    "Retain external bootstrap authorship and all historical nonclaims / unresolved boundaries"
+    "BPC-R2 COMPLETED / FROZEN; do not reopen or repeat the real execution",
+    "Next phase NOT_STARTED; record only live current input -> continuously running A CurrentStructure -> history-formed C ↔ O in that same structure -> actual later recursive consumption",
+    "O -> expression -> real body execution already validated in fixed BPC-R2 scope; no new design or implementation in this closeout",
+    "Retain external query/trigger and formal sampler/binder authorship; preserve all historical nonclaims and frozen results"
   ],
   "cec0_minimal_real_witness": {
     "status": "PASS",
@@ -418,56 +418,61 @@
     "implementation_or_priority_selected": false
   },
   "current_research_phase": {
-    "name": "BPC-R1 — Real-Experience Body-Port Connection Formation",
+    "name": "BPC-R2 — Formed Body-Port Action-Code Authorship and Execution",
     "status": "PASS",
     "lifecycle": "COMPLETED_FROZEN",
     "completed": true,
     "frozen": true,
-    "scope": "Independent TEST_ONLY offline real formal-history formation only; native parameterless capability identity; supported shared incidence",
-    "base_commit": "ebdcbc73d060ce894513f35853ed01c5d47836ef",
-    "accepted_claim": "recorded real Minecraft experience -> formal history / RealExperience -> generic shared-incidence formation -> supported C ↔ O",
-    "closeout_anchor": "commit containing BPC_R1_CONVERSATION_HANDOFF.md",
-    "handoff": "BPC_R1_CONVERSATION_HANDOFF.md",
-    "report": "experimental/body_port_real1/VALIDATION.json",
-    "closeout_validation": "experimental/body_port_real1/CLOSEOUT_VALIDATION.json",
-    "unit_tests_passed": 29,
-    "negative_controls_passed": 12,
+    "scope": "Fixed real-history witness; independent TEST_ONLY body; native catalog 2 code 0; parameterless expression; external query and trigger",
+    "base_commit": "822ee5d05ba83c68b9a9a76e7be049f2be12c031",
+    "implementation_result_commit": "386e50eb26803ffe61a9cd863403b9c9468e4958",
+    "accepted_claim": "Within the fixed TEST_ONLY witness, a supported real-history-formed C ↔ O can provide the native action code of a subsequent parameterless primitive expression, and that exact expression can enter the real body execution channel and receive a matching execution receipt without sampler, binder, value-to-action mapping, fallback, or retry.",
+    "closeout_anchor": "commit containing BPC_R2_CONVERSATION_HANDOFF.md; resolve with git log -1 --format=%H -- BPC_R2_CONVERSATION_HANDOFF.md",
+    "handoff": "BPC_R2_CONVERSATION_HANDOFF.md",
+    "report": "experimental/body_port_real2/VALIDATION.json",
+    "closeout_validation": "experimental/body_port_real2/CLOSEOUT_VALIDATION.json",
+    "unit_tests_passed": 15,
+    "negative_controls_passed": 8,
+    "regression": {
+      "command": "pytest -q --ignore=tests/test_successor0.py --basetemp <new isolated workspace directory>",
+      "passed": 336,
+      "subtests_passed": 90,
+      "seconds": 284.55,
+      "status": "PASS",
+      "successor0_not_reopened": true
+    },
+    "real_execution_attempts": 1,
+    "automatic_retry": false,
+    "live_body_is_formal_A": false,
     "formal_runtime_changed": false,
-    "Minecraft_executed": false,
-    "formed_connection_execution_connected": false,
+    "catalog_changed": false,
     "source_database_changed": false,
-    "BPC0_frozen_evidence_changed": false,
     "prior_research_results_reopened": false,
     "theory_changed": false,
     "nonclaims": [
-      "internally authored historical action",
-      "O caused the observed world change",
-      "behavioral authorship",
+      "C ↔ O formed inside the continuously running A CurrentStructure",
+      "live A later current input actually consumed this connection",
+      "world effect causal law",
       "general parameter formation",
       "autonomous goal",
+      "autonomous action selection",
       "behavioral causal closure",
-      "C ↔ O controls the real body"
-    ],
-    "implementation_commit": "5fd85389e39801a0899eb0b1a4296796c2427783",
-    "closeout_regression": {
-      "command": "pytest -q --ignore=tests/test_successor0.py",
-      "passed": 321,
-      "subtests_passed": 90,
-      "seconds": 275.1,
-      "successor0_revalidated": false
-    }
+      "L1 / upward recursion",
+      "universal generative dynamics"
+    ]
   },
-  "prior_closeout_index_scope": "current_checkpoint / repository_state_audit / next_research_boundary retain the historical Successor-0 closeout; historical_research_phases.bpc0 retains BPC-0; current_research_phase records BPC-R1",
+  "prior_closeout_index_scope": "current_checkpoint / repository_state_audit / next_research_boundary retain the historical Successor-0 closeout; historical_research_phases retain BPC-0 and BPC-R1; current_research_phase records BPC-R2",
   "next_phase_boundary": {
     "status": "NOT_STARTED",
-    "stage_started": false,
-    "chain": "real-history-formed C ↔ O -> subsequent real body execution",
-    "question": "一个由真实 Minecraft 历史形成并验证的 C ↔ O，能否在不经过外部 sampler、binder 或人工 value-to-action mapping 的情况下，直接成为后续真实 primitive body expression 的动作来源？",
+    "chain": "live current input -> A's continuously running CurrentStructure -> history-formed C ↔ O inside that same structure -> later recursive processing actually consumes that C ↔ O",
     "boundary_only": true,
     "design_started": false,
     "implementation_started": false,
-    "Minecraft_execution_started": false,
-    "implementation_authorized_in_handoff": false
+    "experiment_started": false,
+    "already_validated_tail": "O -> expression -> real body execution in the fixed BPC-R2 scope; need not be independently revalidated as the next question",
+    "stage_started": false,
+    "implementation_authorized_in_handoff": false,
+    "Minecraft_execution_started": false
   },
   "historical_research_phases": {
     "bpc0": {
@@ -493,6 +498,46 @@
       "closeout_anchor": "commit containing BPC0_CONVERSATION_HANDOFF.md",
       "closeout_regression_tests_passed_excluding_successor0": 292,
       "handoff": "BPC0_CONVERSATION_HANDOFF.md"
+    },
+    "bpc_r1": {
+      "name": "BPC-R1 — Real-Experience Body-Port Connection Formation",
+      "status": "PASS",
+      "lifecycle": "COMPLETED_FROZEN",
+      "completed": true,
+      "frozen": true,
+      "scope": "Independent TEST_ONLY offline real formal-history formation only; native parameterless capability identity; supported shared incidence",
+      "base_commit": "ebdcbc73d060ce894513f35853ed01c5d47836ef",
+      "accepted_claim": "recorded real Minecraft experience -> formal history / RealExperience -> generic shared-incidence formation -> supported C ↔ O",
+      "closeout_anchor": "commit containing BPC_R1_CONVERSATION_HANDOFF.md",
+      "handoff": "BPC_R1_CONVERSATION_HANDOFF.md",
+      "report": "experimental/body_port_real1/VALIDATION.json",
+      "closeout_validation": "experimental/body_port_real1/CLOSEOUT_VALIDATION.json",
+      "unit_tests_passed": 29,
+      "negative_controls_passed": 12,
+      "formal_runtime_changed": false,
+      "Minecraft_executed": false,
+      "formed_connection_execution_connected": false,
+      "source_database_changed": false,
+      "BPC0_frozen_evidence_changed": false,
+      "prior_research_results_reopened": false,
+      "theory_changed": false,
+      "nonclaims": [
+        "internally authored historical action",
+        "O caused the observed world change",
+        "behavioral authorship",
+        "general parameter formation",
+        "autonomous goal",
+        "behavioral causal closure",
+        "C ↔ O controls the real body"
+      ],
+      "implementation_commit": "5fd85389e39801a0899eb0b1a4296796c2427783",
+      "closeout_regression": {
+        "command": "pytest -q --ignore=tests/test_successor0.py",
+        "passed": 321,
+        "subtests_passed": 90,
+        "seconds": 275.1,
+        "successor0_revalidated": false
+      }
     }
   },
   "historical_next_phase_boundaries": {
@@ -503,6 +548,17 @@
       "implementation_authorized_in_handoff": false,
       "runtime_changes_authorized_in_handoff": false,
       "Minecraft_execution_authorized_in_handoff": false
+    },
+    "bpc_r1_closeout": {
+      "status": "NOT_STARTED",
+      "stage_started": false,
+      "chain": "real-history-formed C ↔ O -> subsequent real body execution",
+      "question": "一个由真实 Minecraft 历史形成并验证的 C ↔ O，能否在不经过外部 sampler、binder 或人工 value-to-action mapping 的情况下，直接成为后续真实 primitive body expression 的动作来源？",
+      "boundary_only": true,
+      "design_started": false,
+      "implementation_started": false,
+      "Minecraft_execution_started": false,
+      "implementation_authorized_in_handoff": false
     }
   }
 }

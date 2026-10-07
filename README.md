@@ -10,20 +10,36 @@
 
 ## 当前研究状态
 
-**BPC-R1 已完成并冻结：COMPLETED / FROZEN，真实历史 formation PASS。**
-限定结论：**真实 Minecraft 已记录经历 → 正式 history / RealExperience → generic shared-incidence formation → supported C ↔ O**。
-本阶段只在隔离 TEST_ONLY 模块离线读取既有正式历史；不是正式 runtime 接入，也没有重新运行 Minecraft。
-原生 O 为 `(catalog version=2, numeric code=0)`，来自已有 capability 身份，不经 value-to-action mapping。
-真实 witness 为 `03476345-ff88-4128-b64f-1adc22d8d1ad`，记录帧为 `E75 → E76`。
-规格、原验收及收口证据见 [BPC-R1](experimental/body_port_real1/README.md)、
-[VALIDATION.md](experimental/body_port_real1/VALIDATION.md)、[VALIDATION.json](experimental/body_port_real1/VALIDATION.json)
-及 [正式 conversation handoff](BPC_R1_CONVERSATION_HANDOFF.md)。实现/验收提交为 `5fd85389e39801a0899eb0b1a4296796c2427783`；冻结状态锚点为包含 handoff 的独立收口提交。
-收口专项 **29 passed**；排除不重验的 Successor-0 专项后，回归 **321 passed / 90 subtests passed**；12 项负对照全部通过。
+**BPC-R2 已完成并冻结：COMPLETED / FROZEN，PASS。**
+限定结论：固定 TEST_ONLY witness 中，受支持的真实历史形成 `C ↔ O` 为后续无参数
+primitive expression 提供原生 action code；该 exact expression 经既有身体通道完成
+恰好一次真实执行并收到匹配回执，未调用 sampler、binder、value-to-action mapping、fallback 或 retry。
+O 为既有 `(catalog version=2, code=0)`，parameters 为 `{}`，并非内部创造的新能力。
+BPC-R1 已形成的 S/C 被直接读取，未更换 witness、重算 formation 或改写旧证据。
+独立 TEST_ONLY body 使用端口 61875；不是正在运行的正式 A CurrentStructure 接入。
 
-不证明历史动作由内部结构产生、O 导致观察到的世界变化、行为作者权、一般参数形成、自主目标、
-behavioral causal closure，或 C ↔ O 已能控制真实身体。历史 bootstrap 作者仍为外部策略。
-下一阶段 **NOT_STARTED**；只记录研究边界：`real-history-formed C ↔ O → subsequent real body execution`。
-本轮不设计、实现或运行这个下一阶段。
+实现/结果提交：`386e50eb26803ffe61a9cd863403b9c9468e4958`；收口提交为包含
+[BPC-R2 handoff](BPC_R2_CONVERSATION_HANDOFF.md) 的独立提交。
+见 [规格](experimental/body_port_real2/SPEC.md)、
+[原验收](experimental/body_port_real2/VALIDATION.md)、
+[机器报告](experimental/body_port_real2/VALIDATION.json) 与
+[收口核对](experimental/body_port_real2/CLOSEOUT_VALIDATION.json)。
+专项 **15 passed**；8 项负对照 PASS；相关回归 **336 passed / 90 subtests passed**；
+Successor-0 未重新运行。closeout 只核对可信执行记录及源码/证据哈希，没有再次执行 Minecraft。
+
+不证明 `C ↔ O` 在持续运行的 A CurrentStructure 内形成，也不证明 live A 后续当前输入
+实际消费了连接；不证明 world effect causal law、一般参数形成、自主目标、自主动作选择、
+behavioral causal closure、L1/upward recursion 或 universal generative dynamics。
+正式 runtime、catalog、caps、BPC-0/BPC-R1 及其他冻结阶段和理论均未修改。
+
+下一阶段 **NOT_STARTED**，只记录边界：
+`live current input → A's continuously running CurrentStructure → history-formed C ↔ O inside that same structure → later recursive processing actually consumes that C ↔ O`。
+`O → expression → real body execution` 已在 BPC-R2 限定范围内验证，后半链不是下一阶段需重新验证的问题。
+本轮不设计或实现下一阶段。
+
+BPC-R1 保留真实历史 formation PASS：实现 `5fd85389e39801a0899eb0b1a4296796c2427783`，
+收口 `822ee5d05ba83c68b9a9a76e7be049f2be12c031`；29 项专项、12 项负对照及
+321 passed / 90 subtests 的历史回归不改写。见 [BPC-R1 handoff](BPC_R1_CONVERSATION_HANDOFF.md)。
 
 BPC-0 继续保留 synthetic TEST_ONLY witness PASS：实现 `996b6fab6d055159f1336085ec80e5a7a4f07613`，
 收口 `ebdcbc73d060ce894513f35853ed01c5d47836ef`；原 synthetic 身体输出证据、17 项专项测试和

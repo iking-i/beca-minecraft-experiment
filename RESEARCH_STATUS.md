@@ -2,7 +2,58 @@
 
 **Status date:** 2026-10-07
 
-**Current stage: BPC-R1 — Real-Experience Body-Port Connection Formation; COMPLETED / FROZEN; PASS.**
+**Current stage: BPC-R2 — Formed Body-Port Action-Code Authorship and Execution; COMPLETED / FROZEN; PASS.**
+Implementation / original result commit: `386e50eb26803ffe61a9cd863403b9c9468e4958`.
+Closeout anchor: commit containing `BPC_R2_CONVERSATION_HANDOFF.md`.
+
+Strongest accepted claim:
+
+> Within the fixed TEST_ONLY witness, a supported real-history-formed C ↔ O can provide the native action code of a subsequent parameterless primitive expression, and that exact expression can enter the real body execution channel and receive a matching execution receipt without sampler, binder, value-to-action mapping, fallback, or retry.
+
+Fixed experience `03476345-ff88-4128-b64f-1adc22d8d1ad`, frames E75 → E76,
+native O `(catalog version=2, code=0)`, parameters `{}`. Previously formed BPC-R1
+S/C was decoded and consumed, not reformed. The code came from the unique supported
+native port. Query C and execution trigger/timing are external TEST_ONLY conditions.
+Existing body dispatch is a fixed mechanism; no sampler/binder/mapping/fallback.
+Independent test body on port 61875 sent exactly one real perform expression,
+received a matching receipt and closed; no retry/reconnect. No formal A writes.
+
+Dedicated **15 passed**; eight negative controls PASS; related regression
+**336 passed, 90 subtests passed** (284.55 s), excluding frozen Successor-0 tests.
+Original executed records and current source/report hashes were verified at closeout;
+no new Minecraft action, regression or Successor-0 run for documentation closeout.
+Formal runtime/catalog/caps/old frozen stages/theory remain unchanged.
+Evidence: `experimental/body_port_real2/VALIDATION.md` / `VALIDATION.json`,
+`experimental/body_port_real2/CLOSEOUT_VALIDATION.json`,
+`BPC_R2_CONVERSATION_HANDOFF.md`; full local evidence remains under
+`storage/validation/BPC-R2-LIVE-001/` and the permanent one-attempt ledger.
+
+Nonclaims: no proof that C ↔ O formed inside continuously running A CurrentStructure;
+no proof live A later current input consumed it; no world effect causal law,
+general parameter formation, autonomous goal/action selection, behavioral causal
+closure, L1/upward recursion or universal generative dynamics. Formal runtime's
+sampler/binder remain externally authored. BPC-R1/other history is not upgraded.
+
+**Next phase: NOT_STARTED.** Boundary only:
+
+```text
+live current input
+→ A's continuously running CurrentStructure
+→ history-formed C ↔ O inside that same structure
+→ later recursive processing actually consumes that C ↔ O
+```
+
+`O → expression → real body execution` already has scoped BPC-R2 evidence;
+the next boundary does not require independently revalidating that tail.
+No next-phase mechanism, runtime change or experiment is designed here.
+
+## Historical BPC-R1 closeout checkpoint
+
+The following records the earlier BPC-R1 closeout, not current-stage instructions.
+Its next-boundary NOT_STARTED and nonclaims refer to that historical checkpoint;
+BPC-R2 does not rewrite its frozen evidence.
+
+**Historical stage: BPC-R1 — Real-Experience Body-Port Connection Formation; COMPLETED / FROZEN; PASS.**
 Implementation/acceptance commit: `5fd85389e39801a0899eb0b1a4296796c2427783`.
 Freeze / phase-closeout anchor: the commit containing `BPC_R1_CONVERSATION_HANDOFF.md`.
 Resolve its exact SHA using `git log -1 --format=%H -- BPC_R1_CONVERSATION_HANDOFF.md`.

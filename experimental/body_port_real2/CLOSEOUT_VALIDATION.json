@@ -1,0 +1,145 @@
+{
+  "stage": "BPC-R2",
+  "status_date": "2026-10-07",
+  "lifecycle": "COMPLETED_FROZEN",
+  "classification": "PASS",
+  "branch": "codex/bpc-r2-real-execution",
+  "base_commit": "822ee5d05ba83c68b9a9a76e7be049f2be12c031",
+  "implementation_result_commit": "386e50eb26803ffe61a9cd863403b9c9468e4958",
+  "closeout_anchor": "commit containing BPC_R2_CONVERSATION_HANDOFF.md; resolve with git log -1 --format=%H -- BPC_R2_CONVERSATION_HANDOFF.md",
+  "accepted_claim": "Within the fixed TEST_ONLY witness, a supported real-history-formed C ↔ O can provide the native action code of a subsequent parameterless primitive expression, and that exact expression can enter the real body execution channel and receive a matching execution receipt without sampler, binder, value-to-action mapping, fallback, or retry.",
+  "scope": "Fixed real-history witness; independent TEST_ONLY body; native catalog 2 code 0; parameterless expression; external query and trigger",
+  "witness": {
+    "experience_id": "03476345-ff88-4128-b64f-1adc22d8d1ad",
+    "frames": [
+      "E75",
+      "E76"
+    ],
+    "port": {
+      "catalog_version": 2,
+      "code": 0
+    }
+  },
+  "original_validation": "experimental/body_port_real2/VALIDATION.json",
+  "original_validation_sha256": "2d92eea85ac7ce3289e604852637a45d4b851440cb6d69eb4aa6f0db64dda014",
+  "real_report": "storage\\validation\\BPC-R2-LIVE-001\\validation.json",
+  "real_report_sha256": "6b14e0edb13947bcce59fe135bd3f122d3a3629e00e740aa8ffe0ef1b14fe8ca",
+  "saved_organization_report": "storage/validation/BPC-R1-REAL-HISTORY-003/validation.json",
+  "saved_organization_report_sha256": "304166194dfd927667a74eaca5d0b42dd5935ae015ebe8bcafa91182e4655814",
+  "action_ledger": "storage/validation/BPC-R2-ONE-PERFORM.json",
+  "action_ledger_sha256": "90653606be08e1a3dfa9d5297e689a366a2f37bac1eed84a4ef316e1c00e44fa",
+  "expression": {
+    "code": 0,
+    "parameters": {}
+  },
+  "transmitted_expression": {
+    "code": 0,
+    "parameters": {}
+  },
+  "receipt_identity": {
+    "code": 0,
+    "parameters": {},
+    "started_at": "2026-10-06T16:52:37.420Z",
+    "finished_at": "2026-10-06T16:52:37.549Z",
+    "result": {
+      "input_sent": 1,
+      "effect_acknowledged": 0
+    },
+    "effect_attribution": "temporal_observation_only"
+  },
+  "perform_attempts": 1,
+  "automatic_retry": false,
+  "reconnect_enabled": false,
+  "controls": {
+    "formed_connection_removed": true,
+    "necessary_port_support_removed": true,
+    "organization_inaccessible": true,
+    "ambiguous_supported_ports": true,
+    "unrelated_distractor": true,
+    "invalid_connection_no_sampler_fallback": true,
+    "binder_forbidden_valid_expression": true,
+    "no_sampler_binder_formation_bridge_calls": true
+  },
+  "forbidden_call_counts": {},
+  "dedicated_tests": {
+    "passed": 15,
+    "seconds": 0.32,
+    "status": "PASS",
+    "default_temp_setup_issue_resolved_with_new_workspace_temp": true
+  },
+  "regression": {
+    "command": "pytest -q --ignore=tests/test_successor0.py --basetemp <new isolated workspace directory>",
+    "passed": 336,
+    "subtests_passed": 90,
+    "seconds": 284.55,
+    "status": "PASS",
+    "successor0_not_reopened": true
+  },
+  "test_record_basis": "Prior executed tool output and original validation index, with current source hash verification; no test re-execution needed for documentation-only closeout",
+  "closeout_Minecraft_executed": false,
+  "closeout_successor0_revalidated": false,
+  "authorship": {
+    "code": "SUPPORTED_FORMED_CONNECTION",
+    "query_and_trigger": "TEST_ONLY_EXPERIMENTER",
+    "body_dispatch": "EXTERNAL_FIXED_MECHANISM",
+    "historical_bootstrap": "EXTERNAL_FIXED_POLICY",
+    "live_body_is_formal_A": false
+  },
+  "audit": {
+    "formed_only_consumer": true,
+    "expression_code_equals_returned_port_code": true,
+    "empty_parameters_without_binder": true,
+    "no_mapping_sampler_binder_fallback": true,
+    "request_and_receipt_match": true,
+    "one_perform_no_retry": true,
+    "all_8_controls_pass": true,
+    "source_and_evidence_digests_verified": true,
+    "formal_runtime_catalog_caps_unchanged": true,
+    "frozen_prior_results_unchanged": true,
+    "theory_unchanged": true,
+    "unrelated_untracked_excluded": true
+  },
+  "source_hashes": {
+    "experimental\\body_port_real2\\prototype.py": "1e8526671373a9e27ed383de9fa519a479fbc83507e5d052f3db7965e16f5a8c",
+    "experimental\\body_port_real2\\validation.py": "dec7e0bd3e238797ca98adca651fba1ec265510aeda983fdf735e364c86c4ea6",
+    "experimental\\body_port_real2\\SPEC.md": "815c4c29f14168e1d07a15f6ec1979e3ae505ff049a134d2a97466b5f4da5637",
+    "tests\\test_body_port_real2.py": "a761379b01aea8c0cbed9d7fdc9222a5140a56c85ae0145f3185bcbf4dcd4d46",
+    "individual\\bridge.py": "5e8c528c36b60d1531f9dbe897f873939f43a93057ef81e388cbad50b1f53fe3",
+    "bridge\\server.js": "3d36b7ba3b629da48c22d53ddbeb642a17ef9e8000024b9939b19d11b53c87b1",
+    "minecraft\\src\\capabilities.js": "f2dc0fa1ba250d2cabae743eaa03761c6c0be0e452ec0c4371fd737c5b2012cb",
+    "minecraft\\action-space.json": "25f3b95319594fee7d6b76d618b091e9c41166e426d59d3853fffbcb08b6426e"
+  },
+  "protected_remote_before": {
+    "main": "135205d4632f8b0d4ed21f30fd3478dce8118c84",
+    "codex/bpc-0-frozen": "ebdcbc73d060ce894513f35853ed01c5d47836ef",
+    "codex/bpc-r1-real-formation": "822ee5d05ba83c68b9a9a76e7be049f2be12c031"
+  },
+  "protected_local_before": {
+    "main": "524197110ebaf7fb5f5dd565d2d6a49faf8a4c61",
+    "codex/bpc-0-frozen": "ebdcbc73d060ce894513f35853ed01c5d47836ef",
+    "codex/bpc-r1-real-formation": "822ee5d05ba83c68b9a9a76e7be049f2be12c031"
+  },
+  "nonclaims": [
+    "C ↔ O formed inside the continuously running A CurrentStructure",
+    "live A later current input actually consumed this connection",
+    "world effect causal law",
+    "general parameter formation",
+    "autonomous goal",
+    "autonomous action selection",
+    "behavioral causal closure",
+    "L1 / upward recursion",
+    "universal generative dynamics"
+  ],
+  "next_phase": {
+    "status": "NOT_STARTED",
+    "chain": "live current input -> A's continuously running CurrentStructure -> history-formed C ↔ O inside that same structure -> later recursive processing actually consumes that C ↔ O",
+    "boundary_only": true,
+    "design_started": false,
+    "implementation_started": false,
+    "experiment_started": false,
+    "already_validated_tail": "O -> expression -> real body execution in the fixed BPC-R2 scope; need not be independently revalidated as the next question",
+    "stage_started": false,
+    "implementation_authorized_in_handoff": false,
+    "Minecraft_execution_started": false
+  }
+}
