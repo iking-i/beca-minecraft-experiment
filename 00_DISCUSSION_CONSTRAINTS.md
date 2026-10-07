@@ -1140,3 +1140,24 @@ Those remain open. Do not invent them from this section.
 
 **Signed: 四号**
 
+## 31. Conversation handoff outside formal phase closeout
+
+**Status:** discussion/research-method guardrail only  
+**Scope:** conversation continuity during maintenance or between formal research phases
+
+When a conversation ends while the repository is between formal phase closeouts, create or update `CURRENT_CONVERSATION_HANDOFF.md` rather than inventing a new research phase.
+
+The working handoff may record the last completed evidence, local-only commits or uncommitted maintenance, the current maintenance blocker, the next already-authorized engineering action, and the next research causal boundary that remains `NOT_STARTED`.
+
+It must distinguish:
+
+```text
+formal research closeout
+!=
+conversation continuity handoff
+```
+
+It must not rewrite frozen historical evidence, promote maintenance into a research PASS, or claim that a remote branch contains local-only work that has not been pushed.
+
+When local state is newer than the accessible remote branch, state that mismatch explicitly. The actual local worktree and its Git state remain authoritative for current implementation facts until synchronized.
+
