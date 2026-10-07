@@ -10,6 +10,29 @@
 
 ## 当前研究状态
 
+**最新 closeout（2026-10-07）：memory/runtime boundary long-run validation 已完成。**
+运行实现 `ed88877535375f42a51cd479518cbb5673f28db2`；Individual
+`A-24f4fd0f-e83a-4ea2-9db6-2c351c9cfe05`，Session
+`S-f4a2c0a1-b26e-4503-974c-ea9cf27e1834`；最终 A6327 / event 62646。
+已记录运行跨度 59 分 39.216 秒：2727 observations、920 条逐条核对的真实完整闭环；
+Core sampled peak 86.39453125 MiB，未复现 512 MiB `core_ram_limit`。
+`MEMORY_RUNTIME_BOUNDARY = PASS`、`LONG_RUNNING_REAL_BODY_WORLD_LOOP = PASS`；
+`FULL_HISTORY_RAM_REGRESSION = NOT_OBSERVED`、`CORE_RAM_LIMIT_REGRESSION = NOT_OBSERVED`。
+2722 个 formed organization 均记录 `external_history_loaded=false`，初始化
+`raw_history_retained=false`；完整 EventStore 仍作为外部实验审计历史保留。
+
+用户主动关闭承载实验的终端窗口：`STOP_REASON = USER_CLOSED_TERMINAL`，
+不是程序内 Ctrl+C / controlled shutdown。没有 SESSION_ENDED 或完整 Core/Bridge
+退出证据，故 `TERMINATION_OBSERVABILITY = NOT_VALIDATED`，不判 PASS 或 FAIL。
+这不证明世界效果因果律、内部行为作者权、L1 或 Perfect Recursion 全部成立。
+完整归档与交接见 [长程运行 handoff](LONG_RUN_CURRENT_STRUCTURE_CONVERSATION_HANDOFF.md)。
+下一方向仅记录为 initial-constraint / A0 constraint audit：
+**NOT_STARTED / NOT_IMPLEMENTED / NOT_YET_SPECIFIED**；本轮不开始审计或实现。
+
+### 历史 BPC-LIVE-1 closeout 与解释纠正
+
+以下保留此前阶段的状态、范围与证据，不替代上面的最新长程运行 closeout。
+
 **研究解释已纠正（2026-10-07）：** BPC-LIVE-1 仍为历史限定范围内的
 **PASS / COMPLETED / FROZEN**，冻结提交为
 `916ccf4f83243346341ea3e3cbf5e41e06991cff`。但 `Shared(C,O)` 的准确分类是

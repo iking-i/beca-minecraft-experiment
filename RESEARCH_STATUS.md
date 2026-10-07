@@ -1,4 +1,56 @@
-## Authoritative current interpretation — 2026-10-07
+## Latest closeout — long-run current-structure validation, 2026-10-07
+
+**Current position: memory/runtime boundary long-run validation COMPLETED / FROZEN.**
+Implementation `ed88877535375f42a51cd479518cbb5673f28db2`; exact individual
+`A-24f4fd0f-e83a-4ea2-9db6-2c351c9cfe05`, session
+`S-f4a2c0a1-b26e-4503-974c-ea9cf27e1834`; final committed **A6327 / event 62646**.
+Recorded span: **59 min 39.216 s**, not a measured shutdown timestamp.
+
+| Current run conclusion | Classification |
+|---|---|
+| MEMORY_RUNTIME_BOUNDARY | PASS |
+| LONG_RUNNING_REAL_BODY_WORLD_LOOP | PASS |
+| FULL_HISTORY_RAM_REGRESSION | NOT_OBSERVED |
+| CORE_RAM_LIMIT_REGRESSION | NOT_OBSERVED |
+| TERMINATION_OBSERVABILITY | NOT_VALIDATED |
+| STOP_REASON | USER_CLOSED_TERMINAL |
+| INITIAL_CONSTRAINT_AUDIT | NOT_STARTED / NOT_IMPLEMENTED / NOT_YET_SPECIFIED |
+
+2727 observations, 1365 requests, 920 executed, 445 failed; 2723 experiences,
+recursive partial outputs and integrations each. All 920 successful executions
+have reference-checked renewed-input / experience / partial / integration chains.
+Core RSS: start **19.19140625**, sampled peak **86.39453125**, last sampled
+**50.36328125 MiB**; final compact UTF-8 InternalState **625543 bytes**.
+All 2722 formed organizations record `external_history_loaded=false`;
+`FROI_INITIAL_CONDITION.raw_history_retained=false`. Complete EventStore history
+remains external audit material, not A's live runtime memory. Current retained
+structure and current input continued the real runtime chain.
+
+The observer intentionally closed the experiment terminal; this was not an
+in-program controlled Ctrl+C shutdown. No SESSION_ENDED or final Core/Bridge exit
+evidence was recorded. Termination observability is neither PASS nor FAIL here;
+missing final evidence does not establish an implementation failure or successful
+validation. No system self-termination is evidenced. Last committed state remains
+`running`; actual exit time/code/order remain unknown.
+
+Against the archived A603 / 130-observation / 44-loop run with Core peak
+555.203125 MiB and `core_ram_limit`, this fixed run provides scoped evidence that
+the old full-history runtime RAM blocker was removed and longer real recursion
+continued. It does not solve memory universally or establish behavioral authorship,
+specific world-effect causal laws, L1/upward recursion or all Perfect Recursion.
+
+Full evidence boundaries, comparison and handoff:
+[LONG_RUN_CURRENT_STRUCTURE_CONVERSATION_HANDOFF.md](LONG_RUN_CURRENT_STRUCTURE_CONVERSATION_HANDOFF.md).
+Next direction is initial-constraint / A0 constraint audit only; no question,
+acceptance boundary, implementation or result for it is specified here.
+No runtime/tests/caps/FROI/GSC/termination-observability changes or experiment rerun
+are performed by this documentation closeout. Earlier scoped results remain unchanged.
+
+## Historical authoritative interpretation checkpoint — 2026-10-07
+
+The BPC-LIVE-1 current/latest wording below belongs to that earlier checkpoint.
+Its correction and frozen evidence remain valid within their original scope;
+the latest completed operational validation is indexed above.
 
 **LATEST COMPLETED EXPERIMENT:** BPC-LIVE-1 = **PASS / COMPLETED / FROZEN**.
 
