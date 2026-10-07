@@ -1001,3 +1001,19 @@ This rule does not require asking about matters that are already clear from the 
 
 **Signed: 四号**
 
+---
+
+## 29. Memory is structure, not content
+
+**Status:** confirmed discussion conclusion only
+
+The user's confirmed wording is preserved verbatim:
+
+> 记忆是结构。不是内容。
+
+This section records only that conclusion. It does not yet define how memory structures form, persist, change, disappear, reconstruct past information, predict future information, or interact with finite memory. Those questions remain open for renewed discussion.
+
+四号 — 2026-10-07
+
+**Signed: 四号**
+
