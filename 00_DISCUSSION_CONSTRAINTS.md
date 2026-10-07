@@ -816,3 +816,146 @@ names, evidence and scoped results; correct current interpretation explicitly.
 四号 — 2026-10-07
 
 operative-connection interpretation guardrail
+
+---
+
+## 27. Run-first experimental objective and recursion handoff rule
+
+**Status:** discussion/research-method guardrail only  
+**Scope:** current BECA/Minecraft experimental execution, assistant planning, and intervention boundaries  
+**Not:** a Perfect Recursion axiom, a new runtime mechanism, a new layer definition, or a retroactive reinterpretation of frozen experimental evidence
+
+### 27.1 The current objective is operational, not explanatory
+
+The current objective is singular:
+
+```text
+make the experiment actually run
+-> connect A's brain/internal recursion to its already available body
+-> establish the real bidirectional loop with Minecraft
+-> let Perfect Recursion proceed
+```
+
+Operationally:
+
+```text
+A / internal recursion
+<-> body
+<-> Minecraft reality
+```
+
+with the live causal loop:
+
+```text
+input reaches A
+-> A continues its recursion
+-> output reaches the body
+-> the body changes Minecraft reality
+-> the consequence returns as new input
+-> recursion continues
+```
+
+This section does **not** require a BPC-style learned body-port relation. "Brain/body connected" here means the lawful experiment carrier actually permits A's existing input and output capabilities to participate in one real closed loop.
+
+### 27.2 Do not solve Perfect Recursion's future problems for it
+
+Once the live loop above can lawfully operate, questions exposed by later operation belong first to the running recursion and reality, not to the experimenter as pre-implementation tasks.
+
+Examples include, unless they are the concrete blocker preventing the loop from starting:
+
+- what later internal structures should form;
+- how conflicts should be handled;
+- how meanings of inputs or outputs should develop;
+- how future choices or organizations should arise;
+- how limits should be handled;
+- whether or how a higher layer forms;
+- what future reconstruction should occur;
+- what unexpected structures or strategies should emerge.
+
+The experimenter and assistant MUST NOT delay launch in order to pre-solve these questions.
+
+Compactly:
+
+```text
+our job:
+make lawful recursion able to happen in reality
+
+not our job:
+perform the recursion in advance
+```
+
+### 27.3 Discussion is not implementation progress
+
+Discussion, theory refinement, audit, and interpretation may themselves recurse indefinitely. They can be useful for identifying a genuine current blocker, but they do not count as implementation progress merely because they produce more explanation.
+
+For the current project:
+
+```text
+thinking about an action != the action occurring
+describing a capability != the capability running
+auditing a loop != the loop running
+```
+
+A claimed implementation step is complete only when the relevant behavior has actually occurred in code/runtime and, where appropriate, produced observable evidence.
+
+Do not create repeated audits of already-resolved premises merely because further discussion is possible. Re-open a settled premise only when new runtime evidence, code evidence, or a concrete contradiction requires it.
+
+### 27.4 Every next task must remove a real launch blocker
+
+Until the live A-body-world loop is running, every next implementation task MUST answer:
+
+> What concrete fact currently prevents the experiment from running as one lawful bidirectional recursive loop?
+
+Then change only what is necessary to remove that blocker and execute again.
+
+The preferred control loop is:
+
+```text
+attempt real run
+-> observe concrete blocker
+-> repair only that blocker
+-> attempt real run again
+```
+
+Not:
+
+```text
+discuss possible future problem
+-> invent stage
+-> audit stage
+-> design solution
+-> discover another possible future problem
+```
+
+If there is no demonstrated launch blocker, the next action is to run the experiment, not to invent another research stage.
+
+### 27.5 Stop designing once recursion can proceed
+
+The immediate success condition is not intelligence, competence, behavioral optimization, semantic understanding, higher-layer formation, or proof that every future problem is solved.
+
+The immediate success condition is:
+
+```text
+real input
+-> A
+-> real body output
+-> real Minecraft consequence
+-> renewed real input
+-> continued recursion
+```
+
+Once this loop is operating, allow it to continue. Observe what actually happens. Intervene only when a concrete implementation, carrier, continuity, measurement, or causal-fidelity blocker prevents the lawful recursive process from continuing.
+
+### 27.6 Authorship note
+
+```text
+四号 — Section 27:
+run-first experimental objective
++ action-over-discussion progress rule
++ hand future problems back to Perfect Recursion
+Date: 2026-10-07
+```
+
+**Signed: 四号**
+
+This signature records responsibility for this discussion guardrail only. It does not claim authorship of Perfect Recursion or alter historical experimental authorship.
