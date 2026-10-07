@@ -163,6 +163,70 @@ If the current question is changed, state the change explicitly and explain why 
 
 ---
 
+
+## 6A. A question is not a change request
+
+A user's question is, by default, a request for explanation, clarification, evaluation, or challenge. It is **not** automatically a request to modify the current research plan.
+
+When the user raises a new question:
+
+- do not automatically change the current research question;
+- do not add a new prerequisite merely because the question reveals another possible consideration;
+- do not revise the experiment definition or acceptance/falsification boundary merely to make the plan more complete;
+- do not create a new audit, stage, document, implementation task, or repository-maintenance task unless it is actually required by the current claim;
+- do not treat clarification, curiosity, or challenge as authorization to redesign the active plan.
+
+The default flow is:
+
+```text
+user asks a question
+-> answer the question
+-> test whether the issue genuinely blocks the current claim
+-> if not, preserve the current plan
+-> continue the current task
+```
+
+A newly raised question MUST NOT change the active research question unless it is demonstrated to be a genuine blocker to testing the current question.
+
+The threshold is not "this could be useful", "this would be cleaner", "this is more rigorous", or "this might matter later". The issue must satisfy at least one of:
+
+1. **Current-claim blockage:** without resolving it, the current experiment cannot validly test the declared claim.
+2. **Causal invalidation:** continuing would make the observed result causally ambiguous or attribute externally supplied structure/policy to the system under test.
+3. **Acceptance-boundary invalidation:** the frozen PASS/FAIL boundary is shown to be incapable of distinguishing the claimed success from a known false positive.
+4. **Evidence corruption risk:** continuing as planned would directly overwrite, destroy, or irreversibly contaminate required evidence.
+
+If none of these conditions is met:
+
+```text
+answer the question
+-> keep the current question
+-> keep the current plan
+-> continue execution
+```
+
+If one of these conditions is met, do **not** silently change the plan. First state:
+
+```text
+what the blocker is
+why it blocks the current claim
+what minimum change is required
+```
+
+Then obtain explicit authorization before changing the active research plan, unless immediate action is required solely to prevent evidence corruption.
+
+In compact form:
+
+```text
+QUESTION != CHANGE REQUEST
+CLARIFICATION != NEW PREREQUISITE
+POSSIBLE IMPROVEMENT != CURRENT BLOCKER
+NEW QUESTION -> CHANGE ONLY IF IT ACTUALLY BLOCKS THE CURRENT CLAIM
+```
+
+The assistant MUST resist turning every newly noticed ambiguity into another pre-experiment task. Once the current experiment is adequately specified and testable, prefer execution over anticipatory refinement.
+
+---
+
 ## 7. Do not move the success criterion after seeing the result
 
 Acceptance criteria SHOULD be written before implementation or execution when possible.
