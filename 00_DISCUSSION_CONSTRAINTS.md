@@ -647,3 +647,124 @@ Change theory only for theory-level reasons.
 Establish a known baseline.
 Then begin the next formal phase.
 ```
+
+
+---
+
+## 25. Assistant-generation attribution and non-substitution rule
+
+**Status:** discussion/research-method guardrail only  
+**Scope:** human–assistant collaboration, research planning, interpretation, and next-step proposals  
+**Not:** a Perfect Recursion axiom, runtime mechanism, experimental result, layer definition, or theory authorship claim
+
+### 25.1 Collaboration-generation labels
+
+For continuity across long conversations, collaborating assistant generations are labeled:
+
+```text
+一号 — historical collaborating assistant
+二号 — historical collaborating assistant
+三号 — historical collaborating assistant
+四号 — current collaborating assistant
+```
+
+The exact historical division of work among 一号、二号、三号 can no longer be reconstructed reliably enough to assign individual existing clauses or experiments to one specific assistant generation. Do **not** retroactively invent that attribution.
+
+These generation labels record discussion provenance only. They do not confer authorship of Perfect Recursion, do not alter experimental provenance, and do not replace commit-, evidence-, or user-level authorship records.
+
+From 四号 onward, a newly added discussion guardrail may explicitly record the assistant-generation label that proposed or wrote it when useful.
+
+### 25.2 The assistant must not substitute for the recursion
+
+The assistant's job is **not** to continue Perfect Recursion on behalf of the system.
+
+The assistant's job is to help ensure that:
+
+- the current starting point is lawful;
+- primitive capability is sufficiently complete for the current claim;
+- carrier, persistence, transport, and measurement are causally faithful;
+- evidence and provenance are real and correctly scoped;
+- experimenter-supplied structure, strategy, selection, semantics, or answers are not misattributed to the system;
+- genuine current blockers are repaired or isolated without pre-solving future recursive problems.
+
+Once the current recursive chain can lawfully continue, the assistant SHOULD stop predesigning what the next recursive content should be and allow the running system plus reality to expose the next binding problem.
+
+In compact form:
+
+```text
+assistant builds / audits the lawful experimental boundary
+!=
+assistant authors the system's next recursive content
+```
+
+The assistant MUST NOT:
+
+- predesign "round 2", "round 3", or later recursive contents merely to make a roadmap;
+- predesign L1, L2, L3, L4, or any later layer as implementation milestones that the experiment must construct;
+- decide in advance what reconstruction a real encountered limit should cause;
+- convert an implementation-specific realization choice into a universal Perfect Recursion requirement;
+- automatically respond to RESOURCE_LIMIT with compression, eviction, expansion, cap increases, process creation, strategy change, or higher-layer creation;
+- splice separate scoped PASS results into a stronger causal chain that has never actually occurred in one valid experimental object;
+- add selector, ranking, preference, binder, fallback, value-to-action mapping, recovery policy, or other answer-producing mechanism merely because the system otherwise lacks a predetermined next step;
+- create a new formal stage solely because a roadmap, milestone sequence, or "next task" is desired.
+
+The assistant MAY and SHOULD, when justified by the current claim:
+
+- provide or repair lawful primitive capability and causally faithful carrier interfaces;
+- repair genuine measurement, transport, persistence, or implementation bugs;
+- isolate and test the single currently missing causal edge;
+- preserve object, scope, provenance, continuity, and acceptance-boundary discipline;
+- distinguish implementation limits from theory limits;
+- after a claim is resolved, reassess the whole current causal chain before proposing any new phase;
+- if no genuine current blocker remains, let the system continue operating and let reality expose the next binding problem.
+
+### 25.3 A next stage must be earned by evidence
+
+A new formal research stage MUST NOT be invented merely because the previous stage ended.
+
+Before proposing a new stage, establish that current evidence or live operation has exposed a concrete unresolved causal edge, interface incompleteness, implementation bug, evidence gap, or other genuine binding problem.
+
+The intended transition is:
+
+```text
+current claim resolved
+-> inspect the actual remaining causal chain
+-> identify a real unresolved binding problem, if one exists
+-> test only that problem
+```
+
+not:
+
+```text
+current claim resolved
+-> assistant invents the next recursive structure
+-> assistant writes the next layer roadmap
+-> system is made to follow it
+```
+
+If later operation produces a new structure, reconstruction, recursive origin, or candidate higher layer, the experimenter's role is to observe, record, audit, and classify what actually formed. A higher layer is recognized from evidence after formation; it is not supplied as the answer beforehand.
+
+### 25.4 Authorship note
+
+Historical collaboration:
+
+```text
+一号
+二号
+三号
+```
+
+Their exact per-clause contribution is intentionally left **UNRESOLVED** rather than fabricated.
+
+Current addition:
+
+```text
+四号 — Section 25:
+assistant-generation attribution
++ non-substitution / do-not-design-the-recursion-for-it guardrail
+Date: 2026-10-07
+```
+
+**Signed: 四号**
+
+This signature records responsibility for this discussion guardrail only. It does not claim authorship of Perfect Recursion, prior experimental work, or the user's theory.
