@@ -1,0 +1,35 @@
+{
+  "implementation_commit": "68b8ad64b5f68edd5151c7ce73af8f3657281027",
+  "conditions": [
+    "CANONICAL",
+    "NC3",
+    "NC4",
+    "NC5",
+    "NC6"
+  ],
+  "fresh_database_per_condition": true,
+  "fresh_individual_per_condition": true,
+  "reconnect": false,
+  "host": "127.0.0.1",
+  "port": 55205,
+  "observation_interval": 0.5,
+  "startup_timeout_seconds": 30.0,
+  "stop_boundary": "fully committed next real recursive cycle after first consecutive live change; E1 appearances do not start the counter",
+  "actions_forbidden": true,
+  "resource_caps": {
+    "max_core_ram_mb": 512,
+    "max_bridge_ram_mb": 1024,
+    "max_total_cpu_percent": 200,
+    "max_lifetime_storage_mb": 65536,
+    "body_observation_caps": {
+      "blockRadius": 4,
+      "entityRadius": 16,
+      "maxBlocks": 64,
+      "maxEntities": 64
+    }
+  },
+  "recorded_before_first_run": "2026-10-07T02:43:36.886976+00:00",
+  "recorder_sha256": "245f0c86babd3684aa5116362927ce69567e331a4b615e8216156027bfa6400b",
+  "effective_invocation_sha256": "6a89827d40bd44b7affce401510abd7ef0f7764d344cfb60825a5ae00a3febcd",
+  "external_measurement_only": true
+}

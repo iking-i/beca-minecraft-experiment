@@ -142,10 +142,10 @@
     }
   },
   "next_work": [
-    "BPC-R2 COMPLETED / FROZEN; do not reopen or repeat the real execution",
-    "Next phase NOT_STARTED; record only live current input -> continuously running A CurrentStructure -> history-formed C ↔ O in that same structure -> actual later recursive consumption",
-    "O -> expression -> real body execution already validated in fixed BPC-R2 scope; no new design or implementation in this closeout",
-    "Retain external query/trigger and formal sampler/binder authorship; preserve all historical nonclaims and frozen results"
+    "BPC-LIVE-1 PASS / COMPLETED / FROZEN; retain both NOT_TESTABLE attempts and final PASS",
+    "A8 later new-formation RESOURCE_LIMIT remains a limitation, not a reversal of the target prior-connection read; do not raise caps",
+    "Next phase NOT_STARTED; no new research question, mechanism or execution is defined by this closeout",
+    "Preserve all previous scoped results, external default sampler/binder authorship and outstanding nonclaims"
   ],
   "cec0_minimal_real_witness": {
     "status": "PASS",
@@ -418,58 +418,84 @@
     "implementation_or_priority_selected": false
   },
   "current_research_phase": {
-    "name": "BPC-R2 — Formed Body-Port Action-Code Authorship and Execution",
+    "name": "BPC-LIVE-1 — Live Body-Port Connection Formation, Persistence and Later Read",
     "status": "PASS",
     "lifecycle": "COMPLETED_FROZEN",
     "completed": true,
     "frozen": true,
-    "scope": "Fixed real-history witness; independent TEST_ONLY body; native catalog 2 code 0; parameterless expression; external query and trigger",
-    "base_commit": "822ee5d05ba83c68b9a9a76e7be049f2be12c031",
-    "implementation_result_commit": "386e50eb26803ffe61a9cd863403b9c9468e4958",
-    "accepted_claim": "Within the fixed TEST_ONLY witness, a supported real-history-formed C ↔ O can provide the native action code of a subsequent parameterless primitive expression, and that exact expression can enter the real body execution channel and receive a matching execution receipt without sampler, binder, value-to-action mapping, fallback, or retry.",
-    "closeout_anchor": "commit containing BPC_R2_CONVERSATION_HANDOFF.md; resolve with git log -1 --format=%H -- BPC_R2_CONVERSATION_HANDOFF.md",
-    "handoff": "BPC_R2_CONVERSATION_HANDOFF.md",
-    "report": "experimental/body_port_real2/VALIDATION.json",
-    "closeout_validation": "experimental/body_port_real2/CLOSEOUT_VALIDATION.json",
-    "unit_tests_passed": 15,
-    "negative_controls_passed": 8,
-    "regression": {
-      "command": "pytest -q --ignore=tests/test_successor0.py --basetemp <new isolated workspace directory>",
-      "passed": 336,
-      "subtests_passed": 90,
-      "seconds": 284.55,
-      "status": "PASS",
-      "successor0_not_reopened": true
+    "implementation_commit": "68b8ad64b5f68edd5151c7ce73af8f3657281027",
+    "definition_commit": "6d7b469c9943ab42aa2e8bee7bcf313b613d3bc3",
+    "definition": "LIVE_BODY_PORT_CONNECTION_EXPERIMENT.md",
+    "scope": "Fresh DB/individual per preregistered run; continuous observation-only live A; all observed native ports; shared current-record incidence; no action execution",
+    "accepted_claim": "In the frozen BPC-LIVE-1 observation-only live scope, actually observed native body ports enter the running A recursive structure; a current real change forms supported C ↔ O in that same state chain; the connection is committed to A internal state and a later real recursive cycle consumes the exact saved connection through its endogenous saved reference, with persistence/access controls removing the corresponding read effect.",
+    "handoff": "BPC_LIVE_1_CONVERSATION_HANDOFF.md",
+    "report": "experimental/live_body_connection/LIVE_VALIDATION.json",
+    "closeout_validation": "experimental/live_body_connection/CLOSEOUT_VALIDATION.json",
+    "closeout_anchor": "commit containing BPC_LIVE_1_CONVERSATION_HANDOFF.md; resolve with git log -1 --format=%H -- BPC_LIVE_1_CONVERSATION_HANDOFF.md",
+    "unit_tests_passed": 41,
+    "negative_controls": {
+      "NC1": "PASS",
+      "NC2": "PASS",
+      "NC3": "PASS",
+      "NC4": "PASS",
+      "NC5": "PASS",
+      "NC6": "PASS"
     },
-    "real_execution_attempts": 1,
-    "automatic_retry": false,
-    "live_body_is_formal_A": false,
-    "formal_runtime_changed": false,
-    "catalog_changed": false,
-    "source_database_changed": false,
-    "prior_research_results_reopened": false,
+    "regression": {
+      "passed": 377,
+      "subtests_passed": 90,
+      "status": "PASS",
+      "scope": "Executed implementation regression, excluding frozen tests/test_successor0.py; not rerun for document closeout"
+    },
+    "canonical": {
+      "individual_id": "A-129405a7-e17d-434f-ad12-7141027ad33e",
+      "session_id": "S-b70616b6-1da9-43e8-8da3-4079e363ff7a",
+      "formed_state_version": 7,
+      "formed_frame": "E3",
+      "later_read_state_version": 8,
+      "later_read_frame": "E4",
+      "saved_connections_read": 47,
+      "runtime_interruption": false
+    },
+    "prior_attempt_statuses": [
+      "NOT_TESTABLE",
+      "NOT_TESTABLE"
+    ],
+    "prior_attempts_preserved": true,
+    "resource_limit": {
+      "state_version": 8,
+      "scope": "Later attempted new formation, after actual read of the COMPLETE prior organization",
+      "status": "RESOURCE_LIMIT",
+      "prior_complete_connection_read_succeeded": true,
+      "affects_this_phase_pass": false,
+      "cap_increased": false,
+      "further_capacity_claim": false
+    },
+    "perform_calls": 0,
+    "sampler_binder_mapping_fallback_used": false,
+    "historical_replay_offline_detached_used": false,
     "theory_changed": false,
+    "runtime_changed_in_closeout": false,
+    "frozen_definition_changed": false,
     "nonclaims": [
-      "C ↔ O formed inside the continuously running A CurrentStructure",
-      "live A later current input actually consumed this connection",
-      "world effect causal law",
-      "general parameter formation",
-      "autonomous goal",
-      "autonomous action selection",
-      "behavioral causal closure",
-      "L1 / upward recursion",
-      "universal generative dynamics"
+      "No action expression or real body execution from the live connection in this phase",
+      "No proof a body capability caused the observed change; shared current-record incidence only",
+      "No autonomous goal or action selection",
+      "No general required-parameter formation",
+      "No behavioral causal closure",
+      "No L1/upward recursion or universal generative dynamics",
+      "No indefinite live continuation or resource adequacy",
+      "No guarantee of equivalence to a long-history individual"
     ]
   },
-  "prior_closeout_index_scope": "current_checkpoint / repository_state_audit / next_research_boundary retain the historical Successor-0 closeout; historical_research_phases retain BPC-0 and BPC-R1; current_research_phase records BPC-R2",
+  "prior_closeout_index_scope": "current_checkpoint / repository_state_audit / next_research_boundary retain the historical Successor-0 checkpoint; historical_research_phases retain BPC-0, BPC-R1 and BPC-R2; current_research_phase records BPC-LIVE-1",
   "next_phase_boundary": {
     "status": "NOT_STARTED",
-    "chain": "live current input -> A's continuously running CurrentStructure -> history-formed C ↔ O inside that same structure -> later recursive processing actually consumes that C ↔ O",
+    "question": "NOT_DEFINED_IN_THIS_CLOSEOUT",
     "boundary_only": true,
     "design_started": false,
     "implementation_started": false,
     "experiment_started": false,
-    "already_validated_tail": "O -> expression -> real body execution in the fixed BPC-R2 scope; need not be independently revalidated as the next question",
     "stage_started": false,
     "implementation_authorized_in_handoff": false,
     "Minecraft_execution_started": false
@@ -538,6 +564,50 @@
         "seconds": 275.1,
         "successor0_revalidated": false
       }
+    },
+    "bpc_r2": {
+      "name": "BPC-R2 — Formed Body-Port Action-Code Authorship and Execution",
+      "status": "PASS",
+      "lifecycle": "COMPLETED_FROZEN",
+      "completed": true,
+      "frozen": true,
+      "scope": "Fixed real-history witness; independent TEST_ONLY body; native catalog 2 code 0; parameterless expression; external query and trigger",
+      "base_commit": "822ee5d05ba83c68b9a9a76e7be049f2be12c031",
+      "implementation_result_commit": "386e50eb26803ffe61a9cd863403b9c9468e4958",
+      "accepted_claim": "Within the fixed TEST_ONLY witness, a supported real-history-formed C ↔ O can provide the native action code of a subsequent parameterless primitive expression, and that exact expression can enter the real body execution channel and receive a matching execution receipt without sampler, binder, value-to-action mapping, fallback, or retry.",
+      "closeout_anchor": "commit containing BPC_R2_CONVERSATION_HANDOFF.md; resolve with git log -1 --format=%H -- BPC_R2_CONVERSATION_HANDOFF.md",
+      "handoff": "BPC_R2_CONVERSATION_HANDOFF.md",
+      "report": "experimental/body_port_real2/VALIDATION.json",
+      "closeout_validation": "experimental/body_port_real2/CLOSEOUT_VALIDATION.json",
+      "unit_tests_passed": 15,
+      "negative_controls_passed": 8,
+      "regression": {
+        "command": "pytest -q --ignore=tests/test_successor0.py --basetemp <new isolated workspace directory>",
+        "passed": 336,
+        "subtests_passed": 90,
+        "seconds": 284.55,
+        "status": "PASS",
+        "successor0_not_reopened": true
+      },
+      "real_execution_attempts": 1,
+      "automatic_retry": false,
+      "live_body_is_formal_A": false,
+      "formal_runtime_changed": false,
+      "catalog_changed": false,
+      "source_database_changed": false,
+      "prior_research_results_reopened": false,
+      "theory_changed": false,
+      "nonclaims": [
+        "C ↔ O formed inside the continuously running A CurrentStructure",
+        "live A later current input actually consumed this connection",
+        "world effect causal law",
+        "general parameter formation",
+        "autonomous goal",
+        "autonomous action selection",
+        "behavioral causal closure",
+        "L1 / upward recursion",
+        "universal generative dynamics"
+      ]
     }
   },
   "historical_next_phase_boundaries": {
@@ -559,6 +629,18 @@
       "implementation_started": false,
       "Minecraft_execution_started": false,
       "implementation_authorized_in_handoff": false
+    },
+    "bpc_r2_closeout": {
+      "status": "NOT_STARTED",
+      "chain": "live current input -> A's continuously running CurrentStructure -> history-formed C ↔ O inside that same structure -> later recursive processing actually consumes that C ↔ O",
+      "boundary_only": true,
+      "design_started": false,
+      "implementation_started": false,
+      "experiment_started": false,
+      "already_validated_tail": "O -> expression -> real body execution in the fixed BPC-R2 scope; need not be independently revalidated as the next question",
+      "stage_started": false,
+      "implementation_authorized_in_handoff": false,
+      "Minecraft_execution_started": false
     }
   }
 }

@@ -1,0 +1,135 @@
+"""External run recorder. Never supplies observations, roots or organization."""
+import hashlib
+import json
+import os
+from pathlib import Path
+import sys
+import time
+from datetime import datetime, timezone
+
+ROOT = Path.cwd()
+sys.path.insert(0, str(ROOT))
+import psutil
+from individual.core import ACore
+from individual.bridge import MinecraftBridge
+from individual.formal_boundary import RESOURCE_CAP_KEYS, sensor_caps
+from supervisor.supervisor import load_limits
+
+OUT = ROOT / 'storage' / 'validation' / 'bpc-live-1-20261007-later-cycle'
+OUT.mkdir(parents=True, exist_ok=False)
+CONDITIONS = ['CANONICAL', 'NC3', 'NC4', 'NC5', 'NC6']
+config = json.loads((ROOT / 'minecraft/config.json').read_text(encoding='utf-8-sig'))
+config['port'] = 55205
+config['username'] = 'BPC_LIVE_1'
+config['reconnect']['enabled'] = False
+limits = load_limits(ROOT / 'supervisor/limits.yaml')
+resource = {k: limits[k] for k in RESOURCE_CAP_KEYS}
+resource['body_observation_caps'] = sensor_caps(ROOT / 'minecraft/config.json')
+protocol = {'implementation_commit': '68b8ad64b5f68edd5151c7ce73af8f3657281027',
+    'conditions': CONDITIONS, 'fresh_database_per_condition': True,
+    'fresh_individual_per_condition': True, 'reconnect': False,
+    'host': config['host'], 'port': config['port'], 'observation_interval': 0.5,
+    'startup_timeout_seconds': config['connectTimeoutMs'] / 1000,
+    'stop_boundary': 'fully committed next real recursive cycle after first consecutive live change; E1 appearances do not start the counter',
+    'actions_forbidden': True, 'resource_caps': resource,
+    'recorded_before_first_run': datetime.now(timezone.utc).isoformat(),
+    'recorder_sha256': hashlib.sha256(Path(__file__).read_bytes()).hexdigest()}
+(OUT / 'protocol.json').write_text(json.dumps(protocol, indent=2), encoding='utf-8')
+results = []
+for condition in CONDITIONS:
+    directory = OUT / condition
+    directory.mkdir()
+    path = directory / 'config.local.json'
+    path.write_text(json.dumps(config, indent=2), encoding='utf-8')
+    calls, logs, snapshots = [], [], []
+    bridge = MinecraftBridge(path, log=logs.append)
+    original = bridge.call
+    def call(method, args=None, timeout=None):
+        calls.append({'method': method, 'args': args})
+        if method in ('perform', 'move', 'interact', 'chat'):
+            raise AssertionError('Forbidden action path')
+        return original(method, args, timeout)
+    bridge.call = call
+    database = directory / 'individual.db'
+    core = None
+    result = {'condition': condition, 'classification': 'NOT_TESTABLE',
+              'database': str(database), 'fresh_database_before_start': not database.exists(),
+              'real_observation_count': 0, 'execution_calls': 0,
+              'automatic_retry': False, 'connection_evidence': []}
+    reason = 'real_world_connection_unavailable'
+    try:
+        core = ACore(database, bridge, observation_interval=0.5,
+            session_context={'stage': 'BPC-LIVE-1', 'condition': condition,
+                'implementation_commit': protocol['implementation_commit'],
+                'minecraft_connection': {k: config[k] for k in ('host','port','username','version')}},
+            session_label='BPC-LIVE-1 ' + condition, initialize_lifetime=True,
+            live_body_connection=True, live_body_control=condition, resource_caps=resource)
+        result.update(individual_id=core.state.individual_id, session_id=core.state.session_id,
+                      start_state_version=core.state.state_version)
+        core.start()
+        deadline = time.monotonic() + protocol['startup_timeout_seconds']
+        change_sequence = None
+        while time.monotonic() < deadline:
+            core.tick()
+            state = core.state
+            status = dict(core._bridge_status)
+            result['connection_evidence'].append(status)
+            if status.get('lastError') or core._live_interrupted:
+                result['reason'] = 'Minecraft connection failed before required live chain'
+                break
+            if state.environment_sequence > len(snapshots):
+                snapshots.append(state.to_dict() if hasattr(state, 'to_dict') else __import__('dataclasses').asdict(state))
+                result['real_observation_count'] = state.environment_sequence
+                delta = state.observation_frame.get('delta', {})
+                if (delta.get('previous_frame_id') is not None and delta.get('changes')
+                        and not delta.get('sample_gap') and change_sequence is None):
+                    change_sequence = state.environment_sequence
+                if change_sequence and state.environment_sequence > change_sequence:
+                    # tick() returned only after recursive processing and its state transaction.
+                    # Capture the actual read/output; never invoke formation or consumer here.
+                    local = state.internal_state['l0_state']
+                    result['formation_sequence'] = change_sequence
+                    result['later_sequence'] = state.environment_sequence
+                    result['later_state_version'] = state.state_version
+                    result['later_frame_id'] = state.observation_frame['frame_id']
+                    result['live_body_connection_read'] = local['live_body_read']
+                    result['corresponding_processing_outputs'] = [
+                        p['output'] for p in state.internal_state['active_processes'].values()
+                        if 'live_body_connection_read' in p.get('output', {})]
+                    result['reason'] = 'Next real recursive cycle fully committed and actual read/output recorded'
+                    result['classification'] = 'UNCLASSIFIED_RECORDED_LIVE_BOUNDARY'
+                    reason = 'live_measurement_boundary'
+                    break
+                if state.environment_sequence >= core._engine.caps.history:
+                    result['reason'] = 'Existing observation history cap reached before required boundary'
+                    break
+            if psutil.Process(os.getpid()).memory_info().rss / 1024**2 > limits['max_core_ram_mb']:
+                reason = 'core_ram_limit'
+                result['reason'] = reason
+                break
+            if bridge.pid and psutil.Process(bridge.pid).memory_info().rss / 1024**2 > limits['max_bridge_ram_mb']:
+                reason = 'bridge_ram_limit'
+                result['reason'] = reason
+                break
+            time.sleep(0.05)
+        result.setdefault('reason', 'No required real input before unchanged connection timeout')
+    except Exception as error:
+        result['error'] = {'type': type(error).__name__, 'message': str(error)}
+    finally:
+        if core:
+            core.shutdown(reason)
+            result['end_state_version'] = core._state.state_version
+        result['calls'] = calls
+        result['execution_calls'] = sum(c['method'] in ('perform','move','interact','chat') for c in calls)
+        (directory / 'bridge.log').write_text('\n'.join(logs), encoding='utf-8')
+        (directory / 'live_snapshots.json').write_text(json.dumps(snapshots, indent=2), encoding='utf-8')
+        (directory / 'result.json').write_text(json.dumps(result, indent=2), encoding='utf-8')
+    results.append(result)
+    print(json.dumps({k: result.get(k) for k in ('condition','classification','real_observation_count','reason','error')}, ensure_ascii=False), flush=True)
+report = {'stage': 'BPC-LIVE-1', 'implementation_commit': protocol['implementation_commit'],
+          'classification': 'NOT_TESTABLE' if all(r['classification'] == 'NOT_TESTABLE' for r in results) else 'PENDING_EVIDENCE_CLASSIFICATION',
+          'results': results, 'not_a_theory_failure': True,
+          'pure_code_results_are_not_live_acceptance': True}
+(OUT / 'LIVE_VALIDATION.json').write_text(json.dumps(report, indent=2), encoding='utf-8')
+(OUT / 'LIVE_VALIDATION.md').write_text('# BPC-LIVE-1 live attempt\n\nImplementation: `' + protocol['implementation_commit'] + '`.\n\nClassification: **' + report['classification'] + '**.\n\n' + '\n'.join('- ' + r['condition'] + ': ' + r['classification'] + '; real observations=' + str(r['real_observation_count']) + '; ' + r.get('reason', str(r.get('error'))) for r in results) + '\n\nNo perform, sampler, binder, replay, detached artifact or old database supplied evidence. No live PASS is inferred from code tests. Each attempt has its own fresh individual/database; failed runs will not be restarted or reused.\n', encoding='utf-8')
+print(str(OUT), flush=True)

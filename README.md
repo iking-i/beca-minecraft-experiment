@@ -10,6 +10,29 @@
 
 ## 当前研究状态
 
+**BPC-LIVE-1 = PASS / COMPLETED / FROZEN。**
+真实观察到的原生 O 进入连续运行 A 的递归形成空间；当前真实输入形成 C，
+在线形成并保存 C ↔ O，后续真实轮次从同一 A 的内部状态读取原连接。
+Canonical 在 A7/E3 提交 47 条连接，A8/E4 实际消费这些连接；NC1–NC6 全部 PASS。
+没有 perform、sampler、binder、mapping、fallback、historical replay 或 detached BPC。
+
+A8 成功读取旧的 COMPLETE 组织后，新形成尝试返回 `RESOURCE_LIMIT`。
+该限制完整保留，不影响本阶段已验证的目标链；没有提高 cap，不证明无限持续能力。
+两次先前 NOT_TESTABLE 记录不被最终 PASS 覆盖。
+
+实现证据提交 `68b8ad64b5f68edd5151c7ce73af8f3657281027`；
+[最终验收](experimental/live_body_connection/LIVE_VALIDATION.md)、
+[JSON](experimental/live_body_connection/LIVE_VALIDATION.json)、
+[收口](experimental/live_body_connection/CLOSEOUT.md) 和
+[handoff](BPC_LIVE_1_CONVERSATION_HANDOFF.md)。
+专项 41 passed，已有相关回归 377 passed / 90 subtests passed，收口专项 41 passed。
+不证明 live 连接已作者化动作、世界效果因果律、一般参数形成、自主目标/动作选择、
+behavioral causal closure、L1 或普遍生成律。下一阶段 **NOT_STARTED**；本次不定义下一问题。
+
+### 历史 BPC-R2 收口检查点
+
+以下 BPC-R2 的 nonclaims / 下一边界是当时的历史状态；不改写旧证据，也不作为当前工作指令。
+
 **BPC-R2 已完成并冻结：COMPLETED / FROZEN，PASS。**
 限定结论：固定 TEST_ONLY witness 中，受支持的真实历史形成 `C ↔ O` 为后续无参数
 primitive expression 提供原生 action code；该 exact expression 经既有身体通道完成

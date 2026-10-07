@@ -2,7 +2,59 @@
 
 **Status date:** 2026-10-07
 
-**Current stage: BPC-R2 — Formed Body-Port Action-Code Authorship and Execution; COMPLETED / FROZEN; PASS.**
+**Current stage: BPC-LIVE-1 — Live Body-Port Connection Formation, Persistence and Later Read; PASS / COMPLETED / FROZEN.**
+Implementation evidence: `68b8ad64b5f68edd5151c7ce73af8f3657281027`.
+Closeout anchor: commit containing `BPC_LIVE_1_CONVERSATION_HANDOFF.md`.
+
+The frozen observation-only live chain is now evidenced:
+
+```text
+actually observed native O → running A's own recursive formation space
+→ current real input forms C → supported C ↔ O forms online
+→ connection persists in A internal state (A7 / E3)
+→ same runtime receives E4 → actual recursive processing reads that saved connection (A8)
+```
+
+Canonical used a fresh database/individual. All 47 observed native ports were retained,
+without selecting one. O is not a newly created capability. Its source is actual body
+capability observation; C is the exact current-run difference. The consumer reads the
+saved graph and its endogenous feedback reference before new formation, not exported
+history or a detached BPC graph. The exact read enters recursive partial processing
+and process output. All NC1–NC6 are PASS; valid NC1/NC2 were retained, not rerun.
+
+**A8 RESOURCE_LIMIT is retained:** after successfully consuming the A7 COMPLETE
+organization, a later new-formation attempt returned RESOURCE_LIMIT. That incomplete
+attempt was not published as COMPLETE. It does not invalidate this phase's verified
+formation/persistence/one-later-read chain and is only recorded as a subsequent
+capacity limitation. No cap was raised; indefinite continuation is not claimed.
+
+The first ECONNREFUSED NOT_TESTABLE and second premature-recorder-stop NOT_TESTABLE
+remain unchanged. Final PASS and all identities/supports are preserved in
+`experimental/live_body_connection/LIVE_VALIDATION.*`; historical report copies and
+local-artifact hashes are indexed by `CLOSEOUT_VALIDATION.json`.
+Full fresh databases/raw observations remain local and are not committed.
+
+Nonclaims: no live-connection action expression/execution, O→world-effect causal law,
+general parameter formation, autonomous goal/action selection, behavioral causal
+closure, L1/upward recursion, universal generative dynamics, or long-history/unlimited
+resource adequacy. Default sampler/binder authorship is unchanged. BPC-R2 and all
+other older frozen results retain their original scope; they are not combined into
+an untested behavioral loop.
+
+Tests: original implementation **41 passed**; executed related regression
+**377 passed / 90 subtests passed**, excluding frozen Successor-0; closeout pure-code
+maintenance rerun **41 passed**. No Minecraft, Successor-0 or runtime change at closeout.
+Theory and frozen experiment definition remain unchanged.
+
+**Next phase: NOT_STARTED.** No next question, design, implementation or run is
+started by this closeout. See `BPC_LIVE_1_CONVERSATION_HANDOFF.md`.
+
+## Historical BPC-R2 closeout checkpoint
+
+The following is the earlier BPC-R2 status, including its then-current nonclaims
+and NOT_STARTED boundary. It is retained as historical evidence, not current work.
+
+**Historical stage: BPC-R2 — Formed Body-Port Action-Code Authorship and Execution; COMPLETED / FROZEN; PASS.**
 Implementation / original result commit: `386e50eb26803ffe61a9cd863403b9c9468e4958`.
 Closeout anchor: commit containing `BPC_R2_CONVERSATION_HANDOFF.md`.
 

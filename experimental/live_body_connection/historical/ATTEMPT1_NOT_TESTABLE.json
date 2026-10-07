@@ -1,0 +1,338 @@
+{
+  "stage": "BPC-LIVE-1",
+  "implementation_commit": "68b8ad64b5f68edd5151c7ce73af8f3657281027",
+  "classification": "NOT_TESTABLE",
+  "results": [
+    {
+      "condition": "CANONICAL",
+      "classification": "NOT_TESTABLE",
+      "database": "D:\\codex\\project\\\u6211\u7684\u4e16\u754c\\storage\\validation\\bpc-live-1-20261007-first-attempt\\CANONICAL\\individual.db",
+      "fresh_database_before_start": true,
+      "real_observation_count": 0,
+      "execution_calls": 0,
+      "automatic_retry": false,
+      "connection_evidence": [
+        {
+          "state": "connecting",
+          "connected": false,
+          "attempt": 1,
+          "username": "BPC_LIVE_1",
+          "host": "127.0.0.1",
+          "port": 49939,
+          "lastError": null
+        },
+        {
+          "state": "connecting",
+          "connected": false,
+          "attempt": 1,
+          "username": "BPC_LIVE_1",
+          "host": "127.0.0.1",
+          "port": 49939,
+          "lastError": {
+            "code": "ECONNREFUSED",
+            "message": "\u8fde\u63a5\u88ab\u62d2\u7edd\uff1a\u8bf7\u786e\u8ba4 Minecraft Java \u670d\u52a1\u5668\u5df2\u542f\u52a8\uff0c\u5730\u5740\u548c\u7aef\u53e3\u6b63\u786e\u3002"
+          }
+        }
+      ],
+      "individual_id": "A-6292b6f4-10bc-41c2-b70f-01c5ef91343d",
+      "session_id": "S-1b1f28f3-1d72-41ea-9cc3-e0327a7c1766",
+      "start_state_version": 1,
+      "reason": "Minecraft connection failed before required live chain",
+      "end_state_version": 5,
+      "calls": [
+        {
+          "method": "start",
+          "args": null
+        },
+        {
+          "method": "close",
+          "args": null
+        }
+      ]
+    },
+    {
+      "condition": "NC1",
+      "classification": "NOT_TESTABLE",
+      "database": "D:\\codex\\project\\\u6211\u7684\u4e16\u754c\\storage\\validation\\bpc-live-1-20261007-first-attempt\\NC1\\individual.db",
+      "fresh_database_before_start": true,
+      "real_observation_count": 0,
+      "execution_calls": 0,
+      "automatic_retry": false,
+      "connection_evidence": [
+        {
+          "state": "connecting",
+          "connected": false,
+          "attempt": 1,
+          "username": "BPC_LIVE_1",
+          "host": "127.0.0.1",
+          "port": 49939,
+          "lastError": null
+        },
+        {
+          "state": "disconnected",
+          "connected": false,
+          "attempt": 1,
+          "username": "BPC_LIVE_1",
+          "host": "127.0.0.1",
+          "port": 49939,
+          "lastError": {
+            "code": "ECONNREFUSED",
+            "message": "\u8fde\u63a5\u88ab\u62d2\u7edd\uff1a\u8bf7\u786e\u8ba4 Minecraft Java \u670d\u52a1\u5668\u5df2\u542f\u52a8\uff0c\u5730\u5740\u548c\u7aef\u53e3\u6b63\u786e\u3002"
+          }
+        }
+      ],
+      "individual_id": "A-8a67e5bf-feba-47a0-9bf2-7524c92e2717",
+      "session_id": "S-9c65c750-04cd-4d65-a989-c9708c6d6aa7",
+      "start_state_version": 1,
+      "reason": "Minecraft connection failed before required live chain",
+      "end_state_version": 6,
+      "calls": [
+        {
+          "method": "start",
+          "args": null
+        },
+        {
+          "method": "close",
+          "args": null
+        }
+      ]
+    },
+    {
+      "condition": "NC2",
+      "classification": "NOT_TESTABLE",
+      "database": "D:\\codex\\project\\\u6211\u7684\u4e16\u754c\\storage\\validation\\bpc-live-1-20261007-first-attempt\\NC2\\individual.db",
+      "fresh_database_before_start": true,
+      "real_observation_count": 0,
+      "execution_calls": 0,
+      "automatic_retry": false,
+      "connection_evidence": [
+        {
+          "state": "connecting",
+          "connected": false,
+          "attempt": 1,
+          "username": "BPC_LIVE_1",
+          "host": "127.0.0.1",
+          "port": 49939,
+          "lastError": null
+        },
+        {
+          "state": "disconnected",
+          "connected": false,
+          "attempt": 1,
+          "username": "BPC_LIVE_1",
+          "host": "127.0.0.1",
+          "port": 49939,
+          "lastError": {
+            "code": "ECONNREFUSED",
+            "message": "\u8fde\u63a5\u88ab\u62d2\u7edd\uff1a\u8bf7\u786e\u8ba4 Minecraft Java \u670d\u52a1\u5668\u5df2\u542f\u52a8\uff0c\u5730\u5740\u548c\u7aef\u53e3\u6b63\u786e\u3002"
+          }
+        }
+      ],
+      "individual_id": "A-9eaf8323-38c4-4615-9d65-66f64abc5d70",
+      "session_id": "S-28079a6e-cc42-4f5d-9215-e96d8f668d5f",
+      "start_state_version": 1,
+      "reason": "Minecraft connection failed before required live chain",
+      "end_state_version": 6,
+      "calls": [
+        {
+          "method": "start",
+          "args": null
+        },
+        {
+          "method": "close",
+          "args": null
+        }
+      ]
+    },
+    {
+      "condition": "NC3",
+      "classification": "NOT_TESTABLE",
+      "database": "D:\\codex\\project\\\u6211\u7684\u4e16\u754c\\storage\\validation\\bpc-live-1-20261007-first-attempt\\NC3\\individual.db",
+      "fresh_database_before_start": true,
+      "real_observation_count": 0,
+      "execution_calls": 0,
+      "automatic_retry": false,
+      "connection_evidence": [
+        {
+          "state": "connecting",
+          "connected": false,
+          "attempt": 1,
+          "username": "BPC_LIVE_1",
+          "host": "127.0.0.1",
+          "port": 49939,
+          "lastError": null
+        },
+        {
+          "state": "connecting",
+          "connected": false,
+          "attempt": 1,
+          "username": "BPC_LIVE_1",
+          "host": "127.0.0.1",
+          "port": 49939,
+          "lastError": {
+            "code": "ECONNREFUSED",
+            "message": "\u8fde\u63a5\u88ab\u62d2\u7edd\uff1a\u8bf7\u786e\u8ba4 Minecraft Java \u670d\u52a1\u5668\u5df2\u542f\u52a8\uff0c\u5730\u5740\u548c\u7aef\u53e3\u6b63\u786e\u3002"
+          }
+        }
+      ],
+      "individual_id": "A-b986b931-ce6a-43a8-b2ad-86fe81a7f689",
+      "session_id": "S-aa64214f-e23f-4eca-b8d1-711ddf484254",
+      "start_state_version": 1,
+      "reason": "Minecraft connection failed before required live chain",
+      "end_state_version": 5,
+      "calls": [
+        {
+          "method": "start",
+          "args": null
+        },
+        {
+          "method": "close",
+          "args": null
+        }
+      ]
+    },
+    {
+      "condition": "NC4",
+      "classification": "NOT_TESTABLE",
+      "database": "D:\\codex\\project\\\u6211\u7684\u4e16\u754c\\storage\\validation\\bpc-live-1-20261007-first-attempt\\NC4\\individual.db",
+      "fresh_database_before_start": true,
+      "real_observation_count": 0,
+      "execution_calls": 0,
+      "automatic_retry": false,
+      "connection_evidence": [
+        {
+          "state": "connecting",
+          "connected": false,
+          "attempt": 1,
+          "username": "BPC_LIVE_1",
+          "host": "127.0.0.1",
+          "port": 49939,
+          "lastError": null
+        },
+        {
+          "state": "disconnected",
+          "connected": false,
+          "attempt": 1,
+          "username": "BPC_LIVE_1",
+          "host": "127.0.0.1",
+          "port": 49939,
+          "lastError": {
+            "code": "ECONNREFUSED",
+            "message": "\u8fde\u63a5\u88ab\u62d2\u7edd\uff1a\u8bf7\u786e\u8ba4 Minecraft Java \u670d\u52a1\u5668\u5df2\u542f\u52a8\uff0c\u5730\u5740\u548c\u7aef\u53e3\u6b63\u786e\u3002"
+          }
+        }
+      ],
+      "individual_id": "A-0d92c6a6-cdd9-4685-bac8-f1b43d8d9a62",
+      "session_id": "S-99a30cf6-742b-4179-bcee-e7c1c5a639bf",
+      "start_state_version": 1,
+      "reason": "Minecraft connection failed before required live chain",
+      "end_state_version": 6,
+      "calls": [
+        {
+          "method": "start",
+          "args": null
+        },
+        {
+          "method": "close",
+          "args": null
+        }
+      ]
+    },
+    {
+      "condition": "NC5",
+      "classification": "NOT_TESTABLE",
+      "database": "D:\\codex\\project\\\u6211\u7684\u4e16\u754c\\storage\\validation\\bpc-live-1-20261007-first-attempt\\NC5\\individual.db",
+      "fresh_database_before_start": true,
+      "real_observation_count": 0,
+      "execution_calls": 0,
+      "automatic_retry": false,
+      "connection_evidence": [
+        {
+          "state": "connecting",
+          "connected": false,
+          "attempt": 1,
+          "username": "BPC_LIVE_1",
+          "host": "127.0.0.1",
+          "port": 49939,
+          "lastError": null
+        },
+        {
+          "state": "disconnected",
+          "connected": false,
+          "attempt": 1,
+          "username": "BPC_LIVE_1",
+          "host": "127.0.0.1",
+          "port": 49939,
+          "lastError": {
+            "code": "ECONNREFUSED",
+            "message": "\u8fde\u63a5\u88ab\u62d2\u7edd\uff1a\u8bf7\u786e\u8ba4 Minecraft Java \u670d\u52a1\u5668\u5df2\u542f\u52a8\uff0c\u5730\u5740\u548c\u7aef\u53e3\u6b63\u786e\u3002"
+          }
+        }
+      ],
+      "individual_id": "A-fbbd919e-90f6-4e5b-af91-af46a43c5121",
+      "session_id": "S-a786282d-a53e-4dd9-9d73-94a3943b0caa",
+      "start_state_version": 1,
+      "reason": "Minecraft connection failed before required live chain",
+      "end_state_version": 6,
+      "calls": [
+        {
+          "method": "start",
+          "args": null
+        },
+        {
+          "method": "close",
+          "args": null
+        }
+      ]
+    },
+    {
+      "condition": "NC6",
+      "classification": "NOT_TESTABLE",
+      "database": "D:\\codex\\project\\\u6211\u7684\u4e16\u754c\\storage\\validation\\bpc-live-1-20261007-first-attempt\\NC6\\individual.db",
+      "fresh_database_before_start": true,
+      "real_observation_count": 0,
+      "execution_calls": 0,
+      "automatic_retry": false,
+      "connection_evidence": [
+        {
+          "state": "connecting",
+          "connected": false,
+          "attempt": 1,
+          "username": "BPC_LIVE_1",
+          "host": "127.0.0.1",
+          "port": 49939,
+          "lastError": null
+        },
+        {
+          "state": "connecting",
+          "connected": false,
+          "attempt": 1,
+          "username": "BPC_LIVE_1",
+          "host": "127.0.0.1",
+          "port": 49939,
+          "lastError": {
+            "code": "ECONNREFUSED",
+            "message": "\u8fde\u63a5\u88ab\u62d2\u7edd\uff1a\u8bf7\u786e\u8ba4 Minecraft Java \u670d\u52a1\u5668\u5df2\u542f\u52a8\uff0c\u5730\u5740\u548c\u7aef\u53e3\u6b63\u786e\u3002"
+          }
+        }
+      ],
+      "individual_id": "A-71397522-4b10-4eba-832d-ef75e2a52326",
+      "session_id": "S-5a77d541-5fd6-4448-9a40-7e56576bf7c7",
+      "start_state_version": 1,
+      "reason": "Minecraft connection failed before required live chain",
+      "end_state_version": 5,
+      "calls": [
+        {
+          "method": "start",
+          "args": null
+        },
+        {
+          "method": "close",
+          "args": null
+        }
+      ]
+    }
+  ],
+  "not_a_theory_failure": true,
+  "pure_code_results_are_not_live_acceptance": true
+}
