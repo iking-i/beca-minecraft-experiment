@@ -821,6 +821,15 @@ operative-connection interpretation guardrail
 
 ## 27. Run-first experimental objective and recursion handoff rule
 
+
+### 27.0 User's original constraint
+
+The user's original wording is preserved verbatim as the controlling statement for this section:
+
+> 我们要做的就是让实验跑起来，让大脑和身体连接起来。让完美递归进行起来。其他的不在我们的考虑范围内。其他的都是完美递归需要解决的问题。
+
+This sentence is preserved as discussion provenance and scope guidance. The surrounding clauses in this section interpret and operationalize it without replacing it.
+
 **Status:** discussion/research-method guardrail only  
 **Scope:** current BECA/Minecraft experimental execution, assistant planning, and intervention boundaries  
 **Not:** a Perfect Recursion axiom, a new runtime mechanism, a new layer definition, or a retroactive reinterpretation of frozen experimental evidence
