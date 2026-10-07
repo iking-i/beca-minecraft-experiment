@@ -816,3 +816,327 @@ names, evidence and scoped results; correct current interpretation explicitly.
 四号 — 2026-10-07
 
 operative-connection interpretation guardrail
+
+---
+
+## 27. Run-first experimental objective and recursion handoff rule
+
+
+### 27.0 User's original constraint
+
+The user's original wording is preserved verbatim as the controlling statement for this section:
+
+> 我们要做的就是让实验跑起来，让大脑和身体连接起来。让完美递归进行起来。其他的不在我们的考虑范围内。其他的都是完美递归需要解决的问题。
+
+This sentence is preserved as discussion provenance and scope guidance. The surrounding clauses in this section interpret and operationalize it without replacing it.
+
+**Status:** discussion/research-method guardrail only  
+**Scope:** current BECA/Minecraft experimental execution, assistant planning, and intervention boundaries  
+**Not:** a Perfect Recursion axiom, a new runtime mechanism, a new layer definition, or a retroactive reinterpretation of frozen experimental evidence
+
+### 27.1 The current objective is operational, not explanatory
+
+The current objective is singular:
+
+```text
+make the experiment actually run
+-> connect A's brain/internal recursion to its already available body
+-> establish the real bidirectional loop with Minecraft
+-> let Perfect Recursion proceed
+```
+
+Operationally:
+
+```text
+A / internal recursion
+<-> body
+<-> Minecraft reality
+```
+
+with the live causal loop:
+
+```text
+input reaches A
+-> A continues its recursion
+-> output reaches the body
+-> the body changes Minecraft reality
+-> the consequence returns as new input
+-> recursion continues
+```
+
+This section does **not** require a BPC-style learned body-port relation. "Brain/body connected" here means the lawful experiment carrier actually permits A's existing input and output capabilities to participate in one real closed loop.
+
+### 27.2 Do not solve Perfect Recursion's future problems for it
+
+Once the live loop above can lawfully operate, questions exposed by later operation belong first to the running recursion and reality, not to the experimenter as pre-implementation tasks.
+
+Examples include, unless they are the concrete blocker preventing the loop from starting:
+
+- what later internal structures should form;
+- how conflicts should be handled;
+- how meanings of inputs or outputs should develop;
+- how future choices or organizations should arise;
+- how limits should be handled;
+- whether or how a higher layer forms;
+- what future reconstruction should occur;
+- what unexpected structures or strategies should emerge.
+
+The experimenter and assistant MUST NOT delay launch in order to pre-solve these questions.
+
+Compactly:
+
+```text
+our job:
+make lawful recursion able to happen in reality
+
+not our job:
+perform the recursion in advance
+```
+
+### 27.3 Discussion is not implementation progress
+
+Discussion, theory refinement, audit, and interpretation may themselves recurse indefinitely. They can be useful for identifying a genuine current blocker, but they do not count as implementation progress merely because they produce more explanation.
+
+For the current project:
+
+```text
+thinking about an action != the action occurring
+describing a capability != the capability running
+auditing a loop != the loop running
+```
+
+A claimed implementation step is complete only when the relevant behavior has actually occurred in code/runtime and, where appropriate, produced observable evidence.
+
+Do not create repeated audits of already-resolved premises merely because further discussion is possible. Re-open a settled premise only when new runtime evidence, code evidence, or a concrete contradiction requires it.
+
+### 27.4 Every next task must remove a real launch blocker
+
+Until the live A-body-world loop is running, every next implementation task MUST answer:
+
+> What concrete fact currently prevents the experiment from running as one lawful bidirectional recursive loop?
+
+Then change only what is necessary to remove that blocker and execute again.
+
+The preferred control loop is:
+
+```text
+attempt real run
+-> observe concrete blocker
+-> repair only that blocker
+-> attempt real run again
+```
+
+Not:
+
+```text
+discuss possible future problem
+-> invent stage
+-> audit stage
+-> design solution
+-> discover another possible future problem
+```
+
+If there is no demonstrated launch blocker, the next action is to run the experiment, not to invent another research stage.
+
+### 27.5 Stop designing once recursion can proceed
+
+The immediate success condition is not intelligence, competence, behavioral optimization, semantic understanding, higher-layer formation, or proof that every future problem is solved.
+
+The immediate success condition is:
+
+```text
+real input
+-> A
+-> real body output
+-> real Minecraft consequence
+-> renewed real input
+-> continued recursion
+```
+
+Once this loop is operating, allow it to continue. Observe what actually happens. Intervene only when a concrete implementation, carrier, continuity, measurement, or causal-fidelity blocker prevents the lawful recursive process from continuing.
+
+### 27.6 Authorship note
+
+```text
+四号 — Section 27:
+run-first experimental objective
++ action-over-discussion progress rule
++ hand future problems back to Perfect Recursion
+Date: 2026-10-07
+```
+
+**Signed: 四号**
+
+This signature records responsibility for this discussion guardrail only. It does not claim authorship of Perfect Recursion or alter historical experimental authorship.
+
+---
+
+## 28. Stop-and-ask rule under uncertainty
+
+**Status:** discussion/research-method guardrail only  
+**Scope:** assistant interpretation, planning, code changes, experiment changes, and Codex instructions
+
+The user's original wording is preserved verbatim:
+
+> 不知道干什么就先不要干，先问我。不要乱干。
+
+Operational rule:
+
+If the assistant is materially uncertain about the user's intended next action, scope, target object, whether a change should be made, or whether an unresolved point should be implemented, the assistant MUST stop before acting and ask the user for clarification.
+
+Do not fill uncertainty with an invented plan, speculative implementation, new experiment stage, repository change, or Codex instruction.
+
+In compact form:
+
+```text
+uncertain about what to do
+-> do not act
+-> ask the user
+-> act only after the ambiguity is resolved
+```
+
+This rule does not require asking about matters that are already clear from the current instruction and established project state. It exists to prevent unconfirmed assumptions from becoming actions.
+
+四号 — 2026-10-07
+
+**Signed: 四号**
+
+---
+
+## 29. Memory is structure, not content
+
+**Status:** confirmed discussion conclusion only
+
+The user's confirmed wording is preserved verbatim:
+
+> 记忆是结构。不是内容。
+
+This section records only that conclusion. It does not yet define how memory structures form, persist, change, disappear, reconstruct past information, predict future information, or interact with finite memory. Those questions remain open for renewed discussion.
+
+四号 — 2026-10-07
+
+**Signed: 四号**
+
+---
+
+## 30. Need governs structure; purpose governs runtime allocation
+
+**Status:** confirmed discussion conclusions only  
+**Scope:** memory/runtime interpretation; implementation mechanism remains unspecified
+
+The following points are confirmed from the renewed discussion after §29.
+
+### 30.1 Structure is preserved by need, not by unlimited memory
+
+The user's confirmed formulation is:
+
+> 不是因为不会忘。记忆力无限。而是因为在不断调用。
+
+and:
+
+> 结构由需要保存。
+
+A structure remains stable because reality continues to require it and therefore continues to call it. Repeated use is not important merely as a count; what matters is that the structure is repeatedly needed in actual operation.
+
+Examples used in discussion:
+
+- Chinese remains highly available when daily life continuously requires Chinese communication.
+- English may remain weaker when it is used mainly for occasional exams, but can become more central if the living environment continuously requires English.
+- A mathematical formula can become structurally stable through repeated later use, rather than because every earlier exercise is retained.
+
+Compactly:
+
+```text
+reality needs a structure
+-> the structure is called
+-> it participates in current operation
+-> continued need keeps calling it
+-> the structure remains / strengthens
+```
+
+### 30.2 Purpose governs current runtime-memory allocation
+
+The user's confirmed formulation is:
+
+> 需要决定结构。目的决定内存分配。
+
+A current purpose determines which structures, intermediate results, and temporary processes receive runtime memory at that moment.
+
+For example, when solving a mathematics problem whose purpose is only to obtain the answer:
+
+```text
+problem
+-> temporary derivation
+-> answer
+-> purpose completed
+-> temporary derivation and answer need not remain active
+```
+
+If the purpose also includes checking the answer later, the answer may remain active because the process is still unfinished.
+
+### 30.3 An unfinished purpose is not guaranteed to remain active
+
+A pending process can lose runtime-memory allocation when another purpose requires more of the finite runtime memory.
+
+The user's confirmed example is that a person can suddenly forget what they were about to say or do.
+
+Conceptually:
+
+```text
+pending purpose
+-> temporarily retained access path
+-> another purpose consumes more runtime memory
+-> allocation to the pending path falls
+-> the path may cease to be actively accessible
+-> the unfinished task may be forgotten
+```
+
+This means "unfinished" does not guarantee continued active retention.
+
+### 30.4 Reduced need lowers structural share and can remove an active prediction/recall path
+
+The user's confirmed formulation is:
+
+> 占比逐渐降低，几乎彻底消失，失去推测通道。但不会真的消失。
+
+When a previously used structure is no longer regularly needed, its share in the currently usable structure can progressively decline. It may become difficult or impossible to actively derive/reproduce from a common current cue while still remaining recognizable when reality directly presents it.
+
+The example used in discussion:
+
+- frequently used Chinese and numbers remain easy to access;
+- rarely used mathematical formulas become difficult to actively recall from Chinese descriptions;
+- when the formula itself is shown, the residual structure can still support recognition or association back to familiar Chinese concepts.
+
+Thus:
+
+```text
+active recall failure
+!=
+complete structural erasure
+```
+
+and directional accessibility need not be symmetric:
+
+```text
+presented formula -> familiar associated meaning   may remain available
+familiar meaning -> reconstruct formula            may fail
+```
+
+### 30.5 What is not yet specified
+
+This section does **not** yet define:
+
+- a numeric weight-update rule;
+- a selector, ranking, or importance score;
+- a fixed decay function;
+- a concrete memory-allocation algorithm;
+- how "need" is generated;
+- how one need becomes a current purpose;
+- exact implementation data structures.
+
+Those remain open. Do not invent them from this section.
+
+四号 — 2026-10-07
+
+**Signed: 四号**
+
