@@ -1,0 +1,2672 @@
+{
+  "offline_status": "PASS",
+  "controls": {
+    "formed_connection_removed": true,
+    "necessary_port_support_removed": true,
+    "organization_inaccessible": true,
+    "ambiguous_supported_ports": true,
+    "unrelated_distractor": true,
+    "invalid_connection_no_sampler_fallback": true,
+    "binder_forbidden_valid_expression": true,
+    "no_sampler_binder_formation_bridge_calls": true
+  },
+  "forbidden_call_counts": {},
+  "expression": {
+    "code": 0,
+    "parameters": {}
+  },
+  "port": {
+    "version": 2,
+    "code": 0
+  },
+  "code_author": "SUPPORTED_FORMED_CONNECTION",
+  "query_and_trigger_author": "TEST_ONLY_EXPERIMENTER",
+  "source_digest": "304166194dfd927667a74eaca5d0b42dd5935ae015ebe8bcafa91182e4655814",
+  "classification": "PASS",
+  "perform_attempts": 1,
+  "live_body_identity": "BPC_R2_Test",
+  "real_body_is_formal_A": false,
+  "automatic_retry": false,
+  "reconnect_enabled": false,
+  "transmitted_expression": {
+    "code": 0,
+    "parameters": {}
+  },
+  "dispatch_authorship": "EXTERNAL_FIXED_MECHANISM",
+  "catalog_version": 2,
+  "receipt": {
+    "code": 0,
+    "parameters": {},
+    "started_at": "2026-10-06T16:52:37.420Z",
+    "before": {
+      "position": {
+        "x": -1227.5,
+        "y": 72,
+        "z": 355.5
+      },
+      "orientation": {
+        "yaw": 3.141592653589793,
+        "pitch": 0
+      },
+      "inventory_slots": [
+        {
+          "slot": 0,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 1,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 2,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 3,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 4,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 5,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 6,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 7,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 8,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 9,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 10,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 11,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 12,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 13,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 14,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 15,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 16,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 17,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 18,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 19,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 20,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 21,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 22,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 23,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 24,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 25,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 26,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 27,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 28,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 29,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 30,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 31,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 32,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 33,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 34,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 35,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 36,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 37,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 38,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 39,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 40,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 41,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 42,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 43,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 44,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 45,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        }
+      ],
+      "blocks": [
+        {
+          "block_ref": "ob6cda16c_1_1",
+          "block_type_id": 130,
+          "position": {
+            "x": -1227,
+            "y": 72,
+            "z": 355
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_2",
+          "block_type_id": 8,
+          "position": {
+            "x": -1228,
+            "y": 71,
+            "z": 355
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_3",
+          "block_type_id": 8,
+          "position": {
+            "x": -1228,
+            "y": 71,
+            "z": 356
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_4",
+          "block_type_id": 8,
+          "position": {
+            "x": -1227,
+            "y": 71,
+            "z": 355
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_5",
+          "block_type_id": 8,
+          "position": {
+            "x": -1227,
+            "y": 71,
+            "z": 356
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_6",
+          "block_type_id": 130,
+          "position": {
+            "x": -1229,
+            "y": 72,
+            "z": 356
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_7",
+          "block_type_id": 130,
+          "position": {
+            "x": -1226,
+            "y": 72,
+            "z": 356
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_8",
+          "block_type_id": 8,
+          "position": {
+            "x": -1229,
+            "y": 71,
+            "z": 355
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_9",
+          "block_type_id": 8,
+          "position": {
+            "x": -1229,
+            "y": 71,
+            "z": 356
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_10",
+          "block_type_id": 8,
+          "position": {
+            "x": -1228,
+            "y": 71,
+            "z": 354
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_11",
+          "block_type_id": 8,
+          "position": {
+            "x": -1228,
+            "y": 71,
+            "z": 357
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_12",
+          "block_type_id": 8,
+          "position": {
+            "x": -1227,
+            "y": 71,
+            "z": 354
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_13",
+          "block_type_id": 8,
+          "position": {
+            "x": -1227,
+            "y": 71,
+            "z": 357
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_14",
+          "block_type_id": 8,
+          "position": {
+            "x": -1226,
+            "y": 71,
+            "z": 355
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_15",
+          "block_type_id": 8,
+          "position": {
+            "x": -1226,
+            "y": 71,
+            "z": 356
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_16",
+          "block_type_id": 9,
+          "position": {
+            "x": -1228,
+            "y": 70,
+            "z": 355
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_17",
+          "block_type_id": 9,
+          "position": {
+            "x": -1228,
+            "y": 70,
+            "z": 356
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_18",
+          "block_type_id": 9,
+          "position": {
+            "x": -1227,
+            "y": 70,
+            "z": 355
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_19",
+          "block_type_id": 9,
+          "position": {
+            "x": -1227,
+            "y": 70,
+            "z": 356
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_20",
+          "block_type_id": 130,
+          "position": {
+            "x": -1229,
+            "y": 72,
+            "z": 354
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_21",
+          "block_type_id": 8,
+          "position": {
+            "x": -1229,
+            "y": 71,
+            "z": 354
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_22",
+          "block_type_id": 8,
+          "position": {
+            "x": -1229,
+            "y": 71,
+            "z": 357
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_23",
+          "block_type_id": 8,
+          "position": {
+            "x": -1226,
+            "y": 71,
+            "z": 354
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_24",
+          "block_type_id": 8,
+          "position": {
+            "x": -1226,
+            "y": 71,
+            "z": 357
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_25",
+          "block_type_id": 9,
+          "position": {
+            "x": -1229,
+            "y": 70,
+            "z": 355
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_26",
+          "block_type_id": 9,
+          "position": {
+            "x": -1229,
+            "y": 70,
+            "z": 356
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_27",
+          "block_type_id": 9,
+          "position": {
+            "x": -1228,
+            "y": 70,
+            "z": 354
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_28",
+          "block_type_id": 9,
+          "position": {
+            "x": -1228,
+            "y": 70,
+            "z": 357
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_29",
+          "block_type_id": 9,
+          "position": {
+            "x": -1227,
+            "y": 70,
+            "z": 354
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_30",
+          "block_type_id": 9,
+          "position": {
+            "x": -1227,
+            "y": 70,
+            "z": 357
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_31",
+          "block_type_id": 9,
+          "position": {
+            "x": -1226,
+            "y": 70,
+            "z": 355
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_32",
+          "block_type_id": 9,
+          "position": {
+            "x": -1226,
+            "y": 70,
+            "z": 356
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_33",
+          "block_type_id": 8,
+          "position": {
+            "x": -1230,
+            "y": 71,
+            "z": 355
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_34",
+          "block_type_id": 8,
+          "position": {
+            "x": -1230,
+            "y": 71,
+            "z": 356
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_35",
+          "block_type_id": 8,
+          "position": {
+            "x": -1228,
+            "y": 71,
+            "z": 353
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_36",
+          "block_type_id": 8,
+          "position": {
+            "x": -1228,
+            "y": 71,
+            "z": 358
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_37",
+          "block_type_id": 8,
+          "position": {
+            "x": -1227,
+            "y": 71,
+            "z": 353
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_38",
+          "block_type_id": 8,
+          "position": {
+            "x": -1227,
+            "y": 71,
+            "z": 358
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_39",
+          "block_type_id": 8,
+          "position": {
+            "x": -1225,
+            "y": 71,
+            "z": 356
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_40",
+          "block_type_id": 130,
+          "position": {
+            "x": -1226,
+            "y": 72,
+            "z": 358
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_41",
+          "block_type_id": 130,
+          "position": {
+            "x": -1225,
+            "y": 72,
+            "z": 357
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_42",
+          "block_type_id": 9,
+          "position": {
+            "x": -1229,
+            "y": 70,
+            "z": 354
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_43",
+          "block_type_id": 9,
+          "position": {
+            "x": -1229,
+            "y": 70,
+            "z": 357
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_44",
+          "block_type_id": 9,
+          "position": {
+            "x": -1226,
+            "y": 70,
+            "z": 354
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_45",
+          "block_type_id": 9,
+          "position": {
+            "x": -1226,
+            "y": 70,
+            "z": 357
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_46",
+          "block_type_id": 8,
+          "position": {
+            "x": -1230,
+            "y": 71,
+            "z": 354
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_47",
+          "block_type_id": 8,
+          "position": {
+            "x": -1230,
+            "y": 71,
+            "z": 357
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_48",
+          "block_type_id": 8,
+          "position": {
+            "x": -1229,
+            "y": 71,
+            "z": 353
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_49",
+          "block_type_id": 8,
+          "position": {
+            "x": -1229,
+            "y": 71,
+            "z": 358
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_50",
+          "block_type_id": 9,
+          "position": {
+            "x": -1228,
+            "y": 69,
+            "z": 355
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_51",
+          "block_type_id": 9,
+          "position": {
+            "x": -1228,
+            "y": 69,
+            "z": 356
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_52",
+          "block_type_id": 9,
+          "position": {
+            "x": -1227,
+            "y": 69,
+            "z": 355
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_53",
+          "block_type_id": 9,
+          "position": {
+            "x": -1227,
+            "y": 69,
+            "z": 356
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_54",
+          "block_type_id": 130,
+          "position": {
+            "x": -1226,
+            "y": 71,
+            "z": 353
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_55",
+          "block_type_id": 8,
+          "position": {
+            "x": -1226,
+            "y": 71,
+            "z": 358
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_56",
+          "block_type_id": 8,
+          "position": {
+            "x": -1225,
+            "y": 71,
+            "z": 357
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_57",
+          "block_type_id": 9,
+          "position": {
+            "x": -1230,
+            "y": 70,
+            "z": 355
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_58",
+          "block_type_id": 9,
+          "position": {
+            "x": -1230,
+            "y": 70,
+            "z": 356
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_59",
+          "block_type_id": 9,
+          "position": {
+            "x": -1228,
+            "y": 70,
+            "z": 353
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_60",
+          "block_type_id": 9,
+          "position": {
+            "x": -1228,
+            "y": 70,
+            "z": 358
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_61",
+          "block_type_id": 9,
+          "position": {
+            "x": -1227,
+            "y": 70,
+            "z": 353
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_62",
+          "block_type_id": 9,
+          "position": {
+            "x": -1227,
+            "y": 70,
+            "z": 358
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_63",
+          "block_type_id": 8,
+          "position": {
+            "x": -1225,
+            "y": 70,
+            "z": 355
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_64",
+          "block_type_id": 9,
+          "position": {
+            "x": -1225,
+            "y": 70,
+            "z": 356
+          }
+        }
+      ],
+      "inventory_screen": {
+        "container_id": "wb6cda16c_1_1",
+        "slot_count": 46,
+        "inventory_start": 9,
+        "inventory_end": 45,
+        "slot_state": [
+          {
+            "slot": 0,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 1,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 2,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 3,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 4,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 5,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 6,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 7,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 8,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 9,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 10,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 11,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 12,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 13,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 14,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 15,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 16,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 17,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 18,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 19,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 20,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 21,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 22,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 23,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 24,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 25,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 26,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 27,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 28,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 29,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 30,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 31,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 32,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 33,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 34,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 35,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 36,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 37,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 38,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 39,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 40,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 41,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 42,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 43,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 44,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 45,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          }
+        ],
+        "cursor": {
+          "slot": -1,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        "result_slot": 0,
+        "input_slots": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "container": null,
+      "crafting": null,
+      "inputs": {
+        "body_state": 1,
+        "mounted": 0,
+        "sleeping": 0,
+        "using_item": 0,
+        "dig_active": 0,
+        "hand": -1,
+        "offhand_item": {
+          "slot": 45,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        "inventory_server_sequence": 1,
+        "slot_feedback_kind": 0
+      },
+      "control_modes": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "finished_at": "2026-10-06T16:52:37.549Z",
+    "result": {
+      "input_sent": 1,
+      "effect_acknowledged": 0
+    },
+    "after": {
+      "position": {
+        "x": -1227.5,
+        "y": 72,
+        "z": 355.5
+      },
+      "orientation": {
+        "yaw": 3.141592653589793,
+        "pitch": 0
+      },
+      "inventory_slots": [
+        {
+          "slot": 0,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 1,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 2,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 3,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 4,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 5,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 6,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 7,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 8,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 9,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 10,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 11,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 12,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 13,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 14,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 15,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 16,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 17,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 18,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 19,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 20,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 21,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 22,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 23,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 24,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 25,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 26,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 27,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 28,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 29,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 30,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 31,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 32,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 33,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 34,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 35,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 36,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 37,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 38,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 39,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 40,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 41,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 42,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 43,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 44,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        {
+          "slot": 45,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        }
+      ],
+      "blocks": [
+        {
+          "block_ref": "ob6cda16c_1_1",
+          "block_type_id": 130,
+          "position": {
+            "x": -1227,
+            "y": 72,
+            "z": 355
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_2",
+          "block_type_id": 8,
+          "position": {
+            "x": -1228,
+            "y": 71,
+            "z": 355
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_3",
+          "block_type_id": 8,
+          "position": {
+            "x": -1228,
+            "y": 71,
+            "z": 356
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_4",
+          "block_type_id": 8,
+          "position": {
+            "x": -1227,
+            "y": 71,
+            "z": 355
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_5",
+          "block_type_id": 8,
+          "position": {
+            "x": -1227,
+            "y": 71,
+            "z": 356
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_6",
+          "block_type_id": 130,
+          "position": {
+            "x": -1229,
+            "y": 72,
+            "z": 356
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_7",
+          "block_type_id": 130,
+          "position": {
+            "x": -1226,
+            "y": 72,
+            "z": 356
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_8",
+          "block_type_id": 8,
+          "position": {
+            "x": -1229,
+            "y": 71,
+            "z": 355
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_9",
+          "block_type_id": 8,
+          "position": {
+            "x": -1229,
+            "y": 71,
+            "z": 356
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_10",
+          "block_type_id": 8,
+          "position": {
+            "x": -1228,
+            "y": 71,
+            "z": 354
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_11",
+          "block_type_id": 8,
+          "position": {
+            "x": -1228,
+            "y": 71,
+            "z": 357
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_12",
+          "block_type_id": 8,
+          "position": {
+            "x": -1227,
+            "y": 71,
+            "z": 354
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_13",
+          "block_type_id": 8,
+          "position": {
+            "x": -1227,
+            "y": 71,
+            "z": 357
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_14",
+          "block_type_id": 8,
+          "position": {
+            "x": -1226,
+            "y": 71,
+            "z": 355
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_15",
+          "block_type_id": 8,
+          "position": {
+            "x": -1226,
+            "y": 71,
+            "z": 356
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_16",
+          "block_type_id": 9,
+          "position": {
+            "x": -1228,
+            "y": 70,
+            "z": 355
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_17",
+          "block_type_id": 9,
+          "position": {
+            "x": -1228,
+            "y": 70,
+            "z": 356
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_18",
+          "block_type_id": 9,
+          "position": {
+            "x": -1227,
+            "y": 70,
+            "z": 355
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_19",
+          "block_type_id": 9,
+          "position": {
+            "x": -1227,
+            "y": 70,
+            "z": 356
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_20",
+          "block_type_id": 130,
+          "position": {
+            "x": -1229,
+            "y": 72,
+            "z": 354
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_21",
+          "block_type_id": 8,
+          "position": {
+            "x": -1229,
+            "y": 71,
+            "z": 354
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_22",
+          "block_type_id": 8,
+          "position": {
+            "x": -1229,
+            "y": 71,
+            "z": 357
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_23",
+          "block_type_id": 8,
+          "position": {
+            "x": -1226,
+            "y": 71,
+            "z": 354
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_24",
+          "block_type_id": 8,
+          "position": {
+            "x": -1226,
+            "y": 71,
+            "z": 357
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_25",
+          "block_type_id": 9,
+          "position": {
+            "x": -1229,
+            "y": 70,
+            "z": 355
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_26",
+          "block_type_id": 9,
+          "position": {
+            "x": -1229,
+            "y": 70,
+            "z": 356
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_27",
+          "block_type_id": 9,
+          "position": {
+            "x": -1228,
+            "y": 70,
+            "z": 354
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_28",
+          "block_type_id": 9,
+          "position": {
+            "x": -1228,
+            "y": 70,
+            "z": 357
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_29",
+          "block_type_id": 9,
+          "position": {
+            "x": -1227,
+            "y": 70,
+            "z": 354
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_30",
+          "block_type_id": 9,
+          "position": {
+            "x": -1227,
+            "y": 70,
+            "z": 357
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_31",
+          "block_type_id": 9,
+          "position": {
+            "x": -1226,
+            "y": 70,
+            "z": 355
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_32",
+          "block_type_id": 9,
+          "position": {
+            "x": -1226,
+            "y": 70,
+            "z": 356
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_33",
+          "block_type_id": 8,
+          "position": {
+            "x": -1230,
+            "y": 71,
+            "z": 355
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_34",
+          "block_type_id": 8,
+          "position": {
+            "x": -1230,
+            "y": 71,
+            "z": 356
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_35",
+          "block_type_id": 8,
+          "position": {
+            "x": -1228,
+            "y": 71,
+            "z": 353
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_36",
+          "block_type_id": 8,
+          "position": {
+            "x": -1228,
+            "y": 71,
+            "z": 358
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_37",
+          "block_type_id": 8,
+          "position": {
+            "x": -1227,
+            "y": 71,
+            "z": 353
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_38",
+          "block_type_id": 8,
+          "position": {
+            "x": -1227,
+            "y": 71,
+            "z": 358
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_39",
+          "block_type_id": 8,
+          "position": {
+            "x": -1225,
+            "y": 71,
+            "z": 356
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_40",
+          "block_type_id": 130,
+          "position": {
+            "x": -1226,
+            "y": 72,
+            "z": 358
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_41",
+          "block_type_id": 130,
+          "position": {
+            "x": -1225,
+            "y": 72,
+            "z": 357
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_42",
+          "block_type_id": 9,
+          "position": {
+            "x": -1229,
+            "y": 70,
+            "z": 354
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_43",
+          "block_type_id": 9,
+          "position": {
+            "x": -1229,
+            "y": 70,
+            "z": 357
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_44",
+          "block_type_id": 9,
+          "position": {
+            "x": -1226,
+            "y": 70,
+            "z": 354
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_45",
+          "block_type_id": 9,
+          "position": {
+            "x": -1226,
+            "y": 70,
+            "z": 357
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_46",
+          "block_type_id": 8,
+          "position": {
+            "x": -1230,
+            "y": 71,
+            "z": 354
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_47",
+          "block_type_id": 8,
+          "position": {
+            "x": -1230,
+            "y": 71,
+            "z": 357
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_48",
+          "block_type_id": 8,
+          "position": {
+            "x": -1229,
+            "y": 71,
+            "z": 353
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_49",
+          "block_type_id": 8,
+          "position": {
+            "x": -1229,
+            "y": 71,
+            "z": 358
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_50",
+          "block_type_id": 9,
+          "position": {
+            "x": -1228,
+            "y": 69,
+            "z": 355
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_51",
+          "block_type_id": 9,
+          "position": {
+            "x": -1228,
+            "y": 69,
+            "z": 356
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_52",
+          "block_type_id": 9,
+          "position": {
+            "x": -1227,
+            "y": 69,
+            "z": 355
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_53",
+          "block_type_id": 9,
+          "position": {
+            "x": -1227,
+            "y": 69,
+            "z": 356
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_54",
+          "block_type_id": 130,
+          "position": {
+            "x": -1226,
+            "y": 71,
+            "z": 353
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_55",
+          "block_type_id": 8,
+          "position": {
+            "x": -1226,
+            "y": 71,
+            "z": 358
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_56",
+          "block_type_id": 8,
+          "position": {
+            "x": -1225,
+            "y": 71,
+            "z": 357
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_57",
+          "block_type_id": 9,
+          "position": {
+            "x": -1230,
+            "y": 70,
+            "z": 355
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_58",
+          "block_type_id": 9,
+          "position": {
+            "x": -1230,
+            "y": 70,
+            "z": 356
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_59",
+          "block_type_id": 9,
+          "position": {
+            "x": -1228,
+            "y": 70,
+            "z": 353
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_60",
+          "block_type_id": 9,
+          "position": {
+            "x": -1228,
+            "y": 70,
+            "z": 358
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_61",
+          "block_type_id": 9,
+          "position": {
+            "x": -1227,
+            "y": 70,
+            "z": 353
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_62",
+          "block_type_id": 9,
+          "position": {
+            "x": -1227,
+            "y": 70,
+            "z": 358
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_63",
+          "block_type_id": 8,
+          "position": {
+            "x": -1225,
+            "y": 70,
+            "z": 355
+          }
+        },
+        {
+          "block_ref": "ob6cda16c_1_64",
+          "block_type_id": 9,
+          "position": {
+            "x": -1225,
+            "y": 70,
+            "z": 356
+          }
+        }
+      ],
+      "inventory_screen": {
+        "container_id": "wb6cda16c_1_1",
+        "slot_count": 46,
+        "inventory_start": 9,
+        "inventory_end": 45,
+        "slot_state": [
+          {
+            "slot": 0,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 1,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 2,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 3,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 4,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 5,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 6,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 7,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 8,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 9,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 10,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 11,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 12,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 13,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 14,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 15,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 16,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 17,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 18,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 19,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 20,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 21,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 22,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 23,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 24,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 25,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 26,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 27,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 28,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 29,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 30,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 31,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 32,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 33,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 34,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 35,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 36,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 37,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 38,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 39,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 40,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 41,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 42,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 43,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 44,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          },
+          {
+            "slot": 45,
+            "item_type_id": null,
+            "count": 0,
+            "metadata": null,
+            "durability": null
+          }
+        ],
+        "cursor": {
+          "slot": -1,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        "result_slot": 0,
+        "input_slots": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "container": null,
+      "crafting": null,
+      "inputs": {
+        "body_state": 1,
+        "mounted": 0,
+        "sleeping": 0,
+        "using_item": 0,
+        "dig_active": 0,
+        "hand": -1,
+        "offhand_item": {
+          "slot": 45,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        },
+        "inventory_server_sequence": 1,
+        "slot_feedback_kind": 0
+      },
+      "control_modes": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "effect_attribution": "temporal_observation_only"
+  },
+  "reason": "MATCHING_REAL_INPUT_EXECUTION_RECEIPT",
+  "world_effect_causality_claimed": false,
+  "stage": "BPC-R2",
+  "base_commit": "822ee5d05ba83c68b9a9a76e7be049f2be12c031",
+  "implementation_source": "LOCAL_WORKTREE; not committed",
+  "witness": {
+    "experience_id": "03476345-ff88-4128-b64f-1adc22d8d1ad",
+    "frames": [
+      "E75",
+      "E76"
+    ],
+    "port": {
+      "catalog_version": 2,
+      "code": 0
+    }
+  },
+  "real_report": "storage\\validation\\BPC-R2-LIVE-001\\validation.json",
+  "real_report_sha256": "6b14e0edb13947bcce59fe135bd3f122d3a3629e00e740aa8ffe0ef1b14fe8ca",
+  "sole_perform_ledger": "storage/validation/BPC-R2-ONE-PERFORM.json",
+  "dedicated_tests": {
+    "passed": 15,
+    "seconds": 0.32,
+    "status": "PASS",
+    "default_temp_setup_issue_resolved_with_new_workspace_temp": true
+  },
+  "source_hashes": {
+    "experimental\\body_port_real2\\prototype.py": "1e8526671373a9e27ed383de9fa519a479fbc83507e5d052f3db7965e16f5a8c",
+    "experimental\\body_port_real2\\validation.py": "dec7e0bd3e238797ca98adca651fba1ec265510aeda983fdf735e364c86c4ea6",
+    "experimental\\body_port_real2\\SPEC.md": "815c4c29f14168e1d07a15f6ec1979e3ae505ff049a134d2a97466b5f4da5637",
+    "tests\\test_body_port_real2.py": "a761379b01aea8c0cbed9d7fdc9222a5140a56c85ae0145f3185bcbf4dcd4d46",
+    "individual\\bridge.py": "5e8c528c36b60d1531f9dbe897f873939f43a93057ef81e388cbad50b1f53fe3",
+    "bridge\\server.js": "3d36b7ba3b629da48c22d53ddbeb642a17ef9e8000024b9939b19d11b53c87b1",
+    "minecraft\\src\\capabilities.js": "f2dc0fa1ba250d2cabae743eaa03761c6c0be0e452ec0c4371fd737c5b2012cb",
+    "minecraft\\action-space.json": "25f3b95319594fee7d6b76d618b091e9c41166e426d59d3853fffbcb08b6426e"
+  },
+  "nonclaims": [
+    "endogenous query/goal/timing",
+    "general parameter formation",
+    "general behavioral authorship",
+    "behavioral causal closure",
+    "O caused world change",
+    "formal A body control",
+    "imitation",
+    "universal generative dynamics",
+    "L1"
+  ],
+  "regression": {
+    "command": "pytest -q --ignore=tests/test_successor0.py --basetemp <new isolated workspace directory>",
+    "passed": 336,
+    "subtests_passed": 90,
+    "seconds": 284.55,
+    "status": "PASS",
+    "successor0_not_reopened": true
+  }
+}
