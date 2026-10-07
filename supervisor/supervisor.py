@@ -2,6 +2,7 @@
 
 import argparse
 from copy import deepcopy
+from contextlib import closing
 import json
 import math
 import os
@@ -12,11 +13,15 @@ import subprocess
 import sys
 import threading
 import time
+import traceback
+from types import SimpleNamespace
+from uuid import uuid4
 
 import psutil
 import yaml
 
 from individual.state import utc_now
+from .process_evidence import ProcessProbe, StreamCapture
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_LIMITS = dict(sample_interval_seconds=0.5, max_core_ram_mb=512,
@@ -62,16 +67,106 @@ class Supervisor:
         self._cpu_violations = 0
         self._sample = None
         self._closed = False
+        self._probes = {}
+        self._kill_requests = {}
+        self._first_exit = None
+        self._monitor_error = None
+        self._individual_id = None
         self._audit_path = self.database.with_name(self.database.stem + '.supervisor.db')
         self._audit_path.parent.mkdir(parents=True, exist_ok=True)
         self._audit = sqlite3.connect(self._audit_path)
         self._audit.execute('CREATE TABLE IF NOT EXISTS supervisor_events(sequence INTEGER PRIMARY KEY AUTOINCREMENT, timestamp TEXT, event_type TEXT, payload TEXT)')
-        self._record('SUPERVISOR_STARTED', {'limits': self.limits, 'subject_member': False})
+        self._output_dir = self.database.parent / 'process-evidence' / uuid4().hex
+        self._output_dir.mkdir(parents=True)
+        self._stdout_capture = StreamCapture(self._output_dir / 'core.stdout.log')
+        self._stderr_capture = StreamCapture(self._output_dir / 'core-and-forwarded-bridge.stderr.log')
+        self._record('SUPERVISOR_STARTED', {'limits': self.limits, 'subject_member': False,
+            'pid': os.getpid(), 'role': 'supervisor', 'host_entrypoint': sys.argv[0],
+            'launcher_same_process': Path(sys.argv[0]).name == 'main.py',
+            'output_directory': str(self._output_dir)})
 
     def _record(self, kind, payload):
         with self._audit:
             self._audit.execute('INSERT INTO supervisor_events(timestamp,event_type,payload) VALUES (?,?,?)',
                                 (utc_now(), kind, json.dumps(payload, ensure_ascii=False, allow_nan=False)))
+
+    def _exit_context(self):
+        heartbeat = self._heartbeat or {}
+        context = {key: heartbeat.get(key) for key in ('individual_id', 'session_id', 'state_version')}
+        context['individual_id'] = context['individual_id'] or self._individual_id
+        context['session_id'] = context['session_id'] or self._session_id
+        # External measurement only: latest committed identity, never history/input.
+        try:
+            with closing(sqlite3.connect(self.database.as_uri() + '?mode=ro', uri=True, timeout=.1)) as db:
+                db.execute('PRAGMA query_only=ON')
+                row = db.execute("SELECT state_version,json_extract(snapshot,'$.individual_id'),"
+                    "json_extract(snapshot,'$.session_id') FROM states ORDER BY state_version DESC LIMIT 1").fetchone()
+                if row:
+                    context.update(state_version=row[0], individual_id=row[1], session_id=row[2])
+        except sqlite3.Error as error:
+            context['committed_state_query_error'] = str(error)
+        return {**context, 'last_heartbeat': self._heartbeat,
+                'last_resource_sample': self._sample, 'subject_member': False,
+                'recursive_input': False}
+
+    def _track_process(self, process, role, popen=None):
+        probe = self._probes.get(process.pid)
+        if probe is None:
+            probe = ProcessProbe(process, role, popen)
+            self._probes[process.pid] = probe
+            self._record('PROCESS_TRACKED', {'role': role, 'pid': process.pid,
+                'exit_code_capture_error': probe.capture_error, 'subject_member': False})
+        elif not probe.recorded and role != 'related_child':
+            probe.role = role
+
+    def _observe_exits(self):
+        observed = []
+        for probe in self._probes.values():
+            result = probe.poll()
+            if result is not None:
+                observed.append(result)
+        # Kernel times distinguish actual exit order where available. Else only
+        # discovery order is known, and must not be presented as causal order.
+        observed.sort(key=lambda r: r['exit_time'] or '9999')
+        for result in observed:
+            result['observed_at'] = utc_now()
+            if self._first_exit is None:
+                self._first_exit = {k: result[k] for k in ('role', 'pid', 'exit_time', 'observed_at')}
+            result.update(first_observed_exit=self._first_exit,
+                supervisor_termination_requested=self._stopping_at is not None,
+                supervisor_reason=self._stop_reason,
+                supervisor_kill_request=self._kill_requests.get(result['pid']),
+                termination_origin='SUPERVISOR_INITIATED' if self._stopping_at is not None
+                    or result['pid'] in self._kill_requests else 'SPONTANEOUS_PROCESS_EXIT',
+                root_cause='NOT_ESTABLISHED')
+            if result['role'] in ('Core', 'Bridge'):
+                result['stderr'] = self._stderr_capture.snapshot()
+                result['stderr_scope'] = 'Core_and_forwarded_Bridge; individual_line_author_unknown'
+                result['stdout'] = self._stdout_capture.snapshot()
+            else:
+                result['stderr_scope'] = 'parent_private_pipe_not_available_to_external_supervisor'
+            self._record('PROCESS_EXIT_OBSERVED', {**result, **self._exit_context()})
+
+    def _monitor_exception(self, error):
+        self._monitor_error = repr(error)
+        trace = ''.join(traceback.format_exception(type(error), error, error.__traceback__))
+        path = self._output_dir / 'supervisor.traceback.log'
+        with path.open('a', encoding='utf8') as file:
+            file.write(trace)
+        self._record('MONITOR_EXCEPTION', {'role': 'supervisor', 'pid': os.getpid(),
+            'error': repr(error), 'traceback_path': str(path), 'traceback_tail': trace[-8192:],
+            **self._exit_context()})
+        self._observe_exits()
+
+    def _query_disappeared(self, process, operation, error):
+        probe = self._probes.get(process.pid) if process else None
+        if probe and getattr(probe, 'disappearance_recorded', False):
+            return
+        if probe:
+            probe.disappearance_recorded = True
+        self._record('PROCESS_QUERY_DISAPPEARED', {'pid': process.pid if process else None,
+            'operation': operation, 'error': repr(error), 'subject_member': False})
+        self._observe_exits()
 
     def start(self, core_args=None, command=None):
         if self.process is not None:
@@ -82,17 +177,23 @@ class Supervisor:
         self.process = subprocess.Popen(argv, cwd=ROOT, stdin=subprocess.PIPE, stdout=subprocess.PIPE,
                                         stderr=subprocess.PIPE, text=True, encoding='utf-8', bufsize=1,
                                         env=env, creationflags=flags, start_new_session=os.name != 'nt')
-        self._core = psutil.Process(self.process.pid)
-        self._core.cpu_percent()
+        self._record('CORE_LAUNCHED', {'pid': self.process.pid})
+        try:
+            self._core = psutil.Process(self.process.pid)
+            self._track_process(self._core, 'Core', self.process)
+            self._core.cpu_percent()
+        except psutil.NoSuchProcess as error:
+            self._track_process(SimpleNamespace(pid=self.process.pid), 'Core', self.process)
+            self._query_disappeared(self._core, 'start/cpu_percent', error)
         self._started_at = time.monotonic()
         for target in (self._read_output, self._read_errors):
             thread = threading.Thread(target=target, daemon=True)
             thread.start()
             self._threads.append(thread)
-        self._record('CORE_LAUNCHED', {'pid': self.process.pid})
 
     def _read_output(self):
         for line in self.process.stdout:
+            self._stdout_capture.append(line)
             try:
                 self._messages.put(json.loads(line))
             except ValueError:
@@ -100,6 +201,7 @@ class Supervisor:
 
     def _read_errors(self):
         for line in self.process.stderr:
+            self._stderr_capture.append(line)
             self.log(f'[Body/Core] {line.rstrip()}')
 
     def control(self, command):
@@ -138,6 +240,7 @@ class Supervisor:
                 self._last_heartbeat = time.monotonic()
                 self.log(json.dumps(message, ensure_ascii=False, separators=(',', ':')))
             elif kind == 'CORE_STARTED':
+                self._individual_id = message.get('individual_id')
                 self._session_id = message.get('session_id')
                 if message.get('lifetime_role') == 'snapshot_branch':
                     self.log('快照实验分支：不是原始 A 主线。')
@@ -148,6 +251,12 @@ class Supervisor:
                 self.log(f"Session: {self._session_id} | A{message['state_version']}; lifetime preserved")
             elif kind == 'CORE_ERROR':
                 self.log(f"Core error: {message.get('message')}")
+            elif kind == 'BRIDGE_STARTED':
+                try:
+                    self._track_process(psutil.Process(message['pid']), 'Bridge')
+                except psutil.NoSuchProcess as error:
+                    self._track_process(SimpleNamespace(pid=message['pid']), 'Bridge')
+                    self._query_disappeared(SimpleNamespace(pid=message['pid']), 'bridge_registration', error)
             # Outbound messages are telemetry only. They cannot change limits or send controls.
 
     def _process_sample(self, process):
@@ -157,23 +266,35 @@ class Supervisor:
             return {'pid': process.pid, 'alive': process.is_running() and process.status() != psutil.STATUS_ZOMBIE,
                     'cpu_percent': process.cpu_percent(interval=None),
                     'ram_mb': process.memory_info().rss / (1024 * 1024)}
-        except (psutil.NoSuchProcess, psutil.AccessDenied):
+        except psutil.NoSuchProcess as error:
+            self._query_disappeared(process, 'resource_sample', error)
+            return {'pid': process.pid, 'alive': False, 'cpu_percent': 0.0, 'ram_mb': 0.0}
+        except psutil.AccessDenied:
             return {'pid': process.pid, 'alive': False, 'cpu_percent': 0.0, 'ram_mb': 0.0}
 
     def _collect(self):
         try:
-            children = self._core.children(recursive=True)
+            children = self._core.children(recursive=True) if self._core else []
         except (psutil.NoSuchProcess, psutil.AccessDenied):
             children = []
         for child in children:
             if child.pid not in self._owned_children:
-                child.cpu_percent()
                 self._owned_children[child.pid] = child
+                self._track_process(child, 'related_child')
+                try:
+                    child.cpu_percent()
+                except psutil.NoSuchProcess as error:
+                    self._query_disappeared(child, 'child_discovery/cpu_percent', error)
+                    continue
             try:
                 if 'integration.froi_worker' in child.cmdline() or 'tests.fixtures.froi_worker_hook' in child.cmdline():
                     self._workers[child.pid] = self._owned_children[child.pid]
+                    self._track_process(child, 'worker')
                 if child.name().lower() in ('node', 'node.exe'):
                     self._bridge = self._owned_children[child.pid]
+                    self._track_process(child, 'Bridge')
+                elif child.pid not in self._workers:
+                    self._track_process(child, 'Core')
             except (psutil.NoSuchProcess, psutil.AccessDenied):
                 pass
         worker_pids = set(self._workers)
@@ -196,13 +317,21 @@ class Supervisor:
             core['ram_mb'] += extra['ram_mb']
         bridge = self._process_sample(self._bridge)
         self._sample = {'timestamp': utc_now(), 'core': core, 'bridge': bridge, 'computation_worker': worker}
-        self._sample['storage'] = {'used_mb': sum(p.stat().st_size for p in self.database.parent.iterdir()
-            if p.is_file() and (p.name.startswith(self.database.name) or p.name.startswith(self._audit_path.name))) / (1024 * 1024),
+        storage_bytes = 0
+        for path in self.database.parent.iterdir():
+            if path.name.startswith(self.database.name) or path.name.startswith(self._audit_path.name):
+                try:
+                    if path.is_file():
+                        storage_bytes += path.stat().st_size
+                except FileNotFoundError:
+                    self._record('STORAGE_SAMPLE_FILE_DISAPPEARED', {'path': str(path)})
+        self._sample['storage'] = {'used_mb': storage_bytes / (1024 * 1024),
             'max_mb': self.limits['max_lifetime_storage_mb'], 'source': 'ENVIRONMENT_CONSTRAINT'}
         self._sample['pressure'] = max((core['ram_mb'] + worker['ram_mb']) / self.limits['max_core_ram_mb'],
             bridge['ram_mb'] / self.limits['max_bridge_ram_mb'],
             (core['cpu_percent'] + bridge['cpu_percent'] + worker['cpu_percent']) / self.limits['max_total_cpu_percent'])
         self._record('RESOURCE_SAMPLE', self._sample)
+        self._observe_exits()
         if self._stopping_at is None:
             self._send('resource_sample', self._sample)
         return self._sample
@@ -237,17 +366,25 @@ class Supervisor:
             self._request_termination('bridge_process_exited')
 
     def _kill_owned(self):
+        self._observe_exits()
         # Handles are only descendants discovered by the parent, never arbitrary Core-supplied PIDs.
         for child in reversed(list(self._owned_children.values())):
             try:
                 if child.is_running():
+                    self._kill_requests[child.pid] = {'at': utc_now(), 'reason': self._stop_reason or 'monitor_cleanup'}
+                    self._record('PROCESS_KILL_REQUESTED', {'role': self._probes[child.pid].role,
+                        'pid': child.pid, **self._kill_requests[child.pid]})
                     child.kill()
             except (psutil.NoSuchProcess, psutil.AccessDenied):
                 pass
         if self.process and self.process.poll() is None:
+            self._kill_requests[self.process.pid] = {'at': utc_now(), 'reason': self._stop_reason or 'monitor_cleanup'}
+            self._record('PROCESS_KILL_REQUESTED', {'role': 'Core', 'pid': self.process.pid,
+                **self._kill_requests[self.process.pid]})
             self.process.kill()
         if self.process:
             self.process.wait(timeout=5)
+        self._observe_exits()
 
     def run(self, duration=0, verify_loop=False):
         if self.process is None:
@@ -303,17 +440,28 @@ class Supervisor:
             if self.process.poll() is None:
                 self._record('FORCED_TERMINATION', {'reason': 'manual_terminate', 'final_core_event_not_guaranteed': True})
                 self._kill_owned()
+        except Exception as error:
+            self._monitor_exception(error)
+            raise
         finally:
+            self._observe_exits()
+            self._record('SUPERVISOR_RUN_FINISHED', {'role': 'supervisor', 'pid': os.getpid(),
+                'monitor_error': self._monitor_error, 'core_exit_code': self.process.poll(),
+                **self._exit_context()})
             if self.process.poll() is not None:
                 self._kill_owned()
                 for thread in self._threads:
                     thread.join(timeout=1)
                 self._drain_messages()
                 self._record('SUPERVISOR_STOPPED', {'core_exit_code': self.process.returncode, 'reason': self._stop_reason})
+                self._observe_exits()
+                self._record('OUTPUT_CAPTURE_FINAL', {'stderr': self._stderr_capture.snapshot(),
+                    'stdout': self._stdout_capture.snapshot(), **self._exit_context()})
                 for stream in (self.process.stdin, self.process.stdout, self.process.stderr):
                     stream.close()
                 self._audit.close()
                 self._closed = True
+                self._close_evidence()
         return self.process.returncode or (1 if self._stop_reason not in (None, 'manual_terminate', 'runtime_limit', 'verification_complete') else 0)
 
     def close(self):
@@ -321,7 +469,10 @@ class Supervisor:
             return
         try:
             if self.process:
-                self._collect()
+                try:
+                    self._collect()
+                except Exception as error:
+                    self._monitor_exception(error)
                 self._kill_owned()
         finally:
             if self.process:
@@ -330,8 +481,20 @@ class Supervisor:
                 for stream in (self.process.stdin, self.process.stdout, self.process.stderr):
                     if not stream.closed:
                         stream.close()
+            self._observe_exits()
+            self._record('SUPERVISOR_CLOSED', {'role': 'supervisor', 'pid': os.getpid(),
+                'core_exit_code': self.process.poll() if self.process else None,
+                'monitor_error': self._monitor_error, 'stderr': self._stderr_capture.snapshot(),
+                'stdout': self._stdout_capture.snapshot(), **self._exit_context()})
+            self._close_evidence()
             self._audit.close()
             self._closed = True
+
+    def _close_evidence(self):
+        for probe in self._probes.values():
+            probe.close()
+        self._stdout_capture.close()
+        self._stderr_capture.close()
 
 
 def cli():
@@ -410,6 +573,8 @@ def cli():
         print('Supervisor running. Commands: pause / resume / status / terminate; Ctrl+C terminates.', flush=True)
         return supervisor.run(args.duration, args.verify_loop)
     except Exception as error:
+        if supervisor and not supervisor._closed:
+            supervisor._monitor_exception(error)
         print(f'Startup/monitor error: {error}', file=sys.stderr)
         return 1
     finally:
