@@ -1,0 +1,136 @@
+{
+  "stage": "BPC-LIVE-1",
+  "definition_commit": "6d7b469c9943ab42aa2e8bee7bcf313b613d3bc3",
+  "branch": "codex/bpc-live-1",
+  "implementation_status": "IMPLEMENTED",
+  "code_validation_status": "PASS",
+  "real_live_acceptance": "NOT_EXECUTED",
+  "canonical_real_run_executed": false,
+  "real_negative_control_runs_executed": false,
+  "Minecraft_executed": false,
+  "BPC_LIVE_1_perform_calls": 0,
+  "BPC_LIVE_1_sampler_calls": 0,
+  "BPC_LIVE_1_binder_calls": 0,
+  "expression_generation_connected": false,
+  "unit_tests": {
+    "passed": 41,
+    "failed": 0,
+    "seconds": 7.63,
+    "command": ".venv/Scripts/python.exe -m pytest tests/test_live_body_connection.py -q --basetemp=.test-tmp/bpc-live-1-20261007-004 --tb=short --junitxml=.test-tmp/bpc-live-1-unit-final.xml"
+  },
+  "regression": {
+    "passed": 377,
+    "failed": 0,
+    "subtests_passed": 90,
+    "seconds": 290.32,
+    "command": ".venv/Scripts/python.exe -m pytest -q --ignore=tests/test_successor0.py --basetemp=.test-tmp/bpc-live-1-regression-20261007-final --tb=short --junitxml=.test-tmp/bpc-live-1-regression-final.xml",
+    "successor0_rerun": false,
+    "transport_fixtures": "existing fake adapters only; not Minecraft or stage real acceptance"
+  },
+  "controls": {
+    "NC1": {
+      "pure_code": "PASS",
+      "real_live": "NOT_EXECUTED"
+    },
+    "NC2": {
+      "pure_code": "PASS",
+      "real_live": "NOT_EXECUTED"
+    },
+    "NC3": {
+      "pure_code": "PASS",
+      "real_live": "NOT_EXECUTED"
+    },
+    "NC4": {
+      "pure_code": "PASS",
+      "real_live": "NOT_EXECUTED"
+    },
+    "NC5": {
+      "pure_code": "PASS",
+      "real_live": "NOT_EXECUTED"
+    },
+    "NC6": {
+      "pure_code": "PASS",
+      "real_live": "NOT_EXECUTED"
+    }
+  },
+  "persistent_location": "AState.internal_state.l0_state.live_body_structure",
+  "read_root_source": "preceding live formation result persisted in that structure.feedback",
+  "consumer": "individual.live_body_structure.consume_saved",
+  "consumer_effect_locations": [
+    "RECURSIVE_PARTIAL_OUTPUT.processing.live_body_connection_read",
+    "InternalState.active_processes[process_id].output.live_body_connection_read",
+    "InternalState.l0_state.live_body_read"
+  ],
+  "formation_scope": "generic current-record shared incidence; all observed native ports; no action/effect attribution",
+  "default_runtime_path_changed": false,
+  "formal_l0_source_changed": false,
+  "formal_froi_source_changed": false,
+  "FROI_GSC_CEC_BPC_frozen_material_changed": false,
+  "frozen_definition_changed": false,
+  "caps_files_changed": false,
+  "canonical_database_changed": false,
+  "research_status_files_changed": false,
+  "unrelated_untracked_content_changed": false,
+  "implementation_commit": null,
+  "push_performed": false,
+  "runtime_sources": {
+    "individual/__init__.py": "dbc1467d7e78e8f805ace7bd395dfbb8df0b5f6307dacac2f8f8450bd8b793ce",
+    "individual/action_space.py": "1148708b0fca48040aab7b1cc3104e8a46dc5459e8faa4a85003a51508dd959b",
+    "individual/actions.py": "31beabe39379c0a74d6d1651dfeef59f1bf7cdb9990b5855ff76075a06e17fc2",
+    "individual/behavioral_audit.py": "379fa546c09b9cd01967869bddca259d0b9049df382a483d0ec41a6fd6e5ff4a",
+    "individual/bridge.py": "5e8c528c36b60d1531f9dbe897f873939f43a93057ef81e388cbad50b1f53fe3",
+    "individual/change_detection.py": "7803f4480236cc8be24f1432c91531c976ce76f579a0c36cda84b30640c30fff",
+    "individual/core.py": "766d6d4dc2ba0c24db8fb8361a92b478d05a349458dabe97121011ccb9cf77d0",
+    "individual/decision_provenance.py": "6d2666a1a6f0e21488164aee3254f34b835c288bf55b5ceee77553348982c7bd",
+    "individual/events.py": "61fa23e81b2f36685b7d2351bd7242ddb30cbdec9e2a3c825612b83f1f3b28ed",
+    "individual/experiment_audit.py": "68e79626b5fc80ec4508212f5b57f7295e08125b45d2a05ff1c7597a72a2c2dc",
+    "individual/formal_boundary.py": "6bb8232a675a808ba050d13131edcd4d159716a7f1acb30ed3811211eee6206a",
+    "individual/formal_froi.py": "8468377e06eccb0413a2b3028cb34e30cf6c1c89156b6c371ab6b72d9ef57e12",
+    "individual/formal_l0.py": "1b6abea5d568c349bf7c181ecd771fc6f08cd0f1791fa49be7434c4acd354b62",
+    "individual/formal_live_body.py": "2183294f8a05498130bf19bb4edf48c45011b3d93313756c2e149141bae9e80d",
+    "individual/identity.py": "5d3c718dd760c1a1d242c142a6198106280b57139f62f3d3415b19646a0b442d",
+    "individual/inspect.py": "33a631fbe7be7aad4ac626ea3157774581c54489fb47928c36174cfec5e6d1df",
+    "individual/integration.py": "7be13b5c250eef1333dab7ae39dfc260c0cc60be098abed459f9925a473b421b",
+    "individual/internal_state.py": "bbbc0c39c236dc5d21e3cf11d028a9a0497606d71efcbf87c631fcddc987986c",
+    "individual/l0_audit.py": "4aa4525394640234ddd73f14a8eb102ede6ca90806916d6f6a950430d6343a74",
+    "individual/lifetime.py": "2f2c9c0e0b7402da511e074dbf292121e39cf8b656b2a1f28f2abd13d80bdc81",
+    "individual/limit_consequences.py": "31016249d5f8f374344c88355308cc2a5813c054d4473bffa25c4fdbaee58b01",
+    "individual/live_body_structure.py": "a0aa977788fa81349ebdb698977d9566ed581ccf07773408a72ed4a85dc8956e",
+    "individual/observation.py": "d0bc8f74494593424c6e947c5bdb8e93bc80fc356d9cb1dc53730711977959db",
+    "individual/policies.py": "040afd47b8e8d1e5d97fa01543de2179945ba30fd264d9ba6d3d5d3cea0ca185",
+    "individual/policy.py": "cd3834e9174cd37d53f40d25910efcc775bf73262717349717065939feba9ab8",
+    "individual/policy_audit.py": "f574c7edd25db423aca98ce3724fbaba4289f7c0f87636b4ef3e9271a9cbfd64",
+    "individual/recursion.py": "fcf1d8f41dbe0d520197e485e658817df5082d7fea1dbd97f50b93c70c6fd126",
+    "individual/state.py": "0d57a22352e1478ea550353b16f499133d7807ac8884a1a9afa9fa06095bc50f",
+    "individual/storage.py": "d93b98784491b93a4a6d85abf0d8904b819db5160d07952a89e1ca619796774a",
+    "individual/structure.py": "b8068ac2cc6166027d1615d249207d2b277f553a20318d6bbfdaf64ce33705c2",
+    "minecraft/action-space.json": "25f3b95319594fee7d6b76d618b091e9c41166e426d59d3853fffbcb08b6426e"
+  },
+  "evidence": {
+    ".test-tmp/bpc-live-1-unit-final.xml": {
+      "sha256": "1876fc3797a5a40a383aad1d85a7932a2b71e3bed5d252c68f7a5496f68abc04"
+    },
+    ".test-tmp/bpc-live-1-regression-final.xml": {
+      "sha256": "a5fc3c2f3ca30f0c7b14d3df2b9e14bdb6baf90ea0d28b0d21367ce9dac44b01"
+    },
+    ".test-tmp/bpc-live-1-regression-final.log": {
+      "sha256": "2cd1945b4db652ebf2df3163fdc8507116ac5dcac0c780202f4ba6e590e63ef0"
+    },
+    "tests/test_live_body_connection.py": {
+      "sha256": "4b7bcb9ed6804683544733bd907d58e6688697d4b4e98e289da8dcc31d07ab2b"
+    },
+    "LIVE_BODY_PORT_CONNECTION_EXPERIMENT.md": {
+      "sha256": "d351ca67125a35ceb118003791a67d093e2533948f0a22ae25604a98b7f6b44d"
+    }
+  },
+  "nonclaims": [
+    "real live stage PASS",
+    "O caused C",
+    "behavioral authorship",
+    "general parameter formation",
+    "autonomous goals or action selection",
+    "behavioral causal closure",
+    "L1/upward recursion",
+    "universal generative dynamics"
+  ]
+}

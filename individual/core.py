@@ -34,7 +34,18 @@ class ACore:
 
     def __init__(self, database, bridge, policy=None, observation_interval=1.0, session_context=None,
                  session_label='Minecraft', initialize_lifetime=False, experiment_profile='formal_l0', physical_caps=None,
-                 resource_caps=None, froi=False, froi_caps=None, froi_async=False, worker_factory=None):
+                 resource_caps=None, froi=False, froi_caps=None, froi_async=False, worker_factory=None,
+                 live_body_connection=False, live_body_control='CANONICAL'):
+        self._live_body_connection = live_body_connection
+        self._live_interrupted = False
+        if live_body_connection:
+            from .live_body_structure import LiveControls
+            self._live_controls = LiveControls(live_body_control)
+            if (not initialize_lifetime or Path(database).exists() or froi or policy is not None
+                    or experiment_profile != 'formal_l0'):
+                raise ValueError('BPC-LIVE-1 requires a fresh database/individual and no legacy/FROI/action policy')
+        elif live_body_control != 'CANONICAL':
+            raise ValueError('Live controls require BPC-LIVE-1')
         if experiment_profile not in ('formal_l0', 'legacy_policy_debug'):
             raise ValueError('Unknown experiment profile')
         if not math.isfinite(observation_interval) or observation_interval <= 0:
@@ -67,6 +78,8 @@ class ACore:
         self._lease = ExperimentLease(database).acquire()
         self._store = None
         try:
+            if live_body_connection and Path(database).exists():
+                raise ValueError('Fresh BPC-LIVE-1 database was created by another writer')
             preflight(database, self._engine.caps if self._experiment_profile == 'formal_l0' else None,
                       self._engine.resource_caps if self._experiment_profile == 'formal_l0' else None)
             self._store = EventStore(database)
@@ -100,6 +113,19 @@ class ACore:
         self._body_dead = False
         self._paused = False
         self._closed = False
+        if live_body_connection:
+            from .formal_live_body import FormalLiveBodyEngine
+            from .live_body_structure import source_identity
+            self._live_owner = (self._state.individual_id, self._state.session_id, str(uuid4()))
+            self._live_condition = live_body_control
+            self._engine = FormalLiveBodyEngine(self._engine.caps, self._engine.resource_caps,
+                                               self._live_owner, self._live_controls)
+            internal = InternalState.from_dict(self._state.internal_state)
+            internal.l0_state['live_body_structure'] = self._engine.initial_structure()
+            self._transition('LIVE_BODY_RUN_INITIALIZED', {'stage': 'BPC-LIVE-1',
+                'measurement_condition': live_body_control, 'owner': list(self._live_owner),
+                'fresh_database': True, 'actions_enabled': False,
+                'runtime_sources': source_identity()}, internal_state=internal.to_dict())
 
     @property
     def state(self):
@@ -122,6 +148,8 @@ class ACore:
         return self.state
 
     def start(self):
+        if self._live_body_connection and self._had_connection:
+            raise RuntimeError('BPC-LIVE-1 cannot restart its carrier')
         self._bridge.launch()
         self._transition('BRIDGE_PROCESS_STARTED', {'pid': self._bridge.pid}, status='connecting')
         try:
@@ -132,6 +160,11 @@ class ACore:
                 raise
 
     def accept_observation(self, observation):
+        if self._live_body_connection:
+            if (self._live_interrupted or self._state.session_id != self._live_owner[1]
+                    or self._state.individual_id != self._live_owner[0]
+                    or self._engine.controls.condition != self._live_condition):
+                raise RuntimeError('BPC-LIVE-1 continuous run/control boundary changed')
         if not self._session_active:
             raise RuntimeError('Open a session before accepting environment observations')
         if self._computation is not None:
@@ -139,7 +172,14 @@ class ACore:
         fields = observation_fields(observation)
         sequence = self._state.environment_sequence + 1
         frame = self._encoder.encode(observation, sequence, self._body_epoch)
-        if self._froi:
+        if self._live_body_connection:
+            from .live_body_structure import observed_ports
+            ports = observed_ports(observation.get('actionSpace'))
+            # Actual observed identity enters the interpreter before formation.
+            frame.nearby_data.setdefault('body', {})['native_ports'] = deepcopy(ports)
+            internal, frame, journal = self._engine.advance(self._state.internal_state, frame,
+                self._state.state_version + 1, self._pending_actions, ports=ports)
+        elif self._froi:
             from integration.froi import OrganizationSession, history_from_store
             organization = OrganizationSession(history_from_store(self._store, self._state), self._froi_caps)
             organization.session_id = self._state.session_id
@@ -174,7 +214,11 @@ class ACore:
 
     def _commit_observation(self, observation, fields, sequence, internal, frame, journal):
         provision(internal, observation.get('actionSpace'), self._state.state_version + 1, journal)
-        if self._experiment_profile == 'formal_l0' and 'action.parameter_binding' in internal.policy_registry:
+        if self._live_body_connection:
+            for key in ('formal.action_sampling', 'action.parameter_binding'):
+                if key in internal.policy_registry:
+                    internal.policy_registry[key]['formal_path_enabled'] = False
+        elif self._experiment_profile == 'formal_l0' and 'action.parameter_binding' in internal.policy_registry:
             internal.policy_registry['action.parameter_binding']['formal_path_enabled'] = True
         journal.append(('SENSOR_DEBUG_MAPPING', deepcopy(self._encoder.debug_mapping)))
         result = self._transition('WORLD_OBSERVATION', {'observation': deepcopy(observation), 'frame_id': frame.frame_id},
@@ -264,6 +308,8 @@ class ACore:
             runtime_status = 'connecting'
         changes = {}
         if event_type in ('BODY_DIED', 'BRIDGE_DISCONNECTED'):
+            if self._live_body_connection:
+                self._live_interrupted = True
             internal = InternalState.from_dict(self._state.internal_state) if self._state.internal_state else InternalState()
             incident = {'event_type': event_type, 'state_version': self._state.state_version + 1,
                         'frame_id': self._state.observation_frame.get('frame_id') if self._state.observation_frame else None,
@@ -280,6 +326,8 @@ class ACore:
         return result
 
     def execute_action(self, action, initiator='policy'):
+        if self._live_body_connection:
+            raise RuntimeError('BPC-LIVE-1 has no body execution path')
         if self._computation is not None:
             raise RuntimeError('No actions while computation checkpoint is frozen')
         if not self._session_active:
@@ -311,6 +359,8 @@ class ACore:
         return True
 
     def execute_discrete_action(self, action_code=None, parameters=None):
+        if self._live_body_connection:
+            raise RuntimeError('BPC-LIVE-1 has no sampler/binder/perform path')
         if self._computation is not None:
             raise RuntimeError('No actions while computation checkpoint is frozen')
         if self._paused or self._closed or not self._session_active:
@@ -427,7 +477,7 @@ class ACore:
                     'source': 'EXTERNAL_FIXED_MECHANISM'}))
                 return
             self._transition('SUPERVISOR_PAUSED', {'observations_continue': True}, status='paused')
-            if self._session_active and self._bridge_status.get('connected'):
+            if self._session_active and self._bridge_status.get('connected') and not self._live_body_connection:
                 self.execute_action({'method': 'move', 'args': {'direction': 'stop'}}, initiator='supervisor_pause')
 
     def resume(self):
@@ -472,6 +522,8 @@ class ACore:
             self._next_observation = now + self._observation_interval
         if self._computation is not None:
             return
+        if self._live_body_connection:
+            return  # Observation-only recursion; never enter the action stage.
         if not self._paused and not self._await_fresh_observation and self._policy is not None:
             action = self._policy.next_action(self.state, now)
             if action:
@@ -501,6 +553,8 @@ class ACore:
         return self.state
 
     def begin_session(self, environment=None, label='Minecraft'):
+        if self._live_body_connection:
+            raise RuntimeError('BPC-LIVE-1 cannot switch/restart its session')
         if self._closed or self._session_active:
             raise RuntimeError('End the current session before opening another')
         self._state = self._store.open_session({**(environment or {}), 'experiment_profile': self._experiment_profile}, label, carrier_restart=False,
@@ -546,13 +600,25 @@ def main():
     parser.add_argument('--physical-caps', default=str(ROOT / 'individual/experiment.json'))
     parser.add_argument('--froi', action='store_true', help='FROI-1 organization relation-read integration; no action authorship claim')
     parser.add_argument('--froi-caps', help='External frozen GSC-0 capacity JSON for this lifetime')
+    parser.add_argument('--bpc-live-1', action='store_true',
+                        help='Explicit fresh BPC-LIVE-1 observation-only run; no body actions')
+    parser.add_argument('--bpc-live-control', default='CANONICAL',
+                        choices=['CANONICAL', 'NC1', 'NC2', 'NC3', 'NC4', 'NC5', 'NC6'])
     parser.add_argument('--environment-caps', type=json.loads, default={}, help='External Supervisor resource ceilings for this condition')
     parser.add_argument('--policy-wait', type=float, default=1.0)
     parser.add_argument('--move-ms', type=int, default=200)
     args = parser.parse_args()
     from .lifetime import resolve_runtime_database
     try:
-        args.db = str(resolve_runtime_database(args.db, args.branch_db))
+        if args.bpc_live_1:
+            if (not args.db or args.branch_db or args.froi or args.smoke_policy or args.legacy_policy_debug
+                    or Path(args.db).exists()):
+                parser.error('BPC-LIVE-1 requires an explicit unused --db and no replay/FROI/action policy')
+            args.db = str(Path(args.db).resolve())
+        else:
+            if args.bpc_live_control != 'CANONICAL':
+                parser.error('--bpc-live-control requires --bpc-live-1')
+            args.db = str(resolve_runtime_database(args.db, args.branch_db))
     except (ValueError, OSError) as error:
         parser.error(str(error))
     if not math.isfinite(args.policy_wait) or args.policy_wait < 0 or not 1 <= args.move_ms <= 1000:
@@ -602,7 +668,9 @@ def main():
                      experiment_profile=context['experiment_profile'],
                      physical_caps=FormalLimits.load(args.physical_caps) if context['experiment_profile']=='formal_l0' else None,
                      resource_caps=args.environment_caps, froi=args.froi,
-                     froi_caps=load_froi_caps(args.froi_caps), froi_async=True)
+                     froi_caps=load_froi_caps(args.froi_caps), froi_async=True,
+                     initialize_lifetime=args.bpc_live_1, live_body_connection=args.bpc_live_1,
+                     live_body_control=args.bpc_live_control)
         emit('CORE_STARTED', individual_id=core.state.individual_id, state_version=core.state.state_version,
              session_id=core.state.session_id, lifetime_role='snapshot_branch' if args.branch_db else 'mainline')
         threading.Thread(target=read_controls, daemon=True).start()
