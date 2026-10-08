@@ -142,6 +142,8 @@ class ACore:
             raise RuntimeError('A Core is closed')
         if changes.get('internal_state', {}).get('l0_state', {}).get('froi_detached_test_only'):
             raise ValueError('Detached FROI test state cannot be persisted to formal A')
+        if 'operative_test_only' in changes.get('internal_state', {}).get('l0_state', {}):
+            raise ValueError('TEST_ONLY operative state cannot be persisted to formal A')
         if self._experiment_profile == 'formal_l0':
             validate_boundary(self._state.internal_state, self._engine.caps, self._engine.resource_caps)
             validate_boundary(changes.get('internal_state', self._state.internal_state), self._engine.caps, self._engine.resource_caps)

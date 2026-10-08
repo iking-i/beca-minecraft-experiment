@@ -1,0 +1,81 @@
+--- 0cd29715:individual/formal_l0.py:advance
++++ experimental/formall0_operative/engine.py:_advance_operative
+@@ -1,4 +1,6 @@
+-def advance(self, current, frame, state_version, pending_actions):
++def _advance_operative(self, current, frame, state_version, pending_actions):
++        if not self._test_only_operative_adoption and 'operative_test_only' in (current or {}).get('l0_state', {}):
++            raise ValueError('TEST_ONLY operative state requires explicit opt-in')
+         validate_boundary(current, self.caps, self.resource_caps)
+         internal = InternalState.from_dict(current) if current else InternalState()
+         local = internal.l0_state
+@@ -138,8 +140,14 @@
+             process['status'] = 'ACTIVE'
+             feedback = deepcopy(local.get('feedback', {}))
+             reference = feedback.get('next_relation_ref')
+-            read_relation = internal.relations.get(reference) if reference else None
++            operative_read = None
++            if self._test_only_operative_adoption:
++                read_relation, operative_read = self._read_operative_operands(internal, reference)
++            else:
++                read_relation = internal.relations.get(reference) if reference else None
+             expected = list(read_relation.get('outcomes', {})) if read_relation else []
++            prediction_context = (root in operative_read['relations'] if operative_read is not None
++                                  else reference == root)
+             if reference and read_relation is None:
+                 failure('INFORMATION_NOT_SIMULTANEOUSLY_AVAILABLE', 'relation_memory', 'read_relation',
+                         len(internal.relations), self.caps.relations, 1, [reference])
+@@ -151,10 +159,12 @@
+                 'publication_number': process['attempts'], 'experience': deepcopy(experience),
+                 'question': deepcopy(process['question']), 'consumed_feedback': feedback,
+                 'processing': {'requested_relation_ref': reference, 'read_succeeded': read_relation is not None,
+-                    'expected_outcomes': expected, 'same_context_as_prediction': reference == root,
+-                    'outcome_previously_observed': unit_id in expected if reference == root else None,
++                    'expected_outcomes': expected, 'same_context_as_prediction': prediction_context,
++                    'outcome_previously_observed': unit_id in expected if prediction_context else None,
+                     'consumed_limit_ids': [x['limit_id'] for x in frame.internal_observations]},
+                 'provisional': True, 'source': 'EXTERNAL_FIXED_MECHANISM'}
++            if operative_read is not None:
++                partial['processing']['operative_dependencies'] = deepcopy(operative_read)
+             process['last_information_sequence'] = frame.sequence_id
+             process['output'] = {'partial_id': partial['partial_id'], 'publication_number': process['attempts']}
+             journal.append(('RECURSIVE_PARTIAL_OUTPUT', deepcopy(partial)))
+@@ -165,15 +175,20 @@
+             # Evidence insertion changes the later read state. Capacity failure gives no fallback.
+             before_hash = digest(internal.relations)
+             relation = internal.relations.get(root)
++            relation_created = False
+             if relation is None:
+-                if len(internal.relations) >= self.caps.relations:
++                relation_used = len(internal.relations)
++                if operative_read is not None:
++                    relation_used += len(local['operative_test_only']['edges'])
++                if relation_used >= self.caps.relations:
+                     failure('RELATION_CAPACITY_REACHED', 'relation_memory', 'insert_relation',
+-                            len(internal.relations), self.caps.relations, len(internal.relations) + 1, [root])
++                            relation_used, self.caps.relations, relation_used + 1, [root])
+                 else:
+                     relation = {'relation_id': root, 'antecedent': experience['antecedent'],
+                         'action_code': action_code, 'outcomes': {}, 'evidence_count': 0,
+                         'last_sequence': frame.sequence_id, 'evidence_refs': []}
+                     internal.relations[root] = relation
++                    relation_created = True
+             operations = []
+             if relation is not None:
+                 if unit_id not in relation['outcomes'] and len(relation['outcomes']) >= self.caps.outcomes_per_relation:
+@@ -212,12 +227,15 @@
+                     'updater_source': 'EXTERNAL_FIXED_MECHANISM',
+                     'before_hash': before_hash, 'after_hash': result['model_after_hash']}))
+             local['feedback'] = {'integration_id': integration_id, 'partial_id': partial['partial_id'],
+-                'state_version': state_version, 'next_relation_ref': root,
++                'state_version': state_version, 'next_relation_ref': reference if operative_read is not None else root,
+                 'expected_outcomes': list(relation['outcomes']) if relation else [],
+                 'model_after_hash': result['model_after_hash'],
+                 'observed_limit_ids': partial['processing']['consumed_limit_ids']}
+             internal.latest_feedback = deepcopy(local['feedback'])
+             journal.append(('RECURSIVE_FEEDBACK_STORED', deepcopy(local['feedback'])))
++            if operative_read is not None and relation_created:
++                self._form_operative_dependencies(internal, operative_read, experience, partial,
++                                                 result, state_version, failure)
+         elif previous and delta['sample_gap']:
+             journal.append(('TEMPORAL_LINK_UNRESOLVED', {'frame_ids': [previous.frame_id, frame.frame_id],
+                 'reason': 'carrier_epoch_or_encoding_changed', 'action_ids': delta['after_action_ids']}))
