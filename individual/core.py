@@ -104,6 +104,8 @@ class ACore:
         native_preflight(database, getattr(self, '_native_config', None))
         from experimental.typed_operative_connection.channel import reject_foreign_mode as typed_preflight
         typed_preflight(database, getattr(self, '_typed_config', None))
+        from experimental.native_parameter_binding_extension.channel import reject_foreign_mode as binding_preflight
+        binding_preflight(database, getattr(self, '_binding_config', None))
         from experimental.operative_content.channel import reject_foreign_mode
         reject_foreign_mode(database, getattr(self, '_content_config', None))
         self._lease = ExperimentLease(database).acquire()
