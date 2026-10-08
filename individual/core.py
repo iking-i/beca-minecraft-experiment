@@ -37,7 +37,15 @@ class ACore:
                  session_label='Minecraft', initialize_lifetime=False, experiment_profile='formal_l0', physical_caps=None,
                  resource_caps=None, froi=False, froi_caps=None, froi_async=False, worker_factory=None,
                  live_body_connection=False, live_body_control='CANONICAL', organization_factory=None,
-                 full_history_enabled=True):
+                 full_history_enabled=True, test_only_operative=None):
+        self._test_only_operative = test_only_operative
+        if test_only_operative is None and (session_context or {}).get('operative_core_test_only') is not None:
+            raise ValueError('Reserved TEST_ONLY lifecycle metadata requires explicit mode')
+        if test_only_operative is not None:
+            from experimental.formall0_continuous.channel import validate_config
+            validate_config(database, test_only_operative, initialize_lifetime)
+            if froi or live_body_connection or policy is not None or experiment_profile != 'formal_l0':
+                raise ValueError('TEST_ONLY operative Core requires isolated formal_l0 without other modes')
         self._live_body_connection = live_body_connection
         self._live_interrupted = False
         if live_body_connection:
@@ -77,6 +85,15 @@ class ACore:
         else:
             self._engine = (FormalL0Engine(physical_caps, normalize_resource_caps(resource_caps))
                             if self._experiment_profile == 'formal_l0' else StructuralEngine(physical_caps))
+        from experimental.formall0_continuous.channel import preflight as operative_preflight
+        if test_only_operative is not None:
+            from experimental.formall0_continuous.channel import validate_origin
+            from experimental.formall0_operative.engine import TestOnlyFormalL0Engine
+            self._engine = TestOnlyFormalL0Engine(physical_caps, normalize_resource_caps(resource_caps),
+                                                test_only_operative_adoption=True)
+            if initialize_lifetime:
+                validate_origin(test_only_operative, self._engine)
+        operative_preflight(database, test_only_operative, self._engine)
         if self._experiment_profile == 'formal_l0':
             preflight(database, self._engine.caps, self._engine.resource_caps)
         else:
@@ -86,6 +103,10 @@ class ACore:
         try:
             if live_body_connection and Path(database).exists():
                 raise ValueError('Fresh BPC-LIVE-1 database was created by another writer')
+            if test_only_operative is not None:
+                from experimental.formall0_continuous.channel import validate_config
+                validate_config(database, test_only_operative, initialize_lifetime)
+            operative_preflight(database, test_only_operative, self._engine)
             preflight(database, self._engine.caps if self._experiment_profile == 'formal_l0' else None,
                       self._engine.resource_caps if self._experiment_profile == 'formal_l0' else None)
             self._store = EventStore(database, full_history_enabled=full_history_enabled)
@@ -94,7 +115,11 @@ class ACore:
             previous = self._store.latest_state()
             if (experiment_profile == 'legacy_policy_debug' or policy is not None) and previous and previous.internal_state.get('l0_state', {}).get('profile') == 'formal_l0':
                 raise ValueError('Formal lifetime cannot resume through legacy adaptation; use an independent debug fixture')
-            self._state = self._store.open_session({**(session_context or {}),
+            operative_context = {}
+            if test_only_operative is not None:
+                from experimental.formall0_continuous.channel import KEY, session_metadata
+                operative_context[KEY] = session_metadata(database)
+            self._state = self._store.open_session({**(session_context or {}), **operative_context,
                 'experiment_profile': self._experiment_profile, 'froi_enabled': froi,
                 'froi_caps': asdict(self._froi_caps) if froi else None}, session_label,
                 formal_caps=self._engine.caps if self._experiment_profile == 'formal_l0' else None,
@@ -119,6 +144,15 @@ class ACore:
         self._body_dead = False
         self._paused = False
         self._closed = False
+        if test_only_operative is not None and initialize_lifetime:
+            from experimental.formall0_continuous.channel import initialize_state
+            try:
+                initialize_state(self, test_only_operative)
+            except BaseException:
+                self._closed = True
+                self._store.close()
+                self._lease.release()
+                raise
         if live_body_connection:
             from .formal_live_body import FormalLiveBodyEngine
             from .live_body_structure import source_identity
@@ -142,7 +176,21 @@ class ACore:
             raise RuntimeError('A Core is closed')
         if changes.get('internal_state', {}).get('l0_state', {}).get('froi_detached_test_only'):
             raise ValueError('Detached FROI test state cannot be persisted to formal A')
-        if 'operative_test_only' in changes.get('internal_state', {}).get('l0_state', {}):
+        if getattr(self, '_test_only_operative', None) is not None:
+            from experimental.formall0_continuous.channel import validate_state
+            # Initialization validates its first supplied state; subsequent transitions
+            # require both the previous and next authoritative lifecycle to match.
+            if 'operative_core_test_only' in self._state.internal_state.get('l0_state', {}):
+                validate_state(self._store.path, self._test_only_operative, self._state, self._engine)
+                old_edges = self._state.internal_state['l0_state']['operative_test_only']['edges']
+                new_edges = changes.get('internal_state', self._state.internal_state).get('l0_state', {}).get('operative_test_only', {}).get('edges', [])
+                if any(edge not in new_edges for edge in old_edges):
+                    raise ValueError('Cannot erase committed operative dependencies')
+            validate_state(self._store.path, self._test_only_operative,
+                           replace(self._state, internal_state=changes.get('internal_state', self._state.internal_state)),
+                           self._engine)
+        elif ('operative_test_only' in changes.get('internal_state', {}).get('l0_state', {})
+              or 'operative_core_test_only' in changes.get('internal_state', {}).get('l0_state', {})):
             raise ValueError('TEST_ONLY operative state cannot be persisted to formal A')
         if self._experiment_profile == 'formal_l0':
             validate_boundary(self._state.internal_state, self._engine.caps, self._engine.resource_caps)
@@ -549,6 +597,9 @@ class ACore:
             self._next_observation = self._next_action
 
     def end_session(self, reason='manual_session_end', carrier_stop=False):
+        if self._test_only_operative is not None:
+            from experimental.formall0_continuous.channel import validate_state
+            validate_state(self._store.path, self._test_only_operative, self._state, self._engine)
         self._cancel_computation(reason)
         if self._closed:
             raise RuntimeError('A Core is closed')
@@ -560,11 +611,20 @@ class ACore:
         return self.state
 
     def begin_session(self, environment=None, label='Minecraft'):
+        if self._test_only_operative is not None:
+            from experimental.formall0_continuous.channel import validate_state
+            validate_state(self._store.path, self._test_only_operative, self._state, self._engine)
         if self._live_body_connection:
             raise RuntimeError('BPC-LIVE-1 cannot switch/restart its session')
         if self._closed or self._session_active:
             raise RuntimeError('End the current session before opening another')
-        self._state = self._store.open_session({**(environment or {}), 'experiment_profile': self._experiment_profile}, label, carrier_restart=False,
+        operative_context = {}
+        if self._test_only_operative is not None:
+            from experimental.formall0_continuous.channel import KEY, session_metadata
+            operative_context[KEY] = session_metadata(self._store.path)
+        elif (environment or {}).get('operative_core_test_only') is not None:
+            raise ValueError('Reserved TEST_ONLY lifecycle metadata requires explicit mode')
+        self._state = self._store.open_session({**(environment or {}), **operative_context, 'experiment_profile': self._experiment_profile}, label, carrier_restart=False,
             formal_caps=self._engine.caps if self._experiment_profile == 'formal_l0' else None,
             resource_caps=self._engine.resource_caps if self._experiment_profile == 'formal_l0' else None,
             runtime_status='paused' if self._paused else 'running' if self._bridge_status.get('connected') else 'waiting_for_bridge')

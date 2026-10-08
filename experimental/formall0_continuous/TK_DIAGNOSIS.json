@@ -1,0 +1,577 @@
+{
+  "failed_test": "tests/test_runtime_monitor.py::MonitorTests::test_window_can_open_idle_and_close_without_experiment",
+  "original_failure_boundary": "tkinter.Tk -> _tkinter.create -> tk.tcl -> ttk.tcl -> source ttk/utils.tcl; before MonitorWindow/Core construction",
+  "immediate_failure": "Tcl/Tk bootstrap reported script-read failure for ttk/utils.tcl",
+  "triggering_cause": "NOT_ESTABLISHED; no reproduction and no proof of permanent missing file, DLL damage, or test-order contamination",
+  "same_interpreter": {
+    "executable": "D:\\codex\\project\\我的世界\\.venv\\Scripts\\python.exe",
+    "base_prefix": "C:\\Users\\i\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python",
+    "version": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "tkinter_module": "C:\\Users\\i\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\tkinter\\__init__.py",
+    "extension": "C:\\Users\\i\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\DLLs\\_tkinter.pyd",
+    "TCL_VERSION": "8.6",
+    "TK_VERSION": "8.6",
+    "environment": {},
+    "tcl_patchlevel": "8.6.12",
+    "tk_patchlevel": "8.6.12",
+    "tcl_library": "C:\\Users\\i\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\tcl\\tcl8.6",
+    "tk_library": "C:/Users/i/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/tcl/tk8.6",
+    "ttk_library": "C:/Users/i/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/tcl/tk8.6/ttk",
+    "loaded_libraries": "",
+    "minimal_Tk": "PASS"
+  },
+  "minimal_tk": "PASS",
+  "repeated_minimal_tk": [
+    {
+      "iteration": 0,
+      "status": "PASS"
+    },
+    {
+      "iteration": 1,
+      "status": "PASS"
+    },
+    {
+      "iteration": 2,
+      "status": "PASS"
+    },
+    {
+      "iteration": 3,
+      "status": "PASS"
+    },
+    {
+      "iteration": 4,
+      "status": "PASS"
+    },
+    {
+      "iteration": 5,
+      "status": "PASS"
+    },
+    {
+      "iteration": 6,
+      "status": "PASS"
+    },
+    {
+      "iteration": 7,
+      "status": "PASS"
+    },
+    {
+      "iteration": 8,
+      "status": "PASS"
+    },
+    {
+      "iteration": 9,
+      "status": "PASS"
+    },
+    {
+      "iteration": 10,
+      "status": "PASS"
+    },
+    {
+      "iteration": 11,
+      "status": "PASS"
+    },
+    {
+      "iteration": 12,
+      "status": "PASS"
+    },
+    {
+      "iteration": 13,
+      "status": "PASS"
+    },
+    {
+      "iteration": 14,
+      "status": "PASS"
+    },
+    {
+      "iteration": 15,
+      "status": "PASS"
+    },
+    {
+      "iteration": 16,
+      "status": "PASS"
+    },
+    {
+      "iteration": 17,
+      "status": "PASS"
+    },
+    {
+      "iteration": 18,
+      "status": "PASS"
+    },
+    {
+      "iteration": 19,
+      "status": "PASS"
+    },
+    {
+      "iteration": 20,
+      "status": "PASS"
+    },
+    {
+      "iteration": 21,
+      "status": "PASS"
+    },
+    {
+      "iteration": 22,
+      "status": "PASS"
+    },
+    {
+      "iteration": 23,
+      "status": "PASS"
+    },
+    {
+      "iteration": 24,
+      "status": "PASS"
+    },
+    {
+      "iteration": 25,
+      "status": "PASS"
+    },
+    {
+      "iteration": 26,
+      "status": "PASS"
+    },
+    {
+      "iteration": 27,
+      "status": "PASS"
+    },
+    {
+      "iteration": 28,
+      "status": "PASS"
+    },
+    {
+      "iteration": 29,
+      "status": "PASS"
+    }
+  ],
+  "baseline_commit": "76fee923fd1ea2d3b4697e299f1c35f9d6c8817e",
+  "baseline_same_failure": "NOT_REPRODUCED; identical failing test passes at detached original HEAD",
+  "current_single": "PASS",
+  "baseline_single": "PASS",
+  "order_current": "28 PASS",
+  "order_baseline": "Monitor GUI tests PASS; 3 unrelated recording-option tests fail because detached checkout lacks ignored minecraft/config.json; no environment/test repair applied",
+  "original_environment_full": {
+    "status": "PASS",
+    "passed": 560,
+    "subtests_passed": 114,
+    "failed": 0,
+    "seconds": 330.44,
+    "test_exclusions": [],
+    "log": "history/tk-full-recheck.log"
+  },
+  "read_only_monitor_setup_probes": [
+    {
+      "test": "tests/test_runtime_monitor.py::MonitorTests::test_actual_launcher_monitor_button_does_not_launch_experiment_or_change_selection",
+      "time": 1791442538.3839242,
+      "cwd": "D:\\codex\\project\\我的世界",
+      "python": "D:\\codex\\project\\我的世界\\.venv\\Scripts\\python.exe",
+      "env": {},
+      "tkinter_file": null,
+      "tkinter_Tk_module": null,
+      "files": {
+        "tcl/tk8.6/tk.tcl": {
+          "size": 24266,
+          "sha256": "0f617d96cbf213296d7a5f7fcffbb4ae1149840d7d045211ef932e8dd66683e9"
+        },
+        "tcl/tk8.6/ttk/utils.tcl": {
+          "size": 8624,
+          "sha256": "d58610a34301bb6e61a60bec69a7cecf4c45c6a034a9fc123977174b586278be"
+        }
+      }
+    },
+    {
+      "test": "tests/test_runtime_monitor.py::MonitorTests::test_complete_order_requires_matching_new_frame_and_action_processing",
+      "time": 1791442538.6504812,
+      "cwd": "D:\\codex\\project\\我的世界",
+      "python": "D:\\codex\\project\\我的世界\\.venv\\Scripts\\python.exe",
+      "env": {},
+      "tkinter_file": "C:\\Users\\i\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\tkinter\\__init__.py",
+      "tkinter_Tk_module": "tkinter",
+      "files": {
+        "tcl/tk8.6/tk.tcl": {
+          "size": 24266,
+          "sha256": "0f617d96cbf213296d7a5f7fcffbb4ae1149840d7d045211ef932e8dd66683e9"
+        },
+        "tcl/tk8.6/ttk/utils.tcl": {
+          "size": 8624,
+          "sha256": "d58610a34301bb6e61a60bec69a7cecf4c45c6a034a9fc123977174b586278be"
+        }
+      }
+    },
+    {
+      "test": "tests/test_runtime_monitor.py::MonitorTests::test_ended_preserved_then_next_session_resets_counters",
+      "time": 1791442538.8334248,
+      "cwd": "D:\\codex\\project\\我的世界",
+      "python": "D:\\codex\\project\\我的世界\\.venv\\Scripts\\python.exe",
+      "env": {},
+      "tkinter_file": "C:\\Users\\i\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\tkinter\\__init__.py",
+      "tkinter_Tk_module": "tkinter",
+      "files": {
+        "tcl/tk8.6/tk.tcl": {
+          "size": 24266,
+          "sha256": "0f617d96cbf213296d7a5f7fcffbb4ae1149840d7d045211ef932e8dd66683e9"
+        },
+        "tcl/tk8.6/ttk/utils.tcl": {
+          "size": 8624,
+          "sha256": "d58610a34301bb6e61a60bec69a7cecf4c45c6a034a9fc123977174b586278be"
+        }
+      }
+    },
+    {
+      "test": "tests/test_runtime_monitor.py::MonitorTests::test_executed_without_renewed_world_input_waits",
+      "time": 1791442539.0025997,
+      "cwd": "D:\\codex\\project\\我的世界",
+      "python": "D:\\codex\\project\\我的世界\\.venv\\Scripts\\python.exe",
+      "env": {},
+      "tkinter_file": "C:\\Users\\i\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\tkinter\\__init__.py",
+      "tkinter_Tk_module": "tkinter",
+      "files": {
+        "tcl/tk8.6/tk.tcl": {
+          "size": 24266,
+          "sha256": "0f617d96cbf213296d7a5f7fcffbb4ae1149840d7d045211ef932e8dd66683e9"
+        },
+        "tcl/tk8.6/ttk/utils.tcl": {
+          "size": 8624,
+          "sha256": "d58610a34301bb6e61a60bec69a7cecf4c45c6a034a9fc123977174b586278be"
+        }
+      }
+    },
+    {
+      "test": "tests/test_runtime_monitor.py::MonitorTests::test_failure_not_success_and_unrelated_observations_do_not_complete",
+      "time": 1791442539.1566436,
+      "cwd": "D:\\codex\\project\\我的世界",
+      "python": "D:\\codex\\project\\我的世界\\.venv\\Scripts\\python.exe",
+      "env": {},
+      "tkinter_file": "C:\\Users\\i\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\tkinter\\__init__.py",
+      "tkinter_Tk_module": "tkinter",
+      "files": {
+        "tcl/tk8.6/tk.tcl": {
+          "size": 24266,
+          "sha256": "0f617d96cbf213296d7a5f7fcffbb4ae1149840d7d045211ef932e8dd66683e9"
+        },
+        "tcl/tk8.6/ttk/utils.tcl": {
+          "size": 8624,
+          "sha256": "d58610a34301bb6e61a60bec69a7cecf4c45c6a034a9fc123977174b586278be"
+        }
+      }
+    },
+    {
+      "test": "tests/test_runtime_monitor.py::MonitorTests::test_initial_attach_counts_entire_session_but_loads_only_tail_metadata",
+      "time": 1791442539.3236115,
+      "cwd": "D:\\codex\\project\\我的世界",
+      "python": "D:\\codex\\project\\我的世界\\.venv\\Scripts\\python.exe",
+      "env": {},
+      "tkinter_file": "C:\\Users\\i\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\tkinter\\__init__.py",
+      "tkinter_Tk_module": "tkinter",
+      "files": {
+        "tcl/tk8.6/tk.tcl": {
+          "size": 24266,
+          "sha256": "0f617d96cbf213296d7a5f7fcffbb4ae1149840d7d045211ef932e8dd66683e9"
+        },
+        "tcl/tk8.6/ttk/utils.tcl": {
+          "size": 8624,
+          "sha256": "d58610a34301bb6e61a60bec69a7cecf4c45c6a034a9fc123977174b586278be"
+        }
+      }
+    },
+    {
+      "test": "tests/test_runtime_monitor.py::MonitorTests::test_launcher_starts_independent_monitor_only",
+      "time": 1791442539.6742127,
+      "cwd": "D:\\codex\\project\\我的世界",
+      "python": "D:\\codex\\project\\我的世界\\.venv\\Scripts\\python.exe",
+      "env": {},
+      "tkinter_file": "C:\\Users\\i\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\tkinter\\__init__.py",
+      "tkinter_Tk_module": "tkinter",
+      "files": {
+        "tcl/tk8.6/tk.tcl": {
+          "size": 24266,
+          "sha256": "0f617d96cbf213296d7a5f7fcffbb4ae1149840d7d045211ef932e8dd66683e9"
+        },
+        "tcl/tk8.6/ttk/utils.tcl": {
+          "size": 8624,
+          "sha256": "d58610a34301bb6e61a60bec69a7cecf4c45c6a034a9fc123977174b586278be"
+        }
+      }
+    },
+    {
+      "test": "tests/test_runtime_monitor.py::MonitorTests::test_missing_action_identity_cannot_count_as_matched_execution",
+      "time": 1791442539.6801085,
+      "cwd": "D:\\codex\\project\\我的世界",
+      "python": "D:\\codex\\project\\我的世界\\.venv\\Scripts\\python.exe",
+      "env": {},
+      "tkinter_file": "C:\\Users\\i\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\tkinter\\__init__.py",
+      "tkinter_Tk_module": "tkinter",
+      "files": {
+        "tcl/tk8.6/tk.tcl": {
+          "size": 24266,
+          "sha256": "0f617d96cbf213296d7a5f7fcffbb4ae1149840d7d045211ef932e8dd66683e9"
+        },
+        "tcl/tk8.6/ttk/utils.tcl": {
+          "size": 8624,
+          "sha256": "d58610a34301bb6e61a60bec69a7cecf4c45c6a034a9fc123977174b586278be"
+        }
+      }
+    },
+    {
+      "test": "tests/test_runtime_monitor.py::MonitorTests::test_missing_initializing_corrupt_or_mismatched_database_retries",
+      "time": 1791442539.6847308,
+      "cwd": "D:\\codex\\project\\我的世界",
+      "python": "D:\\codex\\project\\我的世界\\.venv\\Scripts\\python.exe",
+      "env": {},
+      "tkinter_file": "C:\\Users\\i\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\tkinter\\__init__.py",
+      "tkinter_Tk_module": "tkinter",
+      "files": {
+        "tcl/tk8.6/tk.tcl": {
+          "size": 24266,
+          "sha256": "0f617d96cbf213296d7a5f7fcffbb4ae1149840d7d045211ef932e8dd66683e9"
+        },
+        "tcl/tk8.6/ttk/utils.tcl": {
+          "size": 8624,
+          "sha256": "d58610a34301bb6e61a60bec69a7cecf4c45c6a034a9fc123977174b586278be"
+        }
+      }
+    },
+    {
+      "test": "tests/test_runtime_monitor.py::MonitorTests::test_missing_selection_and_registered_only_are_idle",
+      "time": 1791442539.790833,
+      "cwd": "D:\\codex\\project\\我的世界",
+      "python": "D:\\codex\\project\\我的世界\\.venv\\Scripts\\python.exe",
+      "env": {},
+      "tkinter_file": "C:\\Users\\i\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\tkinter\\__init__.py",
+      "tkinter_Tk_module": "tkinter",
+      "files": {
+        "tcl/tk8.6/tk.tcl": {
+          "size": 24266,
+          "sha256": "0f617d96cbf213296d7a5f7fcffbb4ae1149840d7d045211ef932e8dd66683e9"
+        },
+        "tcl/tk8.6/ttk/utils.tcl": {
+          "size": 8624,
+          "sha256": "d58610a34301bb6e61a60bec69a7cecf4c45c6a034a9fc123977174b586278be"
+        }
+      }
+    },
+    {
+      "test": "tests/test_runtime_monitor.py::MonitorTests::test_new_input_failure_does_not_keep_displaying_previous_cycle_as_running",
+      "time": 1791442539.8733823,
+      "cwd": "D:\\codex\\project\\我的世界",
+      "python": "D:\\codex\\project\\我的世界\\.venv\\Scripts\\python.exe",
+      "env": {},
+      "tkinter_file": "C:\\Users\\i\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\tkinter\\__init__.py",
+      "tkinter_Tk_module": "tkinter",
+      "files": {
+        "tcl/tk8.6/tk.tcl": {
+          "size": 24266,
+          "sha256": "0f617d96cbf213296d7a5f7fcffbb4ae1149840d7d045211ef932e8dd66683e9"
+        },
+        "tcl/tk8.6/ttk/utils.tcl": {
+          "size": 8624,
+          "sha256": "d58610a34301bb6e61a60bec69a7cecf4c45c6a034a9fc123977174b586278be"
+        }
+      }
+    },
+    {
+      "test": "tests/test_runtime_monitor.py::MonitorTests::test_observation_is_not_complete_loop",
+      "time": 1791442539.8733823,
+      "cwd": "D:\\codex\\project\\我的世界",
+      "python": "D:\\codex\\project\\我的世界\\.venv\\Scripts\\python.exe",
+      "env": {},
+      "tkinter_file": "C:\\Users\\i\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\tkinter\\__init__.py",
+      "tkinter_Tk_module": "tkinter",
+      "files": {
+        "tcl/tk8.6/tk.tcl": {
+          "size": 24266,
+          "sha256": "0f617d96cbf213296d7a5f7fcffbb4ae1149840d7d045211ef932e8dd66683e9"
+        },
+        "tcl/tk8.6/ttk/utils.tcl": {
+          "size": 8624,
+          "sha256": "d58610a34301bb6e61a60bec69a7cecf4c45c6a034a9fc123977174b586278be"
+        }
+      }
+    },
+    {
+      "test": "tests/test_runtime_monitor.py::MonitorTests::test_pages_are_incremental_and_list_bounded_without_reading_state_snapshot",
+      "time": 1791442539.9993408,
+      "cwd": "D:\\codex\\project\\我的世界",
+      "python": "D:\\codex\\project\\我的世界\\.venv\\Scripts\\python.exe",
+      "env": {},
+      "tkinter_file": "C:\\Users\\i\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\tkinter\\__init__.py",
+      "tkinter_Tk_module": "tkinter",
+      "files": {
+        "tcl/tk8.6/tk.tcl": {
+          "size": 24266,
+          "sha256": "0f617d96cbf213296d7a5f7fcffbb4ae1149840d7d045211ef932e8dd66683e9"
+        },
+        "tcl/tk8.6/ttk/utils.tcl": {
+          "size": 8624,
+          "sha256": "d58610a34301bb6e61a60bec69a7cecf4c45c6a034a9fc123977174b586278be"
+        }
+      }
+    },
+    {
+      "test": "tests/test_runtime_monitor.py::MonitorTests::test_payload_cannot_cross_session_or_individual_boundary",
+      "time": 1791442541.2360225,
+      "cwd": "D:\\codex\\project\\我的世界",
+      "python": "D:\\codex\\project\\我的世界\\.venv\\Scripts\\python.exe",
+      "env": {},
+      "tkinter_file": "C:\\Users\\i\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\tkinter\\__init__.py",
+      "tkinter_Tk_module": "tkinter",
+      "files": {
+        "tcl/tk8.6/tk.tcl": {
+          "size": 24266,
+          "sha256": "0f617d96cbf213296d7a5f7fcffbb4ae1149840d7d045211ef932e8dd66683e9"
+        },
+        "tcl/tk8.6/ttk/utils.tcl": {
+          "size": 8624,
+          "sha256": "d58610a34301bb6e61a60bec69a7cecf4c45c6a034a9fc123977174b586278be"
+        }
+      }
+    },
+    {
+      "test": "tests/test_runtime_monitor.py::MonitorTests::test_read_only_queries_payload_and_close_cannot_modify_database",
+      "time": 1791442541.3378909,
+      "cwd": "D:\\codex\\project\\我的世界",
+      "python": "D:\\codex\\project\\我的世界\\.venv\\Scripts\\python.exe",
+      "env": {},
+      "tkinter_file": "C:\\Users\\i\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\tkinter\\__init__.py",
+      "tkinter_Tk_module": "tkinter",
+      "files": {
+        "tcl/tk8.6/tk.tcl": {
+          "size": 24266,
+          "sha256": "0f617d96cbf213296d7a5f7fcffbb4ae1149840d7d045211ef932e8dd66683e9"
+        },
+        "tcl/tk8.6/ttk/utils.tcl": {
+          "size": 8624,
+          "sha256": "d58610a34301bb6e61a60bec69a7cecf4c45c6a034a9fc123977174b586278be"
+        }
+      }
+    },
+    {
+      "test": "tests/test_runtime_monitor.py::MonitorTests::test_readonly_wal_poll_sees_commits_without_reopening_monitor",
+      "time": 1791442541.4627595,
+      "cwd": "D:\\codex\\project\\我的世界",
+      "python": "D:\\codex\\project\\我的世界\\.venv\\Scripts\\python.exe",
+      "env": {},
+      "tkinter_file": "C:\\Users\\i\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\tkinter\\__init__.py",
+      "tkinter_Tk_module": "tkinter",
+      "files": {
+        "tcl/tk8.6/tk.tcl": {
+          "size": 24266,
+          "sha256": "0f617d96cbf213296d7a5f7fcffbb4ae1149840d7d045211ef932e8dd66683e9"
+        },
+        "tcl/tk8.6/ttk/utils.tcl": {
+          "size": 8624,
+          "sha256": "d58610a34301bb6e61a60bec69a7cecf4c45c6a034a9fc123977174b586278be"
+        }
+      }
+    },
+    {
+      "test": "tests/test_runtime_monitor.py::MonitorTests::test_requested_is_not_executed_and_wrong_receipt_does_not_match",
+      "time": 1791442541.6280212,
+      "cwd": "D:\\codex\\project\\我的世界",
+      "python": "D:\\codex\\project\\我的世界\\.venv\\Scripts\\python.exe",
+      "env": {},
+      "tkinter_file": "C:\\Users\\i\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\tkinter\\__init__.py",
+      "tkinter_Tk_module": "tkinter",
+      "files": {
+        "tcl/tk8.6/tk.tcl": {
+          "size": 24266,
+          "sha256": "0f617d96cbf213296d7a5f7fcffbb4ae1149840d7d045211ef932e8dd66683e9"
+        },
+        "tcl/tk8.6/ttk/utils.tcl": {
+          "size": 8624,
+          "sha256": "d58610a34301bb6e61a60bec69a7cecf4c45c6a034a9fc123977174b586278be"
+        }
+      }
+    },
+    {
+      "test": "tests/test_runtime_monitor.py::MonitorTests::test_selected_individual_changed_re_attaches_without_writing_selection",
+      "time": 1791442541.7764874,
+      "cwd": "D:\\codex\\project\\我的世界",
+      "python": "D:\\codex\\project\\我的世界\\.venv\\Scripts\\python.exe",
+      "env": {},
+      "tkinter_file": "C:\\Users\\i\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\tkinter\\__init__.py",
+      "tkinter_Tk_module": "tkinter",
+      "files": {
+        "tcl/tk8.6/tk.tcl": {
+          "size": 24266,
+          "sha256": "0f617d96cbf213296d7a5f7fcffbb4ae1149840d7d045211ef932e8dd66683e9"
+        },
+        "tcl/tk8.6/ttk/utils.tcl": {
+          "size": 8624,
+          "sha256": "d58610a34301bb6e61a60bec69a7cecf4c45c6a034a9fc123977174b586278be"
+        }
+      }
+    },
+    {
+      "test": "tests/test_runtime_monitor.py::MonitorTests::test_session_detected_incremental_refresh_and_no_duplicate_counts",
+      "time": 1791442541.9944806,
+      "cwd": "D:\\codex\\project\\我的世界",
+      "python": "D:\\codex\\project\\我的世界\\.venv\\Scripts\\python.exe",
+      "env": {},
+      "tkinter_file": "C:\\Users\\i\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\tkinter\\__init__.py",
+      "tkinter_Tk_module": "tkinter",
+      "files": {
+        "tcl/tk8.6/tk.tcl": {
+          "size": 24266,
+          "sha256": "0f617d96cbf213296d7a5f7fcffbb4ae1149840d7d045211ef932e8dd66683e9"
+        },
+        "tcl/tk8.6/ttk/utils.tcl": {
+          "size": 8624,
+          "sha256": "d58610a34301bb6e61a60bec69a7cecf4c45c6a034a9fc123977174b586278be"
+        }
+      }
+    },
+    {
+      "test": "tests/test_runtime_monitor.py::MonitorTests::test_window_can_open_idle_and_close_without_experiment",
+      "time": 1791442542.1233394,
+      "cwd": "D:\\codex\\project\\我的世界",
+      "python": "D:\\codex\\project\\我的世界\\.venv\\Scripts\\python.exe",
+      "env": {},
+      "tkinter_file": "C:\\Users\\i\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\tkinter\\__init__.py",
+      "tkinter_Tk_module": "tkinter",
+      "files": {
+        "tcl/tk8.6/tk.tcl": {
+          "size": 24266,
+          "sha256": "0f617d96cbf213296d7a5f7fcffbb4ae1149840d7d045211ef932e8dd66683e9"
+        },
+        "tcl/tk8.6/ttk/utils.tcl": {
+          "size": 8624,
+          "sha256": "d58610a34301bb6e61a60bec69a7cecf4c45c6a034a9fc123977174b586278be"
+        }
+      }
+    },
+    {
+      "test": "tests/test_runtime_monitor.py::MonitorTests::test_wrong_order_or_missing_pre_request_processing_is_not_closed",
+      "time": 1791442542.4234717,
+      "cwd": "D:\\codex\\project\\我的世界",
+      "python": "D:\\codex\\project\\我的世界\\.venv\\Scripts\\python.exe",
+      "env": {},
+      "tkinter_file": "C:\\Users\\i\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\tkinter\\__init__.py",
+      "tkinter_Tk_module": "tkinter",
+      "files": {
+        "tcl/tk8.6/tk.tcl": {
+          "size": 24266,
+          "sha256": "0f617d96cbf213296d7a5f7fcffbb4ae1149840d7d045211ef932e8dd66683e9"
+        },
+        "tcl/tk8.6/ttk/utils.tcl": {
+          "size": 8624,
+          "sha256": "d58610a34301bb6e61a60bec69a7cecf4c45c6a034a9fc123977174b586278be"
+        }
+      }
+    }
+  ],
+  "validation_environment": {
+    "python_unchanged": true,
+    "dll_unchanged": true,
+    "copy_exact": true,
+    "file_count": 1265,
+    "TCL_LIBRARY": "C:\\Users\\i\\.codex\\visualizations\\2026\\10\\03\\01a10045-8063-70d3-b492-5e9242f9ab36\\formal-continuous-tk-validation-20261008\\tcl\\tcl8.6",
+    "TK_LIBRARY": "C:\\Users\\i\\.codex\\visualizations\\2026\\10\\03\\01a10045-8063-70d3-b492-5e9242f9ab36\\formal-continuous-tk-validation-20261008\\tcl\\tk8.6",
+    "binding": "only child verification process environment; no global/system environment or repository runtime change",
+    "manifest": "TK_LIBRARY_MANIFEST.json",
+    "minimal_and_current_and_baseline_single": "PASS"
+  },
+  "fix": "Environment-only verification stabilization: complete byte-identical Tcl/Tk script-library copy with explicit process-local library paths. No operative/runtime/test changes; not a demonstrated repair of the unknown original trigger.",
+  "original_not_testable_report": "history/tk_not_testable_original/VALIDATION.md and VALIDATION.json",
+  "raw_log_archive": "history/RAW_LOGS.json",
+  "skips_xfails_mocks_expected_value_changes": false
+}
