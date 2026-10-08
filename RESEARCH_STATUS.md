@@ -1,6 +1,19 @@
-## Latest closeout — Current State / Full Audit History decoupling real acceptance, 2026-10-08
+## Latest closeout — Operative Handoff TEST_ONLY, 2026-10-08
 
-**Current position: PASS / COMPLETED / FROZEN.**
+**PASS / COMPLETED / FROZEN.** Implementation/result anchor:
+`7ca0ccdfd73c7c5132d7f3de54571b21c9e9d279`.
+OH-T1–OH-T8 all PASS. Same structural type and non-privileged execution path;
+formed S1 is an ordinary TEST_ONLY dependency with normal reentry, edge-only
+ablation and structural reuse. This does not establish integration into formal A.
+
+Recorded regression: **502 passed / 114 subtests passed**; dedicated **19 passed**;
+frozen GSC-0 controls **23 passed**. Full scope, nonclaims and historical test-attempt
+record: [closeout](OPERATIVE_HANDOFF_TEST_ONLY_CLOSEOUT.md).
+Next experimental phase: **NOT_STARTED**; authorized continuation is read-only audit.
+
+## Historical closeout — Current State / Full Audit History decoupling real acceptance, 2026-10-08
+
+**Historical position: PASS / COMPLETED / FROZEN.**
 Infrastructure implementation is frozen at
 `0f8bf05a84ae68bd9aed66f738f9c4d3009edbe3`.
 Regression: **483 passed / 114 subtests passed**; `git diff --check` PASS.
@@ -130,45 +143,41 @@ next stage is started.
 
 # BECA-V0 — Current Research Status
 
-## Current next research question — Operative Handoff TEST_ONLY
-
-The next research question is now explicitly frozen, but implementation and execution have
-not started. See [OPERATIVE_HANDOFF_TEST_ONLY_SPEC.md](OPERATIVE_HANDOFF_TEST_ONLY_SPEC.md).
-
-Frozen question:
-
-> Can one creator-supplied initial operative structure S0 and one later internally formed
-> structure S1 of the same operative kind enter the same generic, non-privileged execution
-> mechanism, such that ordinary later recursion actually depends on S1?
-
-This follows the operative-structure audit result that generic formed-edge execution
-semantics are absent in the current runtime. The purpose is to test the minimum
-creator-to-individual authorship handoff at the structural level, not behavioral
-authorship.
-
-The first-individual continuation condition is separately clarified by current theory:
-`Continuity(A) != 0` may be a protected startup condition, including an initially
-unreachable death/termination transition. It is not evidence of an internally authored
-survival goal and is not assumed permanent.
-
-Current lifecycle:
-
-```text
-QUESTION_FROZEN
-DESIGN_FROZEN
-IMPLEMENTATION_NOT_STARTED
-EXPERIMENT_NOT_STARTED
-MINECRAFT_NOT_REQUIRED
-```
-
-
+## Current stage — Operative Handoff TEST_ONLY
 
 **Status date:** 2026-10-08
+**PASS / COMPLETED / FROZEN**; implementation/result anchor:
+`7ca0ccdfd73c7c5132d7f3de54571b21c9e9d279`.
 
-**Current stage: Current State / Full Audit History decoupling and optional Full History recording; PASS / COMPLETED / FROZEN.**
-Implementation evidence: `0f8bf05a84ae68bd9aed66f738f9c4d3009edbe3`.
-Real acceptance is summarized above and frozen in
-`CURRENT_STATE_FULL_HISTORY_CONVERSATION_HANDOFF.md`. No next research phase is started by this closeout.
+The frozen question and acceptance criteria remain in
+`OPERATIVE_HANDOFF_TEST_ONLY_SPEC.md`. Its preregistration status is historical;
+implementation and validation are completed, not pending.
+
+Within the frozen minimal TEST_ONLY scope, an origin-supplied operative edge and a later internally formed edge of the same structural kind entered the same non-privileged generic execution mechanism; the later formed edge became an ordinary recursive dependency, survived normal reentry, and was causally necessary under edge ablation.
+
+OH-T1–OH-T8: PASS. Same Edge type and execution path; no executor provenance
+privilege or specialized consumer; actual edge-ablation dependency and reuse
+established only in this isolated scope. Recorded tests: dedicated 19 passed;
+GSC-0 controls 23 passed; full regression 502 passed / 114 subtests passed.
+Diff check, JSON and report reproduction PASS; the original temporary-directory
+setup failure remains in `experimental/operative_handoff/VALIDATION.*`.
+
+TEST_ONLY M is not the proven final FormalL0 mechanism. Formal A / CurrentStructure
+integration and generic operative reentry, real-A internal operative authorship,
+body/action/parameter authorship, behavioral causal closure, Minecraft-facing
+operative handoff, autonomous goals, survival goals, L1/upward recursion and
+universal Perfect Recursion remain NOT_ESTABLISHED.
+
+The first-individual continuation clarification remains unchanged:
+`Continuity(A) != 0` can be a protected origin condition, not a self-authored
+survival goal or permanent constraint.
+
+Next experimental phase: **NOT_STARTED**. Only the separately authorized read-only
+Formal A interface audit may follow this closeout; no runtime implementation or
+new experiment is authorized. All old results retain their historical scopes.
+
+See `OPERATIVE_HANDOFF_TEST_ONLY_CLOSEOUT.md` and
+`OPERATIVE_HANDOFF_TEST_ONLY_CONVERSATION_HANDOFF.md`.
 
 ## Historical BPC-LIVE-1 status
 

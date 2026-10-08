@@ -1,93 +1,76 @@
 {
   "current_research_phase": {
-    "name": "Current State / Full Audit History decoupling and optional Full History recording",
+    "name": "OPERATIVE_HANDOFF_TEST_ONLY",
     "lifecycle": "COMPLETED_FROZEN",
+    "status": "PASS",
     "completed": true,
     "frozen": true,
-    "status": "PASS",
-    "implementation_commit": "0f8bf05a84ae68bd9aed66f738f9c4d3009edbe3",
-    "regression": {
-      "passed": 483,
-      "subtests_passed": 114,
-      "git_diff_check": "PASS"
+    "implementation_commit": "7ca0ccdfd73c7c5132d7f3de54571b21c9e9d279",
+    "scope": "minimal isolated TEST_ONLY temporal-frontier formation and structural dependency execution",
+    "criteria": {
+      "OH_T1": "PASS",
+      "OH_T2": "PASS",
+      "OH_T3": "PASS",
+      "OH_T4": "PASS",
+      "OH_T5": "PASS",
+      "OH_T6": "PASS",
+      "OH_T7": "PASS",
+      "OH_T8": "PASS"
     },
-    "real_acceptance": {
-      "status": "PASS",
-      "test_individual_scope": "same TEST A across all three real runs",
-      "segments": [
-        {
-          "full_history": "OFF",
-          "from_state_version": 163,
-          "to_state_version": 200
-        },
-        {
-          "full_history": "OFF",
-          "resumed": true,
-          "from_state_version": 200,
-          "to_state_version": 243
-        },
-        {
-          "full_history": "ON",
-          "resumed": true,
-          "from_state_version": 243,
-          "to_state_version": 281
-        }
-      ],
-      "recording_resumed_at_state_version": 244,
-      "full_history_off_appends_audit_history": false,
-      "off_to_on_backfill": false,
-      "audit_gap_preserved": true,
-      "audit_gap_classified_as_corruption": false,
-      "controlled_termination_all_three_runs": true,
-      "core_exit_code": 0,
-      "bridge_exit_code": 0,
-      "first_off_segment_inputs": 8,
-      "auxiliary_input_target": 12,
-      "budget_extended_to_reach_auxiliary_target": false
+    "accepted_claim": "Within the frozen minimal TEST_ONLY scope, an origin-supplied operative edge and a later internally formed edge of the same structural kind entered the same non-privileged generic execution mechanism; the later formed edge became an ordinary recursive dependency, survived normal reentry, and was causally necessary under edge ablation.",
+    "same_edge_type": true,
+    "same_execution_path": true,
+    "provenance_used_by_executor": false,
+    "specialized_consumer_used": false,
+    "edge_ablation_changes_actual_path": true,
+    "structural_reuse": true,
+    "verification": {
+      "dedicated_passed": 19,
+      "gsc0_controls_passed": 23,
+      "full_passed": 502,
+      "full_subtests_passed": 114,
+      "diff_check": "PASS",
+      "JSON": "PASS",
+      "report_reproduction": "PASS",
+      "record": "experimental/operative_handoff/VALIDATION.json",
+      "initial_full_setup_error_preserved": true
     },
-    "boundary": {
-      "CURRENT_STATE_FULL_HISTORY_DECOUPLING": "PASS",
-      "FULL_HISTORY_OPTION": "PASS",
-      "SAME_A_RESUME_WITH_HISTORY_OFF": "PASS",
-      "OFF_TO_OFF_TO_ON": "PASS",
-      "CURRENT_STATE_AUTHORITY": "ALWAYS_PERSISTED",
-      "FULL_AUDIT_HISTORY": "OPTIONAL_OBSERVER_RECORD",
-      "AUDIT_GAP": "LEGITIMATE_RECORDING_ABSENCE_NOT_CORRUPTION"
+    "nonclaims": {
+      "FORMAL_A_INTEGRATION": "NOT_ESTABLISHED",
+      "CURRENTSTRUCTURE_INTEGRATION": "NOT_ESTABLISHED",
+      "FORMALL0_GENERIC_OPERATIVE_REENTRY": "NOT_ESTABLISHED",
+      "REAL_A_INTERNAL_OPERATIVE_AUTHORSHIP": "NOT_ESTABLISHED",
+      "BODY_EXPRESSION_AUTHORSHIP": "NOT_ESTABLISHED",
+      "ACTION_CODE_AUTHORSHIP": "NOT_ESTABLISHED",
+      "PARAMETER_AUTHORSHIP": "NOT_ESTABLISHED",
+      "BEHAVIORAL_CAUSAL_CLOSURE": "NOT_ESTABLISHED",
+      "MINECRAFT_WORLD_FACING_OPERATIVE_HANDOFF": "NOT_ESTABLISHED",
+      "AUTONOMOUS_GOAL_FORMATION": "NOT_ESTABLISHED",
+      "SURVIVAL_GOAL": "NOT_ESTABLISHED",
+      "L1 / UPWARD_RECURSION": "NOT_ESTABLISHED",
+      "UNIVERSAL_PERFECT_RECURSION": "NOT_ESTABLISHED"
     },
-    "unchanged": {
-      "formal_selection": true,
-      "canonical_mainline_A_state_and_history": true,
-      "FROI": true,
-      "sampler_binder": true,
-      "body": true
-    },
-    "prior_sandbox_EACCES_attempt": "NOT_TESTABLE",
-    "local_evidence": [
-      "storage/recording-option-validation/run-20261007-63745/VALIDATION.md",
-      "storage/recording-option-validation/run-20261007-63745/ACCEPTANCE.json"
-    ],
-    "handoff": "CURRENT_STATE_FULL_HISTORY_CONVERSATION_HANDOFF.md",
-    "next_research_phase_started": false,
-    "next_research_question_defined_by_this_closeout": false
+    "formal_runtime_changed": false,
+    "minecraft_run": false,
+    "new_a_created": false,
+    "formal_final_mechanism_established": false,
+    "closeout": "OPERATIVE_HANDOFF_TEST_ONLY_CLOSEOUT.md",
+    "handoff": "OPERATIVE_HANDOFF_TEST_ONLY_CONVERSATION_HANDOFF.md",
+    "next_research_phase_started": false
   },
   "next_phase_boundary": {
-    "status": "QUESTION_AND_DESIGN_FROZEN_IMPLEMENTATION_NOT_STARTED",
-    "question": "Can creator-supplied S0 and later internally formed S1 of the same operative kind use the same non-privileged generic execution mechanism so ordinary later recursion causally depends on S1?",
-    "specification": "OPERATIVE_HANDOFF_TEST_ONLY_SPEC.md",
-    "boundary_only": true,
-    "design_started": true,
-    "design_frozen": true,
+    "status": "NOT_STARTED",
     "implementation_started": false,
     "experiment_started": false,
     "stage_started": false,
-    "implementation_authorized_in_handoff": false,
+    "authorized_current_activity": "READ_ONLY_FORMAL_A_GENERIC_OPERATIVE_INTEGRATION_AUDIT",
+    "audit_authorizes_runtime_implementation": false,
     "Minecraft_execution_started": false
   },
   "next_work": [
-    "Preserve all frozen prior results and the Current State / Full Audit History PASS",
-    "Use OPERATIVE_HANDOFF_TEST_ONLY_SPEC.md as the sole next-question boundary",
-    "Do not run Minecraft or connect body expression for this stage",
-    "Implementation remains not started until explicitly authorized"
+    "Preserve the frozen Operative Handoff TEST_ONLY PASS and all prior scoped results",
+    "Perform only the separately authorized read-only Formal A operative integration audit",
+    "No formal runtime integration, new experiment, Minecraft run, body expression or new A is authorized"
   ],
   "status_date": "2026-10-08",
   "operative_connection_interpretation": {
@@ -605,7 +588,7 @@
       "No guarantee of equivalence to a long-history individual"
     ]
   },
-  "prior_closeout_index_scope": "current_research_phase records the Current State / Full Audit History decoupling real acceptance; historical_long_run_current_structure_closeout preserves the prior long-run current-structure validation; current_checkpoint / repository_state_audit / next_research_boundary retain the historical Successor-0 checkpoint; historical_research_phases retain BPC-0, BPC-R1 and BPC-R2; historical_bpc_live_1_closeout_checkpoint preserves BPC-LIVE-1",
+  "prior_closeout_index_scope": "current_research_phase records Operative Handoff TEST_ONLY; historical_current_state_full_history_closeout preserves the prior Current State / Full Audit History PASS; all other historical checkpoints and evidence retain their original scopes. historical_operative_handoff_preregistration retains the pre-implementation index.",
   "historical_bpc_live_1_next_phase_boundary": {
     "status": "NOT_STARTED",
     "question": "NOT_DEFINED_IN_THIS_CLOSEOUT",
@@ -904,7 +887,7 @@
     "runtime_changed": false
   },
   "operative_handoff_test_only": {
-    "status": "DESIGN_FROZEN_IMPLEMENTATION_NOT_STARTED",
+    "status": "PASS / COMPLETED / FROZEN",
     "question_frozen": true,
     "specification": "OPERATIVE_HANDOFF_TEST_ONLY_SPEC.md",
     "scope": "TEST_ONLY structural operative handoff",
@@ -920,6 +903,127 @@
       "OH-T6",
       "OH-T7",
       "OH-T8"
-    ]
+    ],
+    "implementation_commit": "7ca0ccdfd73c7c5132d7f3de54571b21c9e9d279",
+    "result_report": "experimental/operative_handoff/VALIDATION.json",
+    "closeout": "OPERATIVE_HANDOFF_TEST_ONLY_CLOSEOUT.md",
+    "handoff": "OPERATIVE_HANDOFF_TEST_ONLY_CONVERSATION_HANDOFF.md",
+    "implementation_started": true,
+    "experiment_completed": true,
+    "criteria": {
+      "OH_T1": "PASS",
+      "OH_T2": "PASS",
+      "OH_T3": "PASS",
+      "OH_T4": "PASS",
+      "OH_T5": "PASS",
+      "OH_T6": "PASS",
+      "OH_T7": "PASS",
+      "OH_T8": "PASS"
+    }
+  },
+  "historical_current_state_full_history_closeout": {
+    "name": "Current State / Full Audit History decoupling and optional Full History recording",
+    "lifecycle": "COMPLETED_FROZEN",
+    "completed": true,
+    "frozen": true,
+    "status": "PASS",
+    "implementation_commit": "0f8bf05a84ae68bd9aed66f738f9c4d3009edbe3",
+    "regression": {
+      "passed": 483,
+      "subtests_passed": 114,
+      "git_diff_check": "PASS"
+    },
+    "real_acceptance": {
+      "status": "PASS",
+      "test_individual_scope": "same TEST A across all three real runs",
+      "segments": [
+        {
+          "full_history": "OFF",
+          "from_state_version": 163,
+          "to_state_version": 200
+        },
+        {
+          "full_history": "OFF",
+          "resumed": true,
+          "from_state_version": 200,
+          "to_state_version": 243
+        },
+        {
+          "full_history": "ON",
+          "resumed": true,
+          "from_state_version": 243,
+          "to_state_version": 281
+        }
+      ],
+      "recording_resumed_at_state_version": 244,
+      "full_history_off_appends_audit_history": false,
+      "off_to_on_backfill": false,
+      "audit_gap_preserved": true,
+      "audit_gap_classified_as_corruption": false,
+      "controlled_termination_all_three_runs": true,
+      "core_exit_code": 0,
+      "bridge_exit_code": 0,
+      "first_off_segment_inputs": 8,
+      "auxiliary_input_target": 12,
+      "budget_extended_to_reach_auxiliary_target": false
+    },
+    "boundary": {
+      "CURRENT_STATE_FULL_HISTORY_DECOUPLING": "PASS",
+      "FULL_HISTORY_OPTION": "PASS",
+      "SAME_A_RESUME_WITH_HISTORY_OFF": "PASS",
+      "OFF_TO_OFF_TO_ON": "PASS",
+      "CURRENT_STATE_AUTHORITY": "ALWAYS_PERSISTED",
+      "FULL_AUDIT_HISTORY": "OPTIONAL_OBSERVER_RECORD",
+      "AUDIT_GAP": "LEGITIMATE_RECORDING_ABSENCE_NOT_CORRUPTION"
+    },
+    "unchanged": {
+      "formal_selection": true,
+      "canonical_mainline_A_state_and_history": true,
+      "FROI": true,
+      "sampler_binder": true,
+      "body": true
+    },
+    "prior_sandbox_EACCES_attempt": "NOT_TESTABLE",
+    "local_evidence": [
+      "storage/recording-option-validation/run-20261007-63745/VALIDATION.md",
+      "storage/recording-option-validation/run-20261007-63745/ACCEPTANCE.json"
+    ],
+    "handoff": "CURRENT_STATE_FULL_HISTORY_CONVERSATION_HANDOFF.md",
+    "next_research_phase_started": false,
+    "next_research_question_defined_by_this_closeout": false
+  },
+  "historical_operative_handoff_preregistration": {
+    "next_phase_boundary": {
+      "status": "QUESTION_AND_DESIGN_FROZEN_IMPLEMENTATION_NOT_STARTED",
+      "question": "Can creator-supplied S0 and later internally formed S1 of the same operative kind use the same non-privileged generic execution mechanism so ordinary later recursion causally depends on S1?",
+      "specification": "OPERATIVE_HANDOFF_TEST_ONLY_SPEC.md",
+      "boundary_only": true,
+      "design_started": true,
+      "design_frozen": true,
+      "implementation_started": false,
+      "experiment_started": false,
+      "stage_started": false,
+      "implementation_authorized_in_handoff": false,
+      "Minecraft_execution_started": false
+    },
+    "operative_handoff_test_only": {
+      "status": "DESIGN_FROZEN_IMPLEMENTATION_NOT_STARTED",
+      "question_frozen": true,
+      "specification": "OPERATIVE_HANDOFF_TEST_ONLY_SPEC.md",
+      "scope": "TEST_ONLY structural operative handoff",
+      "minecraft_required": false,
+      "body_expression_in_scope": false,
+      "behavioral_authorship_claimed": false,
+      "acceptance_tests": [
+        "OH-T1",
+        "OH-T2",
+        "OH-T3",
+        "OH-T4",
+        "OH-T5",
+        "OH-T6",
+        "OH-T7",
+        "OH-T8"
+      ]
+    }
   }
 }

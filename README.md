@@ -10,7 +10,27 @@
 
 ## 当前研究状态
 
-**最新 closeout（2026-10-08）：Current State / Full Audit History 解耦与 Full History 可选记录真实验收已完成，PASS / COMPLETED / FROZEN。**
+**最新 closeout（2026-10-08）：OPERATIVE_HANDOFF_TEST_ONLY = PASS / COMPLETED / FROZEN。**
+实现与结果冻结提交：`7ca0ccdfd73c7c5132d7f3de54571b21c9e9d279`。
+OH-T1–OH-T8 全部 PASS；专项 19 passed，冻结 GSC-0 controls 23 passed，
+完整回归 502 passed / 114 subtests passed；diff-check / JSON / report reproduction PASS。
+
+在最小 TEST_ONLY witness 中，初始提供与后来内部形成的同类型 operative edge
+进入同一非特权执行机制；形成的边成为普通递归依赖，并通过 normal reentry、
+edge-only ablation 和 structural reuse 验证。执行器不读取 provenance，也不依赖
+specialized consumer。**TEST_ONLY M 不是已证明 FormalL0 应采用的最终机制。**
+
+这不证明正式 A / CurrentStructure 接入、FormalL0 generic operative reentry、
+真实 A 内部 operative 作者权、身体/动作/参数作者权、behavioral causal closure、
+真实 Minecraft operative handoff、自主目标、生存目标、L1/upward recursion 或通用
+Perfect Recursion。下一实验阶段仍为 **NOT_STARTED**；只允许已授权的只读接入审计。
+
+见 [closeout](OPERATIVE_HANDOFF_TEST_ONLY_CLOSEOUT.md) 和
+[conversation handoff](OPERATIVE_HANDOFF_TEST_ONLY_CONVERSATION_HANDOFF.md)。
+原 BPC/FROI/Successor/GSC/CEC 及 Current State / Full Audit History 证据保持冻结。
+
+
+**历史 closeout（2026-10-08）：Current State / Full Audit History 解耦与 Full History 可选记录真实验收已完成，PASS / COMPLETED / FROZEN。**
 基础设施冻结提交 `0f8bf05a84ae68bd9aed66f738f9c4d3009edbe3`；完整回归
 **483 passed / 114 subtests passed**，`git diff --check` PASS。独立真实验收使用同一测试 A：
 **OFF A163→A200；OFF 恢复 A200→A243；ON 恢复 A243→A281**。OFF 期间完整审计历史不追加，
@@ -47,7 +67,7 @@ Core sampled peak 86.39453125 MiB，未复现 512 MiB `core_ram_limit`。
 
 ### 历史 BPC-LIVE-1 closeout 与解释纠正
 
-以下保留此前阶段的状态、范围与证据，不替代上面的最新 Current State / Full Audit History closeout。
+以下保留此前阶段的状态、范围与证据，不替代上面的最新 Operative Handoff TEST_ONLY closeout。
 
 **研究解释已纠正（2026-10-07）：** BPC-LIVE-1 仍为历史限定范围内的
 **PASS / COMPLETED / FROZEN**，冻结提交为
