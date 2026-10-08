@@ -1,24 +1,31 @@
-## Latest closeout — FormalL0 Operative Adoption TEST_ONLY, 2026-10-08
+## Latest closeout — Formal A Continuous Operative Reentry TEST_ONLY, 2026-10-08
 
-**FORMALL0_OPERATIVE_ADOPTION_TEST_ONLY = PASS / COMPLETED / FROZEN**（2026-10-08）。
-实现/验证锚点：`8b33097b746931b788ab5e72de66dd483af18edc`；FA-T1～FA-T10 全部 PASS。
-已记录专项 **30 passed**、相关 **99 passed / 24 subtests**、完整回归
-**532 passed / 114 subtests**；冻结 FormalL0 源码哈希 MATCH，默认 runtime 不变。
-本次收口核对既有证据，不重跑实验或测试。
+**FORMAL_A_CONTINUOUS_OPERATIVE_REENTRY = PASS / COMPLETED / FROZEN**（2026-10-08）。
+实现/验证锚点：`1e28a00a401681efb304ec518ed672a12cea901f`；CR-T1～CR-T10 全部 PASS。
+已记录专项 **28 passed**、相关 **161 passed / 23 subtests**、完整回归
+**560 passed / 114 subtests**；13 项冻结源码哈希 MATCH，默认运行行为保持不变。
+本次仅核对既有证据并收口，不重跑实验或测试。
 
-最强结论仅限隔离派生 FormalL0 引擎：S0 与历史形成的 S1 在真实测试 InternalState
-中使用相同 representation / execution，S1 持久恢复并自然改变后续 ordinary advance
-的实际操作数和比较；S1-only ablation、provenance neutrality 与重复复用均成立。
-这不证明 canonical FormalL0、连续真实 A 或 Core/EventStore 已接入；不证明
-Minecraft 作者权、behavioral causal closure 或 L1。迁移前 FA-T9 FAIL 与源码哈希
-冲突原样保留，所有旧冻结结果不改写。
+在独立 TEST_ONLY ACore 生命周期中，同一个 A 的合成输入实际经历形成了 operative structure S1；S1 被原子写入权威 Current State，跨真实进程恢复后无需重新形成，即可在正常 ACore 状态转换中成为实际运行依赖。S0 与 S1 使用相同表示和执行机制；S1-only ablation 改变实际计算，来源标签不赋予执行特权，完整回归通过。
+输入为 synthetic observations，使用 FakeBridge；不是正式 mainline A 或 Minecraft 实验。
+每个 ON/OFF witness 各自保持同一个测试个体、同一数据库和递增 state version；
+OFF 同样恢复 S1，不依赖 Full Audit History。进程重启后的首帧有既有 carrier gap，
+后续普通 advance 实际使用 S1；不将 gap 改写为成功处理。
 
-见 [closeout](FORMALL0_OPERATIVE_ADOPTION_TEST_ONLY_CLOSEOUT.md) 与
-[conversation handoff](FORMALL0_OPERATIVE_ADOPTION_TEST_ONLY_CONVERSATION_HANDOFF.md)。
+原始 **NOT_TESTABLE** 报告和 Tcl/Tk 失败日志保留；`ttk/utils.tcl` 读取错误的
+具体触发原因仍 **NOT_ESTABLISHED**，独立验证环境通过不等于根因已查明。
+默认 FormalL0 adoption、正式 mainline A adoption、身体表达作者权、自主动作选择、
+自主目标、behavioral causal closure、L1/upward recursion 仍未证明。
+旧 FormalL0 adoption / OH / BPC / FROI / GSC / CEC / Successor 和持久化结果不改写。
 
-下一研究问题仅冻结：在不改变原有冻结 FormalL0 的前提下，如何让已经通过 TEST_ONLY 的 operative adoption 通过明确版本化的实验执行路径进入 ACore 和权威 Current State，使同一个实验个体在连续状态转换中真正使用后来形成的 operative structure？
-边界：`ACore → authoritative Current State → versioned operative engine → formation + persistence → next ordinary advance → formed operative dependency`。
-下一实现/实验 **NOT_STARTED**；本轮不设计、不实施、不运行 Minecraft。
+见 [closeout](FORMAL_A_CONTINUOUS_OPERATIVE_REENTRY_CLOSEOUT.md) 与
+[conversation handoff](FORMAL_A_CONTINUOUS_OPERATIVE_REENTRY_CONVERSATION_HANDOFF.md)。
+
+下一研究问题仅冻结：**已经由同一个 A 的实际经历形成、持续保存并正常重入的内部 operative structure，能否进一步参与 A 对外表达内容的形成，并通过结构消融证明其因果作用？**
+下一阶段首先核对 ACore 身体表达准备路径、外部 selector、action code/参数绑定、
+冻结 BPC 身体接口边界以及内部结构能否成为实际表达操作数。
+不得预设固定 S1-to-action 映射；内部计算受影响不等于动作内容已由内部形成。
+下一阶段 design / implementation / experiment **NOT_STARTED**；不要求直接运行 Minecraft。
 
 ## Historical closeout — Operative Handoff TEST_ONLY, 2026-10-08
 
@@ -165,7 +172,9 @@ next stage is started.
 
 # BECA-V0 — Current Research Status
 
-## Current stage — FormalL0 Operative Adoption TEST_ONLY
+## Historical stage — FormalL0 Operative Adoption TEST_ONLY
+
+The following is the preserved 8b33097 / 76fee923 checkpoint, including its then-next Core question, not current authorization. The scoped Core integration question is now resolved by the independent TEST_ONLY phase above; its old nonclaims are not rewritten.
 
 **FORMALL0_OPERATIVE_ADOPTION_TEST_ONLY = PASS / COMPLETED / FROZEN**（2026-10-08）。
 实现/验证锚点：`8b33097b746931b788ab5e72de66dd483af18edc`；FA-T1～FA-T10 全部 PASS。
@@ -857,9 +866,11 @@ Local evidence: `storage/validation/CROSS-ACTOR-REIFICATION-002/validation.json`
 
 ```text
 Perfect Recursion v0.9                 conceptual architecture; retained
-FormalL0 operative adoption TEST_ONLY   PASS / COMPLETED / FROZEN; isolated derived engine
-Canonical/live A/Core adoption           NOT_ESTABLISHED
-Next Core/current-state question         QUESTION_FROZEN; implementation/experiment NOT_STARTED
+Formal A continuous operative reentry   PASS / COMPLETED / FROZEN; isolated TEST_ONLY ACore lifecycle
+Authoritative Current State / S1 recovery VALIDATED; no reformation or full-history replay
+FormalL0 operative adoption TEST_ONLY    Historical PASS / COMPLETED / FROZEN; isolated derived engine
+Default/mainline A adoption              NOT_ESTABLISHED
+Next outward-expression question         QUESTION_FROZEN; design/implementation/experiment NOT_STARTED
 World Entry                             PASSED within frozen scope
 FormalL0 history -> recursive read      VALIDATED
 Behavioral Causal Closure               NOT YET PASSED; historical FAILED / diagnostic_partial
