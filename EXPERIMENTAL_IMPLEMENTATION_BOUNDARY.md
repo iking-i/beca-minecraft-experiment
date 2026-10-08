@@ -213,6 +213,18 @@ Preserve:
 
 Do not create a fresh database merely because a new run begins.
 
+
+### Database scope across independent experiments (2026-10-09 clarification)
+
+The lifetime/session continuity rule above applies **within one experiment-specific individual**, not across every independently designed research stage. The eventual continuously operating formal A is a **target outcome**, not a pre-existing identity that all intermediate tests must share.
+
+- **New independent experiment:** normally initialize a fresh isolated database and test-individual identity, unless the explicitly scoped experiment requires an existing historical witness, replay, or controlled continuation; record that exception and its provenance.
+- **Same experiment continued:** retain that experiment's database and current state across runs, sessions, process restarts, and persistence tests as required. Do not create a replacement merely because the carrier restarts.
+- **Final continuing A:** only after it is explicitly established as the experimental outcome, preserve and resume its database for ongoing operation. Earlier TEST_ONLY databases do not become that A by implication.
+- **Ambiguous or incompatible requirements:** stop and confirm database selection with the user before initializing, overwriting, migrating, replacing, or deleting any existing experimental state. Never silently operate on another experiment's canonical history.
+
+These are engineering/isolation/recordkeeping rules, **not** new theoretical invariants, empirical findings, PASS criteria, database-sharing requirements, or runtime changes. The existing historical text below retains its original stage-specific scope; no prior evidence is reclassified.
+
 ## 9. Canonical history
 
 A normal continuation may look like:

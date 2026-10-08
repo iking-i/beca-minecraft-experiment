@@ -1210,3 +1210,31 @@ Those remain open. Do not invent them from this section.
 
 **Signed: 四号**
 
+---
+
+## 31. Independent experiment databases and the eventual formal A
+
+**Status:** user-confirmed experiment-management rule, not a Perfect Recursion axiom, implementation mechanism, empirical result, or new acceptance criterion.  
+**Scope:** database choice across independent experiments, sessions, isolated tests, and eventual continuing operation.
+
+The user's clarification is that **the formal A is an intended outcome of the eventual experiment, not an already-existing subject that every intermediate experiment must resume**. Earlier experiments may have produced test individuals and historical databases; none is automatically designated the eventual formal A.
+
+Use the following distinctions:
+
+1. **Different independent experiments:** in principle initialize separate, independently identified databases/individuals. Do not silently reuse the data or history of a prior experiment as the initial state of a new experiment. A declared historical-witness, replay, or compatibility study may deliberately read or resume designated existing material only when its scope and provenance explicitly require it.
+2. **One experiment, multiple rounds or processes:** resume the same experiment-specific database whenever testing persistence, continuation, or cross-process recovery. A new session, program restart, or Minecraft reconnection is **not** by itself a new independent experiment or a reason to recreate that individual.
+3. **Intermediate TEST_ONLY individuals:** are isolated experimental subjects, not the eventual formal A. Their databases must not overwrite or migrate historical/canonical data by default. Existing databases, failed attempts, and frozen evidence remain protected.
+4. **Eventual formal A:** only an explicitly established final experimental outcome may be designated for ongoing operation. Once established, later sessions should continue its own database and identity rather than initialize a replacement on each run. This rule does not assert that such an A already exists or that subject continuity has been proved.
+5. **Unclear or conflicting database requirements:** inspect the stage's explicit isolation and provenance requirements and ask the user before choosing to initialize, reuse, branch, replace, or delete a consequential database. Do not turn the engineering convention into a new PASS condition.
+
+The user originally raised unwanted growth from earlier designs as a practical resource-management concern. That concern does **not** mean every distinct experiment must share one database; nor does using one database itself establish bounded RAM, bounded storage growth, or recursion continuity.
+
+Compact distinction:
+
+```text
+new independent experiment -> normally separate database / experimental individual
+same experiment continued  -> resume that experiment's own database
+final continuing A          -> eventual result, then preserve its database across sessions
+```
+
+This section clarifies scope for existing statements such as `individual lifetime != experiment session` and “do not create a fresh database merely because a new run begins”; it does not repeal the continuity rule *within* an individual lifetime or retroactively modify earlier experiments.
