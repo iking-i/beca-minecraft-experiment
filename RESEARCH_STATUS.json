@@ -1,79 +1,97 @@
 {
   "current_research_phase": {
-    "name": "GENERIC_OPERATIVE_CONTENT_CONSTRUCTION_TEST_ONLY",
+    "name": "NATIVE_BODY_OPERANDS_IN_OPERATIVE_RECURSION",
     "lifecycle": "COMPLETED_FROZEN",
     "status": "PASS",
     "completed": true,
     "frozen": true,
-    "implementation_commit": "89f116798ef7f7251822199fdb4f665988fc28fa",
-    "closeout_anchor": "Separate documentation commit containing GENERIC_OPERATIVE_CONTENT_CONSTRUCTION_TEST_ONLY_CLOSEOUT.md",
-    "scope": "independent explicitly enabled TEST_ONLY ContentCore; synthetic observations / FakeBridge; each ON/OFF witness preserves one individual and one DB across actual subprocess restart",
+    "implementation_commit": "257789144740d1e6468f00d7b7e380b4d45ba34c",
+    "closeout_anchor": "Separate documentation commit containing NATIVE_BODY_OPERANDS_CLOSEOUT.md",
+    "scope": "explicit TEST_ONLY NativeCore; synthetic observations / FakeBridge; each ON/OFF independent A/database persists across actual subprocess restart",
+    "mechanism_version": "NATIVE-BODY-OPERANDS-TEST_ONLY-1",
     "criteria": {
-      "GC_T1": "PASS",
-      "GC_T2": "PASS",
-      "GC_T3": "PASS",
-      "GC_T4": "PASS",
-      "GC_T5": "PASS",
-      "GC_T6": "PASS",
-      "GC_T7": "PASS",
-      "GC_T8": "PASS",
-      "GC_T9": "PASS",
-      "GC_T10": "PASS"
+      "NBO_T1": "PASS",
+      "NBO_T2": "PASS",
+      "NBO_T3": "PASS",
+      "NBO_T4": "PASS",
+      "NBO_T5": "PASS",
+      "NBO_T6": "PASS",
+      "NBO_T7": "PASS",
+      "NBO_T8": "PASS",
+      "NBO_T9": "PASS"
     },
-    "accepted_claim": "在独立 TEST_ONLY A 中，历史形成的 operative structure S1 能够通过已给定的通用 Pair 构造机制，因果性地参与新有类型内容的形成；形成内容进入权威 Current State，跨进程恢复并再次参与普通构造。",
-    "mechanism_version": "GENERIC-OPERATIVE-CONTENT-TEST_ONLY-1",
-    "representation": "InternalState.l0_state.content_test_only typed UnitRef / Pair nodes; provenance and execution evidence stored separately",
-    "mechanism_origin": "Externally supplied generic Pair law and initial S0 scaffold; actual operands/products depend on actual experiences and operative S1; operation autonomy not established",
-    "S1_PRESENT_TYPED_PAIRS": 3,
-    "S1_ABLATED_TYPED_PAIRS": 0,
-    "new_pair_count_scope": "new relative to fixed checkpoint; total constructor outputs separately equal 5 versus 2",
-    "EXPECTED_OPERANDS": {
-      "S1_present": 8,
-      "S1_ablated": 4
+    "accepted_claim": "在独立 TEST_ONLY A 中，原生能力身份、参数槽/域和观察值/引用成为普通可达 typed UnitRef；经历形成的 S1 因果性地影响其参与通用 Pair 构造，材料与内容进入权威 Current State，跨进程恢复并复用。",
+    "representation": "typed NativePort / ParameterSlot / ParameterDomain / ObservedValue / ObservedReference Units and declared source incidence; ordinary UnitRef/Pair construction",
+    "attribution": "environment supplies identity/types/sensor material; external generic representation and Pair mechanism; actual experience-formed S1 determines operand reachability, not expression adoption",
+    "typed_input_counts": {
+      "ObservedValue": 4,
+      "NativePort": 3,
+      "ParameterSlot": 2,
+      "ObservedReference": 1,
+      "ParameterDomain": 2
+    },
+    "causal_evidence": {
+      "S1_present_native_atoms": 12,
+      "S1_ablated_native_atoms": 0,
+      "new_pairs_present": 15,
+      "new_pairs_ablated": 0,
+      "expected_present": 32,
+      "expected_ablated": 4,
+      "max_witness_units_plus_content": 63,
+      "locked_units_cap": 64,
+      "all_native_atom_products_reused": true
     },
     "S1_reinsertion_restores_content": true,
     "CURRENT_STATE_AUTHORITATIVE": true,
-    "T1_CURRENT_STATE_PERSISTENCE": "PASS",
-    "T1_CROSS_PROCESS_REUSE": "PASS",
-    "new_T1_refs_actually_reused": 3,
+    "CURRENT_STATE_PERSISTENCE": "PASS",
+    "CROSS_PROCESS_REUSE": "PASS",
     "recording_modes_verified": [
       "ON",
       "OFF"
     ],
     "FULL_HISTORY_REPLAY_REQUIRED": false,
     "specialized_consumer_used": false,
+    "external_selection_used": false,
     "provenance_affects_execution": false,
     "verification": {
-      "dedicated_passed": 24,
-      "related_passed": 80,
+      "dedicated_passed": 20,
+      "related_passed": 104,
       "related_subtests_passed": 13,
-      "full_passed": 584,
+      "full_passed": 604,
       "full_subtests_passed": 114,
       "full_failures": 0,
-      "test_exclusions": [],
-      "record": "experimental/operative_content/VALIDATION.json",
-      "counts_source": "recorded implementation verification audited at closeout; no closeout rerun"
+      "frozen_hash_count": 13,
+      "frozen_hash_status": "MATCH",
+      "record": "experimental/native_body_operands/VALIDATION.json",
+      "counts_source": "recorded implementation runs audited at closeout; no closeout rerun"
     },
-    "FROZEN_HASHES": "MATCH",
     "DEFAULT_EXECUTION_BEHAVIOR_UNCHANGED": true,
-    "core_edit_scope": "read-only experiment-state admission guard; no default execution change",
+    "core_edit_scope": "existing two-line read-only foreign-mode guard; no further runtime change at closeout",
     "original_failure_records": [
-      "experimental/operative_content/history/INITIAL_VERIFICATION.md",
-      "experimental/operative_content/history/GUARD_REPAIR.md",
-      "experimental/operative_content/history/FIRST_FULL_REGRESSION.json"
+      "experimental/native_body_operands/INITIAL_VERIFICATION.md"
     ],
     "original_failure_preserved": true,
-    "tk_failure_triggering_cause": "NOT_ESTABLISHED; final validation used prior independently copied byte-identical Tcl/Tk scripts with process-local paths",
+    "CE_readiness_record_preserved": {
+      "classification": "NOT_READY",
+      "criteria": "CE_T1..CE_T10 remain NOT_ESTABLISHED",
+      "files": [
+        "experimental/operative_expression/SPEC.md",
+        "experimental/operative_expression/VALIDATION.md",
+        "experimental/operative_expression/VALIDATION.json"
+      ],
+      "tracking": "existing local untracked material preserved byte-identically; excluded from this commit"
+    },
     "limits": [
-      "UnitRef is channel/kind identity, not exact numeric delta magnitude",
-      "content plus Units share existing locked units cap; reject entire non-fitting batch"
+      "first-created channel/kind incidence does not update every later scalar or ref epoch",
+      "historical references are construction material, not asserted current executable targets",
+      "16 Units + 47 content nodes = 63/64; original capacity unchanged; whole batches reject without pruning"
     ],
     "nonclaims": {
-      "ARBITRARY_CONTENT_GENERATION": "NOT_ESTABLISHED",
       "COMPLETE_EXPRESSION_FORMATION": "NOT_ESTABLISHED",
+      "PARAMETER_BINDING_RELATION": "NOT_ESTABLISHED",
       "ACTION_CODE_AUTHORSHIP": "NOT_ESTABLISHED",
       "PARAMETER_AUTHORSHIP": "NOT_ESTABLISHED",
-      "EXPRESSION_ADOPTION_RELATION": "NOT_ESTABLISHED",
+      "EXPRESSION_ADOPTION_AUTHORITY": "NOT_ESTABLISHED",
       "BODY_EXECUTION_AUTHORITY": "NOT_ESTABLISHED",
       "AUTONOMOUS_ACTION_SELECTION": "NOT_ESTABLISHED",
       "AUTONOMOUS_GOAL_FORMATION": "NOT_ESTABLISHED",
@@ -83,34 +101,35 @@
       "UNIVERSAL_GENERATIVE_DYNAMICS": "NOT_ESTABLISHED"
     },
     "minecraft_run": false,
+    "body_execution": false,
     "real_mainline_a_created": false,
     "theory_changed": false,
-    "closeout": "GENERIC_OPERATIVE_CONTENT_CONSTRUCTION_TEST_ONLY_CLOSEOUT.md",
-    "handoff": "GENERIC_OPERATIVE_CONTENT_CONSTRUCTION_TEST_ONLY_CONVERSATION_HANDOFF.md",
+    "closeout": "NATIVE_BODY_OPERANDS_CLOSEOUT.md",
+    "handoff": "NATIVE_BODY_OPERANDS_CONVERSATION_HANDOFF.md",
     "next_research_phase_started": false
   },
   "next_phase_boundary": {
     "status": "QUESTION_FROZEN",
     "next_phase_lifecycle": "NOT_STARTED",
-    "question": "已经形成并可继续参与构造的 T1，能否通过同一套普通 operative 机制，进一步形成包含动作 code、必要参数及引用关系的完整表达内容，而不由宿主固定策略替 A 填写或选择？",
+    "question": "在身体端口、参数槽、合法值和感知引用已经成为可达递归操作数之后，现有普通递归构造能否形成具有完整参数绑定关系的原生身体表达？",
     "question_frozen": true,
     "stage_started": false,
     "design_started": false,
-    "acceptance_preregistered": false,
     "implementation_started": false,
     "experiment_started": false,
     "Minecraft_execution_started": false,
-    "first_checks_only": [
-      "是否可以复用现有 typed Pair 和构造机制，不预设其充分性"
+    "distinctions": [
+      "environment-provided legal materials and type constraints",
+      "internally formed expression content and parameter bindings",
+      "adoption and execution authority remain unestablished"
     ],
-    "forbidden_inference": "No independent output decision system, fixed Pair-to-action mapping, host-supplied/selected expression, or sampler/binder relabeling as internal generation.",
-    "direct_minecraft_run_required": false,
+    "direction_only": "prioritize existing ordinary construction reuse, no fixed action strategy or validator-as-author inference",
     "runtime_implementation_authorized_by_closeout": false
   },
   "next_work": [
-    "Preserve completed/frozen Generic Operative Content Construction TEST_ONLY PASS and all original failures/old evidence",
-    "Only freeze T1 -> complete expression content question and possible reuse of existing typed Pair/construction; no design is supplied",
-    "No next design, implementation, acceptance change, body connection or Minecraft experiment is started by this closeout"
+    "Preserve Native Body Operands PASS / COMPLETED / FROZEN and original CE NOT_READY evidence",
+    "Only freeze complete native-expression / parameter-binding question; prioritize ordinary constructor reuse without prescribing a mechanism",
+    "No next design, implementation, adoption or body execution is started by closeout"
   ],
   "status_date": "2026-10-08",
   "operative_connection_interpretation": {
@@ -540,19 +559,19 @@
   "next_research_boundary": {
     "status": "QUESTION_FROZEN",
     "next_phase_lifecycle": "NOT_STARTED",
-    "question": "已经形成并可继续参与构造的 T1，能否通过同一套普通 operative 机制，进一步形成包含动作 code、必要参数及引用关系的完整表达内容，而不由宿主固定策略替 A 填写或选择？",
+    "question": "在身体端口、参数槽、合法值和感知引用已经成为可达递归操作数之后，现有普通递归构造能否形成具有完整参数绑定关系的原生身体表达？",
     "question_frozen": true,
     "stage_started": false,
     "design_started": false,
-    "acceptance_preregistered": false,
     "implementation_started": false,
     "experiment_started": false,
     "Minecraft_execution_started": false,
-    "first_checks_only": [
-      "是否可以复用现有 typed Pair 和构造机制，不预设其充分性"
+    "distinctions": [
+      "environment-provided legal materials and type constraints",
+      "internally formed expression content and parameter bindings",
+      "adoption and execution authority remain unestablished"
     ],
-    "forbidden_inference": "No independent output decision system, fixed Pair-to-action mapping, host-supplied/selected expression, or sampler/binder relabeling as internal generation.",
-    "direct_minecraft_run_required": false,
+    "direction_only": "prioritize existing ordinary construction reuse, no fixed action strategy or validator-as-author inference",
     "runtime_implementation_authorized_by_closeout": false
   },
   "historical_bpc_live_1_closeout_checkpoint": {
@@ -633,7 +652,7 @@
       "No guarantee of equivalence to a long-history individual"
     ]
   },
-  "prior_closeout_index_scope": "current_research_phase records Generic Operative Content Construction TEST_ONLY. Historical phase and then-next-boundary snapshots preserve all previous closeouts, including Continuous Operative Reentry. Legacy checkpoint and evidence indexes retain historical scopes; no historical result or artifact is rewritten.",
+  "prior_closeout_index_scope": "Current phase is Native Body Operands TEST_ONLY. Historical phase/then-next-question snapshots preserve prior closeouts including Generic Operative Content Construction. Legacy indexes retain historical scopes; CE NOT_READY remains unchanged.",
   "historical_bpc_live_1_next_phase_boundary": {
     "status": "NOT_STARTED",
     "question": "NOT_DEFINED_IN_THIS_CLOSEOUT",
@@ -897,6 +916,96 @@
       "closeout": "FORMAL_A_CONTINUOUS_OPERATIVE_REENTRY_CLOSEOUT.md",
       "handoff": "FORMAL_A_CONTINUOUS_OPERATIVE_REENTRY_CONVERSATION_HANDOFF.md",
       "next_research_phase_started": false
+    },
+    "generic_operative_content_construction_test_only": {
+      "name": "GENERIC_OPERATIVE_CONTENT_CONSTRUCTION_TEST_ONLY",
+      "lifecycle": "COMPLETED_FROZEN",
+      "status": "PASS",
+      "completed": true,
+      "frozen": true,
+      "implementation_commit": "89f116798ef7f7251822199fdb4f665988fc28fa",
+      "closeout_anchor": "Separate documentation commit containing GENERIC_OPERATIVE_CONTENT_CONSTRUCTION_TEST_ONLY_CLOSEOUT.md",
+      "scope": "independent explicitly enabled TEST_ONLY ContentCore; synthetic observations / FakeBridge; each ON/OFF witness preserves one individual and one DB across actual subprocess restart",
+      "criteria": {
+        "GC_T1": "PASS",
+        "GC_T2": "PASS",
+        "GC_T3": "PASS",
+        "GC_T4": "PASS",
+        "GC_T5": "PASS",
+        "GC_T6": "PASS",
+        "GC_T7": "PASS",
+        "GC_T8": "PASS",
+        "GC_T9": "PASS",
+        "GC_T10": "PASS"
+      },
+      "accepted_claim": "在独立 TEST_ONLY A 中，历史形成的 operative structure S1 能够通过已给定的通用 Pair 构造机制，因果性地参与新有类型内容的形成；形成内容进入权威 Current State，跨进程恢复并再次参与普通构造。",
+      "mechanism_version": "GENERIC-OPERATIVE-CONTENT-TEST_ONLY-1",
+      "representation": "InternalState.l0_state.content_test_only typed UnitRef / Pair nodes; provenance and execution evidence stored separately",
+      "mechanism_origin": "Externally supplied generic Pair law and initial S0 scaffold; actual operands/products depend on actual experiences and operative S1; operation autonomy not established",
+      "S1_PRESENT_TYPED_PAIRS": 3,
+      "S1_ABLATED_TYPED_PAIRS": 0,
+      "new_pair_count_scope": "new relative to fixed checkpoint; total constructor outputs separately equal 5 versus 2",
+      "EXPECTED_OPERANDS": {
+        "S1_present": 8,
+        "S1_ablated": 4
+      },
+      "S1_reinsertion_restores_content": true,
+      "CURRENT_STATE_AUTHORITATIVE": true,
+      "T1_CURRENT_STATE_PERSISTENCE": "PASS",
+      "T1_CROSS_PROCESS_REUSE": "PASS",
+      "new_T1_refs_actually_reused": 3,
+      "recording_modes_verified": [
+        "ON",
+        "OFF"
+      ],
+      "FULL_HISTORY_REPLAY_REQUIRED": false,
+      "specialized_consumer_used": false,
+      "provenance_affects_execution": false,
+      "verification": {
+        "dedicated_passed": 24,
+        "related_passed": 80,
+        "related_subtests_passed": 13,
+        "full_passed": 584,
+        "full_subtests_passed": 114,
+        "full_failures": 0,
+        "test_exclusions": [],
+        "record": "experimental/operative_content/VALIDATION.json",
+        "counts_source": "recorded implementation verification audited at closeout; no closeout rerun"
+      },
+      "FROZEN_HASHES": "MATCH",
+      "DEFAULT_EXECUTION_BEHAVIOR_UNCHANGED": true,
+      "core_edit_scope": "read-only experiment-state admission guard; no default execution change",
+      "original_failure_records": [
+        "experimental/operative_content/history/INITIAL_VERIFICATION.md",
+        "experimental/operative_content/history/GUARD_REPAIR.md",
+        "experimental/operative_content/history/FIRST_FULL_REGRESSION.json"
+      ],
+      "original_failure_preserved": true,
+      "tk_failure_triggering_cause": "NOT_ESTABLISHED; final validation used prior independently copied byte-identical Tcl/Tk scripts with process-local paths",
+      "limits": [
+        "UnitRef is channel/kind identity, not exact numeric delta magnitude",
+        "content plus Units share existing locked units cap; reject entire non-fitting batch"
+      ],
+      "nonclaims": {
+        "ARBITRARY_CONTENT_GENERATION": "NOT_ESTABLISHED",
+        "COMPLETE_EXPRESSION_FORMATION": "NOT_ESTABLISHED",
+        "ACTION_CODE_AUTHORSHIP": "NOT_ESTABLISHED",
+        "PARAMETER_AUTHORSHIP": "NOT_ESTABLISHED",
+        "EXPRESSION_ADOPTION_RELATION": "NOT_ESTABLISHED",
+        "BODY_EXECUTION_AUTHORITY": "NOT_ESTABLISHED",
+        "AUTONOMOUS_ACTION_SELECTION": "NOT_ESTABLISHED",
+        "AUTONOMOUS_GOAL_FORMATION": "NOT_ESTABLISHED",
+        "DEFAULT_MAINLINE_ADOPTION": "NOT_ESTABLISHED",
+        "BEHAVIORAL_CAUSAL_CLOSURE": "NOT_ESTABLISHED",
+        "L1_UPWARD_RECURSION": "NOT_ESTABLISHED",
+        "UNIVERSAL_GENERATIVE_DYNAMICS": "NOT_ESTABLISHED"
+      },
+      "minecraft_run": false,
+      "real_mainline_a_created": false,
+      "theory_changed": false,
+      "closeout": "GENERIC_OPERATIVE_CONTENT_CONSTRUCTION_TEST_ONLY_CLOSEOUT.md",
+      "handoff": "GENERIC_OPERATIVE_CONTENT_CONSTRUCTION_TEST_ONLY_CONVERSATION_HANDOFF.md",
+      "next_research_phase_started": false
     }
   },
   "historical_next_phase_boundaries": {
@@ -971,6 +1080,24 @@
         "内部 operative structure 能否成为实际表达操作数"
       ],
       "forbidden_inference": "Internal computation effects do not prove expression authorship; no prewritten S1-to-action mapping may substitute for causal formation.",
+      "direct_minecraft_run_required": false,
+      "runtime_implementation_authorized_by_closeout": false
+    },
+    "generic_operative_content_construction_test_only_closeout": {
+      "status": "QUESTION_FROZEN",
+      "next_phase_lifecycle": "NOT_STARTED",
+      "question": "已经形成并可继续参与构造的 T1，能否通过同一套普通 operative 机制，进一步形成包含动作 code、必要参数及引用关系的完整表达内容，而不由宿主固定策略替 A 填写或选择？",
+      "question_frozen": true,
+      "stage_started": false,
+      "design_started": false,
+      "acceptance_preregistered": false,
+      "implementation_started": false,
+      "experiment_started": false,
+      "Minecraft_execution_started": false,
+      "first_checks_only": [
+        "是否可以复用现有 typed Pair 和构造机制，不预设其充分性"
+      ],
+      "forbidden_inference": "No independent output decision system, fixed Pair-to-action mapping, host-supplied/selected expression, or sampler/binder relabeling as internal generation.",
       "direct_minecraft_run_required": false,
       "runtime_implementation_authorized_by_closeout": false
     }

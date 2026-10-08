@@ -10,6 +10,39 @@
 
 ## 当前研究状态
 
+**NATIVE_BODY_OPERANDS_IN_OPERATIVE_RECURSION = PASS / COMPLETED / FROZEN**（2026-10-08）。
+实现/验证锚点：`257789144740d1e6468f00d7b7e380b4d45ba34c`；NBO-T1～NBO-T9 全部 PASS。
+已记录专项 **20 passed**、相关 **104 passed / 13 subtests**、完整回归
+**604 passed / 114 subtests**；13 项冻结源码哈希 MATCH。本次只核对既有代码与机器证据，不重新运行实验。
+
+在独立 TEST_ONLY NativeCore、合成观察和 FakeBridge 范围内，环境声明的原生端口、
+参数槽/合法域以及观察值/感知引用，成为普通 typed UnitRef 操作数。
+经历形成的 S1 因果性地影响其进入普通 operative 读取和同一通用 Pair 构造；产品进入
+实际 expected operands，材料与内容保存于权威 Current State，并在 ON/OFF 各自独立的
+同一个 A / 数据库生命周期内跨真实进程恢复及复用，无需 Full Audit History replay。
+S1-only ablation：可达原生材料 **12 → 0**，新增 Pair **15 → 0**，实际操作数 **32 → 4**；
+恢复 S1 后构造内容恢复。全部可达材料并存，没有外部择一、sampler、binder 或专门 consumer。
+
+能力身份与类型域来自环境，输入表示和通用 Pair 法则由外部机制给定。
+本阶段**不证明完整表达、参数绑定关系、动作/参数作者权、表达采用权或身体执行权**。
+历史引用不等于当前可执行目标；重复 channel/kind 模式保留首建输入 incidence。
+最终 witness 为 16 Units + 47 content nodes = **63/64**，容量不变，不代表无限增长能力。
+
+完整表达阶段原有 **CE NOT_READY** SPEC / VALIDATION.md/json 原样保留；
+CE-T1～CE-T10 未改变、未通过。这些既有本地 untracked 材料不纳入本次收口提交。
+旧实验和初次失败不改写；默认执行行为不变，既有 Core 修改仅为只读实验模式 admission guard。
+见 [closeout](NATIVE_BODY_OPERANDS_CLOSEOUT.md) 与
+[conversation handoff](NATIVE_BODY_OPERANDS_CONVERSATION_HANDOFF.md)。
+
+下一问题仅冻结：**在身体端口、参数槽、合法值和感知引用已经成为可达递归操作数之后，现有普通递归构造能否形成具有完整参数绑定关系的原生身体表达？**
+区分环境材料/类型约束、内部形成内容/绑定关系，以及尚未建立的采用/执行权。
+优先复用现有递归构造，不预设固定动作策略，不将外部合法性校验当作内部作者权。
+下一阶段 design / implementation / experiment **NOT_STARTED**；不接通身体、不运行 Minecraft。
+
+### 历史 closeout — Generic Operative Content Construction TEST_ONLY
+
+以下保留该阶段收口时的状态与下一问题，不作为当前实施授权。
+
 **GENERIC_OPERATIVE_CONTENT_CONSTRUCTION_TEST_ONLY = PASS / COMPLETED / FROZEN**（2026-10-08）。
 实现/验证锚点：`89f116798ef7f7251822199fdb4f665988fc28fa`；GC-T1～GC-T10 全部 PASS。
 已记录专项 **24 passed**、相关 **80 passed / 13 subtests**、完整回归
