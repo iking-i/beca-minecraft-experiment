@@ -1,6 +1,6 @@
 # BECA-V0：L0 持续递归与当前极限反馈实验
 
-本仓库是 [beca-architecture](https://github.com/iking-i/beca-architecture) 的独立 Minecraft 实验实现，当前理论引用为 **Perfect Recursion / BER v0.9**，已核对理论 `main` 提交 [`c494892ba12382b2f2d07cce330176257130626c`](https://github.com/iking-i/beca-architecture/commit/c494892ba12382b2f2d07cce330176257130626c)（2026-10-08）。现有实现及本地同步的 v0.8 文档仍保留原来源和历史结果。此次理论元数据更新不改变运行行为，不等于实验结果、行为验证或 L1；v0.9 将 `Continuity(A) != 0` 区分为实验延续条件，不能提升为通用核心公理。机器可读来源见 [THEORY_REFERENCE.json](THEORY_REFERENCE.json)。
+本仓库是 [beca-architecture](https://github.com/iking-i/beca-architecture) 的独立 Minecraft 实验实现，当前理论引用为 **Perfect Recursion / BER v0.9**，已核对理论 `main` 提交 [`0917f695d5452c5b890de6d7e9c366503b051797`](https://github.com/iking-i/beca-architecture/commit/0917f695d5452c5b890de6d7e9c366503b051797)（2026-10-08）。现有实现及本地同步的 v0.8 文档仍保留原来源和历史结果。此次理论元数据更新不改变运行行为，不等于实验结果、行为验证或 L1；v0.9 将 `Continuity(A) != 0` 区分为实验延续条件，不能提升为通用核心公理。本次为 v0.9 内的个体／环境角色及实际边界说明补充，不是新的实验结果。机器可读来源见 [THEORY_REFERENCE.json](THEORY_REFERENCE.json)。
 
 非穷尽 realization 边界已进入上述正式 theory `main`：理论不要求穷尽组合、枚举全部 possible structures 或完成 global enumerative least-fixed-point closure 后才允许递归或现实行动继续。本次只同步正式理论引用，不改变已记录的研究结论或历史结果。
 
@@ -28,14 +28,15 @@ S1-only ablation：Pair 产品 **2 → 1**，实际操作数 **13 → 12**，重
 自主目标、真实世界因果律、behavioral causal closure、L1 或通用生成规律。
 旧 CE NOT_READY、Operative Expression Binding NOT_READY 和初次失败记录原样保留，
 不追溯升级；既有 unrelated untracked 材料不加入本次收口提交。
-本次不修改 runtime、测试、caps、理论引用或冻结 evidence，不运行 Minecraft。
+上述实验收口未修改 runtime、测试、caps、理论引用或冻结 evidence，未运行 Minecraft；本次仅同步当前理论引用与状态。
 见 [closeout](TYPED_OPERATIVE_CONNECTION_CLOSEOUT.md) 与
 [conversation handoff](TYPED_OPERATIVE_CONNECTION_CONVERSATION_HANDOFF.md)。
 
-下一步首先独立审查并补充 `iking-i/beca-architecture` 的**个体／环境角色相对性及实际边界说明**。
-理论更新必须有独立理论层依据，不得追溯修改本阶段验收结果；本次不更新理论仓库或理论引用。
-理论更新之后，再研究实际形成的 typed connection 如何参与原生参数槽和值／引用绑定。
-这里只记录交接顺序，不设计机制；下一实验阶段 **NOT_STARTED**。
+上一阶段交接要求的独立理论审查与补充已完成并由另一对话推送：`iking-i/beca-architecture/main`
+`0917f695d5452c5b890de6d7e9c366503b051797`（v0.9），补充个体／环境角色相对性及实际边界说明。
+本次只同步引用，不修改理论仓库，不追溯改变 TC 验收、旧 closeout 或实验结果。
+后续研究问题仍为实际形成的 typed connection 如何参与原生参数槽和值／引用绑定；
+设计、实现及实验均未开始，下一实验阶段 **NOT_STARTED**。
 
 ### 历史 closeout — Native Body Operands TEST_ONLY
 

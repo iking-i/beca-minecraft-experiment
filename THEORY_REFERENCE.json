@@ -2,7 +2,7 @@
   "theory_repository": "https://github.com/iking-i/beca-architecture",
   "theory_version": "Perfect Recursion / BER v0.9",
   "theory_branch": "main",
-  "theory_main_commit_at_publication": "2e207806289269a1213f6fcc83fa14eb0984aab7",
+  "theory_main_commit_at_publication": "0917f695d5452c5b890de6d7e9c366503b051797",
   "previous_theory_reference": {
     "version": "Perfect Recursion / BER v0.9",
     "commit": "89a56ad7ce236adfcb52b13d3e6fe7014ff88ddd"
@@ -35,17 +35,39 @@
   "theory_update_is_behavior_validation": false,
   "theory_update_is_L1": false,
   "research_status": "RESEARCH_STATUS.md",
-  "note": "Metadata/reference synchronization only. Current theory main clarifies that origin-given constraints/startup scaffolding are classified by provenance rather than permanent immutability, and that external education/instruction belongs to environment-side recursion. The historical non-exhaustive realization boundary remains anchored to its 2026-10-06 theory commit. No runtime, continuity/death behavior, GSC validation result, behavioral-closure verdict, world-entry evidence, or historical experimental result is changed.",
+  "note": "Current v0.9 theory main independently clarifies individual/environment role relativity and practical causal-audit boundaries. This is a theory explanation supplement, not a new axiom, runtime mechanism, experimental result, subject-identity proof or layer-ascent claim. Earlier current references and the historical non-exhaustive boundary anchor are preserved. Runtime, experimental acceptance and historical evidence are unchanged.",
   "current_reference": {
     "branch": "main",
-    "commit": "2e207806289269a1213f6fcc83fa14eb0984aab7",
+    "commit": "0917f695d5452c5b890de6d7e9c366503b051797",
     "checked_on": "2026-10-08",
     "scope": [
       "current Perfect Recursion / BER v0.9 theory",
       "origin-given startup tasks and transient scaffolding",
       "first-individual continuation may be an origin startup condition",
-      "initial death/termination may be absent or unreachable without implying a survival goal"
+      "initial death/termination may be absent or unreachable without implying a survival goal",
+      "individual/environment roles are relative to a declared focal structure and interaction boundary",
+      "concrete realization and causal audit require explicit practical boundaries",
+      "environment structure / physical characteristics is a provisional analogy, not a mandatory decomposition"
     ],
-    "changes_runtime": false
-  }
+    "changes_runtime": false,
+    "checked_sections": [
+      "SPEC.md §4.1",
+      "ARCHITECTURE.md §2.1: Relative roles and practical boundaries",
+      "README.md: Handoff — 2026-10-08: individual/environment role clarification"
+    ]
+  },
+  "historical_current_references": [
+    {
+      "branch": "main",
+      "commit": "2e207806289269a1213f6fcc83fa14eb0984aab7",
+      "checked_on": "2026-10-08",
+      "scope": [
+        "current Perfect Recursion / BER v0.9 theory",
+        "origin-given startup tasks and transient scaffolding",
+        "first-individual continuation may be an origin startup condition",
+        "initial death/termination may be absent or unreachable without implying a survival goal"
+      ],
+      "changes_runtime": false
+    }
+  ]
 }

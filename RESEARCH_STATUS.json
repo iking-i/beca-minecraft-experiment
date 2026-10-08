@@ -103,17 +103,21 @@
     "next_research_phase_started": false
   },
   "next_phase_boundary": {
-    "status": "HANDOFF_RECORDED",
+    "status": "THEORY_UPDATE_COMPLETED_NEXT_EXPERIMENT_NOT_STARTED",
     "next_phase_lifecycle": "NOT_STARTED",
     "first_work": {
       "repo": "iking-i/beca-architecture",
       "subject": "个体／环境角色相对性及实际边界说明",
       "independent_theory_level_justification_required": true,
       "retroactive_acceptance_change_allowed": false,
-      "review_started": false,
-      "update_started": false
+      "review_started": true,
+      "update_started": true,
+      "status": "COMPLETED",
+      "completed": true,
+      "completion_source": "independent theory conversation; theory main commit verified by Git",
+      "theory_commit": "0917f695d5452c5b890de6d7e9c366503b051797"
     },
-    "subsequent_question": "理论更新之后，再研究实际形成的 typed connection 如何参与原生参数槽和值／引用绑定。",
+    "subsequent_question": "实际形成的 typed connection 如何参与原生参数槽和值／引用绑定？理论说明补充已完成；下一实验尚未开始。",
     "stage_started": false,
     "design_started": false,
     "implementation_started": false,
@@ -122,9 +126,9 @@
     "runtime_implementation_authorized_by_closeout": false
   },
   "next_work": [
-    "Preserve Typed Operative Connection PASS / COMPLETED / FROZEN, earlier NOT_READY records and all original failures",
-    "First independently review and supplement individual/environment role relativity and actual boundary explanation in iking-i/beca-architecture; do not retroactively change TC acceptance",
-    "Only after the independent theory update continue typed-connection participation in native parameter-slot/value/reference binding; no next design/implementation/experiment started"
+    "Preserve Typed Operative Connection PASS / COMPLETED / FROZEN, earlier NOT_READY records and original failures",
+    "Independent theory role/boundary clarification completed at iking-i/beca-architecture/main 0917f695d5452c5b890de6d7e9c366503b051797; reference synchronized only, no retroactive TC acceptance change",
+    "Typed connection participation in native parameter-slot/value/reference binding remains the recorded question; next design, implementation and experiment NOT_STARTED"
   ],
   "status_date": "2026-10-08",
   "operative_connection_interpretation": {
@@ -161,7 +165,7 @@
     "version": "Perfect Recursion / BER v0.9",
     "repository": "iking-i/beca-architecture",
     "branch": "main",
-    "commit": "2e207806289269a1213f6fcc83fa14eb0984aab7",
+    "commit": "0917f695d5452c5b890de6d7e9c366503b051797",
     "classification": "conceptual_architecture",
     "complete_general_generative_dynamics_established": false,
     "universal_generative_law_status": "NOT_ESTABLISHED",
@@ -171,7 +175,9 @@
       "exhaustive_composition_required": false,
       "all_possible_structures_required": false,
       "global_enumerative_closure_required_before_continuation": false
-    }
+    },
+    "checked_on": "2026-10-08",
+    "current_clarification": "individual/environment roles are boundary-relative; practical implementation/audit boundaries remain explicit; v0.9 explanation supplement, not an experimental result"
   },
   "world_entry": {
     "status": "passed",
@@ -552,17 +558,21 @@
     "historical_results_rewritten": false
   },
   "next_research_boundary": {
-    "status": "HANDOFF_RECORDED",
+    "status": "THEORY_UPDATE_COMPLETED_NEXT_EXPERIMENT_NOT_STARTED",
     "next_phase_lifecycle": "NOT_STARTED",
     "first_work": {
       "repo": "iking-i/beca-architecture",
       "subject": "个体／环境角色相对性及实际边界说明",
       "independent_theory_level_justification_required": true,
       "retroactive_acceptance_change_allowed": false,
-      "review_started": false,
-      "update_started": false
+      "review_started": true,
+      "update_started": true,
+      "status": "COMPLETED",
+      "completed": true,
+      "completion_source": "independent theory conversation; theory main commit verified by Git",
+      "theory_commit": "0917f695d5452c5b890de6d7e9c366503b051797"
     },
-    "subsequent_question": "理论更新之后，再研究实际形成的 typed connection 如何参与原生参数槽和值／引用绑定。",
+    "subsequent_question": "实际形成的 typed connection 如何参与原生参数槽和值／引用绑定？理论说明补充已完成；下一实验尚未开始。",
     "stage_started": false,
     "design_started": false,
     "implementation_started": false,
@@ -1358,7 +1368,8 @@
       "Initial operative structure must not rely on a privileged execution channel unavailable to later internally formed structures of the same operative kind",
       "No generic operative interpreter is claimed designed or validated by this clarification"
     ],
-    "theory_reference_commit": "c494892ba12382b2f2d07cce330176257130626c"
+    "theory_reference_commit": "c494892ba12382b2f2d07cce330176257130626c",
+    "theory_reference_scope": "historical clarification provenance; current theory reference is recorded in theory.commit"
   },
   "first_individual_continuation_clarification": {
     "theory_commit": "2e207806289269a1213f6fcc83fa14eb0984aab7",
@@ -1596,5 +1607,56 @@
       "recursive formation of relations/mechanics"
     ],
     "implementation_or_priority_selected": false
+  },
+  "historical_theory_reference_syncs": [
+    {
+      "theory": {
+        "version": "Perfect Recursion / BER v0.9",
+        "repository": "iking-i/beca-architecture",
+        "branch": "main",
+        "commit": "2e207806289269a1213f6fcc83fa14eb0984aab7",
+        "classification": "conceptual_architecture",
+        "complete_general_generative_dynamics_established": false,
+        "universal_generative_law_status": "NOT_ESTABLISHED",
+        "main_boundary_reference": {
+          "branch": "main",
+          "commit": "546363ffd9e3f55cd22cd73ad2e91cc57f93bae3",
+          "exhaustive_composition_required": false,
+          "all_possible_structures_required": false,
+          "global_enumerative_closure_required_before_continuation": false
+        }
+      },
+      "next_phase_boundary": {
+        "status": "HANDOFF_RECORDED",
+        "next_phase_lifecycle": "NOT_STARTED",
+        "first_work": {
+          "repo": "iking-i/beca-architecture",
+          "subject": "个体／环境角色相对性及实际边界说明",
+          "independent_theory_level_justification_required": true,
+          "retroactive_acceptance_change_allowed": false,
+          "review_started": false,
+          "update_started": false
+        },
+        "subsequent_question": "理论更新之后，再研究实际形成的 typed connection 如何参与原生参数槽和值／引用绑定。",
+        "stage_started": false,
+        "design_started": false,
+        "implementation_started": false,
+        "experiment_started": false,
+        "Minecraft_execution_started": false,
+        "runtime_implementation_authorized_by_closeout": false
+      },
+      "experiment_anchor": "2774e2ebaf5352523bcf29c116913e61b79ee7d0"
+    }
+  ],
+  "theory_reference_synchronization": {
+    "status": "COMPLETED",
+    "theory_commit": "0917f695d5452c5b890de6d7e9c366503b051797",
+    "version": "Perfect Recursion / BER v0.9",
+    "experiment_baseline": "2774e2ebaf5352523bcf29c116913e61b79ee7d0",
+    "theory_updated_independently": true,
+    "new_experiment_result": false,
+    "runtime_changed": false,
+    "historical_evidence_changed": false,
+    "next_experiment_started": false
   }
 }

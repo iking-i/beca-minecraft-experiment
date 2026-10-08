@@ -18,14 +18,15 @@ S1-only ablation：Pair 产品 **2 → 1**，实际操作数 **13 → 12**，重
 自主目标、真实世界因果律、behavioral causal closure、L1 或通用生成规律。
 旧 CE NOT_READY、Operative Expression Binding NOT_READY 和初次失败记录原样保留，
 不追溯升级；既有 unrelated untracked 材料不加入本次收口提交。
-本次不修改 runtime、测试、caps、理论引用或冻结 evidence，不运行 Minecraft。
+上述实验收口未修改 runtime、测试、caps、理论引用或冻结 evidence，未运行 Minecraft；本次仅同步当前理论引用与状态。
 见 [closeout](TYPED_OPERATIVE_CONNECTION_CLOSEOUT.md) 与
 [conversation handoff](TYPED_OPERATIVE_CONNECTION_CONVERSATION_HANDOFF.md)。
 
-下一步首先独立审查并补充 `iking-i/beca-architecture` 的**个体／环境角色相对性及实际边界说明**。
-理论更新必须有独立理论层依据，不得追溯修改本阶段验收结果；本次不更新理论仓库或理论引用。
-理论更新之后，再研究实际形成的 typed connection 如何参与原生参数槽和值／引用绑定。
-这里只记录交接顺序，不设计机制；下一实验阶段 **NOT_STARTED**。
+上一阶段交接要求的独立理论审查与补充已完成并由另一对话推送：`iking-i/beca-architecture/main`
+`0917f695d5452c5b890de6d7e9c366503b051797`（v0.9），补充个体／环境角色相对性及实际边界说明。
+本次只同步引用，不修改理论仓库，不追溯改变 TC 验收、旧 closeout 或实验结果。
+后续研究问题仍为实际形成的 typed connection 如何参与原生参数槽和值／引用绑定；
+设计、实现及实验均未开始，下一实验阶段 **NOT_STARTED**。
 
 ## Historical closeout — Native Body Operands TEST_ONLY, 2026-10-08
 
@@ -512,16 +513,16 @@ Current theory reference:
 ```text
 Perfect Recursion / BER v0.9
 beca-architecture main:
-c494892ba12382b2f2d07cce330176257130626c
+0917f695d5452c5b890de6d7e9c366503b051797
 ```
 
 Perfect Recursion currently provides a conceptual recursive architecture and audit boundaries for recursive layers, current effective limits, reconstruction, causal provenance, subject-continuity separation, functional openness, and upward-recursion claims.
 
 The theory does **not** specify one complete universal generative dynamics for all possible realizations. The experimental sequence `Difference / Alignment / Propagation / Composition / Closure` remains a candidate L0 realization, not a universal axiom set.
 
-The non-exhaustive realization boundary was established in theory main at `546363ffd9e3f55cd22cd73ad2e91cc57f93bae3` on 2026-10-06 and remains preserved in the current theory main `c494892ba12382b2f2d07cce330176257130626c`. The current main additionally clarifies origin-given startup tasks / transient scaffolding and their separation from later runtime permanence and individual authorship. `SPEC.md` PR-I37 and `EXPERIMENTAL_IMPLEMENTATION_BOUNDARY.md` §16.1 continue to distinguish theory from realization: Perfect Recursion does not require exhaustive composition, enumeration of all possible structures, or global enumerative least-fixed-point closure before recursion or reality-facing action may continue. The origin of the current goal/execution requirement, the mechanical meaning of “enough”, the definition of “executable”, and prevention of hidden selection remain unresolved realization-level questions.
+The non-exhaustive realization boundary was established in theory main at `546363ffd9e3f55cd22cd73ad2e91cc57f93bae3` on 2026-10-06 and remains preserved in the current theory main `0917f695d5452c5b890de6d7e9c366503b051797`. The current main additionally clarifies origin-given startup tasks / transient scaffolding and their separation from later runtime permanence and individual authorship. `SPEC.md` PR-I37 and `EXPERIMENTAL_IMPLEMENTATION_BOUNDARY.md` §16.1 continue to distinguish theory from realization: Perfect Recursion does not require exhaustive composition, enumeration of all possible structures, or global enumerative least-fixed-point closure before recursion or reality-facing action may continue. The origin of the current goal/execution requirement, the mechanical meaning of “enough”, the definition of “executable”, and prevention of hidden selection remain unresolved realization-level questions.
 
-This update synchronizes references to theory main; it does not change experimental conclusions, runtime behavior, or historical results.
+The independently updated v0.9 main now also clarifies individual/environment role relativity and the need for a declared practical boundary for causal attribution. Role relativity does not establish subject continuity or layer ascent; the environment hardware/software description remains a provisional analogy. This reference synchronization is not a new experiment or mechanism and does not change experimental conclusions, runtime behavior, historical theory anchors or results.
 
 `Continuity(A) != 0` is an experimental continuation condition for the first-individual experiment, not a universal theory invariant, reward, survival objective, immortality rule, or automatic repair/respawn rule.
 
