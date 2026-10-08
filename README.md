@@ -10,7 +10,23 @@
 
 ## 当前研究状态
 
-**最新 closeout（2026-10-07）：memory/runtime boundary long-run validation 已完成。**
+**最新 closeout（2026-10-08）：Current State / Full Audit History 解耦与 Full History 可选记录真实验收已完成，PASS / COMPLETED / FROZEN。**
+基础设施冻结提交 `0f8bf05a84ae68bd9aed66f738f9c4d3009edbe3`；完整回归
+**483 passed / 114 subtests passed**，`git diff --check` PASS。独立真实验收使用同一测试 A：
+**OFF A163→A200；OFF 恢复 A200→A243；ON 恢复 A243→A281**。OFF 期间完整审计历史不追加，
+恢复后仍为同一 A；重新 ON 后从 **A244** 起记录，未回填 OFF 期间缺失历史，audit gap 被保留且不误判为损坏。
+三次真实运行均受控结束，Core / Bridge exit code 均为 0。
+
+该结果验证的工程边界是：**authoritative Current State 必须持续保存；Full Audit History 是可选的外部观察者记录，不是 A 连续存在的必要记忆。**
+正式 selection、主线 A 状态及历史、FROI、sampler/binder、body 均未因验收改变。此前 sandbox `EACCES`
+尝试保留为 **NOT_TESTABLE**；第一段真实 OFF 在固定预算内取得 8 次输入，12 次仅为辅助目标，未延长预算。
+本地原始证据位于 `storage/recording-option-validation/run-20261007-63745/`，不随仓库发布。
+见 [Current State / Full History handoff](CURRENT_STATE_FULL_HISTORY_CONVERSATION_HANDOFF.md)。
+本 closeout **不自动开始下一研究阶段**。
+
+### 历史 closeout（2026-10-07）：memory/runtime boundary long-run validation
+
+**memory/runtime boundary long-run validation 已完成。**
 运行实现 `ed88877535375f42a51cd479518cbb5673f28db2`；Individual
 `A-24f4fd0f-e83a-4ea2-9db6-2c351c9cfe05`，Session
 `S-f4a2c0a1-b26e-4503-974c-ea9cf27e1834`；最终 A6327 / event 62646。

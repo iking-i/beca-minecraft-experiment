@@ -1,4 +1,54 @@
-## Latest closeout — long-run current-structure validation, 2026-10-07
+## Latest closeout — Current State / Full Audit History decoupling real acceptance, 2026-10-08
+
+**Current position: PASS / COMPLETED / FROZEN.**
+Infrastructure implementation is frozen at
+`0f8bf05a84ae68bd9aed66f738f9c4d3009edbe3`.
+Regression: **483 passed / 114 subtests passed**; `git diff --check` PASS.
+
+The same TEST A was resumed across all three real runs:
+
+| Segment | State transition | Full History |
+|---|---:|---|
+| first real run | A163 → A200 | OFF |
+| resumed real run | A200 → A243 | OFF |
+| resumed real run | A243 → A281 | ON |
+
+Acceptance results:
+
+| Boundary | Classification |
+|---|---|
+| CURRENT_STATE_FULL_HISTORY_DECOUPLING | PASS |
+| FULL_HISTORY_OPTION | PASS |
+| SAME_A_RESUME_WITH_HISTORY_OFF | PASS |
+| OFF_TO_OFF_TO_ON | PASS |
+| FULL_HISTORY_OFF_APPENDS_AUDIT_HISTORY | NO |
+| OFF_TO_ON_BACKFILL | NO |
+| AUDIT_GAP_PRESERVED | PASS |
+| AUDIT_GAP_CLASSIFIED_AS_CORRUPTION | NO |
+| CONTROLLED_TERMINATION | PASS |
+| CORE_BRIDGE_EXIT_CODES | 0 / 0 |
+
+OFF preserved authoritative current state and same-A continuation while omitting complete
+audit-history appends. Re-enabling recording began at **A244**; no missing OFF interval was
+fabricated or backfilled. Audit absence is therefore a legitimate recording gap, not state
+corruption. This validates the engineering separation:
+
+`CURRENT STATE = authoritative / always persisted`
+
+`FULL AUDIT HISTORY = optional observer record`
+
+Formal selection, canonical/mainline A state and history, FROI, sampler/binder and body were
+not changed by the acceptance run. The prior sandbox `EACCES` attempt remains
+**NOT_TESTABLE**. The first real OFF segment obtained 8 inputs under the frozen budget;
+12 was an auxiliary target only, so the budget was not extended to manufacture the count.
+All three real runs ended under control and Core/Bridge exited 0.
+
+Local raw evidence remains outside the published repository:
+`storage/recording-option-validation/run-20261007-63745/VALIDATION.md` and
+`ACCEPTANCE.json`. This closeout does not start or define a new research phase.
+See [CURRENT_STATE_FULL_HISTORY_CONVERSATION_HANDOFF.md](CURRENT_STATE_FULL_HISTORY_CONVERSATION_HANDOFF.md).
+
+## Historical closeout — long-run current-structure validation, 2026-10-07
 
 **Current position: memory/runtime boundary long-run validation COMPLETED / FROZEN.**
 Implementation `ed88877535375f42a51cd479518cbb5673f28db2`; exact individual
@@ -80,11 +130,14 @@ next stage is started.
 
 # BECA-V0 — Current Research Status
 
-**Status date:** 2026-10-07
+**Status date:** 2026-10-08
 
-**Current stage: BPC-LIVE-1 — Live Body-Port Connection Formation, Persistence and Later Read; PASS / COMPLETED / FROZEN.**
-Implementation evidence: `68b8ad64b5f68edd5151c7ce73af8f3657281027`.
-Closeout anchor: commit containing `BPC_LIVE_1_CONVERSATION_HANDOFF.md`.
+**Current stage: Current State / Full Audit History decoupling and optional Full History recording; PASS / COMPLETED / FROZEN.**
+Implementation evidence: `0f8bf05a84ae68bd9aed66f738f9c4d3009edbe3`.
+Real acceptance is summarized above and frozen in
+`CURRENT_STATE_FULL_HISTORY_CONVERSATION_HANDOFF.md`. No next research phase is started by this closeout.
+
+## Historical BPC-LIVE-1 status
 
 The frozen observation-only live chain is now evidenced:
 

@@ -1,125 +1,74 @@
 {
   "current_research_phase": {
-    "name": "Memory/runtime boundary long-run current-structure validation",
+    "name": "Current State / Full Audit History decoupling and optional Full History recording",
     "lifecycle": "COMPLETED_FROZEN",
     "completed": true,
     "frozen": true,
-    "implementation_commit": "ed88877535375f42a51cd479518cbb5673f28db2",
-    "individual_id": "A-24f4fd0f-e83a-4ea2-9db6-2c351c9cfe05",
-    "session_id": "S-f4a2c0a1-b26e-4503-974c-ea9cf27e1834",
-    "final_state_version": 6327,
-    "final_event_sequence": 62646,
-    "supervisor_final_sequence": 6341,
-    "session_started_at": "2026-10-07T09:22:36.588105+00:00",
-    "last_committed_at": "2026-10-07T10:22:15.803658+00:00",
-    "recorded_runtime_span_seconds": 3579.215553,
-    "actual_ended_at": null,
-    "counts": {
-      "observations": 2727,
-      "action_requests": 1365,
-      "actions_executed": 920,
-      "actions_failed": 445,
-      "experiences": 2723,
-      "recursive_outputs": 2723,
-      "integrations": 2723,
-      "reference_checked_complete_real_loops": 920
+    "status": "PASS",
+    "implementation_commit": "0f8bf05a84ae68bd9aed66f738f9c4d3009edbe3",
+    "regression": {
+      "passed": 483,
+      "subtests_passed": 114,
+      "git_diff_check": "PASS"
     },
-    "core_rss_mib": {
-      "start": 19.19140625,
-      "sampled_peak": 86.39453125,
-      "last_sampled": 50.36328125,
-      "successive_equal_sample_count_segment_means_rounded": [
-        48.57,
-        57.58,
-        62.85,
-        60.01
+    "real_acceptance": {
+      "status": "PASS",
+      "test_individual_scope": "same TEST A across all three real runs",
+      "segments": [
+        {
+          "full_history": "OFF",
+          "from_state_version": 163,
+          "to_state_version": 200
+        },
+        {
+          "full_history": "OFF",
+          "resumed": true,
+          "from_state_version": 200,
+          "to_state_version": 243
+        },
+        {
+          "full_history": "ON",
+          "resumed": true,
+          "from_state_version": 243,
+          "to_state_version": 281
+        }
       ],
-      "sustained_monotonic_uncontrolled_growth_observed": false
+      "recording_resumed_at_state_version": 244,
+      "full_history_off_appends_audit_history": false,
+      "off_to_on_backfill": false,
+      "audit_gap_preserved": true,
+      "audit_gap_classified_as_corruption": false,
+      "controlled_termination_all_three_runs": true,
+      "core_exit_code": 0,
+      "bridge_exit_code": 0,
+      "first_off_segment_inputs": 8,
+      "auxiliary_input_target": 12,
+      "budget_extended_to_reach_auxiliary_target": false
     },
-    "bridge_rss_mib": {
-      "sampled_peak": 283.28125,
-      "last_sampled": 105.85546875
+    "boundary": {
+      "CURRENT_STATE_FULL_HISTORY_DECOUPLING": "PASS",
+      "FULL_HISTORY_OPTION": "PASS",
+      "SAME_A_RESUME_WITH_HISTORY_OFF": "PASS",
+      "OFF_TO_OFF_TO_ON": "PASS",
+      "CURRENT_STATE_AUTHORITY": "ALWAYS_PERSISTED",
+      "FULL_AUDIT_HISTORY": "OPTIONAL_OBSERVER_RECORD",
+      "AUDIT_GAP": "LEGITIMATE_RECORDING_ABSENCE_NOT_CORRUPTION"
     },
-    "final_internal_state_compact_utf8_bytes": 625543,
-    "results": {
-      "MEMORY_RUNTIME_BOUNDARY": "PASS",
-      "LONG_RUNNING_REAL_BODY_WORLD_LOOP": "PASS",
-      "FULL_HISTORY_RAM_REGRESSION": "NOT_OBSERVED",
-      "CORE_RAM_LIMIT_REGRESSION": "NOT_OBSERVED",
-      "TERMINATION_OBSERVABILITY": "NOT_VALIDATED",
-      "STOP_REASON": "USER_CLOSED_TERMINAL"
+    "unchanged": {
+      "formal_selection": true,
+      "canonical_mainline_A_state_and_history": true,
+      "FROI": true,
+      "sampler_binder": true,
+      "body": true
     },
-    "runtime_boundary": {
-      "FULL_HISTORY_IN_LIVE_RUNTIME": "NO",
-      "CORE_RAM_LIMIT_RECURRED": "NO",
-      "REAL_BODY_WORLD_LOOP_SUSTAINED": "YES",
-      "formed_organizations_external_history_loaded_false": 2722,
-      "FROI_INITIAL_CONDITION_raw_history_retained": false,
-      "complete_eventstore_history": "PRESERVED_EXTERNAL_EXPERIMENT_AUDIT"
-    },
-    "computation": {
-      "submitted_jobs": 2722,
-      "returned_jobs": 2722,
-      "returned_complete": 4,
-      "returned_resource_limit": 2718,
-      "unreturned_submitted_jobs": 0,
-      "additional_cancelled_execution_records": 5,
-      "cancel_reason": "bridge_status_changed",
-      "final_resource_limit_normally_consumed": true,
-      "pending_consequences_not_pending_computation": 5
-    },
-    "termination": {
-      "SYSTEM_SELF_TERMINATION": "NO",
-      "OBSERVER_INTENTIONAL_STOP": "YES",
-      "STOP_METHOD": "USER_CLOSED_TERMINAL",
-      "PROGRAMMATIC_CONTROLLED_STOP": "NO",
-      "SESSION_ENDED_RECORDED": "NO",
-      "TERMINATION_EVIDENCE_COMPLETE": "NO",
-      "TERMINATION_OBSERVABILITY_VALIDATED": "NO",
-      "TERMINATION_OBSERVABILITY": "NOT_VALIDATED",
-      "stop_method_source": "USER_POST_RUN_CLARIFICATION_NOT_RECOVERED_SUPERVISOR_EVENT",
-      "system_self_termination_meaning": "No evidence of a system decision or recursive completion ending the run",
-      "core_pid": 24004,
-      "bridge_pid": 54108,
-      "supervisor_pid": 704,
-      "core_exit_code": null,
-      "bridge_exit_code": null,
-      "exit_time": null,
-      "exit_order": null,
-      "final_persisted_state_status": "running",
-      "manual_control_recorded": false,
-      "termination_request_recorded": false,
-      "final_core_bridge_exit_recorded": false,
-      "supervisor_finalization_recorded": false,
-      "stdout_bytes": 223366197,
-      "stderr_bytes": 858,
-      "child_exit_observations": 522,
-      "observability_implementation_failure_established": false,
-      "controlled_stop_test_reexecuted": false
-    },
-    "historical_comparison": {
-      "scope": "old full-history RAM blocker removed; longer real recursion only",
-      "old_individual_id": "A-9896e8eb-990e-48c7-ac30-694c2686d438",
-      "old_session_id": "S-ae0b5775-0bd6-4e91-bc4b-85f9ce603779",
-      "old_final_state_version": 603,
-      "old_observations": 130,
-      "old_complete_real_loops": 44,
-      "old_core_peak_rss_mib": 555.203125,
-      "unchanged_core_ram_cap_mib": 512,
-      "old_session_ended_recorded": true,
-      "old_reason": "core_ram_limit"
-    },
-    "nonclaims": [
-      "specific world-effect causal law",
-      "internal behavioral authorship",
-      "L1 / upward recursion",
-      "all Perfect Recursion validated",
-      "universal memory solution",
-      "termination observability PASS or FAIL"
+    "prior_sandbox_EACCES_attempt": "NOT_TESTABLE",
+    "local_evidence": [
+      "storage/recording-option-validation/run-20261007-63745/VALIDATION.md",
+      "storage/recording-option-validation/run-20261007-63745/ACCEPTANCE.json"
     ],
-    "handoff": "LONG_RUN_CURRENT_STRUCTURE_CONVERSATION_HANDOFF.md",
-    "closeout_anchor": "commit containing LONG_RUN_CURRENT_STRUCTURE_CONVERSATION_HANDOFF.md",
-    "closeout_scope": "DOCUMENTATION_ONLY_NO_RUNTIME_TEST_CAP_FROI_GSC_OBSERVABILITY_CHANGES_NO_RUN_NO_PUSH"
+    "handoff": "CURRENT_STATE_FULL_HISTORY_CONVERSATION_HANDOFF.md",
+    "next_research_phase_started": false,
+    "next_research_question_defined_by_this_closeout": false
   },
   "next_phase_boundary": {
     "status": "NOT_STARTED",
@@ -139,7 +88,7 @@
     "Termination observability NOT_VALIDATED: USER_CLOSED_TERMINAL was not a programmatic controlled shutdown; no PASS/FAIL or repair in this closeout",
     "Direction only: initial-constraint audit / A0 constraint audit; NOT_STARTED / NOT_IMPLEMENTED / NOT_YET_SPECIFIED; no initial-constraint conclusion"
   ],
-  "status_date": "2026-10-07",
+  "status_date": "2026-10-08",
   "operative_connection_interpretation": {
     "status": "CORRECTED",
     "correction_document": "OPERATIVE_CONNECTION_ERRATUM.md",
@@ -655,7 +604,7 @@
       "No guarantee of equivalence to a long-history individual"
     ]
   },
-  "prior_closeout_index_scope": "current_checkpoint / repository_state_audit / next_research_boundary retain the historical Successor-0 checkpoint; historical_research_phases retain BPC-0, BPC-R1 and BPC-R2; historical_bpc_live_1_closeout_checkpoint preserves BPC-LIVE-1; current_research_phase records the long-run current-structure validation",
+  "prior_closeout_index_scope": "current_research_phase records the Current State / Full Audit History decoupling real acceptance; historical_long_run_current_structure_closeout preserves the prior long-run current-structure validation; current_checkpoint / repository_state_audit / next_research_boundary retain the historical Successor-0 checkpoint; historical_research_phases retain BPC-0, BPC-R1 and BPC-R2; historical_bpc_live_1_closeout_checkpoint preserves BPC-LIVE-1",
   "historical_bpc_live_1_next_phase_boundary": {
     "status": "NOT_STARTED",
     "question": "NOT_DEFINED_IN_THIS_CLOSEOUT",
@@ -809,5 +758,127 @@
       "implementation_authorized_in_handoff": false,
       "Minecraft_execution_started": false
     }
+  },
+  "historical_long_run_current_structure_closeout": {
+    "name": "Memory/runtime boundary long-run current-structure validation",
+    "lifecycle": "COMPLETED_FROZEN",
+    "completed": true,
+    "frozen": true,
+    "implementation_commit": "ed88877535375f42a51cd479518cbb5673f28db2",
+    "individual_id": "A-24f4fd0f-e83a-4ea2-9db6-2c351c9cfe05",
+    "session_id": "S-f4a2c0a1-b26e-4503-974c-ea9cf27e1834",
+    "final_state_version": 6327,
+    "final_event_sequence": 62646,
+    "supervisor_final_sequence": 6341,
+    "session_started_at": "2026-10-07T09:22:36.588105+00:00",
+    "last_committed_at": "2026-10-07T10:22:15.803658+00:00",
+    "recorded_runtime_span_seconds": 3579.215553,
+    "actual_ended_at": null,
+    "counts": {
+      "observations": 2727,
+      "action_requests": 1365,
+      "actions_executed": 920,
+      "actions_failed": 445,
+      "experiences": 2723,
+      "recursive_outputs": 2723,
+      "integrations": 2723,
+      "reference_checked_complete_real_loops": 920
+    },
+    "core_rss_mib": {
+      "start": 19.19140625,
+      "sampled_peak": 86.39453125,
+      "last_sampled": 50.36328125,
+      "successive_equal_sample_count_segment_means_rounded": [
+        48.57,
+        57.58,
+        62.85,
+        60.01
+      ],
+      "sustained_monotonic_uncontrolled_growth_observed": false
+    },
+    "bridge_rss_mib": {
+      "sampled_peak": 283.28125,
+      "last_sampled": 105.85546875
+    },
+    "final_internal_state_compact_utf8_bytes": 625543,
+    "results": {
+      "MEMORY_RUNTIME_BOUNDARY": "PASS",
+      "LONG_RUNNING_REAL_BODY_WORLD_LOOP": "PASS",
+      "FULL_HISTORY_RAM_REGRESSION": "NOT_OBSERVED",
+      "CORE_RAM_LIMIT_REGRESSION": "NOT_OBSERVED",
+      "TERMINATION_OBSERVABILITY": "NOT_VALIDATED",
+      "STOP_REASON": "USER_CLOSED_TERMINAL"
+    },
+    "runtime_boundary": {
+      "FULL_HISTORY_IN_LIVE_RUNTIME": "NO",
+      "CORE_RAM_LIMIT_RECURRED": "NO",
+      "REAL_BODY_WORLD_LOOP_SUSTAINED": "YES",
+      "formed_organizations_external_history_loaded_false": 2722,
+      "FROI_INITIAL_CONDITION_raw_history_retained": false,
+      "complete_eventstore_history": "PRESERVED_EXTERNAL_EXPERIMENT_AUDIT"
+    },
+    "computation": {
+      "submitted_jobs": 2722,
+      "returned_jobs": 2722,
+      "returned_complete": 4,
+      "returned_resource_limit": 2718,
+      "unreturned_submitted_jobs": 0,
+      "additional_cancelled_execution_records": 5,
+      "cancel_reason": "bridge_status_changed",
+      "final_resource_limit_normally_consumed": true,
+      "pending_consequences_not_pending_computation": 5
+    },
+    "termination": {
+      "SYSTEM_SELF_TERMINATION": "NO",
+      "OBSERVER_INTENTIONAL_STOP": "YES",
+      "STOP_METHOD": "USER_CLOSED_TERMINAL",
+      "PROGRAMMATIC_CONTROLLED_STOP": "NO",
+      "SESSION_ENDED_RECORDED": "NO",
+      "TERMINATION_EVIDENCE_COMPLETE": "NO",
+      "TERMINATION_OBSERVABILITY_VALIDATED": "NO",
+      "TERMINATION_OBSERVABILITY": "NOT_VALIDATED",
+      "stop_method_source": "USER_POST_RUN_CLARIFICATION_NOT_RECOVERED_SUPERVISOR_EVENT",
+      "system_self_termination_meaning": "No evidence of a system decision or recursive completion ending the run",
+      "core_pid": 24004,
+      "bridge_pid": 54108,
+      "supervisor_pid": 704,
+      "core_exit_code": null,
+      "bridge_exit_code": null,
+      "exit_time": null,
+      "exit_order": null,
+      "final_persisted_state_status": "running",
+      "manual_control_recorded": false,
+      "termination_request_recorded": false,
+      "final_core_bridge_exit_recorded": false,
+      "supervisor_finalization_recorded": false,
+      "stdout_bytes": 223366197,
+      "stderr_bytes": 858,
+      "child_exit_observations": 522,
+      "observability_implementation_failure_established": false,
+      "controlled_stop_test_reexecuted": false
+    },
+    "historical_comparison": {
+      "scope": "old full-history RAM blocker removed; longer real recursion only",
+      "old_individual_id": "A-9896e8eb-990e-48c7-ac30-694c2686d438",
+      "old_session_id": "S-ae0b5775-0bd6-4e91-bc4b-85f9ce603779",
+      "old_final_state_version": 603,
+      "old_observations": 130,
+      "old_complete_real_loops": 44,
+      "old_core_peak_rss_mib": 555.203125,
+      "unchanged_core_ram_cap_mib": 512,
+      "old_session_ended_recorded": true,
+      "old_reason": "core_ram_limit"
+    },
+    "nonclaims": [
+      "specific world-effect causal law",
+      "internal behavioral authorship",
+      "L1 / upward recursion",
+      "all Perfect Recursion validated",
+      "universal memory solution",
+      "termination observability PASS or FAIL"
+    ],
+    "handoff": "LONG_RUN_CURRENT_STRUCTURE_CONVERSATION_HANDOFF.md",
+    "closeout_anchor": "commit containing LONG_RUN_CURRENT_STRUCTURE_CONVERSATION_HANDOFF.md",
+    "closeout_scope": "DOCUMENTATION_ONLY_NO_RUNTIME_TEST_CAP_FROI_GSC_OBSERVABILITY_CHANGES_NO_RUN_NO_PUSH"
   }
 }
