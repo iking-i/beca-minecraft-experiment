@@ -10,6 +10,39 @@
 
 ## 当前研究状态
 
+**GENERIC_OPERATIVE_CONTENT_CONSTRUCTION_TEST_ONLY = PASS / COMPLETED / FROZEN**（2026-10-08）。
+实现/验证锚点：`89f116798ef7f7251822199fdb4f665988fc28fa`；GC-T1～GC-T10 全部 PASS。
+已记录专项 **24 passed**、相关 **80 passed / 13 subtests**、完整回归
+**584 passed / 114 subtests**；13 项冻结源码哈希 MATCH。本次核对既有证据，不重跑实验或测试。
+
+在独立 TEST_ONLY A 中，历史形成的 operative structure S1 能够通过已给定的通用 Pair
+构造机制，因果性地参与新有类型内容 T1 的形成；形成内容进入权威 Current State，
+跨真实进程恢复并再次参与普通构造。Pair 操作由外部提供，实际构造操作数与产品内容
+受当前经历和 S1 影响；不证明构造操作本身由 A 自主创造。
+S1-only ablation：新增 Pair **3 → 0**，实际 expected operands **8 → 4**；
+重新插入 S1 恢复内容。总构造输出为 5 → 2，与新增产品数分别记录。
+ON/OFF 两个独立生命周期均在同一个 A / 数据库内跨进程保存并复用全部 3 个新 T1 引用，
+不依赖 Full Audit History replay。使用 synthetic observations / FakeBridge，没有运行 Minecraft。
+
+初次专项失败、首轮完整回归失败和修复记录原样保留；Tk 初始化失败的具体宿主触发原因
+仍 NOT_ESTABLISHED。旧冻结 FormalL0、测试、历史证据及理论引用不变。
+默认执行行为不变；实现中的 Core 修改仅为实验状态 admission guard。
+仍不证明任意内容生成、完整表达、动作与参数作者权、表达采用关系、身体执行权、
+自主目标、自主动作选择、behavioral causal closure、L1/upward recursion 或通用生成规律。
+
+见 [closeout](GENERIC_OPERATIVE_CONTENT_CONSTRUCTION_TEST_ONLY_CLOSEOUT.md) 与
+[conversation handoff](GENERIC_OPERATIVE_CONTENT_CONSTRUCTION_TEST_ONLY_CONVERSATION_HANDOFF.md)。
+
+下一问题仅冻结：**已经形成并可继续参与构造的 T1，能否通过同一套普通 operative 机制，
+进一步形成包含动作 code、必要参数及引用关系的完整表达内容，而不由宿主固定策略替 A 填写或选择？**
+只记录核对现有 typed Pair / 构造机制是否可复用的研究边界，不预设其足够。
+不得另造独立决策系统、硬编码 Pair-to-action 映射或把 sampler/binder 结果冒充内部生成。
+下一阶段 design / implementation / experiment **NOT_STARTED**；不接通身体、不运行 Minecraft。
+
+### 历史 closeout — Formal A Continuous Operative Reentry TEST_ONLY
+
+以下保留先前阶段收口时的状态与下一问题，不作为当前实施授权。
+
 **FORMAL_A_CONTINUOUS_OPERATIVE_REENTRY = PASS / COMPLETED / FROZEN**（2026-10-08）。
 实现/验证锚点：`1e28a00a401681efb304ec518ed672a12cea901f`；CR-T1～CR-T10 全部 PASS。
 已记录专项 **28 passed**、相关 **161 passed / 23 subtests**、完整回归
