@@ -2,7 +2,7 @@
   "theory_repository": "https://github.com/iking-i/beca-architecture",
   "theory_version": "Perfect Recursion / BER v0.9",
   "theory_branch": "main",
-  "theory_main_commit_at_publication": "c494892ba12382b2f2d07cce330176257130626c",
+  "theory_main_commit_at_publication": "2e207806289269a1213f6fcc83fa14eb0984aab7",
   "previous_theory_reference": {
     "version": "Perfect Recursion / BER v0.9",
     "commit": "89a56ad7ce236adfcb52b13d3e6fe7014ff88ddd"
@@ -38,13 +38,13 @@
   "note": "Metadata/reference synchronization only. Current theory main clarifies that origin-given constraints/startup scaffolding are classified by provenance rather than permanent immutability, and that external education/instruction belongs to environment-side recursion. The historical non-exhaustive realization boundary remains anchored to its 2026-10-06 theory commit. No runtime, continuity/death behavior, GSC validation result, behavioral-closure verdict, world-entry evidence, or historical experimental result is changed.",
   "current_reference": {
     "branch": "main",
-    "commit": "c494892ba12382b2f2d07cce330176257130626c",
+    "commit": "2e207806289269a1213f6fcc83fa14eb0984aab7",
     "checked_on": "2026-10-08",
     "scope": [
       "current Perfect Recursion / BER v0.9 theory",
       "origin-given startup tasks and transient scaffolding",
-      "origin provenance != runtime permanence",
-      "environment-side education/instruction as recursive input"
+      "first-individual continuation may be an origin startup condition",
+      "initial death/termination may be absent or unreachable without implying a survival goal"
     ],
     "changes_runtime": false
   }

@@ -130,6 +130,39 @@ next stage is started.
 
 # BECA-V0 — Current Research Status
 
+## Current next research question — Operative Handoff TEST_ONLY
+
+The next research question is now explicitly frozen, but implementation and execution have
+not started. See [OPERATIVE_HANDOFF_TEST_ONLY_SPEC.md](OPERATIVE_HANDOFF_TEST_ONLY_SPEC.md).
+
+Frozen question:
+
+> Can one creator-supplied initial operative structure S0 and one later internally formed
+> structure S1 of the same operative kind enter the same generic, non-privileged execution
+> mechanism, such that ordinary later recursion actually depends on S1?
+
+This follows the operative-structure audit result that generic formed-edge execution
+semantics are absent in the current runtime. The purpose is to test the minimum
+creator-to-individual authorship handoff at the structural level, not behavioral
+authorship.
+
+The first-individual continuation condition is separately clarified by current theory:
+`Continuity(A) != 0` may be a protected startup condition, including an initially
+unreachable death/termination transition. It is not evidence of an internally authored
+survival goal and is not assumed permanent.
+
+Current lifecycle:
+
+```text
+QUESTION_FROZEN
+DESIGN_FROZEN
+IMPLEMENTATION_NOT_STARTED
+EXPERIMENT_NOT_STARTED
+MINECRAFT_NOT_REQUIRED
+```
+
+
+
 **Status date:** 2026-10-08
 
 **Current stage: Current State / Full Audit History decoupling and optional Full History recording; PASS / COMPLETED / FROZEN.**

@@ -99,6 +99,31 @@ interpreter has already been designed or validated.
 
 ---
 
+## 2B. First-individual continuation may be a protected startup condition
+
+For the first-individual experiment, `Continuity(A) != 0` MUST NOT be interpreted as
+evidence that A begins with a self-authored survival objective.
+
+A valid startup realization may instead make the relevant death/termination transition
+absent, unreachable, or externally prevented long enough for initial recursive
+accumulation:
+
+```text
+protected / non-terminating startup
+!=
+survival goal
+```
+
+If termination later becomes reachable through lawful environment–individual recursion,
+continuation may then become a newly encountered recursive problem. Any later
+continuation-related goal, policy, or structure must be attributed by provenance and
+must not be projected back into A0.
+
+This clarification does not add a death mechanism to the current runtime and does not
+authorize changing the current individual's termination behavior.
+
+---
+
 ## 3. Do not pre-solve future recursive problems
 
 A newly noticed problem does **not** automatically become a prerequisite for the current experiment.
