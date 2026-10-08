@@ -10,6 +10,37 @@
 
 ## 当前研究状态
 
+**TYPED_OPERATIVE_CONNECTION_TEST_ONLY = PASS / COMPLETED / FROZEN**（2026-10-08）。
+实现/验证锚点：`95d54d5b60783ace18eee8399ae3068158011379`；TC-T1～TC-T10 全部 PASS。
+已记录专项 **24 passed**、相关 **124 passed / 13 subtests**、完整回归
+**628 passed / 114 subtests**；13 项冻结源码哈希 MATCH。本次核对保存的代码、测试与机器证据，不重新运行实验。
+
+在独立 TEST_ONLY ConnectionCore、合成观察和 FakeBridge 范围内，普通 integration
+依据同通道精确 before→after 形成 **ObservedValue → ObservedValue** 定向连接。
+后续普通递归实际使用已形成连接的端点构造 Pair，并将产品作为实际 expected operands。
+两组不同历史形成相反连接，在材料与当前输入相同的检查点产生不同内容；
+S1-only ablation：Pair 产品 **2 → 1**，实际操作数 **13 → 12**，重新插入恢复原内容。
+连接与内容进入权威 Current State，ON/OFF 各自同一个 A / 数据库跨真实进程恢复并复用，
+不依赖 Full Audit History replay，不重新形成 S1。S0/S1 表示和执行语义相同，来源标签不授予权限。
+
+观察值、类型和身份来自环境/编码器；通用形成与 Pair 法则由外部给定。
+不证明任意 typed-operand 连接、参数槽绑定、完整身体表达、表达采用权、身体执行权、
+自主目标、真实世界因果律、behavioral causal closure、L1 或通用生成规律。
+旧 CE NOT_READY、Operative Expression Binding NOT_READY 和初次失败记录原样保留，
+不追溯升级；既有 unrelated untracked 材料不加入本次收口提交。
+本次不修改 runtime、测试、caps、理论引用或冻结 evidence，不运行 Minecraft。
+见 [closeout](TYPED_OPERATIVE_CONNECTION_CLOSEOUT.md) 与
+[conversation handoff](TYPED_OPERATIVE_CONNECTION_CONVERSATION_HANDOFF.md)。
+
+下一步首先独立审查并补充 `iking-i/beca-architecture` 的**个体／环境角色相对性及实际边界说明**。
+理论更新必须有独立理论层依据，不得追溯修改本阶段验收结果；本次不更新理论仓库或理论引用。
+理论更新之后，再研究实际形成的 typed connection 如何参与原生参数槽和值／引用绑定。
+这里只记录交接顺序，不设计机制；下一实验阶段 **NOT_STARTED**。
+
+### 历史 closeout — Native Body Operands TEST_ONLY
+
+以下保留该阶段的冻结状态及当时下一问题，不作为当前实施授权。
+
 **NATIVE_BODY_OPERANDS_IN_OPERATIVE_RECURSION = PASS / COMPLETED / FROZEN**（2026-10-08）。
 实现/验证锚点：`257789144740d1e6468f00d7b7e380b4d45ba34c`；NBO-T1～NBO-T9 全部 PASS。
 已记录专项 **20 passed**、相关 **104 passed / 13 subtests**、完整回归

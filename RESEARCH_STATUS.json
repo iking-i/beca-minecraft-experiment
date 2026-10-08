@@ -1,47 +1,46 @@
 {
   "current_research_phase": {
-    "name": "NATIVE_BODY_OPERANDS_IN_OPERATIVE_RECURSION",
+    "name": "TYPED_OPERATIVE_CONNECTION_TEST_ONLY",
     "lifecycle": "COMPLETED_FROZEN",
     "status": "PASS",
     "completed": true,
     "frozen": true,
-    "implementation_commit": "257789144740d1e6468f00d7b7e380b4d45ba34c",
-    "closeout_anchor": "Separate documentation commit containing NATIVE_BODY_OPERANDS_CLOSEOUT.md",
-    "scope": "explicit TEST_ONLY NativeCore; synthetic observations / FakeBridge; each ON/OFF independent A/database persists across actual subprocess restart",
-    "mechanism_version": "NATIVE-BODY-OPERANDS-TEST_ONLY-1",
+    "implementation_commit": "95d54d5b60783ace18eee8399ae3068158011379",
+    "closeout_anchor": "Separate documentation commit containing TYPED_OPERATIVE_CONNECTION_CLOSEOUT.md",
+    "scope": "independent TEST_ONLY ConnectionCore; synthetic observations / FakeBridge; scalar ObservedValue to ObservedValue connections",
+    "mechanism_version": "TYPED-OPERATIVE-CONNECTION-TEST_ONLY-1",
     "criteria": {
-      "NBO_T1": "PASS",
-      "NBO_T2": "PASS",
-      "NBO_T3": "PASS",
-      "NBO_T4": "PASS",
-      "NBO_T5": "PASS",
-      "NBO_T6": "PASS",
-      "NBO_T7": "PASS",
-      "NBO_T8": "PASS",
-      "NBO_T9": "PASS"
+      "TC_T1": "PASS",
+      "TC_T2": "PASS",
+      "TC_T3": "PASS",
+      "TC_T4": "PASS",
+      "TC_T5": "PASS",
+      "TC_T6": "PASS",
+      "TC_T7": "PASS",
+      "TC_T8": "PASS",
+      "TC_T9": "PASS",
+      "TC_T10": "PASS"
     },
-    "accepted_claim": "在独立 TEST_ONLY A 中，原生能力身份、参数槽/域和观察值/引用成为普通可达 typed UnitRef；经历形成的 S1 因果性地影响其参与通用 Pair 构造，材料与内容进入权威 Current State，跨进程恢复并复用。",
-    "representation": "typed NativePort / ParameterSlot / ParameterDomain / ObservedValue / ObservedReference Units and declared source incidence; ordinary UnitRef/Pair construction",
-    "attribution": "environment supplies identity/types/sensor material; external generic representation and Pair mechanism; actual experience-formed S1 determines operand reachability, not expression adoption",
-    "typed_input_counts": {
-      "ObservedValue": 4,
-      "NativePort": 3,
-      "ParameterSlot": 2,
-      "ObservedReference": 1,
-      "ParameterDomain": 2
-    },
+    "accepted_claim": "普通 integration 依据合成观察同通道精确 before→after 形成 ObservedValue 定向连接；后续普通递归实际使用端点构造 Pair。不同历史、消融与恢复、权威状态持久化及跨真实进程复用成立。",
+    "attribution": "sensor supplies values/types/identities; externally given generic formation/constructor law; actual experienced transitions supply specific endpoint direction/content",
     "causal_evidence": {
-      "S1_present_native_atoms": 12,
-      "S1_ablated_native_atoms": 0,
-      "new_pairs_present": 15,
-      "new_pairs_ablated": 0,
-      "expected_present": 32,
-      "expected_ablated": 4,
-      "max_witness_units_plus_content": 63,
-      "locked_units_cap": 64,
-      "all_native_atom_products_reused": true
+      "history_pairs": [
+        [
+          0,
+          1
+        ],
+        [
+          20,
+          64
+        ]
+      ],
+      "same_native_material": true,
+      "pairs_present": 2,
+      "pairs_s1_ablated": 1,
+      "expected_present": 13,
+      "expected_s1_ablated": 12,
+      "reinsertion_restores_content": true
     },
-    "S1_reinsertion_restores_content": true,
     "CURRENT_STATE_AUTHORITATIVE": true,
     "CURRENT_STATE_PERSISTENCE": "PASS",
     "CROSS_PROCESS_REUSE": "PASS",
@@ -49,87 +48,83 @@
       "ON",
       "OFF"
     ],
+    "S1_reformed_after_restart": false,
     "FULL_HISTORY_REPLAY_REQUIRED": false,
     "specialized_consumer_used": false,
     "external_selection_used": false,
     "provenance_affects_execution": false,
     "verification": {
-      "dedicated_passed": 20,
-      "related_passed": 104,
+      "dedicated_passed": 24,
+      "related_passed": 124,
       "related_subtests_passed": 13,
-      "full_passed": 604,
+      "full_passed": 628,
       "full_subtests_passed": 114,
       "full_failures": 0,
       "frozen_hash_count": 13,
       "frozen_hash_status": "MATCH",
-      "record": "experimental/native_body_operands/VALIDATION.json",
-      "counts_source": "recorded implementation runs audited at closeout; no closeout rerun"
+      "record": "experimental/typed_operative_connection/VALIDATION.json",
+      "counts_source": "saved implementation verification; no closeout rerun"
     },
-    "DEFAULT_EXECUTION_BEHAVIOR_UNCHANGED": true,
-    "core_edit_scope": "existing two-line read-only foreign-mode guard; no further runtime change at closeout",
     "original_failure_records": [
-      "experimental/native_body_operands/INITIAL_VERIFICATION.md"
+      "experimental/typed_operative_connection/INITIAL_VERIFICATION.md"
     ],
     "original_failure_preserved": true,
-    "CE_readiness_record_preserved": {
-      "classification": "NOT_READY",
-      "criteria": "CE_T1..CE_T10 remain NOT_ESTABLISHED",
-      "files": [
-        "experimental/operative_expression/SPEC.md",
-        "experimental/operative_expression/VALIDATION.md",
-        "experimental/operative_expression/VALIDATION.json"
-      ],
-      "tracking": "existing local untracked material preserved byte-identically; excluded from this commit"
+    "prior_NOT_READY_records_preserved": {
+      "CE": "experimental/operative_expression/",
+      "Operative Expression Binding": "experimental/operative_expression_binding/",
+      "tracking": "existing unrelated local untracked material preserved and excluded from closeout commit"
     },
     "limits": [
-      "first-created channel/kind incidence does not update every later scalar or ref epoch",
-      "historical references are construction material, not asserted current executable targets",
-      "16 Units + 47 content nodes = 63/64; original capacity unchanged; whole batches reject without pruning"
+      "formation hook requires new ordinary temporal relation integration",
+      "exact finite scalar endpoints must already be admitted",
+      "original shared unit/content 64 and relation 96 limits unchanged"
     ],
     "nonclaims": {
-      "COMPLETE_EXPRESSION_FORMATION": "NOT_ESTABLISHED",
-      "PARAMETER_BINDING_RELATION": "NOT_ESTABLISHED",
-      "ACTION_CODE_AUTHORSHIP": "NOT_ESTABLISHED",
-      "PARAMETER_AUTHORSHIP": "NOT_ESTABLISHED",
+      "ARBITRARY_TYPED_OPERAND_CONNECTION": "NOT_ESTABLISHED",
+      "PARAMETER_SLOT_BINDING": "NOT_ESTABLISHED",
+      "COMPLETE_BODY_EXPRESSION": "NOT_ESTABLISHED",
       "EXPRESSION_ADOPTION_AUTHORITY": "NOT_ESTABLISHED",
       "BODY_EXECUTION_AUTHORITY": "NOT_ESTABLISHED",
-      "AUTONOMOUS_ACTION_SELECTION": "NOT_ESTABLISHED",
       "AUTONOMOUS_GOAL_FORMATION": "NOT_ESTABLISHED",
-      "DEFAULT_MAINLINE_ADOPTION": "NOT_ESTABLISHED",
+      "AUTONOMOUS_ACTION_SELECTION": "NOT_ESTABLISHED",
+      "WORLD_EFFECT_CAUSAL_LAW": "NOT_ESTABLISHED",
       "BEHAVIORAL_CAUSAL_CLOSURE": "NOT_ESTABLISHED",
       "L1_UPWARD_RECURSION": "NOT_ESTABLISHED",
       "UNIVERSAL_GENERATIVE_DYNAMICS": "NOT_ESTABLISHED"
     },
+    "DEFAULT_EXECUTION_BEHAVIOR_UNCHANGED": true,
+    "core_edit_scope": "already committed two-line read-only foreign-mode guard; no closeout runtime edit",
     "minecraft_run": false,
     "body_execution": false,
     "real_mainline_a_created": false,
     "theory_changed": false,
-    "closeout": "NATIVE_BODY_OPERANDS_CLOSEOUT.md",
-    "handoff": "NATIVE_BODY_OPERANDS_CONVERSATION_HANDOFF.md",
+    "closeout": "TYPED_OPERATIVE_CONNECTION_CLOSEOUT.md",
+    "handoff": "TYPED_OPERATIVE_CONNECTION_CONVERSATION_HANDOFF.md",
     "next_research_phase_started": false
   },
   "next_phase_boundary": {
-    "status": "QUESTION_FROZEN",
+    "status": "HANDOFF_RECORDED",
     "next_phase_lifecycle": "NOT_STARTED",
-    "question": "在身体端口、参数槽、合法值和感知引用已经成为可达递归操作数之后，现有普通递归构造能否形成具有完整参数绑定关系的原生身体表达？",
-    "question_frozen": true,
+    "first_work": {
+      "repo": "iking-i/beca-architecture",
+      "subject": "个体／环境角色相对性及实际边界说明",
+      "independent_theory_level_justification_required": true,
+      "retroactive_acceptance_change_allowed": false,
+      "review_started": false,
+      "update_started": false
+    },
+    "subsequent_question": "理论更新之后，再研究实际形成的 typed connection 如何参与原生参数槽和值／引用绑定。",
     "stage_started": false,
     "design_started": false,
     "implementation_started": false,
     "experiment_started": false,
     "Minecraft_execution_started": false,
-    "distinctions": [
-      "environment-provided legal materials and type constraints",
-      "internally formed expression content and parameter bindings",
-      "adoption and execution authority remain unestablished"
-    ],
-    "direction_only": "prioritize existing ordinary construction reuse, no fixed action strategy or validator-as-author inference",
     "runtime_implementation_authorized_by_closeout": false
   },
   "next_work": [
-    "Preserve Native Body Operands PASS / COMPLETED / FROZEN and original CE NOT_READY evidence",
-    "Only freeze complete native-expression / parameter-binding question; prioritize ordinary constructor reuse without prescribing a mechanism",
-    "No next design, implementation, adoption or body execution is started by closeout"
+    "Preserve Typed Operative Connection PASS / COMPLETED / FROZEN, earlier NOT_READY records and all original failures",
+    "First independently review and supplement individual/environment role relativity and actual boundary explanation in iking-i/beca-architecture; do not retroactively change TC acceptance",
+    "Only after the independent theory update continue typed-connection participation in native parameter-slot/value/reference binding; no next design/implementation/experiment started"
   ],
   "status_date": "2026-10-08",
   "operative_connection_interpretation": {
@@ -557,21 +552,22 @@
     "historical_results_rewritten": false
   },
   "next_research_boundary": {
-    "status": "QUESTION_FROZEN",
+    "status": "HANDOFF_RECORDED",
     "next_phase_lifecycle": "NOT_STARTED",
-    "question": "在身体端口、参数槽、合法值和感知引用已经成为可达递归操作数之后，现有普通递归构造能否形成具有完整参数绑定关系的原生身体表达？",
-    "question_frozen": true,
+    "first_work": {
+      "repo": "iking-i/beca-architecture",
+      "subject": "个体／环境角色相对性及实际边界说明",
+      "independent_theory_level_justification_required": true,
+      "retroactive_acceptance_change_allowed": false,
+      "review_started": false,
+      "update_started": false
+    },
+    "subsequent_question": "理论更新之后，再研究实际形成的 typed connection 如何参与原生参数槽和值／引用绑定。",
     "stage_started": false,
     "design_started": false,
     "implementation_started": false,
     "experiment_started": false,
     "Minecraft_execution_started": false,
-    "distinctions": [
-      "environment-provided legal materials and type constraints",
-      "internally formed expression content and parameter bindings",
-      "adoption and execution authority remain unestablished"
-    ],
-    "direction_only": "prioritize existing ordinary construction reuse, no fixed action strategy or validator-as-author inference",
     "runtime_implementation_authorized_by_closeout": false
   },
   "historical_bpc_live_1_closeout_checkpoint": {
@@ -652,7 +648,7 @@
       "No guarantee of equivalence to a long-history individual"
     ]
   },
-  "prior_closeout_index_scope": "Current phase is Native Body Operands TEST_ONLY. Historical phase/then-next-question snapshots preserve prior closeouts including Generic Operative Content Construction. Legacy indexes retain historical scopes; CE NOT_READY remains unchanged.",
+  "prior_closeout_index_scope": "Current phase is Typed Operative Connection TEST_ONLY. Prior phase and then-next-question snapshots, including Native Body Operands, remain historical. CE and Operative Expression Binding NOT_READY remain unchanged.",
   "historical_bpc_live_1_next_phase_boundary": {
     "status": "NOT_STARTED",
     "question": "NOT_DEFINED_IN_THIS_CLOSEOUT",
@@ -1006,6 +1002,115 @@
       "closeout": "GENERIC_OPERATIVE_CONTENT_CONSTRUCTION_TEST_ONLY_CLOSEOUT.md",
       "handoff": "GENERIC_OPERATIVE_CONTENT_CONSTRUCTION_TEST_ONLY_CONVERSATION_HANDOFF.md",
       "next_research_phase_started": false
+    },
+    "native_body_operands_in_operative_recursion": {
+      "name": "NATIVE_BODY_OPERANDS_IN_OPERATIVE_RECURSION",
+      "lifecycle": "COMPLETED_FROZEN",
+      "status": "PASS",
+      "completed": true,
+      "frozen": true,
+      "implementation_commit": "257789144740d1e6468f00d7b7e380b4d45ba34c",
+      "closeout_anchor": "Separate documentation commit containing NATIVE_BODY_OPERANDS_CLOSEOUT.md",
+      "scope": "explicit TEST_ONLY NativeCore; synthetic observations / FakeBridge; each ON/OFF independent A/database persists across actual subprocess restart",
+      "mechanism_version": "NATIVE-BODY-OPERANDS-TEST_ONLY-1",
+      "criteria": {
+        "NBO_T1": "PASS",
+        "NBO_T2": "PASS",
+        "NBO_T3": "PASS",
+        "NBO_T4": "PASS",
+        "NBO_T5": "PASS",
+        "NBO_T6": "PASS",
+        "NBO_T7": "PASS",
+        "NBO_T8": "PASS",
+        "NBO_T9": "PASS"
+      },
+      "accepted_claim": "在独立 TEST_ONLY A 中，原生能力身份、参数槽/域和观察值/引用成为普通可达 typed UnitRef；经历形成的 S1 因果性地影响其参与通用 Pair 构造，材料与内容进入权威 Current State，跨进程恢复并复用。",
+      "representation": "typed NativePort / ParameterSlot / ParameterDomain / ObservedValue / ObservedReference Units and declared source incidence; ordinary UnitRef/Pair construction",
+      "attribution": "environment supplies identity/types/sensor material; external generic representation and Pair mechanism; actual experience-formed S1 determines operand reachability, not expression adoption",
+      "typed_input_counts": {
+        "ObservedValue": 4,
+        "NativePort": 3,
+        "ParameterSlot": 2,
+        "ObservedReference": 1,
+        "ParameterDomain": 2
+      },
+      "causal_evidence": {
+        "S1_present_native_atoms": 12,
+        "S1_ablated_native_atoms": 0,
+        "new_pairs_present": 15,
+        "new_pairs_ablated": 0,
+        "expected_present": 32,
+        "expected_ablated": 4,
+        "max_witness_units_plus_content": 63,
+        "locked_units_cap": 64,
+        "all_native_atom_products_reused": true
+      },
+      "S1_reinsertion_restores_content": true,
+      "CURRENT_STATE_AUTHORITATIVE": true,
+      "CURRENT_STATE_PERSISTENCE": "PASS",
+      "CROSS_PROCESS_REUSE": "PASS",
+      "recording_modes_verified": [
+        "ON",
+        "OFF"
+      ],
+      "FULL_HISTORY_REPLAY_REQUIRED": false,
+      "specialized_consumer_used": false,
+      "external_selection_used": false,
+      "provenance_affects_execution": false,
+      "verification": {
+        "dedicated_passed": 20,
+        "related_passed": 104,
+        "related_subtests_passed": 13,
+        "full_passed": 604,
+        "full_subtests_passed": 114,
+        "full_failures": 0,
+        "frozen_hash_count": 13,
+        "frozen_hash_status": "MATCH",
+        "record": "experimental/native_body_operands/VALIDATION.json",
+        "counts_source": "recorded implementation runs audited at closeout; no closeout rerun"
+      },
+      "DEFAULT_EXECUTION_BEHAVIOR_UNCHANGED": true,
+      "core_edit_scope": "existing two-line read-only foreign-mode guard; no further runtime change at closeout",
+      "original_failure_records": [
+        "experimental/native_body_operands/INITIAL_VERIFICATION.md"
+      ],
+      "original_failure_preserved": true,
+      "CE_readiness_record_preserved": {
+        "classification": "NOT_READY",
+        "criteria": "CE_T1..CE_T10 remain NOT_ESTABLISHED",
+        "files": [
+          "experimental/operative_expression/SPEC.md",
+          "experimental/operative_expression/VALIDATION.md",
+          "experimental/operative_expression/VALIDATION.json"
+        ],
+        "tracking": "existing local untracked material preserved byte-identically; excluded from this commit"
+      },
+      "limits": [
+        "first-created channel/kind incidence does not update every later scalar or ref epoch",
+        "historical references are construction material, not asserted current executable targets",
+        "16 Units + 47 content nodes = 63/64; original capacity unchanged; whole batches reject without pruning"
+      ],
+      "nonclaims": {
+        "COMPLETE_EXPRESSION_FORMATION": "NOT_ESTABLISHED",
+        "PARAMETER_BINDING_RELATION": "NOT_ESTABLISHED",
+        "ACTION_CODE_AUTHORSHIP": "NOT_ESTABLISHED",
+        "PARAMETER_AUTHORSHIP": "NOT_ESTABLISHED",
+        "EXPRESSION_ADOPTION_AUTHORITY": "NOT_ESTABLISHED",
+        "BODY_EXECUTION_AUTHORITY": "NOT_ESTABLISHED",
+        "AUTONOMOUS_ACTION_SELECTION": "NOT_ESTABLISHED",
+        "AUTONOMOUS_GOAL_FORMATION": "NOT_ESTABLISHED",
+        "DEFAULT_MAINLINE_ADOPTION": "NOT_ESTABLISHED",
+        "BEHAVIORAL_CAUSAL_CLOSURE": "NOT_ESTABLISHED",
+        "L1_UPWARD_RECURSION": "NOT_ESTABLISHED",
+        "UNIVERSAL_GENERATIVE_DYNAMICS": "NOT_ESTABLISHED"
+      },
+      "minecraft_run": false,
+      "body_execution": false,
+      "real_mainline_a_created": false,
+      "theory_changed": false,
+      "closeout": "NATIVE_BODY_OPERANDS_CLOSEOUT.md",
+      "handoff": "NATIVE_BODY_OPERANDS_CONVERSATION_HANDOFF.md",
+      "next_research_phase_started": false
     }
   },
   "historical_next_phase_boundaries": {
@@ -1099,6 +1204,24 @@
       ],
       "forbidden_inference": "No independent output decision system, fixed Pair-to-action mapping, host-supplied/selected expression, or sampler/binder relabeling as internal generation.",
       "direct_minecraft_run_required": false,
+      "runtime_implementation_authorized_by_closeout": false
+    },
+    "native_body_operands_closeout": {
+      "status": "QUESTION_FROZEN",
+      "next_phase_lifecycle": "NOT_STARTED",
+      "question": "在身体端口、参数槽、合法值和感知引用已经成为可达递归操作数之后，现有普通递归构造能否形成具有完整参数绑定关系的原生身体表达？",
+      "question_frozen": true,
+      "stage_started": false,
+      "design_started": false,
+      "implementation_started": false,
+      "experiment_started": false,
+      "Minecraft_execution_started": false,
+      "distinctions": [
+        "environment-provided legal materials and type constraints",
+        "internally formed expression content and parameter bindings",
+        "adoption and execution authority remain unestablished"
+      ],
+      "direction_only": "prioritize existing ordinary construction reuse, no fixed action strategy or validator-as-author inference",
       "runtime_implementation_authorized_by_closeout": false
     }
   },
