@@ -1,0 +1,330 @@
+{
+  "classification": "PASS",
+  "criteria": {
+    "OH_T1": "PASS",
+    "OH_T2": "PASS",
+    "OH_T3": "PASS",
+    "OH_T4": "PASS",
+    "OH_T5": "PASS",
+    "OH_T6": "PASS",
+    "OH_T7": "PASS",
+    "OH_T8": "PASS"
+  },
+  "scope": "minimal TEST_ONLY temporal-frontier formation and structural dependency execution",
+  "fixture": {
+    "nodes": [
+      "A",
+      "B",
+      "C"
+    ],
+    "S0": [
+      "A",
+      "B"
+    ],
+    "formation_input": {
+      "active": [
+        "A"
+      ],
+      "observed": [
+        "C"
+      ]
+    },
+    "later_input": {
+      "active": [
+        "A"
+      ],
+      "observed": []
+    }
+  },
+  "S1": {
+    "edge": {
+      "source": {
+        "identity": "B"
+      },
+      "target": {
+        "identity": "C"
+      }
+    },
+    "provenance": "INTERNALLY_FORMED",
+    "formed_version": 2,
+    "support": [
+      "processing:1",
+      "observed:2:C"
+    ]
+  },
+  "S0": {
+    "edge": {
+      "source": {
+        "identity": "A"
+      },
+      "target": {
+        "identity": "B"
+      }
+    },
+    "provenance": "ORIGIN_SUPPLIED",
+    "formed_version": 0,
+    "support": [
+      "initial structural input"
+    ]
+  },
+  "committed_edge_collection": [
+    [
+      "A",
+      "B"
+    ],
+    [
+      "B",
+      "C"
+    ]
+  ],
+  "formation_history": [
+    {
+      "version": 1,
+      "input": {
+        "active": [
+          "A"
+        ],
+        "observed": []
+      },
+      "processing": {
+        "participating": [
+          "A",
+          "B"
+        ],
+        "dependencies": [
+          [
+            "A",
+            "B"
+          ]
+        ]
+      },
+      "formed": []
+    },
+    {
+      "version": 2,
+      "input": {
+        "active": [
+          "A"
+        ],
+        "observed": [
+          "C"
+        ]
+      },
+      "processing": {
+        "participating": [
+          "A",
+          "B"
+        ],
+        "dependencies": [
+          [
+            "A",
+            "B"
+          ]
+        ]
+      },
+      "formed": [
+        [
+          "B",
+          "C"
+        ]
+      ]
+    }
+  ],
+  "mechanism": {
+    "file": "experimental/operative_handoff/mechanism.py",
+    "symbol": "Mechanism.advance",
+    "line": 7,
+    "execution_input_fields": [
+      "nodes",
+      "edges",
+      "active"
+    ],
+    "same_edge_collection": true,
+    "same_execution_path": true,
+    "static_checks": {
+      "audit_fields_read": [],
+      "forbidden_domain_tokens": [],
+      "edge_execution_loop_count": 1
+    }
+  },
+  "traces": {
+    "origin": {
+      "participating": [
+        "A",
+        "B"
+      ],
+      "dependencies": [
+        [
+          "A",
+          "B"
+        ]
+      ]
+    },
+    "formation_cycle": {
+      "participating": [
+        "A",
+        "B"
+      ],
+      "dependencies": [
+        [
+          "A",
+          "B"
+        ]
+      ]
+    },
+    "canonical": {
+      "participating": [
+        "A",
+        "B",
+        "C"
+      ],
+      "dependencies": [
+        [
+          "A",
+          "B"
+        ],
+        [
+          "B",
+          "C"
+        ]
+      ]
+    },
+    "edge_ablation": {
+      "participating": [
+        "A",
+        "B"
+      ],
+      "dependencies": [
+        [
+          "A",
+          "B"
+        ]
+      ]
+    },
+    "provenance_removed": {
+      "participating": [
+        "A",
+        "B",
+        "C"
+      ],
+      "dependencies": [
+        [
+          "A",
+          "B"
+        ],
+        [
+          "B",
+          "C"
+        ]
+      ]
+    },
+    "provenance_unified": {
+      "participating": [
+        "A",
+        "B",
+        "C"
+      ],
+      "dependencies": [
+        [
+          "A",
+          "B"
+        ],
+        [
+          "B",
+          "C"
+        ]
+      ]
+    },
+    "repeated_reuse": {
+      "participating": [
+        "A",
+        "B",
+        "C"
+      ],
+      "dependencies": [
+        [
+          "A",
+          "B"
+        ],
+        [
+          "B",
+          "C"
+        ]
+      ]
+    }
+  },
+  "edge_ablation_held_fixed": [
+    "nodes",
+    "S0",
+    "input",
+    "history",
+    "audit",
+    "previous processing",
+    "M"
+  ],
+  "claim": "Within the frozen minimal TEST_ONLY scope, an origin-supplied operative edge and a later internally formed edge of the same structural kind entered the same non-privileged generic execution mechanism; the formed edge became an ordinary recursive dependency, survived normal reentry, and was causally necessary under edge ablation.",
+  "nonclaims": [
+    "behavioral causal closure",
+    "action authorship",
+    "parameter authorship",
+    "goal authorship",
+    "survival authorship",
+    "Minecraft behavior",
+    "L1/upward recursion",
+    "universal Perfect Recursion proof",
+    "all formed structures executable",
+    "formal-runtime adoption"
+  ],
+  "minecraft_run": false,
+  "new_a_created": false,
+  "formal_runtime_changed": false,
+  "base_commit": "41aceb5f0b74f7be6eb186dd5e2c0a34ba1b5d8d",
+  "source_sha256": {
+    "OPERATIVE_HANDOFF_TEST_ONLY_SPEC.md": "6c5a25d935627a441b278c07114fd2de25503e78262528414b0a69e43e214875",
+    "experimental/operative_handoff/__init__.py": "644e20f998c56e431ebfedf16b2cdbd127709ba1c8b9390c3d8b1d365beb6100",
+    "experimental/operative_handoff/mechanism.py": "2cb05fe2ac6f4f4427e129d8de78ea6c7a9aca89c8a25e64bf6fdcfd9f5f8596",
+    "experimental/operative_handoff/model.py": "b154adc926f09ceab656b68c8c04175faba3f4e00850096c1078a0ab4bc8aa97",
+    "experimental/operative_handoff/runtime.py": "c3c8982ce90828bc11880b52619bbe9cf8dd51beea839105dc96dc9ef2381df6",
+    "experimental/operative_handoff/validation.py": "ae60c69b5e4a2988d887c08e3858cc36bb1c8af17509f861c644ec6e83dd3f76",
+    "tests/test_operative_handoff.py": "b20487fbbe2cc8f3b138bac3b1f0d58fa460c65e8d76fddd7b947831e0298f41"
+  },
+  "tests": {
+    "dedicated": {
+      "command": ".venv/Scripts/python.exe -m pytest -q tests/test_operative_handoff.py",
+      "passed": 19,
+      "seconds": 0.22,
+      "exit_code": 0
+    },
+    "gsc0_controls": {
+      "command": ".venv/Scripts/python.exe -m pytest -q experimental/gsc0/tests.py",
+      "passed": 23,
+      "seconds": 4.17,
+      "exit_code": 0
+    },
+    "full_initial_attempt": {
+      "command": ".venv/Scripts/python.exe -m pytest -q",
+      "passed": 452,
+      "setup_errors": 50,
+      "subtests_passed": 114,
+      "seconds": 333.8,
+      "exit_code": 1,
+      "classification": "ENVIRONMENT_SETUP_ERROR",
+      "reason": "pytest could not create numbered temporary directory in sandbox default temp path; test bodies for all 50 errors did not execute"
+    },
+    "full_writable_basetemp": {
+      "command": ".venv/Scripts/python.exe -m pytest -q --basetemp <fresh writable external test directory>",
+      "basetemp": "C:/Users/i/.codex/visualizations/2026/10/03/01a10045-8063-70d3-b492-5e9242f9ab36/operative-handoff-pytest-8bd21c50",
+      "passed": 502,
+      "subtests_passed": 114,
+      "seconds": 315.02,
+      "exit_code": 0,
+      "status": "PASS"
+    }
+  },
+  "diff_check": "PASS",
+  "specialized_consumer_used": false,
+  "body_changed": false,
+  "sampler_binder_changed": false,
+  "old_frozen_evidence_changed": false,
+  "research_status_changed": false
+}
