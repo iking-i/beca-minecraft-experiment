@@ -1,76 +1,91 @@
 {
   "current_research_phase": {
-    "name": "OPERATIVE_HANDOFF_TEST_ONLY",
+    "name": "FORMALL0_OPERATIVE_ADOPTION_TEST_ONLY",
     "lifecycle": "COMPLETED_FROZEN",
     "status": "PASS",
     "completed": true,
     "frozen": true,
-    "implementation_commit": "7ca0ccdfd73c7c5132d7f3de54571b21c9e9d279",
-    "scope": "minimal isolated TEST_ONLY temporal-frontier formation and structural dependency execution",
+    "implementation_commit": "8b33097b746931b788ab5e72de66dd483af18edc",
+    "scope": "isolated opt-in FormalL0-derived engine; synthetic frames; actual test InternalState, not canonical Core/EventStore or real A",
     "criteria": {
-      "OH_T1": "PASS",
-      "OH_T2": "PASS",
-      "OH_T3": "PASS",
-      "OH_T4": "PASS",
-      "OH_T5": "PASS",
-      "OH_T6": "PASS",
-      "OH_T7": "PASS",
-      "OH_T8": "PASS"
+      "FA_T1": "PASS",
+      "FA_T2": "PASS",
+      "FA_T3": "PASS",
+      "FA_T4": "PASS",
+      "FA_T5": "PASS",
+      "FA_T6": "PASS",
+      "FA_T7": "PASS",
+      "FA_T8": "PASS",
+      "FA_T9": "PASS",
+      "FA_T10": "PASS"
     },
-    "accepted_claim": "Within the frozen minimal TEST_ONLY scope, an origin-supplied operative edge and a later internally formed edge of the same structural kind entered the same non-privileged generic execution mechanism; the later formed edge became an ordinary recursive dependency, survived normal reentry, and was causally necessary under edge ablation.",
-    "same_edge_type": true,
-    "same_execution_path": true,
-    "provenance_used_by_executor": false,
+    "accepted_claim": "Within the isolated TEST_ONLY FormalL0-derived synthetic-frame scope, origin-supplied S0 and history-formed S1 share one operative representation and execution mechanism in actual test InternalState; persisted S1 naturally changes subsequent ordinary advance operands and comparison, with edge-only causal ablation, repeated reuse and provenance-neutral execution. This does not establish adoption by canonical FormalL0, ACore or a continuously running real A.",
+    "operative_representation": "InternalState.l0_state.operative_test_only.edges: source/target ordinary relation references",
+    "S0_source": "creator-supplied origin scaffold",
+    "S1_formation_source": "post-startup synthetic experience and actual relation integration under the registered TEST_ONLY candidate law",
+    "same_representation_and_execution": true,
+    "ordinary_advance_operands_changed": true,
+    "S1_only_ablation_comparison": "True -> None",
     "specialized_consumer_used": false,
-    "edge_ablation_changes_actual_path": true,
-    "structural_reuse": true,
+    "provenance_affects_execution": false,
     "verification": {
-      "dedicated_passed": 19,
-      "gsc0_controls_passed": 23,
-      "full_passed": 502,
+      "dedicated_passed": 30,
+      "related_passed": 99,
+      "related_subtests_passed": 24,
+      "full_passed": 532,
       "full_subtests_passed": 114,
-      "diff_check": "PASS",
-      "JSON": "PASS",
-      "report_reproduction": "PASS",
-      "record": "experimental/operative_handoff/VALIDATION.json",
-      "initial_full_setup_error_preserved": true
+      "full_failures": 0,
+      "test_exclusions": [],
+      "frozen_guard_passed": 1,
+      "frozen_guard_subtests_passed": 13,
+      "record": "experimental/formall0_operative/VALIDATION.json",
+      "counts_source": "recorded implementation verification; no closeout rerun"
     },
+    "FROZEN_FORMALL0_SOURCE_HASH": "MATCH",
+    "frozen_formall0_sha256": "1b6abea5d568c349bf7c181ecd771fc6f08cd0f1791fa49be7434c4acd354b62",
+    "DEFAULT_RUNTIME_UNCHANGED": true,
+    "pre_isolation_failure_preserved": true,
+    "pre_isolation_record": "experimental/formall0_operative/history/PRE_ISOLATION_VALIDATION.json",
     "nonclaims": {
-      "FORMAL_A_INTEGRATION": "NOT_ESTABLISHED",
-      "CURRENTSTRUCTURE_INTEGRATION": "NOT_ESTABLISHED",
-      "FORMALL0_GENERIC_OPERATIVE_REENTRY": "NOT_ESTABLISHED",
-      "REAL_A_INTERNAL_OPERATIVE_AUTHORSHIP": "NOT_ESTABLISHED",
-      "BODY_EXPRESSION_AUTHORSHIP": "NOT_ESTABLISHED",
-      "ACTION_CODE_AUTHORSHIP": "NOT_ESTABLISHED",
-      "PARAMETER_AUTHORSHIP": "NOT_ESTABLISHED",
+      "CANONICAL_FORMALL0_ADOPTION": "NOT_ESTABLISHED",
+      "REAL_A_CONTINUOUS_OPERATIVE_ADOPTION": "NOT_ESTABLISHED",
+      "CORE_EVENTSTORE_INTEGRATION": "NOT_ESTABLISHED",
+      "MINECRAFT_WORLD_FACING_AUTHORSHIP": "NOT_ESTABLISHED",
       "BEHAVIORAL_CAUSAL_CLOSURE": "NOT_ESTABLISHED",
-      "MINECRAFT_WORLD_FACING_OPERATIVE_HANDOFF": "NOT_ESTABLISHED",
-      "AUTONOMOUS_GOAL_FORMATION": "NOT_ESTABLISHED",
-      "SURVIVAL_GOAL": "NOT_ESTABLISHED",
-      "L1 / UPWARD_RECURSION": "NOT_ESTABLISHED",
-      "UNIVERSAL_PERFECT_RECURSION": "NOT_ESTABLISHED"
+      "L1_UPWARD_RECURSION": "NOT_ESTABLISHED"
     },
-    "formal_runtime_changed": false,
+    "canonical_core_integration": false,
     "minecraft_run": false,
-    "new_a_created": false,
-    "formal_final_mechanism_established": false,
-    "closeout": "OPERATIVE_HANDOFF_TEST_ONLY_CLOSEOUT.md",
-    "handoff": "OPERATIVE_HANDOFF_TEST_ONLY_CONVERSATION_HANDOFF.md",
+    "real_a_created": false,
+    "closeout": "FORMALL0_OPERATIVE_ADOPTION_TEST_ONLY_CLOSEOUT.md",
+    "handoff": "FORMALL0_OPERATIVE_ADOPTION_TEST_ONLY_CONVERSATION_HANDOFF.md",
     "next_research_phase_started": false
   },
   "next_phase_boundary": {
-    "status": "NOT_STARTED",
+    "status": "QUESTION_FROZEN",
+    "next_phase_lifecycle": "NOT_STARTED",
+    "question": "在不改变原有冻结 FormalL0 的前提下，如何让已经通过 TEST_ONLY 的 operative adoption 通过明确版本化的实验执行路径进入 ACore 和权威 Current State，使同一个实验个体在连续状态转换中真正使用后来形成的 operative structure？",
+    "chain": [
+      "ACore",
+      "authoritative Current State",
+      "versioned operative engine",
+      "formation + persistence",
+      "next ordinary advance",
+      "formed operative dependency"
+    ],
+    "question_frozen": true,
+    "stage_started": false,
+    "design_started": false,
+    "acceptance_preregistered": false,
     "implementation_started": false,
     "experiment_started": false,
-    "stage_started": false,
-    "authorized_current_activity": "READ_ONLY_FORMAL_A_GENERIC_OPERATIVE_INTEGRATION_AUDIT",
-    "audit_authorizes_runtime_implementation": false,
-    "Minecraft_execution_started": false
+    "Minecraft_execution_started": false,
+    "runtime_implementation_authorized_by_closeout": false
   },
   "next_work": [
-    "Preserve the frozen Operative Handoff TEST_ONLY PASS and all prior scoped results",
-    "Perform only the separately authorized read-only Formal A operative integration audit",
-    "No formal runtime integration, new experiment, Minecraft run, body expression or new A is authorized"
+    "Preserve the frozen isolated FormalL0 Operative Adoption TEST_ONLY PASS and all historical evidence",
+    "Only freeze the versioned ACore/authoritative Current State operative adoption question",
+    "No next design, implementation, state migration, Minecraft run or experiment is started or authorized by closeout"
   ],
   "status_date": "2026-10-08",
   "operative_connection_interpretation": {
@@ -498,17 +513,25 @@
     "historical_results_rewritten": false
   },
   "next_research_boundary": {
-    "classification": "CANDIDATE_NEXT_RESEARCH_BOUNDARY",
-    "status": "NOT_YET_DESIGNED",
-    "stage_started": false,
-    "chain": "formed internal organization -> complete primitive body expression",
-    "missing_validated_edge": "internal organization -> action code + all required parameters",
-    "other_open_questions": [
-      "multiple producer",
-      "internal requirement origin",
-      "recursive formation of relations/mechanics"
+    "status": "QUESTION_FROZEN",
+    "next_phase_lifecycle": "NOT_STARTED",
+    "question": "在不改变原有冻结 FormalL0 的前提下，如何让已经通过 TEST_ONLY 的 operative adoption 通过明确版本化的实验执行路径进入 ACore 和权威 Current State，使同一个实验个体在连续状态转换中真正使用后来形成的 operative structure？",
+    "chain": [
+      "ACore",
+      "authoritative Current State",
+      "versioned operative engine",
+      "formation + persistence",
+      "next ordinary advance",
+      "formed operative dependency"
     ],
-    "implementation_or_priority_selected": false
+    "question_frozen": true,
+    "stage_started": false,
+    "design_started": false,
+    "acceptance_preregistered": false,
+    "implementation_started": false,
+    "experiment_started": false,
+    "Minecraft_execution_started": false,
+    "runtime_implementation_authorized_by_closeout": false
   },
   "historical_bpc_live_1_closeout_checkpoint": {
     "name": "BPC-LIVE-1 — Live Body-Port Connection Formation, Persistence and Later Read",
@@ -588,7 +611,7 @@
       "No guarantee of equivalence to a long-history individual"
     ]
   },
-  "prior_closeout_index_scope": "current_research_phase records Operative Handoff TEST_ONLY; historical_current_state_full_history_closeout preserves the prior Current State / Full Audit History PASS; all other historical checkpoints and evidence retain their original scopes. historical_operative_handoff_preregistration retains the pre-implementation index.",
+  "prior_closeout_index_scope": "current_research_phase records isolated FormalL0 Operative Adoption TEST_ONLY. historical_operative_handoff_closeout_index preserves the previous OH status and then-current authorization; historical_successor0_next_research_boundary and historical checkpoint fields retain their original scopes. No historical result or evidence is rewritten.",
   "historical_bpc_live_1_next_phase_boundary": {
     "status": "NOT_STARTED",
     "question": "NOT_DEFINED_IN_THIS_CLOSEOUT",
@@ -1025,5 +1048,94 @@
         "OH-T8"
       ]
     }
+  },
+  "historical_operative_handoff_closeout_index": {
+    "current_research_phase": {
+      "name": "OPERATIVE_HANDOFF_TEST_ONLY",
+      "lifecycle": "COMPLETED_FROZEN",
+      "status": "PASS",
+      "completed": true,
+      "frozen": true,
+      "implementation_commit": "7ca0ccdfd73c7c5132d7f3de54571b21c9e9d279",
+      "scope": "minimal isolated TEST_ONLY temporal-frontier formation and structural dependency execution",
+      "criteria": {
+        "OH_T1": "PASS",
+        "OH_T2": "PASS",
+        "OH_T3": "PASS",
+        "OH_T4": "PASS",
+        "OH_T5": "PASS",
+        "OH_T6": "PASS",
+        "OH_T7": "PASS",
+        "OH_T8": "PASS"
+      },
+      "accepted_claim": "Within the frozen minimal TEST_ONLY scope, an origin-supplied operative edge and a later internally formed edge of the same structural kind entered the same non-privileged generic execution mechanism; the later formed edge became an ordinary recursive dependency, survived normal reentry, and was causally necessary under edge ablation.",
+      "same_edge_type": true,
+      "same_execution_path": true,
+      "provenance_used_by_executor": false,
+      "specialized_consumer_used": false,
+      "edge_ablation_changes_actual_path": true,
+      "structural_reuse": true,
+      "verification": {
+        "dedicated_passed": 19,
+        "gsc0_controls_passed": 23,
+        "full_passed": 502,
+        "full_subtests_passed": 114,
+        "diff_check": "PASS",
+        "JSON": "PASS",
+        "report_reproduction": "PASS",
+        "record": "experimental/operative_handoff/VALIDATION.json",
+        "initial_full_setup_error_preserved": true
+      },
+      "nonclaims": {
+        "FORMAL_A_INTEGRATION": "NOT_ESTABLISHED",
+        "CURRENTSTRUCTURE_INTEGRATION": "NOT_ESTABLISHED",
+        "FORMALL0_GENERIC_OPERATIVE_REENTRY": "NOT_ESTABLISHED",
+        "REAL_A_INTERNAL_OPERATIVE_AUTHORSHIP": "NOT_ESTABLISHED",
+        "BODY_EXPRESSION_AUTHORSHIP": "NOT_ESTABLISHED",
+        "ACTION_CODE_AUTHORSHIP": "NOT_ESTABLISHED",
+        "PARAMETER_AUTHORSHIP": "NOT_ESTABLISHED",
+        "BEHAVIORAL_CAUSAL_CLOSURE": "NOT_ESTABLISHED",
+        "MINECRAFT_WORLD_FACING_OPERATIVE_HANDOFF": "NOT_ESTABLISHED",
+        "AUTONOMOUS_GOAL_FORMATION": "NOT_ESTABLISHED",
+        "SURVIVAL_GOAL": "NOT_ESTABLISHED",
+        "L1 / UPWARD_RECURSION": "NOT_ESTABLISHED",
+        "UNIVERSAL_PERFECT_RECURSION": "NOT_ESTABLISHED"
+      },
+      "formal_runtime_changed": false,
+      "minecraft_run": false,
+      "new_a_created": false,
+      "formal_final_mechanism_established": false,
+      "closeout": "OPERATIVE_HANDOFF_TEST_ONLY_CLOSEOUT.md",
+      "handoff": "OPERATIVE_HANDOFF_TEST_ONLY_CONVERSATION_HANDOFF.md",
+      "next_research_phase_started": false
+    },
+    "next_phase_boundary": {
+      "status": "NOT_STARTED",
+      "implementation_started": false,
+      "experiment_started": false,
+      "stage_started": false,
+      "authorized_current_activity": "READ_ONLY_FORMAL_A_GENERIC_OPERATIVE_INTEGRATION_AUDIT",
+      "audit_authorizes_runtime_implementation": false,
+      "Minecraft_execution_started": false
+    },
+    "next_work": [
+      "Preserve the frozen Operative Handoff TEST_ONLY PASS and all prior scoped results",
+      "Perform only the separately authorized read-only Formal A operative integration audit",
+      "No formal runtime integration, new experiment, Minecraft run, body expression or new A is authorized"
+    ],
+    "prior_closeout_index_scope": "current_research_phase records Operative Handoff TEST_ONLY; historical_current_state_full_history_closeout preserves the prior Current State / Full Audit History PASS; all other historical checkpoints and evidence retain their original scopes. historical_operative_handoff_preregistration retains the pre-implementation index."
+  },
+  "historical_successor0_next_research_boundary": {
+    "classification": "CANDIDATE_NEXT_RESEARCH_BOUNDARY",
+    "status": "NOT_YET_DESIGNED",
+    "stage_started": false,
+    "chain": "formed internal organization -> complete primitive body expression",
+    "missing_validated_edge": "internal organization -> action code + all required parameters",
+    "other_open_questions": [
+      "multiple producer",
+      "internal requirement origin",
+      "recursive formation of relations/mechanics"
+    ],
+    "implementation_or_priority_selected": false
   }
 }

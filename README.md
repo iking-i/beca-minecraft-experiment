@@ -10,7 +10,29 @@
 
 ## 当前研究状态
 
-**最新 closeout（2026-10-08）：OPERATIVE_HANDOFF_TEST_ONLY = PASS / COMPLETED / FROZEN。**
+**FORMALL0_OPERATIVE_ADOPTION_TEST_ONLY = PASS / COMPLETED / FROZEN**（2026-10-08）。
+实现/验证锚点：`8b33097b746931b788ab5e72de66dd483af18edc`；FA-T1～FA-T10 全部 PASS。
+已记录专项 **30 passed**、相关 **99 passed / 24 subtests**、完整回归
+**532 passed / 114 subtests**；冻结 FormalL0 源码哈希 MATCH，默认 runtime 不变。
+本次收口核对既有证据，不重跑实验或测试。
+
+最强结论仅限隔离派生 FormalL0 引擎：S0 与历史形成的 S1 在真实测试 InternalState
+中使用相同 representation / execution，S1 持久恢复并自然改变后续 ordinary advance
+的实际操作数和比较；S1-only ablation、provenance neutrality 与重复复用均成立。
+这不证明 canonical FormalL0、连续真实 A 或 Core/EventStore 已接入；不证明
+Minecraft 作者权、behavioral causal closure 或 L1。迁移前 FA-T9 FAIL 与源码哈希
+冲突原样保留，所有旧冻结结果不改写。
+
+见 [closeout](FORMALL0_OPERATIVE_ADOPTION_TEST_ONLY_CLOSEOUT.md) 与
+[conversation handoff](FORMALL0_OPERATIVE_ADOPTION_TEST_ONLY_CONVERSATION_HANDOFF.md)。
+
+下一研究问题仅冻结：在不改变原有冻结 FormalL0 的前提下，如何让已经通过 TEST_ONLY 的 operative adoption 通过明确版本化的实验执行路径进入 ACore 和权威 Current State，使同一个实验个体在连续状态转换中真正使用后来形成的 operative structure？
+边界：`ACore → authoritative Current State → versioned operative engine → formation + persistence → next ordinary advance → formed operative dependency`。
+下一实现/实验 **NOT_STARTED**；本轮不设计、不实施、不运行 Minecraft。
+
+### 历史 closeout — Operative Handoff TEST_ONLY
+
+**历史 closeout（2026-10-08）：OPERATIVE_HANDOFF_TEST_ONLY = PASS / COMPLETED / FROZEN。**
 实现与结果冻结提交：`7ca0ccdfd73c7c5132d7f3de54571b21c9e9d279`。
 OH-T1–OH-T8 全部 PASS；专项 19 passed，冻结 GSC-0 controls 23 passed，
 完整回归 502 passed / 114 subtests passed；diff-check / JSON / report reproduction PASS。
@@ -67,7 +89,7 @@ Core sampled peak 86.39453125 MiB，未复现 512 MiB `core_ram_limit`。
 
 ### 历史 BPC-LIVE-1 closeout 与解释纠正
 
-以下保留此前阶段的状态、范围与证据，不替代上面的最新 Operative Handoff TEST_ONLY closeout。
+以下保留此前阶段的状态、范围与证据，不替代上面的最新 FormalL0 Operative Adoption TEST_ONLY closeout。
 
 **研究解释已纠正（2026-10-07）：** BPC-LIVE-1 仍为历史限定范围内的
 **PASS / COMPLETED / FROZEN**，冻结提交为

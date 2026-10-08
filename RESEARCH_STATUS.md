@@ -1,4 +1,26 @@
-## Latest closeout — Operative Handoff TEST_ONLY, 2026-10-08
+## Latest closeout — FormalL0 Operative Adoption TEST_ONLY, 2026-10-08
+
+**FORMALL0_OPERATIVE_ADOPTION_TEST_ONLY = PASS / COMPLETED / FROZEN**（2026-10-08）。
+实现/验证锚点：`8b33097b746931b788ab5e72de66dd483af18edc`；FA-T1～FA-T10 全部 PASS。
+已记录专项 **30 passed**、相关 **99 passed / 24 subtests**、完整回归
+**532 passed / 114 subtests**；冻结 FormalL0 源码哈希 MATCH，默认 runtime 不变。
+本次收口核对既有证据，不重跑实验或测试。
+
+最强结论仅限隔离派生 FormalL0 引擎：S0 与历史形成的 S1 在真实测试 InternalState
+中使用相同 representation / execution，S1 持久恢复并自然改变后续 ordinary advance
+的实际操作数和比较；S1-only ablation、provenance neutrality 与重复复用均成立。
+这不证明 canonical FormalL0、连续真实 A 或 Core/EventStore 已接入；不证明
+Minecraft 作者权、behavioral causal closure 或 L1。迁移前 FA-T9 FAIL 与源码哈希
+冲突原样保留，所有旧冻结结果不改写。
+
+见 [closeout](FORMALL0_OPERATIVE_ADOPTION_TEST_ONLY_CLOSEOUT.md) 与
+[conversation handoff](FORMALL0_OPERATIVE_ADOPTION_TEST_ONLY_CONVERSATION_HANDOFF.md)。
+
+下一研究问题仅冻结：在不改变原有冻结 FormalL0 的前提下，如何让已经通过 TEST_ONLY 的 operative adoption 通过明确版本化的实验执行路径进入 ACore 和权威 Current State，使同一个实验个体在连续状态转换中真正使用后来形成的 operative structure？
+边界：`ACore → authoritative Current State → versioned operative engine → formation + persistence → next ordinary advance → formed operative dependency`。
+下一实现/实验 **NOT_STARTED**；本轮不设计、不实施、不运行 Minecraft。
+
+## Historical closeout — Operative Handoff TEST_ONLY, 2026-10-08
 
 **PASS / COMPLETED / FROZEN.** Implementation/result anchor:
 `7ca0ccdfd73c7c5132d7f3de54571b21c9e9d279`.
@@ -143,7 +165,31 @@ next stage is started.
 
 # BECA-V0 — Current Research Status
 
-## Current stage — Operative Handoff TEST_ONLY
+## Current stage — FormalL0 Operative Adoption TEST_ONLY
+
+**FORMALL0_OPERATIVE_ADOPTION_TEST_ONLY = PASS / COMPLETED / FROZEN**（2026-10-08）。
+实现/验证锚点：`8b33097b746931b788ab5e72de66dd483af18edc`；FA-T1～FA-T10 全部 PASS。
+已记录专项 **30 passed**、相关 **99 passed / 24 subtests**、完整回归
+**532 passed / 114 subtests**；冻结 FormalL0 源码哈希 MATCH，默认 runtime 不变。
+本次收口核对既有证据，不重跑实验或测试。
+
+最强结论仅限隔离派生 FormalL0 引擎：S0 与历史形成的 S1 在真实测试 InternalState
+中使用相同 representation / execution，S1 持久恢复并自然改变后续 ordinary advance
+的实际操作数和比较；S1-only ablation、provenance neutrality 与重复复用均成立。
+这不证明 canonical FormalL0、连续真实 A 或 Core/EventStore 已接入；不证明
+Minecraft 作者权、behavioral causal closure 或 L1。迁移前 FA-T9 FAIL 与源码哈希
+冲突原样保留，所有旧冻结结果不改写。
+
+见 [closeout](FORMALL0_OPERATIVE_ADOPTION_TEST_ONLY_CLOSEOUT.md) 与
+[conversation handoff](FORMALL0_OPERATIVE_ADOPTION_TEST_ONLY_CONVERSATION_HANDOFF.md)。
+
+下一研究问题仅冻结：在不改变原有冻结 FormalL0 的前提下，如何让已经通过 TEST_ONLY 的 operative adoption 通过明确版本化的实验执行路径进入 ACore 和权威 Current State，使同一个实验个体在连续状态转换中真正使用后来形成的 operative structure？
+边界：`ACore → authoritative Current State → versioned operative engine → formation + persistence → next ordinary advance → formed operative dependency`。
+下一实现/实验 **NOT_STARTED**；本轮不设计、不实施、不运行 Minecraft。
+
+## Historical stage — Operative Handoff TEST_ONLY
+
+The following stage-specific status and next-work wording are the preserved OH checkpoint, not current authorization.
 
 **Status date:** 2026-10-08
 **PASS / COMPLETED / FROZEN**; implementation/result anchor:
@@ -811,6 +857,9 @@ Local evidence: `storage/validation/CROSS-ACTOR-REIFICATION-002/validation.json`
 
 ```text
 Perfect Recursion v0.9                 conceptual architecture; retained
+FormalL0 operative adoption TEST_ONLY   PASS / COMPLETED / FROZEN; isolated derived engine
+Canonical/live A/Core adoption           NOT_ESTABLISHED
+Next Core/current-state question         QUESTION_FROZEN; implementation/experiment NOT_STARTED
 World Entry                             PASSED within frozen scope
 FormalL0 history -> recursive read      VALIDATED
 Behavioral Causal Closure               NOT YET PASSED; historical FAILED / diagnostic_partial
@@ -837,4 +886,4 @@ L1 / upward recursion                   NOT VALIDATED
 Cross-environment core invariance       NOT YET DEMONSTRATED
 ```
 
-> **Current research position:** FROI-1 scoped v3 PASS, CEC-0 minimal real witness PASS, and historical GSC-0/GSC-0C RESOURCE_LIMIT results remain unchanged. Successor-0 is implemented and PASS in its externally rooted, unique-producer, acyclic TEST_ONLY scope; formed support is causally consumed without global exhaustive enumeration. The concrete local-formation candidate is validated; universal dynamics remain unestablished. Requirement origin, multiple producers, cycles, recursively formed relations/mechanics, body expression and world-facing integration are not established. The candidate organization -> complete primitive body-expression boundary is not yet designed or started; other open questions remain without priority. Behavioral causal closure remains failed/not yet passed; no code is changed by this status update.
+> **Historical research position (Successor-0 checkpoint):** FROI-1 scoped v3 PASS, CEC-0 minimal real witness PASS, and historical GSC-0/GSC-0C RESOURCE_LIMIT results remain unchanged. Successor-0 is implemented and PASS in its externally rooted, unique-producer, acyclic TEST_ONLY scope; formed support is causally consumed without global exhaustive enumeration. The concrete local-formation candidate is validated; universal dynamics remain unestablished. Requirement origin, multiple producers, cycles, recursively formed relations/mechanics, body expression and world-facing integration are not established. The candidate organization -> complete primitive body-expression boundary is not yet designed or started; other open questions remain without priority. Behavioral causal closure remains failed/not yet passed; no code is changed by this status update.
