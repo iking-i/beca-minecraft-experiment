@@ -47,7 +47,7 @@ Core sampled peak 86.39453125 MiB，未复现 512 MiB `core_ram_limit`。
 
 ### 历史 BPC-LIVE-1 closeout 与解释纠正
 
-以下保留此前阶段的状态、范围与证据，不替代上面的最新长程运行 closeout。
+以下保留此前阶段的状态、范围与证据，不替代上面的最新 Current State / Full Audit History closeout。
 
 **研究解释已纠正（2026-10-07）：** BPC-LIVE-1 仍为历史限定范围内的
 **PASS / COMPLETED / FROZEN**，冻结提交为

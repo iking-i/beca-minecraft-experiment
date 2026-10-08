@@ -72,21 +72,19 @@
   },
   "next_phase_boundary": {
     "status": "NOT_STARTED",
-    "direction": "initial-constraint audit / A0 constraint audit",
-    "implementation_status": "NOT_IMPLEMENTED",
-    "specification_status": "NOT_YET_SPECIFIED",
-    "question": "NOT_YET_SPECIFIED",
-    "stage_started": false,
+    "question": "NOT_DEFINED_IN_THIS_CLOSEOUT",
+    "boundary_only": true,
     "design_started": false,
     "implementation_started": false,
     "experiment_started": false,
+    "stage_started": false,
     "implementation_authorized_in_handoff": false,
     "Minecraft_execution_started": false
   },
   "next_work": [
-    "Memory/runtime boundary long-run validation completed; preserve exact A6327 / event 62646 evidence and all earlier frozen results",
-    "Termination observability NOT_VALIDATED: USER_CLOSED_TERMINAL was not a programmatic controlled shutdown; no PASS/FAIL or repair in this closeout",
-    "Direction only: initial-constraint audit / A0 constraint audit; NOT_STARTED / NOT_IMPLEMENTED / NOT_YET_SPECIFIED; no initial-constraint conclusion"
+    "Preserve the frozen Current State / Full Audit History decoupling implementation at 0f8bf05a84ae68bd9aed66f738f9c4d3009edbe3 and its independent real PASS evidence",
+    "Do not reopen or rerun the completed recording-option acceptance without a later concrete blocker",
+    "No next research question, mechanism, implementation, or experiment is defined by this closeout"
   ],
   "status_date": "2026-10-08",
   "operative_connection_interpretation": {
