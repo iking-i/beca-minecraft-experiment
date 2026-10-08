@@ -2,7 +2,7 @@
   "theory_repository": "https://github.com/iking-i/beca-architecture",
   "theory_version": "Perfect Recursion / BER v0.9",
   "theory_branch": "main",
-  "theory_main_commit_at_publication": "546363ffd9e3f55cd22cd73ad2e91cc57f93bae3",
+  "theory_main_commit_at_publication": "c494892ba12382b2f2d07cce330176257130626c",
   "previous_theory_reference": {
     "version": "Perfect Recursion / BER v0.9",
     "commit": "89a56ad7ce236adfcb52b13d3e6fe7014ff88ddd"
@@ -10,7 +10,7 @@
   "implementation_design_reference_commit": "867e1f192f7f21298450a553a4a733ec8f15a999",
   "main_boundary_reference": {
     "branch": "main",
-    "commit": "546363ffd9e3f55cd22cd73ad2e91cc57f93bae3",
+    "commit": "c494892ba12382b2f2d07cce330176257130626c",
     "checked_on": "2026-10-06",
     "sections": [
       "SPEC.md PR-I37",

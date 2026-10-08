@@ -54,6 +54,51 @@ provide the answer for how to use it
 
 ---
 
+## 2A. Origin-given startup scaffolding is allowed; permanence is not implied
+
+The experiment may provide creator-supplied startup tasks, pending/suspended items,
+initial operative structures, or other bootstrap conditions when they are needed to
+start the realization being tested.
+
+Their provenance and persistence MUST be separated:
+
+```text
+CREATOR-SUPPLIED AT ORIGIN
+!=
+SELF-AUTHORED BY A
+!=
+PERMANENT PROCESS
+```
+
+A startup item may later be completed, released, repeatedly reactivated by environmental
+conditions, modified, or superseded. The project MUST NOT turn an initialization choice
+into an eternal internal objective merely because the item existed at A0.
+
+External education/instruction is treated as environment-side input in the coupled
+`environment <-> individual` recursion. It may strongly shape early structure without
+being relabeled as self-authored by the individual.
+
+For operative-structure work, the experimenter may supply an initial runnable structure.
+However, that structure MUST NOT receive a privileged execution channel unavailable in
+principle to later internally formed structures of the same operative kind. The relevant
+distinction is:
+
+```text
+first structure
+!=
+special privileged structure
+```
+
+This rule does not require the first operative structure itself to be internally created.
+It protects the later authorship transition: creator scaffolding may start the process,
+but continued creator-specific execution semantics must not be mistaken for the
+individual's own recursively formed operative structure.
+
+This section is a research-method boundary, not a claim that a generic operative
+interpreter has already been designed or validated.
+
+---
+
 ## 3. Do not pre-solve future recursive problems
 
 A newly noticed problem does **not** automatically become a prerequisite for the current experiment.

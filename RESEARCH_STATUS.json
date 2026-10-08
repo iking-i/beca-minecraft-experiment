@@ -121,7 +121,7 @@
     "version": "Perfect Recursion / BER v0.9",
     "repository": "iking-i/beca-architecture",
     "branch": "main",
-    "commit": "546363ffd9e3f55cd22cd73ad2e91cc57f93bae3",
+    "commit": "c494892ba12382b2f2d07cce330176257130626c",
     "classification": "conceptual_architecture",
     "complete_general_generative_dynamics_established": false,
     "universal_generative_law_status": "NOT_ESTABLISHED",
@@ -878,5 +878,18 @@
     "handoff": "LONG_RUN_CURRENT_STRUCTURE_CONVERSATION_HANDOFF.md",
     "closeout_anchor": "commit containing LONG_RUN_CURRENT_STRUCTURE_CONVERSATION_HANDOFF.md",
     "closeout_scope": "DOCUMENTATION_ONLY_NO_RUNTIME_TEST_CAP_FROI_GSC_OBSERVABILITY_CHANGES_NO_RUN_NO_PUSH"
+  },
+  "current_methodological_clarification": {
+    "date": "2026-10-08",
+    "status": "RECORDED_NO_NEW_EXPERIMENT_STARTED",
+    "points": [
+      "Origin-given startup tasks / suspended items / bootstrap structures may be creator-supplied and may vary with creation purpose",
+      "Origin provenance does not imply runtime permanence or an absolute process",
+      "External education/instruction belongs to environment-side recursion and may strongly shape early individual structure",
+      "An initial operative structure may be externally supplied",
+      "Initial operative structure must not rely on a privileged execution channel unavailable to later internally formed structures of the same operative kind",
+      "No generic operative interpreter is claimed designed or validated by this clarification"
+    ],
+    "theory_reference_commit": "c494892ba12382b2f2d07cce330176257130626c"
   }
 }
