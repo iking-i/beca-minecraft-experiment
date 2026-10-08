@@ -10,21 +10,22 @@
   "implementation_design_reference_commit": "867e1f192f7f21298450a553a4a733ec8f15a999",
   "main_boundary_reference": {
     "branch": "main",
-    "commit": "c494892ba12382b2f2d07cce330176257130626c",
+    "commit": "546363ffd9e3f55cd22cd73ad2e91cc57f93bae3",
     "checked_on": "2026-10-06",
     "sections": [
       "SPEC.md PR-I37",
       "EXPERIMENTAL_IMPLEMENTATION_BOUNDARY.md section 16.1"
     ],
-    "scope": "non-exhaustive realization boundary and unresolved successor direction",
+    "scope": "historical anchor where the non-exhaustive realization boundary and unresolved successor direction were checked",
     "changes_runtime": false,
     "unresolved_questions_are_confirmed_blockers": false
   },
-  "checked_on": "2026-10-06",
+  "checked_on": "2026-10-08",
   "scope": "L0 within-layer evidence feedback; behavioral causal closure diagnostic only; no validated internal behavior or upward recursion",
   "publication_changes_experiment_behavior": false,
   "checked_sources": [
     "SPEC.md",
+    "ARCHITECTURE.md",
     "EXPERIMENTAL_IMPLEMENTATION_BOUNDARY.md",
     "INDIVIDUAL_CONTINUITY.md",
     "ENVIRONMENT_INDEPENDENCE.md",
@@ -34,5 +35,17 @@
   "theory_update_is_behavior_validation": false,
   "theory_update_is_L1": false,
   "research_status": "RESEARCH_STATUS.md",
-  "note": "Metadata/reference synchronization only. The current theory explicitly classifies Difference / Alignment / Propagation / Composition / Closure / CurrentStructure as a candidate generative-L0 realization under investigation, not established universal primitives of Perfect Recursion. No runtime, continuity/death behavior, GSC validation result, behavioral-closure verdict, or world-entry evidence is changed."
+  "note": "Metadata/reference synchronization only. Current theory main clarifies that origin-given constraints/startup scaffolding are classified by provenance rather than permanent immutability, and that external education/instruction belongs to environment-side recursion. The historical non-exhaustive realization boundary remains anchored to its 2026-10-06 theory commit. No runtime, continuity/death behavior, GSC validation result, behavioral-closure verdict, world-entry evidence, or historical experimental result is changed.",
+  "current_reference": {
+    "branch": "main",
+    "commit": "c494892ba12382b2f2d07cce330176257130626c",
+    "checked_on": "2026-10-08",
+    "scope": [
+      "current Perfect Recursion / BER v0.9 theory",
+      "origin-given startup tasks and transient scaffolding",
+      "origin provenance != runtime permanence",
+      "environment-side education/instruction as recursive input"
+    ],
+    "changes_runtime": false
+  }
 }

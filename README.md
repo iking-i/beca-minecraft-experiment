@@ -1,6 +1,6 @@
 # BECA-V0：L0 持续递归与当前极限反馈实验
 
-本仓库是 [beca-architecture](https://github.com/iking-i/beca-architecture) 的独立 Minecraft 实验实现，当前理论引用为 **Perfect Recursion / BER v0.9**，已核对理论 `main` 提交 [`c494892ba12382b2f2d07cce330176257130626c`](https://github.com/iking-i/beca-architecture/commit/c494892ba12382b2f2d07cce330176257130626c)（2026-10-06）。现有实现及本地同步的 v0.8 文档仍保留原来源和历史结果。此次理论元数据更新不改变运行行为，不等于实验结果、行为验证或 L1；v0.9 将 `Continuity(A) != 0` 区分为实验延续条件，不能提升为通用核心公理。机器可读来源见 [THEORY_REFERENCE.json](THEORY_REFERENCE.json)。
+本仓库是 [beca-architecture](https://github.com/iking-i/beca-architecture) 的独立 Minecraft 实验实现，当前理论引用为 **Perfect Recursion / BER v0.9**，已核对理论 `main` 提交 [`c494892ba12382b2f2d07cce330176257130626c`](https://github.com/iking-i/beca-architecture/commit/c494892ba12382b2f2d07cce330176257130626c)（2026-10-08）。现有实现及本地同步的 v0.8 文档仍保留原来源和历史结果。此次理论元数据更新不改变运行行为，不等于实验结果、行为验证或 L1；v0.9 将 `Continuity(A) != 0` 区分为实验延续条件，不能提升为通用核心公理。机器可读来源见 [THEORY_REFERENCE.json](THEORY_REFERENCE.json)。
 
 非穷尽 realization 边界已进入上述正式 theory `main`：理论不要求穷尽组合、枚举全部 possible structures 或完成 global enumerative least-fixed-point closure 后才允许递归或现实行动继续。本次只同步正式理论引用，不改变已记录的研究结论或历史结果。
 
