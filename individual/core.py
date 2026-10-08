@@ -100,6 +100,8 @@ class ACore:
             preflight(database, None)  # Refuse sealed formal history before any writes.
         # Preserve existing argument/cap refusal order and reject content-mode
         # takeover before any lease, writer, schema or session side effect.
+        from experimental.native_body_operands.channel import reject_foreign_mode as native_preflight
+        native_preflight(database, getattr(self, '_native_config', None))
         from experimental.operative_content.channel import reject_foreign_mode
         reject_foreign_mode(database, getattr(self, '_content_config', None))
         self._lease = ExperimentLease(database).acquire()
