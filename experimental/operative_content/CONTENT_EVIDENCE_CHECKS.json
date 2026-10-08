@@ -1,0 +1,61 @@
+{
+  "spec_digest": "b2f225a0ced92a748c91563af0f9a59850eefec3e073255e5de431b02f8d0f94",
+  "causal_metrics": {
+    "normal": {
+      "constructed_count": 5,
+      "new_pair_refs": [
+        "T-741b0218e4ea3f01556576b138c4d4959a445f14db90724c33c734b3f5060ebf",
+        "T-c702209dfbb106950c14ddd7b18c9cdc754c85378cf634bf8751689be3fab667",
+        "T-caf75a893524dd30117d5b72db108b3deca1d3205616e71d1f299fc1c179004d"
+      ],
+      "new_pair_count": 3,
+      "expected_operand_count": 8
+    },
+    "s1_only_ablated": {
+      "constructed_count": 2,
+      "new_pair_refs": [],
+      "new_pair_count": 0,
+      "expected_operand_count": 4
+    }
+  },
+  "restart_reuse": {
+    "ON": {
+      "new_t1_refs": [
+        "T-741b0218e4ea3f01556576b138c4d4959a445f14db90724c33c734b3f5060ebf",
+        "T-c702209dfbb106950c14ddd7b18c9cdc754c85378cf634bf8751689be3fab667",
+        "T-caf75a893524dd30117d5b72db108b3deca1d3205616e71d1f299fc1c179004d"
+      ],
+      "all_new_t1_reused": true,
+      "identity_preserved": true
+    },
+    "OFF": {
+      "new_t1_refs": [
+        "T-741b0218e4ea3f01556576b138c4d4959a445f14db90724c33c734b3f5060ebf",
+        "T-c702209dfbb106950c14ddd7b18c9cdc754c85378cf634bf8751689be3fab667",
+        "T-caf75a893524dd30117d5b72db108b3deca1d3205616e71d1f299fc1c179004d"
+      ],
+      "all_new_t1_reused": true,
+      "identity_preserved": true
+    }
+  },
+  "frozen_component_hashes": {
+    "minecraft/action-space.json": "c6687f63d7b96f540f277c8f3a06c8da2580994032f5fbc8489569f9553eefa8",
+    "minecraft/package.json": "7ea2986776f49ce2cdfd7ebf67bfbaa7adb00faf05fc6b093b92e081cd8ec442",
+    "minecraft/package-lock.json": "34feb5d3c139e4a3c4d24062a1ad520e7fbe9eba5478cbed68f389f1765234ed",
+    "minecraft/src/body.js": "9c6b2f99d2749398fe0fddf2303bff39ccb8ed8e4060297438106bcc52884d41",
+    "minecraft/src/capabilities.js": "65e060ea833717c87ed5ad775693b36d47630b8be7386310d5858ce7d02979a6",
+    "minecraft/src/native_inputs.js": "4c99d4afde7fa6df399f521c46d1c46e7fc6c673b1b1b1f4e11af67e1b9c9c5b",
+    "minecraft/src/index.js": "ef26df549c770eeecd5e697b9bd788078c08a6542a05dafc759314e91605e178",
+    "individual/observation.py": "3ec369f35123d8ee3106149ce7a1800df1102eacb6d3a5dd497616fe7aa0632f",
+    "individual/action_space.py": "11c3aa773a9877c42db9fda3b586fbe3f40fad56bf2aaf9d8c0de17546f19e7c",
+    "individual/formal_l0.py": "1b6abea5d568c349bf7c181ecd771fc6f08cd0f1791fa49be7434c4acd354b62",
+    "individual/formal_boundary.py": "6bb8232a675a808ba050d13131edcd4d159716a7f1acb30ed3811211eee6206a",
+    "individual/experiment.json": "1eb5e69f2a7a1cd2a637779989424e8840edef9f23f76468c22df87bd60666b2",
+    "supervisor/limits.yaml": "8a2aa79264f1e9689dddde9ea5e45d78a09dcc06437efe48e0d09beb7d86093d"
+  },
+  "prior_tracked_files_changed": [
+    "individual/core.py"
+  ],
+  "old_reports_and_sources_unchanged": true,
+  "default_execution_semantics_changed": false
+}

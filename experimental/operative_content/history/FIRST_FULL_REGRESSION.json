@@ -1,0 +1,53 @@
+{
+  "status": "NOT_TESTABLE",
+  "verification": {
+    "focused": {
+      "command": [
+        "D:\\codex\\project\\我的世界\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "tests/test_operative_content.py",
+        "-q",
+        "--tb=short",
+        "--basetemp=D:\\codex\\project\\我的世界\\.test-tmp\\content-focused-20261008074515"
+      ],
+      "returncode": 0,
+      "stdout": "........................                                                 [100%]\n24 passed in 8.58s\n",
+      "stderr": "",
+      "stdout_sha256": "01398c604ab488c9afa02a0a00f23f700f1267cc6ccb003ff8543a583c973369"
+    },
+    "related": {
+      "command": [
+        "D:\\codex\\project\\我的世界\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "tests/test_formal_continuous_operative.py",
+        "tests/test_formall0_operative_adoption.py",
+        "tests/test_formal_l0.py",
+        "tests/test_live_evidence.py",
+        "-q",
+        "--tb=short",
+        "--basetemp=D:\\codex\\project\\我的世界\\.test-tmp\\content-related-20261008074515"
+      ],
+      "returncode": 0,
+      "stdout": "........................................................................ [ 90%]\n........                                                    [100%]\n80 passed, 13 subtests passed in 20.93s\n",
+      "stderr": "",
+      "stdout_sha256": "6d430b825c906b208b912e7b041624c3e6a20fadfb4b32ed28e40a068a7b9218"
+    },
+    "full": {
+      "command": [
+        "D:\\codex\\project\\我的世界\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-q",
+        "--tb=short",
+        "--basetemp=D:\\codex\\project\\我的世界\\.test-tmp\\content-full-20261008074515"
+      ],
+      "returncode": 1,
+      "stdout": "......................................................... [  9%]\n............................................................. [ 20%]\n...........................F..FF.F.......F............................. [ 32%]\n........................................................................ [ 44%]\n.............................................................. [ 55%]\n...........................F............................... [ 65%]\n................................................................. [ 76%]\n......................F................................................................................................. [ 97%]\n.................                             [100%]\n================================== FAILURES ===================================\n_ FormalBoundaryTests.test_changed_configuration_file_refuses_and_keeps_entire_database_family _\ntests\\test_formal_boundary.py:95: in test_changed_configuration_file_refuses_and_keeps_entire_database_family\n    self.assertEqual(self.family(), before)\nE   AssertionError: {'ind[590913 chars]al.db-shm': b'\\x18\\xe2-\\x00\\x00\\x00\\x00\\x00\\x0[131069 chars]b'0'} != {'ind[590913 chars]al.db.lock': b'0'}\nE   Diff is 1076371 characters long. Set self.maxDiff to None to see it.\n_ FormalBoundaryTests.test_each_changed_logical_cap_refuses_before_store_lease_session_or_state_write _\ntests\\test_formal_boundary.py:86: in test_each_changed_logical_cap_refuses_before_store_lease_session_or_state_write\n    self.assertEqual(self.family(), before)\nE   AssertionError: {'ind[590913 chars]al.db-shm': b'\\x18\\xe2-\\x00\\x00\\x00\\x00\\x00\\x0[131069 chars]b'0'} != {'ind[590913 chars]al.db.lock': b'0'}\nE   Diff is 1076371 characters long. Set self.maxDiff to None to see it.\n---------------------------- Captured stdout call -----------------------------\nu\n_ FormalBoundaryTests.test_each_changed_sensor_capacity_refuses_and_defaults_are_normalized _\ntests\\test_formal_boundary.py:200: in test_each_changed_sensor_capacity_refuses_and_defaults_are_normalized\n    self.assertEqual(self.family(), before)\nE   AssertionError: {'ind[586163 chars]al.db-shm': b'\\x18\\xe2-\\x00\\x00\\x00\\x00\\x00\\x0[131069 chars]b'0'} != {'ind[586163 chars]al.db.lock': b'0'}\nE   Diff is 1069101 characters long. Set self.maxDiff to None to see it.\n_ FormalBoundaryTests.test_interrupted_session_does_not_get_recovery_events_when_caps_mismatch _\ntests\\test_formal_boundary.py:104: in test_interrupted_session_does_not_get_recovery_events_when_caps_mismatch\n    self.assertEqual(self.family(), before)\nE   AssertionError: {'ind[515841 chars]al.db-shm': b'\\x18\\xe2-\\x00\\x00\\x00\\x00\\x00\\x0[131069 chars]b'0'} != {'ind[515841 chars]al.db.lock': b'0'}\nE   Diff is 969046 characters long. Set self.maxDiff to None to see it.\n_ FormalBoundaryTests.test_unsealed_historical_formal_data_refuses_without_automatic_migration _\ntests\\test_formal_boundary.py:155: in test_unsealed_historical_formal_data_refuses_without_automatic_migration\n    self.assertEqual(self.family(), before)\nE   AssertionError: {'ind[599874 chars]x00F', 'individual.db-shm': b'\\x18\\xe2-\\x00\\x0[131057 chars] b''} != {'ind[599874 chars]x00F'}\nE   Diff is 1090208 characters long. Set self.maxDiff to None to see it.\n____________ test_existing_database_rejected_without_modification _____________\ntests\\test_live_body_connection.py:298: in test_existing_database_rejected_without_modification\n    ACore(db, FakeBridge(), initialize_lifetime=True, live_body_connection=True)\nindividual\\core.py:45: in __init__\n    reject_foreign_mode(database, getattr(self, '_content_config', None))\nexperimental\\operative_content\\channel.py:32: in reject_foreign_mode\n    if not db.execute(\"SELECT 1 FROM sqlite_master WHERE name='states'\").fetchone():\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE   sqlite3.DatabaseError: file is not a database\n_____ MonitorTests.test_window_can_open_idle_and_close_without_experiment _____\ntests\\test_runtime_monitor.py:341: in test_window_can_open_idle_and_close_without_experiment\n    window = tk.Tk()\n             ^^^^^^^\nC:\\Users\\i\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\tkinter\\__init__.py:2346: in __init__\n    self.tk = _tkinter.create(screenName, baseName, className, interactive, wantobjects, useTk, sync, use)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE   _tkinter.TclError: Can't find a usable init.tcl in the following directories: \nE       {C:\\Users\\i\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\tcl\\tcl8.6}\nE   \nE   C:/Users/i/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/tcl/tcl8.6/init.tcl: couldn't read file \"C:/Users/i/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/tcl/tcl8.6/init.tcl\": No error\nE   couldn't read file \"C:/Users/i/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/tcl/tcl8.6/init.tcl\": No error\nE       while executing\nE   \"source C:/Users/i/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/tcl/tcl8.6/init.tcl\"\nE       (\"uplevel\" body line 1)\nE       invoked from within\nE   \"uplevel #0 [list source $tclfile]\"\nE   \nE   \nE   This probably means that Tcl wasn't installed properly.\n=========================== short test summary info ===========================\nFAILED tests/test_formal_boundary.py::FormalBoundaryTests::test_changed_configuration_file_refuses_and_keeps_entire_database_family\nFAILED tests/test_formal_boundary.py::FormalBoundaryTests::test_each_changed_logical_cap_refuses_before_store_lease_session_or_state_write\nFAILED tests/test_formal_boundary.py::FormalBoundaryTests::test_each_changed_sensor_capacity_refuses_and_defaults_are_normalized\nFAILED tests/test_formal_boundary.py::FormalBoundaryTests::test_interrupted_session_does_not_get_recovery_events_when_caps_mismatch\nFAILED tests/test_formal_boundary.py::FormalBoundaryTests::test_unsealed_historical_formal_data_refuses_without_automatic_migration\nFAILED tests/test_live_body_connection.py::test_existing_database_rejected_without_modification\nFAILED tests/test_runtime_monitor.py::MonitorTests::test_window_can_open_idle_and_close_without_experiment\n7 failed, 577 passed, 108 subtests passed in 347.55s (0:05:47)\n",
+      "stderr": "",
+      "stdout_sha256": "3af52831a7e02d130cbcd57e1ff905ad523f8a28acbd5f482db936702fc8020e"
+    }
+  },
+  "cause_boundary": "Five DB-family regressions and one legacy rejection-order regression from the new admission guard; one host Tcl/Tk bootstrap failure. Criteria unchanged."
+}
