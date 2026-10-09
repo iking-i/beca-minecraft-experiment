@@ -10,7 +10,38 @@
 
 ## 当前研究状态
 
-## 当前阶段收口 — Ordinary Pair Usage TEST_ONLY（2026-10-09）
+## 当前阶段收口 — Continuous Capacity TEST_ONLY（2026-10-09）
+
+**CONTINUOUS_CAPACITY_TEST_ONLY = BUDGET_COMPLETED / COMPLETED / FROZEN**。
+实现／验证提交：`474f3c9798b37ca2b9c3111dab4499b52e577cbf`；独立收口以新增下列 closeout／handoff 的提交为锚点。
+
+同一独立 A、数据库及连续 Core 完成 **32 帧真实观察、32 次 ordinary advance、30 条经历／integration**。
+最终观察 E32 提交 A39，正常外部关闭 A40／event449。受限结构 **3/64 → 31/64**，
+E6–E32 保持31/64；没有整批 Unit/Pair 容量拒绝。9个 Pair 持续保存并参与后续直接构造；
+显式 Pair 读取与历史自动包装均为0。直接重算既有 canonical Pair 不等于读取保存的 Pair 节点作为操作数。
+
+**异常与未完成边界保留：** 真实 BODY_DIED event67/A11；E4→E5 为
+TEMPORAL_LINK_UNRESOLVED event71/A12，不能伪造为经历。死亡原因未建立。
+仅一次外部 bootstrap code16/slot0；EffectRoute=0、递归驱动perform=0，
+**本轮没有再次形成递归身体反馈闭环**。先前独立 Ordinary Pair Usage 受控闭环 PASS 保持有效。
+
+InternalState 紧凑序列化 **236,219 → 1,247,906 字节**，内部保存的完整观察来源 **1 → 32**。
+结构计费稳定不等于整体内存有界；未测RSS，未证明无限持续运行。
+目的／需要驱动的内存分配与保留未实现，不能用它们解释本轮稳定计费。
+
+已有记录核对：修正后 **6专项通过**，此前工具及相关 **17通过**（有重叠，不相加）；
+**13冻结哈希 MATCH**。本阶段及收口未重跑完整回归，旧757/114仅属上一阶段历史记录。
+原515 tracked／27无关文件未变是当前索引更新前的核对；本次仅授权三个索引更新，其他512文件不变。
+首次记录器误停、原始失败、真实死亡及未解决时间关联均保留；本次收口不运行Minecraft，不改机制、cap或理论。
+
+见 [closeout](CONTINUOUS_CAPACITY_CLOSEOUT.md)、[conversation handoff](CONTINUOUS_CAPACITY_CONVERSATION_HANDOFF.md)、
+[机器收口记录](experimental/continuous_capacity/CLOSEOUT_VALIDATION.json) 和 [全部提交文件](CONTINUOUS_CAPACITY_COMMITTED_FILES.md)。
+
+下一阶段仅记录两项已出现的问题：InternalState 观察来源持续增长的表示边界；真实死亡及E4→E5时间关联的因果核对。
+**NEXT_PHASE / DESIGN / IMPLEMENTATION / EXPERIMENT = NOT_STARTED**。此交接不授权立即修复。
+以下段落保留原阶段结果与当时的下一问题，不构成当前执行授权。
+
+## 历史阶段收口 — Ordinary Pair Usage TEST_ONLY（2026-10-09）
 
 **ORDINARY_PAIR_USAGE_TEST_ONLY = PASS / COMPLETED / FROZEN**。
 **受控真实局部反馈闭环 = PASS**；不等于自主行为或无限持续运行。

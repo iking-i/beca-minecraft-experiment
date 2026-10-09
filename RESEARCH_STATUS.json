@@ -1,46 +1,49 @@
 {
   "current_research_phase": {
-    "name": "ORDINARY_PAIR_USAGE_TEST_ONLY",
-    "status": "PASS",
+    "name": "CONTINUOUS_CAPACITY_TEST_ONLY",
+    "status": "BUDGET_COMPLETED",
     "lifecycle": "COMPLETED_FROZEN",
     "completed": true,
     "frozen": true,
-    "implementation_commit": "d840ec37396e62438c7c76fff911e7524d997af6",
-    "closeout_anchor": "separate commit adding ORDINARY_PAIR_USAGE_CLOSEOUT.md and ORDINARY_PAIR_USAGE_CONVERSATION_HANDOFF.md",
-    "scope": "Isolated versioned TEST_ONLY Pair semantics; saved-real offline comparison and controlled live local body-feedback reentry",
+    "baseline_commit": "43ef0ef97797992bf788d52c348b79be294407c0",
+    "implementation_commit": "474f3c9798b37ca2b9c3111dab4499b52e577cbf",
+    "closeout_anchor": "separate commit adding CONTINUOUS_CAPACITY_CLOSEOUT.md and CONTINUOUS_CAPACITY_CONVERSATION_HANDOFF.md",
+    "scope": "32-frame bounded real measurement of unchanged UsageRealCore/UsageRealEngine in one fresh experimental A/database/continuous Core",
+    "engine_version": "ORDINARY-PAIR-USAGE-TEST_ONLY-1",
     "layered_results": {
-      "observation_interface_reference_admission": "PASS_WITHIN_TEST_ONLY_SCOPE",
-      "ordinary_pair_usage": "PASS",
-      "controlled_real_local_feedback_loop": "PASS",
-      "unlimited_sustained_recursion": "NOT_ESTABLISHED"
+      "real_observation_budget": "BUDGET_COMPLETED",
+      "finite_charged_structure_capacity": "LIMIT_NOT_REACHED_WITHIN_BUDGET",
+      "recursive_body_feedback_loop_this_run": "NOT_ESTABLISHED",
+      "prior_independent_controlled_feedback_loop": "PASS_UNCHANGED",
+      "unlimited_sustained_operation": "NOT_ESTABLISHED",
+      "bounded_total_state_or_runtime_memory": "NOT_ESTABLISHED"
     },
-    "accepted_claim": "Given external bootstrap, world-owner controlled real input and a generic experimenter-supplied constructor rule, actual ordinary integration/occurrence effects produce one subsequent native operation, whose matching real receipt and renewed observation enter the same continuous A, followed by another committed recursive cycle.",
-    "representation_change": {
-      "version": "ORDINARY-PAIR-USAGE-TEST_ONLY-1",
-      "old_rule": "Wrap every saved Pair satisfying accessibility and structural-support predicate",
-      "new_rule": "Wrap only explicit canonical Pair operands actually returned by base ordinary relation traversal; process all, without selector",
-      "direct_connections_unchanged": true,
-      "old_content_retained": true,
-      "shared_unit_cap": 64,
-      "rule_author": "EXPERIMENTER_SUPPLIED_GENERIC_MECHANISM",
-      "explicit_read_relation_autonomous_formation": "NOT_ESTABLISHED"
-    },
-    "offline_saved_real_comparison": {
-      "old_capacity": 75,
-      "new_capacity": 54,
-      "cap": 64,
-      "old_wrapping_count": 20,
-      "old_staged_nodes": 68,
-      "new_content_nodes": 47,
-      "units": 7,
-      "original_nodes_retained": true,
-      "new_live_claim": false,
-      "evidence": "experimental/ordinary_pair_usage/evidence/OFFLINE_VALIDATION.json"
-    },
+    "accepted_claim": "The unchanged TEST_ONLY mechanism completed 32 real ordinary advances and 30 experiences/integrations in one continuous A; charged structures grew3/64 to31/64 and remained31/64 fromE6 toE32, while full retained observation sources and serialized InternalState continued growing. This run did not re-establish a recursive body-feedback loop.",
     "real_evidence": {
-      "individual_id": "A-c10aa620-cc1f-4b87-905c-439199a8170e",
-      "session_id": "S-a4ee040e-795f-49f0-a19c-14c0a6623157",
-      "continuous_single_core": true,
+      "individual_id": "A-968eab84-38ed-4a07-854c-e3cb568a587a",
+      "session_id": "S-0c7dbc3b-e710-45f0-9f6b-35b08c2fdfbb",
+      "fresh_database": true,
+      "same_database_and_continuous_core": true,
+      "observations": 32,
+      "ordinary_advances": 32,
+      "experiences": 30,
+      "recursive_partial_outputs": 30,
+      "integrations": 30,
+      "last_observation_version": 39,
+      "controlled_shutdown_version": 40,
+      "final_event_sequence": 449,
+      "runtime_restarted": false,
+      "body_died": true,
+      "body_death_event": 67,
+      "body_death_version": 11,
+      "body_death_cause": "NOT_ESTABLISHED",
+      "temporal_link_unresolved": {
+        "frames": "E4-to-E5",
+        "event": 71,
+        "version": 12,
+        "reason": "carrier_epoch_or_encoding_changed",
+        "complete_experience": false
+      },
       "external_bootstrap_count": 1,
       "external_bootstrap": {
         "code": 16,
@@ -48,84 +51,110 @@
           "slot": 0
         }
       },
-      "world_intervention_author": "EXPERIMENTER_WORLD_COMMAND",
-      "world_input": "hotbar.8 quantity 0-to-1-to-0-to-1",
-      "recursive_execution_count": 1,
-      "recursive_expression": {
-        "code": 16,
-        "parameters": {
-          "slot": 1
-        }
-      },
-      "action_id": "19f62bcf-c337-4aa6-a384-fd5c76455424",
-      "action_event_sequence": 69,
-      "action_version": 12,
-      "renewed_experience_id": "f0db6e40-176e-4850-9672-8a7ca95d42e3",
-      "renewed_event_sequence": 74,
-      "E5": {
-        "version": 13,
-        "capacity": 31,
-        "receipt_integrated": true,
-        "selected_hotbar_slot": 1
-      },
-      "E6": {
-        "version": 14,
-        "capacity": 35,
-        "continued_processing": true
-      },
-      "controlled_shutdown_version": 15,
-      "effect_attribution": "temporal_observation_only",
-      "independent_server_acknowledgement": false,
-      "evidence": "experimental/ordinary_pair_usage/LIVE_VALIDATION.json"
+      "bootstrap_author": "EXPERIMENTER",
+      "bootstrap_action_id": "8550225d-f6f8-43d4-9321-a1895931c1a6",
+      "bootstrap_receipt_experience_event": 32,
+      "receipt_attribution": "temporal_observation_only",
+      "formed_effect_routes": 0,
+      "recursive_perform": 0,
+      "additional_world_interventions": 0,
+      "sampler_calls": 0,
+      "binder_calls": 0,
+      "evidence": "experimental/continuous_capacity/VALIDATION.json; evidence/run2/SUMMARY.json; exact-byte raw envelopes"
     },
+    "capacity": {
+      "unit_cap": 64,
+      "relation_cap": 96,
+      "caps_changed": false,
+      "initial_unit_charge": 3,
+      "final_unit_charge": 31,
+      "stable_from_frame": 6,
+      "stable_through_frame": 32,
+      "final_units": 8,
+      "final_content_nodes": 23,
+      "final_pairs": 9,
+      "final_body_refs": 3,
+      "final_observation_refs": 11,
+      "final_current_effects": 0,
+      "final_current_operations": 0,
+      "final_cells": 0,
+      "final_relation_charge": 21,
+      "explicit_pair_read_operands": 0,
+      "historical_auto_wrappers": 0,
+      "retained_pairs_recomputed_in_direct_construction": 9,
+      "saved_pair_node_read_is_not_direct_recomputation": true,
+      "whole_batch_unit_or_pair_rejection": false,
+      "nonfatal_current_limit_events": 78
+    },
+    "persisted_footprint": {
+      "initial_internal_serialized_bytes": 236219,
+      "final_internal_serialized_bytes": 1247906,
+      "initial_observation_sources": 1,
+      "final_observation_sources": 32,
+      "source_pool_in_authoritative_internal_state": true,
+      "source_pool_unit_charged": false,
+      "serialized_size_is_not_RSS": true,
+      "RSS_measured": false,
+      "stable_charged_structure_count_is_not_total_memory_bound": true
+    },
+    "purpose_need_mechanism": "NOT_IMPLEMENTED_IN_THIS_ENGINE",
     "verification": {
-      "focused_passed": 12,
-      "full_passed": 757,
-      "subtests_passed": 114,
+      "pre_correction_measurement_and_related_passed": 17,
+      "post_correction_recorder_passed": 6,
+      "counts_overlap_do_not_sum": true,
+      "full_regression_rerun": false,
+      "previous_phase_full_757_subtests_114_is_historical_only": true,
       "frozen_hash_count": 13,
       "frozen_hash_status": "MATCH",
-      "preserved_files_at_validation": 461,
-      "test_rerun_during_closeout": false,
-      "new_minecraft_run_during_closeout": false,
-      "source": "experimental/ordinary_pair_usage/VALIDATION.json; evidence/full-regression.txt; CLOSEOUT_VALIDATION.json"
+      "baseline_files_unchanged_before_status_edits": 515,
+      "baseline_files_unchanged_after_status_edits": 512,
+      "authorized_current_index_edits": 3,
+      "unrelated_files_preserved": 27,
+      "source": "experimental/continuous_capacity/PREFLIGHT.json; PREFLIGHT_R2.json; evidence/related-tests.txt; evidence/recorder-corrected-tests.txt; CLOSEOUT_VALIDATION.json"
     },
-    "historical_failures_preserved": true,
+    "first_recorder_failure_preserved": true,
+    "other_historical_evidence_preserved": true,
     "nonclaims": [
+      "New recursive body-feedback loop in this trial",
       "Autonomous action selection",
-      "Autonomous goal or purpose formation",
+      "Autonomous purpose/need or allocation",
       "Generic world causal law",
       "Unlimited sustained operation",
-      "Autonomous formation of explicit Pair content-reference read relations",
+      "Bounded total memory",
+      "Autonomous explicit Pair-read relation formation",
+      "Uninterrupted physical-body continuity",
       "Default/formal A adoption",
       "L1/upward recursion",
       "Universal Perfect Recursion validation"
     ],
-    "closeout_record": "experimental/ordinary_pair_usage/CLOSEOUT_VALIDATION.json",
-    "handoff": "ORDINARY_PAIR_USAGE_CONVERSATION_HANDOFF.md"
+    "closeout_record": "experimental/continuous_capacity/CLOSEOUT_VALIDATION.json",
+    "handoff": "CONTINUOUS_CAPACITY_CONVERSATION_HANDOFF.md"
   },
   "next_phase_boundary": {
     "status": "NOT_STARTED",
     "next_phase_lifecycle": "NOT_STARTED",
-    "question": "在已验证的真实反馈闭环基础上，继续检查同一个体的持续递归、结构形成与有限容量之间的关系。",
-    "starting_point": "Versioned UsageRealCore/UsageRealEngine and saved six-frame controlled local feedback run; do not assume unbounded operation or autonomous explicit Pair read formation.",
     "boundary_only": true,
+    "observed_issues": [
+      "Retained full observation sources keep growing in InternalState; current running state versus external audit history boundary requires examination",
+      "Real body death and E4-to-E5 TEMPORAL_LINK_UNRESOLVED require causal checking"
+    ],
+    "starting_point": "Frozen continuous_capacity run2 raw frames/states/events and unchanged UsageRealEngine/UsageRealCore",
     "stage_started": false,
     "design_started": false,
     "implementation_started": false,
     "experiment_started": false,
     "runtime_implementation_authorized_by_closeout": false,
     "forbidden": [
-      "Predesigned purpose selector",
-      "Predesigned forgetting rule",
-      "Predesigned memory-allocation algorithm",
-      "Cap increase or deletion to manufacture success",
+      "Immediate repair from this handoff",
+      "Cap increase",
+      "Predesigned selector/forgetting/allocation/purpose mechanism",
       "Rewriting historical evidence"
     ]
   },
   "next_work": [
-    "Preserve closed controlled-local PASS and all previous PARTIAL/RESOURCE_LIMIT/NOT_TESTABLE records",
-    "Resume only from sustained same-A recursion, structural formation and finite-capacity evidence when separately authorized",
-    "Do not predesign purpose, forgetting, allocation or higher-layer solutions"
+    "Preserve bounded Continuous Capacity measurement and prior controlled-loop PASS independently",
+    "Record only the two exposed observation-source and body-death/temporal-link issues; wait for separate authorization",
+    "Next phase/design/implementation/experiment NOT_STARTED; no theory or mechanism change"
   ],
   "status_date": "2026-10-09",
   "operative_connection_interpretation": {
@@ -260,13 +289,15 @@
     "claim": "real accumulated history + current structural read input -> fixed GSC-0 -> formed COMPLETE O-G0-1 organization -> actual FormalL0 internal consumer -> measurable causal internal-processing difference -> read-failure consequence can enter later FormalL0 processing"
   },
   "current_checkpoint": {
-    "version": "ORDINARY-PAIR-USAGE-TEST_ONLY-1",
-    "status": "PASS / COMPLETED / FROZEN",
-    "real_attempt": "PASS_WITHIN_CONTROLLED_LOCAL_SCOPE",
-    "real_loop": "CONTROLLED_LOCAL_FEEDBACK_REENTRY_PASS",
+    "version": "CONTINUOUS_CAPACITY_TEST_ONLY",
+    "status": "BUDGET_COMPLETED / COMPLETED / FROZEN",
+    "real_attempt": "32_FRAME_BUDGET_COMPLETED",
+    "real_loop": "NOT_ESTABLISHED_THIS_RUN",
+    "prior_independent_controlled_loop": "PASS_UNCHANGED",
     "unlimited_operation": "NOT_ESTABLISHED",
-    "implementation_commit": "d840ec37396e62438c7c76fff911e7524d997af6",
-    "closeout_anchor": "separate commit adding ORDINARY_PAIR_USAGE_CLOSEOUT.md"
+    "bounded_total_memory": "NOT_ESTABLISHED",
+    "implementation_commit": "474f3c9798b37ca2b9c3111dab4499b52e577cbf",
+    "closeout_anchor": "separate commit adding CONTINUOUS_CAPACITY_CLOSEOUT.md"
   },
   "successor_unresolved_boundary": {
     "classification": "UNRESOLVED_RESEARCH_QUESTIONS",
@@ -558,19 +589,21 @@
   "next_research_boundary": {
     "status": "NOT_STARTED",
     "next_phase_lifecycle": "NOT_STARTED",
-    "question": "在已验证的真实反馈闭环基础上，继续检查同一个体的持续递归、结构形成与有限容量之间的关系。",
-    "starting_point": "Versioned UsageRealCore/UsageRealEngine and saved six-frame controlled local feedback run; do not assume unbounded operation or autonomous explicit Pair read formation.",
     "boundary_only": true,
+    "observed_issues": [
+      "Retained full observation sources keep growing in InternalState; current running state versus external audit history boundary requires examination",
+      "Real body death and E4-to-E5 TEMPORAL_LINK_UNRESOLVED require causal checking"
+    ],
+    "starting_point": "Frozen continuous_capacity run2 raw frames/states/events and unchanged UsageRealEngine/UsageRealCore",
     "stage_started": false,
     "design_started": false,
     "implementation_started": false,
     "experiment_started": false,
     "runtime_implementation_authorized_by_closeout": false,
     "forbidden": [
-      "Predesigned purpose selector",
-      "Predesigned forgetting rule",
-      "Predesigned memory-allocation algorithm",
-      "Cap increase or deletion to manufacture success",
+      "Immediate repair from this handoff",
+      "Cap increase",
+      "Predesigned selector/forgetting/allocation/purpose mechanism",
       "Rewriting historical evidence"
     ]
   },
@@ -652,7 +685,7 @@
       "No guarantee of equivalence to a long-history individual"
     ]
   },
-  "prior_closeout_index_scope": "Current phase records Native Parameter Binding Extension scalar candidate construction only. TC/NBO and then-next questions remain historical; old NOT_READY records unchanged.",
+  "prior_closeout_index_scope": "Current phase is the bounded Continuous Capacity measurement. Historical Ordinary Pair Usage PASS and its then-next boundary are preserved; new measurement does not overwrite any earlier scoped result. Next phase NOT_STARTED.",
   "historical_bpc_live_1_next_phase_boundary": {
     "status": "NOT_STARTED",
     "question": "NOT_DEFINED_IN_THIS_CLOSEOUT",
@@ -1407,6 +1440,110 @@
       ],
       "closeout_record": "experimental/operative_body_real/CLOSEOUT_VALIDATION.json",
       "handoff": "OPERATIVE_BODY_CONNECTION_CONVERSATION_HANDOFF.md"
+    },
+    "ordinary_pair_usage": {
+      "name": "ORDINARY_PAIR_USAGE_TEST_ONLY",
+      "status": "PASS",
+      "lifecycle": "COMPLETED_FROZEN",
+      "completed": true,
+      "frozen": true,
+      "implementation_commit": "d840ec37396e62438c7c76fff911e7524d997af6",
+      "closeout_anchor": "separate commit adding ORDINARY_PAIR_USAGE_CLOSEOUT.md and ORDINARY_PAIR_USAGE_CONVERSATION_HANDOFF.md",
+      "scope": "Isolated versioned TEST_ONLY Pair semantics; saved-real offline comparison and controlled live local body-feedback reentry",
+      "layered_results": {
+        "observation_interface_reference_admission": "PASS_WITHIN_TEST_ONLY_SCOPE",
+        "ordinary_pair_usage": "PASS",
+        "controlled_real_local_feedback_loop": "PASS",
+        "unlimited_sustained_recursion": "NOT_ESTABLISHED"
+      },
+      "accepted_claim": "Given external bootstrap, world-owner controlled real input and a generic experimenter-supplied constructor rule, actual ordinary integration/occurrence effects produce one subsequent native operation, whose matching real receipt and renewed observation enter the same continuous A, followed by another committed recursive cycle.",
+      "representation_change": {
+        "version": "ORDINARY-PAIR-USAGE-TEST_ONLY-1",
+        "old_rule": "Wrap every saved Pair satisfying accessibility and structural-support predicate",
+        "new_rule": "Wrap only explicit canonical Pair operands actually returned by base ordinary relation traversal; process all, without selector",
+        "direct_connections_unchanged": true,
+        "old_content_retained": true,
+        "shared_unit_cap": 64,
+        "rule_author": "EXPERIMENTER_SUPPLIED_GENERIC_MECHANISM",
+        "explicit_read_relation_autonomous_formation": "NOT_ESTABLISHED"
+      },
+      "offline_saved_real_comparison": {
+        "old_capacity": 75,
+        "new_capacity": 54,
+        "cap": 64,
+        "old_wrapping_count": 20,
+        "old_staged_nodes": 68,
+        "new_content_nodes": 47,
+        "units": 7,
+        "original_nodes_retained": true,
+        "new_live_claim": false,
+        "evidence": "experimental/ordinary_pair_usage/evidence/OFFLINE_VALIDATION.json"
+      },
+      "real_evidence": {
+        "individual_id": "A-c10aa620-cc1f-4b87-905c-439199a8170e",
+        "session_id": "S-a4ee040e-795f-49f0-a19c-14c0a6623157",
+        "continuous_single_core": true,
+        "external_bootstrap_count": 1,
+        "external_bootstrap": {
+          "code": 16,
+          "parameters": {
+            "slot": 0
+          }
+        },
+        "world_intervention_author": "EXPERIMENTER_WORLD_COMMAND",
+        "world_input": "hotbar.8 quantity 0-to-1-to-0-to-1",
+        "recursive_execution_count": 1,
+        "recursive_expression": {
+          "code": 16,
+          "parameters": {
+            "slot": 1
+          }
+        },
+        "action_id": "19f62bcf-c337-4aa6-a384-fd5c76455424",
+        "action_event_sequence": 69,
+        "action_version": 12,
+        "renewed_experience_id": "f0db6e40-176e-4850-9672-8a7ca95d42e3",
+        "renewed_event_sequence": 74,
+        "E5": {
+          "version": 13,
+          "capacity": 31,
+          "receipt_integrated": true,
+          "selected_hotbar_slot": 1
+        },
+        "E6": {
+          "version": 14,
+          "capacity": 35,
+          "continued_processing": true
+        },
+        "controlled_shutdown_version": 15,
+        "effect_attribution": "temporal_observation_only",
+        "independent_server_acknowledgement": false,
+        "evidence": "experimental/ordinary_pair_usage/LIVE_VALIDATION.json"
+      },
+      "verification": {
+        "focused_passed": 12,
+        "full_passed": 757,
+        "subtests_passed": 114,
+        "frozen_hash_count": 13,
+        "frozen_hash_status": "MATCH",
+        "preserved_files_at_validation": 461,
+        "test_rerun_during_closeout": false,
+        "new_minecraft_run_during_closeout": false,
+        "source": "experimental/ordinary_pair_usage/VALIDATION.json; evidence/full-regression.txt; CLOSEOUT_VALIDATION.json"
+      },
+      "historical_failures_preserved": true,
+      "nonclaims": [
+        "Autonomous action selection",
+        "Autonomous goal or purpose formation",
+        "Generic world causal law",
+        "Unlimited sustained operation",
+        "Autonomous formation of explicit Pair content-reference read relations",
+        "Default/formal A adoption",
+        "L1/upward recursion",
+        "Universal Perfect Recursion validation"
+      ],
+      "closeout_record": "experimental/ordinary_pair_usage/CLOSEOUT_VALIDATION.json",
+      "handoff": "ORDINARY_PAIR_USAGE_CONVERSATION_HANDOFF.md"
     }
   },
   "historical_next_phase_boundaries": {
@@ -1592,6 +1729,25 @@
         "fabricated PASS"
       ],
       "resume_execution_verification_only_after": "real observation enters the same experimental state chain"
+    },
+    "ordinary_pair_usage_closeout": {
+      "status": "NOT_STARTED",
+      "next_phase_lifecycle": "NOT_STARTED",
+      "question": "在已验证的真实反馈闭环基础上，继续检查同一个体的持续递归、结构形成与有限容量之间的关系。",
+      "starting_point": "Versioned UsageRealCore/UsageRealEngine and saved six-frame controlled local feedback run; do not assume unbounded operation or autonomous explicit Pair read formation.",
+      "boundary_only": true,
+      "stage_started": false,
+      "design_started": false,
+      "implementation_started": false,
+      "experiment_started": false,
+      "runtime_implementation_authorized_by_closeout": false,
+      "forbidden": [
+        "Predesigned purpose selector",
+        "Predesigned forgetting rule",
+        "Predesigned memory-allocation algorithm",
+        "Cap increase or deletion to manufacture success",
+        "Rewriting historical evidence"
+      ]
     }
   },
   "historical_long_run_current_structure_closeout": {
@@ -2302,5 +2458,164 @@
       "implementation_commit": "ae07b74910ad670f471619eadff4814e3cd6d735",
       "closeout_anchor": "commit adding OPERATIVE_BODY_CONNECTION_CLOSEOUT.md"
     }
+  },
+  "historical_ordinary_pair_usage_closeout_current_index": {
+    "current_research_phase": {
+      "name": "ORDINARY_PAIR_USAGE_TEST_ONLY",
+      "status": "PASS",
+      "lifecycle": "COMPLETED_FROZEN",
+      "completed": true,
+      "frozen": true,
+      "implementation_commit": "d840ec37396e62438c7c76fff911e7524d997af6",
+      "closeout_anchor": "separate commit adding ORDINARY_PAIR_USAGE_CLOSEOUT.md and ORDINARY_PAIR_USAGE_CONVERSATION_HANDOFF.md",
+      "scope": "Isolated versioned TEST_ONLY Pair semantics; saved-real offline comparison and controlled live local body-feedback reentry",
+      "layered_results": {
+        "observation_interface_reference_admission": "PASS_WITHIN_TEST_ONLY_SCOPE",
+        "ordinary_pair_usage": "PASS",
+        "controlled_real_local_feedback_loop": "PASS",
+        "unlimited_sustained_recursion": "NOT_ESTABLISHED"
+      },
+      "accepted_claim": "Given external bootstrap, world-owner controlled real input and a generic experimenter-supplied constructor rule, actual ordinary integration/occurrence effects produce one subsequent native operation, whose matching real receipt and renewed observation enter the same continuous A, followed by another committed recursive cycle.",
+      "representation_change": {
+        "version": "ORDINARY-PAIR-USAGE-TEST_ONLY-1",
+        "old_rule": "Wrap every saved Pair satisfying accessibility and structural-support predicate",
+        "new_rule": "Wrap only explicit canonical Pair operands actually returned by base ordinary relation traversal; process all, without selector",
+        "direct_connections_unchanged": true,
+        "old_content_retained": true,
+        "shared_unit_cap": 64,
+        "rule_author": "EXPERIMENTER_SUPPLIED_GENERIC_MECHANISM",
+        "explicit_read_relation_autonomous_formation": "NOT_ESTABLISHED"
+      },
+      "offline_saved_real_comparison": {
+        "old_capacity": 75,
+        "new_capacity": 54,
+        "cap": 64,
+        "old_wrapping_count": 20,
+        "old_staged_nodes": 68,
+        "new_content_nodes": 47,
+        "units": 7,
+        "original_nodes_retained": true,
+        "new_live_claim": false,
+        "evidence": "experimental/ordinary_pair_usage/evidence/OFFLINE_VALIDATION.json"
+      },
+      "real_evidence": {
+        "individual_id": "A-c10aa620-cc1f-4b87-905c-439199a8170e",
+        "session_id": "S-a4ee040e-795f-49f0-a19c-14c0a6623157",
+        "continuous_single_core": true,
+        "external_bootstrap_count": 1,
+        "external_bootstrap": {
+          "code": 16,
+          "parameters": {
+            "slot": 0
+          }
+        },
+        "world_intervention_author": "EXPERIMENTER_WORLD_COMMAND",
+        "world_input": "hotbar.8 quantity 0-to-1-to-0-to-1",
+        "recursive_execution_count": 1,
+        "recursive_expression": {
+          "code": 16,
+          "parameters": {
+            "slot": 1
+          }
+        },
+        "action_id": "19f62bcf-c337-4aa6-a384-fd5c76455424",
+        "action_event_sequence": 69,
+        "action_version": 12,
+        "renewed_experience_id": "f0db6e40-176e-4850-9672-8a7ca95d42e3",
+        "renewed_event_sequence": 74,
+        "E5": {
+          "version": 13,
+          "capacity": 31,
+          "receipt_integrated": true,
+          "selected_hotbar_slot": 1
+        },
+        "E6": {
+          "version": 14,
+          "capacity": 35,
+          "continued_processing": true
+        },
+        "controlled_shutdown_version": 15,
+        "effect_attribution": "temporal_observation_only",
+        "independent_server_acknowledgement": false,
+        "evidence": "experimental/ordinary_pair_usage/LIVE_VALIDATION.json"
+      },
+      "verification": {
+        "focused_passed": 12,
+        "full_passed": 757,
+        "subtests_passed": 114,
+        "frozen_hash_count": 13,
+        "frozen_hash_status": "MATCH",
+        "preserved_files_at_validation": 461,
+        "test_rerun_during_closeout": false,
+        "new_minecraft_run_during_closeout": false,
+        "source": "experimental/ordinary_pair_usage/VALIDATION.json; evidence/full-regression.txt; CLOSEOUT_VALIDATION.json"
+      },
+      "historical_failures_preserved": true,
+      "nonclaims": [
+        "Autonomous action selection",
+        "Autonomous goal or purpose formation",
+        "Generic world causal law",
+        "Unlimited sustained operation",
+        "Autonomous formation of explicit Pair content-reference read relations",
+        "Default/formal A adoption",
+        "L1/upward recursion",
+        "Universal Perfect Recursion validation"
+      ],
+      "closeout_record": "experimental/ordinary_pair_usage/CLOSEOUT_VALIDATION.json",
+      "handoff": "ORDINARY_PAIR_USAGE_CONVERSATION_HANDOFF.md"
+    },
+    "current_checkpoint": {
+      "version": "ORDINARY-PAIR-USAGE-TEST_ONLY-1",
+      "status": "PASS / COMPLETED / FROZEN",
+      "real_attempt": "PASS_WITHIN_CONTROLLED_LOCAL_SCOPE",
+      "real_loop": "CONTROLLED_LOCAL_FEEDBACK_REENTRY_PASS",
+      "unlimited_operation": "NOT_ESTABLISHED",
+      "implementation_commit": "d840ec37396e62438c7c76fff911e7524d997af6",
+      "closeout_anchor": "separate commit adding ORDINARY_PAIR_USAGE_CLOSEOUT.md"
+    },
+    "next_phase_boundary": {
+      "status": "NOT_STARTED",
+      "next_phase_lifecycle": "NOT_STARTED",
+      "question": "在已验证的真实反馈闭环基础上，继续检查同一个体的持续递归、结构形成与有限容量之间的关系。",
+      "starting_point": "Versioned UsageRealCore/UsageRealEngine and saved six-frame controlled local feedback run; do not assume unbounded operation or autonomous explicit Pair read formation.",
+      "boundary_only": true,
+      "stage_started": false,
+      "design_started": false,
+      "implementation_started": false,
+      "experiment_started": false,
+      "runtime_implementation_authorized_by_closeout": false,
+      "forbidden": [
+        "Predesigned purpose selector",
+        "Predesigned forgetting rule",
+        "Predesigned memory-allocation algorithm",
+        "Cap increase or deletion to manufacture success",
+        "Rewriting historical evidence"
+      ]
+    },
+    "next_research_boundary": {
+      "status": "NOT_STARTED",
+      "next_phase_lifecycle": "NOT_STARTED",
+      "question": "在已验证的真实反馈闭环基础上，继续检查同一个体的持续递归、结构形成与有限容量之间的关系。",
+      "starting_point": "Versioned UsageRealCore/UsageRealEngine and saved six-frame controlled local feedback run; do not assume unbounded operation or autonomous explicit Pair read formation.",
+      "boundary_only": true,
+      "stage_started": false,
+      "design_started": false,
+      "implementation_started": false,
+      "experiment_started": false,
+      "runtime_implementation_authorized_by_closeout": false,
+      "forbidden": [
+        "Predesigned purpose selector",
+        "Predesigned forgetting rule",
+        "Predesigned memory-allocation algorithm",
+        "Cap increase or deletion to manufacture success",
+        "Rewriting historical evidence"
+      ]
+    },
+    "next_work": [
+      "Preserve closed controlled-local PASS and all previous PARTIAL/RESOURCE_LIMIT/NOT_TESTABLE records",
+      "Resume only from sustained same-A recursion, structural formation and finite-capacity evidence when separately authorized",
+      "Do not predesign purpose, forgetting, allocation or higher-layer solutions"
+    ],
+    "prior_closeout_index_scope": "Current phase records Native Parameter Binding Extension scalar candidate construction only. TC/NBO and then-next questions remain historical; old NOT_READY records unchanged."
   }
 }
