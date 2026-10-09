@@ -1,0 +1,16 @@
+{
+  "source": "Read-only extraction from independently exercised frozen RealEffectCore comparison",
+  "database": "D:\\codex\\project\\\u6211\u7684\u4e16\u754c\\.test-tmp\\tmpzwj4p4pv\\baseline.db",
+  "same_python_process_core_reopen": true,
+  "cross_process_claim": false,
+  "perform_expressions": [
+    {
+      "code": 16,
+      "parameters": {
+        "slot": 0
+      }
+    }
+  ],
+  "resumed_reused_content": 5,
+  "note": "Frozen baseline also has no fresh activation at resume in the split E1/E2/E3 then E4/E5 fixture; test expectation was corrected to ordinary persistence/reuse, not activation."
+}

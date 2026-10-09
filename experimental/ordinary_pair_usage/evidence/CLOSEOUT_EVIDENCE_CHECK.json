@@ -1,0 +1,38 @@
+{
+  "classification": "PASS",
+  "scope": "Closeout consistency checks only; no experiment rerun",
+  "saved_real_capacity": {
+    "old": 75,
+    "new": 54,
+    "cap": 64,
+    "original_content_preserved": true
+  },
+  "live_request_receipt_experience_same_A": "MATCH",
+  "live_E5": {
+    "version": 13,
+    "capacity": 31,
+    "receipt_integrated": true
+  },
+  "live_E6": {
+    "version": 14,
+    "capacity": 35,
+    "normal_processing": true
+  },
+  "database": {
+    "read_only_immutable": true,
+    "authoritative_version": 15,
+    "controlled_session_ended": true,
+    "original_bytes_unchanged": true
+  },
+  "source_and_evidence_hashes": "MATCH",
+  "frozen_hashes": 13,
+  "precloseout_material_preserved": 532,
+  "historical_461_check": "Confirmed before authorized state-index edits; not a claim those three current-state indexes remain unchanged",
+  "full_regression": "Existing raw log: 757 passed / 114 subtests; no rerun",
+  "focused": "Existing VALIDATION.json: 12 passed / 55.84s; prior successful tool execution",
+  "report_scope_clarifications": {
+    "VALIDATION.json.new_authoritative_real_database_writes": "False describes offline saved-state evaluation; subsequent fresh live database commits are verified separately",
+    "commit_created_and_push_performed": "Collection-time metadata, superseded by new commit anchors; original report preserved"
+  },
+  "new_experiments_run": false
+}

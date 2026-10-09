@@ -1,0 +1,7 @@
+{
+  "command": "/item replace entity BECA_H_41a1664e hotbar.8 with minecraft:stone 1",
+  "source": "WORLD_OWNER_REPORT",
+  "completed": true,
+  "reported_result": "以用石头替换xx槽位。执行成功。",
+  "received_at": "2026-10-09T05:46:04.306005+00:00"
+}

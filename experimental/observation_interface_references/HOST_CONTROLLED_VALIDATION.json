@@ -1,0 +1,4964 @@
+{
+  "classification": "RESOURCE_LIMIT",
+  "local_real_formation_and_operation": "VERIFIED",
+  "complete_real_feedback_recursion": "NOT_READY",
+  "reason": "E5 ordinary Pair construction rejected before observation/experience commit",
+  "individual_id": "A-f2edc0b5-ff36-4282-9e1a-34996177a2f9",
+  "session_id": "S-a2809712-81de-4e2c-9e99-3e022a781d5a",
+  "body_username": "BECA_H_41a1664e",
+  "port": 58160,
+  "database": "D:\\codex\\project\\我的世界\\.test-tmp\\observation-host-controlled-58160-run1\\individual.db",
+  "continuous_single_core": true,
+  "restart": false,
+  "controlled_channel": {
+    "channel_id": "8700695247692320",
+    "descriptor": "26.1:player_slots:44:count",
+    "native_source": "inventorySlots[slot=44].count",
+    "physical_intervention": "hotbar.8 quantity; not selected slot",
+    "e1_observed_zero": true
+  },
+  "frames": [
+    {
+      "label": "E1_baseline",
+      "timestamp": "2026-10-09T05:44:26.259Z",
+      "state_version_before": 4,
+      "state_version_after": 5,
+      "raw_slot_44": [
+        {
+          "slot": 44,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        }
+      ],
+      "raw_selected_hotbar_slot": 0,
+      "admission_error": null,
+      "frame_id": "A-f2edc0b5-ff36-4282-9e1a-34996177a2f9:E1",
+      "numeric_channel_count": 248,
+      "observed_object_count": 32,
+      "capability_count": 47,
+      "controlled_channel_value": 0
+    },
+    {
+      "label": "E2_external_0_to_1",
+      "timestamp": "2026-10-09T05:46:06.382Z",
+      "state_version_before": 7,
+      "state_version_after": 8,
+      "raw_slot_44": [
+        {
+          "slot": 44,
+          "item_type_id": 1,
+          "count": 1,
+          "metadata": 0,
+          "durability": null
+        }
+      ],
+      "raw_selected_hotbar_slot": 0,
+      "admission_error": null,
+      "frame_id": "A-f2edc0b5-ff36-4282-9e1a-34996177a2f9:E2",
+      "numeric_channel_count": 265,
+      "observed_object_count": 35,
+      "capability_count": 47,
+      "controlled_channel_value": 1
+    },
+    {
+      "label": "E3_external_1_to_0",
+      "timestamp": "2026-10-09T05:47:05.117Z",
+      "state_version_before": 8,
+      "state_version_after": 9,
+      "raw_slot_44": [
+        {
+          "slot": 44,
+          "item_type_id": null,
+          "count": 0,
+          "metadata": null,
+          "durability": null
+        }
+      ],
+      "raw_selected_hotbar_slot": 0,
+      "admission_error": null,
+      "frame_id": "A-f2edc0b5-ff36-4282-9e1a-34996177a2f9:E3",
+      "numeric_channel_count": 260,
+      "observed_object_count": 35,
+      "capability_count": 47,
+      "controlled_channel_value": 0
+    },
+    {
+      "label": "E4_external_0_to_1",
+      "timestamp": "2026-10-09T05:49:05.028Z",
+      "state_version_before": 9,
+      "state_version_after": 12,
+      "raw_slot_44": [
+        {
+          "slot": 44,
+          "item_type_id": 1,
+          "count": 1,
+          "metadata": 0,
+          "durability": null
+        }
+      ],
+      "raw_selected_hotbar_slot": 0,
+      "admission_error": null,
+      "frame_id": "A-f2edc0b5-ff36-4282-9e1a-34996177a2f9:E4",
+      "numeric_channel_count": 265,
+      "observed_object_count": 35,
+      "capability_count": 47,
+      "controlled_channel_value": 1
+    },
+    {
+      "label": "E5_renewed_world",
+      "timestamp": "2026-10-09T05:49:19.545Z",
+      "state_version_before": 12,
+      "state_version_after": null,
+      "raw_slot_44": [
+        {
+          "slot": 44,
+          "item_type_id": 1,
+          "count": 1,
+          "metadata": 0,
+          "durability": null
+        }
+      ],
+      "raw_selected_hotbar_slot": 1,
+      "admission_error": {
+        "type": "ContentCapacityError",
+        "message": "Whole reference Pair batch exceeds locked capacity"
+      }
+    }
+  ],
+  "interventions": [
+    {
+      "source": "EXPERIMENTER_WORLD_COMMAND",
+      "command": "/item replace entity BECA_H_41a1664e hotbar.8 with minecraft:stone 1",
+      "channel_id": "8700695247692320",
+      "state_before": 7,
+      "monotonic": 92413.468,
+      "host_report": {
+        "command": "/item replace entity BECA_H_41a1664e hotbar.8 with minecraft:stone 1",
+        "source": "WORLD_OWNER_REPORT",
+        "completed": true,
+        "reported_result": "以用石头替换xx槽位。执行成功。",
+        "received_at": "2026-10-09T05:46:04.306005+00:00"
+      },
+      "observed_quantity": 1,
+      "state_after": 8
+    },
+    {
+      "source": "EXPERIMENTER_WORLD_COMMAND",
+      "command": "/item replace entity BECA_H_41a1664e hotbar.8 with minecraft:air",
+      "channel_id": "8700695247692320",
+      "state_before": 8,
+      "monotonic": 92514.234,
+      "host_report": {
+        "command": "/item replace entity BECA_H_41a1664e hotbar.8 with minecraft:air",
+        "source": "WORLD_OWNER_REPORT",
+        "completed": true,
+        "reported_result": "以用空气替换xx槽位。执行成功。",
+        "received_at": "2026-10-09T05:47:02.901103+00:00"
+      },
+      "observed_quantity": 0,
+      "state_after": 9
+    },
+    {
+      "source": "EXPERIMENTER_WORLD_COMMAND",
+      "command": "/item replace entity BECA_H_41a1664e hotbar.8 with minecraft:stone 1",
+      "channel_id": "8700695247692320",
+      "state_before": 9,
+      "monotonic": 92575.593,
+      "host_report": {
+        "command": "/item replace entity BECA_H_41a1664e hotbar.8 with minecraft:stone 1",
+        "source": "WORLD_OWNER_REPORT",
+        "completed": true,
+        "reported_result": "以用石头替换xx槽位。执行成功  。",
+        "received_at": "2026-10-09T05:49:02.867820+00:00"
+      },
+      "observed_quantity": 1,
+      "state_after": 12
+    }
+  ],
+  "matching_route_ids_after_e2": [
+    "86aca73e742fe69f80612705143397c6349a36ac9be8107de032236b9d030a7a"
+  ],
+  "initial_external_bootstrap": {
+    "expression": {
+      "code": 16,
+      "parameters": {
+        "slot": 0
+      }
+    },
+    "execution_count": 1,
+    "events": [
+      {
+        "event_sequence": 27,
+        "event_type": "ACTION_EXECUTED",
+        "state_version": 7,
+        "timestamp": "2026-10-09T05:44:26.672424+00:00",
+        "payload": {
+          "action_id": "9454ffd1-0140-4477-97b1-d1f89f098664",
+          "action_code": 16,
+          "status": "executed",
+          "method": "perform",
+          "args": {
+            "code": 16,
+            "parameters": {
+              "slot": 0
+            }
+          },
+          "initiator": "EXPERIMENTER_SUPPLIED_REAL_BOOTSTRAP",
+          "provenance": {
+            "source": "EXTERNAL_FIXED_INITIAL_CONDITION",
+            "internal_authorship": false
+          },
+          "result": {
+            "code": 16,
+            "parameters": {
+              "slot": 0
+            },
+            "started_at": "2026-10-09T05:44:26.601Z",
+            "before": {
+              "position": {
+                "x": -1241.5,
+                "y": 82,
+                "z": 344.5
+              },
+              "orientation": {
+                "yaw": 3.141592653589793,
+                "pitch": 0
+              },
+              "inventory_slots": [
+                {
+                  "slot": 0,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 1,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 2,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 3,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 4,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 5,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 6,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 7,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 8,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 9,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 10,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 11,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 12,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 13,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 14,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 15,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 16,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 17,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 18,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 19,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 20,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 21,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 22,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 23,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 24,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 25,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 26,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 27,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 28,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 29,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 30,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 31,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 32,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 33,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 34,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 35,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 36,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 37,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 38,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 39,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 40,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 41,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 42,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 43,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 44,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 45,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                }
+              ],
+              "blocks": [
+                {
+                  "block_ref": "o331bf517_1_1",
+                  "block_type_id": 524,
+                  "position": {
+                    "x": -1242,
+                    "y": 81,
+                    "z": 344
+                  }
+                },
+                {
+                  "block_ref": "o331bf517_1_2",
+                  "block_type_id": 524,
+                  "position": {
+                    "x": -1241,
+                    "y": 81,
+                    "z": 344
+                  }
+                },
+                {
+                  "block_ref": "o331bf517_1_3",
+                  "block_type_id": 524,
+                  "position": {
+                    "x": -1243,
+                    "y": 81,
+                    "z": 344
+                  }
+                },
+                {
+                  "block_ref": "o331bf517_1_4",
+                  "block_type_id": 524,
+                  "position": {
+                    "x": -1240,
+                    "y": 81,
+                    "z": 344
+                  }
+                },
+                {
+                  "block_ref": "o331bf517_1_5",
+                  "block_type_id": 524,
+                  "position": {
+                    "x": -1242,
+                    "y": 80,
+                    "z": 344
+                  }
+                },
+                {
+                  "block_ref": "o331bf517_1_6",
+                  "block_type_id": 524,
+                  "position": {
+                    "x": -1241,
+                    "y": 80,
+                    "z": 344
+                  }
+                },
+                {
+                  "block_ref": "o331bf517_1_7",
+                  "block_type_id": 524,
+                  "position": {
+                    "x": -1243,
+                    "y": 81,
+                    "z": 343
+                  }
+                },
+                {
+                  "block_ref": "o331bf517_1_8",
+                  "block_type_id": 524,
+                  "position": {
+                    "x": -1243,
+                    "y": 80,
+                    "z": 344
+                  }
+                },
+                {
+                  "block_ref": "o331bf517_1_9",
+                  "block_type_id": 524,
+                  "position": {
+                    "x": -1240,
+                    "y": 80,
+                    "z": 344
+                  }
+                },
+                {
+                  "block_ref": "o331bf517_1_10",
+                  "block_type_id": 524,
+                  "position": {
+                    "x": -1239,
+                    "y": 81,
+                    "z": 344
+                  }
+                },
+                {
+                  "block_ref": "o331bf517_1_11",
+                  "block_type_id": 524,
+                  "position": {
+                    "x": -1243,
+                    "y": 80,
+                    "z": 343
+                  }
+                },
+                {
+                  "block_ref": "o331bf517_1_12",
+                  "block_type_id": 524,
+                  "position": {
+                    "x": -1243,
+                    "y": 81,
+                    "z": 342
+                  }
+                },
+                {
+                  "block_ref": "o331bf517_1_13",
+                  "block_type_id": 7,
+                  "position": {
+                    "x": -1242,
+                    "y": 79,
+                    "z": 344
+                  }
+                },
+                {
+                  "block_ref": "o331bf517_1_14",
+                  "block_type_id": 7,
+                  "position": {
+                    "x": -1241,
+                    "y": 79,
+                    "z": 344
+                  }
+                },
+                {
+                  "block_ref": "o331bf517_1_15",
+                  "block_type_id": 524,
+                  "position": {
+                    "x": -1239,
+                    "y": 81,
+                    "z": 343
+                  }
+                },
+                {
+                  "block_ref": "o331bf517_1_16",
+                  "block_type_id": 201,
+                  "position": {
+                    "x": -1242,
+                    "y": 80,
+                    "z": 342
+                  }
+                },
+                {
+                  "block_ref": "o331bf517_1_17",
+                  "block_type_id": 524,
+                  "position": {
+                    "x": -1239,
+                    "y": 80,
+                    "z": 344
+                  }
+                },
+                {
+                  "block_ref": "o331bf517_1_18",
+                  "block_type_id": 7,
+                  "position": {
+                    "x": -1243,
+                    "y": 79,
+                    "z": 344
+                  }
+                },
+                {
+                  "block_ref": "o331bf517_1_19",
+                  "block_type_id": 7,
+                  "position": {
+                    "x": -1242,
+                    "y": 79,
+                    "z": 343
+                  }
+                },
+                {
+                  "block_ref": "o331bf517_1_20",
+                  "block_type_id": 7,
+                  "position": {
+                    "x": -1241,
+                    "y": 79,
+                    "z": 343
+                  }
+                },
+                {
+                  "block_ref": "o331bf517_1_21",
+                  "block_type_id": 7,
+                  "position": {
+                    "x": -1240,
+                    "y": 79,
+                    "z": 344
+                  }
+                },
+                {
+                  "block_ref": "o331bf517_1_22",
+                  "block_type_id": 524,
+                  "position": {
+                    "x": -1243,
+                    "y": 80,
+                    "z": 342
+                  }
+                },
+                {
+                  "block_ref": "o331bf517_1_23",
+                  "block_type_id": 12,
+                  "position": {
+                    "x": -1240,
+                    "y": 80,
+                    "z": 342
+                  }
+                },
+                {
+                  "block_ref": "o331bf517_1_24",
+                  "block_type_id": 524,
+                  "position": {
+                    "x": -1239,
+                    "y": 80,
+                    "z": 343
+                  }
+                },
+                {
+                  "block_ref": "o331bf517_1_25",
+                  "block_type_id": 7,
+                  "position": {
+                    "x": -1243,
+                    "y": 79,
+                    "z": 343
+                  }
+                },
+                {
+                  "block_ref": "o331bf517_1_26",
+                  "block_type_id": 7,
+                  "position": {
+                    "x": -1240,
+                    "y": 79,
+                    "z": 343
+                  }
+                },
+                {
+                  "block_ref": "o331bf517_1_27",
+                  "block_type_id": 524,
+                  "position": {
+                    "x": -1239,
+                    "y": 81,
+                    "z": 342
+                  }
+                },
+                {
+                  "block_ref": "o331bf517_1_28",
+                  "block_type_id": 524,
+                  "position": {
+                    "x": -1243,
+                    "y": 81,
+                    "z": 341
+                  }
+                },
+                {
+                  "block_ref": "o331bf517_1_29",
+                  "block_type_id": 7,
+                  "position": {
+                    "x": -1242,
+                    "y": 79,
+                    "z": 342
+                  }
+                },
+                {
+                  "block_ref": "o331bf517_1_30",
+                  "block_type_id": 7,
+                  "position": {
+                    "x": -1241,
+                    "y": 79,
+                    "z": 342
+                  }
+                },
+                {
+                  "block_ref": "o331bf517_1_31",
+                  "block_type_id": 7,
+                  "position": {
+                    "x": -1243,
+                    "y": 79,
+                    "z": 342
+                  }
+                },
+                {
+                  "block_ref": "o331bf517_1_32",
+                  "block_type_id": 524,
+                  "position": {
+                    "x": -1243,
+                    "y": 80,
+                    "z": 341
+                  }
+                }
+              ],
+              "inventory_screen": {
+                "container_id": "w331bf517_1_1",
+                "slot_count": 46,
+                "inventory_start": 9,
+                "inventory_end": 45,
+                "slot_state": [
+                  {
+                    "slot": 0,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 1,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 2,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 3,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 4,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 5,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 6,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 7,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 8,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 9,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 10,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 11,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 12,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 13,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 14,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 15,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 16,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 17,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 18,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 19,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 20,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 21,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 22,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 23,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 24,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 25,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 26,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 27,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 28,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 29,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 30,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 31,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 32,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 33,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 34,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 35,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 36,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 37,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 38,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 39,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 40,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 41,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 42,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 43,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 44,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 45,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  }
+                ],
+                "cursor": {
+                  "slot": -1,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                "result_slot": 0,
+                "input_slots": [
+                  1,
+                  2,
+                  3,
+                  4
+                ]
+              },
+              "container": null,
+              "crafting": null,
+              "inputs": {
+                "body_state": 1,
+                "mounted": 0,
+                "sleeping": 0,
+                "using_item": 0,
+                "dig_active": 0,
+                "hand": -1,
+                "offhand_item": {
+                  "slot": 45,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                "inventory_server_sequence": 1,
+                "slot_feedback_kind": 0
+              },
+              "control_modes": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            "finished_at": "2026-10-09T05:44:26.601Z",
+            "result": {
+              "input_sent": 1,
+              "effect_acknowledged": 0
+            },
+            "after": {
+              "position": {
+                "x": -1241.5,
+                "y": 82,
+                "z": 344.5
+              },
+              "orientation": {
+                "yaw": 3.141592653589793,
+                "pitch": 0
+              },
+              "inventory_slots": [
+                {
+                  "slot": 0,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 1,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 2,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 3,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 4,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 5,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 6,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 7,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 8,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 9,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 10,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 11,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 12,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 13,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 14,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 15,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 16,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 17,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 18,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 19,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 20,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 21,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 22,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 23,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 24,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 25,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 26,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 27,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 28,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 29,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 30,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 31,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 32,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 33,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 34,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 35,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 36,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 37,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 38,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 39,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 40,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 41,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 42,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 43,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 44,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 45,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                }
+              ],
+              "blocks": [
+                {
+                  "block_ref": "o331bf517_1_1",
+                  "block_type_id": 524,
+                  "position": {
+                    "x": -1242,
+                    "y": 81,
+                    "z": 344
+                  }
+                },
+                {
+                  "block_ref": "o331bf517_1_2",
+                  "block_type_id": 524,
+                  "position": {
+                    "x": -1241,
+                    "y": 81,
+                    "z": 344
+                  }
+                },
+                {
+                  "block_ref": "o331bf517_1_3",
+                  "block_type_id": 524,
+                  "position": {
+                    "x": -1243,
+                    "y": 81,
+                    "z": 344
+                  }
+                },
+                {
+                  "block_ref": "o331bf517_1_4",
+                  "block_type_id": 524,
+                  "position": {
+                    "x": -1240,
+                    "y": 81,
+                    "z": 344
+                  }
+                },
+                {
+                  "block_ref": "o331bf517_1_5",
+                  "block_type_id": 524,
+                  "position": {
+                    "x": -1242,
+                    "y": 80,
+                    "z": 344
+                  }
+                },
+                {
+                  "block_ref": "o331bf517_1_6",
+                  "block_type_id": 524,
+                  "position": {
+                    "x": -1241,
+                    "y": 80,
+                    "z": 344
+                  }
+                },
+                {
+                  "block_ref": "o331bf517_1_7",
+                  "block_type_id": 524,
+                  "position": {
+                    "x": -1243,
+                    "y": 81,
+                    "z": 343
+                  }
+                },
+                {
+                  "block_ref": "o331bf517_1_8",
+                  "block_type_id": 524,
+                  "position": {
+                    "x": -1243,
+                    "y": 80,
+                    "z": 344
+                  }
+                },
+                {
+                  "block_ref": "o331bf517_1_9",
+                  "block_type_id": 524,
+                  "position": {
+                    "x": -1240,
+                    "y": 80,
+                    "z": 344
+                  }
+                },
+                {
+                  "block_ref": "o331bf517_1_10",
+                  "block_type_id": 524,
+                  "position": {
+                    "x": -1239,
+                    "y": 81,
+                    "z": 344
+                  }
+                },
+                {
+                  "block_ref": "o331bf517_1_11",
+                  "block_type_id": 524,
+                  "position": {
+                    "x": -1243,
+                    "y": 80,
+                    "z": 343
+                  }
+                },
+                {
+                  "block_ref": "o331bf517_1_12",
+                  "block_type_id": 524,
+                  "position": {
+                    "x": -1243,
+                    "y": 81,
+                    "z": 342
+                  }
+                },
+                {
+                  "block_ref": "o331bf517_1_13",
+                  "block_type_id": 7,
+                  "position": {
+                    "x": -1242,
+                    "y": 79,
+                    "z": 344
+                  }
+                },
+                {
+                  "block_ref": "o331bf517_1_14",
+                  "block_type_id": 7,
+                  "position": {
+                    "x": -1241,
+                    "y": 79,
+                    "z": 344
+                  }
+                },
+                {
+                  "block_ref": "o331bf517_1_15",
+                  "block_type_id": 524,
+                  "position": {
+                    "x": -1239,
+                    "y": 81,
+                    "z": 343
+                  }
+                },
+                {
+                  "block_ref": "o331bf517_1_16",
+                  "block_type_id": 201,
+                  "position": {
+                    "x": -1242,
+                    "y": 80,
+                    "z": 342
+                  }
+                },
+                {
+                  "block_ref": "o331bf517_1_17",
+                  "block_type_id": 524,
+                  "position": {
+                    "x": -1239,
+                    "y": 80,
+                    "z": 344
+                  }
+                },
+                {
+                  "block_ref": "o331bf517_1_18",
+                  "block_type_id": 7,
+                  "position": {
+                    "x": -1243,
+                    "y": 79,
+                    "z": 344
+                  }
+                },
+                {
+                  "block_ref": "o331bf517_1_19",
+                  "block_type_id": 7,
+                  "position": {
+                    "x": -1242,
+                    "y": 79,
+                    "z": 343
+                  }
+                },
+                {
+                  "block_ref": "o331bf517_1_20",
+                  "block_type_id": 7,
+                  "position": {
+                    "x": -1241,
+                    "y": 79,
+                    "z": 343
+                  }
+                },
+                {
+                  "block_ref": "o331bf517_1_21",
+                  "block_type_id": 7,
+                  "position": {
+                    "x": -1240,
+                    "y": 79,
+                    "z": 344
+                  }
+                },
+                {
+                  "block_ref": "o331bf517_1_22",
+                  "block_type_id": 524,
+                  "position": {
+                    "x": -1243,
+                    "y": 80,
+                    "z": 342
+                  }
+                },
+                {
+                  "block_ref": "o331bf517_1_23",
+                  "block_type_id": 12,
+                  "position": {
+                    "x": -1240,
+                    "y": 80,
+                    "z": 342
+                  }
+                },
+                {
+                  "block_ref": "o331bf517_1_24",
+                  "block_type_id": 524,
+                  "position": {
+                    "x": -1239,
+                    "y": 80,
+                    "z": 343
+                  }
+                },
+                {
+                  "block_ref": "o331bf517_1_25",
+                  "block_type_id": 7,
+                  "position": {
+                    "x": -1243,
+                    "y": 79,
+                    "z": 343
+                  }
+                },
+                {
+                  "block_ref": "o331bf517_1_26",
+                  "block_type_id": 7,
+                  "position": {
+                    "x": -1240,
+                    "y": 79,
+                    "z": 343
+                  }
+                },
+                {
+                  "block_ref": "o331bf517_1_27",
+                  "block_type_id": 524,
+                  "position": {
+                    "x": -1239,
+                    "y": 81,
+                    "z": 342
+                  }
+                },
+                {
+                  "block_ref": "o331bf517_1_28",
+                  "block_type_id": 524,
+                  "position": {
+                    "x": -1243,
+                    "y": 81,
+                    "z": 341
+                  }
+                },
+                {
+                  "block_ref": "o331bf517_1_29",
+                  "block_type_id": 7,
+                  "position": {
+                    "x": -1242,
+                    "y": 79,
+                    "z": 342
+                  }
+                },
+                {
+                  "block_ref": "o331bf517_1_30",
+                  "block_type_id": 7,
+                  "position": {
+                    "x": -1241,
+                    "y": 79,
+                    "z": 342
+                  }
+                },
+                {
+                  "block_ref": "o331bf517_1_31",
+                  "block_type_id": 7,
+                  "position": {
+                    "x": -1243,
+                    "y": 79,
+                    "z": 342
+                  }
+                },
+                {
+                  "block_ref": "o331bf517_1_32",
+                  "block_type_id": 524,
+                  "position": {
+                    "x": -1243,
+                    "y": 80,
+                    "z": 341
+                  }
+                }
+              ],
+              "inventory_screen": {
+                "container_id": "w331bf517_1_1",
+                "slot_count": 46,
+                "inventory_start": 9,
+                "inventory_end": 45,
+                "slot_state": [
+                  {
+                    "slot": 0,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 1,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 2,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 3,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 4,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 5,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 6,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 7,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 8,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 9,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 10,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 11,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 12,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 13,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 14,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 15,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 16,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 17,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 18,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 19,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 20,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 21,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 22,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 23,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 24,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 25,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 26,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 27,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 28,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 29,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 30,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 31,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 32,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 33,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 34,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 35,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 36,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 37,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 38,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 39,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 40,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 41,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 42,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 43,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 44,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  },
+                  {
+                    "slot": 45,
+                    "item_type_id": null,
+                    "count": 0,
+                    "metadata": null,
+                    "durability": null
+                  }
+                ],
+                "cursor": {
+                  "slot": -1,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                "result_slot": 0,
+                "input_slots": [
+                  1,
+                  2,
+                  3,
+                  4
+                ]
+              },
+              "container": null,
+              "crafting": null,
+              "inputs": {
+                "body_state": 1,
+                "mounted": 0,
+                "sleeping": 0,
+                "using_item": 0,
+                "dig_active": 0,
+                "hand": -1,
+                "offhand_item": {
+                  "slot": 45,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                "inventory_server_sequence": 1,
+                "slot_feedback_kind": 0
+              },
+              "control_modes": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            },
+            "effect_attribution": "temporal_observation_only"
+          }
+        }
+      }
+    ]
+  },
+  "recursive_native_operations": [
+    {
+      "event_sequence": 69,
+      "event_type": "ACTION_EXECUTED",
+      "state_version": 12,
+      "timestamp": "2026-10-09T05:49:17.389599+00:00",
+      "payload": {
+        "action_id": "4bf25083-dbea-41b6-91ea-6231c633b4d8",
+        "action_code": 16,
+        "status": "executed",
+        "method": "perform",
+        "args": {
+          "code": 16,
+          "parameters": {
+            "slot": 1
+          }
+        },
+        "initiator": "TEST_ONLY_ORDINARY_OCCURRENCE_EFFECT",
+        "provenance": {
+          "operation": {
+            "type": "NativeOperation",
+            "port": {
+              "type": "BodyRef",
+              "catalog_id": "348be4ed3375400d2ba05b6146cc8fceae11d2c437f9fc7dad92663c020a4b99",
+              "catalog_version": 2,
+              "namespace": "26.1",
+              "body_epoch": 0,
+              "kind": "port",
+              "code": 16
+            },
+            "expression": {
+              "code": 16,
+              "parameters": {
+                "slot": 1
+              }
+            },
+            "effect_refs": [
+              "4775224be4551a0e3d3980691ce521916c48ddba7bc6afa8e611df8e8953f94a",
+              "7fa5ca1df4cd8a5a6a2daa0a35b759bb7146bab012c247cdce512b48cba6156e"
+            ]
+          },
+          "packet": {
+            "frame_id": "A-f2edc0b5-ff36-4282-9e1a-34996177a2f9:E4",
+            "state_version": 10,
+            "effects": {
+              "4775224be4551a0e3d3980691ce521916c48ddba7bc6afa8e611df8e8953f94a": {
+                "type": "ReceiverEffect",
+                "receiver": {
+                  "type": "BodyRef",
+                  "catalog_id": "348be4ed3375400d2ba05b6146cc8fceae11d2c437f9fc7dad92663c020a4b99",
+                  "catalog_version": 2,
+                  "namespace": "26.1",
+                  "body_epoch": 0,
+                  "kind": "slot",
+                  "code": 16,
+                  "slot": "slot"
+                },
+                "operand": {
+                  "type": "ObservationRef",
+                  "namespace": "26.1",
+                  "node": "N-da437658cd3c38daabd478a14cf55d701f7898e973fdfa8f10f286c8feb724c0"
+                },
+                "route_ref": "86aca73e742fe69f80612705143397c6349a36ac9be8107de032236b9d030a7a",
+                "occurrence": {
+                  "channel_id": "8700695247692320",
+                  "kind": "increased",
+                  "before": 0,
+                  "after": 1,
+                  "delta": 1
+                }
+              },
+              "7fa5ca1df4cd8a5a6a2daa0a35b759bb7146bab012c247cdce512b48cba6156e": {
+                "type": "ReceiverEffect",
+                "receiver": {
+                  "type": "BodyRef",
+                  "catalog_id": "348be4ed3375400d2ba05b6146cc8fceae11d2c437f9fc7dad92663c020a4b99",
+                  "catalog_version": 2,
+                  "namespace": "26.1",
+                  "body_epoch": 0,
+                  "kind": "slot",
+                  "code": 16,
+                  "slot": "slot"
+                },
+                "operand": {
+                  "type": "ObservationRef",
+                  "namespace": "26.1",
+                  "node": "N-da437658cd3c38daabd478a14cf55d701f7898e973fdfa8f10f286c8feb724c0"
+                },
+                "route_ref": "e0c4f965788cb1cf7fb0dc4807f7799defc603d07201d782e430bd71831cf501",
+                "occurrence": {
+                  "channel_id": "9611063340563467",
+                  "kind": "increased",
+                  "before": 0,
+                  "after": 1,
+                  "delta": 1
+                }
+              }
+            },
+            "read_dependencies": {
+              "relations": [
+                "U-1d6d7a6efe353163cd8f:-1",
+                "U-d80582d4068f3e1ab329:16",
+                "opaque:operand",
+                "opaque:origin"
+              ],
+              "dependencies": [
+                {
+                  "source": "opaque:origin",
+                  "target": "opaque:operand"
+                },
+                {
+                  "source": "opaque:operand",
+                  "target": "U-d80582d4068f3e1ab329:16"
+                },
+                {
+                  "source": "U-d80582d4068f3e1ab329:16",
+                  "target": "U-1d6d7a6efe353163cd8f:-1"
+                }
+              ],
+              "typed_connections": [
+                "d901a660e0000463b2d2c2827e6d331520b4cad7b0a3312aef61cce92461305c",
+                "725b7660c331e58ed7d1ff708bd64c2a91acb4d6be6bbf826307a33dd4808c4e",
+                "6e1ab987126f75e7345662299959cb0d8f38a3a88bbd3aaa22c3018f5926115d",
+                "67c609208e02997b1f0f893bbfaca2e1b54bceac0fe5e93a81692f51593e3423",
+                "506d4372176948f525492159fe87fb6a0b605ecf7ca7480aa4421868debf6763",
+                "6852ce0447a5e4d68ed48ca399932c4d765e6970de0303fc36cc67c3864534ea",
+                "b2bb0629ca4a2bed65e4270e3f592b5687a663464d670fd790dd371755234d23",
+                "367bbcac76fc37d7e99147c5c971fa295de0d9dc02a568d929532604fed3623a",
+                "86dfd5f51a0e7bccf4af25da06d6712c0d4f68f3ea012f108173ae4042d4b675",
+                "76a673a75f2a47dd1dec93c5896329730fbbdb486ffbdf9a4b16fc1dd175807d",
+                "a0e1bdf0ed6ad44d47864eacde39056d12f9c508a4ffa33316bd5651c551bc0a",
+                "2b7fc369a902039a8ad4d13f2425a3df086b3c65505f20a000581b7bf6364218"
+              ]
+            },
+            "body_status": "READY",
+            "operations": [
+              {
+                "type": "NativeOperation",
+                "port": {
+                  "type": "BodyRef",
+                  "catalog_id": "348be4ed3375400d2ba05b6146cc8fceae11d2c437f9fc7dad92663c020a4b99",
+                  "catalog_version": 2,
+                  "namespace": "26.1",
+                  "body_epoch": 0,
+                  "kind": "port",
+                  "code": 16
+                },
+                "expression": {
+                  "code": 16,
+                  "parameters": {
+                    "slot": 1
+                  }
+                },
+                "effect_refs": [
+                  "4775224be4551a0e3d3980691ce521916c48ddba7bc6afa8e611df8e8953f94a",
+                  "7fa5ca1df4cd8a5a6a2daa0a35b759bb7146bab012c247cdce512b48cba6156e"
+                ]
+              }
+            ]
+          },
+          "formation_rule": "OBSERVATION-REFERENCE-EFFECTS-TEST_ONLY-1",
+          "action_selection_claimed": false
+        },
+        "result": {
+          "code": 16,
+          "parameters": {
+            "slot": 1
+          },
+          "started_at": "2026-10-09T05:49:15.347Z",
+          "before": {
+            "position": {
+              "x": -1241.5,
+              "y": 82,
+              "z": 344.5
+            },
+            "orientation": {
+              "yaw": 3.141592653589793,
+              "pitch": 0
+            },
+            "inventory_slots": [
+              {
+                "slot": 0,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 1,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 2,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 3,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 4,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 5,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 6,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 7,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 8,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 9,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 10,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 11,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 12,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 13,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 14,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 15,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 16,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 17,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 18,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 19,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 20,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 21,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 22,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 23,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 24,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 25,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 26,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 27,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 28,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 29,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 30,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 31,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 32,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 33,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 34,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 35,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 36,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 37,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 38,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 39,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 40,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 41,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 42,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 43,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 44,
+                "item_type_id": 1,
+                "count": 1,
+                "metadata": 0,
+                "durability": null
+              },
+              {
+                "slot": 45,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              }
+            ],
+            "blocks": [
+              {
+                "block_ref": "o331bf517_1_1",
+                "block_type_id": 524,
+                "position": {
+                  "x": -1242,
+                  "y": 81,
+                  "z": 344
+                }
+              },
+              {
+                "block_ref": "o331bf517_1_2",
+                "block_type_id": 524,
+                "position": {
+                  "x": -1241,
+                  "y": 81,
+                  "z": 344
+                }
+              },
+              {
+                "block_ref": "o331bf517_1_3",
+                "block_type_id": 524,
+                "position": {
+                  "x": -1243,
+                  "y": 81,
+                  "z": 344
+                }
+              },
+              {
+                "block_ref": "o331bf517_1_4",
+                "block_type_id": 524,
+                "position": {
+                  "x": -1240,
+                  "y": 81,
+                  "z": 344
+                }
+              },
+              {
+                "block_ref": "o331bf517_1_5",
+                "block_type_id": 524,
+                "position": {
+                  "x": -1242,
+                  "y": 80,
+                  "z": 344
+                }
+              },
+              {
+                "block_ref": "o331bf517_1_6",
+                "block_type_id": 524,
+                "position": {
+                  "x": -1241,
+                  "y": 80,
+                  "z": 344
+                }
+              },
+              {
+                "block_ref": "o331bf517_1_7",
+                "block_type_id": 524,
+                "position": {
+                  "x": -1243,
+                  "y": 81,
+                  "z": 343
+                }
+              },
+              {
+                "block_ref": "o331bf517_1_8",
+                "block_type_id": 524,
+                "position": {
+                  "x": -1243,
+                  "y": 80,
+                  "z": 344
+                }
+              },
+              {
+                "block_ref": "o331bf517_1_9",
+                "block_type_id": 524,
+                "position": {
+                  "x": -1240,
+                  "y": 80,
+                  "z": 344
+                }
+              },
+              {
+                "block_ref": "o331bf517_1_10",
+                "block_type_id": 524,
+                "position": {
+                  "x": -1239,
+                  "y": 81,
+                  "z": 344
+                }
+              },
+              {
+                "block_ref": "o331bf517_1_11",
+                "block_type_id": 524,
+                "position": {
+                  "x": -1243,
+                  "y": 80,
+                  "z": 343
+                }
+              },
+              {
+                "block_ref": "o331bf517_1_12",
+                "block_type_id": 524,
+                "position": {
+                  "x": -1243,
+                  "y": 81,
+                  "z": 342
+                }
+              },
+              {
+                "block_ref": "o331bf517_1_13",
+                "block_type_id": 7,
+                "position": {
+                  "x": -1242,
+                  "y": 79,
+                  "z": 344
+                }
+              },
+              {
+                "block_ref": "o331bf517_1_14",
+                "block_type_id": 7,
+                "position": {
+                  "x": -1241,
+                  "y": 79,
+                  "z": 344
+                }
+              },
+              {
+                "block_ref": "o331bf517_1_15",
+                "block_type_id": 524,
+                "position": {
+                  "x": -1239,
+                  "y": 81,
+                  "z": 343
+                }
+              },
+              {
+                "block_ref": "o331bf517_1_16",
+                "block_type_id": 201,
+                "position": {
+                  "x": -1242,
+                  "y": 80,
+                  "z": 342
+                }
+              },
+              {
+                "block_ref": "o331bf517_1_17",
+                "block_type_id": 524,
+                "position": {
+                  "x": -1239,
+                  "y": 80,
+                  "z": 344
+                }
+              },
+              {
+                "block_ref": "o331bf517_1_18",
+                "block_type_id": 7,
+                "position": {
+                  "x": -1243,
+                  "y": 79,
+                  "z": 344
+                }
+              },
+              {
+                "block_ref": "o331bf517_1_19",
+                "block_type_id": 7,
+                "position": {
+                  "x": -1242,
+                  "y": 79,
+                  "z": 343
+                }
+              },
+              {
+                "block_ref": "o331bf517_1_20",
+                "block_type_id": 7,
+                "position": {
+                  "x": -1241,
+                  "y": 79,
+                  "z": 343
+                }
+              },
+              {
+                "block_ref": "o331bf517_1_21",
+                "block_type_id": 7,
+                "position": {
+                  "x": -1240,
+                  "y": 79,
+                  "z": 344
+                }
+              },
+              {
+                "block_ref": "o331bf517_1_22",
+                "block_type_id": 524,
+                "position": {
+                  "x": -1243,
+                  "y": 80,
+                  "z": 342
+                }
+              },
+              {
+                "block_ref": "o331bf517_1_23",
+                "block_type_id": 12,
+                "position": {
+                  "x": -1240,
+                  "y": 80,
+                  "z": 342
+                }
+              },
+              {
+                "block_ref": "o331bf517_1_24",
+                "block_type_id": 524,
+                "position": {
+                  "x": -1239,
+                  "y": 80,
+                  "z": 343
+                }
+              },
+              {
+                "block_ref": "o331bf517_1_25",
+                "block_type_id": 7,
+                "position": {
+                  "x": -1243,
+                  "y": 79,
+                  "z": 343
+                }
+              },
+              {
+                "block_ref": "o331bf517_1_26",
+                "block_type_id": 7,
+                "position": {
+                  "x": -1240,
+                  "y": 79,
+                  "z": 343
+                }
+              },
+              {
+                "block_ref": "o331bf517_1_27",
+                "block_type_id": 524,
+                "position": {
+                  "x": -1239,
+                  "y": 81,
+                  "z": 342
+                }
+              },
+              {
+                "block_ref": "o331bf517_1_28",
+                "block_type_id": 524,
+                "position": {
+                  "x": -1243,
+                  "y": 81,
+                  "z": 341
+                }
+              },
+              {
+                "block_ref": "o331bf517_1_29",
+                "block_type_id": 7,
+                "position": {
+                  "x": -1242,
+                  "y": 79,
+                  "z": 342
+                }
+              },
+              {
+                "block_ref": "o331bf517_1_30",
+                "block_type_id": 7,
+                "position": {
+                  "x": -1241,
+                  "y": 79,
+                  "z": 342
+                }
+              },
+              {
+                "block_ref": "o331bf517_1_31",
+                "block_type_id": 7,
+                "position": {
+                  "x": -1243,
+                  "y": 79,
+                  "z": 342
+                }
+              },
+              {
+                "block_ref": "o331bf517_1_32",
+                "block_type_id": 524,
+                "position": {
+                  "x": -1243,
+                  "y": 80,
+                  "z": 341
+                }
+              }
+            ],
+            "inventory_screen": {
+              "container_id": "w331bf517_1_1",
+              "slot_count": 46,
+              "inventory_start": 9,
+              "inventory_end": 45,
+              "slot_state": [
+                {
+                  "slot": 0,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 1,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 2,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 3,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 4,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 5,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 6,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 7,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 8,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 9,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 10,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 11,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 12,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 13,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 14,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 15,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 16,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 17,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 18,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 19,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 20,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 21,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 22,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 23,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 24,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 25,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 26,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 27,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 28,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 29,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 30,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 31,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 32,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 33,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 34,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 35,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 36,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 37,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 38,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 39,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 40,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 41,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 42,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 43,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 44,
+                  "item_type_id": 1,
+                  "count": 1,
+                  "metadata": 0,
+                  "durability": null
+                },
+                {
+                  "slot": 45,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                }
+              ],
+              "cursor": {
+                "slot": -1,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              "result_slot": 0,
+              "input_slots": [
+                1,
+                2,
+                3,
+                4
+              ]
+            },
+            "container": null,
+            "crafting": null,
+            "inputs": {
+              "body_state": 1,
+              "mounted": 0,
+              "sleeping": 0,
+              "using_item": 0,
+              "dig_active": 0,
+              "hand": -1,
+              "offhand_item": {
+                "slot": 45,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              "inventory_server_sequence": 4,
+              "slot_feedback_kind": 0
+            },
+            "control_modes": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "finished_at": "2026-10-09T05:49:15.348Z",
+          "result": {
+            "input_sent": 1,
+            "effect_acknowledged": 0
+          },
+          "after": {
+            "position": {
+              "x": -1241.5,
+              "y": 82,
+              "z": 344.5
+            },
+            "orientation": {
+              "yaw": 3.141592653589793,
+              "pitch": 0
+            },
+            "inventory_slots": [
+              {
+                "slot": 0,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 1,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 2,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 3,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 4,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 5,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 6,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 7,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 8,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 9,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 10,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 11,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 12,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 13,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 14,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 15,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 16,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 17,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 18,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 19,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 20,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 21,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 22,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 23,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 24,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 25,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 26,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 27,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 28,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 29,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 30,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 31,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 32,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 33,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 34,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 35,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 36,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 37,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 38,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 39,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 40,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 41,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 42,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 43,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              {
+                "slot": 44,
+                "item_type_id": 1,
+                "count": 1,
+                "metadata": 0,
+                "durability": null
+              },
+              {
+                "slot": 45,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              }
+            ],
+            "blocks": [
+              {
+                "block_ref": "o331bf517_1_1",
+                "block_type_id": 524,
+                "position": {
+                  "x": -1242,
+                  "y": 81,
+                  "z": 344
+                }
+              },
+              {
+                "block_ref": "o331bf517_1_2",
+                "block_type_id": 524,
+                "position": {
+                  "x": -1241,
+                  "y": 81,
+                  "z": 344
+                }
+              },
+              {
+                "block_ref": "o331bf517_1_3",
+                "block_type_id": 524,
+                "position": {
+                  "x": -1243,
+                  "y": 81,
+                  "z": 344
+                }
+              },
+              {
+                "block_ref": "o331bf517_1_4",
+                "block_type_id": 524,
+                "position": {
+                  "x": -1240,
+                  "y": 81,
+                  "z": 344
+                }
+              },
+              {
+                "block_ref": "o331bf517_1_5",
+                "block_type_id": 524,
+                "position": {
+                  "x": -1242,
+                  "y": 80,
+                  "z": 344
+                }
+              },
+              {
+                "block_ref": "o331bf517_1_6",
+                "block_type_id": 524,
+                "position": {
+                  "x": -1241,
+                  "y": 80,
+                  "z": 344
+                }
+              },
+              {
+                "block_ref": "o331bf517_1_7",
+                "block_type_id": 524,
+                "position": {
+                  "x": -1243,
+                  "y": 81,
+                  "z": 343
+                }
+              },
+              {
+                "block_ref": "o331bf517_1_8",
+                "block_type_id": 524,
+                "position": {
+                  "x": -1243,
+                  "y": 80,
+                  "z": 344
+                }
+              },
+              {
+                "block_ref": "o331bf517_1_9",
+                "block_type_id": 524,
+                "position": {
+                  "x": -1240,
+                  "y": 80,
+                  "z": 344
+                }
+              },
+              {
+                "block_ref": "o331bf517_1_10",
+                "block_type_id": 524,
+                "position": {
+                  "x": -1239,
+                  "y": 81,
+                  "z": 344
+                }
+              },
+              {
+                "block_ref": "o331bf517_1_11",
+                "block_type_id": 524,
+                "position": {
+                  "x": -1243,
+                  "y": 80,
+                  "z": 343
+                }
+              },
+              {
+                "block_ref": "o331bf517_1_12",
+                "block_type_id": 524,
+                "position": {
+                  "x": -1243,
+                  "y": 81,
+                  "z": 342
+                }
+              },
+              {
+                "block_ref": "o331bf517_1_13",
+                "block_type_id": 7,
+                "position": {
+                  "x": -1242,
+                  "y": 79,
+                  "z": 344
+                }
+              },
+              {
+                "block_ref": "o331bf517_1_14",
+                "block_type_id": 7,
+                "position": {
+                  "x": -1241,
+                  "y": 79,
+                  "z": 344
+                }
+              },
+              {
+                "block_ref": "o331bf517_1_15",
+                "block_type_id": 524,
+                "position": {
+                  "x": -1239,
+                  "y": 81,
+                  "z": 343
+                }
+              },
+              {
+                "block_ref": "o331bf517_1_16",
+                "block_type_id": 201,
+                "position": {
+                  "x": -1242,
+                  "y": 80,
+                  "z": 342
+                }
+              },
+              {
+                "block_ref": "o331bf517_1_17",
+                "block_type_id": 524,
+                "position": {
+                  "x": -1239,
+                  "y": 80,
+                  "z": 344
+                }
+              },
+              {
+                "block_ref": "o331bf517_1_18",
+                "block_type_id": 7,
+                "position": {
+                  "x": -1243,
+                  "y": 79,
+                  "z": 344
+                }
+              },
+              {
+                "block_ref": "o331bf517_1_19",
+                "block_type_id": 7,
+                "position": {
+                  "x": -1242,
+                  "y": 79,
+                  "z": 343
+                }
+              },
+              {
+                "block_ref": "o331bf517_1_20",
+                "block_type_id": 7,
+                "position": {
+                  "x": -1241,
+                  "y": 79,
+                  "z": 343
+                }
+              },
+              {
+                "block_ref": "o331bf517_1_21",
+                "block_type_id": 7,
+                "position": {
+                  "x": -1240,
+                  "y": 79,
+                  "z": 344
+                }
+              },
+              {
+                "block_ref": "o331bf517_1_22",
+                "block_type_id": 524,
+                "position": {
+                  "x": -1243,
+                  "y": 80,
+                  "z": 342
+                }
+              },
+              {
+                "block_ref": "o331bf517_1_23",
+                "block_type_id": 12,
+                "position": {
+                  "x": -1240,
+                  "y": 80,
+                  "z": 342
+                }
+              },
+              {
+                "block_ref": "o331bf517_1_24",
+                "block_type_id": 524,
+                "position": {
+                  "x": -1239,
+                  "y": 80,
+                  "z": 343
+                }
+              },
+              {
+                "block_ref": "o331bf517_1_25",
+                "block_type_id": 7,
+                "position": {
+                  "x": -1243,
+                  "y": 79,
+                  "z": 343
+                }
+              },
+              {
+                "block_ref": "o331bf517_1_26",
+                "block_type_id": 7,
+                "position": {
+                  "x": -1240,
+                  "y": 79,
+                  "z": 343
+                }
+              },
+              {
+                "block_ref": "o331bf517_1_27",
+                "block_type_id": 524,
+                "position": {
+                  "x": -1239,
+                  "y": 81,
+                  "z": 342
+                }
+              },
+              {
+                "block_ref": "o331bf517_1_28",
+                "block_type_id": 524,
+                "position": {
+                  "x": -1243,
+                  "y": 81,
+                  "z": 341
+                }
+              },
+              {
+                "block_ref": "o331bf517_1_29",
+                "block_type_id": 7,
+                "position": {
+                  "x": -1242,
+                  "y": 79,
+                  "z": 342
+                }
+              },
+              {
+                "block_ref": "o331bf517_1_30",
+                "block_type_id": 7,
+                "position": {
+                  "x": -1241,
+                  "y": 79,
+                  "z": 342
+                }
+              },
+              {
+                "block_ref": "o331bf517_1_31",
+                "block_type_id": 7,
+                "position": {
+                  "x": -1243,
+                  "y": 79,
+                  "z": 342
+                }
+              },
+              {
+                "block_ref": "o331bf517_1_32",
+                "block_type_id": 524,
+                "position": {
+                  "x": -1243,
+                  "y": 80,
+                  "z": 341
+                }
+              }
+            ],
+            "inventory_screen": {
+              "container_id": "w331bf517_1_1",
+              "slot_count": 46,
+              "inventory_start": 9,
+              "inventory_end": 45,
+              "slot_state": [
+                {
+                  "slot": 0,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 1,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 2,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 3,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 4,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 5,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 6,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 7,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 8,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 9,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 10,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 11,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 12,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 13,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 14,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 15,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 16,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 17,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 18,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 19,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 20,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 21,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 22,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 23,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 24,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 25,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 26,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 27,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 28,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 29,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 30,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 31,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 32,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 33,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 34,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 35,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 36,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 37,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 38,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 39,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 40,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 41,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 42,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 43,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                },
+                {
+                  "slot": 44,
+                  "item_type_id": 1,
+                  "count": 1,
+                  "metadata": 0,
+                  "durability": null
+                },
+                {
+                  "slot": 45,
+                  "item_type_id": null,
+                  "count": 0,
+                  "metadata": null,
+                  "durability": null
+                }
+              ],
+              "cursor": {
+                "slot": -1,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              "result_slot": 0,
+              "input_slots": [
+                1,
+                2,
+                3,
+                4
+              ]
+            },
+            "container": null,
+            "crafting": null,
+            "inputs": {
+              "body_state": 1,
+              "mounted": 0,
+              "sleeping": 0,
+              "using_item": 0,
+              "dig_active": 0,
+              "hand": -1,
+              "offhand_item": {
+                "slot": 45,
+                "item_type_id": null,
+                "count": 0,
+                "metadata": null,
+                "durability": null
+              },
+              "inventory_server_sequence": 4,
+              "slot_feedback_kind": 0
+            },
+            "control_modes": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "effect_attribution": "temporal_observation_only"
+        }
+      }
+    }
+  ],
+  "perform_request_count": 2,
+  "recursive_execution_count": 1,
+  "chat_request_count": 0,
+  "committed_observation_count": 4,
+  "committed_experience_count": 3,
+  "formed_route_count": 7,
+  "all_formed_routes": {
+    "86aca73e742fe69f80612705143397c6349a36ac9be8107de032236b9d030a7a": {
+      "type": "EffectRoute",
+      "trigger": {
+        "namespace": "26.1",
+        "channel_id": "8700695247692320",
+        "kind": "increased",
+        "before": {
+          "type": "ObservationRef",
+          "namespace": "26.1",
+          "node": "N-62a1d4983b30a758a1c070e9f4895c30810e5469a5900366115afa81b71c1679"
+        },
+        "after": {
+          "type": "ObservationRef",
+          "namespace": "26.1",
+          "node": "N-da437658cd3c38daabd478a14cf55d701f7898e973fdfa8f10f286c8feb724c0"
+        }
+      },
+      "receiver": {
+        "type": "BodyRef",
+        "catalog_id": "348be4ed3375400d2ba05b6146cc8fceae11d2c437f9fc7dad92663c020a4b99",
+        "catalog_version": 2,
+        "namespace": "26.1",
+        "body_epoch": 0,
+        "kind": "slot",
+        "code": 16,
+        "slot": "slot"
+      }
+    },
+    "e0c4f965788cb1cf7fb0dc4807f7799defc603d07201d782e430bd71831cf501": {
+      "type": "EffectRoute",
+      "trigger": {
+        "namespace": "26.1",
+        "channel_id": "9611063340563467",
+        "kind": "increased",
+        "before": {
+          "type": "ObservationRef",
+          "namespace": "26.1",
+          "node": "N-62a1d4983b30a758a1c070e9f4895c30810e5469a5900366115afa81b71c1679"
+        },
+        "after": {
+          "type": "ObservationRef",
+          "namespace": "26.1",
+          "node": "N-da437658cd3c38daabd478a14cf55d701f7898e973fdfa8f10f286c8feb724c0"
+        }
+      },
+      "receiver": {
+        "type": "BodyRef",
+        "catalog_id": "348be4ed3375400d2ba05b6146cc8fceae11d2c437f9fc7dad92663c020a4b99",
+        "catalog_version": 2,
+        "namespace": "26.1",
+        "body_epoch": 0,
+        "kind": "slot",
+        "code": 16,
+        "slot": "slot"
+      }
+    },
+    "ab3a3c2d430a743c246655711e3f22c2d62c9ac3602bab98610a729fead61192": {
+      "type": "EffectRoute",
+      "trigger": {
+        "namespace": "26.1",
+        "channel_id": "71216751673604255",
+        "kind": "increased",
+        "before": {
+          "type": "ObservationRef",
+          "namespace": "26.1",
+          "node": "N-da437658cd3c38daabd478a14cf55d701f7898e973fdfa8f10f286c8feb724c0"
+        },
+        "after": {
+          "type": "ObservationRef",
+          "namespace": "26.1",
+          "node": "N-595d7f7efccc6076c523baf1be8df1cf3a9e8a23782c11e7294462b6f6d65612"
+        }
+      },
+      "receiver": {
+        "type": "BodyRef",
+        "catalog_id": "348be4ed3375400d2ba05b6146cc8fceae11d2c437f9fc7dad92663c020a4b99",
+        "catalog_version": 2,
+        "namespace": "26.1",
+        "body_epoch": 0,
+        "kind": "slot",
+        "code": 16,
+        "slot": "slot"
+      }
+    },
+    "c8e97000ce6d21e3a1651b5485a992419e899782e0f240cd8806ab53198c80ca": {
+      "type": "EffectRoute",
+      "trigger": {
+        "namespace": "26.1",
+        "channel_id": "8700695247692320",
+        "kind": "decreased",
+        "before": {
+          "type": "ObservationRef",
+          "namespace": "26.1",
+          "node": "N-da437658cd3c38daabd478a14cf55d701f7898e973fdfa8f10f286c8feb724c0"
+        },
+        "after": {
+          "type": "ObservationRef",
+          "namespace": "26.1",
+          "node": "N-62a1d4983b30a758a1c070e9f4895c30810e5469a5900366115afa81b71c1679"
+        }
+      },
+      "receiver": {
+        "type": "BodyRef",
+        "catalog_id": "348be4ed3375400d2ba05b6146cc8fceae11d2c437f9fc7dad92663c020a4b99",
+        "catalog_version": 2,
+        "namespace": "26.1",
+        "body_epoch": 0,
+        "kind": "slot",
+        "code": 16,
+        "slot": "slot"
+      }
+    },
+    "5f02f22c137381af6791112367d022dbc62c44afb80a5547177f1615f57e4383": {
+      "type": "EffectRoute",
+      "trigger": {
+        "namespace": "26.1",
+        "channel_id": "9611063340563467",
+        "kind": "decreased",
+        "before": {
+          "type": "ObservationRef",
+          "namespace": "26.1",
+          "node": "N-da437658cd3c38daabd478a14cf55d701f7898e973fdfa8f10f286c8feb724c0"
+        },
+        "after": {
+          "type": "ObservationRef",
+          "namespace": "26.1",
+          "node": "N-62a1d4983b30a758a1c070e9f4895c30810e5469a5900366115afa81b71c1679"
+        }
+      },
+      "receiver": {
+        "type": "BodyRef",
+        "catalog_id": "348be4ed3375400d2ba05b6146cc8fceae11d2c437f9fc7dad92663c020a4b99",
+        "catalog_version": 2,
+        "namespace": "26.1",
+        "body_epoch": 0,
+        "kind": "slot",
+        "code": 16,
+        "slot": "slot"
+      }
+    },
+    "2b0477ef985a13fc74c7a5230498fb172f85127f3ed7c94921a8b38984ae3e65": {
+      "type": "EffectRoute",
+      "trigger": {
+        "namespace": "26.1",
+        "channel_id": "71216751673604255",
+        "kind": "increased",
+        "before": {
+          "type": "ObservationRef",
+          "namespace": "26.1",
+          "node": "N-595d7f7efccc6076c523baf1be8df1cf3a9e8a23782c11e7294462b6f6d65612"
+        },
+        "after": {
+          "type": "ObservationRef",
+          "namespace": "26.1",
+          "node": "N-66d995403b86fa7977ee7d2f07ccdd663a775ebe3c73a995477fd06ade2f5a41"
+        }
+      },
+      "receiver": {
+        "type": "BodyRef",
+        "catalog_id": "348be4ed3375400d2ba05b6146cc8fceae11d2c437f9fc7dad92663c020a4b99",
+        "catalog_version": 2,
+        "namespace": "26.1",
+        "body_epoch": 0,
+        "kind": "slot",
+        "code": 16,
+        "slot": "slot"
+      }
+    },
+    "57f92e5433d8e65f093346868401759a9d8b60b4615ce962be2e881825578a88": {
+      "type": "EffectRoute",
+      "trigger": {
+        "namespace": "26.1",
+        "channel_id": "71216751673604255",
+        "kind": "increased",
+        "before": {
+          "type": "ObservationRef",
+          "namespace": "26.1",
+          "node": "N-66d995403b86fa7977ee7d2f07ccdd663a775ebe3c73a995477fd06ade2f5a41"
+        },
+        "after": {
+          "type": "ObservationRef",
+          "namespace": "26.1",
+          "node": "N-a4b4b3bbe3959249ff09032ddc76cc80c308c662a2fb665530d83ed89ed119b7"
+        }
+      },
+      "receiver": {
+        "type": "BodyRef",
+        "catalog_id": "348be4ed3375400d2ba05b6146cc8fceae11d2c437f9fc7dad92663c020a4b99",
+        "catalog_version": 2,
+        "namespace": "26.1",
+        "body_epoch": 0,
+        "kind": "slot",
+        "code": 16,
+        "slot": "slot"
+      }
+    }
+  },
+  "all_route_supports": {
+    "86aca73e742fe69f80612705143397c6349a36ac9be8107de032236b9d030a7a": {
+      "binding": "d901a660e0000463b2d2c2827e6d331520b4cad7b0a3312aef61cce92461305c",
+      "transition": "725b7660c331e58ed7d1ff708bd64c2a91acb4d6be6bbf826307a33dd4808c4e",
+      "formation": {
+        "experience_id": "b8b01b9b-3cf6-4c45-ae09-0427df44a5b7",
+        "integration_id": "468dd808-6164-4c35-a8e9-e21d03e74740",
+        "frame_ids": [
+          "A-f2edc0b5-ff36-4282-9e1a-34996177a2f9:E1",
+          "A-f2edc0b5-ff36-4282-9e1a-34996177a2f9:E2"
+        ],
+        "change_fact": {
+          "channel_id": "8700695247692320",
+          "kind": "increased",
+          "before": 0,
+          "after": 1,
+          "delta": 1
+        },
+        "state_version": 8
+      }
+    },
+    "e0c4f965788cb1cf7fb0dc4807f7799defc603d07201d782e430bd71831cf501": {
+      "binding": "d901a660e0000463b2d2c2827e6d331520b4cad7b0a3312aef61cce92461305c",
+      "transition": "725b7660c331e58ed7d1ff708bd64c2a91acb4d6be6bbf826307a33dd4808c4e",
+      "formation": {
+        "experience_id": "b8b01b9b-3cf6-4c45-ae09-0427df44a5b7",
+        "integration_id": "468dd808-6164-4c35-a8e9-e21d03e74740",
+        "frame_ids": [
+          "A-f2edc0b5-ff36-4282-9e1a-34996177a2f9:E1",
+          "A-f2edc0b5-ff36-4282-9e1a-34996177a2f9:E2"
+        ],
+        "change_fact": {
+          "channel_id": "9611063340563467",
+          "kind": "increased",
+          "before": 0,
+          "after": 1,
+          "delta": 1
+        },
+        "state_version": 8
+      }
+    },
+    "ab3a3c2d430a743c246655711e3f22c2d62c9ac3602bab98610a729fead61192": {
+      "binding": "67c609208e02997b1f0f893bbfaca2e1b54bceac0fe5e93a81692f51593e3423",
+      "transition": "6e1ab987126f75e7345662299959cb0d8f38a3a88bbd3aaa22c3018f5926115d",
+      "formation": {
+        "experience_id": "b8b01b9b-3cf6-4c45-ae09-0427df44a5b7",
+        "integration_id": "468dd808-6164-4c35-a8e9-e21d03e74740",
+        "frame_ids": [
+          "A-f2edc0b5-ff36-4282-9e1a-34996177a2f9:E1",
+          "A-f2edc0b5-ff36-4282-9e1a-34996177a2f9:E2"
+        ],
+        "change_fact": {
+          "channel_id": "71216751673604255",
+          "kind": "increased",
+          "before": 1,
+          "after": 2,
+          "delta": 1
+        },
+        "state_version": 8
+      }
+    },
+    "c8e97000ce6d21e3a1651b5485a992419e899782e0f240cd8806ab53198c80ca": {
+      "binding": "67c609208e02997b1f0f893bbfaca2e1b54bceac0fe5e93a81692f51593e3423",
+      "transition": "6852ce0447a5e4d68ed48ca399932c4d765e6970de0303fc36cc67c3864534ea",
+      "formation": {
+        "experience_id": "52d751ca-8976-4c1a-92d9-4fbaa9e1c273",
+        "integration_id": "62ae6c80-5ea5-4608-b4fa-b7e87f917478",
+        "frame_ids": [
+          "A-f2edc0b5-ff36-4282-9e1a-34996177a2f9:E2",
+          "A-f2edc0b5-ff36-4282-9e1a-34996177a2f9:E3"
+        ],
+        "change_fact": {
+          "channel_id": "8700695247692320",
+          "kind": "decreased",
+          "before": 1,
+          "after": 0,
+          "delta": -1
+        },
+        "state_version": 9
+      }
+    },
+    "5f02f22c137381af6791112367d022dbc62c44afb80a5547177f1615f57e4383": {
+      "binding": "67c609208e02997b1f0f893bbfaca2e1b54bceac0fe5e93a81692f51593e3423",
+      "transition": "6852ce0447a5e4d68ed48ca399932c4d765e6970de0303fc36cc67c3864534ea",
+      "formation": {
+        "experience_id": "52d751ca-8976-4c1a-92d9-4fbaa9e1c273",
+        "integration_id": "62ae6c80-5ea5-4608-b4fa-b7e87f917478",
+        "frame_ids": [
+          "A-f2edc0b5-ff36-4282-9e1a-34996177a2f9:E2",
+          "A-f2edc0b5-ff36-4282-9e1a-34996177a2f9:E3"
+        ],
+        "change_fact": {
+          "channel_id": "9611063340563467",
+          "kind": "decreased",
+          "before": 1,
+          "after": 0,
+          "delta": -1
+        },
+        "state_version": 9
+      }
+    },
+    "2b0477ef985a13fc74c7a5230498fb172f85127f3ed7c94921a8b38984ae3e65": {
+      "binding": "2b7fc369a902039a8ad4d13f2425a3df086b3c65505f20a000581b7bf6364218",
+      "transition": "a0e1bdf0ed6ad44d47864eacde39056d12f9c508a4ffa33316bd5651c551bc0a",
+      "formation": {
+        "experience_id": "52d751ca-8976-4c1a-92d9-4fbaa9e1c273",
+        "integration_id": "62ae6c80-5ea5-4608-b4fa-b7e87f917478",
+        "frame_ids": [
+          "A-f2edc0b5-ff36-4282-9e1a-34996177a2f9:E2",
+          "A-f2edc0b5-ff36-4282-9e1a-34996177a2f9:E3"
+        ],
+        "change_fact": {
+          "channel_id": "71216751673604255",
+          "kind": "increased",
+          "before": 2,
+          "after": 3,
+          "delta": 1
+        },
+        "state_version": 9
+      }
+    },
+    "57f92e5433d8e65f093346868401759a9d8b60b4615ce962be2e881825578a88": {
+      "binding": "cee59985ec9b10a011861eca8f042f84441aae5476c8a4da00e892eb30d33fb6",
+      "transition": "fd5d7653b05c8237da054fa4252a65cb85354641e89f032363608c13f3fdb467",
+      "formation": {
+        "experience_id": "be9ee90e-9630-4637-8958-63502076fe0a",
+        "integration_id": "c0cb52a2-fc7e-4737-ba21-66924d473f33",
+        "frame_ids": [
+          "A-f2edc0b5-ff36-4282-9e1a-34996177a2f9:E3",
+          "A-f2edc0b5-ff36-4282-9e1a-34996177a2f9:E4"
+        ],
+        "change_fact": {
+          "channel_id": "71216751673604255",
+          "kind": "increased",
+          "before": 3,
+          "after": 4,
+          "delta": 1
+        },
+        "state_version": 10
+      }
+    }
+  },
+  "routes_used_in_actual_e4_effects": [
+    "86aca73e742fe69f80612705143397c6349a36ac9be8107de032236b9d030a7a",
+    "e0c4f965788cb1cf7fb0dc4807f7799defc603d07201d782e430bd71831cf501"
+  ],
+  "actual_effect_packet": {
+    "frame_id": "A-f2edc0b5-ff36-4282-9e1a-34996177a2f9:E4",
+    "state_version": 10,
+    "effects": {
+      "4775224be4551a0e3d3980691ce521916c48ddba7bc6afa8e611df8e8953f94a": {
+        "type": "ReceiverEffect",
+        "receiver": {
+          "type": "BodyRef",
+          "catalog_id": "348be4ed3375400d2ba05b6146cc8fceae11d2c437f9fc7dad92663c020a4b99",
+          "catalog_version": 2,
+          "namespace": "26.1",
+          "body_epoch": 0,
+          "kind": "slot",
+          "code": 16,
+          "slot": "slot"
+        },
+        "operand": {
+          "type": "ObservationRef",
+          "namespace": "26.1",
+          "node": "N-da437658cd3c38daabd478a14cf55d701f7898e973fdfa8f10f286c8feb724c0"
+        },
+        "route_ref": "86aca73e742fe69f80612705143397c6349a36ac9be8107de032236b9d030a7a",
+        "occurrence": {
+          "channel_id": "8700695247692320",
+          "kind": "increased",
+          "before": 0,
+          "after": 1,
+          "delta": 1
+        }
+      },
+      "7fa5ca1df4cd8a5a6a2daa0a35b759bb7146bab012c247cdce512b48cba6156e": {
+        "type": "ReceiverEffect",
+        "receiver": {
+          "type": "BodyRef",
+          "catalog_id": "348be4ed3375400d2ba05b6146cc8fceae11d2c437f9fc7dad92663c020a4b99",
+          "catalog_version": 2,
+          "namespace": "26.1",
+          "body_epoch": 0,
+          "kind": "slot",
+          "code": 16,
+          "slot": "slot"
+        },
+        "operand": {
+          "type": "ObservationRef",
+          "namespace": "26.1",
+          "node": "N-da437658cd3c38daabd478a14cf55d701f7898e973fdfa8f10f286c8feb724c0"
+        },
+        "route_ref": "e0c4f965788cb1cf7fb0dc4807f7799defc603d07201d782e430bd71831cf501",
+        "occurrence": {
+          "channel_id": "9611063340563467",
+          "kind": "increased",
+          "before": 0,
+          "after": 1,
+          "delta": 1
+        }
+      }
+    },
+    "read_dependencies": {
+      "relations": [
+        "U-1d6d7a6efe353163cd8f:-1",
+        "U-d80582d4068f3e1ab329:16",
+        "opaque:operand",
+        "opaque:origin"
+      ],
+      "dependencies": [
+        {
+          "source": "opaque:origin",
+          "target": "opaque:operand"
+        },
+        {
+          "source": "opaque:operand",
+          "target": "U-d80582d4068f3e1ab329:16"
+        },
+        {
+          "source": "U-d80582d4068f3e1ab329:16",
+          "target": "U-1d6d7a6efe353163cd8f:-1"
+        }
+      ],
+      "typed_connections": [
+        "d901a660e0000463b2d2c2827e6d331520b4cad7b0a3312aef61cce92461305c",
+        "725b7660c331e58ed7d1ff708bd64c2a91acb4d6be6bbf826307a33dd4808c4e",
+        "6e1ab987126f75e7345662299959cb0d8f38a3a88bbd3aaa22c3018f5926115d",
+        "67c609208e02997b1f0f893bbfaca2e1b54bceac0fe5e93a81692f51593e3423",
+        "506d4372176948f525492159fe87fb6a0b605ecf7ca7480aa4421868debf6763",
+        "6852ce0447a5e4d68ed48ca399932c4d765e6970de0303fc36cc67c3864534ea",
+        "b2bb0629ca4a2bed65e4270e3f592b5687a663464d670fd790dd371755234d23",
+        "367bbcac76fc37d7e99147c5c971fa295de0d9dc02a568d929532604fed3623a",
+        "86dfd5f51a0e7bccf4af25da06d6712c0d4f68f3ea012f108173ae4042d4b675",
+        "76a673a75f2a47dd1dec93c5896329730fbbdb486ffbdf9a4b16fc1dd175807d",
+        "a0e1bdf0ed6ad44d47864eacde39056d12f9c508a4ffa33316bd5651c551bc0a",
+        "2b7fc369a902039a8ad4d13f2425a3df086b3c65505f20a000581b7bf6364218"
+      ]
+    },
+    "body_status": "READY",
+    "operations": [
+      {
+        "type": "NativeOperation",
+        "port": {
+          "type": "BodyRef",
+          "catalog_id": "348be4ed3375400d2ba05b6146cc8fceae11d2c437f9fc7dad92663c020a4b99",
+          "catalog_version": 2,
+          "namespace": "26.1",
+          "body_epoch": 0,
+          "kind": "port",
+          "code": 16
+        },
+        "expression": {
+          "code": 16,
+          "parameters": {
+            "slot": 1
+          }
+        },
+        "effect_refs": [
+          "4775224be4551a0e3d3980691ce521916c48ddba7bc6afa8e611df8e8953f94a",
+          "7fa5ca1df4cd8a5a6a2daa0a35b759bb7146bab012c247cdce512b48cba6156e"
+        ]
+      }
+    ]
+  },
+  "final_processing_version": 10,
+  "final_committed_version_before_shutdown": 12,
+  "final_authoritative_before_shutdown_matches": true,
+  "units": 6,
+  "content_nodes": 38,
+  "current_effects": 2,
+  "current_native_operations": 1,
+  "accounted_current_unit_content_effect_total": 47,
+  "unit_cap": 64,
+  "error": {
+    "type": "ContentCapacityError",
+    "message": "Whole reference Pair batch exceeds locked capacity"
+  },
+  "error_location": "experimental/observation_interface_references/reference/engine.py:285",
+  "receipt_ids_committed_in_renewed_experience": [],
+  "post_action_observed_body_change": {
+    "native_field": "selectedHotbarSlot",
+    "encoded_channel": "52061178473360753",
+    "e4_before_execution": 0,
+    "e5_raw_after_execution": 1,
+    "e5_recursive_commit": false,
+    "caveat": "This is the existing carrier observed body state; native receipt input_sent=1/effect_acknowledged=0 does not independently prove server acknowledgement or physical causal law."
+  },
+  "shutdown_events": [
+    {
+      "event_sequence": 71,
+      "state_version": 13,
+      "timestamp": "2026-10-09T05:49:22.594783+00:00",
+      "payload": {
+        "session_id": "S-a2809712-81de-4e2c-9e99-3e022a781d5a",
+        "reason": "TEST_ONLY_real_effect_bounded_close",
+        "carrier_stop": true,
+        "internal_state_preserved": true,
+        "lifetime_ended": false,
+        "physical_continuity_after_carrier_stop": "unproven"
+      }
+    }
+  ],
+  "shutdown_error": null,
+  "authoritative_version_after_shutdown": 13,
+  "sampler_used": false,
+  "binder_used": false,
+  "replay_used": false,
+  "synthetic_receipt_used": false,
+  "op_attempted": false,
+  "retry": false,
+  "frozen_hash_checks": {
+    "minecraft/action-space.json": true,
+    "minecraft/package.json": true,
+    "minecraft/package-lock.json": true,
+    "minecraft/src/body.js": true,
+    "minecraft/src/capabilities.js": true,
+    "minecraft/src/native_inputs.js": true,
+    "minecraft/src/index.js": true,
+    "individual/observation.py": true,
+    "individual/action_space.py": true,
+    "individual/formal_l0.py": true,
+    "individual/formal_boundary.py": true,
+    "individual/experiment.json": true,
+    "supervisor/limits.yaml": true
+  },
+  "prior_preservation_file_count": 461,
+  "prior_files_changed": [],
+  "mechanism_source_hashes": {
+    "experimental/observation_interface_references/reference/channel.py": "557f5d83cdfc1f17283b80f426b7636387e6e71fe39fddab6c7b04fb711df7ee",
+    "experimental/observation_interface_references/reference/engine.py": "e7a079781c2f09870656e4c4ce2377a7050f1af8c417dccdf695b50cc12acb14",
+    "experimental/observation_interface_references/reference/references.py": "c73cd770a6770e6d0ca3e043dfc0efc8f0de0ce3974337fa45e5929ce476cff1",
+    "experimental/observation_interface_references/reference/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "experimental/observation_interface_references/effects/channel.py": "5a0d06f419ac5d2a79f19f02588c35c282d21668fa787b42a64b84eb734f7960",
+    "experimental/observation_interface_references/effects/engine.py": "72d805ab673582b0a7e78da27fc3be2bae6f73e515d1260a01795f3a9ec7f616",
+    "experimental/observation_interface_references/effects/native.py": "f7df57ce9bb9853d0351c475b520be78357e3d4805e311fe07e40f8682d8f8ac",
+    "experimental/observation_interface_references/effects/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "experimental/observation_interface_references/real/channel.py": "aa2d6d2399f6664cd2f85ebdc277c60b9ae3f9f61188f1fdcd4f53a07047f3ed",
+    "experimental/observation_interface_references/real/adapter.py": "27eca081fd9744b84fc902c12811290051e004550776ea8b3b33a1bacc485fc6"
+  },
+  "new_instrumentation_only": [
+    "real/host_controlled_live.py",
+    "HOST_CONTROLLED_WORLD_INPUT_PROTOCOL.md"
+  ],
+  "nonclaims": [
+    "autonomous action choice",
+    "semantic equivalence of inventory-count and hotbar-slot domains",
+    "world causal law",
+    "completed sustained real bidirectional loop",
+    "independently acknowledged server-side effect"
+  ],
+  "recorded_at": "2026-10-09T05:51:47.569632+00:00",
+  "evidence_sha256": {
+    "bridge-stderr.log": "b2f7142e2c23b062398125dbcc1df0a26ae61375a3ca6a118efdbc47ad1d7619",
+    "E2_external_0_to_1.HOST_ACK.json": "b8e60d88ac843e21be08b80b2b056436dfa691a4f4b02b666121e29955708768",
+    "E2_external_0_to_1.READY.json": "c3c41138488bcc389692a1edce2857b2222fa4d85a112a38b85faf3234c5352e",
+    "E3_external_1_to_0.HOST_ACK.json": "2ba91429b0c62d8b179688b4bf3ad99ee416a5f6943cf81c022bbdacd507e4f7",
+    "E3_external_1_to_0.READY.json": "1eeb6522a8812c718c394300486b6cd90f7091120153e2b33de74bdff667293a",
+    "E4_external_0_to_1.HOST_ACK.json": "052518a6c17870704f5b5ab4be2b98c4d9a4819aeaa502b680551100993a4551",
+    "E4_external_0_to_1.READY.json": "44497779085d5b4bc578deb80277833d76a66f5aa86dd73d3fe3fef0f0544829",
+    "REPORT.json": "a24ad86c91afbd6e9e78fe38e9b394364475f59777707cd9058deb97fa1b214f",
+    "transport.jsonl": "6ecee41486cfd28bd77f47c76e51a08be81c9bb604f429c4b7e7c03d93d09bec"
+  }
+}

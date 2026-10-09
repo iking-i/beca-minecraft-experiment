@@ -1,0 +1,11 @@
+{
+  "phase": "E4_external_0_to_1",
+  "command": "/item replace entity BECA_H_36bdada4 hotbar.8 with minecraft:stone 1",
+  "body_username": "BECA_H_36bdada4",
+  "individual_id": "A-c10aa620-cc1f-4b87-905c-439199a8170e",
+  "session_id": "S-a4ee040e-795f-49f0-a19c-14c0a6623157",
+  "committed_state_before": 9,
+  "channel_id": "8700695247692320",
+  "expected_after": 1,
+  "ack_file": "D:\\codex\\project\\我的世界\\.test-tmp\\ordinary-pair-usage-live-58160-run2\\E4_external_0_to_1.HOST_ACK.json"
+}

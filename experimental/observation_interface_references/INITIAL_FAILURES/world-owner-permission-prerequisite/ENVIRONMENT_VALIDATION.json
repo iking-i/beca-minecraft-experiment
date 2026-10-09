@@ -1,0 +1,21 @@
+{
+  "classification": "NOT_TESTABLE",
+  "reason": "SERVER_COMMAND_PERMISSION_NOT_ESTABLISHED",
+  "raw_runner_classification": "NOT_READY",
+  "raw_runner_error": {
+    "type": "RuntimeError",
+    "message": "Operator acknowledgement timed out; no intervention"
+  },
+  "individual_id": "A-db0286da-098e-4110-991a-53594d012b5e",
+  "session_id": "S-c7a21ef0-d9ea-4d28-8d08-706a33df5bfa",
+  "body_username": "BECA_I_adb3745b",
+  "observation_count": 0,
+  "perform_request_count": 0,
+  "chat_request_count": 0,
+  "formed_route_count": 0,
+  "recursive_execution_count": 0,
+  "shutdown_error": null,
+  "original_operator_feedback_file": ".test-tmp\\observation-controlled-world-58160-run1\\OP_UNAVAILABLE.json",
+  "mechanism_not_tested_in_this_run": true,
+  "new_retry": false
+}

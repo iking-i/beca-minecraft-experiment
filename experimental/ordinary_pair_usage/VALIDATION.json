@@ -1,0 +1,55 @@
+{
+  "version": "ORDINARY-PAIR-USAGE-TEST_ONLY-1",
+  "classification": "PASS",
+  "scope": "OFFLINE_PAIR_USAGE_RULE_ONLY",
+  "overall_new_real_feedback_loop": "PASS_WITHIN_CONTROLLED_LOCAL_SCOPE",
+  "new_minecraft_run": true,
+  "live_waiting_condition": null,
+  "focused_tests": {
+    "passed": 12,
+    "seconds": 55.84,
+    "command": "python -m pytest tests/test_ordinary_pair_usage.py -q"
+  },
+  "full_regression": {
+    "passed": 757,
+    "subtests": 114,
+    "seconds": 517.89,
+    "command": "python -m pytest -q",
+    "log": "evidence/full-regression.txt"
+  },
+  "initial_regression": {
+    "passed": 756,
+    "subtests": 114,
+    "failed": 1,
+    "failure_id": "tests/test_runtime_monitor.py::MonitorTests::test_window_can_open_idle_and_close_without_experiment",
+    "record": "INITIAL_FAILURES/full-regression-tk-path.txt",
+    "reason_observed": "Tk library loading failed under prior external validation library paths",
+    "repair": "Validation process environment only: use current Python installation tcl/tcl8.6 and tcl/tk8.6. Actual Tk initialization and original failing test passed; full suite rerun without exclusions."
+  },
+  "frozen_hashes": {
+    "matched": 13,
+    "failed": 0
+  },
+  "original_file_preservation": {
+    "matched": 461,
+    "failed": 0
+  },
+  "capacity": {
+    "old": 75,
+    "new": 54,
+    "cap": 64,
+    "all_prior_nodes_preserved": true
+  },
+  "new_authoritative_real_database_writes": false,
+  "new_rule_contribution": "Experimenter-supplied generic constructor semantics; not internally learned need/purpose",
+  "explicit_content_reference_formation": "NOT_ESTABLISHED: positive operands are creator-supplied controls",
+  "commit_created": false,
+  "push_performed": false,
+  "evidence_sha256": {
+    "evidence\\full-regression.txt": "7f8de265f961944972b58d68c680120c5dbcbc0b78e154c473987c63fd9ccbfb",
+    "evidence\\OFFLINE_VALIDATION.json": "1af125386ba0a8406889efaa0330676da4164fad2d0ede08cd01f9da13f2a8e5",
+    "INITIAL_FAILURES/full-regression-tk-path.txt": "dff67ac2e4c00f85f809c85263dfa24445a0a14b60678d7844e1d8667cb65181"
+  },
+  "live_validation": "LIVE_VALIDATION.json",
+  "initial_live_attempt": "INITIAL_FAILURES/live-run1-EACCES.json"
+}

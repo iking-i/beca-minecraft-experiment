@@ -1,0 +1,43 @@
+{
+  "scope": "Public exports without changing originals",
+  "exports": [
+    {
+      "source": "experimental/observation_interface_references/evidence/host-controlled-world-run1/bridge-stderr.log",
+      "public_copy": "experimental/observation_interface_references/evidence/host-controlled-world-run1/bridge-stderr.txt",
+      "sha256": "b2f7142e2c23b062398125dbcc1df0a26ae61375a3ca6a118efdbc47ad1d7619",
+      "bytes": 343
+    },
+    {
+      "source": "experimental/ordinary_pair_usage/evidence/live-run2/bridge-stderr.log",
+      "public_copy": "experimental/ordinary_pair_usage/evidence/live-run2/bridge-stderr.txt",
+      "sha256": "6c8c0a9861ebf7e9ef6df44d47a292c383657277d36805c8db980be904182fc7",
+      "bytes": 344
+    },
+    {
+      "source": "experimental/ordinary_pair_usage/INITIAL_FAILURES/full-regression-tk-path.txt",
+      "public_copy": "experimental/ordinary_pair_usage/INITIAL_FAILURES/full-regression-tk-path.raw.json",
+      "format": "exact-byte base64 envelope",
+      "sha256": "dff67ac2e4c00f85f809c85263dfa24445a0a14b60678d7844e1d8667cb65181"
+    },
+    {
+      "source": ".test-tmp/observation-controlled-world-58160-run1/ENVIRONMENT_VALIDATION.json",
+      "public_copy": "experimental/observation_interface_references/INITIAL_FAILURES/world-owner-permission-prerequisite/ENVIRONMENT_VALIDATION.json",
+      "sha256": "1db87ed979c3519d40512a76623d91486bd4ea98226b8959754411b0b76de121"
+    },
+    {
+      "source": ".test-tmp/observation-controlled-world-58160-run1/OP_UNAVAILABLE.json",
+      "public_copy": "experimental/observation_interface_references/INITIAL_FAILURES/world-owner-permission-prerequisite/OP_UNAVAILABLE.json",
+      "sha256": "7f50c240645747bb234c87269ed545b34cb1fc8bf26416a4f144a4d59288abfe"
+    },
+    {
+      "source": ".test-tmp/observation-controlled-world-58160-run1/REPORT.json",
+      "public_copy": "experimental/observation_interface_references/INITIAL_FAILURES/world-owner-permission-prerequisite/REPORT.json",
+      "sha256": "dab776ac6d6fb6e63e2a6d3b61002dae7e4e3f3081ab835a2fc9db7a08bf907b"
+    }
+  ],
+  "exclusions": [
+    "All SQLite databases, leases, private body configurations, caches and unrelated materials",
+    "Original whitespace-bearing failure .txt remain local; exact .raw.json envelopes are submitted"
+  ],
+  "hash_note": "Reports retain original workspace hashes. Git LF normalization is recorded separately at closeout."
+}
