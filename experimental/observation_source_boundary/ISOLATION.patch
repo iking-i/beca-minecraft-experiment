@@ -1,0 +1,345 @@
+--- experimental/observation_interface_references/reference/engine.py
++++ experimental\observation_source_boundary\reference\engine.py
+@@ -5,6 +5,7 @@
+ Units. Declared slot owner/domain incidence has external interface provenance.
+ """
+ from copy import deepcopy
++from ..store import repository
+ import math
+ 
+ from individual.internal_state import InternalState
+@@ -53,7 +54,7 @@
+ 
+ def validate(internal):
+     pool = internal.l0_state.get(KEY)
+-    if (not isinstance(pool, dict) or set(pool) != {'version', 'catalog', 'current_source', 'sources', 'observations', 'observation_meta', 'edges', 'evidence', 'nodes', 'node_evidence'}
++    if (not isinstance(pool, dict) or set(pool) != {'version', 'catalog', 'current_source', 'sources', 'observations', 'edges', 'evidence', 'nodes', 'node_evidence'}
+             or pool['version'] != VERSION
+             or any(not isinstance(pool[k], dict) for k in ('sources', 'edges', 'evidence', 'nodes', 'node_evidence'))):
+         raise ValueError('Invalid body-reference collection/version')
+@@ -78,22 +79,14 @@
+     if (len(internal.relations) + len(internal.l0_state['operative_test_only']['edges'])
+             + len(pool['edges']) > internal.l0_state['locked_caps']['relations']):
+         raise ContentCapacityError('Actual operative connections exceed relation capacity')
+-    if set(pool['observations']) != set(pool['observation_meta']):
+-        raise ValueError('Observation provenance coverage mismatch')
+-    for frame_id, source in pool['observations'].items():
+-        typed_inputs(source)
+-        meta = pool['observation_meta'][frame_id]
+-        if (set(meta) != {'source_digest', 'sequence_id', 'timestamp'}
+-                or source['frame_id'] != frame_id or meta['source_digest'] != digest(source)
+-                or source['namespace'] != pool['catalog']['namespace']
+-                or type(meta['sequence_id']) is not int or type(meta['timestamp']) is not str):
+-            raise ValueError('Observation provenance mismatch')
+-    if pool['current_source'] is not None and pool['observations'].get(pool['current_source']['frame_id']) != pool['current_source']:
++    repository().boundary(pool['observations'])
++    if pool['current_source'] is not None and repository().get(pool['current_source']['frame_id']) != pool['current_source']:
+         raise ValueError('Current observation is not registered')
+-    for parent, source in pool['sources'].items():
++    for parent, frame_id in pool['sources'].items():
+         if parent not in internal.units:
+             raise ValueError('Missing ordinary observation incidence endpoint')
+-        if pool['observations'].get(source['frame_id']) != source:
++        source = repository().get(frame_id)
++        if source['namespace'] != pool['catalog']['namespace']:
+             raise ValueError('Missing observation incidence provenance')
+     if any(u.get('operand_kind') == 'REFERENCE_SENSOR' for u in internal.units.values()):
+         raise ValueError('External observation facts must not masquerade as Units')
+@@ -189,16 +182,14 @@
+         parent = pattern_id(detect_changes(before, frame).to_dict())
+         source = sensor_source(frame)
+         pool['current_source'] = source
+-        if frame.frame_id in pool['observations']:
+-            raise ValueError('Observation identity reused; no replay/replacement')
+-        pool['observations'][frame.frame_id] = deepcopy(source)
+-        pool['observation_meta'][frame.frame_id] = {'timestamp': frame.timestamp,
+-            'sequence_id': frame.sequence_id, 'source_digest': digest(source)}
++        repository().stage(source, {'timestamp': frame.timestamp,
++            'sequence_id': frame.sequence_id, 'source_digest': digest(source)})
++        pool['observations'] = repository().descriptor()
+         if parent not in pool['sources']:
+             typed_inputs(source)  # Validate all facts; instantiate no sensor Units.
+             if len(working.units.keys() | {parent}) + len(pool['nodes']) > self.caps.units:
+                 raise ContentCapacityError('Actual observation Unit/content exceeds locked capacity')
+-            pool['sources'][parent] = source
++            pool['sources'][parent] = source['frame_id']
+         # All existing body addresses must also be legal in this current scope.
+         for edge in pool['edges'].values():
+             resolve(working, edge['source']); resolve(working, edge['target'])
+@@ -219,7 +210,7 @@
+         if not self._executing:
+             return result, read
+         reached = set(result['outcomes'])
+-        sources = [s for parent, s in pool['sources'].items() if parent in reached]
++        sources = [repository().get(f) for parent, f in pool['sources'].items() if parent in reached]
+         accessible_values = {r for s in sources for r, n in typed_inputs(s).items()
+                              if n['type'] in ('ObservedValue', 'ObservedReference')}
+         def accessible(ref):
+--- experimental/observation_interface_references/reference/references.py
++++ experimental\observation_source_boundary\reference\references.py
+@@ -1,11 +1,12 @@
+ """Exact native interface addresses, not internal Units or action recipes."""
+ from copy import deepcopy
++from ..store import repository
+ 
+ from individual.action_space import CATALOG_DATA, DEFINITIONS
+ from individual.formal_l0 import digest
+ from experimental.native_body_operands.engine import typed_inputs
+ 
+-VERSION = 'OBSERVATION-REFERENCES-TEST_ONLY-1'
++VERSION = 'OBSERVATION-SOURCE-BOUNDARY-REFERENCES-TEST_ONLY-1'
+ KEY = 'observation_interface_references_test_only'
+ 
+ 
+@@ -26,7 +27,7 @@
+ 
+ def fact_ref(internal, frame_id, channel_id):
+     pool = internal.l0_state[KEY]
+-    source = pool['observations'].get(frame_id)
++    source = repository().get(frame_id)
+     if source is None or channel_id not in source['numeric_channels']:
+         raise ValueError('Unobserved frame/channel')
+     ref = {'type': 'ObservationFactRef', 'frame_id': frame_id,
+@@ -98,7 +99,7 @@
+     if isinstance(ref, dict) and ref.get('type') == 'ObservationFactRef':
+         if set(ref) != {'type', 'frame_id', 'source_digest', 'channel_id'}:
+             raise ValueError('Invalid observation fact address')
+-        source = pool['observations'].get(ref['frame_id'])
++        source = repository().get(ref['frame_id'])
+         if (source is None or digest(source) != ref['source_digest']
+                 or ref['channel_id'] not in source['numeric_channels']):
+             raise ValueError('Foreign or forged observation fact')
+@@ -110,15 +111,7 @@
+                 or pool['current_source'] is None
+                 or ref['namespace'] != pool['current_source']['namespace']):
+             raise ValueError('Invalid or foreign observation address')
+-        matches = []
+-        for source in pool['observations'].values():
+-            if source['namespace'] == ref['namespace']:
+-                node = typed_inputs(source).get(ref['node'])
+-                if node is not None and node['type'] in ('ObservedValue', 'ObservedReference'):
+-                    matches.append(node)
+-        if not matches or any(node != matches[0] for node in matches):
+-            raise ValueError('Unobserved or ambiguous observation endpoint')
+-        node = matches[0]
++        node = repository().atom(ref['namespace'], ref['node'])
+         if node['type'] == 'ObservedReference':
+             current = pool['current_source']
+             if (node['body_epoch'] != current['body_epoch']
+--- experimental/observation_interface_references/reference/channel.py
++++ experimental\observation_source_boundary\reference\channel.py
+@@ -1,5 +1,6 @@
+ """Explicit isolated Core lifecycle; only authoritative Current State is restored."""
+ from contextlib import closing
++from ..store import repository
+ from copy import deepcopy
+ from dataclasses import dataclass
+ import json
+@@ -38,9 +39,8 @@
+         from .references import observed_catalog
+         frame = ObservationFrame(**state['observation_frame'])
+         if (pool['current_source'] != sensor_source(frame)
+-                or any(not key.startswith(state['individual_id'] + ':E')
+-                       for key in pool['observations'])
+-                or pool['observation_meta'].get(frame.frame_id) != {
++                or pool['observations']['individual_id'] != state['individual_id']
++                or repository().meta(frame.frame_id) != {
+                     'timestamp': frame.timestamp, 'sequence_id': frame.sequence_id,
+                     'source_digest': digest(sensor_source(frame))}):
+             raise ValueError('Current/foreign observation provenance mismatch')
+@@ -96,7 +96,7 @@
+         if event_type == 'TEST_ONLY_OPERATIVE_ORIGIN_ADOPTED':
+             internal = deepcopy(changes['internal_state'])
+             internal['l0_state'][KEY] = {'version': VERSION, 'catalog': None,
+-                'current_source': None, 'sources': {}, 'observations': {}, 'observation_meta': {},
++                'current_source': None, 'sources': {}, 'observations': repository().descriptor(),
+                 'edges': {}, 'evidence': {}, 'nodes': {}, 'node_evidence': {}}
+             internal['l0_state'][MODE] = {'version': VERSION,
+                 'database': str(Path(self._reference_config.database).resolve()),
+--- experimental/observation_interface_references/effects/engine.py
++++ experimental\observation_source_boundary\effects\engine.py
+@@ -1,11 +1,12 @@
+ """Candidate exact-occurrence propagation in the ordinary ReferenceEngine hooks."""
+ from copy import deepcopy
++from ..store import repository
+ import math
+ 
+ from individual.formal_l0 import digest
+-from experimental.observation_interface_references.reference.engine import (
++from experimental.observation_source_boundary.reference.engine import (
+     ReferenceEngine, validate as validate_references, value_ref, connection)
+-from experimental.observation_interface_references.reference.references import KEY as REF_KEY, resolve
++from experimental.observation_source_boundary.reference.references import KEY as REF_KEY, resolve
+ from experimental.operative_content.engine import ContentCapacityError
+ 
+ KEY = 'observation_reference_effects_test_only'
+@@ -24,8 +25,7 @@
+             or not math.isfinite(fact['before']) or not math.isfinite(fact['after'])
+             or fact['before'] == fact['after']):
+         return None
+-    if not any(fact.get('channel_id') in s['numeric_channels']
+-               for s in internal.l0_state[REF_KEY]['observations'].values()):
++    if not repository().channel(fact.get('channel_id')):
+         raise ValueError('Unobserved effect channel')
+     return {'namespace': source['namespace'], 'channel_id': fact['channel_id'],
+             'kind': fact['kind'], 'before': value_ref(fact['before'], internal),
+@@ -95,11 +95,11 @@
+         frames = formation.get('frame_ids')
+         if type(frames) is not list or len(frames) != 2:
+             raise ValueError('Missing effect observation interval')
+-        before, after = (base['observations'].get(f) for f in frames)
++        before, after = (repository().get(f) for f in frames)
+         fact = formation['change_fact']
+         if (before is None or after is None
+                 or before['namespace'] != after['namespace'] or before['body_epoch'] != after['body_epoch']
+-                or base['observation_meta'][frames[0]]['sequence_id'] >= base['observation_meta'][frames[1]]['sequence_id']
++                or repository().meta(frames[0])['sequence_id'] >= repository().meta(frames[1])['sequence_id']
+                 or fact['channel_id'] not in before['numeric_channels']
+                 or fact['channel_id'] not in after['numeric_channels']
+                 or type(before['numeric_channels'][fact['channel_id']]) is not type(fact['before'])
+--- experimental/observation_interface_references/effects/native.py
++++ experimental\observation_source_boundary\effects\native.py
+@@ -2,7 +2,7 @@
+ from copy import deepcopy
+ import math
+ 
+-from experimental.observation_interface_references.reference.references import resolve
++from experimental.observation_source_boundary.reference.references import resolve
+ 
+ 
+ def project(internal, frame, effects):
+--- experimental/observation_interface_references/effects/channel.py
++++ experimental\observation_source_boundary\effects\channel.py
+@@ -11,7 +11,7 @@
+ from individual.current_state import current_row
+ from individual.internal_state import InternalState
+ from individual.bridge import BridgeError
+-from experimental.observation_interface_references.reference.channel import ReferenceCore, ReferenceConfig
++from experimental.observation_source_boundary.reference.channel import ReferenceCore, ReferenceConfig
+ from .engine import EffectEngine, KEY, VERSION, empty_pool, validate
+ 
+ MODE = 'observation_reference_effect_lifecycle'
+@@ -46,7 +46,7 @@
+ 
+ 
+ class EffectCore(ReferenceCore):
+-    def __init__(self, database, bridge, *, config, initialize_lifetime=False):
++    def __init__(self, database, bridge, *, config, initialize_lifetime=False, full_history_enabled=True):
+         path = Path(database).resolve()
+         if (type(config) is not EffectConfig or config.version != VERSION
+                 or Path(config.database).resolve() != path):
+@@ -64,7 +64,7 @@
+             raise ValueError('No preformed effect answer in origin')
+         self._effect_config = config
+         super().__init__(database, bridge, config=ReferenceConfig(str(path), origin_state=config.origin_state),
+-                         initialize_lifetime=initialize_lifetime)
++                         initialize_lifetime=initialize_lifetime, full_history_enabled=full_history_enabled)
+         self._engine = EffectEngine(self._engine.caps, self._engine.resource_caps)
+         validate_state(self.state.to_dict(), config)
+ 
+--- experimental/observation_interface_references/real/adapter.py
++++ experimental\observation_source_boundary\real\adapter.py
+@@ -5,9 +5,9 @@
+ from individual.formal_l0 import digest
+ from individual.observation import FrameEncoder
+ from experimental.native_body_operands.engine import sensor_source, typed_inputs
+-from experimental.observation_interface_references.reference.engine import connection, compatible, value_ref
+-from experimental.observation_interface_references.reference.references import KEY as REF_KEY, body_ref
+-from experimental.observation_interface_references.effects.engine import EffectEngine
++from experimental.observation_source_boundary.reference.engine import connection, compatible, value_ref
++from experimental.observation_source_boundary.reference.references import KEY as REF_KEY, body_ref
++from experimental.observation_source_boundary.effects.engine import EffectEngine
+ 
+ VERSION = 'OBSERVATION-REFERENCE-REAL-CARRIER-TEST_ONLY-1'
+ MODE = 'observation_reference_real_lifecycle'
+@@ -80,7 +80,7 @@
+         if type(value) in (int, float):
+             operand = value_ref(value, internal)
+         elif type(value) is str:
+-            from experimental.observation_interface_references.reference.references import observation_ref
++            from experimental.observation_source_boundary.reference.references import observation_ref
+             from experimental.native_body_operands.engine import unit_identity
+             matches = [unit_identity(n) for n in available.values()
+                        if n['type'] == 'ObservedReference' and n['token'] == value]
+--- experimental/observation_interface_references/real/channel.py
++++ experimental\observation_source_boundary\real\channel.py
+@@ -9,14 +9,14 @@
+ from individual.bridge import MinecraftBridge
+ from individual.current_state import current_row
+ from individual.formal_l0 import digest
+-from experimental.observation_interface_references.effects.channel import EffectCore, EffectConfig
++from experimental.observation_source_boundary.effects.channel import EffectCore, EffectConfig
+ from .adapter import MODE, VERSION, RealEncoder, RealEffectEngine, canonical_observation
+ 
+ BOOTSTRAP = {'code': 16, 'parameters': {'slot': 0}}
+ 
+ 
+ class RealEffectCore(EffectCore):
+-    def __init__(self, database, bridge, *, config, initialize_lifetime=False):
++    def __init__(self, database, bridge, *, config, initialize_lifetime=False, full_history_enabled=True):
+         self._native_records = {}
+         self._real_source = ('NATIVE_BRIDGE_EXECUTION' if isinstance(bridge, MinecraftBridge)
+                              else 'OFFLINE_RECEIPT_ADAPTER_TEST')
+@@ -29,7 +29,7 @@
+                 self._validate_mode(json.loads(row[3]))
+         elif MODE in (config.origin_state or {}).get('l0_state', {}):
+             raise ValueError('No preformed real lifecycle in origin')
+-        super().__init__(database, bridge, config=config, initialize_lifetime=initialize_lifetime)
++        super().__init__(database, bridge, config=config, initialize_lifetime=initialize_lifetime, full_history_enabled=full_history_enabled)
+         self._encoder = RealEncoder(self.state.individual_id)
+         self._engine = RealEffectEngine(self._engine.caps, self._engine.resource_caps)
+         self._validate_mode(self.state.to_dict())
+--- experimental/ordinary_pair_usage/engine.py
++++ experimental\observation_source_boundary\engine.py
+@@ -5,13 +5,14 @@
+ connection construction, identity, capacity and pre-publication semantics.
+ """
+ from copy import deepcopy
++from .store import repository
+ from individual.formal_l0 import digest
+ from experimental.formall0_operative.engine import TestOnlyFormalL0Engine
+ from experimental.native_body_operands.engine import typed_inputs
+ from experimental.operative_content.engine import identity, ContentCapacityError
+-from experimental.observation_interface_references.reference.engine import ReferenceEngine, validate, unit_ref
+-from experimental.observation_interface_references.reference.references import resolve
+-from experimental.observation_interface_references.real.adapter import RealEffectEngine
++from experimental.observation_source_boundary.reference.engine import ReferenceEngine, validate, unit_ref
++from experimental.observation_source_boundary.reference.references import resolve
++from experimental.observation_source_boundary.real.adapter import RealEffectEngine
+ 
+ VERSION = 'ORDINARY-PAIR-USAGE-TEST_ONLY-1'
+ MODE = 'ordinary_pair_usage_test_only'
+@@ -23,7 +24,7 @@
+         if not self._executing:
+             return result, read
+         reached = set(result['outcomes'])
+-        sources = [s for parent, s in pool['sources'].items() if parent in reached]
++        sources = [repository().get(f) for parent, f in pool['sources'].items() if parent in reached]
+         accessible_values = {r for s in sources for r, n in typed_inputs(s).items()
+                              if n['type'] in ('ObservedValue', 'ObservedReference')}
+         def accessible(ref):
+--- experimental/ordinary_pair_usage/channel.py
++++ experimental\observation_source_boundary\channel.py
+@@ -5,11 +5,11 @@
+ from pathlib import Path
+ import sqlite3
+ from individual.current_state import current_row
+-from experimental.observation_interface_references.real.channel import RealEffectCore
++from experimental.observation_source_boundary.real.channel import RealEffectCore
+ from .engine import MODE, VERSION, UsageRealEngine
+ 
+ class UsageRealCore(RealEffectCore):
+-    def __init__(self, database, bridge, *, config, initialize_lifetime=False):
++    def __init__(self, database, bridge, *, config, initialize_lifetime=False, full_history_enabled=True):
+         if initialize_lifetime:
+             if MODE in (config.origin_state or {}).get('l0_state', {}):
+                 raise ValueError('Fresh origin cannot claim a prior usage version')
+@@ -18,7 +18,7 @@
+                 row = current_row(db)
+                 if not row or json.loads(row[3])['internal_state']['l0_state'].get(MODE) != {'version': VERSION}:
+                     raise ValueError('No silent migration to ordinary Pair usage version')
+-        super().__init__(database, bridge, config=config, initialize_lifetime=initialize_lifetime)
++        super().__init__(database, bridge, config=config, initialize_lifetime=initialize_lifetime, full_history_enabled=full_history_enabled)
+         self._engine = UsageRealEngine(self._engine.caps, self._engine.resource_caps)
+ 
+     def _transition(self, event_type, payload, additional_events=(), **changes):

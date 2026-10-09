@@ -1,0 +1,39 @@
+{
+  "fact": {
+    "address": {
+      "type": "ObservationFactRef",
+      "frame_id": "A-87cd4a08-65a3-4d51-81ad-49b00343e8a4:E1",
+      "source_digest": "7497d82ab9505cd5779d7687f730499720e11115fd94605fb07fa2216b4da493",
+      "channel_id": "68326857248053496"
+    },
+    "resolved": {
+      "type": "ObservedValue",
+      "value_type": "integer",
+      "value": 20
+    }
+  },
+  "numeric_observation_ref": {
+    "address": {
+      "type": "ObservationRef",
+      "namespace": "26.1",
+      "node": "N-8f435c2192c3a6bd137bb21aa7030addbf8bcea3366b6bc998e101d36590bdc7"
+    },
+    "resolved": {
+      "type": "ObservedValue",
+      "value_type": "integer",
+      "value": 20
+    }
+  },
+  "old_epoch_object_rejected": {
+    "classification": "PASS",
+    "error": "Stale observation reference"
+  },
+  "forged_digest": {
+    "classification": "PASS",
+    "error": "Foreign or forged observation fact"
+  },
+  "missing_frame": {
+    "classification": "PASS",
+    "error": "Missing authoritative observation source"
+  }
+}

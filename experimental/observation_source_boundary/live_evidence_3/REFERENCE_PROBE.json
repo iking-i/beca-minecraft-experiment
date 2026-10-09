@@ -1,0 +1,14 @@
+{
+  "address": {
+    "type": "ObservationFactRef",
+    "frame_id": "A-87cd4a08-65a3-4d51-81ad-49b00343e8a4:E1",
+    "source_digest": "7497d82ab9505cd5779d7687f730499720e11115fd94605fb07fa2216b4da493",
+    "channel_id": "68326857248053496"
+  },
+  "resolved": {
+    "type": "ObservedValue",
+    "value_type": "integer",
+    "value": 20
+  },
+  "scope": "EXTERNAL_READ_ONLY_NOT_A_INPUT"
+}

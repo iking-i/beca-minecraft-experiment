@@ -1,0 +1,45 @@
+{
+  "baseline": "f2d66102755038dad688a20189767ded24651b0e",
+  "copies": {
+    "reference/engine.py": {
+      "source": "experimental/observation_interface_references/reference/engine.py",
+      "source_lf_sha256": "e7a079781c2f09870656e4c4ce2377a7050f1af8c417dccdf695b50cc12acb14"
+    },
+    "reference/references.py": {
+      "source": "experimental/observation_interface_references/reference/references.py",
+      "source_lf_sha256": "c73cd770a6770e6d0ca3e043dfc0efc8f0de0ce3974337fa45e5929ce476cff1"
+    },
+    "reference/channel.py": {
+      "source": "experimental/observation_interface_references/reference/channel.py",
+      "source_lf_sha256": "557f5d83cdfc1f17283b80f426b7636387e6e71fe39fddab6c7b04fb711df7ee"
+    },
+    "effects/engine.py": {
+      "source": "experimental/observation_interface_references/effects/engine.py",
+      "source_lf_sha256": "72d805ab673582b0a7e78da27fc3be2bae6f73e515d1260a01795f3a9ec7f616"
+    },
+    "effects/native.py": {
+      "source": "experimental/observation_interface_references/effects/native.py",
+      "source_lf_sha256": "f7df57ce9bb9853d0351c475b520be78357e3d4805e311fe07e40f8682d8f8ac"
+    },
+    "effects/channel.py": {
+      "source": "experimental/observation_interface_references/effects/channel.py",
+      "source_lf_sha256": "5a0d06f419ac5d2a79f19f02588c35c282d21668fa787b42a64b84eb734f7960"
+    },
+    "real/adapter.py": {
+      "source": "experimental/observation_interface_references/real/adapter.py",
+      "source_lf_sha256": "27eca081fd9744b84fc902c12811290051e004550776ea8b3b33a1bacc485fc6"
+    },
+    "real/channel.py": {
+      "source": "experimental/observation_interface_references/real/channel.py",
+      "source_lf_sha256": "aa2d6d2399f6664cd2f85ebdc277c60b9ae3f9f61188f1fdcd4f53a07047f3ed"
+    },
+    "engine.py": {
+      "source": "experimental/ordinary_pair_usage/engine.py",
+      "source_lf_sha256": "b017c1f2ccb136141e7e10dce7fcd150bc5ec033201a6bf00ca366fb85251283"
+    },
+    "channel.py": {
+      "source": "experimental/ordinary_pair_usage/channel.py",
+      "source_lf_sha256": "8a4ccf70b7866621b569dfea68c5debdb6b57d4dc81965b24c0ec37dc8bc74fd"
+    }
+  }
+}

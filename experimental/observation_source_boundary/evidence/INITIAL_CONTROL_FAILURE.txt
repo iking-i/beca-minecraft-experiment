@@ -1,0 +1,20 @@
+...........F.....                                                        [100%]
+================================== FAILURES ===================================
+_______________ test_real_capacity_refusal_has_no_source_commit _______________
+
+tmp_path = WindowsPath('D:/codex/project/我的世界/.test-tmp/source-boundary-controls/test_real_capacity_refusal_has0')
+
+    def test_real_capacity_refusal_has_no_source_commit(tmp_path):
+        from experimental.operative_content.engine import identity, ContentCapacityError
+        c = create(tmp_path / 'capacity.db')
+        try:
+            c.accept_observation(sample(1, 0)); c.bootstrap_once(); c.accept_observation(sample(2, 1))
+            state = deepcopy(c.state.internal_state); pool = state['l0_state'][KEY]
+>           right = next(k for k,n in pool['nodes'].items() if n['type']=='BodyRef'); left = right
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           StopIteration
+
+tests\test_observation_source_boundary.py:163: StopIteration
+=========================== short test summary info ===========================
+FAILED tests/test_observation_source_boundary.py::test_real_capacity_refusal_has_no_source_commit
+1 failed, 16 passed in 16.70s

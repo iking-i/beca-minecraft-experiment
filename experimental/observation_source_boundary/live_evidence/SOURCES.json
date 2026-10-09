@@ -1,0 +1,6874 @@
+[
+  {
+    "frame_id": "A-d5b960f4-ba3d-44b2-a6bc-a94096fe17e7:E1",
+    "individual_id": "A-d5b960f4-ba3d-44b2-a6bc-a94096fe17e7",
+    "source_digest": "7ae96876bef4c7acc021d245a5c4b31e288fd18b72d79782fc7323289df0fe22",
+    "meta": {
+      "timestamp": "2026-10-09T12:33:34.540Z",
+      "sequence_id": 1,
+      "source_digest": "7ae96876bef4c7acc021d245a5c4b31e288fd18b72d79782fc7323289df0fe22"
+    },
+    "body": {
+      "frame_id": "A-d5b960f4-ba3d-44b2-a6bc-a94096fe17e7:E1",
+      "namespace": "26.1",
+      "body_epoch": 0,
+      "declarations": [
+        {
+          "code": 0,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 1,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 2,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 3,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 4,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 5,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 6,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 7,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 8,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "yaw_delta": {
+                "type": "number",
+                "minimum": -3.141592653589793,
+                "maximum": 3.141592653589793
+              },
+              "pitch_delta": {
+                "type": "number",
+                "minimum": -3.141592653589793,
+                "maximum": 3.141592653589793
+              }
+            },
+            "required": [
+              "pitch_delta",
+              "yaw_delta"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 9,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 10,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 11,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 12,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 13,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "object_ref": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "object_ref"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [
+            0
+          ],
+          "formal_enabled": true
+        },
+        {
+          "code": 14,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "block_ref": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "block_ref"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [
+            1
+          ],
+          "formal_enabled": true
+        },
+        {
+          "code": 15,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "inventory_slot": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 255
+              },
+              "reference_block": {
+                "type": "string"
+              },
+              "face": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 5
+              }
+            },
+            "required": [
+              "face",
+              "inventory_slot",
+              "reference_block"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": false,
+          "environment_requirement_codes": [
+            1,
+            2,
+            3
+          ],
+          "formal_enabled": true
+        },
+        {
+          "code": 16,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "slot": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 8
+              }
+            },
+            "required": [
+              "slot"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 17,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "duration_ms": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 10000,
+                "optional": true
+              }
+            },
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": false,
+          "environment_requirement_codes": [
+            4
+          ],
+          "formal_enabled": true
+        },
+        {
+          "code": 18,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 19,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "slot": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 255
+              },
+              "amount": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 128
+              }
+            },
+            "required": [
+              "amount",
+              "slot"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": false,
+          "environment_requirement_codes": [
+            2,
+            3,
+            5
+          ],
+          "formal_enabled": false
+        },
+        {
+          "code": 20,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "source_slot": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 255
+              },
+              "target_slot": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 255
+              },
+              "amount": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 128
+              }
+            },
+            "required": [
+              "amount",
+              "source_slot",
+              "target_slot"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": false,
+          "environment_requirement_codes": [
+            2,
+            3,
+            5
+          ],
+          "formal_enabled": false
+        },
+        {
+          "code": 21,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "source_slot": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 255
+              },
+              "equipment_slot": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 5
+              }
+            },
+            "required": [
+              "equipment_slot",
+              "source_slot"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": false,
+          "environment_requirement_codes": [
+            2,
+            3,
+            5
+          ],
+          "formal_enabled": false
+        },
+        {
+          "code": 22,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "block_ref": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "block_ref"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [
+            1
+          ],
+          "formal_enabled": true
+        },
+        {
+          "code": 23,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "entity_ref": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "entity_ref"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": false,
+          "environment_requirement_codes": [
+            6
+          ],
+          "formal_enabled": true
+        },
+        {
+          "code": 24,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "entity_ref": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "entity_ref"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": false,
+          "environment_requirement_codes": [
+            6
+          ],
+          "formal_enabled": true
+        },
+        {
+          "code": 25,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "container_id": {
+                "type": "string"
+              },
+              "source_slot": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 255
+              },
+              "target_slot": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 255
+              },
+              "amount": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 128
+              }
+            },
+            "required": [
+              "amount",
+              "container_id",
+              "source_slot",
+              "target_slot"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": false,
+          "environment_requirement_codes": [
+            7,
+            8,
+            5
+          ],
+          "formal_enabled": false
+        },
+        {
+          "code": 26,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "container_id": {
+                "type": "string"
+              },
+              "source_slot": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 255
+              },
+              "target_slot": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 255
+              },
+              "amount": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 128
+              }
+            },
+            "required": [
+              "amount",
+              "container_id",
+              "source_slot",
+              "target_slot"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": false,
+          "environment_requirement_codes": [
+            7,
+            9,
+            5
+          ],
+          "formal_enabled": false
+        },
+        {
+          "code": 27,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "container_id": {
+                "type": "string"
+              },
+              "source_slot": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 255
+              },
+              "target_slot": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 255
+              },
+              "amount": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 128
+              }
+            },
+            "required": [
+              "amount",
+              "container_id",
+              "source_slot",
+              "target_slot"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": false,
+          "environment_requirement_codes": [
+            7,
+            10,
+            5
+          ],
+          "formal_enabled": false
+        },
+        {
+          "code": 28,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "container_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "container_id"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": false,
+          "environment_requirement_codes": [
+            7
+          ],
+          "formal_enabled": true
+        },
+        {
+          "code": 29,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [
+            11
+          ],
+          "formal_enabled": true
+        },
+        {
+          "code": 30,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "source_slot": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 255
+              },
+              "target_slot": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 255
+              },
+              "amount": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 128
+              }
+            },
+            "required": [
+              "amount",
+              "source_slot",
+              "target_slot"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": false,
+          "environment_requirement_codes": [
+            12,
+            8,
+            5
+          ],
+          "formal_enabled": false
+        },
+        {
+          "code": 31,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "target_slot": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 255
+              }
+            },
+            "required": [
+              "target_slot"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": false,
+          "environment_requirement_codes": [
+            12,
+            13,
+            5
+          ],
+          "formal_enabled": false
+        },
+        {
+          "code": 32,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": false,
+          "environment_requirement_codes": [
+            12
+          ],
+          "formal_enabled": true
+        },
+        {
+          "code": 33,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "container_id": {
+                "type": "string"
+              },
+              "slot": {
+                "type": "integer",
+                "minimum": -999,
+                "maximum": 255
+              },
+              "mouse_button": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 1
+              }
+            },
+            "required": [
+              "container_id",
+              "mouse_button",
+              "slot"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 34,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "control": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 6
+              },
+              "pressed": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 1
+              }
+            },
+            "required": [
+              "control",
+              "pressed"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 35,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "hand": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 1
+              }
+            },
+            "required": [
+              "hand"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 36,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 37,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "block_ref": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "block_ref"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [
+            1
+          ],
+          "formal_enabled": true
+        },
+        {
+          "code": 38,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": false,
+          "environment_requirement_codes": [
+            14
+          ],
+          "formal_enabled": true
+        },
+        {
+          "code": 39,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": false,
+          "environment_requirement_codes": [
+            14
+          ],
+          "formal_enabled": true
+        },
+        {
+          "code": 40,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": false,
+          "environment_requirement_codes": [
+            15
+          ],
+          "formal_enabled": true
+        },
+        {
+          "code": 41,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": false,
+          "environment_requirement_codes": [
+            16
+          ],
+          "formal_enabled": true
+        },
+        {
+          "code": 42,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": false,
+          "environment_requirement_codes": [
+            17
+          ],
+          "formal_enabled": true
+        },
+        {
+          "code": 43,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "container_id": {
+                "type": "string"
+              },
+              "slot": {
+                "type": "integer",
+                "minimum": -999,
+                "maximum": 255
+              },
+              "mode": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 6
+              },
+              "button": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 10
+              }
+            },
+            "required": [
+              "button",
+              "container_id",
+              "mode",
+              "slot"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 44,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "block_ref": {
+                "type": "string"
+              },
+              "hand": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "face": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 5
+              },
+              "cursor_x": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "cursor_y": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "cursor_z": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              }
+            },
+            "required": [
+              "block_ref",
+              "cursor_x",
+              "cursor_y",
+              "cursor_z",
+              "face",
+              "hand"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [
+            1
+          ],
+          "formal_enabled": true
+        },
+        {
+          "code": 45,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "entity_ref": {
+                "type": "string"
+              },
+              "hand": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "x": {
+                "type": "number",
+                "minimum": -4,
+                "maximum": 4
+              },
+              "y": {
+                "type": "number",
+                "minimum": -4,
+                "maximum": 4
+              },
+              "z": {
+                "type": "number",
+                "minimum": -4,
+                "maximum": 4
+              }
+            },
+            "required": [
+              "entity_ref",
+              "hand",
+              "x",
+              "y",
+              "z"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": false,
+          "environment_requirement_codes": [
+            6
+          ],
+          "formal_enabled": true
+        },
+        {
+          "code": 46,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [
+            3
+          ],
+          "formal_enabled": true
+        }
+      ],
+      "numeric_channels": {
+        "68326857248053496": 20,
+        "60650656969011459": 20,
+        "68572218898709928": -1234.5,
+        "9324645421340612": 74,
+        "38638267297803372": 348.5,
+        "35839297774966783": 3.141592653589793,
+        "47035839869373576": 0,
+        "4247284586065100": 6450,
+        "51284064296861790": 85,
+        "164165693286089": 8,
+        "68680993888566134": -0.5,
+        "35741809744286052": -1,
+        "21817668115081398": -0.5,
+        "23260286796656701": 8,
+        "42818619967532291": -0.5,
+        "10998830433256826": -1,
+        "55664018652559636": 0.5,
+        "31841983409624436": 8,
+        "1046718273317500": -1.5,
+        "69337940831413085": -1,
+        "59444511626117982": -0.5,
+        "9105451463771508": 8,
+        "18575088724247550": -1.5,
+        "39005101976600328": -1,
+        "65689442160493186": 0.5,
+        "56429686039905349": 130,
+        "1768228942778880": -0.5,
+        "61477361775084364": -1,
+        "61050886811809443": -1.5,
+        "34619880107536192": 8,
+        "60194120298847491": -0.5,
+        "36489969480732173": -1,
+        "16346669940174814": 1.5,
+        "23978811274718015": 130,
+        "55923784534083433": 0.5,
+        "2943359680935184": -1,
+        "23164960221704320": -1.5,
+        "54853787032241911": 9,
+        "17825296235772706": -0.5,
+        "27081764809394750": -2,
+        "39929537311053161": -0.5,
+        "71487759084943315": 9,
+        "35515149025197380": -0.5,
+        "36299256124126152": -2,
+        "44013409744735510": 0.5,
+        "69887008923672890": 8,
+        "57007894726522906": 0.5,
+        "56434682307424786": -2,
+        "33951800383109202": -0.5,
+        "66757721117519597": 8,
+        "15473366381217149": 0.5,
+        "67607881719191820": -2,
+        "46345598939475375": 0.5,
+        "24014865940523547": 8,
+        "8449929279781647": -1.5,
+        "61703777727857626": -1,
+        "49398546188145034": -1.5,
+        "21577033875876652": 8,
+        "7559743441125963": -1.5,
+        "31649504118184643": -1,
+        "4801488479863102": 1.5,
+        "20933114904992588": 9,
+        "63733486880252527": -1.5,
+        "29004791473018787": -2,
+        "53437269815841540": -0.5,
+        "60591674305266940": 9,
+        "41694407980268966": -1.5,
+        "71521981623720584": -2,
+        "1591903873494155": 0.5,
+        "62769943301744786": 8,
+        "18878693557820101": -0.5,
+        "24135680516568625": -2,
+        "21989902577577122": -1.5,
+        "33036481239015865": 9,
+        "67751328080806276": -0.5,
+        "33130690488294940": -2,
+        "26078593570905986": 1.5,
+        "67021468267698292": 8,
+        "37894881799890820": 0.5,
+        "37967904935248389": -2,
+        "53934257927266207": -1.5,
+        "5384225651990851": 8,
+        "8556044107463510": 0.5,
+        "55518987160271467": -2,
+        "11361956953858183": 1.5,
+        "47317368106832035": 8,
+        "51078190213143370": -2.5,
+        "1111727000149149": 0,
+        "9399957268261902": -0.5,
+        "67532811501605000": 8,
+        "58668835400574581": -2.5,
+        "21004043515641423": 0,
+        "18882904390739068": 0.5,
+        "5198894663901912": 9,
+        "29541184159396686": -2.5,
+        "10364429390968136": -1,
+        "64887229186404422": -0.5,
+        "17948246671860797": 9,
+        "22206932717649806": -2.5,
+        "39973786656756326": -1,
+        "64115907402321007": 0.5,
+        "43183797097785925": 8,
+        "34460617965839451": -0.5,
+        "18546812120320961": -1,
+        "26224114821385534": 2.5,
+        "2889872866660144": 130,
+        "31076053457453546": -2.5,
+        "53367599288454347": 0,
+        "15841672326545169": -1.5,
+        "5759169668454447": 9,
+        "54150582213607550": -1.5,
+        "352057532147097": -2,
+        "14895670602465873": -1.5,
+        "55924336390541777": 9,
+        "14782028544058886": -1.5,
+        "46989833676708915": -2,
+        "55822194381800102": 1.5,
+        "26349499348294053": 8,
+        "23098312928851551": -2.5,
+        "36589995587926662": -1,
+        "21694884006608974": -1.5,
+        "250285629339489": 8,
+        "6233372243216671": -2.5,
+        "10291729208081879": -1,
+        "2587545860799977": 1.5,
+        "6658648874270863": 130,
+        "13635493084616913": -1.5,
+        "2806056355640178": -1,
+        "36509184138514284": -2.5,
+        "35979181009998849": 8,
+        "59443217567368915": -1.5,
+        "4370687784344566": -1,
+        "62351781963272258": 2.5,
+        "13722379353707556": 9,
+        "25138670946656323": -0.5,
+        "54089064521587042": -3,
+        "2077118612063678": -0.5,
+        "27940960570042519": 9,
+        "15309952067714933": -0.5,
+        "33770743775519409": -3,
+        "47957242115094621": 0.5,
+        "61005077696569626": 9,
+        "43252122418478108": 0.5,
+        "12858091315087081": -3,
+        "45955523328566880": -0.5,
+        "54052702378155823": 9,
+        "9769914293949444": 0.5,
+        "60203300522916427": -3,
+        "8744806899002867": 0.5,
+        "2021650648335631": 9,
+        "26643259141144792": -2.5,
+        "68764117716858756": -2,
+        "54574260077046643": -0.5,
+        "35537626458351689": 9,
+        "13877055901117800": -2.5,
+        "6261934379585035": -2,
+        "4417656172081541": 0.5,
+        "41060188569335849": 8,
+        "10828675644055864": -0.5,
+        "54406123414628824": -2,
+        "6641042709523982": -2.5,
+        "24540762167230701": 9,
+        "58966654751179839": -0.5,
+        "49984986255119695": -2,
+        "29298520986741546": 2.5,
+        "5095970519818784": 8,
+        "29209512621689084": 0.5,
+        "48600356106855477": -2,
+        "54246896243367914": 2.5,
+        "59945543541231833": 130,
+        "21247722223431368": 2.5,
+        "5291683771583436": -2,
+        "7135245677323357": 0.5,
+        "20382661358322793": 9,
+        "8159728524310678": -1.5,
+        "57677064858600046": -3,
+        "11185203864672392": -0.5,
+        "14175829298867549": 9,
+        "53214976796338138": -1.5,
+        "67789885775091627": -3,
+        "57716494083127866": 0.5,
+        "10925688865092117": 9,
+        "47761391369611927": -0.5,
+        "53668257076791947": -3,
+        "47903175028307631": -1.5,
+        "50905005012913322": 9,
+        "13797170314644566": -0.5,
+        "63611729869883117": -3,
+        "27151323037736623": 1.5,
+        "28067277471044900": 9,
+        "13061400030089812": 0.5,
+        "65356241974253533": -3,
+        "37810709906064939": -1.5,
+        "31876438340965936": 9,
+        "29385776792573491": 0.5,
+        "71192791897203724": -3,
+        "29412871223853973": 1.5,
+        "20097722534085706": 8,
+        "19803278634121568": 1.5,
+        "23170670396764975": -3,
+        "10125639144190885": -0.5,
+        "16788111563450241": 8,
+        "61343600540219661": 1.5,
+        "32275236355533686": -3,
+        "46551158825238902": 0.5,
+        "13970843449591997": 8,
+        "7930167275337956": -3.5,
+        "24871385612288422": 0,
+        "39339175032519694": -0.5,
+        "12090507697295828": 8,
+        "7468902659158960": -3.5,
+        "21682406478652333": 0,
+        "41181532318807353": 0.5,
+        "35928483838922037": 9,
+        "71800890472646598": -2.5,
+        "37239717377293465": -2,
+        "40341448658073499": -1.5,
+        "13832052898383787": 9,
+        "24230541137169770": -2.5,
+        "60043911366083959": -2,
+        "14261504313881191": 1.5,
+        "26694880880963459": 130,
+        "2208999028272314": -2.5,
+        "58853937620883221": 0,
+        "48261110742944666": -2.5,
+        "34226292060527114": 8,
+        "46730462586383949": -1.5,
+        "960211706056628": -2,
+        "11213844922653174": -2.5,
+        "19934441010607836": 9,
+        "50665967425896569": -1.5,
+        "33954023252665565": -2,
+        "59904167124068426": 2.5,
+        "70537464773947346": 9,
+        "52370512416589572": -3.5,
+        "26551440677809957": -1,
+        "36668206409933930": -0.5,
+        "68103018822202670": 9,
+        "51233249761592294": -3.5,
+        "3070225404170244": -1,
+        "22185675291157870": 0.5,
+        "5969880327484169": 9,
+        "14742242617577245": -1.5,
+        "69041508872081829": -3,
+        "1593861971964250": -1.5,
+        "7364585116608631": 9,
+        "15319261656234254": -1.5,
+        "18979119654883360": -3,
+        "33466710651657242": 1.5,
+        "65910825158619920": 8,
+        "6057518063116164": 1.5,
+        "38236066507335199": -3,
+        "42333126222761731": -1.5,
+        "46823135046046719": 8,
+        "11348318837374496": -2.5,
+        "1643427253160645": -1,
+        "41393155206972300": -2.5,
+        "6626756401488825": 8,
+        "41702765917537619": -2.5,
+        "21116849639862255": -1,
+        "22274201294391729": 2.5,
+        "42807361925454009": 8,
+        "11643445180145282": -3.5,
+        "32704374706440023": 0,
+        "24824836908249018": -1.5,
+        "18144921709875150": 1,
+        "36442354431419019": 0,
+        "29027926060177595": 0,
+        "39409143039565": 0,
+        "62158882100858172": 0,
+        "67627725993469051": -1,
+        "71216751673604255": 1,
+        "19463169657613254": 0,
+        "52061178473360753": 0,
+        "47886471854657063": 0,
+        "4787785897694379": 0,
+        "42577234335179396": 0,
+        "27163124061631585": 0,
+        "53392413518917325": 0,
+        "46579323521108044": 0,
+        "50291745606320064": 0,
+        "40023286534840446": 0,
+        "47532434624536470": 0,
+        "50189585549612699": 0,
+        "6881078002109111": 0,
+        "30105218073763051": 0,
+        "55087922647765906": 0,
+        "32302867501278051": 0,
+        "34711724493216987": 0,
+        "71994989503398410": 0,
+        "56881968788434638": 0,
+        "27029275114948896": 0,
+        "69746725369215358": 0,
+        "62488618781409620": 0,
+        "68099395215770989": 0,
+        "65864123142901538": 0,
+        "63719565990804230": 0,
+        "19536453874165735": 0,
+        "2340604659022841": 0,
+        "66763977365039079": 0,
+        "23084771773772755": 0,
+        "29738665172220129": 0,
+        "40961901531917984": 0,
+        "66768173680966437": 0,
+        "44334341845526180": 0,
+        "15031663518509061": 0,
+        "58848591062109843": 0,
+        "59391770717114618": 0,
+        "4337332281139695": 0,
+        "56273714164388316": 0,
+        "28678238042708908": 0,
+        "27979388194315221": 0,
+        "16161422528097981": 0,
+        "744933966656299": 0,
+        "62043211964849675": 0,
+        "47359341917676883": 0,
+        "36376766997796101": 0,
+        "24129152931895883": 0,
+        "19459798073894541": 0,
+        "5829648446843246": 0,
+        "57982488846844654": 0,
+        "9214853297594519": 0,
+        "45639057788893899": 0,
+        "40430269996693179": 0,
+        "12275813758657258": 0,
+        "8700695247692320": 0,
+        "63947992589470203": 0,
+        "35683334798867246": 0,
+        "19853822359960814": 0,
+        "50126411923368038": 0,
+        "35274154728788175": 0,
+        "9274100146637766": 0,
+        "20829771373884935": 0,
+        "17542545014525381": 0,
+        "24858325856621010": 0,
+        "55940008637223054": 0,
+        "50574095795299839": 0,
+        "12663794566102106": 0,
+        "42248293728641101": 0,
+        "36112339586948566": 0,
+        "58138048016077430": 0,
+        "5053278946357997": 0,
+        "60362899347301574": 0,
+        "45678087429212617": 0,
+        "49419492073052262": 0,
+        "38823446193600807": 0,
+        "40061351943698162": 0,
+        "11891281102424935": 0,
+        "37095655260128802": 0,
+        "10650770346940334": 0,
+        "10826878337200931": 0,
+        "56668049954305459": 0,
+        "1220270414923201": 0,
+        "51180476718966636": 0,
+        "7437638483518076": 0,
+        "42075855611066789": 0,
+        "50757453815776082": 0,
+        "12344423034918762": 0,
+        "29950895066205555": 0,
+        "8593815179674448": 0,
+        "13050447910456980": 0,
+        "59425699314282847": 0,
+        "33370327778595602": 0,
+        "12536090382029706": 0,
+        "25130570995512110": 0,
+        "20750284129977861": 0,
+        "12199387592901057": 0,
+        "67723177118912660": 0,
+        "54315441981967772": 0,
+        "7420165990677113": 0,
+        "13185867538494550": 0,
+        "70271389995819428": 0,
+        "40333311607282125": 0,
+        "9611063340563467": 0,
+        "59412651686645591": 0,
+        "69914191426151277": 0
+      },
+      "references": [
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_1"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_2"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_3"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_4"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_5"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_6"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_7"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_8"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_9"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_10"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_11"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_12"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_13"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_14"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_15"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_16"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_17"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_18"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_19"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_20"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_21"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_22"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_23"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_24"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_25"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_26"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_27"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_28"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_29"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_30"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_31"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_32"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_33"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_34"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_35"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_36"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_37"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_38"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_39"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_40"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_41"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_42"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_43"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_44"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_45"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_46"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_47"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_48"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_49"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_50"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_51"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_52"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_53"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_54"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_55"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_56"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_57"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_58"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_59"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_60"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_61"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_62"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_63"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_64"
+        }
+      ]
+    },
+    "ordinal": 1,
+    "previous_head": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "head": "42d8d6456952dc5e3f78ff0c86e9d0c5e7aeb188ed21a5b19e03d2c560474120"
+  },
+  {
+    "frame_id": "A-d5b960f4-ba3d-44b2-a6bc-a94096fe17e7:E2",
+    "individual_id": "A-d5b960f4-ba3d-44b2-a6bc-a94096fe17e7",
+    "source_digest": "50e5437c54dcd986f1e286c9054280e5db7d024a764c746b940fbf979b259d7f",
+    "meta": {
+      "timestamp": "2026-10-09T12:33:36.982Z",
+      "sequence_id": 2,
+      "source_digest": "50e5437c54dcd986f1e286c9054280e5db7d024a764c746b940fbf979b259d7f"
+    },
+    "body": {
+      "frame_id": "A-d5b960f4-ba3d-44b2-a6bc-a94096fe17e7:E2",
+      "namespace": "26.1",
+      "body_epoch": 0,
+      "declarations": [
+        {
+          "code": 0,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 1,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 2,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 3,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 4,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 5,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 6,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 7,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 8,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "yaw_delta": {
+                "type": "number",
+                "minimum": -3.141592653589793,
+                "maximum": 3.141592653589793
+              },
+              "pitch_delta": {
+                "type": "number",
+                "minimum": -3.141592653589793,
+                "maximum": 3.141592653589793
+              }
+            },
+            "required": [
+              "pitch_delta",
+              "yaw_delta"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 9,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 10,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 11,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 12,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 13,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "object_ref": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "object_ref"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [
+            0
+          ],
+          "formal_enabled": true
+        },
+        {
+          "code": 14,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "block_ref": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "block_ref"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [
+            1
+          ],
+          "formal_enabled": true
+        },
+        {
+          "code": 15,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "inventory_slot": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 255
+              },
+              "reference_block": {
+                "type": "string"
+              },
+              "face": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 5
+              }
+            },
+            "required": [
+              "face",
+              "inventory_slot",
+              "reference_block"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": false,
+          "environment_requirement_codes": [
+            1,
+            2,
+            3
+          ],
+          "formal_enabled": true
+        },
+        {
+          "code": 16,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "slot": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 8
+              }
+            },
+            "required": [
+              "slot"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 17,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "duration_ms": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 10000,
+                "optional": true
+              }
+            },
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": false,
+          "environment_requirement_codes": [
+            4
+          ],
+          "formal_enabled": true
+        },
+        {
+          "code": 18,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 19,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "slot": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 255
+              },
+              "amount": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 128
+              }
+            },
+            "required": [
+              "amount",
+              "slot"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": false,
+          "environment_requirement_codes": [
+            2,
+            3,
+            5
+          ],
+          "formal_enabled": false
+        },
+        {
+          "code": 20,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "source_slot": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 255
+              },
+              "target_slot": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 255
+              },
+              "amount": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 128
+              }
+            },
+            "required": [
+              "amount",
+              "source_slot",
+              "target_slot"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": false,
+          "environment_requirement_codes": [
+            2,
+            3,
+            5
+          ],
+          "formal_enabled": false
+        },
+        {
+          "code": 21,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "source_slot": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 255
+              },
+              "equipment_slot": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 5
+              }
+            },
+            "required": [
+              "equipment_slot",
+              "source_slot"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": false,
+          "environment_requirement_codes": [
+            2,
+            3,
+            5
+          ],
+          "formal_enabled": false
+        },
+        {
+          "code": 22,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "block_ref": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "block_ref"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [
+            1
+          ],
+          "formal_enabled": true
+        },
+        {
+          "code": 23,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "entity_ref": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "entity_ref"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [
+            6
+          ],
+          "formal_enabled": true
+        },
+        {
+          "code": 24,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "entity_ref": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "entity_ref"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [
+            6
+          ],
+          "formal_enabled": true
+        },
+        {
+          "code": 25,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "container_id": {
+                "type": "string"
+              },
+              "source_slot": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 255
+              },
+              "target_slot": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 255
+              },
+              "amount": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 128
+              }
+            },
+            "required": [
+              "amount",
+              "container_id",
+              "source_slot",
+              "target_slot"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": false,
+          "environment_requirement_codes": [
+            7,
+            8,
+            5
+          ],
+          "formal_enabled": false
+        },
+        {
+          "code": 26,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "container_id": {
+                "type": "string"
+              },
+              "source_slot": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 255
+              },
+              "target_slot": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 255
+              },
+              "amount": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 128
+              }
+            },
+            "required": [
+              "amount",
+              "container_id",
+              "source_slot",
+              "target_slot"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": false,
+          "environment_requirement_codes": [
+            7,
+            9,
+            5
+          ],
+          "formal_enabled": false
+        },
+        {
+          "code": 27,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "container_id": {
+                "type": "string"
+              },
+              "source_slot": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 255
+              },
+              "target_slot": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 255
+              },
+              "amount": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 128
+              }
+            },
+            "required": [
+              "amount",
+              "container_id",
+              "source_slot",
+              "target_slot"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": false,
+          "environment_requirement_codes": [
+            7,
+            10,
+            5
+          ],
+          "formal_enabled": false
+        },
+        {
+          "code": 28,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "container_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "container_id"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": false,
+          "environment_requirement_codes": [
+            7
+          ],
+          "formal_enabled": true
+        },
+        {
+          "code": 29,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [
+            11
+          ],
+          "formal_enabled": true
+        },
+        {
+          "code": 30,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "source_slot": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 255
+              },
+              "target_slot": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 255
+              },
+              "amount": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 128
+              }
+            },
+            "required": [
+              "amount",
+              "source_slot",
+              "target_slot"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": false,
+          "environment_requirement_codes": [
+            12,
+            8,
+            5
+          ],
+          "formal_enabled": false
+        },
+        {
+          "code": 31,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "target_slot": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 255
+              }
+            },
+            "required": [
+              "target_slot"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": false,
+          "environment_requirement_codes": [
+            12,
+            13,
+            5
+          ],
+          "formal_enabled": false
+        },
+        {
+          "code": 32,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": false,
+          "environment_requirement_codes": [
+            12
+          ],
+          "formal_enabled": true
+        },
+        {
+          "code": 33,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "container_id": {
+                "type": "string"
+              },
+              "slot": {
+                "type": "integer",
+                "minimum": -999,
+                "maximum": 255
+              },
+              "mouse_button": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 1
+              }
+            },
+            "required": [
+              "container_id",
+              "mouse_button",
+              "slot"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 34,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "control": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 6
+              },
+              "pressed": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 1
+              }
+            },
+            "required": [
+              "control",
+              "pressed"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 35,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "hand": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 1
+              }
+            },
+            "required": [
+              "hand"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 36,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 37,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "block_ref": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "block_ref"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [
+            1
+          ],
+          "formal_enabled": true
+        },
+        {
+          "code": 38,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": false,
+          "environment_requirement_codes": [
+            14
+          ],
+          "formal_enabled": true
+        },
+        {
+          "code": 39,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": false,
+          "environment_requirement_codes": [
+            14
+          ],
+          "formal_enabled": true
+        },
+        {
+          "code": 40,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": false,
+          "environment_requirement_codes": [
+            15
+          ],
+          "formal_enabled": true
+        },
+        {
+          "code": 41,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": false,
+          "environment_requirement_codes": [
+            16
+          ],
+          "formal_enabled": true
+        },
+        {
+          "code": 42,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": false,
+          "environment_requirement_codes": [
+            17
+          ],
+          "formal_enabled": true
+        },
+        {
+          "code": 43,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "container_id": {
+                "type": "string"
+              },
+              "slot": {
+                "type": "integer",
+                "minimum": -999,
+                "maximum": 255
+              },
+              "mode": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 6
+              },
+              "button": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 10
+              }
+            },
+            "required": [
+              "button",
+              "container_id",
+              "mode",
+              "slot"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 44,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "block_ref": {
+                "type": "string"
+              },
+              "hand": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "face": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 5
+              },
+              "cursor_x": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "cursor_y": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "cursor_z": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              }
+            },
+            "required": [
+              "block_ref",
+              "cursor_x",
+              "cursor_y",
+              "cursor_z",
+              "face",
+              "hand"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [
+            1
+          ],
+          "formal_enabled": true
+        },
+        {
+          "code": 45,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "entity_ref": {
+                "type": "string"
+              },
+              "hand": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "x": {
+                "type": "number",
+                "minimum": -4,
+                "maximum": 4
+              },
+              "y": {
+                "type": "number",
+                "minimum": -4,
+                "maximum": 4
+              },
+              "z": {
+                "type": "number",
+                "minimum": -4,
+                "maximum": 4
+              }
+            },
+            "required": [
+              "entity_ref",
+              "hand",
+              "x",
+              "y",
+              "z"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [
+            6
+          ],
+          "formal_enabled": true
+        },
+        {
+          "code": 46,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [
+            3
+          ],
+          "formal_enabled": true
+        }
+      ],
+      "numeric_channels": {
+        "68326857248053496": 20,
+        "60650656969011459": 20,
+        "68572218898709928": -1234.5,
+        "9324645421340612": 74,
+        "38638267297803372": 348.5,
+        "35839297774966783": 3.141592653589793,
+        "47035839869373576": 0,
+        "4247284586065100": 6483,
+        "51284064296861790": 85,
+        "164165693286089": 8,
+        "68680993888566134": -0.5,
+        "35741809744286052": -1,
+        "21817668115081398": -0.5,
+        "23260286796656701": 8,
+        "42818619967532291": -0.5,
+        "10998830433256826": -1,
+        "55664018652559636": 0.5,
+        "31841983409624436": 8,
+        "1046718273317500": -1.5,
+        "69337940831413085": -1,
+        "59444511626117982": -0.5,
+        "9105451463771508": 8,
+        "18575088724247550": -1.5,
+        "39005101976600328": -1,
+        "65689442160493186": 0.5,
+        "56429686039905349": 130,
+        "1768228942778880": -0.5,
+        "61477361775084364": -1,
+        "61050886811809443": -1.5,
+        "34619880107536192": 8,
+        "60194120298847491": -0.5,
+        "36489969480732173": -1,
+        "16346669940174814": 1.5,
+        "23978811274718015": 130,
+        "55923784534083433": 0.5,
+        "2943359680935184": -1,
+        "23164960221704320": -1.5,
+        "54853787032241911": 9,
+        "17825296235772706": -0.5,
+        "27081764809394750": -2,
+        "39929537311053161": -0.5,
+        "71487759084943315": 9,
+        "35515149025197380": -0.5,
+        "36299256124126152": -2,
+        "44013409744735510": 0.5,
+        "69887008923672890": 8,
+        "57007894726522906": 0.5,
+        "56434682307424786": -2,
+        "33951800383109202": -0.5,
+        "66757721117519597": 8,
+        "15473366381217149": 0.5,
+        "67607881719191820": -2,
+        "46345598939475375": 0.5,
+        "24014865940523547": 8,
+        "8449929279781647": -1.5,
+        "61703777727857626": -1,
+        "49398546188145034": -1.5,
+        "21577033875876652": 8,
+        "7559743441125963": -1.5,
+        "31649504118184643": -1,
+        "4801488479863102": 1.5,
+        "20933114904992588": 9,
+        "63733486880252527": -1.5,
+        "29004791473018787": -2,
+        "53437269815841540": -0.5,
+        "60591674305266940": 9,
+        "41694407980268966": -1.5,
+        "71521981623720584": -2,
+        "1591903873494155": 0.5,
+        "62769943301744786": 8,
+        "18878693557820101": -0.5,
+        "24135680516568625": -2,
+        "21989902577577122": -1.5,
+        "33036481239015865": 9,
+        "67751328080806276": -0.5,
+        "33130690488294940": -2,
+        "26078593570905986": 1.5,
+        "67021468267698292": 8,
+        "37894881799890820": 0.5,
+        "37967904935248389": -2,
+        "53934257927266207": -1.5,
+        "5384225651990851": 8,
+        "8556044107463510": 0.5,
+        "55518987160271467": -2,
+        "11361956953858183": 1.5,
+        "47317368106832035": 8,
+        "51078190213143370": -2.5,
+        "1111727000149149": 0,
+        "9399957268261902": -0.5,
+        "67532811501605000": 8,
+        "58668835400574581": -2.5,
+        "21004043515641423": 0,
+        "18882904390739068": 0.5,
+        "5198894663901912": 9,
+        "29541184159396686": -2.5,
+        "10364429390968136": -1,
+        "64887229186404422": -0.5,
+        "17948246671860797": 9,
+        "22206932717649806": -2.5,
+        "39973786656756326": -1,
+        "64115907402321007": 0.5,
+        "43183797097785925": 8,
+        "34460617965839451": -0.5,
+        "18546812120320961": -1,
+        "26224114821385534": 2.5,
+        "2889872866660144": 130,
+        "31076053457453546": -2.5,
+        "53367599288454347": 0,
+        "15841672326545169": -1.5,
+        "5759169668454447": 9,
+        "54150582213607550": -1.5,
+        "352057532147097": -2,
+        "14895670602465873": -1.5,
+        "55924336390541777": 9,
+        "14782028544058886": -1.5,
+        "46989833676708915": -2,
+        "55822194381800102": 1.5,
+        "26349499348294053": 8,
+        "23098312928851551": -2.5,
+        "36589995587926662": -1,
+        "21694884006608974": -1.5,
+        "250285629339489": 8,
+        "6233372243216671": -2.5,
+        "10291729208081879": -1,
+        "2587545860799977": 1.5,
+        "6658648874270863": 130,
+        "13635493084616913": -1.5,
+        "2806056355640178": -1,
+        "36509184138514284": -2.5,
+        "35979181009998849": 8,
+        "59443217567368915": -1.5,
+        "4370687784344566": -1,
+        "62351781963272258": 2.5,
+        "13722379353707556": 9,
+        "25138670946656323": -0.5,
+        "54089064521587042": -3,
+        "2077118612063678": -0.5,
+        "27940960570042519": 9,
+        "15309952067714933": -0.5,
+        "33770743775519409": -3,
+        "47957242115094621": 0.5,
+        "61005077696569626": 9,
+        "43252122418478108": 0.5,
+        "12858091315087081": -3,
+        "45955523328566880": -0.5,
+        "54052702378155823": 9,
+        "9769914293949444": 0.5,
+        "60203300522916427": -3,
+        "8744806899002867": 0.5,
+        "2021650648335631": 9,
+        "26643259141144792": -2.5,
+        "68764117716858756": -2,
+        "54574260077046643": -0.5,
+        "35537626458351689": 9,
+        "13877055901117800": -2.5,
+        "6261934379585035": -2,
+        "4417656172081541": 0.5,
+        "41060188569335849": 8,
+        "10828675644055864": -0.5,
+        "54406123414628824": -2,
+        "6641042709523982": -2.5,
+        "24540762167230701": 9,
+        "58966654751179839": -0.5,
+        "49984986255119695": -2,
+        "29298520986741546": 2.5,
+        "5095970519818784": 8,
+        "29209512621689084": 0.5,
+        "48600356106855477": -2,
+        "54246896243367914": 2.5,
+        "59945543541231833": 130,
+        "21247722223431368": 2.5,
+        "5291683771583436": -2,
+        "7135245677323357": 0.5,
+        "20382661358322793": 9,
+        "8159728524310678": -1.5,
+        "57677064858600046": -3,
+        "11185203864672392": -0.5,
+        "14175829298867549": 9,
+        "53214976796338138": -1.5,
+        "67789885775091627": -3,
+        "57716494083127866": 0.5,
+        "10925688865092117": 9,
+        "47761391369611927": -0.5,
+        "53668257076791947": -3,
+        "47903175028307631": -1.5,
+        "50905005012913322": 9,
+        "13797170314644566": -0.5,
+        "63611729869883117": -3,
+        "27151323037736623": 1.5,
+        "28067277471044900": 9,
+        "13061400030089812": 0.5,
+        "65356241974253533": -3,
+        "37810709906064939": -1.5,
+        "31876438340965936": 9,
+        "29385776792573491": 0.5,
+        "71192791897203724": -3,
+        "29412871223853973": 1.5,
+        "20097722534085706": 8,
+        "19803278634121568": 1.5,
+        "23170670396764975": -3,
+        "10125639144190885": -0.5,
+        "16788111563450241": 8,
+        "61343600540219661": 1.5,
+        "32275236355533686": -3,
+        "46551158825238902": 0.5,
+        "13970843449591997": 8,
+        "7930167275337956": -3.5,
+        "24871385612288422": 0,
+        "39339175032519694": -0.5,
+        "12090507697295828": 8,
+        "7468902659158960": -3.5,
+        "21682406478652333": 0,
+        "41181532318807353": 0.5,
+        "35928483838922037": 9,
+        "71800890472646598": -2.5,
+        "37239717377293465": -2,
+        "40341448658073499": -1.5,
+        "13832052898383787": 9,
+        "24230541137169770": -2.5,
+        "60043911366083959": -2,
+        "14261504313881191": 1.5,
+        "26694880880963459": 130,
+        "2208999028272314": -2.5,
+        "58853937620883221": 0,
+        "48261110742944666": -2.5,
+        "34226292060527114": 8,
+        "46730462586383949": -1.5,
+        "960211706056628": -2,
+        "11213844922653174": -2.5,
+        "19934441010607836": 9,
+        "50665967425896569": -1.5,
+        "33954023252665565": -2,
+        "59904167124068426": 2.5,
+        "70537464773947346": 9,
+        "52370512416589572": -3.5,
+        "26551440677809957": -1,
+        "36668206409933930": -0.5,
+        "68103018822202670": 9,
+        "51233249761592294": -3.5,
+        "3070225404170244": -1,
+        "22185675291157870": 0.5,
+        "5969880327484169": 9,
+        "14742242617577245": -1.5,
+        "69041508872081829": -3,
+        "1593861971964250": -1.5,
+        "7364585116608631": 9,
+        "15319261656234254": -1.5,
+        "18979119654883360": -3,
+        "33466710651657242": 1.5,
+        "65910825158619920": 8,
+        "6057518063116164": 1.5,
+        "38236066507335199": -3,
+        "42333126222761731": -1.5,
+        "46823135046046719": 8,
+        "11348318837374496": -2.5,
+        "1643427253160645": -1,
+        "41393155206972300": -2.5,
+        "6626756401488825": 8,
+        "41702765917537619": -2.5,
+        "21116849639862255": -1,
+        "22274201294391729": 2.5,
+        "42807361925454009": 8,
+        "11643445180145282": -3.5,
+        "32704374706440023": 0,
+        "24824836908249018": -1.5,
+        "70596680665779650": 150,
+        "1739486503167064": 6.69196,
+        "23997067022440729": -2,
+        "65463237286793167": -0.00404,
+        "28878112315914046": 150,
+        "63425272413676313": 10.41728,
+        "56478389997686062": -3,
+        "42822490824250621": 0.99441,
+        "18144921709875150": 1,
+        "36442354431419019": 0,
+        "29027926060177595": 0,
+        "39409143039565": 0,
+        "62158882100858172": 0,
+        "67627725993469051": -1,
+        "71216751673604255": 1,
+        "19463169657613254": 0,
+        "52061178473360753": 0,
+        "47886471854657063": 0,
+        "4787785897694379": 0,
+        "42577234335179396": 0,
+        "27163124061631585": 0,
+        "53392413518917325": 0,
+        "46579323521108044": 0,
+        "50291745606320064": 0,
+        "40023286534840446": 0,
+        "47532434624536470": 0,
+        "50189585549612699": 0,
+        "6881078002109111": 0,
+        "30105218073763051": 0,
+        "55087922647765906": 0,
+        "32302867501278051": 0,
+        "34711724493216987": 0,
+        "71994989503398410": 0,
+        "56881968788434638": 0,
+        "27029275114948896": 0,
+        "69746725369215358": 0,
+        "62488618781409620": 0,
+        "68099395215770989": 0,
+        "65864123142901538": 0,
+        "63719565990804230": 0,
+        "19536453874165735": 0,
+        "2340604659022841": 0,
+        "66763977365039079": 0,
+        "23084771773772755": 0,
+        "29738665172220129": 0,
+        "40961901531917984": 0,
+        "66768173680966437": 0,
+        "44334341845526180": 0,
+        "15031663518509061": 0,
+        "58848591062109843": 0,
+        "59391770717114618": 0,
+        "4337332281139695": 0,
+        "56273714164388316": 0,
+        "28678238042708908": 0,
+        "27979388194315221": 0,
+        "16161422528097981": 0,
+        "744933966656299": 0,
+        "62043211964849675": 0,
+        "47359341917676883": 0,
+        "36376766997796101": 0,
+        "24129152931895883": 0,
+        "19459798073894541": 0,
+        "5829648446843246": 0,
+        "57982488846844654": 0,
+        "9214853297594519": 0,
+        "45639057788893899": 0,
+        "40430269996693179": 0,
+        "12275813758657258": 0,
+        "8700695247692320": 0,
+        "63947992589470203": 0,
+        "35683334798867246": 0,
+        "19853822359960814": 0,
+        "50126411923368038": 0,
+        "35274154728788175": 0,
+        "9274100146637766": 0,
+        "20829771373884935": 0,
+        "17542545014525381": 0,
+        "24858325856621010": 0,
+        "55940008637223054": 0,
+        "50574095795299839": 0,
+        "12663794566102106": 0,
+        "42248293728641101": 0,
+        "36112339586948566": 0,
+        "58138048016077430": 0,
+        "5053278946357997": 0,
+        "60362899347301574": 0,
+        "45678087429212617": 0,
+        "49419492073052262": 0,
+        "38823446193600807": 0,
+        "40061351943698162": 0,
+        "11891281102424935": 0,
+        "37095655260128802": 0,
+        "10650770346940334": 0,
+        "10826878337200931": 0,
+        "56668049954305459": 0,
+        "1220270414923201": 0,
+        "51180476718966636": 0,
+        "7437638483518076": 0,
+        "42075855611066789": 0,
+        "50757453815776082": 0,
+        "12344423034918762": 0,
+        "29950895066205555": 0,
+        "8593815179674448": 0,
+        "13050447910456980": 0,
+        "59425699314282847": 0,
+        "33370327778595602": 0,
+        "12536090382029706": 0,
+        "25130570995512110": 0,
+        "20750284129977861": 0,
+        "12199387592901057": 0,
+        "67723177118912660": 0,
+        "54315441981967772": 0,
+        "7420165990677113": 0,
+        "13185867538494550": 0,
+        "70271389995819428": 0,
+        "40333311607282125": 0,
+        "9611063340563467": 0,
+        "59412651686645591": 0,
+        "69914191426151277": 0
+      },
+      "references": [
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_1"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_2"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_3"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_4"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_5"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_6"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_7"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_8"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_9"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_10"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_11"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_12"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_13"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_14"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_15"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_16"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_17"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_18"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_19"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_20"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_21"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_22"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_23"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_24"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_25"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_26"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_27"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_28"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_29"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_30"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_31"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_32"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_33"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_34"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_35"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_36"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_37"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_38"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_39"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_40"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_41"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_42"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_43"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_44"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_45"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_46"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_47"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_48"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_49"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_50"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_51"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_52"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_53"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_54"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_55"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_56"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_57"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_58"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_59"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_60"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_61"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_62"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_63"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_64"
+        },
+        {
+          "kind": "entities",
+          "token": "o1a482a7b_1_65"
+        },
+        {
+          "kind": "entities",
+          "token": "o1a482a7b_1_66"
+        }
+      ]
+    },
+    "ordinal": 2,
+    "previous_head": "42d8d6456952dc5e3f78ff0c86e9d0c5e7aeb188ed21a5b19e03d2c560474120",
+    "head": "7c571f085c897c941b9821a96fb70516a2b92844d721392e989a6fd999a86c1e"
+  },
+  {
+    "frame_id": "A-d5b960f4-ba3d-44b2-a6bc-a94096fe17e7:E3",
+    "individual_id": "A-d5b960f4-ba3d-44b2-a6bc-a94096fe17e7",
+    "source_digest": "b10cbd8af78c40835f3ca01d538fc31c96bff9eacaea1eaead9ca88cfe6cfec5",
+    "meta": {
+      "timestamp": "2026-10-09T12:33:39.608Z",
+      "sequence_id": 3,
+      "source_digest": "b10cbd8af78c40835f3ca01d538fc31c96bff9eacaea1eaead9ca88cfe6cfec5"
+    },
+    "body": {
+      "frame_id": "A-d5b960f4-ba3d-44b2-a6bc-a94096fe17e7:E3",
+      "namespace": "26.1",
+      "body_epoch": 0,
+      "declarations": [
+        {
+          "code": 0,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 1,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 2,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 3,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 4,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 5,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 6,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 7,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 8,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "yaw_delta": {
+                "type": "number",
+                "minimum": -3.141592653589793,
+                "maximum": 3.141592653589793
+              },
+              "pitch_delta": {
+                "type": "number",
+                "minimum": -3.141592653589793,
+                "maximum": 3.141592653589793
+              }
+            },
+            "required": [
+              "pitch_delta",
+              "yaw_delta"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 9,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 10,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 11,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 12,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 13,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "object_ref": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "object_ref"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [
+            0
+          ],
+          "formal_enabled": true
+        },
+        {
+          "code": 14,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "block_ref": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "block_ref"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [
+            1
+          ],
+          "formal_enabled": true
+        },
+        {
+          "code": 15,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "inventory_slot": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 255
+              },
+              "reference_block": {
+                "type": "string"
+              },
+              "face": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 5
+              }
+            },
+            "required": [
+              "face",
+              "inventory_slot",
+              "reference_block"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": false,
+          "environment_requirement_codes": [
+            1,
+            2,
+            3
+          ],
+          "formal_enabled": true
+        },
+        {
+          "code": 16,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "slot": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 8
+              }
+            },
+            "required": [
+              "slot"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 17,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "duration_ms": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 10000,
+                "optional": true
+              }
+            },
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": false,
+          "environment_requirement_codes": [
+            4
+          ],
+          "formal_enabled": true
+        },
+        {
+          "code": 18,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 19,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "slot": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 255
+              },
+              "amount": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 128
+              }
+            },
+            "required": [
+              "amount",
+              "slot"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": false,
+          "environment_requirement_codes": [
+            2,
+            3,
+            5
+          ],
+          "formal_enabled": false
+        },
+        {
+          "code": 20,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "source_slot": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 255
+              },
+              "target_slot": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 255
+              },
+              "amount": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 128
+              }
+            },
+            "required": [
+              "amount",
+              "source_slot",
+              "target_slot"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": false,
+          "environment_requirement_codes": [
+            2,
+            3,
+            5
+          ],
+          "formal_enabled": false
+        },
+        {
+          "code": 21,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "source_slot": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 255
+              },
+              "equipment_slot": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 5
+              }
+            },
+            "required": [
+              "equipment_slot",
+              "source_slot"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": false,
+          "environment_requirement_codes": [
+            2,
+            3,
+            5
+          ],
+          "formal_enabled": false
+        },
+        {
+          "code": 22,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "block_ref": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "block_ref"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [
+            1
+          ],
+          "formal_enabled": true
+        },
+        {
+          "code": 23,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "entity_ref": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "entity_ref"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [
+            6
+          ],
+          "formal_enabled": true
+        },
+        {
+          "code": 24,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "entity_ref": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "entity_ref"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [
+            6
+          ],
+          "formal_enabled": true
+        },
+        {
+          "code": 25,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "container_id": {
+                "type": "string"
+              },
+              "source_slot": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 255
+              },
+              "target_slot": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 255
+              },
+              "amount": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 128
+              }
+            },
+            "required": [
+              "amount",
+              "container_id",
+              "source_slot",
+              "target_slot"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": false,
+          "environment_requirement_codes": [
+            7,
+            8,
+            5
+          ],
+          "formal_enabled": false
+        },
+        {
+          "code": 26,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "container_id": {
+                "type": "string"
+              },
+              "source_slot": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 255
+              },
+              "target_slot": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 255
+              },
+              "amount": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 128
+              }
+            },
+            "required": [
+              "amount",
+              "container_id",
+              "source_slot",
+              "target_slot"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": false,
+          "environment_requirement_codes": [
+            7,
+            9,
+            5
+          ],
+          "formal_enabled": false
+        },
+        {
+          "code": 27,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "container_id": {
+                "type": "string"
+              },
+              "source_slot": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 255
+              },
+              "target_slot": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 255
+              },
+              "amount": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 128
+              }
+            },
+            "required": [
+              "amount",
+              "container_id",
+              "source_slot",
+              "target_slot"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": false,
+          "environment_requirement_codes": [
+            7,
+            10,
+            5
+          ],
+          "formal_enabled": false
+        },
+        {
+          "code": 28,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "container_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "container_id"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": false,
+          "environment_requirement_codes": [
+            7
+          ],
+          "formal_enabled": true
+        },
+        {
+          "code": 29,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [
+            11
+          ],
+          "formal_enabled": true
+        },
+        {
+          "code": 30,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "source_slot": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 255
+              },
+              "target_slot": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 255
+              },
+              "amount": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 128
+              }
+            },
+            "required": [
+              "amount",
+              "source_slot",
+              "target_slot"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": false,
+          "environment_requirement_codes": [
+            12,
+            8,
+            5
+          ],
+          "formal_enabled": false
+        },
+        {
+          "code": 31,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "target_slot": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 255
+              }
+            },
+            "required": [
+              "target_slot"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": false,
+          "environment_requirement_codes": [
+            12,
+            13,
+            5
+          ],
+          "formal_enabled": false
+        },
+        {
+          "code": 32,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": false,
+          "environment_requirement_codes": [
+            12
+          ],
+          "formal_enabled": true
+        },
+        {
+          "code": 33,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "container_id": {
+                "type": "string"
+              },
+              "slot": {
+                "type": "integer",
+                "minimum": -999,
+                "maximum": 255
+              },
+              "mouse_button": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 1
+              }
+            },
+            "required": [
+              "container_id",
+              "mouse_button",
+              "slot"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 34,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "control": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 6
+              },
+              "pressed": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 1
+              }
+            },
+            "required": [
+              "control",
+              "pressed"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 35,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "hand": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 1
+              }
+            },
+            "required": [
+              "hand"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 36,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 37,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "block_ref": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "block_ref"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [
+            1
+          ],
+          "formal_enabled": true
+        },
+        {
+          "code": 38,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": false,
+          "environment_requirement_codes": [
+            14
+          ],
+          "formal_enabled": true
+        },
+        {
+          "code": 39,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": false,
+          "environment_requirement_codes": [
+            14
+          ],
+          "formal_enabled": true
+        },
+        {
+          "code": 40,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": false,
+          "environment_requirement_codes": [
+            15
+          ],
+          "formal_enabled": true
+        },
+        {
+          "code": 41,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": false,
+          "environment_requirement_codes": [
+            16
+          ],
+          "formal_enabled": true
+        },
+        {
+          "code": 42,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": false,
+          "environment_requirement_codes": [
+            17
+          ],
+          "formal_enabled": true
+        },
+        {
+          "code": 43,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "container_id": {
+                "type": "string"
+              },
+              "slot": {
+                "type": "integer",
+                "minimum": -999,
+                "maximum": 255
+              },
+              "mode": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 6
+              },
+              "button": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 10
+              }
+            },
+            "required": [
+              "button",
+              "container_id",
+              "mode",
+              "slot"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 44,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "block_ref": {
+                "type": "string"
+              },
+              "hand": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "face": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 5
+              },
+              "cursor_x": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "cursor_y": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "cursor_z": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              }
+            },
+            "required": [
+              "block_ref",
+              "cursor_x",
+              "cursor_y",
+              "cursor_z",
+              "face",
+              "hand"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [
+            1
+          ],
+          "formal_enabled": true
+        },
+        {
+          "code": 45,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "entity_ref": {
+                "type": "string"
+              },
+              "hand": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "x": {
+                "type": "number",
+                "minimum": -4,
+                "maximum": 4
+              },
+              "y": {
+                "type": "number",
+                "minimum": -4,
+                "maximum": 4
+              },
+              "z": {
+                "type": "number",
+                "minimum": -4,
+                "maximum": 4
+              }
+            },
+            "required": [
+              "entity_ref",
+              "hand",
+              "x",
+              "y",
+              "z"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [
+            6
+          ],
+          "formal_enabled": true
+        },
+        {
+          "code": 46,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [
+            3
+          ],
+          "formal_enabled": true
+        }
+      ],
+      "numeric_channels": {
+        "68326857248053496": 20,
+        "60650656969011459": 20,
+        "68572218898709928": -1234.5,
+        "9324645421340612": 74,
+        "38638267297803372": 348.5,
+        "35839297774966783": 3.141592653589793,
+        "47035839869373576": 0,
+        "4247284586065100": 6542,
+        "51284064296861790": 85,
+        "164165693286089": 8,
+        "68680993888566134": -0.5,
+        "35741809744286052": -1,
+        "21817668115081398": -0.5,
+        "23260286796656701": 8,
+        "42818619967532291": -0.5,
+        "10998830433256826": -1,
+        "55664018652559636": 0.5,
+        "31841983409624436": 8,
+        "1046718273317500": -1.5,
+        "69337940831413085": -1,
+        "59444511626117982": -0.5,
+        "9105451463771508": 8,
+        "18575088724247550": -1.5,
+        "39005101976600328": -1,
+        "65689442160493186": 0.5,
+        "56429686039905349": 130,
+        "1768228942778880": -0.5,
+        "61477361775084364": -1,
+        "61050886811809443": -1.5,
+        "34619880107536192": 8,
+        "60194120298847491": -0.5,
+        "36489969480732173": -1,
+        "16346669940174814": 1.5,
+        "23978811274718015": 130,
+        "55923784534083433": 0.5,
+        "2943359680935184": -1,
+        "23164960221704320": -1.5,
+        "54853787032241911": 9,
+        "17825296235772706": -0.5,
+        "27081764809394750": -2,
+        "39929537311053161": -0.5,
+        "71487759084943315": 9,
+        "35515149025197380": -0.5,
+        "36299256124126152": -2,
+        "44013409744735510": 0.5,
+        "69887008923672890": 8,
+        "57007894726522906": 0.5,
+        "56434682307424786": -2,
+        "33951800383109202": -0.5,
+        "66757721117519597": 8,
+        "15473366381217149": 0.5,
+        "67607881719191820": -2,
+        "46345598939475375": 0.5,
+        "24014865940523547": 8,
+        "8449929279781647": -1.5,
+        "61703777727857626": -1,
+        "49398546188145034": -1.5,
+        "21577033875876652": 8,
+        "7559743441125963": -1.5,
+        "31649504118184643": -1,
+        "4801488479863102": 1.5,
+        "20933114904992588": 9,
+        "63733486880252527": -1.5,
+        "29004791473018787": -2,
+        "53437269815841540": -0.5,
+        "60591674305266940": 9,
+        "41694407980268966": -1.5,
+        "71521981623720584": -2,
+        "1591903873494155": 0.5,
+        "62769943301744786": 8,
+        "18878693557820101": -0.5,
+        "24135680516568625": -2,
+        "21989902577577122": -1.5,
+        "33036481239015865": 9,
+        "67751328080806276": -0.5,
+        "33130690488294940": -2,
+        "26078593570905986": 1.5,
+        "67021468267698292": 8,
+        "37894881799890820": 0.5,
+        "37967904935248389": -2,
+        "53934257927266207": -1.5,
+        "5384225651990851": 8,
+        "8556044107463510": 0.5,
+        "55518987160271467": -2,
+        "11361956953858183": 1.5,
+        "47317368106832035": 8,
+        "51078190213143370": -2.5,
+        "1111727000149149": 0,
+        "9399957268261902": -0.5,
+        "67532811501605000": 8,
+        "58668835400574581": -2.5,
+        "21004043515641423": 0,
+        "18882904390739068": 0.5,
+        "5198894663901912": 9,
+        "29541184159396686": -2.5,
+        "10364429390968136": -1,
+        "64887229186404422": -0.5,
+        "17948246671860797": 9,
+        "22206932717649806": -2.5,
+        "39973786656756326": -1,
+        "64115907402321007": 0.5,
+        "43183797097785925": 8,
+        "34460617965839451": -0.5,
+        "18546812120320961": -1,
+        "26224114821385534": 2.5,
+        "2889872866660144": 130,
+        "31076053457453546": -2.5,
+        "53367599288454347": 0,
+        "15841672326545169": -1.5,
+        "5759169668454447": 9,
+        "54150582213607550": -1.5,
+        "352057532147097": -2,
+        "14895670602465873": -1.5,
+        "55924336390541777": 9,
+        "14782028544058886": -1.5,
+        "46989833676708915": -2,
+        "55822194381800102": 1.5,
+        "26349499348294053": 8,
+        "23098312928851551": -2.5,
+        "36589995587926662": -1,
+        "21694884006608974": -1.5,
+        "250285629339489": 8,
+        "6233372243216671": -2.5,
+        "10291729208081879": -1,
+        "2587545860799977": 1.5,
+        "6658648874270863": 130,
+        "13635493084616913": -1.5,
+        "2806056355640178": -1,
+        "36509184138514284": -2.5,
+        "35979181009998849": 8,
+        "59443217567368915": -1.5,
+        "4370687784344566": -1,
+        "62351781963272258": 2.5,
+        "13722379353707556": 9,
+        "25138670946656323": -0.5,
+        "54089064521587042": -3,
+        "2077118612063678": -0.5,
+        "27940960570042519": 9,
+        "15309952067714933": -0.5,
+        "33770743775519409": -3,
+        "47957242115094621": 0.5,
+        "61005077696569626": 9,
+        "43252122418478108": 0.5,
+        "12858091315087081": -3,
+        "45955523328566880": -0.5,
+        "54052702378155823": 9,
+        "9769914293949444": 0.5,
+        "60203300522916427": -3,
+        "8744806899002867": 0.5,
+        "2021650648335631": 9,
+        "26643259141144792": -2.5,
+        "68764117716858756": -2,
+        "54574260077046643": -0.5,
+        "35537626458351689": 9,
+        "13877055901117800": -2.5,
+        "6261934379585035": -2,
+        "4417656172081541": 0.5,
+        "41060188569335849": 8,
+        "10828675644055864": -0.5,
+        "54406123414628824": -2,
+        "6641042709523982": -2.5,
+        "24540762167230701": 9,
+        "58966654751179839": -0.5,
+        "49984986255119695": -2,
+        "29298520986741546": 2.5,
+        "5095970519818784": 8,
+        "29209512621689084": 0.5,
+        "48600356106855477": -2,
+        "54246896243367914": 2.5,
+        "59945543541231833": 130,
+        "21247722223431368": 2.5,
+        "5291683771583436": -2,
+        "7135245677323357": 0.5,
+        "20382661358322793": 9,
+        "8159728524310678": -1.5,
+        "57677064858600046": -3,
+        "11185203864672392": -0.5,
+        "14175829298867549": 9,
+        "53214976796338138": -1.5,
+        "67789885775091627": -3,
+        "57716494083127866": 0.5,
+        "10925688865092117": 9,
+        "47761391369611927": -0.5,
+        "53668257076791947": -3,
+        "47903175028307631": -1.5,
+        "50905005012913322": 9,
+        "13797170314644566": -0.5,
+        "63611729869883117": -3,
+        "27151323037736623": 1.5,
+        "28067277471044900": 9,
+        "13061400030089812": 0.5,
+        "65356241974253533": -3,
+        "37810709906064939": -1.5,
+        "31876438340965936": 9,
+        "29385776792573491": 0.5,
+        "71192791897203724": -3,
+        "29412871223853973": 1.5,
+        "20097722534085706": 8,
+        "19803278634121568": 1.5,
+        "23170670396764975": -3,
+        "10125639144190885": -0.5,
+        "16788111563450241": 8,
+        "61343600540219661": 1.5,
+        "32275236355533686": -3,
+        "46551158825238902": 0.5,
+        "13970843449591997": 8,
+        "7930167275337956": -3.5,
+        "24871385612288422": 0,
+        "39339175032519694": -0.5,
+        "12090507697295828": 8,
+        "7468902659158960": -3.5,
+        "21682406478652333": 0,
+        "41181532318807353": 0.5,
+        "35928483838922037": 9,
+        "71800890472646598": -2.5,
+        "37239717377293465": -2,
+        "40341448658073499": -1.5,
+        "13832052898383787": 9,
+        "24230541137169770": -2.5,
+        "60043911366083959": -2,
+        "14261504313881191": 1.5,
+        "26694880880963459": 130,
+        "2208999028272314": -2.5,
+        "58853937620883221": 0,
+        "48261110742944666": -2.5,
+        "34226292060527114": 8,
+        "46730462586383949": -1.5,
+        "960211706056628": -2,
+        "11213844922653174": -2.5,
+        "19934441010607836": 9,
+        "50665967425896569": -1.5,
+        "33954023252665565": -2,
+        "59904167124068426": 2.5,
+        "70537464773947346": 9,
+        "52370512416589572": -3.5,
+        "26551440677809957": -1,
+        "36668206409933930": -0.5,
+        "68103018822202670": 9,
+        "51233249761592294": -3.5,
+        "3070225404170244": -1,
+        "22185675291157870": 0.5,
+        "5969880327484169": 9,
+        "14742242617577245": -1.5,
+        "69041508872081829": -3,
+        "1593861971964250": -1.5,
+        "7364585116608631": 9,
+        "15319261656234254": -1.5,
+        "18979119654883360": -3,
+        "33466710651657242": 1.5,
+        "65910825158619920": 8,
+        "6057518063116164": 1.5,
+        "38236066507335199": -3,
+        "42333126222761731": -1.5,
+        "46823135046046719": 8,
+        "11348318837374496": -2.5,
+        "1643427253160645": -1,
+        "41393155206972300": -2.5,
+        "6626756401488825": 8,
+        "41702765917537619": -2.5,
+        "21116849639862255": -1,
+        "22274201294391729": 2.5,
+        "42807361925454009": 8,
+        "11643445180145282": -3.5,
+        "32704374706440023": 0,
+        "24824836908249018": -1.5,
+        "70596680665779650": 150,
+        "1739486503167064": 1.69196,
+        "23997067022440729": -1,
+        "65463237286793167": -0.00019,
+        "28878112315914046": 150,
+        "63425272413676313": 5.38434,
+        "56478389997686062": -2,
+        "42822490824250621": 0.9997,
+        "18144921709875150": 1,
+        "36442354431419019": 0,
+        "29027926060177595": 0,
+        "39409143039565": 0,
+        "62158882100858172": 0,
+        "67627725993469051": -1,
+        "71216751673604255": 1,
+        "19463169657613254": 0,
+        "52061178473360753": 0,
+        "47886471854657063": 0,
+        "4787785897694379": 0,
+        "42577234335179396": 0,
+        "27163124061631585": 0,
+        "53392413518917325": 0,
+        "46579323521108044": 0,
+        "50291745606320064": 0,
+        "40023286534840446": 0,
+        "47532434624536470": 0,
+        "50189585549612699": 0,
+        "6881078002109111": 0,
+        "30105218073763051": 0,
+        "55087922647765906": 0,
+        "32302867501278051": 0,
+        "34711724493216987": 0,
+        "71994989503398410": 0,
+        "56881968788434638": 0,
+        "27029275114948896": 0,
+        "69746725369215358": 0,
+        "62488618781409620": 0,
+        "68099395215770989": 0,
+        "65864123142901538": 0,
+        "63719565990804230": 0,
+        "19536453874165735": 0,
+        "2340604659022841": 0,
+        "66763977365039079": 0,
+        "23084771773772755": 0,
+        "29738665172220129": 0,
+        "40961901531917984": 0,
+        "66768173680966437": 0,
+        "44334341845526180": 0,
+        "15031663518509061": 0,
+        "58848591062109843": 0,
+        "59391770717114618": 0,
+        "4337332281139695": 0,
+        "56273714164388316": 0,
+        "28678238042708908": 0,
+        "27979388194315221": 0,
+        "16161422528097981": 0,
+        "744933966656299": 0,
+        "62043211964849675": 0,
+        "47359341917676883": 0,
+        "36376766997796101": 0,
+        "24129152931895883": 0,
+        "19459798073894541": 0,
+        "5829648446843246": 0,
+        "57982488846844654": 0,
+        "9214853297594519": 0,
+        "45639057788893899": 0,
+        "40430269996693179": 0,
+        "12275813758657258": 0,
+        "8700695247692320": 0,
+        "63947992589470203": 0,
+        "35683334798867246": 0,
+        "19853822359960814": 0,
+        "50126411923368038": 0,
+        "35274154728788175": 0,
+        "9274100146637766": 0,
+        "20829771373884935": 0,
+        "17542545014525381": 0,
+        "24858325856621010": 0,
+        "55940008637223054": 0,
+        "50574095795299839": 0,
+        "12663794566102106": 0,
+        "42248293728641101": 0,
+        "36112339586948566": 0,
+        "58138048016077430": 0,
+        "5053278946357997": 0,
+        "60362899347301574": 0,
+        "45678087429212617": 0,
+        "49419492073052262": 0,
+        "38823446193600807": 0,
+        "40061351943698162": 0,
+        "11891281102424935": 0,
+        "37095655260128802": 0,
+        "10650770346940334": 0,
+        "10826878337200931": 0,
+        "56668049954305459": 0,
+        "1220270414923201": 0,
+        "51180476718966636": 0,
+        "7437638483518076": 0,
+        "42075855611066789": 0,
+        "50757453815776082": 0,
+        "12344423034918762": 0,
+        "29950895066205555": 0,
+        "8593815179674448": 0,
+        "13050447910456980": 0,
+        "59425699314282847": 0,
+        "33370327778595602": 0,
+        "12536090382029706": 0,
+        "25130570995512110": 0,
+        "20750284129977861": 0,
+        "12199387592901057": 0,
+        "67723177118912660": 0,
+        "54315441981967772": 0,
+        "7420165990677113": 0,
+        "13185867538494550": 0,
+        "70271389995819428": 0,
+        "40333311607282125": 0,
+        "9611063340563467": 0,
+        "59412651686645591": 0,
+        "69914191426151277": 0
+      },
+      "references": [
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_1"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_2"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_3"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_4"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_5"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_6"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_7"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_8"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_9"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_10"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_11"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_12"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_13"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_14"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_15"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_16"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_17"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_18"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_19"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_20"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_21"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_22"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_23"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_24"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_25"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_26"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_27"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_28"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_29"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_30"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_31"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_32"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_33"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_34"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_35"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_36"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_37"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_38"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_39"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_40"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_41"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_42"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_43"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_44"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_45"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_46"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_47"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_48"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_49"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_50"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_51"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_52"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_53"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_54"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_55"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_56"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_57"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_58"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_59"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_60"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_61"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_62"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_63"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_64"
+        },
+        {
+          "kind": "entities",
+          "token": "o1a482a7b_1_65"
+        },
+        {
+          "kind": "entities",
+          "token": "o1a482a7b_1_66"
+        }
+      ]
+    },
+    "ordinal": 3,
+    "previous_head": "7c571f085c897c941b9821a96fb70516a2b92844d721392e989a6fd999a86c1e",
+    "head": "24c8acd418e696c4c0be549ebec9ecd56c2faaa685ebb7a9657eb9e36340b63a"
+  },
+  {
+    "frame_id": "A-d5b960f4-ba3d-44b2-a6bc-a94096fe17e7:E4",
+    "individual_id": "A-d5b960f4-ba3d-44b2-a6bc-a94096fe17e7",
+    "source_digest": "0254ec4ee8a31b96937699021b6e9c5b3fe46b3857196f869cb325586296a00f",
+    "meta": {
+      "timestamp": "2026-10-09T12:33:43.618Z",
+      "sequence_id": 4,
+      "source_digest": "0254ec4ee8a31b96937699021b6e9c5b3fe46b3857196f869cb325586296a00f"
+    },
+    "body": {
+      "frame_id": "A-d5b960f4-ba3d-44b2-a6bc-a94096fe17e7:E4",
+      "namespace": "26.1",
+      "body_epoch": 0,
+      "declarations": [
+        {
+          "code": 0,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 1,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 2,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 3,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 4,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 5,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 6,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 7,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 8,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "yaw_delta": {
+                "type": "number",
+                "minimum": -3.141592653589793,
+                "maximum": 3.141592653589793
+              },
+              "pitch_delta": {
+                "type": "number",
+                "minimum": -3.141592653589793,
+                "maximum": 3.141592653589793
+              }
+            },
+            "required": [
+              "pitch_delta",
+              "yaw_delta"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 9,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 10,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 11,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 12,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 13,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "object_ref": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "object_ref"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [
+            0
+          ],
+          "formal_enabled": true
+        },
+        {
+          "code": 14,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "block_ref": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "block_ref"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [
+            1
+          ],
+          "formal_enabled": true
+        },
+        {
+          "code": 15,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "inventory_slot": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 255
+              },
+              "reference_block": {
+                "type": "string"
+              },
+              "face": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 5
+              }
+            },
+            "required": [
+              "face",
+              "inventory_slot",
+              "reference_block"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": false,
+          "environment_requirement_codes": [
+            1,
+            2,
+            3
+          ],
+          "formal_enabled": true
+        },
+        {
+          "code": 16,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "slot": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 8
+              }
+            },
+            "required": [
+              "slot"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 17,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "duration_ms": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 10000,
+                "optional": true
+              }
+            },
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": false,
+          "environment_requirement_codes": [
+            4
+          ],
+          "formal_enabled": true
+        },
+        {
+          "code": 18,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 19,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "slot": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 255
+              },
+              "amount": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 128
+              }
+            },
+            "required": [
+              "amount",
+              "slot"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": false,
+          "environment_requirement_codes": [
+            2,
+            3,
+            5
+          ],
+          "formal_enabled": false
+        },
+        {
+          "code": 20,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "source_slot": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 255
+              },
+              "target_slot": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 255
+              },
+              "amount": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 128
+              }
+            },
+            "required": [
+              "amount",
+              "source_slot",
+              "target_slot"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": false,
+          "environment_requirement_codes": [
+            2,
+            3,
+            5
+          ],
+          "formal_enabled": false
+        },
+        {
+          "code": 21,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "source_slot": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 255
+              },
+              "equipment_slot": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 5
+              }
+            },
+            "required": [
+              "equipment_slot",
+              "source_slot"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": false,
+          "environment_requirement_codes": [
+            2,
+            3,
+            5
+          ],
+          "formal_enabled": false
+        },
+        {
+          "code": 22,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "block_ref": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "block_ref"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [
+            1
+          ],
+          "formal_enabled": true
+        },
+        {
+          "code": 23,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "entity_ref": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "entity_ref"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [
+            6
+          ],
+          "formal_enabled": true
+        },
+        {
+          "code": 24,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "entity_ref": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "entity_ref"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [
+            6
+          ],
+          "formal_enabled": true
+        },
+        {
+          "code": 25,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "container_id": {
+                "type": "string"
+              },
+              "source_slot": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 255
+              },
+              "target_slot": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 255
+              },
+              "amount": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 128
+              }
+            },
+            "required": [
+              "amount",
+              "container_id",
+              "source_slot",
+              "target_slot"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": false,
+          "environment_requirement_codes": [
+            7,
+            8,
+            5
+          ],
+          "formal_enabled": false
+        },
+        {
+          "code": 26,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "container_id": {
+                "type": "string"
+              },
+              "source_slot": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 255
+              },
+              "target_slot": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 255
+              },
+              "amount": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 128
+              }
+            },
+            "required": [
+              "amount",
+              "container_id",
+              "source_slot",
+              "target_slot"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": false,
+          "environment_requirement_codes": [
+            7,
+            9,
+            5
+          ],
+          "formal_enabled": false
+        },
+        {
+          "code": 27,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "container_id": {
+                "type": "string"
+              },
+              "source_slot": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 255
+              },
+              "target_slot": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 255
+              },
+              "amount": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 128
+              }
+            },
+            "required": [
+              "amount",
+              "container_id",
+              "source_slot",
+              "target_slot"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": false,
+          "environment_requirement_codes": [
+            7,
+            10,
+            5
+          ],
+          "formal_enabled": false
+        },
+        {
+          "code": 28,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "container_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "container_id"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": false,
+          "environment_requirement_codes": [
+            7
+          ],
+          "formal_enabled": true
+        },
+        {
+          "code": 29,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [
+            11
+          ],
+          "formal_enabled": true
+        },
+        {
+          "code": 30,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "source_slot": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 255
+              },
+              "target_slot": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 255
+              },
+              "amount": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 128
+              }
+            },
+            "required": [
+              "amount",
+              "source_slot",
+              "target_slot"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": false,
+          "environment_requirement_codes": [
+            12,
+            8,
+            5
+          ],
+          "formal_enabled": false
+        },
+        {
+          "code": 31,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "target_slot": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 255
+              }
+            },
+            "required": [
+              "target_slot"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": false,
+          "environment_requirement_codes": [
+            12,
+            13,
+            5
+          ],
+          "formal_enabled": false
+        },
+        {
+          "code": 32,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": false,
+          "environment_requirement_codes": [
+            12
+          ],
+          "formal_enabled": true
+        },
+        {
+          "code": 33,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "container_id": {
+                "type": "string"
+              },
+              "slot": {
+                "type": "integer",
+                "minimum": -999,
+                "maximum": 255
+              },
+              "mouse_button": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 1
+              }
+            },
+            "required": [
+              "container_id",
+              "mouse_button",
+              "slot"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 34,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "control": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 6
+              },
+              "pressed": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 1
+              }
+            },
+            "required": [
+              "control",
+              "pressed"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 35,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "hand": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 1
+              }
+            },
+            "required": [
+              "hand"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 36,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 37,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "block_ref": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "block_ref"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [
+            1
+          ],
+          "formal_enabled": true
+        },
+        {
+          "code": 38,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": false,
+          "environment_requirement_codes": [
+            14
+          ],
+          "formal_enabled": true
+        },
+        {
+          "code": 39,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": false,
+          "environment_requirement_codes": [
+            14
+          ],
+          "formal_enabled": true
+        },
+        {
+          "code": 40,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": false,
+          "environment_requirement_codes": [
+            15
+          ],
+          "formal_enabled": true
+        },
+        {
+          "code": 41,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": false,
+          "environment_requirement_codes": [
+            16
+          ],
+          "formal_enabled": true
+        },
+        {
+          "code": 42,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": false,
+          "environment_requirement_codes": [
+            17
+          ],
+          "formal_enabled": true
+        },
+        {
+          "code": 43,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "container_id": {
+                "type": "string"
+              },
+              "slot": {
+                "type": "integer",
+                "minimum": -999,
+                "maximum": 255
+              },
+              "mode": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 6
+              },
+              "button": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 10
+              }
+            },
+            "required": [
+              "button",
+              "container_id",
+              "mode",
+              "slot"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [],
+          "formal_enabled": true
+        },
+        {
+          "code": 44,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "block_ref": {
+                "type": "string"
+              },
+              "hand": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "face": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 5
+              },
+              "cursor_x": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "cursor_y": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "cursor_z": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              }
+            },
+            "required": [
+              "block_ref",
+              "cursor_x",
+              "cursor_y",
+              "cursor_z",
+              "face",
+              "hand"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [
+            1
+          ],
+          "formal_enabled": true
+        },
+        {
+          "code": 45,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {
+              "entity_ref": {
+                "type": "string"
+              },
+              "hand": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "x": {
+                "type": "number",
+                "minimum": -4,
+                "maximum": 4
+              },
+              "y": {
+                "type": "number",
+                "minimum": -4,
+                "maximum": 4
+              },
+              "z": {
+                "type": "number",
+                "minimum": -4,
+                "maximum": 4
+              }
+            },
+            "required": [
+              "entity_ref",
+              "hand",
+              "x",
+              "y",
+              "z"
+            ],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [
+            6
+          ],
+          "formal_enabled": true
+        },
+        {
+          "code": 46,
+          "category": "BODY_CAPABILITY",
+          "parameter_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+            "additionalProperties": false
+          },
+          "currently_available": true,
+          "environment_requirement_codes": [
+            3
+          ],
+          "formal_enabled": true
+        }
+      ],
+      "numeric_channels": {
+        "68326857248053496": 8,
+        "60650656969011459": 20,
+        "68572218898709928": -1234.5,
+        "9324645421340612": 74,
+        "38638267297803372": 348.5,
+        "35839297774966783": 3.141592653589793,
+        "47035839869373576": 0,
+        "4247284586065100": 6622,
+        "51284064296861790": 85,
+        "164165693286089": 8,
+        "68680993888566134": -0.5,
+        "35741809744286052": -1,
+        "21817668115081398": -0.5,
+        "23260286796656701": 8,
+        "42818619967532291": -0.5,
+        "10998830433256826": -1,
+        "55664018652559636": 0.5,
+        "31841983409624436": 8,
+        "1046718273317500": -1.5,
+        "69337940831413085": -1,
+        "59444511626117982": -0.5,
+        "9105451463771508": 8,
+        "18575088724247550": -1.5,
+        "39005101976600328": -1,
+        "65689442160493186": 0.5,
+        "56429686039905349": 130,
+        "1768228942778880": -0.5,
+        "61477361775084364": -1,
+        "61050886811809443": -1.5,
+        "34619880107536192": 8,
+        "60194120298847491": -0.5,
+        "36489969480732173": -1,
+        "16346669940174814": 1.5,
+        "23978811274718015": 130,
+        "55923784534083433": 0.5,
+        "2943359680935184": -1,
+        "23164960221704320": -1.5,
+        "54853787032241911": 9,
+        "17825296235772706": -0.5,
+        "27081764809394750": -2,
+        "39929537311053161": -0.5,
+        "71487759084943315": 9,
+        "35515149025197380": -0.5,
+        "36299256124126152": -2,
+        "44013409744735510": 0.5,
+        "69887008923672890": 8,
+        "57007894726522906": 0.5,
+        "56434682307424786": -2,
+        "33951800383109202": -0.5,
+        "66757721117519597": 8,
+        "15473366381217149": 0.5,
+        "67607881719191820": -2,
+        "46345598939475375": 0.5,
+        "24014865940523547": 8,
+        "8449929279781647": -1.5,
+        "61703777727857626": -1,
+        "49398546188145034": -1.5,
+        "21577033875876652": 8,
+        "7559743441125963": -1.5,
+        "31649504118184643": -1,
+        "4801488479863102": 1.5,
+        "20933114904992588": 9,
+        "63733486880252527": -1.5,
+        "29004791473018787": -2,
+        "53437269815841540": -0.5,
+        "60591674305266940": 9,
+        "41694407980268966": -1.5,
+        "71521981623720584": -2,
+        "1591903873494155": 0.5,
+        "62769943301744786": 8,
+        "18878693557820101": -0.5,
+        "24135680516568625": -2,
+        "21989902577577122": -1.5,
+        "33036481239015865": 9,
+        "67751328080806276": -0.5,
+        "33130690488294940": -2,
+        "26078593570905986": 1.5,
+        "67021468267698292": 8,
+        "37894881799890820": 0.5,
+        "37967904935248389": -2,
+        "53934257927266207": -1.5,
+        "5384225651990851": 8,
+        "8556044107463510": 0.5,
+        "55518987160271467": -2,
+        "11361956953858183": 1.5,
+        "47317368106832035": 8,
+        "51078190213143370": -2.5,
+        "1111727000149149": 0,
+        "9399957268261902": -0.5,
+        "67532811501605000": 8,
+        "58668835400574581": -2.5,
+        "21004043515641423": 0,
+        "18882904390739068": 0.5,
+        "5198894663901912": 9,
+        "29541184159396686": -2.5,
+        "10364429390968136": -1,
+        "64887229186404422": -0.5,
+        "17948246671860797": 9,
+        "22206932717649806": -2.5,
+        "39973786656756326": -1,
+        "64115907402321007": 0.5,
+        "43183797097785925": 8,
+        "34460617965839451": -0.5,
+        "18546812120320961": -1,
+        "26224114821385534": 2.5,
+        "2889872866660144": 130,
+        "31076053457453546": -2.5,
+        "53367599288454347": 0,
+        "15841672326545169": -1.5,
+        "5759169668454447": 9,
+        "54150582213607550": -1.5,
+        "352057532147097": -2,
+        "14895670602465873": -1.5,
+        "55924336390541777": 9,
+        "14782028544058886": -1.5,
+        "46989833676708915": -2,
+        "55822194381800102": 1.5,
+        "26349499348294053": 8,
+        "23098312928851551": -2.5,
+        "36589995587926662": -1,
+        "21694884006608974": -1.5,
+        "250285629339489": 8,
+        "6233372243216671": -2.5,
+        "10291729208081879": -1,
+        "2587545860799977": 1.5,
+        "6658648874270863": 130,
+        "13635493084616913": -1.5,
+        "2806056355640178": -1,
+        "36509184138514284": -2.5,
+        "35979181009998849": 8,
+        "59443217567368915": -1.5,
+        "4370687784344566": -1,
+        "62351781963272258": 2.5,
+        "13722379353707556": 9,
+        "25138670946656323": -0.5,
+        "54089064521587042": -3,
+        "2077118612063678": -0.5,
+        "27940960570042519": 9,
+        "15309952067714933": -0.5,
+        "33770743775519409": -3,
+        "47957242115094621": 0.5,
+        "61005077696569626": 9,
+        "43252122418478108": 0.5,
+        "12858091315087081": -3,
+        "45955523328566880": -0.5,
+        "54052702378155823": 9,
+        "9769914293949444": 0.5,
+        "60203300522916427": -3,
+        "8744806899002867": 0.5,
+        "2021650648335631": 9,
+        "26643259141144792": -2.5,
+        "68764117716858756": -2,
+        "54574260077046643": -0.5,
+        "35537626458351689": 9,
+        "13877055901117800": -2.5,
+        "6261934379585035": -2,
+        "4417656172081541": 0.5,
+        "41060188569335849": 8,
+        "10828675644055864": -0.5,
+        "54406123414628824": -2,
+        "6641042709523982": -2.5,
+        "24540762167230701": 9,
+        "58966654751179839": -0.5,
+        "49984986255119695": -2,
+        "29298520986741546": 2.5,
+        "5095970519818784": 8,
+        "29209512621689084": 0.5,
+        "48600356106855477": -2,
+        "54246896243367914": 2.5,
+        "59945543541231833": 130,
+        "21247722223431368": 2.5,
+        "5291683771583436": -2,
+        "7135245677323357": 0.5,
+        "20382661358322793": 9,
+        "8159728524310678": -1.5,
+        "57677064858600046": -3,
+        "11185203864672392": -0.5,
+        "14175829298867549": 9,
+        "53214976796338138": -1.5,
+        "67789885775091627": -3,
+        "57716494083127866": 0.5,
+        "10925688865092117": 9,
+        "47761391369611927": -0.5,
+        "53668257076791947": -3,
+        "47903175028307631": -1.5,
+        "50905005012913322": 9,
+        "13797170314644566": -0.5,
+        "63611729869883117": -3,
+        "27151323037736623": 1.5,
+        "28067277471044900": 9,
+        "13061400030089812": 0.5,
+        "65356241974253533": -3,
+        "37810709906064939": -1.5,
+        "31876438340965936": 9,
+        "29385776792573491": 0.5,
+        "71192791897203724": -3,
+        "29412871223853973": 1.5,
+        "20097722534085706": 8,
+        "19803278634121568": 1.5,
+        "23170670396764975": -3,
+        "10125639144190885": -0.5,
+        "16788111563450241": 8,
+        "61343600540219661": 1.5,
+        "32275236355533686": -3,
+        "46551158825238902": 0.5,
+        "13970843449591997": 8,
+        "7930167275337956": -3.5,
+        "24871385612288422": 0,
+        "39339175032519694": -0.5,
+        "12090507697295828": 8,
+        "7468902659158960": -3.5,
+        "21682406478652333": 0,
+        "41181532318807353": 0.5,
+        "35928483838922037": 9,
+        "71800890472646598": -2.5,
+        "37239717377293465": -2,
+        "40341448658073499": -1.5,
+        "13832052898383787": 9,
+        "24230541137169770": -2.5,
+        "60043911366083959": -2,
+        "14261504313881191": 1.5,
+        "26694880880963459": 130,
+        "2208999028272314": -2.5,
+        "58853937620883221": 0,
+        "48261110742944666": -2.5,
+        "34226292060527114": 8,
+        "46730462586383949": -1.5,
+        "960211706056628": -2,
+        "11213844922653174": -2.5,
+        "19934441010607836": 9,
+        "50665967425896569": -1.5,
+        "33954023252665565": -2,
+        "59904167124068426": 2.5,
+        "70537464773947346": 9,
+        "52370512416589572": -3.5,
+        "26551440677809957": -1,
+        "36668206409933930": -0.5,
+        "68103018822202670": 9,
+        "51233249761592294": -3.5,
+        "3070225404170244": -1,
+        "22185675291157870": 0.5,
+        "5969880327484169": 9,
+        "14742242617577245": -1.5,
+        "69041508872081829": -3,
+        "1593861971964250": -1.5,
+        "7364585116608631": 9,
+        "15319261656234254": -1.5,
+        "18979119654883360": -3,
+        "33466710651657242": 1.5,
+        "65910825158619920": 8,
+        "6057518063116164": 1.5,
+        "38236066507335199": -3,
+        "42333126222761731": -1.5,
+        "46823135046046719": 8,
+        "11348318837374496": -2.5,
+        "1643427253160645": -1,
+        "41393155206972300": -2.5,
+        "6626756401488825": 8,
+        "41702765917537619": -2.5,
+        "21116849639862255": -1,
+        "22274201294391729": 2.5,
+        "42807361925454009": 8,
+        "11643445180145282": -3.5,
+        "32704374706440023": 0,
+        "24824836908249018": -1.5,
+        "28878112315914046": 150,
+        "63425272413676313": -0.00287,
+        "56478389997686062": 0,
+        "42822490824250621": 0.52418,
+        "70596680665779650": 150,
+        "1739486503167064": 0.50495,
+        "23997067022440729": 0,
+        "65463237286793167": -0.14264,
+        "18144921709875150": 1,
+        "36442354431419019": 0,
+        "29027926060177595": 0,
+        "39409143039565": 0,
+        "62158882100858172": 0,
+        "67627725993469051": -1,
+        "71216751673604255": 1,
+        "19463169657613254": 0,
+        "52061178473360753": 0,
+        "47886471854657063": 0,
+        "4787785897694379": 0,
+        "42577234335179396": 0,
+        "27163124061631585": 0,
+        "53392413518917325": 0,
+        "46579323521108044": 0,
+        "50291745606320064": 0,
+        "40023286534840446": 0,
+        "47532434624536470": 0,
+        "50189585549612699": 0,
+        "6881078002109111": 0,
+        "30105218073763051": 0,
+        "55087922647765906": 0,
+        "32302867501278051": 0,
+        "34711724493216987": 0,
+        "71994989503398410": 0,
+        "56881968788434638": 0,
+        "27029275114948896": 0,
+        "69746725369215358": 0,
+        "62488618781409620": 0,
+        "68099395215770989": 0,
+        "65864123142901538": 0,
+        "63719565990804230": 0,
+        "19536453874165735": 0,
+        "2340604659022841": 0,
+        "66763977365039079": 0,
+        "23084771773772755": 0,
+        "29738665172220129": 0,
+        "40961901531917984": 0,
+        "66768173680966437": 0,
+        "44334341845526180": 0,
+        "15031663518509061": 0,
+        "58848591062109843": 0,
+        "59391770717114618": 0,
+        "4337332281139695": 0,
+        "56273714164388316": 0,
+        "28678238042708908": 0,
+        "27979388194315221": 0,
+        "16161422528097981": 0,
+        "744933966656299": 0,
+        "62043211964849675": 0,
+        "47359341917676883": 0,
+        "36376766997796101": 0,
+        "24129152931895883": 0,
+        "19459798073894541": 0,
+        "5829648446843246": 0,
+        "57982488846844654": 0,
+        "9214853297594519": 0,
+        "45639057788893899": 0,
+        "40430269996693179": 0,
+        "12275813758657258": 0,
+        "8700695247692320": 0,
+        "63947992589470203": 0,
+        "35683334798867246": 0,
+        "19853822359960814": 0,
+        "50126411923368038": 0,
+        "35274154728788175": 0,
+        "9274100146637766": 0,
+        "20829771373884935": 0,
+        "17542545014525381": 0,
+        "24858325856621010": 0,
+        "55940008637223054": 0,
+        "50574095795299839": 0,
+        "12663794566102106": 0,
+        "42248293728641101": 0,
+        "36112339586948566": 0,
+        "58138048016077430": 0,
+        "5053278946357997": 0,
+        "60362899347301574": 0,
+        "45678087429212617": 0,
+        "49419492073052262": 0,
+        "38823446193600807": 0,
+        "40061351943698162": 0,
+        "11891281102424935": 0,
+        "37095655260128802": 0,
+        "10650770346940334": 0,
+        "10826878337200931": 0,
+        "56668049954305459": 0,
+        "1220270414923201": 0,
+        "51180476718966636": 0,
+        "7437638483518076": 0,
+        "42075855611066789": 0,
+        "50757453815776082": 0,
+        "12344423034918762": 0,
+        "29950895066205555": 0,
+        "8593815179674448": 0,
+        "13050447910456980": 0,
+        "59425699314282847": 0,
+        "33370327778595602": 0,
+        "12536090382029706": 0,
+        "25130570995512110": 0,
+        "20750284129977861": 0,
+        "12199387592901057": 0,
+        "67723177118912660": 0,
+        "54315441981967772": 0,
+        "7420165990677113": 0,
+        "13185867538494550": 0,
+        "70271389995819428": 0,
+        "40333311607282125": 0,
+        "9611063340563467": 0,
+        "59412651686645591": 0,
+        "69914191426151277": 0
+      },
+      "references": [
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_1"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_2"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_3"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_4"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_5"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_6"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_7"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_8"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_9"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_10"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_11"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_12"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_13"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_14"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_15"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_16"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_17"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_18"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_19"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_20"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_21"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_22"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_23"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_24"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_25"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_26"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_27"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_28"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_29"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_30"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_31"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_32"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_33"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_34"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_35"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_36"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_37"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_38"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_39"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_40"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_41"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_42"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_43"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_44"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_45"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_46"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_47"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_48"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_49"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_50"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_51"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_52"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_53"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_54"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_55"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_56"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_57"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_58"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_59"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_60"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_61"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_62"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_63"
+        },
+        {
+          "kind": "blocks",
+          "token": "o1a482a7b_1_64"
+        },
+        {
+          "kind": "entities",
+          "token": "o1a482a7b_1_66"
+        },
+        {
+          "kind": "entities",
+          "token": "o1a482a7b_1_65"
+        }
+      ]
+    },
+    "ordinal": 4,
+    "previous_head": "24c8acd418e696c4c0be549ebec9ecd56c2faaa685ebb7a9657eb9e36340b63a",
+    "head": "0aa3be1f5d51d0022257f5595b8d38d5d2722e220424900bfc14864b66949984"
+  }
+]

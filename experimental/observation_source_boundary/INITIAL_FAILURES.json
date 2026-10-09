@@ -1,0 +1,12 @@
+{
+  "scope": "new implementation/debugging attempts; original frozen evidence untouched",
+  "attempts": [
+    {"id": "initial-focused", "result": "4 failed", "cause": "Validator was comparing the previous state descriptor only against a pending-next descriptor. Corrected to validate previous or next boundary; publication still requires exactly next."},
+    {"id": "focused-r2", "result": "3 passed, 1 failed", "cause": "Resumed Core retained the closed read-only preflight connection. Rebound execution to owning EventStore connection after initialization."},
+    {"id": "controls", "result": "16 passed, 1 failed", "log": ".test-tmp/source-boundary-controls.txt", "cause": "Capacity fixture attempted to select a BodyRef node before its first ordinary construction. Added the missing ordinary advance in this negative-control setup; capacity or construction rules unchanged."},
+    {"id": "comparison-1", "result": "stopped E1", "cause": "Diagnostic coupled UUIDs in base FormalL0, but the unchanged operative interpreter has its own UUID import. Actual process identities differed. Both UUID imports coupled in diagnostic only."},
+    {"id": "comparison-2", "result": "stopped E2", "cause": "Diagnostic assumed nonexistent experience action_codes field. Reads the saved actual pending action code instead."}
+  ],
+  "acceptance_changed": false,
+  "old_failure_records_modified": false
+}

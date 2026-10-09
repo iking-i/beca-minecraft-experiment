@@ -1,0 +1,52 @@
+{
+  "modes": [
+    [
+      "S-fc03952a-906e-43f0-94cb-7b4a82309dd0",
+      0
+    ],
+    [
+      "S-47fcc6f7-e2a0-4097-a498-96853d34f4ac",
+      1
+    ],
+    [
+      "S-bb0d19b9-db2f-4dfd-9962-15a39b668706",
+      1
+    ]
+  ],
+  "ends": [
+    [
+      "S-fc03952a-906e-43f0-94cb-7b4a82309dd0",
+      "2026-10-09T13:02:23.659027+00:00",
+      13,
+      "EXTERNAL_SOURCE_STORAGE_8_FRAME_BUDGET_OR_BLOCKER",
+      0
+    ],
+    [
+      "S-47fcc6f7-e2a0-4097-a498-96853d34f4ac",
+      "2026-10-09T13:02:28.485410+00:00",
+      19,
+      "EXTERNAL_SOURCE_STORAGE_8_FRAME_BUDGET_OR_BLOCKER",
+      0
+    ],
+    [
+      "S-bb0d19b9-db2f-4dfd-9962-15a39b668706",
+      "2026-10-09T13:13:58.367161+00:00",
+      32,
+      "EXTERNAL_SOURCE_STORAGE_8_FRAME_BUDGET_OR_BLOCKER",
+      0
+    ]
+  ],
+  "gaps": [
+    [
+      0,
+      13
+    ]
+  ],
+  "optional_states_min_version": 14,
+  "OFF_observation_events": 0,
+  "third_session_observations": 8,
+  "current_version": 32,
+  "source_body_bytes": 433942,
+  "sqlite_file_bytes": 15360000,
+  "current_snapshot_bytes": 337793
+}

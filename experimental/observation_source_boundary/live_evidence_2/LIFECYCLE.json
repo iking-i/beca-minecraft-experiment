@@ -1,0 +1,67 @@
+{
+  "modes": [
+    [
+      "S-fc03952a-906e-43f0-94cb-7b4a82309dd0",
+      0
+    ],
+    [
+      "S-47fcc6f7-e2a0-4097-a498-96853d34f4ac",
+      1
+    ]
+  ],
+  "sessions": [
+    {
+      "session_id": "S-fc03952a-906e-43f0-94cb-7b4a82309dd0",
+      "individual_id": "A-87cd4a08-65a3-4d51-81ad-49b00343e8a4",
+      "started_at": "2026-10-09T13:02:01.335162+00:00",
+      "start_state_version": 0,
+      "label": "Minecraft",
+      "environment": "{\"observation_reference_lifecycle\":{\"mode\":\"TEST_ONLY\",\"version\":\"OBSERVATION-SOURCE-BOUNDARY-REFERENCES-TEST_ONLY-1\"},\"operative_core_test_only\":{\"mode\":\"TEST_ONLY\",\"mechanism_version\":\"FORMALL0-OPERATIVE-CORE-TEST_ONLY-1\",\"database\":\"D:\\\\codex\\\\project\\\\我的世界\\\\.test-tmp\\\\source-boundary-live-63212-20261009-peaceful1\\\\individual.db\"},\"experiment_profile\":\"formal_l0\",\"froi_enabled\":false,\"froi_caps\":null}",
+      "carrier_epoch": 0,
+      "start_reason": "session_start"
+    },
+    {
+      "session_id": "S-47fcc6f7-e2a0-4097-a498-96853d34f4ac",
+      "individual_id": "A-87cd4a08-65a3-4d51-81ad-49b00343e8a4",
+      "started_at": "2026-10-09T13:02:24.380849+00:00",
+      "start_state_version": 14,
+      "label": "Minecraft",
+      "environment": "{\"observation_reference_lifecycle\":{\"mode\":\"TEST_ONLY\",\"version\":\"OBSERVATION-SOURCE-BOUNDARY-REFERENCES-TEST_ONLY-1\"},\"operative_core_test_only\":{\"mode\":\"TEST_ONLY\",\"mechanism_version\":\"FORMALL0-OPERATIVE-CORE-TEST_ONLY-1\",\"database\":\"D:\\\\codex\\\\project\\\\我的世界\\\\.test-tmp\\\\source-boundary-live-63212-20261009-peaceful1\\\\individual.db\"},\"experiment_profile\":\"formal_l0\",\"froi_enabled\":false,\"froi_caps\":null}",
+      "carrier_epoch": 1,
+      "start_reason": "carrier_restart"
+    }
+  ],
+  "ends": [
+    [
+      "S-fc03952a-906e-43f0-94cb-7b4a82309dd0",
+      "2026-10-09T13:02:23.659027+00:00",
+      13,
+      "EXTERNAL_SOURCE_STORAGE_8_FRAME_BUDGET_OR_BLOCKER",
+      0
+    ],
+    [
+      "S-47fcc6f7-e2a0-4097-a498-96853d34f4ac",
+      "2026-10-09T13:02:28.485410+00:00",
+      19,
+      "EXTERNAL_SOURCE_STORAGE_8_FRAME_BUDGET_OR_BLOCKER",
+      0
+    ]
+  ],
+  "gaps": [
+    [
+      0,
+      13
+    ]
+  ],
+  "current_version": 19,
+  "current_matches_shutdown": true,
+  "optional_states_count": 6,
+  "optional_states_min_version": 14,
+  "optional_events_count": 17,
+  "OFF_observation_events": 0,
+  "ON_observation_events": 1,
+  "source_body_bytes": 229734,
+  "sqlite_file_bytes": 4960256,
+  "sqlite_logical_pages_bytes": 4960256,
+  "current_snapshot_bytes": 319146
+}

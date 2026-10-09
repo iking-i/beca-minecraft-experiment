@@ -1,0 +1,397 @@
+{
+  "format": "exact original bytes, deterministic gzip; no database/config/body logs",
+  "files": [
+    {
+      "original_path": ".test-tmp/source-boundary-live-63212-20261009-peaceful1/LIVE_REPORT.json",
+      "original_bytes": 4159215,
+      "original_sha256": "a8fec0f0f3d00737b102bcfc637f778315d7761e9ae9dd0332e7e0c0f1d1c9d0",
+      "export": "evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/LIVE_REPORT.json.gz",
+      "export_sha256": "d35cc2d003012b29f4e57921d9777e354d928110109c7e7c0f00295b1a0bca23"
+    },
+    {
+      "original_path": ".test-tmp/source-boundary-live-63212-20261009-peaceful1/PREFLIGHT.json",
+      "original_bytes": 154509,
+      "original_sha256": "eed4b6184780b28711f6ff15fe55046085e6f5fb4486005dc2b93e542ea5aab7",
+      "export": "evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/PREFLIGHT.json.gz",
+      "export_sha256": "d2039d84401adc6a5a01504d4d4d8190415a70cd8d5644c7cbb57b09e594a403"
+    },
+    {
+      "original_path": ".test-tmp/source-boundary-live-63212-20261009-peaceful1/OFF-stderr.log",
+      "original_bytes": 0,
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "export": "evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/OFF-stderr.log.gz",
+      "export_sha256": "46b50c321b39e89a491b6727a01628c34245605a30beb3e7414c5e01cff90e6e"
+    },
+    {
+      "original_path": ".test-tmp/source-boundary-live-63212-20261009-peaceful1/OFF-stdout.log",
+      "original_bytes": 947,
+      "original_sha256": "c66754c28c6d2bf4260c810d3fda539c8aec1cc6f2eac5c2ad3a5e0063485743",
+      "export": "evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/OFF-stdout.log.gz",
+      "export_sha256": "a567d31caefae9f1e3b96e4956fabd75cd81dc7e49580b3ca923f04e11612f2b"
+    },
+    {
+      "original_path": ".test-tmp/source-boundary-live-63212-20261009-peaceful1/ON-stderr.log",
+      "original_bytes": 0,
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "export": "evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/ON-stderr.log.gz",
+      "export_sha256": "46b50c321b39e89a491b6727a01628c34245605a30beb3e7414c5e01cff90e6e"
+    },
+    {
+      "original_path": ".test-tmp/source-boundary-live-63212-20261009-peaceful1/ON-stdout.log",
+      "original_bytes": 144,
+      "original_sha256": "f9ad12e80cd75e657df281a9a10fbf497a292d6aecd68215a58f7438ab616934",
+      "export": "evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/ON-stdout.log.gz",
+      "export_sha256": "7cda33b9b92262555312075f3dd2f1e1ab9aeae7e7026802268eb1d2782fdcf6"
+    },
+    {
+      "original_path": ".test-tmp/source-boundary-live-63212-20261009-peaceful1/OFF/frame-01.json",
+      "original_bytes": 1401790,
+      "original_sha256": "ac5773e574e867a3edaed455489ed2768d21a41e41fc4d0507d7fcb3a40ea547",
+      "export": "evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/OFF/frame-01.json.gz",
+      "export_sha256": "a461a02383903e7325277ca45d56aec0711c998a8d24f9c9814eb06450a0ac5b"
+    },
+    {
+      "original_path": ".test-tmp/source-boundary-live-63212-20261009-peaceful1/OFF/frame-02.json",
+      "original_bytes": 1667317,
+      "original_sha256": "d983a60e53365330594dc84cf83fe3e8d5f29b1305cee0b862e3b7f16774a14d",
+      "export": "evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/OFF/frame-02.json.gz",
+      "export_sha256": "fa8c9ed460fc34413fc10a068cd563c6564a06c660bdda897ef7811cffdc6f3e"
+    },
+    {
+      "original_path": ".test-tmp/source-boundary-live-63212-20261009-peaceful1/OFF/frame-03.json",
+      "original_bytes": 1660410,
+      "original_sha256": "c6011f79039d78b819d346a882300909be717290e406f91c3ec419048b4f7362",
+      "export": "evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/OFF/frame-03.json.gz",
+      "export_sha256": "9fa934648ca5a1ddd40975f0ea1819c31d179ffdfc38df7e2a541a99a793a284"
+    },
+    {
+      "original_path": ".test-tmp/source-boundary-live-63212-20261009-peaceful1/OFF/frame-04.json",
+      "original_bytes": 1709868,
+      "original_sha256": "af5e5bedcb916da1aa352e1faa683b400985e47696ea4a16b1ee1742151098c8",
+      "export": "evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/OFF/frame-04.json.gz",
+      "export_sha256": "f180f7f19b49cff68eb7194731c94156726b951be35a95bf3a4f6a72369eaa2e"
+    },
+    {
+      "original_path": ".test-tmp/source-boundary-live-63212-20261009-peaceful1/OFF/frame-05.json",
+      "original_bytes": 1742332,
+      "original_sha256": "7e0ffe96a3e4b4ab860e2e04a07014783540ae05de824cf4929e26b768932195",
+      "export": "evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/OFF/frame-05.json.gz",
+      "export_sha256": "0ad6d402185d85eddfdf0ed17696fb5dfc44d57a50dfd8ce3f963642f277d395"
+    },
+    {
+      "original_path": ".test-tmp/source-boundary-live-63212-20261009-peaceful1/OFF/frame-06.json",
+      "original_bytes": 1774452,
+      "original_sha256": "4a44371e4c65444167d75e72e319a04bb8298d19156b8e3b4d4b4a1a7ee55a3e",
+      "export": "evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/OFF/frame-06.json.gz",
+      "export_sha256": "ab2aea111da4db612253c284e3c2ff4b87d13241027d249e18c3466f993a759b"
+    },
+    {
+      "original_path": ".test-tmp/source-boundary-live-63212-20261009-peaceful1/OFF/frame-07.json",
+      "original_bytes": 1800508,
+      "original_sha256": "3f667f86cf9e35aed2e26c78f709d11f797989899f68711aa2bf7c5b218fdb97",
+      "export": "evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/OFF/frame-07.json.gz",
+      "export_sha256": "46d182a654b6fca863cc94cc0f56b62cea08106a38d491311dcf6e527a445383"
+    },
+    {
+      "original_path": ".test-tmp/source-boundary-live-63212-20261009-peaceful1/OFF/frame-08.json",
+      "original_bytes": 1807312,
+      "original_sha256": "841315fc1bf7e446ddc8474616fee53e1f4f8a4877d0fdabf7e59be639a846f6",
+      "export": "evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/OFF/frame-08.json.gz",
+      "export_sha256": "49be6144db23c56fd30212bcf67b9c6806fb0d1a63a2d4f41f351743f78028f2"
+    },
+    {
+      "original_path": ".test-tmp/source-boundary-live-63212-20261009-peaceful1/OFF/REPORT.json",
+      "original_bytes": 1785470,
+      "original_sha256": "406d929879551201693fdcb49fe357c858dfb102e832daa59eb8b011917043c0",
+      "export": "evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/OFF/REPORT.json.gz",
+      "export_sha256": "749016dda63d69dd4f87e58cb44cf0055a6d871edd0c96cb5b35d1ffb9554f13"
+    },
+    {
+      "original_path": ".test-tmp/source-boundary-live-63212-20261009-peaceful1/OFF/transitions.jsonl",
+      "original_bytes": 1707110,
+      "original_sha256": "64d42a9c9f36dcd26791e06a9210634a68a7eceaf36b463a82612613e9fa9099",
+      "export": "evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/OFF/transitions.jsonl.gz",
+      "export_sha256": "343388202b55ea1de0902f43bff154859a9a8ca21e5c1f0a75d617477370415c"
+    },
+    {
+      "original_path": ".test-tmp/source-boundary-live-63212-20261009-peaceful1/OFF/transport.jsonl",
+      "original_bytes": 345373,
+      "original_sha256": "f7d6869c2fd206f2c0d99b472736264a21b82d44bef7e89dae7b7baf6f4ca48d",
+      "export": "evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/OFF/transport.jsonl.gz",
+      "export_sha256": "51be79218146b3ef6b62de92e47c1f4a0083a3f516e69af723e263c822c121b4"
+    },
+    {
+      "original_path": ".test-tmp/source-boundary-live-63212-20261009-peaceful1/OFF/rss.jsonl",
+      "original_bytes": 24684,
+      "original_sha256": "eaf6b222bc550cbe3a4ae7e2f179cad1a29c347ca1889a663752a894d862fc44",
+      "export": "evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/OFF/rss.jsonl.gz",
+      "export_sha256": "cb966e153bb2457f7d7c55f723dbc0313503007eaaab9b788caa5884252de1f8"
+    },
+    {
+      "original_path": ".test-tmp/source-boundary-live-63212-20261009-peaceful1/ON/frame-01.json",
+      "original_bytes": 1657015,
+      "original_sha256": "aa6781a8b859a36912590f1ff422542fb38020e082b0243a308a52ec709c0268",
+      "export": "evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/ON/frame-01.json.gz",
+      "export_sha256": "4d14b6be8ba1f97e11101e57ed87cd43f0ce87026db73fd6398b7c4b1b059680"
+    },
+    {
+      "original_path": ".test-tmp/source-boundary-live-63212-20261009-peaceful1/ON/REPORT.json",
+      "original_bytes": 1921078,
+      "original_sha256": "01b80db73d3437620dc0b174eccb67b05ee5c26577d46e229f8ad7e03f449ce3",
+      "export": "evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/ON/REPORT.json.gz",
+      "export_sha256": "b1e6ea325465ecdca95b5d302a7b0b8c707147a8ceaf8c1283ad7a678671abe8"
+    },
+    {
+      "original_path": ".test-tmp/source-boundary-live-63212-20261009-peaceful1/ON/transitions.jsonl",
+      "original_bytes": 155697,
+      "original_sha256": "07b92a5f27ad49183faf87da0f9be863d1a9df2488c399cb3d18435b198df276",
+      "export": "evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/ON/transitions.jsonl.gz",
+      "export_sha256": "36b79db9098191a44f0328840e38831b5f814f54266bd284a059ffe1285bc202"
+    },
+    {
+      "original_path": ".test-tmp/source-boundary-live-63212-20261009-peaceful1/ON/transport.jsonl",
+      "original_bytes": 45289,
+      "original_sha256": "4473299fb18755b0aca3787b918a0cbb5d1f81c5b522576c7e811a4a4eba7547",
+      "export": "evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/ON/transport.jsonl.gz",
+      "export_sha256": "f545073e1f5a8295e3badff328705faaccd476190469f06936806a07f7a3a532"
+    },
+    {
+      "original_path": ".test-tmp/source-boundary-live-63212-20261009-peaceful1/ON/rss.jsonl",
+      "original_bytes": 4828,
+      "original_sha256": "f68fcb8a9652b091baf2834537999bc67623cdab8bff6a6c4b0174c7ee312eaa",
+      "export": "evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/ON/rss.jsonl.gz",
+      "export_sha256": "b2a3d9e1cea19cc8fc4c1b9aade1052cc18c4ad880c55380cb47ebadca80c011"
+    },
+    {
+      "original_path": ".test-tmp/source-boundary-live-63212-20261009-peaceful1/ON_SUPPLEMENT/frame-01.json",
+      "original_bytes": 1606350,
+      "original_sha256": "5d8c048f3553ecb20ad6aa1cbc6e3c6fc5b8a07214f81d1c817186de1cc7d38d",
+      "export": "evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/ON_SUPPLEMENT/frame-01.json.gz",
+      "export_sha256": "f7a5250e761c65516b2adecd23558345f5c48e361e96128848bfba009454ba9e"
+    },
+    {
+      "original_path": ".test-tmp/source-boundary-live-63212-20261009-peaceful1/ON_SUPPLEMENT/frame-02.json",
+      "original_bytes": 1727789,
+      "original_sha256": "4b05c4fa1b0113900745bdf8df6ae77dbc16936b9c27f5ad7666dbd8da505862",
+      "export": "evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/ON_SUPPLEMENT/frame-02.json.gz",
+      "export_sha256": "494c54abff6f083835905b3b511614c571c3088fe74eb3219304015529e67975"
+    },
+    {
+      "original_path": ".test-tmp/source-boundary-live-63212-20261009-peaceful1/ON_SUPPLEMENT/frame-03.json",
+      "original_bytes": 1814011,
+      "original_sha256": "17dc728d8e368890574d3db8c211c87c76c8342649fac1b941529ae296f3b151",
+      "export": "evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/ON_SUPPLEMENT/frame-03.json.gz",
+      "export_sha256": "fbbe1a260295b0241f7baca2b0f4fb1788e9728a8e687132bee6f9bb99c56203"
+    },
+    {
+      "original_path": ".test-tmp/source-boundary-live-63212-20261009-peaceful1/ON_SUPPLEMENT/frame-04.json",
+      "original_bytes": 1830557,
+      "original_sha256": "1364585b17110592832412893549ac476cb511e097a4ab8dc8b93f9dc63e4e3e",
+      "export": "evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/ON_SUPPLEMENT/frame-04.json.gz",
+      "export_sha256": "beaf4e96847d5004792c349531c0a0d6726a26728e78b7ae02db7d01a0f4adeb"
+    },
+    {
+      "original_path": ".test-tmp/source-boundary-live-63212-20261009-peaceful1/ON_SUPPLEMENT/frame-05.json",
+      "original_bytes": 1831215,
+      "original_sha256": "f9546580fdab0054e5e3c34c50a9cdfbb6a2d742df825f5ecdf5e9df7fcba33e",
+      "export": "evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/ON_SUPPLEMENT/frame-05.json.gz",
+      "export_sha256": "00d1c795bee45d5b93850a881380a1902fe2b2fb89db0949651bbc57c104b07c"
+    },
+    {
+      "original_path": ".test-tmp/source-boundary-live-63212-20261009-peaceful1/ON_SUPPLEMENT/frame-06.json",
+      "original_bytes": 1831217,
+      "original_sha256": "9e96eef5c5bd4a8a46fe467a7ac0050cac14a88c95101eb5ea234017d7340925",
+      "export": "evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/ON_SUPPLEMENT/frame-06.json.gz",
+      "export_sha256": "01b1086b6219c16f9d3136347300804ba02cf0f3254f0c7726b29cd0d791f6a8"
+    },
+    {
+      "original_path": ".test-tmp/source-boundary-live-63212-20261009-peaceful1/ON_SUPPLEMENT/frame-07.json",
+      "original_bytes": 1831219,
+      "original_sha256": "dd84ba0fb1fe1ef65ef89f7a3dab3b1f3c05486ab1968a967d5cb6799a233fce",
+      "export": "evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/ON_SUPPLEMENT/frame-07.json.gz",
+      "export_sha256": "076eb0444ed5ed4034e21d09280f7630373b9c0d7f14a89445d80f04fece243c"
+    },
+    {
+      "original_path": ".test-tmp/source-boundary-live-63212-20261009-peaceful1/ON_SUPPLEMENT/frame-08.json",
+      "original_bytes": 1831219,
+      "original_sha256": "814218ceb8ee2b37eee87399a85c19839a19b530cf263c17d50ed05261f56334",
+      "export": "evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/ON_SUPPLEMENT/frame-08.json.gz",
+      "export_sha256": "13ae1873e2babcfb84568aeea7a88c515859393094b024336b8188fb6817c8d0"
+    },
+    {
+      "original_path": ".test-tmp/source-boundary-live-63212-20261009-peaceful1/ON_SUPPLEMENT/REPORT.json",
+      "original_bytes": 2425324,
+      "original_sha256": "fa6b4124720826b9c9a5a8186d725286f6dcc313983b1f70bcdd92470dfb9626",
+      "export": "evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/ON_SUPPLEMENT/REPORT.json.gz",
+      "export_sha256": "60a31323d6e760fe40cbe47b78101f92861a607ac70ae95bf0812b2c914689fa"
+    },
+    {
+      "original_path": ".test-tmp/source-boundary-live-63212-20261009-peaceful1/ON_SUPPLEMENT/transitions.jsonl",
+      "original_bytes": 1606332,
+      "original_sha256": "141a70f48a586a61e83f6cc9ba79126bd4c2810b9bd268a2bcfdd1d59d723b2c",
+      "export": "evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/ON_SUPPLEMENT/transitions.jsonl.gz",
+      "export_sha256": "0b8a527dbd080619e45453dd31b21a7d29a06a9d0c925b015ae8405de9f22a3d"
+    },
+    {
+      "original_path": ".test-tmp/source-boundary-live-63212-20261009-peaceful1/ON_SUPPLEMENT/transport.jsonl",
+      "original_bytes": 345671,
+      "original_sha256": "9fc4f381c6ed0bde636a2cdb7c34b9ddab1c2e4058cb59c871261a630a515649",
+      "export": "evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/ON_SUPPLEMENT/transport.jsonl.gz",
+      "export_sha256": "bf7596a4afaacef0d89a000b4a348eca18d09c3310d192729786f454d0865859"
+    },
+    {
+      "original_path": ".test-tmp/source-boundary-live-63212-20261009-peaceful1/ON_SUPPLEMENT/rss.jsonl",
+      "original_bytes": 28696,
+      "original_sha256": "c21a21650140f98e9900ad9ffbaefaff8ba2da61c2648a79587df28065b181e2",
+      "export": "evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/ON_SUPPLEMENT/rss.jsonl.gz",
+      "export_sha256": "b14c1fed1bd925321ab696fe738e017d003094778c6993e152d63e6bad299063"
+    },
+    {
+      "original_path": ".test-tmp/source-boundary-live-63212-20261009-run1/LIVE_REPORT.json",
+      "original_bytes": 500,
+      "original_sha256": "d9e8002dc4908a1cc455a06e00c22bcb14992bd3290642f2e58d59040979087c",
+      "export": "evidence/live_raw_export/source-boundary-live-63212-20261009-run1/LIVE_REPORT.json.gz",
+      "export_sha256": "4d87220ebac7380b1d4983ddf37e2e127c7d2b604caf1354971306d992e17d5e"
+    },
+    {
+      "original_path": ".test-tmp/source-boundary-live-63212-20261009-run1/OFF-stderr.log",
+      "original_bytes": 153,
+      "original_sha256": "c0df24adf5402dcf585dd7c31c8c094f4b1c1564071e642b3415e30e76643f12",
+      "export": "evidence/live_raw_export/source-boundary-live-63212-20261009-run1/OFF-stderr.log.gz",
+      "export_sha256": "0bffe54e89e4d7fc1d9c8e8ac42cd53f2561ed1ac9460a53b532142a50bbdf1c"
+    },
+    {
+      "original_path": ".test-tmp/source-boundary-live-63212-20261009-run1/OFF-stdout.log",
+      "original_bytes": 0,
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "export": "evidence/live_raw_export/source-boundary-live-63212-20261009-run1/OFF-stdout.log.gz",
+      "export_sha256": "46b50c321b39e89a491b6727a01628c34245605a30beb3e7414c5e01cff90e6e"
+    },
+    {
+      "original_path": ".test-tmp/source-boundary-live-63212-20261009-run2/LIVE_REPORT.json",
+      "original_bytes": 189020,
+      "original_sha256": "f195bebe89071a57cbfeeab25f84f27dd6e75d97e01de463a040151f774b131b",
+      "export": "evidence/live_raw_export/source-boundary-live-63212-20261009-run2/LIVE_REPORT.json.gz",
+      "export_sha256": "22e3140465476d395e69fe80b39a3147ad585d6bef223373269aa8cff92e8537"
+    },
+    {
+      "original_path": ".test-tmp/source-boundary-live-63212-20261009-run2/OFF-stderr.log",
+      "original_bytes": 0,
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "export": "evidence/live_raw_export/source-boundary-live-63212-20261009-run2/OFF-stderr.log.gz",
+      "export_sha256": "46b50c321b39e89a491b6727a01628c34245605a30beb3e7414c5e01cff90e6e"
+    },
+    {
+      "original_path": ".test-tmp/source-boundary-live-63212-20261009-run2/OFF-stdout.log",
+      "original_bytes": 36,
+      "original_sha256": "ed24a3b78c547f3c1a7a9f13f45c01ed1d3cb01f312ffad3b7df02b97c14d9b7",
+      "export": "evidence/live_raw_export/source-boundary-live-63212-20261009-run2/OFF-stdout.log.gz",
+      "export_sha256": "f51501b22a3d4768d556161bc9bdcb9d20156fd4ec0a9bd6ea294973c8b544d9"
+    },
+    {
+      "original_path": ".test-tmp/source-boundary-live-63212-20261009-run2/OFF/REPORT.json",
+      "original_bytes": 170644,
+      "original_sha256": "a80239b3c154302ee9c14107336b896a376c2d2cb5029a9affb92ca899054c71",
+      "export": "evidence/live_raw_export/source-boundary-live-63212-20261009-run2/OFF/REPORT.json.gz",
+      "export_sha256": "1d3b5a45206e0221b1c5ce5b0b39ada93269835916f3a9ff198d56ddee8f7c6a"
+    },
+    {
+      "original_path": ".test-tmp/source-boundary-live-63212-20261009-run2/OFF/transitions.jsonl",
+      "original_bytes": 3531,
+      "original_sha256": "3a6bf2309a83a4bc736dec24230c99b98e236360ca813ebf03e9c1a7e7a9cc25",
+      "export": "evidence/live_raw_export/source-boundary-live-63212-20261009-run2/OFF/transitions.jsonl.gz",
+      "export_sha256": "f0ae20d7d64a64676d2f02f3caab4468a323bc2a1b706b0a55355c7e7d74cddd"
+    },
+    {
+      "original_path": ".test-tmp/source-boundary-live-63212-20261009-run2/OFF/transport.jsonl",
+      "original_bytes": 872,
+      "original_sha256": "751fc85743bbbead1fd800d67e0cd6efc81744173d4c0439bb4f0f2ba90fe175",
+      "export": "evidence/live_raw_export/source-boundary-live-63212-20261009-run2/OFF/transport.jsonl.gz",
+      "export_sha256": "d604fa3a2e1362940f585aacbfea16604813688f9e60cdc7f773aff10038028a"
+    },
+    {
+      "original_path": ".test-tmp/source-boundary-live-63212-20261009-run2/OFF/rss.jsonl",
+      "original_bytes": 1836,
+      "original_sha256": "63e09b6d577bde0c2db8035fd74c5511c62fb32e519f4f2aeb00972293544f02",
+      "export": "evidence/live_raw_export/source-boundary-live-63212-20261009-run2/OFF/rss.jsonl.gz",
+      "export_sha256": "5bd3629627e417b22bde8210ad5994497759348e48c57d0b65b1d22cae7e8733"
+    },
+    {
+      "original_path": ".test-tmp/source-boundary-live-63212-20261009-run3/LIVE_REPORT.json",
+      "original_bytes": 2111451,
+      "original_sha256": "28922aed1eddd48c856dc1921683f29e56c1d34b3a1954fb61414976445a2ea8",
+      "export": "evidence/live_raw_export/source-boundary-live-63212-20261009-run3/LIVE_REPORT.json.gz",
+      "export_sha256": "62911cd701e2ae3c19ed46f1ced7d2958fffecbe523fc47cbaa6d1a4d17b282a"
+    },
+    {
+      "original_path": ".test-tmp/source-boundary-live-63212-20261009-run3/OFF-stderr.log",
+      "original_bytes": 0,
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "export": "evidence/live_raw_export/source-boundary-live-63212-20261009-run3/OFF-stderr.log.gz",
+      "export_sha256": "46b50c321b39e89a491b6727a01628c34245605a30beb3e7414c5e01cff90e6e"
+    },
+    {
+      "original_path": ".test-tmp/source-boundary-live-63212-20261009-run3/OFF-stdout.log",
+      "original_bytes": 484,
+      "original_sha256": "b15810a1d330aa5f856dede3504f90040258db092031ebe657491a27acb6a59a",
+      "export": "evidence/live_raw_export/source-boundary-live-63212-20261009-run3/OFF-stdout.log.gz",
+      "export_sha256": "15f6bf1de45212bb45d97f89aa312abf99a5d6e0498bdad11219808910b9ef4a"
+    },
+    {
+      "original_path": ".test-tmp/source-boundary-live-63212-20261009-run3/OFF/frame-01.json",
+      "original_bytes": 1401772,
+      "original_sha256": "c2f2bd769070753f50cd7967c5552bbffc125cce0de7389453783302e56b551e",
+      "export": "evidence/live_raw_export/source-boundary-live-63212-20261009-run3/OFF/frame-01.json.gz",
+      "export_sha256": "ac81361fe01a5b0f4a71268ed1bb18f81aeac3b82a5fcdca6cfe0de6eeadb95c"
+    },
+    {
+      "original_path": ".test-tmp/source-boundary-live-63212-20261009-run3/OFF/frame-02.json",
+      "original_bytes": 1685400,
+      "original_sha256": "0c56952b326c79b09d59fff1292b16062718454d8433a2fc7d1f23cf190e8c53",
+      "export": "evidence/live_raw_export/source-boundary-live-63212-20261009-run3/OFF/frame-02.json.gz",
+      "export_sha256": "ae6f80825f9245f4830d80cf95eafbef480ded4961bc047ca2a262e667b2e5d0"
+    },
+    {
+      "original_path": ".test-tmp/source-boundary-live-63212-20261009-run3/OFF/frame-03.json",
+      "original_bytes": 1741968,
+      "original_sha256": "ba1f296e02446a6d47eb980492385f73e3dd4511c3968e172a5f20e3e5920312",
+      "export": "evidence/live_raw_export/source-boundary-live-63212-20261009-run3/OFF/frame-03.json.gz",
+      "export_sha256": "f14f79ac516053ed8b890123efe4e1674386241c0844c38b311630d0e418c65e"
+    },
+    {
+      "original_path": ".test-tmp/source-boundary-live-63212-20261009-run3/OFF/frame-04.json",
+      "original_bytes": 2001418,
+      "original_sha256": "83b7f8c441b76502ab397d0278ad770f78d8aab772f44bc0c4a566b654f3e83a",
+      "export": "evidence/live_raw_export/source-boundary-live-63212-20261009-run3/OFF/frame-04.json.gz",
+      "export_sha256": "731b386cb45fa868b07505f54e83f1f49bf2c78524a8da5f9141992654babee6"
+    },
+    {
+      "original_path": ".test-tmp/source-boundary-live-63212-20261009-run3/OFF/REPORT.json",
+      "original_bytes": 1891772,
+      "original_sha256": "36f835f46a75000950628b2889907d89eb804f6835be766c73e9f73b0acfdd08",
+      "export": "evidence/live_raw_export/source-boundary-live-63212-20261009-run3/OFF/REPORT.json.gz",
+      "export_sha256": "2ad46019b92c0b770f852c1d952671fba552c2a0be2e9acc8c1161609d805836"
+    },
+    {
+      "original_path": ".test-tmp/source-boundary-live-63212-20261009-run3/OFF/transitions.jsonl",
+      "original_bytes": 889343,
+      "original_sha256": "46ff6dec84f567d0644abf50fbd92c205963a795bddf82f563845b36d66a2bd0",
+      "export": "evidence/live_raw_export/source-boundary-live-63212-20261009-run3/OFF/transitions.jsonl.gz",
+      "export_sha256": "0a83ec8c82ffeb3c49da320aafed1fb029896fade5747175a57acc7b44f1b1b9"
+    },
+    {
+      "original_path": ".test-tmp/source-boundary-live-63212-20261009-run3/OFF/transport.jsonl",
+      "original_bytes": 177907,
+      "original_sha256": "e4560ee9004e85bc976bae99977f5dad321173d32658154944cc77f1f4493a2e",
+      "export": "evidence/live_raw_export/source-boundary-live-63212-20261009-run3/OFF/transport.jsonl.gz",
+      "export_sha256": "409502f973ffedd5469fed7e26aa73803b9218469595fdc906ebd12dcbc2ef2f"
+    },
+    {
+      "original_path": ".test-tmp/source-boundary-live-63212-20261009-run3/OFF/rss.jsonl",
+      "original_bytes": 24344,
+      "original_sha256": "47b4ba62ca127e4abd9430ae6efc314243353ee720ebd2f4c7d7276653c4866e",
+      "export": "evidence/live_raw_export/source-boundary-live-63212-20261009-run3/OFF/rss.jsonl.gz",
+      "export_sha256": "bc06358f863fd06a362dde3901685d6fa47baa2db4f8a182547979f54da7f14d"
+    }
+  ]
+}
