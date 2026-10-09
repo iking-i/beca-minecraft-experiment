@@ -1,4 +1,30 @@
-## Latest closeout — Native Parameter Binding Extension TEST_ONLY, 2026-10-09
+## 当前阶段收口 — 身体引用、递归作用与真实环境准入（2026-10-09）
+
+本阶段结果已记录并冻结；收口不等于真实闭环 PASS。
+
+- **Body Interface References：PASS**，完整47种能力由 BodyRef 进入隔离普通递归，Pair 可形成、保存、再次使用。
+- **Operative Body Effects：PARTIAL**，合成经历中的 EffectRoute、当前变化作用、消融/恢复和跨进程复用已验证。
+- **Real Minecraft Attempt：RESOURCE_LIMIT**，已连接58160并收到真实首帧。
+- **Overall Real Bidirectional Loop：NOT_READY**，尚无真实身体操作及同一个体的后果回流。
+
+实现/验证提交：`ae07b74910ad670f471619eadff4814e3cd6d735`。已保存记录核对：**29专项、722完整回归、114 subtests通过；13项冻结哈希匹配**。
+真实首帧含21个数值操作数与64个观察引用，加初始/本轮结构至少88 Units，超过原64。
+`ReferenceEngine.advance()` 整批观察操作数准入是当前最早阻塞。真实观察没有提交为经历；
+外部初始 `{code:16,parameters:{slot:0}}` 尚未执行；perform为0；真实连接/EffectRoute为0。
+
+下一轮仅从真实观察内容、可引用外部事实与实际形成内部结构的表示边界开始：完整保留输入和合法引用，保留实际内部结构容量限制。
+不提高cap、不丢弃输入、不外部预选、不伪造PASS。只有观察进入同一实验状态链后，才继续绑定、EffectRoute、真实执行及反馈验证。
+**下一轮容量工作/设计/实现/实验均 NOT_STARTED**；本次只整理、核对、提交与交接，不运行Minecraft。
+
+旧阶段、旧NOT_READY及初次失败保留；原报告中的“未提交”属于当时采集状态，不追溯改写。
+425文件未变是上一轮验证时间点的核对记录；本次当前状态文档更新不改变该历史记录。
+正式runtime、身体、sampler/binder、64上限和理论未修改；不宣称自主动作/目标、世界因果律、完整行为闭合或L1。
+
+见 [closeout](OPERATIVE_BODY_CONNECTION_CLOSEOUT.md)、[conversation handoff](OPERATIVE_BODY_CONNECTION_CONVERSATION_HANDOFF.md)、
+[收口核对记录](experimental/operative_body_real/CLOSEOUT_VALIDATION.json) 和 [全部提交文件](OPERATIVE_BODY_CONNECTION_COMMITTED_FILES.md)。
+
+
+## Historical closeout — Native Parameter Binding Extension TEST_ONLY, 2026-10-09
 
 **NATIVE_PARAMETER_BINDING_EXTENSION_TEST_ONLY = PASS / COMPLETED / FROZEN**（2026-10-09）。
 实现/验证锚点：`7cdd14c337ee3d47233873b9e179403904b728e9`；BX-T1～BX-T10 全部 PASS。

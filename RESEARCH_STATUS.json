@@ -1,144 +1,94 @@
 {
   "current_research_phase": {
-    "name": "NATIVE_PARAMETER_BINDING_EXTENSION_TEST_ONLY",
-    "status": "PASS",
-    "lifecycle": "COMPLETED_FROZEN",
+    "name": "OPERATIVE_BODY_CONNECTION_REAL_ATTEMPT_TEST_ONLY",
+    "status": "PARTIAL",
+    "lifecycle": "CLOSED_FROZEN",
     "completed": true,
     "frozen": true,
-    "implementation_commit": "7cdd14c337ee3d47233873b9e179403904b728e9",
-    "closeout_anchor": "Separate documentation commit containing NATIVE_PARAMETER_BINDING_EXTENSION_CLOSEOUT.md",
-    "mechanism_version": "NATIVE-PARAMETER-CONNECTION-TEST_ONLY-1",
-    "scope": "Independent TEST_ONLY BindingCore; synthetic typed receipts and observed scalar connections; binding candidates only",
-    "accepted_claim": "经历形成的数值连接，可以通过外部给定的通用组合规则，产生原始 receipt 中没有的参数绑定候选，并参与普通递归。",
-    "criteria": {
-      "BX_T1": "PASS",
-      "BX_T2": "PASS",
-      "BX_T3": "PASS",
-      "BX_T4": "PASS",
-      "BX_T5": "PASS",
-      "BX_T6": "PASS",
-      "BX_T7": "PASS",
-      "BX_T8": "PASS",
-      "BX_T9": "PASS",
-      "BX_T10": "PASS"
+    "implementation_commit": "ae07b74910ad670f471619eadff4814e3cd6d735",
+    "closeout_anchor": "commit adding OPERATIVE_BODY_CONNECTION_CLOSEOUT.md",
+    "scope": "Isolated TEST_ONLY BodyRef and synthetic occurrence-effects; real first-frame admission attempt",
+    "layered_results": {
+      "body_interface_references": "PASS",
+      "operative_body_effects": "PARTIAL",
+      "real_minecraft_attempt": "RESOURCE_LIMIT",
+      "overall_real_bidirectional_loop": "NOT_READY"
     },
-    "attribution": {
-      "initial_assignment": "EXTERNAL_SYNTHETIC_TYPED_RECEIPT",
-      "scalar_connection": "ORDINARY_EXPERIENCE_INTEGRATION",
-      "composition_law": "EXTERNAL_GENERIC_MECHANISM",
-      "new_candidate_content": "EXACT_ENDPOINT_COMPOSITION_OF_EXPERIENCED_STRUCTURE",
-      "adoption": "NOT_ESTABLISHED"
-    },
-    "causal_evidence": {
-      "histories": [
-        [
-          0,
-          1
-        ],
-        [
-          0,
-          2
-        ]
-      ],
-      "receipt_assignment_value": 0,
-      "new_candidate_values": [
-        1,
-        2
-      ],
-      "same_native_material": true,
-      "products_present": 4,
-      "products_ablated": 3,
-      "expected_present": 16,
-      "expected_ablated": 15,
-      "reinsertion_restores_content": true
-    },
-    "CURRENT_STATE_AUTHORITATIVE": true,
-    "CURRENT_STATE_PERSISTENCE": "PASS",
-    "CROSS_PROCESS_REUSE": "PASS",
-    "recording_modes_verified": [
-      "ON",
-      "OFF"
-    ],
-    "S1_reformed_after_restart": false,
-    "FULL_HISTORY_REPLAY_REQUIRED": false,
-    "specialized_consumer_used": false,
-    "external_selection_used": false,
-    "provenance_affects_execution": false,
+    "accepted_claim": "Complete native BodyRefs participate in ordinary construction/reuse; synthetic current occurrences can activate persisted EffectRoutes; genuine Minecraft observation received but rejected before recursive commit",
     "verification": {
-      "dedicated_passed": 21,
-      "related_passed": 148,
-      "related_subtests_passed": 13,
-      "full_passed": 649,
-      "full_subtests_passed": 114,
-      "full_failures": 0,
+      "focused_passed": 29,
+      "full_passed": 722,
+      "subtests_passed": 114,
       "frozen_hash_count": 13,
       "frozen_hash_status": "MATCH",
-      "record": "experimental/native_parameter_binding_extension/VALIDATION.json",
-      "counts_source": "saved stdout/returncode/hash records; no closeout rerun"
+      "preserved_files_at_original_adapter_validation": 425,
+      "source": "experimental/operative_body_real/evidence/focused-tests.txt and full-regression.txt; existing records checked, no closeout rerun"
     },
-    "numeric_identity_boundary": {
-      "channel_is_part_of_value_identity": false,
-      "same_typed_value_across_channels_can_share_endpoint": true,
-      "additional_candidates_possible": true,
-      "channel_provenance_preserved": true,
-      "channel_causal_disambiguation": "NOT_ESTABLISHED",
-      "cross_channel_exclusion_test_claimed": false
+    "real_evidence": {
+      "port": 58160,
+      "individual_id": "A-371d0ef6-e712-459b-8d56-eee43bbf58e6",
+      "session_id": "S-23e21a8c-fa72-4d92-9e42-da7df7966859",
+      "raw_observations_received": 1,
+      "observations_committed": 0,
+      "experiences": 0,
+      "numeric_operands": 21,
+      "observation_references": 64,
+      "minimum_units_required": 88,
+      "unit_cap": 64,
+      "bootstrap_expression": {
+        "code": 16,
+        "parameters": {
+          "slot": 0
+        }
+      },
+      "bootstrap_author": "EXPERIMENTER",
+      "bootstrap_executed": false,
+      "perform_requests": 0,
+      "real_routes_formed": 0,
+      "real_feedback_loop_established": false
     },
-    "original_failure_records": [
-      "experimental/native_parameter_binding_extension/INITIAL_VERIFICATION.md"
-    ],
-    "original_failure_preserved": true,
-    "prior_NOT_READY_records_preserved": [
-      "experimental/operative_expression/",
-      "experimental/operative_expression_binding/",
-      "experimental/native_parameter_binding/"
-    ],
-    "limits": [
-      "Unit/content capacity 64 and relation capacity 96 unchanged",
-      "one snapshot composition step; not exhaustive closure",
-      "inherited formation hook on new temporal relation integration",
-      "synthetic receipt adapter not validated against real body"
-    ],
-    "nonclaims": {
-      "NEW_REFERENCE_BINDING_PROPAGATION": "NOT_ESTABLISHED",
-      "AUTONOMOUS_ACTION_SELECTION": "NOT_ESTABLISHED",
-      "EXECUTION_APPLICABILITY_OF_CANDIDATES": "NOT_ESTABLISHED",
-      "COMPLETE_BODY_EXPRESSION": "NOT_ESTABLISHED",
-      "EXPRESSION_ADOPTION_AUTHORITY": "NOT_ESTABLISHED",
-      "BODY_EXECUTION_AUTHORITY": "NOT_ESTABLISHED",
-      "MINECRAFT_CAUSAL_CLOSURE": "NOT_ESTABLISHED",
-      "AUTONOMOUS_GOAL_FORMATION": "NOT_ESTABLISHED",
-      "BEHAVIORAL_CAUSAL_CLOSURE": "NOT_ESTABLISHED",
-      "L1_UPWARD_RECURSION": "NOT_ESTABLISHED",
-      "UNIVERSAL_GENERATIVE_DYNAMICS": "NOT_ESTABLISHED"
+    "first_blocker": {
+      "file": "experimental/body_interface_references/engine.py",
+      "function": "ReferenceEngine.advance",
+      "edge": "complete real observation -> whole observed-operand internal Unit admission -> ordinary recursion",
+      "reason": "at least 88 Units exceed locked 64 before first observation commit"
     },
-    "DEFAULT_EXECUTION_BEHAVIOR_UNCHANGED": true,
-    "core_edit_scope": "two added read-only pre-lease admission lines; no recursive computation change",
-    "minecraft_run": false,
-    "body_execution": false,
-    "theory_changed": false,
-    "closeout": "NATIVE_PARAMETER_BINDING_EXTENSION_CLOSEOUT.md",
-    "handoff": "NATIVE_PARAMETER_BINDING_EXTENSION_CONVERSATION_HANDOFF.md",
-    "next_research_phase_started": false
+    "nonclaims": [
+      "Real receipt binding admission",
+      "Real internally generated operation",
+      "World effect causal law",
+      "Same-A continuous real closed loop",
+      "Autonomous selection/goal",
+      "General parameter formation",
+      "L1/upward recursion",
+      "Universal Perfect Recursion realization"
+    ],
+    "closeout_record": "experimental/operative_body_real/CLOSEOUT_VALIDATION.json",
+    "handoff": "OPERATIVE_BODY_CONNECTION_CONVERSATION_HANDOFF.md"
   },
   "next_phase_boundary": {
     "status": "NOT_STARTED",
     "next_phase_lifecycle": "NOT_STARTED",
-    "question": "已形成的连接内容能否构成一个合法的最小原生身体表达，并经原有身体接口实际执行？",
-    "all_action_types_required": false,
-    "all_reference_parameters_required": false,
+    "question": "检查完整真实观察、可引用外部观察事实与实际形成内部结构之间的表示边界，使普通递归合法使用全部真实输入引用，并保留实际内部结构容量限制。",
+    "starting_point": "experimental/body_interface_references/engine.py: ReferenceEngine.advance observed-operand batch admission",
     "boundary_only": true,
     "stage_started": false,
     "design_started": false,
     "implementation_started": false,
     "experiment_started": false,
-    "Minecraft_execution_started": false,
-    "runtime_implementation_authorized_by_closeout": false
+    "runtime_implementation_authorized_by_closeout": false,
+    "forbidden": [
+      "cap increase",
+      "input discard",
+      "external useful-content preselection",
+      "fabricated PASS"
+    ],
+    "resume_execution_verification_only_after": "real observation enters the same experimental state chain"
   },
   "next_work": [
-    "Preserve scalar candidate PASS / COMPLETED / FROZEN and earlier evidence/NOT_READY records",
-    "Record only minimal native-expression/original-interface execution boundary; no candidate adoption",
-    "Next design, implementation and experiment NOT_STARTED; theory unchanged"
+    "Preserve scoped local PARTIAL, real RESOURCE_LIMIT and overall NOT_READY evidence",
+    "Start only from real observation/external fact/internal structure representation boundary when separately instructed",
+    "Do not modify mechanism or run another experiment during closeout"
   ],
   "status_date": "2026-10-09",
   "operative_connection_interpretation": {
@@ -273,12 +223,12 @@
     "claim": "real accumulated history + current structural read input -> fixed GSC-0 -> formed COMPLETE O-G0-1 organization -> actual FormalL0 internal consumer -> measurable causal internal-processing difference -> read-failure consequence can enter later FormalL0 processing"
   },
   "current_checkpoint": {
-    "version": "SUCCESSOR-0",
-    "status": "PASS",
-    "classification": "VALIDATED_CANDIDATE_TEST_ONLY_UNIQUE_PRODUCER_ACYCLIC_SCOPE",
-    "implementation_commit": "91eac86632af528251d73ecf4c80f283c87fe019",
-    "status_closure_commit": "13337f47a44ace65cb1704978dee01f82791c22d",
-    "maintenance_regression_commit": "e207c655e065f075a3235669bc6ce428b5140667"
+    "version": "OPERATIVE_BODY_CONNECTION_REAL_ATTEMPT_TEST_ONLY",
+    "status": "PARTIAL",
+    "real_attempt": "RESOURCE_LIMIT",
+    "real_loop": "NOT_READY",
+    "implementation_commit": "ae07b74910ad670f471619eadff4814e3cd6d735",
+    "closeout_anchor": "commit adding OPERATIVE_BODY_CONNECTION_CLOSEOUT.md"
   },
   "successor_unresolved_boundary": {
     "classification": "UNRESOLVED_RESEARCH_QUESTIONS",
@@ -570,16 +520,21 @@
   "next_research_boundary": {
     "status": "NOT_STARTED",
     "next_phase_lifecycle": "NOT_STARTED",
-    "question": "已形成的连接内容能否构成一个合法的最小原生身体表达，并经原有身体接口实际执行？",
-    "all_action_types_required": false,
-    "all_reference_parameters_required": false,
+    "question": "检查完整真实观察、可引用外部观察事实与实际形成内部结构之间的表示边界，使普通递归合法使用全部真实输入引用，并保留实际内部结构容量限制。",
+    "starting_point": "experimental/body_interface_references/engine.py: ReferenceEngine.advance observed-operand batch admission",
     "boundary_only": true,
     "stage_started": false,
     "design_started": false,
     "implementation_started": false,
     "experiment_started": false,
-    "Minecraft_execution_started": false,
-    "runtime_implementation_authorized_by_closeout": false
+    "runtime_implementation_authorized_by_closeout": false,
+    "forbidden": [
+      "cap increase",
+      "input discard",
+      "external useful-content preselection",
+      "fabricated PASS"
+    ],
+    "resume_execution_verification_only_after": "real observation enters the same experimental state chain"
   },
   "historical_bpc_live_1_closeout_checkpoint": {
     "name": "BPC-LIVE-1 — Live Body-Port Connection Formation, Persistence and Later Read",
@@ -1225,6 +1180,128 @@
       "closeout": "TYPED_OPERATIVE_CONNECTION_CLOSEOUT.md",
       "handoff": "TYPED_OPERATIVE_CONNECTION_CONVERSATION_HANDOFF.md",
       "next_research_phase_started": false
+    },
+    "native_parameter_binding_extension": {
+      "name": "NATIVE_PARAMETER_BINDING_EXTENSION_TEST_ONLY",
+      "status": "PASS",
+      "lifecycle": "COMPLETED_FROZEN",
+      "completed": true,
+      "frozen": true,
+      "implementation_commit": "7cdd14c337ee3d47233873b9e179403904b728e9",
+      "closeout_anchor": "Separate documentation commit containing NATIVE_PARAMETER_BINDING_EXTENSION_CLOSEOUT.md",
+      "mechanism_version": "NATIVE-PARAMETER-CONNECTION-TEST_ONLY-1",
+      "scope": "Independent TEST_ONLY BindingCore; synthetic typed receipts and observed scalar connections; binding candidates only",
+      "accepted_claim": "经历形成的数值连接，可以通过外部给定的通用组合规则，产生原始 receipt 中没有的参数绑定候选，并参与普通递归。",
+      "criteria": {
+        "BX_T1": "PASS",
+        "BX_T2": "PASS",
+        "BX_T3": "PASS",
+        "BX_T4": "PASS",
+        "BX_T5": "PASS",
+        "BX_T6": "PASS",
+        "BX_T7": "PASS",
+        "BX_T8": "PASS",
+        "BX_T9": "PASS",
+        "BX_T10": "PASS"
+      },
+      "attribution": {
+        "initial_assignment": "EXTERNAL_SYNTHETIC_TYPED_RECEIPT",
+        "scalar_connection": "ORDINARY_EXPERIENCE_INTEGRATION",
+        "composition_law": "EXTERNAL_GENERIC_MECHANISM",
+        "new_candidate_content": "EXACT_ENDPOINT_COMPOSITION_OF_EXPERIENCED_STRUCTURE",
+        "adoption": "NOT_ESTABLISHED"
+      },
+      "causal_evidence": {
+        "histories": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "receipt_assignment_value": 0,
+        "new_candidate_values": [
+          1,
+          2
+        ],
+        "same_native_material": true,
+        "products_present": 4,
+        "products_ablated": 3,
+        "expected_present": 16,
+        "expected_ablated": 15,
+        "reinsertion_restores_content": true
+      },
+      "CURRENT_STATE_AUTHORITATIVE": true,
+      "CURRENT_STATE_PERSISTENCE": "PASS",
+      "CROSS_PROCESS_REUSE": "PASS",
+      "recording_modes_verified": [
+        "ON",
+        "OFF"
+      ],
+      "S1_reformed_after_restart": false,
+      "FULL_HISTORY_REPLAY_REQUIRED": false,
+      "specialized_consumer_used": false,
+      "external_selection_used": false,
+      "provenance_affects_execution": false,
+      "verification": {
+        "dedicated_passed": 21,
+        "related_passed": 148,
+        "related_subtests_passed": 13,
+        "full_passed": 649,
+        "full_subtests_passed": 114,
+        "full_failures": 0,
+        "frozen_hash_count": 13,
+        "frozen_hash_status": "MATCH",
+        "record": "experimental/native_parameter_binding_extension/VALIDATION.json",
+        "counts_source": "saved stdout/returncode/hash records; no closeout rerun"
+      },
+      "numeric_identity_boundary": {
+        "channel_is_part_of_value_identity": false,
+        "same_typed_value_across_channels_can_share_endpoint": true,
+        "additional_candidates_possible": true,
+        "channel_provenance_preserved": true,
+        "channel_causal_disambiguation": "NOT_ESTABLISHED",
+        "cross_channel_exclusion_test_claimed": false
+      },
+      "original_failure_records": [
+        "experimental/native_parameter_binding_extension/INITIAL_VERIFICATION.md"
+      ],
+      "original_failure_preserved": true,
+      "prior_NOT_READY_records_preserved": [
+        "experimental/operative_expression/",
+        "experimental/operative_expression_binding/",
+        "experimental/native_parameter_binding/"
+      ],
+      "limits": [
+        "Unit/content capacity 64 and relation capacity 96 unchanged",
+        "one snapshot composition step; not exhaustive closure",
+        "inherited formation hook on new temporal relation integration",
+        "synthetic receipt adapter not validated against real body"
+      ],
+      "nonclaims": {
+        "NEW_REFERENCE_BINDING_PROPAGATION": "NOT_ESTABLISHED",
+        "AUTONOMOUS_ACTION_SELECTION": "NOT_ESTABLISHED",
+        "EXECUTION_APPLICABILITY_OF_CANDIDATES": "NOT_ESTABLISHED",
+        "COMPLETE_BODY_EXPRESSION": "NOT_ESTABLISHED",
+        "EXPRESSION_ADOPTION_AUTHORITY": "NOT_ESTABLISHED",
+        "BODY_EXECUTION_AUTHORITY": "NOT_ESTABLISHED",
+        "MINECRAFT_CAUSAL_CLOSURE": "NOT_ESTABLISHED",
+        "AUTONOMOUS_GOAL_FORMATION": "NOT_ESTABLISHED",
+        "BEHAVIORAL_CAUSAL_CLOSURE": "NOT_ESTABLISHED",
+        "L1_UPWARD_RECURSION": "NOT_ESTABLISHED",
+        "UNIVERSAL_GENERATIVE_DYNAMICS": "NOT_ESTABLISHED"
+      },
+      "DEFAULT_EXECUTION_BEHAVIOR_UNCHANGED": true,
+      "core_edit_scope": "two added read-only pre-lease admission lines; no recursive computation change",
+      "minecraft_run": false,
+      "body_execution": false,
+      "theory_changed": false,
+      "closeout": "NATIVE_PARAMETER_BINDING_EXTENSION_CLOSEOUT.md",
+      "handoff": "NATIVE_PARAMETER_BINDING_EXTENSION_CONVERSATION_HANDOFF.md",
+      "next_research_phase_started": false
     }
   },
   "historical_next_phase_boundaries": {
@@ -1816,5 +1893,170 @@
     "runtime_changed": false,
     "historical_evidence_changed": false,
     "next_experiment_started": false
+  },
+  "historical_body_connection_precloseout_current_index": {
+    "current_research_phase": {
+      "name": "NATIVE_PARAMETER_BINDING_EXTENSION_TEST_ONLY",
+      "status": "PASS",
+      "lifecycle": "COMPLETED_FROZEN",
+      "completed": true,
+      "frozen": true,
+      "implementation_commit": "7cdd14c337ee3d47233873b9e179403904b728e9",
+      "closeout_anchor": "Separate documentation commit containing NATIVE_PARAMETER_BINDING_EXTENSION_CLOSEOUT.md",
+      "mechanism_version": "NATIVE-PARAMETER-CONNECTION-TEST_ONLY-1",
+      "scope": "Independent TEST_ONLY BindingCore; synthetic typed receipts and observed scalar connections; binding candidates only",
+      "accepted_claim": "经历形成的数值连接，可以通过外部给定的通用组合规则，产生原始 receipt 中没有的参数绑定候选，并参与普通递归。",
+      "criteria": {
+        "BX_T1": "PASS",
+        "BX_T2": "PASS",
+        "BX_T3": "PASS",
+        "BX_T4": "PASS",
+        "BX_T5": "PASS",
+        "BX_T6": "PASS",
+        "BX_T7": "PASS",
+        "BX_T8": "PASS",
+        "BX_T9": "PASS",
+        "BX_T10": "PASS"
+      },
+      "attribution": {
+        "initial_assignment": "EXTERNAL_SYNTHETIC_TYPED_RECEIPT",
+        "scalar_connection": "ORDINARY_EXPERIENCE_INTEGRATION",
+        "composition_law": "EXTERNAL_GENERIC_MECHANISM",
+        "new_candidate_content": "EXACT_ENDPOINT_COMPOSITION_OF_EXPERIENCED_STRUCTURE",
+        "adoption": "NOT_ESTABLISHED"
+      },
+      "causal_evidence": {
+        "histories": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "receipt_assignment_value": 0,
+        "new_candidate_values": [
+          1,
+          2
+        ],
+        "same_native_material": true,
+        "products_present": 4,
+        "products_ablated": 3,
+        "expected_present": 16,
+        "expected_ablated": 15,
+        "reinsertion_restores_content": true
+      },
+      "CURRENT_STATE_AUTHORITATIVE": true,
+      "CURRENT_STATE_PERSISTENCE": "PASS",
+      "CROSS_PROCESS_REUSE": "PASS",
+      "recording_modes_verified": [
+        "ON",
+        "OFF"
+      ],
+      "S1_reformed_after_restart": false,
+      "FULL_HISTORY_REPLAY_REQUIRED": false,
+      "specialized_consumer_used": false,
+      "external_selection_used": false,
+      "provenance_affects_execution": false,
+      "verification": {
+        "dedicated_passed": 21,
+        "related_passed": 148,
+        "related_subtests_passed": 13,
+        "full_passed": 649,
+        "full_subtests_passed": 114,
+        "full_failures": 0,
+        "frozen_hash_count": 13,
+        "frozen_hash_status": "MATCH",
+        "record": "experimental/native_parameter_binding_extension/VALIDATION.json",
+        "counts_source": "saved stdout/returncode/hash records; no closeout rerun"
+      },
+      "numeric_identity_boundary": {
+        "channel_is_part_of_value_identity": false,
+        "same_typed_value_across_channels_can_share_endpoint": true,
+        "additional_candidates_possible": true,
+        "channel_provenance_preserved": true,
+        "channel_causal_disambiguation": "NOT_ESTABLISHED",
+        "cross_channel_exclusion_test_claimed": false
+      },
+      "original_failure_records": [
+        "experimental/native_parameter_binding_extension/INITIAL_VERIFICATION.md"
+      ],
+      "original_failure_preserved": true,
+      "prior_NOT_READY_records_preserved": [
+        "experimental/operative_expression/",
+        "experimental/operative_expression_binding/",
+        "experimental/native_parameter_binding/"
+      ],
+      "limits": [
+        "Unit/content capacity 64 and relation capacity 96 unchanged",
+        "one snapshot composition step; not exhaustive closure",
+        "inherited formation hook on new temporal relation integration",
+        "synthetic receipt adapter not validated against real body"
+      ],
+      "nonclaims": {
+        "NEW_REFERENCE_BINDING_PROPAGATION": "NOT_ESTABLISHED",
+        "AUTONOMOUS_ACTION_SELECTION": "NOT_ESTABLISHED",
+        "EXECUTION_APPLICABILITY_OF_CANDIDATES": "NOT_ESTABLISHED",
+        "COMPLETE_BODY_EXPRESSION": "NOT_ESTABLISHED",
+        "EXPRESSION_ADOPTION_AUTHORITY": "NOT_ESTABLISHED",
+        "BODY_EXECUTION_AUTHORITY": "NOT_ESTABLISHED",
+        "MINECRAFT_CAUSAL_CLOSURE": "NOT_ESTABLISHED",
+        "AUTONOMOUS_GOAL_FORMATION": "NOT_ESTABLISHED",
+        "BEHAVIORAL_CAUSAL_CLOSURE": "NOT_ESTABLISHED",
+        "L1_UPWARD_RECURSION": "NOT_ESTABLISHED",
+        "UNIVERSAL_GENERATIVE_DYNAMICS": "NOT_ESTABLISHED"
+      },
+      "DEFAULT_EXECUTION_BEHAVIOR_UNCHANGED": true,
+      "core_edit_scope": "two added read-only pre-lease admission lines; no recursive computation change",
+      "minecraft_run": false,
+      "body_execution": false,
+      "theory_changed": false,
+      "closeout": "NATIVE_PARAMETER_BINDING_EXTENSION_CLOSEOUT.md",
+      "handoff": "NATIVE_PARAMETER_BINDING_EXTENSION_CONVERSATION_HANDOFF.md",
+      "next_research_phase_started": false
+    },
+    "next_phase_boundary": {
+      "status": "NOT_STARTED",
+      "next_phase_lifecycle": "NOT_STARTED",
+      "question": "已形成的连接内容能否构成一个合法的最小原生身体表达，并经原有身体接口实际执行？",
+      "all_action_types_required": false,
+      "all_reference_parameters_required": false,
+      "boundary_only": true,
+      "stage_started": false,
+      "design_started": false,
+      "implementation_started": false,
+      "experiment_started": false,
+      "Minecraft_execution_started": false,
+      "runtime_implementation_authorized_by_closeout": false
+    },
+    "next_work": [
+      "Preserve scalar candidate PASS / COMPLETED / FROZEN and earlier evidence/NOT_READY records",
+      "Record only minimal native-expression/original-interface execution boundary; no candidate adoption",
+      "Next design, implementation and experiment NOT_STARTED; theory unchanged"
+    ],
+    "next_research_boundary": {
+      "status": "NOT_STARTED",
+      "next_phase_lifecycle": "NOT_STARTED",
+      "question": "已形成的连接内容能否构成一个合法的最小原生身体表达，并经原有身体接口实际执行？",
+      "all_action_types_required": false,
+      "all_reference_parameters_required": false,
+      "boundary_only": true,
+      "stage_started": false,
+      "design_started": false,
+      "implementation_started": false,
+      "experiment_started": false,
+      "Minecraft_execution_started": false,
+      "runtime_implementation_authorized_by_closeout": false
+    },
+    "current_checkpoint": {
+      "version": "SUCCESSOR-0",
+      "status": "PASS",
+      "classification": "VALIDATED_CANDIDATE_TEST_ONLY_UNIQUE_PRODUCER_ACYCLIC_SCOPE",
+      "implementation_commit": "91eac86632af528251d73ecf4c80f283c87fe019",
+      "status_closure_commit": "13337f47a44ace65cb1704978dee01f82791c22d",
+      "maintenance_regression_commit": "e207c655e065f075a3235669bc6ce428b5140667"
+    }
   }
 }
