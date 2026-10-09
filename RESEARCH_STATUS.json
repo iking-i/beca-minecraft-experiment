@@ -1,76 +1,113 @@
 {
   "current_research_phase": {
-    "name": "OPERATIVE_BODY_CONNECTION_REAL_ATTEMPT_TEST_ONLY",
-    "status": "PARTIAL",
-    "lifecycle": "CLOSED_FROZEN",
+    "name": "ORDINARY_PAIR_USAGE_TEST_ONLY",
+    "status": "PASS",
+    "lifecycle": "COMPLETED_FROZEN",
     "completed": true,
     "frozen": true,
-    "implementation_commit": "ae07b74910ad670f471619eadff4814e3cd6d735",
-    "closeout_anchor": "commit adding OPERATIVE_BODY_CONNECTION_CLOSEOUT.md",
-    "scope": "Isolated TEST_ONLY BodyRef and synthetic occurrence-effects; real first-frame admission attempt",
+    "implementation_commit": "d840ec37396e62438c7c76fff911e7524d997af6",
+    "closeout_anchor": "separate commit adding ORDINARY_PAIR_USAGE_CLOSEOUT.md and ORDINARY_PAIR_USAGE_CONVERSATION_HANDOFF.md",
+    "scope": "Isolated versioned TEST_ONLY Pair semantics; saved-real offline comparison and controlled live local body-feedback reentry",
     "layered_results": {
-      "body_interface_references": "PASS",
-      "operative_body_effects": "PARTIAL",
-      "real_minecraft_attempt": "RESOURCE_LIMIT",
-      "overall_real_bidirectional_loop": "NOT_READY"
+      "observation_interface_reference_admission": "PASS_WITHIN_TEST_ONLY_SCOPE",
+      "ordinary_pair_usage": "PASS",
+      "controlled_real_local_feedback_loop": "PASS",
+      "unlimited_sustained_recursion": "NOT_ESTABLISHED"
     },
-    "accepted_claim": "Complete native BodyRefs participate in ordinary construction/reuse; synthetic current occurrences can activate persisted EffectRoutes; genuine Minecraft observation received but rejected before recursive commit",
-    "verification": {
-      "focused_passed": 29,
-      "full_passed": 722,
-      "subtests_passed": 114,
-      "frozen_hash_count": 13,
-      "frozen_hash_status": "MATCH",
-      "preserved_files_at_original_adapter_validation": 425,
-      "source": "experimental/operative_body_real/evidence/focused-tests.txt and full-regression.txt; existing records checked, no closeout rerun"
+    "accepted_claim": "Given external bootstrap, world-owner controlled real input and a generic experimenter-supplied constructor rule, actual ordinary integration/occurrence effects produce one subsequent native operation, whose matching real receipt and renewed observation enter the same continuous A, followed by another committed recursive cycle.",
+    "representation_change": {
+      "version": "ORDINARY-PAIR-USAGE-TEST_ONLY-1",
+      "old_rule": "Wrap every saved Pair satisfying accessibility and structural-support predicate",
+      "new_rule": "Wrap only explicit canonical Pair operands actually returned by base ordinary relation traversal; process all, without selector",
+      "direct_connections_unchanged": true,
+      "old_content_retained": true,
+      "shared_unit_cap": 64,
+      "rule_author": "EXPERIMENTER_SUPPLIED_GENERIC_MECHANISM",
+      "explicit_read_relation_autonomous_formation": "NOT_ESTABLISHED"
+    },
+    "offline_saved_real_comparison": {
+      "old_capacity": 75,
+      "new_capacity": 54,
+      "cap": 64,
+      "old_wrapping_count": 20,
+      "old_staged_nodes": 68,
+      "new_content_nodes": 47,
+      "units": 7,
+      "original_nodes_retained": true,
+      "new_live_claim": false,
+      "evidence": "experimental/ordinary_pair_usage/evidence/OFFLINE_VALIDATION.json"
     },
     "real_evidence": {
-      "port": 58160,
-      "individual_id": "A-371d0ef6-e712-459b-8d56-eee43bbf58e6",
-      "session_id": "S-23e21a8c-fa72-4d92-9e42-da7df7966859",
-      "raw_observations_received": 1,
-      "observations_committed": 0,
-      "experiences": 0,
-      "numeric_operands": 21,
-      "observation_references": 64,
-      "minimum_units_required": 88,
-      "unit_cap": 64,
-      "bootstrap_expression": {
+      "individual_id": "A-c10aa620-cc1f-4b87-905c-439199a8170e",
+      "session_id": "S-a4ee040e-795f-49f0-a19c-14c0a6623157",
+      "continuous_single_core": true,
+      "external_bootstrap_count": 1,
+      "external_bootstrap": {
         "code": 16,
         "parameters": {
           "slot": 0
         }
       },
-      "bootstrap_author": "EXPERIMENTER",
-      "bootstrap_executed": false,
-      "perform_requests": 0,
-      "real_routes_formed": 0,
-      "real_feedback_loop_established": false
+      "world_intervention_author": "EXPERIMENTER_WORLD_COMMAND",
+      "world_input": "hotbar.8 quantity 0-to-1-to-0-to-1",
+      "recursive_execution_count": 1,
+      "recursive_expression": {
+        "code": 16,
+        "parameters": {
+          "slot": 1
+        }
+      },
+      "action_id": "19f62bcf-c337-4aa6-a384-fd5c76455424",
+      "action_event_sequence": 69,
+      "action_version": 12,
+      "renewed_experience_id": "f0db6e40-176e-4850-9672-8a7ca95d42e3",
+      "renewed_event_sequence": 74,
+      "E5": {
+        "version": 13,
+        "capacity": 31,
+        "receipt_integrated": true,
+        "selected_hotbar_slot": 1
+      },
+      "E6": {
+        "version": 14,
+        "capacity": 35,
+        "continued_processing": true
+      },
+      "controlled_shutdown_version": 15,
+      "effect_attribution": "temporal_observation_only",
+      "independent_server_acknowledgement": false,
+      "evidence": "experimental/ordinary_pair_usage/LIVE_VALIDATION.json"
     },
-    "first_blocker": {
-      "file": "experimental/body_interface_references/engine.py",
-      "function": "ReferenceEngine.advance",
-      "edge": "complete real observation -> whole observed-operand internal Unit admission -> ordinary recursion",
-      "reason": "at least 88 Units exceed locked 64 before first observation commit"
+    "verification": {
+      "focused_passed": 12,
+      "full_passed": 757,
+      "subtests_passed": 114,
+      "frozen_hash_count": 13,
+      "frozen_hash_status": "MATCH",
+      "preserved_files_at_validation": 461,
+      "test_rerun_during_closeout": false,
+      "new_minecraft_run_during_closeout": false,
+      "source": "experimental/ordinary_pair_usage/VALIDATION.json; evidence/full-regression.txt; CLOSEOUT_VALIDATION.json"
     },
+    "historical_failures_preserved": true,
     "nonclaims": [
-      "Real receipt binding admission",
-      "Real internally generated operation",
-      "World effect causal law",
-      "Same-A continuous real closed loop",
-      "Autonomous selection/goal",
-      "General parameter formation",
+      "Autonomous action selection",
+      "Autonomous goal or purpose formation",
+      "Generic world causal law",
+      "Unlimited sustained operation",
+      "Autonomous formation of explicit Pair content-reference read relations",
+      "Default/formal A adoption",
       "L1/upward recursion",
-      "Universal Perfect Recursion realization"
+      "Universal Perfect Recursion validation"
     ],
-    "closeout_record": "experimental/operative_body_real/CLOSEOUT_VALIDATION.json",
-    "handoff": "OPERATIVE_BODY_CONNECTION_CONVERSATION_HANDOFF.md"
+    "closeout_record": "experimental/ordinary_pair_usage/CLOSEOUT_VALIDATION.json",
+    "handoff": "ORDINARY_PAIR_USAGE_CONVERSATION_HANDOFF.md"
   },
   "next_phase_boundary": {
     "status": "NOT_STARTED",
     "next_phase_lifecycle": "NOT_STARTED",
-    "question": "检查完整真实观察、可引用外部观察事实与实际形成内部结构之间的表示边界，使普通递归合法使用全部真实输入引用，并保留实际内部结构容量限制。",
-    "starting_point": "experimental/body_interface_references/engine.py: ReferenceEngine.advance observed-operand batch admission",
+    "question": "在已验证的真实反馈闭环基础上，继续检查同一个体的持续递归、结构形成与有限容量之间的关系。",
+    "starting_point": "Versioned UsageRealCore/UsageRealEngine and saved six-frame controlled local feedback run; do not assume unbounded operation or autonomous explicit Pair read formation.",
     "boundary_only": true,
     "stage_started": false,
     "design_started": false,
@@ -78,17 +115,17 @@
     "experiment_started": false,
     "runtime_implementation_authorized_by_closeout": false,
     "forbidden": [
-      "cap increase",
-      "input discard",
-      "external useful-content preselection",
-      "fabricated PASS"
-    ],
-    "resume_execution_verification_only_after": "real observation enters the same experimental state chain"
+      "Predesigned purpose selector",
+      "Predesigned forgetting rule",
+      "Predesigned memory-allocation algorithm",
+      "Cap increase or deletion to manufacture success",
+      "Rewriting historical evidence"
+    ]
   },
   "next_work": [
-    "Preserve scoped local PARTIAL, real RESOURCE_LIMIT and overall NOT_READY evidence",
-    "Start only from real observation/external fact/internal structure representation boundary when separately instructed",
-    "Do not modify mechanism or run another experiment during closeout"
+    "Preserve closed controlled-local PASS and all previous PARTIAL/RESOURCE_LIMIT/NOT_TESTABLE records",
+    "Resume only from sustained same-A recursion, structural formation and finite-capacity evidence when separately authorized",
+    "Do not predesign purpose, forgetting, allocation or higher-layer solutions"
   ],
   "status_date": "2026-10-09",
   "operative_connection_interpretation": {
@@ -223,12 +260,13 @@
     "claim": "real accumulated history + current structural read input -> fixed GSC-0 -> formed COMPLETE O-G0-1 organization -> actual FormalL0 internal consumer -> measurable causal internal-processing difference -> read-failure consequence can enter later FormalL0 processing"
   },
   "current_checkpoint": {
-    "version": "OPERATIVE_BODY_CONNECTION_REAL_ATTEMPT_TEST_ONLY",
-    "status": "PARTIAL",
-    "real_attempt": "RESOURCE_LIMIT",
-    "real_loop": "NOT_READY",
-    "implementation_commit": "ae07b74910ad670f471619eadff4814e3cd6d735",
-    "closeout_anchor": "commit adding OPERATIVE_BODY_CONNECTION_CLOSEOUT.md"
+    "version": "ORDINARY-PAIR-USAGE-TEST_ONLY-1",
+    "status": "PASS / COMPLETED / FROZEN",
+    "real_attempt": "PASS_WITHIN_CONTROLLED_LOCAL_SCOPE",
+    "real_loop": "CONTROLLED_LOCAL_FEEDBACK_REENTRY_PASS",
+    "unlimited_operation": "NOT_ESTABLISHED",
+    "implementation_commit": "d840ec37396e62438c7c76fff911e7524d997af6",
+    "closeout_anchor": "separate commit adding ORDINARY_PAIR_USAGE_CLOSEOUT.md"
   },
   "successor_unresolved_boundary": {
     "classification": "UNRESOLVED_RESEARCH_QUESTIONS",
@@ -520,8 +558,8 @@
   "next_research_boundary": {
     "status": "NOT_STARTED",
     "next_phase_lifecycle": "NOT_STARTED",
-    "question": "检查完整真实观察、可引用外部观察事实与实际形成内部结构之间的表示边界，使普通递归合法使用全部真实输入引用，并保留实际内部结构容量限制。",
-    "starting_point": "experimental/body_interface_references/engine.py: ReferenceEngine.advance observed-operand batch admission",
+    "question": "在已验证的真实反馈闭环基础上，继续检查同一个体的持续递归、结构形成与有限容量之间的关系。",
+    "starting_point": "Versioned UsageRealCore/UsageRealEngine and saved six-frame controlled local feedback run; do not assume unbounded operation or autonomous explicit Pair read formation.",
     "boundary_only": true,
     "stage_started": false,
     "design_started": false,
@@ -529,12 +567,12 @@
     "experiment_started": false,
     "runtime_implementation_authorized_by_closeout": false,
     "forbidden": [
-      "cap increase",
-      "input discard",
-      "external useful-content preselection",
-      "fabricated PASS"
-    ],
-    "resume_execution_verification_only_after": "real observation enters the same experimental state chain"
+      "Predesigned purpose selector",
+      "Predesigned forgetting rule",
+      "Predesigned memory-allocation algorithm",
+      "Cap increase or deletion to manufacture success",
+      "Rewriting historical evidence"
+    ]
   },
   "historical_bpc_live_1_closeout_checkpoint": {
     "name": "BPC-LIVE-1 — Live Body-Port Connection Formation, Persistence and Later Read",
@@ -1302,6 +1340,73 @@
       "closeout": "NATIVE_PARAMETER_BINDING_EXTENSION_CLOSEOUT.md",
       "handoff": "NATIVE_PARAMETER_BINDING_EXTENSION_CONVERSATION_HANDOFF.md",
       "next_research_phase_started": false
+    },
+    "operative_body_connection_real_attempt_test_only": {
+      "name": "OPERATIVE_BODY_CONNECTION_REAL_ATTEMPT_TEST_ONLY",
+      "status": "PARTIAL",
+      "lifecycle": "CLOSED_FROZEN",
+      "completed": true,
+      "frozen": true,
+      "implementation_commit": "ae07b74910ad670f471619eadff4814e3cd6d735",
+      "closeout_anchor": "commit adding OPERATIVE_BODY_CONNECTION_CLOSEOUT.md",
+      "scope": "Isolated TEST_ONLY BodyRef and synthetic occurrence-effects; real first-frame admission attempt",
+      "layered_results": {
+        "body_interface_references": "PASS",
+        "operative_body_effects": "PARTIAL",
+        "real_minecraft_attempt": "RESOURCE_LIMIT",
+        "overall_real_bidirectional_loop": "NOT_READY"
+      },
+      "accepted_claim": "Complete native BodyRefs participate in ordinary construction/reuse; synthetic current occurrences can activate persisted EffectRoutes; genuine Minecraft observation received but rejected before recursive commit",
+      "verification": {
+        "focused_passed": 29,
+        "full_passed": 722,
+        "subtests_passed": 114,
+        "frozen_hash_count": 13,
+        "frozen_hash_status": "MATCH",
+        "preserved_files_at_original_adapter_validation": 425,
+        "source": "experimental/operative_body_real/evidence/focused-tests.txt and full-regression.txt; existing records checked, no closeout rerun"
+      },
+      "real_evidence": {
+        "port": 58160,
+        "individual_id": "A-371d0ef6-e712-459b-8d56-eee43bbf58e6",
+        "session_id": "S-23e21a8c-fa72-4d92-9e42-da7df7966859",
+        "raw_observations_received": 1,
+        "observations_committed": 0,
+        "experiences": 0,
+        "numeric_operands": 21,
+        "observation_references": 64,
+        "minimum_units_required": 88,
+        "unit_cap": 64,
+        "bootstrap_expression": {
+          "code": 16,
+          "parameters": {
+            "slot": 0
+          }
+        },
+        "bootstrap_author": "EXPERIMENTER",
+        "bootstrap_executed": false,
+        "perform_requests": 0,
+        "real_routes_formed": 0,
+        "real_feedback_loop_established": false
+      },
+      "first_blocker": {
+        "file": "experimental/body_interface_references/engine.py",
+        "function": "ReferenceEngine.advance",
+        "edge": "complete real observation -> whole observed-operand internal Unit admission -> ordinary recursion",
+        "reason": "at least 88 Units exceed locked 64 before first observation commit"
+      },
+      "nonclaims": [
+        "Real receipt binding admission",
+        "Real internally generated operation",
+        "World effect causal law",
+        "Same-A continuous real closed loop",
+        "Autonomous selection/goal",
+        "General parameter formation",
+        "L1/upward recursion",
+        "Universal Perfect Recursion realization"
+      ],
+      "closeout_record": "experimental/operative_body_real/CLOSEOUT_VALIDATION.json",
+      "handoff": "OPERATIVE_BODY_CONNECTION_CONVERSATION_HANDOFF.md"
     }
   },
   "historical_next_phase_boundaries": {
@@ -1468,6 +1573,25 @@
         "Typed connection participation in native parameter-slot/value/reference binding remains the recorded question; next design, implementation and experiment NOT_STARTED"
       ],
       "prior_closeout_index_scope": "Current phase is Typed Operative Connection TEST_ONLY. Prior phase and then-next-question snapshots, including Native Body Operands, remain historical. CE and Operative Expression Binding NOT_READY remain unchanged."
+    },
+    "operative_body_connection_closeout": {
+      "status": "NOT_STARTED",
+      "next_phase_lifecycle": "NOT_STARTED",
+      "question": "检查完整真实观察、可引用外部观察事实与实际形成内部结构之间的表示边界，使普通递归合法使用全部真实输入引用，并保留实际内部结构容量限制。",
+      "starting_point": "experimental/body_interface_references/engine.py: ReferenceEngine.advance observed-operand batch admission",
+      "boundary_only": true,
+      "stage_started": false,
+      "design_started": false,
+      "implementation_started": false,
+      "experiment_started": false,
+      "runtime_implementation_authorized_by_closeout": false,
+      "forbidden": [
+        "cap increase",
+        "input discard",
+        "external useful-content preselection",
+        "fabricated PASS"
+      ],
+      "resume_execution_verification_only_after": "real observation enters the same experimental state chain"
     }
   },
   "historical_long_run_current_structure_closeout": {
@@ -2057,6 +2181,126 @@
       "implementation_commit": "91eac86632af528251d73ecf4c80f283c87fe019",
       "status_closure_commit": "13337f47a44ace65cb1704978dee01f82791c22d",
       "maintenance_regression_commit": "e207c655e065f075a3235669bc6ce428b5140667"
+    }
+  },
+  "historical_operative_body_connection_closeout_current_index": {
+    "current_research_phase": {
+      "name": "OPERATIVE_BODY_CONNECTION_REAL_ATTEMPT_TEST_ONLY",
+      "status": "PARTIAL",
+      "lifecycle": "CLOSED_FROZEN",
+      "completed": true,
+      "frozen": true,
+      "implementation_commit": "ae07b74910ad670f471619eadff4814e3cd6d735",
+      "closeout_anchor": "commit adding OPERATIVE_BODY_CONNECTION_CLOSEOUT.md",
+      "scope": "Isolated TEST_ONLY BodyRef and synthetic occurrence-effects; real first-frame admission attempt",
+      "layered_results": {
+        "body_interface_references": "PASS",
+        "operative_body_effects": "PARTIAL",
+        "real_minecraft_attempt": "RESOURCE_LIMIT",
+        "overall_real_bidirectional_loop": "NOT_READY"
+      },
+      "accepted_claim": "Complete native BodyRefs participate in ordinary construction/reuse; synthetic current occurrences can activate persisted EffectRoutes; genuine Minecraft observation received but rejected before recursive commit",
+      "verification": {
+        "focused_passed": 29,
+        "full_passed": 722,
+        "subtests_passed": 114,
+        "frozen_hash_count": 13,
+        "frozen_hash_status": "MATCH",
+        "preserved_files_at_original_adapter_validation": 425,
+        "source": "experimental/operative_body_real/evidence/focused-tests.txt and full-regression.txt; existing records checked, no closeout rerun"
+      },
+      "real_evidence": {
+        "port": 58160,
+        "individual_id": "A-371d0ef6-e712-459b-8d56-eee43bbf58e6",
+        "session_id": "S-23e21a8c-fa72-4d92-9e42-da7df7966859",
+        "raw_observations_received": 1,
+        "observations_committed": 0,
+        "experiences": 0,
+        "numeric_operands": 21,
+        "observation_references": 64,
+        "minimum_units_required": 88,
+        "unit_cap": 64,
+        "bootstrap_expression": {
+          "code": 16,
+          "parameters": {
+            "slot": 0
+          }
+        },
+        "bootstrap_author": "EXPERIMENTER",
+        "bootstrap_executed": false,
+        "perform_requests": 0,
+        "real_routes_formed": 0,
+        "real_feedback_loop_established": false
+      },
+      "first_blocker": {
+        "file": "experimental/body_interface_references/engine.py",
+        "function": "ReferenceEngine.advance",
+        "edge": "complete real observation -> whole observed-operand internal Unit admission -> ordinary recursion",
+        "reason": "at least 88 Units exceed locked 64 before first observation commit"
+      },
+      "nonclaims": [
+        "Real receipt binding admission",
+        "Real internally generated operation",
+        "World effect causal law",
+        "Same-A continuous real closed loop",
+        "Autonomous selection/goal",
+        "General parameter formation",
+        "L1/upward recursion",
+        "Universal Perfect Recursion realization"
+      ],
+      "closeout_record": "experimental/operative_body_real/CLOSEOUT_VALIDATION.json",
+      "handoff": "OPERATIVE_BODY_CONNECTION_CONVERSATION_HANDOFF.md"
+    },
+    "next_phase_boundary": {
+      "status": "NOT_STARTED",
+      "next_phase_lifecycle": "NOT_STARTED",
+      "question": "检查完整真实观察、可引用外部观察事实与实际形成内部结构之间的表示边界，使普通递归合法使用全部真实输入引用，并保留实际内部结构容量限制。",
+      "starting_point": "experimental/body_interface_references/engine.py: ReferenceEngine.advance observed-operand batch admission",
+      "boundary_only": true,
+      "stage_started": false,
+      "design_started": false,
+      "implementation_started": false,
+      "experiment_started": false,
+      "runtime_implementation_authorized_by_closeout": false,
+      "forbidden": [
+        "cap increase",
+        "input discard",
+        "external useful-content preselection",
+        "fabricated PASS"
+      ],
+      "resume_execution_verification_only_after": "real observation enters the same experimental state chain"
+    },
+    "next_work": [
+      "Preserve scoped local PARTIAL, real RESOURCE_LIMIT and overall NOT_READY evidence",
+      "Start only from real observation/external fact/internal structure representation boundary when separately instructed",
+      "Do not modify mechanism or run another experiment during closeout"
+    ],
+    "next_research_boundary": {
+      "status": "NOT_STARTED",
+      "next_phase_lifecycle": "NOT_STARTED",
+      "question": "检查完整真实观察、可引用外部观察事实与实际形成内部结构之间的表示边界，使普通递归合法使用全部真实输入引用，并保留实际内部结构容量限制。",
+      "starting_point": "experimental/body_interface_references/engine.py: ReferenceEngine.advance observed-operand batch admission",
+      "boundary_only": true,
+      "stage_started": false,
+      "design_started": false,
+      "implementation_started": false,
+      "experiment_started": false,
+      "runtime_implementation_authorized_by_closeout": false,
+      "forbidden": [
+        "cap increase",
+        "input discard",
+        "external useful-content preselection",
+        "fabricated PASS"
+      ],
+      "resume_execution_verification_only_after": "real observation enters the same experimental state chain"
+    },
+    "current_checkpoint": {
+      "version": "OPERATIVE_BODY_CONNECTION_REAL_ATTEMPT_TEST_ONLY",
+      "status": "PARTIAL",
+      "real_attempt": "RESOURCE_LIMIT",
+      "real_loop": "NOT_READY",
+      "implementation_commit": "ae07b74910ad670f471619eadff4814e3cd6d735",
+      "closeout_anchor": "commit adding OPERATIVE_BODY_CONNECTION_CLOSEOUT.md"
     }
   }
 }

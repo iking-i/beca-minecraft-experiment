@@ -1,4 +1,47 @@
-## 当前阶段收口 — 身体引用、递归作用与真实环境准入（2026-10-09）
+## 当前阶段收口 — Ordinary Pair Usage TEST_ONLY（2026-10-09）
+
+**ORDINARY_PAIR_USAGE_TEST_ONLY = PASS / COMPLETED / FROZEN**。
+**受控真实局部反馈闭环 = PASS**；不等于自主行为或无限持续运行。
+实现／验证锚点：`d840ec37396e62438c7c76fff911e7524d997af6`；本次独立收口提交以新增 closeout／handoff 的提交为锚点。
+
+旧规则会再次包装所有满足可访问及结构支持条件的历史 Pair；新版本
+`ORDINARY-PAIR-USAGE-TEST_ONLY-1` 只包装普通 relation traversal 实际返回的显式 Pair 操作数。
+直接连接构造不变，旧内容不删除，全部真实新结构仍受原 64 上限约束。
+保存的旧 A12＋E5 离线比较为 **75/64 → 54/64**；完整输入及原有内容保留。
+这是新的外部给定 TEST_ONLY 构造语义，不是由 A 学得的 need／purpose 法则。
+
+新独立 A `A-c10aa620-cc1f-4b87-905c-439199a8170e` 在同一次连续运行中，
+由真实经历形成 EffectRoute，随后产生 `{code:16,parameters:{slot:1}}`，
+原生接口执行一次并返回匹配回执。真实 E5 观察到选中槽位 0→1，回执进入
+**A13，31/64** 的后续经历；E6 再提交 **A14，35/64**；正常受控关闭为 A15。
+这组新运行容量与旧 A12／E5 离线比较是不同历史，不能混为一次运行。
+
+外部 bootstrap `{code:16,parameters:{slot:0}}`、实验者实际世界数量
+0→1→0→1 干预和通用构造／作用法则的来源保留。后续参数1及当次作用由实际
+形成路由参与普通递归产生；不宣称原动作 code 自主发现或选择。
+回执为 `input_sent=1, effect_acknowledged=0, temporal_observation_only`；
+选槽变化是实际 carrier 观察，不是独立服务器因果确认。
+
+核对既有证据：**12 专项、757 完整回归、114 subtests 通过；13项冻结哈希 MATCH**。
+原461文件未变是验证时点的记录；本次获授权的三个当前状态索引更新另计。
+首次 Tk 失败、连接 NOT_TESTABLE、旧真实 RESOURCE_LIMIT 及更早冻结结果全部保留。
+本次收口未重跑实验；默认 runtime、理论、body、sampler/binder、容量和旧数据库不变。
+
+**Nonclaims：** 自主动作选择、目的形成、通用世界因果律、无限持续运行、
+显式 Pair 读取关系自主形成、正式／默认 A 采用、L1 和理论整体证明均未建立。
+
+交接见 [closeout](ORDINARY_PAIR_USAGE_CLOSEOUT.md)、
+[conversation handoff](ORDINARY_PAIR_USAGE_CONVERSATION_HANDOFF.md)、
+[收口核对](experimental/ordinary_pair_usage/CLOSEOUT_VALIDATION.json) 和
+[完整提交文件清单](ORDINARY_PAIR_USAGE_COMMITTED_FILES.md)。
+
+下一阶段只记录起点：在已验证的真实反馈闭环基础上，继续检查同一个体的持续递归、
+结构形成与有限容量之间的关系。**NEXT_PHASE = NOT_STARTED**；不预设目的选择器、
+遗忘规则、内存分配算法、扩容或删除方案，本次不设计、实现或运行下一阶段。
+
+以下旧段保留当时结果与下一问题，不作为当前状态或新的执行授权。
+
+## 历史阶段收口 — 身体引用、递归作用与真实环境准入（2026-10-09）
 
 本阶段结果已记录并冻结；收口不等于真实闭环 PASS。
 

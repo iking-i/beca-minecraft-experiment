@@ -1,0 +1,486 @@
+{
+  "classification": "PASS / COMPLETED / FROZEN",
+  "controlled_real_feedback_loop": "PASS_WITHIN_CONTROLLED_LOCAL_SCOPE",
+  "base_commit": "eb94318242b42843e0ec12c0b40b96751c563dc9",
+  "implementation_commit": "d840ec37396e62438c7c76fff911e7524d997af6",
+  "closeout_anchor": "Separate commit adding ORDINARY_PAIR_USAGE_CLOSEOUT.md and this record",
+  "scope": "Evidence consistency and research state closure; no new runtime or experiment",
+  "accepted_claim": "Given external bootstrap, world-owner controlled real input and a generic experimenter-supplied constructor rule, actual ordinary integration/occurrence effects produce one subsequent native operation, whose matching real receipt and renewed observation enter the same continuous A, followed by another committed recursive cycle.",
+  "nonclaims": [
+    "Autonomous action selection",
+    "Autonomous goal or purpose formation",
+    "Generic world causal law",
+    "Unlimited sustained operation",
+    "Autonomous formation of explicit Pair content-reference read relations",
+    "Default/formal A adoption",
+    "L1/upward recursion",
+    "Universal Perfect Recursion validation"
+  ],
+  "verification": {
+    "focused_passed": 12,
+    "full_passed": 757,
+    "subtests_passed": 114,
+    "frozen_hash_count": 13,
+    "frozen_hash_status": "MATCH",
+    "preserved_files_at_validation": 461,
+    "test_rerun_during_closeout": false,
+    "new_minecraft_run_during_closeout": false,
+    "source": "experimental/ordinary_pair_usage/VALIDATION.json; evidence/full-regression.txt; CLOSEOUT_VALIDATION.json"
+  },
+  "checks": "evidence/CLOSEOUT_EVIDENCE_CHECK.json",
+  "live_evidence": "LIVE_VALIDATION.json",
+  "offline_evidence": "evidence/OFFLINE_VALIDATION.json",
+  "same_A_live_chain": {
+    "individual_id": "A-c10aa620-cc1f-4b87-905c-439199a8170e",
+    "session_id": "S-a4ee040e-795f-49f0-a19c-14c0a6623157",
+    "continuous_single_core": true,
+    "external_bootstrap_count": 1,
+    "external_bootstrap": {
+      "code": 16,
+      "parameters": {
+        "slot": 0
+      }
+    },
+    "world_intervention_author": "EXPERIMENTER_WORLD_COMMAND",
+    "world_input": "hotbar.8 quantity 0-to-1-to-0-to-1",
+    "recursive_execution_count": 1,
+    "recursive_expression": {
+      "code": 16,
+      "parameters": {
+        "slot": 1
+      }
+    },
+    "action_id": "19f62bcf-c337-4aa6-a384-fd5c76455424",
+    "action_event_sequence": 69,
+    "action_version": 12,
+    "renewed_experience_id": "f0db6e40-176e-4850-9672-8a7ca95d42e3",
+    "renewed_event_sequence": 74,
+    "E5": {
+      "version": 13,
+      "capacity": 31,
+      "receipt_integrated": true,
+      "selected_hotbar_slot": 1
+    },
+    "E6": {
+      "version": 14,
+      "capacity": 35,
+      "continued_processing": true
+    },
+    "controlled_shutdown_version": 15,
+    "effect_attribution": "temporal_observation_only",
+    "independent_server_acknowledgement": false,
+    "evidence": "experimental/ordinary_pair_usage/LIVE_VALIDATION.json"
+  },
+  "source_and_original_evidence_preserved": true,
+  "default_runtime_changed": false,
+  "body_changed": false,
+  "sampler_binder_changed": false,
+  "caps_changed": false,
+  "theory_changed": false,
+  "database_changed_during_closeout": false,
+  "new_minecraft_run": false,
+  "new_tests_run": false,
+  "historical_RESOURCE_LIMIT_preserved": true,
+  "historical_NOT_TESTABLE_preserved": true,
+  "historical_Tk_failure_preserved": true,
+  "next_phase": {
+    "status": "NOT_STARTED",
+    "next_phase_lifecycle": "NOT_STARTED",
+    "question": "在已验证的真实反馈闭环基础上，继续检查同一个体的持续递归、结构形成与有限容量之间的关系。",
+    "starting_point": "Versioned UsageRealCore/UsageRealEngine and saved six-frame controlled local feedback run; do not assume unbounded operation or autonomous explicit Pair read formation.",
+    "boundary_only": true,
+    "stage_started": false,
+    "design_started": false,
+    "implementation_started": false,
+    "experiment_started": false,
+    "runtime_implementation_authorized_by_closeout": false,
+    "forbidden": [
+      "Predesigned purpose selector",
+      "Predesigned forgetting rule",
+      "Predesigned memory-allocation algorithm",
+      "Cap increase or deletion to manufacture success",
+      "Rewriting historical evidence"
+    ]
+  },
+  "public_submission": {
+    "implementation_files": 74,
+    "closeout_files": 7,
+    "file_index": "ORDINARY_PAIR_USAGE_COMMITTED_FILES.md",
+    "exact_export_index": "PUBLIC_EVIDENCE_EXPORTS.json",
+    "hashes": {
+      "experimental/observation_interface_references/CONTROLLED_WORLD_INPUT_PROTOCOL.md": {
+        "workspace_sha256": "d3e5000d88cb2d9921b6c1b465ff49dfce680ba9f81c6156e9342cb7f509a436",
+        "git_lf_sha256": "d3e5000d88cb2d9921b6c1b465ff49dfce680ba9f81c6156e9342cb7f509a436",
+        "bytes": 2684
+      },
+      "experimental/observation_interface_references/HOST_CONTROLLED_VALIDATION.json": {
+        "workspace_sha256": "20d62a79b3ee64927aecc9d213905b184d3942650c099826141950540c77d565",
+        "git_lf_sha256": "34c346436195a2ed0c4d0cd0d8ef55f269a06087bdf520394600dd1098179aa3",
+        "bytes": 157394
+      },
+      "experimental/observation_interface_references/HOST_CONTROLLED_VALIDATION.md": {
+        "workspace_sha256": "953e98818485d16e6380be3a3dac96f037cb59c01891389485fcd22f3d3f6dd6",
+        "git_lf_sha256": "953e98818485d16e6380be3a3dac96f037cb59c01891389485fcd22f3d3f6dd6",
+        "bytes": 7181
+      },
+      "experimental/observation_interface_references/HOST_CONTROLLED_WORLD_INPUT_PROTOCOL.md": {
+        "workspace_sha256": "9e6354db45b415cb1df3b728de780ff7036b83645a7774403c134967605e0f47",
+        "git_lf_sha256": "9e6354db45b415cb1df3b728de780ff7036b83645a7774403c134967605e0f47",
+        "bytes": 2945
+      },
+      "experimental/observation_interface_references/INITIAL_FAILURES/overlong-restart-fixture.raw.json": {
+        "workspace_sha256": "a9b9f648925a082b6c3f8312fbc0af42c702eac5d6af498fdbe471a5f8bfbeaf",
+        "git_lf_sha256": "df543fe21b609969571a6e4f43e8023e53b8ce65c4de9af4c3b4062e59284d2e",
+        "bytes": 7106
+      },
+      "experimental/observation_interface_references/INITIAL_FAILURES/restart-activation-expectation.raw.json": {
+        "workspace_sha256": "d9af97fe800ca9f467760dfbf3a463aea0c7ad3b908ddc1c7718553445c43033",
+        "git_lf_sha256": "bc066de96e75e7defd9e2bd708565d9e1a095ab00ee5487b5002b4cdfcf27b86",
+        "bytes": 2778
+      },
+      "experimental/observation_interface_references/INITIAL_FAILURES/world-owner-permission-prerequisite/ENVIRONMENT_VALIDATION.json": {
+        "workspace_sha256": "1db87ed979c3519d40512a76623d91486bd4ea98226b8959754411b0b76de121",
+        "git_lf_sha256": "fe2c695b203b9c828f361abbe9ea70fdaf5ebe153268625f1867a41024ec03b0",
+        "bytes": 790
+      },
+      "experimental/observation_interface_references/INITIAL_FAILURES/world-owner-permission-prerequisite/OP_UNAVAILABLE.json": {
+        "workspace_sha256": "7f50c240645747bb234c87269ed545b34cb1fc8bf26416a4f144a4d59288abfe",
+        "git_lf_sha256": "8466ea4b0ec280bfd2b34c94c765299bf967865c6ce59cfa6bede29a4816f804",
+        "bytes": 430
+      },
+      "experimental/observation_interface_references/INITIAL_FAILURES/world-owner-permission-prerequisite/REPORT.json": {
+        "workspace_sha256": "dab776ac6d6fb6e63e2a6d3b61002dae7e4e3f3081ab835a2fc9db7a08bf907b",
+        "git_lf_sha256": "b42c9447425ba3dad8034f018ed527fe6bdc10a60c061127221c7affc58e1b4d",
+        "bytes": 541989
+      },
+      "experimental/observation_interface_references/ISOLATION.md": {
+        "workspace_sha256": "f638f874a7579310ec8306e00c1b3affceaec726020c944c07be1c3d28aa3179",
+        "git_lf_sha256": "f638f874a7579310ec8306e00c1b3affceaec726020c944c07be1c3d28aa3179",
+        "bytes": 1502
+      },
+      "experimental/observation_interface_references/SPEC.md": {
+        "workspace_sha256": "327171e99b418fcd2da64fc48ed0fc9d9dd675b2f55d08515d406def8f3e7b1c",
+        "git_lf_sha256": "327171e99b418fcd2da64fc48ed0fc9d9dd675b2f55d08515d406def8f3e7b1c",
+        "bytes": 2365
+      },
+      "experimental/observation_interface_references/VALIDATION.json": {
+        "workspace_sha256": "30248fa2654fdda4762c13f188b5def1007cf690b00d1ecee7164cad2f4ecc44",
+        "git_lf_sha256": "7c0426f6d17921fc5e6c6f9b96fdb12719f00edfb7a48fd49df2d9b824e442bc",
+        "bytes": 12960
+      },
+      "experimental/observation_interface_references/VALIDATION.md": {
+        "workspace_sha256": "962669d7f56a69b6ffa468a66e8584b7390a5508edf7857cb73f6a5d2b6937d6",
+        "git_lf_sha256": "962669d7f56a69b6ffa468a66e8584b7390a5508edf7857cb73f6a5d2b6937d6",
+        "bytes": 6386
+      },
+      "experimental/observation_interface_references/__init__.py": {
+        "workspace_sha256": "42f0d7cde292aac37928ed23203a5c905656330be9c6657d80fec3eb2b876b8a",
+        "git_lf_sha256": "2e79e6aa4b1947ba62828ca85557f5851bba21568c62f89e42d1709ef6052cba",
+        "bytes": 68
+      },
+      "experimental/observation_interface_references/effects/__init__.py": {
+        "workspace_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "git_lf_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "experimental/observation_interface_references/effects/channel.py": {
+        "workspace_sha256": "5a0d06f419ac5d2a79f19f02588c35c282d21668fa787b42a64b84eb734f7960",
+        "git_lf_sha256": "5a0d06f419ac5d2a79f19f02588c35c282d21668fa787b42a64b84eb734f7960",
+        "bytes": 8846
+      },
+      "experimental/observation_interface_references/effects/engine.py": {
+        "workspace_sha256": "72d805ab673582b0a7e78da27fc3be2bae6f73e515d1260a01795f3a9ec7f616",
+        "git_lf_sha256": "72d805ab673582b0a7e78da27fc3be2bae6f73e515d1260a01795f3a9ec7f616",
+        "bytes": 13792
+      },
+      "experimental/observation_interface_references/effects/native.py": {
+        "workspace_sha256": "f7df57ce9bb9853d0351c475b520be78357e3d4805e311fe07e40f8682d8f8ac",
+        "git_lf_sha256": "f7df57ce9bb9853d0351c475b520be78357e3d4805e311fe07e40f8682d8f8ac",
+        "bytes": 2872
+      },
+      "experimental/observation_interface_references/evidence/full-regression.txt": {
+        "workspace_sha256": "c1cd93173866b0e536e32cf1fc536fdc0d51f9385087e9192a07ad1e8724ccb2",
+        "git_lf_sha256": "1f8ade14fe8eb0eb95c08390e9d68b6572d4f38c1cd3447496a0ab9984f1f552",
+        "bytes": 903
+      },
+      "experimental/observation_interface_references/evidence/host-controlled-world-run1/E2_external_0_to_1.HOST_ACK.json": {
+        "workspace_sha256": "b8e60d88ac843e21be08b80b2b056436dfa691a4f4b02b666121e29955708768",
+        "git_lf_sha256": "cf91ecbe202e730c2cd684ef78a20d413810cc70e5143c0da6ef4c7e5991ecc1",
+        "bytes": 270
+      },
+      "experimental/observation_interface_references/evidence/host-controlled-world-run1/E2_external_0_to_1.READY.json": {
+        "workspace_sha256": "c3c41138488bcc389692a1edce2857b2222fa4d85a112a38b85faf3234c5352e",
+        "git_lf_sha256": "a5c7a1e851bdb1aaa12411b995ad6213f8b2598d4fbb0a72654d13efeae519f6",
+        "bytes": 512
+      },
+      "experimental/observation_interface_references/evidence/host-controlled-world-run1/E3_external_1_to_0.HOST_ACK.json": {
+        "workspace_sha256": "2ba91429b0c62d8b179688b4bf3ad99ee416a5f6943cf81c022bbdacd507e4f7",
+        "git_lf_sha256": "db1aea464f865cbad3282ace38aa0da12a02b53a1dff2302a100101cf9bdaad3",
+        "bytes": 266
+      },
+      "experimental/observation_interface_references/evidence/host-controlled-world-run1/E3_external_1_to_0.READY.json": {
+        "workspace_sha256": "1eeb6522a8812c718c394300486b6cd90f7091120153e2b33de74bdff667293a",
+        "git_lf_sha256": "93212897edd82d1442764e11dbf4758b7f6dc6810c7f35996c9b07cddb1a18c3",
+        "bytes": 508
+      },
+      "experimental/observation_interface_references/evidence/host-controlled-world-run1/E4_external_0_to_1.HOST_ACK.json": {
+        "workspace_sha256": "052518a6c17870704f5b5ab4be2b98c4d9a4819aeaa502b680551100993a4551",
+        "git_lf_sha256": "ae18d3bc3f2f59018ea4c217b2f8e4c4de81f74ff487d0c08424594ec5e6d593",
+        "bytes": 272
+      },
+      "experimental/observation_interface_references/evidence/host-controlled-world-run1/E4_external_0_to_1.READY.json": {
+        "workspace_sha256": "44497779085d5b4bc578deb80277833d76a66f5aa86dd73d3fe3fef0f0544829",
+        "git_lf_sha256": "3a841a62897915245f514b69b71ba4d141d1b8fbcabe5e4bc9b3bf8d7f0532ce",
+        "bytes": 512
+      },
+      "experimental/observation_interface_references/evidence/host-controlled-world-run1/REPORT.json": {
+        "workspace_sha256": "a24ad86c91afbd6e9e78fe38e9b394364475f59777707cd9058deb97fa1b214f",
+        "git_lf_sha256": "67f11eb09b92e055ab22155a320f80acec34308519883f5be75e81f3785f4164",
+        "bytes": 23672011
+      },
+      "experimental/observation_interface_references/evidence/host-controlled-world-run1/bridge-stderr.txt": {
+        "workspace_sha256": "b2f7142e2c23b062398125dbcc1df0a26ae61375a3ca6a118efdbc47ad1d7619",
+        "git_lf_sha256": "61b83037f1fba689b41cdf98a78b1c42be95f59b83ec5ca2295ea3e5c9144ca3",
+        "bytes": 343
+      },
+      "experimental/observation_interface_references/evidence/host-controlled-world-run1/transport.jsonl": {
+        "workspace_sha256": "6ecee41486cfd28bd77f47c76e51a08be81c9bb604f429c4b7e7c03d93d09bec",
+        "git_lf_sha256": "d1b3a6837b394b85cc8a0555aaf6e82dcb941480a2b34b3282330a9fbe0fa6ee",
+        "bytes": 243434
+      },
+      "experimental/observation_interface_references/evidence/offline-saved-observation.json": {
+        "workspace_sha256": "d70a0c994a89f15f3ede9482a6ebeacc821176e94152c08590ce0c75754a666f",
+        "git_lf_sha256": "bd538766c1a8156b16b9004c780406dccc34f5eef7ba1c2110421c5fb72ae11f",
+        "bytes": 1785027
+      },
+      "experimental/observation_interface_references/evidence/real-run1.json": {
+        "workspace_sha256": "cab6380dd758c933236b9caf050136fa0dc0bcbf429e40b55b1bc9dee06a9b82",
+        "git_lf_sha256": "12498b447119bf56831c7ac6d150136283aea21321911311d5e9e855bad45a5a",
+        "bytes": 42453375
+      },
+      "experimental/observation_interface_references/evidence/real-stderr.txt": {
+        "workspace_sha256": "10c10bf9a29bb61dc7138a6baa2462aa8079be5455fc871ae8f21a12dc260c45",
+        "git_lf_sha256": "458051e05e7206c3b6dfb74adee1b6968d7d3c19f03149312687bd49380c8caf",
+        "bytes": 344
+      },
+      "experimental/observation_interface_references/evidence/real-transport.jsonl": {
+        "workspace_sha256": "b664b3f6d44b0466901957f224528b0cf07ffd4b5ea4fd71f7a0410b2e4bd565",
+        "git_lf_sha256": "581974fc3b824bb1684fb64e675b5b954bf39519ae34b0fc5bf19be6c84cb63b",
+        "bytes": 376874
+      },
+      "experimental/observation_interface_references/evidence/related-tests.txt": {
+        "workspace_sha256": "68a342111d199406b2f374ccd4fab05a645776ab93aadfb948e6ef011b8e9625",
+        "git_lf_sha256": "3f3034e0c1a9ac0a059489b3bbf4783c60574c6706759898a4b487c13720a49f",
+        "bytes": 193
+      },
+      "experimental/observation_interface_references/evidence/restart-baseline-comparison.json": {
+        "workspace_sha256": "8dcf22c88643b4da611f193862fdb8e5624abb5b116bf8e0946650f8c53c8975",
+        "git_lf_sha256": "5bcdcab7da670281ba51906680737c3f06eb3ecb380da529a2553cdc7e22a4a2",
+        "bytes": 618
+      },
+      "experimental/observation_interface_references/real/__init__.py": {
+        "workspace_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "git_lf_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "experimental/observation_interface_references/real/adapter.py": {
+        "workspace_sha256": "27eca081fd9744b84fc902c12811290051e004550776ea8b3b33a1bacc485fc6",
+        "git_lf_sha256": "27eca081fd9744b84fc902c12811290051e004550776ea8b3b33a1bacc485fc6",
+        "bytes": 7495
+      },
+      "experimental/observation_interface_references/real/channel.py": {
+        "workspace_sha256": "aa2d6d2399f6664cd2f85ebdc277c60b9ae3f9f61188f1fdcd4f53a07047f3ed",
+        "git_lf_sha256": "aa2d6d2399f6664cd2f85ebdc277c60b9ae3f9f61188f1fdcd4f53a07047f3ed",
+        "bytes": 7070
+      },
+      "experimental/observation_interface_references/real/controlled_live.py": {
+        "workspace_sha256": "e993a2139081859263432b0361cb78c357280727ceb3137677c5a059bcf266f0",
+        "git_lf_sha256": "91cfbb1138574fc7254ffa1090b88680ea460b1a15505055eeadd3c21de566fa",
+        "bytes": 12215
+      },
+      "experimental/observation_interface_references/real/host_controlled_live.py": {
+        "workspace_sha256": "1bb2db51f2018196329d87adccec4249a35437a255437a6c73fc4f363e528cff",
+        "git_lf_sha256": "cd2cb05c96bb915287d6484bebea571a260021d0b4055d740f4c58a6972fc51a",
+        "bytes": 13283
+      },
+      "experimental/observation_interface_references/real/live.py": {
+        "workspace_sha256": "9994b3c02f27d31da1054fe46ef315475e2e2839a8609442047af26b29959eab",
+        "git_lf_sha256": "9994b3c02f27d31da1054fe46ef315475e2e2839a8609442047af26b29959eab",
+        "bytes": 8482
+      },
+      "experimental/observation_interface_references/reference/__init__.py": {
+        "workspace_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "git_lf_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "experimental/observation_interface_references/reference/channel.py": {
+        "workspace_sha256": "557f5d83cdfc1f17283b80f426b7636387e6e71fe39fddab6c7b04fb711df7ee",
+        "git_lf_sha256": "557f5d83cdfc1f17283b80f426b7636387e6e71fe39fddab6c7b04fb711df7ee",
+        "bytes": 6145
+      },
+      "experimental/observation_interface_references/reference/engine.py": {
+        "workspace_sha256": "e7a079781c2f09870656e4c4ce2377a7050f1af8c417dccdf695b50cc12acb14",
+        "git_lf_sha256": "e7a079781c2f09870656e4c4ce2377a7050f1af8c417dccdf695b50cc12acb14",
+        "bytes": 19321
+      },
+      "experimental/observation_interface_references/reference/references.py": {
+        "workspace_sha256": "c73cd770a6770e6d0ca3e043dfc0efc8f0de0ce3974337fa45e5929ce476cff1",
+        "git_lf_sha256": "c73cd770a6770e6d0ca3e043dfc0efc8f0de0ce3974337fa45e5929ce476cff1",
+        "bytes": 8328
+      },
+      "experimental/observation_interface_references/validate_saved.py": {
+        "workspace_sha256": "9089d495a9fcf23ea44cb625cfadf645f56cd7b3b2f6194fa214275063eeca4c",
+        "git_lf_sha256": "9089d495a9fcf23ea44cb625cfadf645f56cd7b3b2f6194fa214275063eeca4c",
+        "bytes": 3356
+      },
+      "experimental/observation_interface_references/validation.py": {
+        "workspace_sha256": "3e3f57edbcadc816d7e3549404f6dcd5676391334e0fe25fe1e9aa1b40f9892d",
+        "git_lf_sha256": "3e3f57edbcadc816d7e3549404f6dcd5676391334e0fe25fe1e9aa1b40f9892d",
+        "bytes": 2938
+      },
+      "experimental/ordinary_pair_usage/INITIAL_FAILURES/full-regression-tk-path.raw.json": {
+        "workspace_sha256": "772a291edb2eb0a379315abe69c580c545c1562a2ace211c8eff4be1190875bb",
+        "git_lf_sha256": "a90d125d1b8907c509619cc810b81f41aaee8e19e5564a7400cf040f7f499e1a",
+        "bytes": 6746
+      },
+      "experimental/ordinary_pair_usage/INITIAL_FAILURES/live-run1-EACCES.json": {
+        "workspace_sha256": "8ce78372e68e18ee0da7ceb06c19dd8aae2fb39cd49c64c353e41e429420527f",
+        "git_lf_sha256": "b1ffb6d0d8bae126b733be7b25da76684cb64aa6a6c3fe1cc0c4a06937521781",
+        "bytes": 609251
+      },
+      "experimental/ordinary_pair_usage/ISOLATION.md": {
+        "workspace_sha256": "d4360cf7f7da40dfb74b128fad41b16faf4a67597b4be6749c64c44119aaa386",
+        "git_lf_sha256": "d4360cf7f7da40dfb74b128fad41b16faf4a67597b4be6749c64c44119aaa386",
+        "bytes": 2236
+      },
+      "experimental/ordinary_pair_usage/LIVE_VALIDATION.json": {
+        "workspace_sha256": "fca81ad6454f936c5b4770f424f626cd3db9678a8542c5b78ea149c3ab69437d",
+        "git_lf_sha256": "29eae51d6ce00258e316569b1d1c0a4f96e692c9c3e41f140ea834cb7f2555ff",
+        "bytes": 6063
+      },
+      "experimental/ordinary_pair_usage/PUBLIC_EVIDENCE_EXPORTS.json": {
+        "workspace_sha256": "6857856facb857c79fea1b40f98804e468ca68280f528a924a4b38891d2c022e",
+        "git_lf_sha256": "925351cf28c7cd570bed8d4fc78ab79fee08da07ae13f64e43e64339d8c65836",
+        "bytes": 2447
+      },
+      "experimental/ordinary_pair_usage/SPEC.md": {
+        "workspace_sha256": "74af6b8a1d91776f058e7c45a9d3d21ae6648fab5483c3ac29fac86c365dccd7",
+        "git_lf_sha256": "74af6b8a1d91776f058e7c45a9d3d21ae6648fab5483c3ac29fac86c365dccd7",
+        "bytes": 3045
+      },
+      "experimental/ordinary_pair_usage/VALIDATION.json": {
+        "workspace_sha256": "ff2781a9c38e99f75e35d49f01cbfae1c8c35832d61ee42d17bf09855cdf4ba5",
+        "git_lf_sha256": "feb3a615548cb1d83872115f7272b0019c2cff8662f54332b1873110ccac3ac2",
+        "bytes": 2246
+      },
+      "experimental/ordinary_pair_usage/VALIDATION.md": {
+        "workspace_sha256": "59abd7ab0fb2b9fe3f30769447a62cff340d1e0d1678271b1bae9981ccfcb9d4",
+        "git_lf_sha256": "59abd7ab0fb2b9fe3f30769447a62cff340d1e0d1678271b1bae9981ccfcb9d4",
+        "bytes": 5176
+      },
+      "experimental/ordinary_pair_usage/__init__.py": {
+        "workspace_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "git_lf_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "experimental/ordinary_pair_usage/channel.py": {
+        "workspace_sha256": "888382a4394091a56a32635d22edd5c000cc41656fe48459be8f0ff31281da10",
+        "git_lf_sha256": "8a4ccf70b7866621b569dfea68c5debdb6b57d4dc81965b24c0ec37dc8bc74fd",
+        "bytes": 1921
+      },
+      "experimental/ordinary_pair_usage/engine.py": {
+        "workspace_sha256": "e90c5f2fd0a8632b120a3b65b70d0f8b6a0db9a4dd46b5b6a01c5524b36c3245",
+        "git_lf_sha256": "b017c1f2ccb136141e7e10dce7fcd150bc5ec033201a6bf00ca366fb85251283",
+        "bytes": 5869
+      },
+      "experimental/ordinary_pair_usage/evidence/CLOSEOUT_EVIDENCE_CHECK.json": {
+        "workspace_sha256": "d44b8853711d67e6dc8524063ba7b5fed7279695dca098eb031f2b34e9381a21",
+        "git_lf_sha256": "29a9f03fb5fb57fdeb9b5670a806e9801c06044c9e3ec7a85e9e093394ddd288",
+        "bytes": 1440
+      },
+      "experimental/ordinary_pair_usage/evidence/OFFLINE_VALIDATION.json": {
+        "workspace_sha256": "1af125386ba0a8406889efaa0330676da4164fad2d0ede08cd01f9da13f2a8e5",
+        "git_lf_sha256": "b1b882931770080d1665016332f0bb57c9307b1af15fd541b8b9bc0f4312c522",
+        "bytes": 21220
+      },
+      "experimental/ordinary_pair_usage/evidence/full-regression.txt": {
+        "workspace_sha256": "7f8de265f961944972b58d68c680120c5dbcbc0b78e154c473987c63fd9ccbfb",
+        "git_lf_sha256": "6d29650f2c93ff907dac29f7c42ce72b1a3776b90892259a3deacd0fd1214eb3",
+        "bytes": 975
+      },
+      "experimental/ordinary_pair_usage/evidence/live-run2/E2_external_0_to_1.HOST_ACK.json": {
+        "workspace_sha256": "e0e0257a18c64229730669f0d91cc6d43d0d783f27aff171a25190ce9568d104",
+        "git_lf_sha256": "e0e0257a18c64229730669f0d91cc6d43d0d783f27aff171a25190ce9568d104",
+        "bytes": 223
+      },
+      "experimental/ordinary_pair_usage/evidence/live-run2/E2_external_0_to_1.READY.json": {
+        "workspace_sha256": "eb1099bba58231d9b7ca61d327230ad99c8f2f1c049562832ed6aa4b56e28475",
+        "git_lf_sha256": "1653c59101729b2cc8c6ed9485b29ad658d7065060a9521dcd7a7c268a6eb5de",
+        "bytes": 509
+      },
+      "experimental/ordinary_pair_usage/evidence/live-run2/E3_external_1_to_0.HOST_ACK.json": {
+        "workspace_sha256": "95a6b205d80190b3e8c325514ed32465346ae2b2111ed1fc9cebfd2dc1f80272",
+        "git_lf_sha256": "95a6b205d80190b3e8c325514ed32465346ae2b2111ed1fc9cebfd2dc1f80272",
+        "bytes": 219
+      },
+      "experimental/ordinary_pair_usage/evidence/live-run2/E3_external_1_to_0.READY.json": {
+        "workspace_sha256": "fa6210c97e23a75a24261d5ece411b288614d0b26a702d681c8b18d5df1b5f48",
+        "git_lf_sha256": "18ed2aac2cd4ac0facd893277546c7d818fdb66aa1f3a109ce04b3a731640f2f",
+        "bytes": 505
+      },
+      "experimental/ordinary_pair_usage/evidence/live-run2/E4_external_0_to_1.HOST_ACK.json": {
+        "workspace_sha256": "a5bbdd714512920ba8ab32743f754d157036d443d2be23097ff993590bf63f7d",
+        "git_lf_sha256": "a5bbdd714512920ba8ab32743f754d157036d443d2be23097ff993590bf63f7d",
+        "bytes": 226
+      },
+      "experimental/ordinary_pair_usage/evidence/live-run2/E4_external_0_to_1.READY.json": {
+        "workspace_sha256": "bee0e68cc5f9e0528e8428472b5a1fa040cf641484c9511561c8008d126017c2",
+        "git_lf_sha256": "9011565585c1e982cf0c1783b484a119962b7a9451146f1323495b2d042ac3b3",
+        "bytes": 509
+      },
+      "experimental/ordinary_pair_usage/evidence/live-run2/REPORT.json": {
+        "workspace_sha256": "0d9e57fda8a0e8eb92a9d6681acfad811f5f8cc35c2369764f75992c8fec2ac9",
+        "git_lf_sha256": "84399ec1ce8ea29267920e1bdf9bb6dbaab8c612bb52d747c286b3a10e8b0e49",
+        "bytes": 39071046
+      },
+      "experimental/ordinary_pair_usage/evidence/live-run2/bridge-stderr.txt": {
+        "workspace_sha256": "6c8c0a9861ebf7e9ef6df44d47a292c383657277d36805c8db980be904182fc7",
+        "git_lf_sha256": "b3708991b49c4f2368c002b0f689572bb7cfb109d3dede5d23ccace2c1a09689",
+        "bytes": 344
+      },
+      "experimental/ordinary_pair_usage/evidence/live-run2/transport.jsonl": {
+        "workspace_sha256": "6cb5509f849d4a38d3896901db5b718c74b637a3c916812bb10a5de83e4b9dc3",
+        "git_lf_sha256": "3951591ad53043173406554464cf62c904c33fecbde1e43b9822aa99a437829f",
+        "bytes": 320705
+      },
+      "experimental/ordinary_pair_usage/live.py": {
+        "workspace_sha256": "c7fe61e21f2247eb506f4829f1bda372681ce921d3c5cc1724477364f5ef1248",
+        "git_lf_sha256": "d628344821e304aa7dd6b160b5ec700dda95b94f65d901b881e47d1d028c83de",
+        "bytes": 13371
+      },
+      "experimental/ordinary_pair_usage/validation.py": {
+        "workspace_sha256": "1d1cc3823df25743f3a1cf586a57d4fc8a2ea97f8205249fb71d7ed497efd2f1",
+        "git_lf_sha256": "e95685b7bfe707c7147fedbe2c72b7734aab718eb2e569a03f0de3d313e2ddc6",
+        "bytes": 3300
+      },
+      "experimental/ordinary_pair_usage/worker.py": {
+        "workspace_sha256": "34d4aaa5170f18d9c269b587f8637b6e5fd0655586e332b59ab50265080862e4",
+        "git_lf_sha256": "74840f6c513ea7288bedd1eb33e85230e9b30f2aec47da717bf11b92a104101a",
+        "bytes": 2044
+      },
+      "tests/test_observation_interface_references.py": {
+        "workspace_sha256": "f17d1c06b493d7666ce82db5b2013715121a49bb9a44501ef2ce791e5f8b3cff",
+        "git_lf_sha256": "c345ba3bebefccb9f3bc1e5ec1d68dd03c5c93da8e3a6822a018e6323a800a1b",
+        "bytes": 18458
+      },
+      "tests/test_ordinary_pair_usage.py": {
+        "workspace_sha256": "ec3d445d513501013099f5140c99a2dd9db4631e8470041d403d22b955c7bdc3",
+        "git_lf_sha256": "0959f18a3df3bc4329a06f7a543eb06b710c22e12d042c0df8af84521044ddff",
+        "bytes": 10142
+      }
+    },
+    "normalization": "Workspace SHA256 records exact original bytes; git_lf_sha256 records submitted LF-normalized blob. Existing Git settings unchanged; old evidence hashes not rewritten."
+  },
+  "unrelated_untracked": "Excluded and byte-preserved; see local precloseout manifest",
+  "report_scope_clarification": "Original metadata describes collection time and scope; see closeout for offline no-write versus later fresh live authoritative writes."
+}
