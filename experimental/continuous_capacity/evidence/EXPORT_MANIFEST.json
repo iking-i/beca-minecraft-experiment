@@ -1,0 +1,364 @@
+{
+  "purpose": "Public exact-byte evidence exports; original local evidence is not changed",
+  "excluded": [
+    "SQLite and sidecars",
+    "private body configuration",
+    "credentials",
+    "leases",
+    "caches",
+    "unrelated files"
+  ],
+  "envelope_decode": "base64 decode data, then gzip decompress; verify original_bytes and original_sha256",
+  "files": {
+    "experimental/continuous_capacity/evidence/run1/REPORT.json.raw.json": {
+      "local_source": ".test-tmp/continuous-capacity-live-58160-20261009-run1/REPORT.json",
+      "original_bytes": 3516698,
+      "original_sha256": "5d0d30a792fa14b8b5b80c0e303c417b04b7083a5417c3c7c3c8c77f098719aa",
+      "encoding": "gzip+base64 exact-byte envelope"
+    },
+    "experimental/continuous_capacity/evidence/run1/SUMMARY.json": {
+      "local_source": ".test-tmp/continuous-capacity-live-58160-20261009-run1/SUMMARY.json",
+      "original_bytes": 102573,
+      "original_sha256": "d136f0e6a4685cab551d38589a205ebcbbefaeec358f764205da60a9f61e48d9",
+      "encoding": "exact UTF-8 JSON copy; Git newline conversion separately recorded"
+    },
+    "experimental/continuous_capacity/evidence/run1/origin.json": {
+      "local_source": ".test-tmp/continuous-capacity-live-58160-20261009-run1/origin.json",
+      "original_bytes": 52645,
+      "original_sha256": "0a9f7f9cb570acaf4ddfcb768bb5f9fdfeb6a4715ce76d6b9414a100c3945a5a",
+      "encoding": "exact UTF-8 JSON copy; Git newline conversion separately recorded"
+    },
+    "experimental/continuous_capacity/evidence/run1/events.jsonl.raw.json": {
+      "local_source": ".test-tmp/continuous-capacity-live-58160-20261009-run1/events.jsonl",
+      "original_bytes": 8262599,
+      "original_sha256": "1716ab87c58a199ac29664976a0e2a0a0621946de3ff570dfdea3083989f053a",
+      "encoding": "gzip+base64 exact-byte envelope"
+    },
+    "experimental/continuous_capacity/evidence/run1/transport.jsonl.raw.json": {
+      "local_source": ".test-tmp/continuous-capacity-live-58160-20261009-run1/transport.jsonl",
+      "original_bytes": 336476,
+      "original_sha256": "8d2a9a86dce6fead7af0f4144889664d5048100319615973ef89d3d5ff29cb3c",
+      "encoding": "gzip+base64 exact-byte envelope"
+    },
+    "experimental/continuous_capacity/evidence/run1/bridge-stderr.log.raw.json": {
+      "local_source": ".test-tmp/continuous-capacity-live-58160-20261009-run1/bridge-stderr.log",
+      "original_bytes": 432,
+      "original_sha256": "ab26031d420feab904fd2c06b694a2a069f610204d57facfcbd213ce4aeadf40",
+      "encoding": "gzip+base64 exact-byte envelope"
+    },
+    "experimental/continuous_capacity/evidence/run1/frames/E01.json.raw.json": {
+      "local_source": ".test-tmp/continuous-capacity-live-58160-20261009-run1/frames/E01.json",
+      "original_bytes": 2452596,
+      "original_sha256": "797bfd8c43d5d226608ef0a3845006508010d2e71ee82bc605058a6e3d0dcd05",
+      "encoding": "gzip+base64 exact-byte envelope"
+    },
+    "experimental/continuous_capacity/evidence/run1/frames/E02.json.raw.json": {
+      "local_source": ".test-tmp/continuous-capacity-live-58160-20261009-run1/frames/E02.json",
+      "original_bytes": 4075970,
+      "original_sha256": "652e84ef182000b358c3f2799078d975c5cf33fd7262a48a4f96a5592a03e5d1",
+      "encoding": "gzip+base64 exact-byte envelope"
+    },
+    "experimental/continuous_capacity/evidence/run1/frames/E03.json.raw.json": {
+      "local_source": ".test-tmp/continuous-capacity-live-58160-20261009-run1/frames/E03.json",
+      "original_bytes": 4001557,
+      "original_sha256": "1ea378096390c6c4641006f6423d6fd4288a6a439ec553b293dd480f59fe4f46",
+      "encoding": "gzip+base64 exact-byte envelope"
+    },
+    "experimental/continuous_capacity/evidence/run1/frames/E04.json.raw.json": {
+      "local_source": ".test-tmp/continuous-capacity-live-58160-20261009-run1/frames/E04.json",
+      "original_bytes": 4097157,
+      "original_sha256": "42ffe0db7c3854cdc81c999752ab6c82168dd115b06ebfaffc45c54019056468",
+      "encoding": "gzip+base64 exact-byte envelope"
+    },
+    "experimental/continuous_capacity/evidence/run1/frames/E05.json.raw.json": {
+      "local_source": ".test-tmp/continuous-capacity-live-58160-20261009-run1/frames/E05.json",
+      "original_bytes": 4342809,
+      "original_sha256": "66d1402b600970fca8f74c1b9223872d22432eef398fcbba7e2ef95599c41d50",
+      "encoding": "gzip+base64 exact-byte envelope"
+    },
+    "experimental/continuous_capacity/evidence/run1/frames/E06.json.raw.json": {
+      "local_source": ".test-tmp/continuous-capacity-live-58160-20261009-run1/frames/E06.json",
+      "original_bytes": 4740002,
+      "original_sha256": "a72d9f07c075693a0779f91334fd9f6d68f99757fe19a0ce8a338b7afcb7b61e",
+      "encoding": "gzip+base64 exact-byte envelope"
+    },
+    "experimental/continuous_capacity/evidence/run1/frames/E07.json.raw.json": {
+      "local_source": ".test-tmp/continuous-capacity-live-58160-20261009-run1/frames/E07.json",
+      "original_bytes": 5178163,
+      "original_sha256": "8d81ddf21096bcbef3e48e01efd47b5ae8081b052cd298d12170c4531fc1e2eb",
+      "encoding": "gzip+base64 exact-byte envelope"
+    },
+    "experimental/continuous_capacity/evidence/run2/REPORT.json.raw.json": {
+      "local_source": ".test-tmp/continuous-capacity-live-58160-20261009-run2/REPORT.json",
+      "original_bytes": 7610507,
+      "original_sha256": "f44296504acef4e20c295cb50f5a6a63e85b63d6185bbce1b32389b7a7a814c1",
+      "encoding": "gzip+base64 exact-byte envelope"
+    },
+    "experimental/continuous_capacity/evidence/run2/SUMMARY.json": {
+      "local_source": ".test-tmp/continuous-capacity-live-58160-20261009-run2/SUMMARY.json",
+      "original_bytes": 535537,
+      "original_sha256": "0cea563f36b9480bbba42e6d2be9341b6cf76560c96f699ec43c1d854b1d1a43",
+      "encoding": "exact UTF-8 JSON copy; Git newline conversion separately recorded"
+    },
+    "experimental/continuous_capacity/evidence/run2/origin.json": {
+      "local_source": ".test-tmp/continuous-capacity-live-58160-20261009-run2/origin.json",
+      "original_bytes": 52644,
+      "original_sha256": "404b64cbc2d56f4c2ff94a1f775cd808de124a1ce5599f73e61acb6fa9215e42",
+      "encoding": "exact UTF-8 JSON copy; Git newline conversion separately recorded"
+    },
+    "experimental/continuous_capacity/evidence/run2/events.jsonl.raw.json": {
+      "local_source": ".test-tmp/continuous-capacity-live-58160-20261009-run2/events.jsonl",
+      "original_bytes": 44130378,
+      "original_sha256": "37f497c750f3032b29bd5baf4d5c3e86f61b0ad54eaeadac91ce94d4f31d92d7",
+      "encoding": "gzip+base64 exact-byte envelope"
+    },
+    "experimental/continuous_capacity/evidence/run2/transport.jsonl.raw.json": {
+      "local_source": ".test-tmp/continuous-capacity-live-58160-20261009-run2/transport.jsonl",
+      "original_bytes": 1413234,
+      "original_sha256": "0e737180ea30839df98f1fce19391a431e1a125c06288a992261a54ab0f97407",
+      "encoding": "gzip+base64 exact-byte envelope"
+    },
+    "experimental/continuous_capacity/evidence/run2/bridge-stderr.log.raw.json": {
+      "local_source": ".test-tmp/continuous-capacity-live-58160-20261009-run2/bridge-stderr.log",
+      "original_bytes": 432,
+      "original_sha256": "3d7f80b0c8c810c72aaf7befa39d150a0c81cbef181420202cb472d3c4d75190",
+      "encoding": "gzip+base64 exact-byte envelope"
+    },
+    "experimental/continuous_capacity/evidence/run2/frames/E01.json.raw.json": {
+      "local_source": ".test-tmp/continuous-capacity-live-58160-20261009-run2/frames/E01.json",
+      "original_bytes": 2452821,
+      "original_sha256": "27cf3efcb2a024549dc019bf7a3ca183e2faa40a29f696b5714216b64ffd3a35",
+      "encoding": "gzip+base64 exact-byte envelope"
+    },
+    "experimental/continuous_capacity/evidence/run2/frames/E02.json.raw.json": {
+      "local_source": ".test-tmp/continuous-capacity-live-58160-20261009-run2/frames/E02.json",
+      "original_bytes": 4076475,
+      "original_sha256": "4b8755c93fecca3f427ac067d95089310294d4e4625121a56ab975b25237d32c",
+      "encoding": "gzip+base64 exact-byte envelope"
+    },
+    "experimental/continuous_capacity/evidence/run2/frames/E03.json.raw.json": {
+      "local_source": ".test-tmp/continuous-capacity-live-58160-20261009-run2/frames/E03.json",
+      "original_bytes": 4152267,
+      "original_sha256": "0e4c9729b7f84885d9d1ce00038036bbdb06e51e9a5b4e1c448a5e43a695f65a",
+      "encoding": "gzip+base64 exact-byte envelope"
+    },
+    "experimental/continuous_capacity/evidence/run2/frames/E04.json.raw.json": {
+      "local_source": ".test-tmp/continuous-capacity-live-58160-20261009-run2/frames/E04.json",
+      "original_bytes": 4508598,
+      "original_sha256": "a13b62a507d7ac964dfd77230d88fcb072043bf3741cef9d54bd796deb59a649",
+      "encoding": "gzip+base64 exact-byte envelope"
+    },
+    "experimental/continuous_capacity/evidence/run2/frames/E05.json.raw.json": {
+      "local_source": ".test-tmp/continuous-capacity-live-58160-20261009-run2/frames/E05.json",
+      "original_bytes": 4790908,
+      "original_sha256": "9de50d4f1ac4422fdb3ef26fc8867cc2b855e075b8d5a1bfcb35f1fd0fd5b27f",
+      "encoding": "gzip+base64 exact-byte envelope"
+    },
+    "experimental/continuous_capacity/evidence/run2/frames/E06.json.raw.json": {
+      "local_source": ".test-tmp/continuous-capacity-live-58160-20261009-run2/frames/E06.json",
+      "original_bytes": 5347004,
+      "original_sha256": "2b05e1387db1ea8e0a1abd52156cd4201eceec87dc664d3f743d4ae1aede95f2",
+      "encoding": "gzip+base64 exact-byte envelope"
+    },
+    "experimental/continuous_capacity/evidence/run2/frames/E07.json.raw.json": {
+      "local_source": ".test-tmp/continuous-capacity-live-58160-20261009-run2/frames/E07.json",
+      "original_bytes": 5715658,
+      "original_sha256": "6c704416df1bf33bc8f1ff6900952bfeccfdb068c56a9c8efad8f33b9e1bf928",
+      "encoding": "gzip+base64 exact-byte envelope"
+    },
+    "experimental/continuous_capacity/evidence/run2/frames/E08.json.raw.json": {
+      "local_source": ".test-tmp/continuous-capacity-live-58160-20261009-run2/frames/E08.json",
+      "original_bytes": 5931656,
+      "original_sha256": "258938d9c7d024f1f596b31e57369ce012656f7312bf577ba80b365da30a7108",
+      "encoding": "gzip+base64 exact-byte envelope"
+    },
+    "experimental/continuous_capacity/evidence/run2/frames/E09.json.raw.json": {
+      "local_source": ".test-tmp/continuous-capacity-live-58160-20261009-run2/frames/E09.json",
+      "original_bytes": 6129509,
+      "original_sha256": "5b30f9907ebd3069647ad0ec48aecb64a90163049905f813bc8d00185276b0e3",
+      "encoding": "gzip+base64 exact-byte envelope"
+    },
+    "experimental/continuous_capacity/evidence/run2/frames/E10.json.raw.json": {
+      "local_source": ".test-tmp/continuous-capacity-live-58160-20261009-run2/frames/E10.json",
+      "original_bytes": 6326612,
+      "original_sha256": "eaaacddcc77161ac8e046e7e712f916afa7630352b11733f67e31b9ba99ebc76",
+      "encoding": "gzip+base64 exact-byte envelope"
+    },
+    "experimental/continuous_capacity/evidence/run2/frames/E11.json.raw.json": {
+      "local_source": ".test-tmp/continuous-capacity-live-58160-20261009-run2/frames/E11.json",
+      "original_bytes": 6527969,
+      "original_sha256": "409d088a3cd56a5d8702891d8aac80f84ad3c9ecf35507e432f57daa2092cdb8",
+      "encoding": "gzip+base64 exact-byte envelope"
+    },
+    "experimental/continuous_capacity/evidence/run2/frames/E12.json.raw.json": {
+      "local_source": ".test-tmp/continuous-capacity-live-58160-20261009-run2/frames/E12.json",
+      "original_bytes": 6727600,
+      "original_sha256": "299da12054a9155c2ed09873ba4eb8d33b9496118f4f4b8808a679603aee003f",
+      "encoding": "gzip+base64 exact-byte envelope"
+    },
+    "experimental/continuous_capacity/evidence/run2/frames/E13.json.raw.json": {
+      "local_source": ".test-tmp/continuous-capacity-live-58160-20261009-run2/frames/E13.json",
+      "original_bytes": 6923771,
+      "original_sha256": "a010ba52e772d995cad80eeda30e8c3cc8f17615506455057392273f44b7f34e",
+      "encoding": "gzip+base64 exact-byte envelope"
+    },
+    "experimental/continuous_capacity/evidence/run2/frames/E14.json.raw.json": {
+      "local_source": ".test-tmp/continuous-capacity-live-58160-20261009-run2/frames/E14.json",
+      "original_bytes": 7119284,
+      "original_sha256": "3b7993230ee8bb31864d459d2e89651e0ff761e992eab56c97c87e6621a35a8e",
+      "encoding": "gzip+base64 exact-byte envelope"
+    },
+    "experimental/continuous_capacity/evidence/run2/frames/E15.json.raw.json": {
+      "local_source": ".test-tmp/continuous-capacity-live-58160-20261009-run2/frames/E15.json",
+      "original_bytes": 7314799,
+      "original_sha256": "d1c24b14601d97b3cda70057edb606c985e29cd345aa3af9b168e62f5872170c",
+      "encoding": "gzip+base64 exact-byte envelope"
+    },
+    "experimental/continuous_capacity/evidence/run2/frames/E16.json.raw.json": {
+      "local_source": ".test-tmp/continuous-capacity-live-58160-20261009-run2/frames/E16.json",
+      "original_bytes": 7510317,
+      "original_sha256": "b3af73989e17368a78065eb3682d92d64effc7fdef249ef45354a61290bea40a",
+      "encoding": "gzip+base64 exact-byte envelope"
+    },
+    "experimental/continuous_capacity/evidence/run2/frames/E17.json.raw.json": {
+      "local_source": ".test-tmp/continuous-capacity-live-58160-20261009-run2/frames/E17.json",
+      "original_bytes": 7705832,
+      "original_sha256": "f7b5b8207f013c8c2a5d27a55e7f61264ba31a533224aaceb32e4ea44ad9fa9a",
+      "encoding": "gzip+base64 exact-byte envelope"
+    },
+    "experimental/continuous_capacity/evidence/run2/frames/E18.json.raw.json": {
+      "local_source": ".test-tmp/continuous-capacity-live-58160-20261009-run2/frames/E18.json",
+      "original_bytes": 7901345,
+      "original_sha256": "a87d25e61bfaac96b1f3e26f7eb536155e857343c0b3579a39742f01845e2100",
+      "encoding": "gzip+base64 exact-byte envelope"
+    },
+    "experimental/continuous_capacity/evidence/run2/frames/E19.json.raw.json": {
+      "local_source": ".test-tmp/continuous-capacity-live-58160-20261009-run2/frames/E19.json",
+      "original_bytes": 8096858,
+      "original_sha256": "72e207191d5a493e13190756fbb9240cf506f6f20fae90915654e179f27275b4",
+      "encoding": "gzip+base64 exact-byte envelope"
+    },
+    "experimental/continuous_capacity/evidence/run2/frames/E20.json.raw.json": {
+      "local_source": ".test-tmp/continuous-capacity-live-58160-20261009-run2/frames/E20.json",
+      "original_bytes": 8292371,
+      "original_sha256": "06d33e51da672ce0eb6cc3ab39cdd1c4325fc8f92706aa48e34ffb635aae8b8b",
+      "encoding": "gzip+base64 exact-byte envelope"
+    },
+    "experimental/continuous_capacity/evidence/run2/frames/E21.json.raw.json": {
+      "local_source": ".test-tmp/continuous-capacity-live-58160-20261009-run2/frames/E21.json",
+      "original_bytes": 8487884,
+      "original_sha256": "08d5920ba8a6900437ca06d1b43dd932d6cabedb9acb8f68d2c387d7f90a0274",
+      "encoding": "gzip+base64 exact-byte envelope"
+    },
+    "experimental/continuous_capacity/evidence/run2/frames/E22.json.raw.json": {
+      "local_source": ".test-tmp/continuous-capacity-live-58160-20261009-run2/frames/E22.json",
+      "original_bytes": 8683397,
+      "original_sha256": "5cf94c6dd147d29ffe9c55b05b62250b02f77fe587e49be218b36042a252c6e4",
+      "encoding": "gzip+base64 exact-byte envelope"
+    },
+    "experimental/continuous_capacity/evidence/run2/frames/E23.json.raw.json": {
+      "local_source": ".test-tmp/continuous-capacity-live-58160-20261009-run2/frames/E23.json",
+      "original_bytes": 8878911,
+      "original_sha256": "bf6f21ef65300a75bf0e899f05fa9dcf4f7d5c6ebd94da667345092200e66028",
+      "encoding": "gzip+base64 exact-byte envelope"
+    },
+    "experimental/continuous_capacity/evidence/run2/frames/E24.json.raw.json": {
+      "local_source": ".test-tmp/continuous-capacity-live-58160-20261009-run2/frames/E24.json",
+      "original_bytes": 9074424,
+      "original_sha256": "b0be28ffc45ddbab1d9cb16fc22da3320a607e2132c5e721b99a29dbb73560f6",
+      "encoding": "gzip+base64 exact-byte envelope"
+    },
+    "experimental/continuous_capacity/evidence/run2/frames/E25.json.raw.json": {
+      "local_source": ".test-tmp/continuous-capacity-live-58160-20261009-run2/frames/E25.json",
+      "original_bytes": 9269937,
+      "original_sha256": "4fae90b2317437010ad006e6e1cff8c8a63ad8172614f62b1816e2465c23458a",
+      "encoding": "gzip+base64 exact-byte envelope"
+    },
+    "experimental/continuous_capacity/evidence/run2/frames/E26.json.raw.json": {
+      "local_source": ".test-tmp/continuous-capacity-live-58160-20261009-run2/frames/E26.json",
+      "original_bytes": 9465450,
+      "original_sha256": "78bd80254e3cd06b71ca50deaa3c56743ebbeb1576066306b294eb86350ba4a4",
+      "encoding": "gzip+base64 exact-byte envelope"
+    },
+    "experimental/continuous_capacity/evidence/run2/frames/E27.json.raw.json": {
+      "local_source": ".test-tmp/continuous-capacity-live-58160-20261009-run2/frames/E27.json",
+      "original_bytes": 9660963,
+      "original_sha256": "73d0d530ab49478a90ad38b1de87c90ad4e688b3e177704b0485e3a4d3c3432c",
+      "encoding": "gzip+base64 exact-byte envelope"
+    },
+    "experimental/continuous_capacity/evidence/run2/frames/E28.json.raw.json": {
+      "local_source": ".test-tmp/continuous-capacity-live-58160-20261009-run2/frames/E28.json",
+      "original_bytes": 9856476,
+      "original_sha256": "b31bacede45c1c6d5116e314eb1c17a1815109b0afee167d3b32d4ed1ad00dc7",
+      "encoding": "gzip+base64 exact-byte envelope"
+    },
+    "experimental/continuous_capacity/evidence/run2/frames/E29.json.raw.json": {
+      "local_source": ".test-tmp/continuous-capacity-live-58160-20261009-run2/frames/E29.json",
+      "original_bytes": 10051989,
+      "original_sha256": "3cba4184a6e93fba8940bc7b00de6c3bb5ada7f3936d2bc94ccbc20c8adb4bc2",
+      "encoding": "gzip+base64 exact-byte envelope"
+    },
+    "experimental/continuous_capacity/evidence/run2/frames/E30.json.raw.json": {
+      "local_source": ".test-tmp/continuous-capacity-live-58160-20261009-run2/frames/E30.json",
+      "original_bytes": 10247502,
+      "original_sha256": "24caa344e8f389a1f778f3f5d677ee96fd81579aec22e297a5dccf9369551c0e",
+      "encoding": "gzip+base64 exact-byte envelope"
+    },
+    "experimental/continuous_capacity/evidence/run2/frames/E31.json.raw.json": {
+      "local_source": ".test-tmp/continuous-capacity-live-58160-20261009-run2/frames/E31.json",
+      "original_bytes": 10443015,
+      "original_sha256": "e25d821d5cda0fc4d173d05fdaac1af2f8cb6e89b9fa84576ef86e0155531018",
+      "encoding": "gzip+base64 exact-byte envelope"
+    },
+    "experimental/continuous_capacity/evidence/run2/frames/E32.json.raw.json": {
+      "local_source": ".test-tmp/continuous-capacity-live-58160-20261009-run2/frames/E32.json",
+      "original_bytes": 10638528,
+      "original_sha256": "4cf9c785f1fad3daac5dc9e53d0ef3ad4f5a66c40038234c8ece389544199268",
+      "encoding": "gzip+base64 exact-byte envelope"
+    },
+    "experimental/continuous_capacity/evidence/related-tests.txt": {
+      "local_source": ".test-tmp/continuous-capacity-focused.txt",
+      "original_bytes": 102,
+      "original_sha256": "f41fe449c310e9624a6cccde177af8764cc592d6f759ac462a93427b0d16b71d",
+      "encoding": "exact raw test output"
+    },
+    "experimental/continuous_capacity/evidence/recorder-corrected-tests.txt": {
+      "local_source": ".test-tmp/continuous-capacity-recorder-tests-run2.txt",
+      "original_bytes": 100,
+      "original_sha256": "6d30b611aa058a1e044cc61301673d851966c1783c029aa97bab9768724e533f",
+      "encoding": "exact raw test output"
+    }
+  },
+  "local_database_sha256": {
+    ".test-tmp/continuous-capacity-live-58160-20261009-run1/individual.db": "397462ed6637b447f542fa91d1e455cc05fbd76bbadaf71be8e00a7f49fd047c",
+    ".test-tmp/continuous-capacity-live-58160-20261009-run2/individual.db": "8ea6c1e8aea1e48aa74cac793a5efd9dfc0ca407e277b7f3808038f5c7beb690"
+  },
+  "readonly_audit": {
+    "run1": {
+      "classification": "FAILURE",
+      "frames": 7,
+      "individual_id": "A-75644fdb-3889-4cac-affe-d7680afb5777",
+      "session_id": "S-9453663b-caf3-4d55-9888-328e4d338958",
+      "shutdown_version": 15,
+      "final_event_sequence": 107,
+      "authority_and_event_log_match": true,
+      "native_perform_requests": 1,
+      "only_perform_is_external_bootstrap": true,
+      "frame_hashes_match": true,
+      "database_unchanged_by_readonly_check": true
+    },
+    "run2": {
+      "classification": "BUDGET_COMPLETED",
+      "frames": 32,
+      "individual_id": "A-968eab84-38ed-4a07-854c-e3cb568a587a",
+      "session_id": "S-0c7dbc3b-e710-45f0-9f6b-35b08c2fdfbb",
+      "shutdown_version": 40,
+      "final_event_sequence": 449,
+      "authority_and_event_log_match": true,
+      "native_perform_requests": 1,
+      "only_perform_is_external_bootstrap": true,
+      "frame_hashes_match": true,
+      "database_unchanged_by_readonly_check": true
+    }
+  }
+}

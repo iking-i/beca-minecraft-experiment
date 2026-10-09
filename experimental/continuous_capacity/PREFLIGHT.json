@@ -1,0 +1,20 @@
+{
+  "baseline": "43ef0ef97797992bf788d52c348b79be294407c0",
+  "existing_tracked_unchanged": 515,
+  "frozen_hashes_match": 13,
+  "test_result": "17 passed in 53.21s",
+  "test_log_sha256": "f41fe449c310e9624a6cccde177af8764cc592d6f759ac462a93427b0d16b71d",
+  "new_measurement_files": {
+    "experimental\\continuous_capacity\\recorder.py": "b7023af3a63866d26989b02203d1bfb8295be5d6915099a7bcb2834c4ccdba64",
+    "experimental\\continuous_capacity\\run.py": "cd6661bb8ec9d2cf0bf75e77deb9043f6c397082ccd6f12600cd336949ee6cd2",
+    "experimental\\continuous_capacity\\__init__.py": "b8f853fd0314f3f94166d3510a8fea6796f069e2c196cb2c63bc7d385f434934",
+    "experimental\\continuous_capacity\\PLAN.md": "9781e3317f2703a58c6bd82af7c17d317d52b045b15277749cf77caa63f31f7f",
+    "tests\\test_continuous_capacity_recorder.py": "a5473699fc4d164bfc9c6790cb4148817304ac79610505f44d4347942a37074c"
+  },
+  "initial_test_setup_failure": {
+    "command": "pytest tests/test_continuous_capacity_recorder.py tests/test_ordinary_pair_usage.py -q",
+    "result": "3 passed, 14 errors in 15.57s",
+    "reason": "pytest cannot create numbered dir under sandbox AC/Temp/pytest-of-i",
+    "repair": "explicit unique workspace --basetemp, no test/engine changes"
+  }
+}

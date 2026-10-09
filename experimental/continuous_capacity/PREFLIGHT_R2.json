@@ -1,0 +1,22 @@
+{
+  "before_second_real_attempt": true,
+  "baseline": "43ef0ef97797992bf788d52c348b79be294407c0",
+  "same_engine": true,
+  "capacity": 64,
+  "tests": "6 passed in 6.76s",
+  "prior_attempt_preserved": {
+    ".test-tmp\\continuous-capacity-live-58160-20261009-run1\\REPORT.json": "5d0d30a792fa14b8b5b80c0e303c417b04b7083a5417c3c7c3c8c77f098719aa",
+    ".test-tmp\\continuous-capacity-live-58160-20261009-run1\\individual.db": "397462ed6637b447f542fa91d1e455cc05fbd76bbadaf71be8e00a7f49fd047c",
+    ".test-tmp\\continuous-capacity-live-58160-20261009-run1\\events.jsonl": "1716ab87c58a199ac29664976a0e2a0a0621946de3ff570dfdea3083989f053a",
+    ".test-tmp\\continuous-capacity-live-58160-20261009-run1\\bridge-stderr.log": "ab26031d420feab904fd2c06b694a2a069f610204d57facfcbd213ce4aeadf40"
+  },
+  "measurement_source_hashes": {
+    "experimental\\continuous_capacity\\PLAN.md": "9781e3317f2703a58c6bd82af7c17d317d52b045b15277749cf77caa63f31f7f",
+    "experimental\\continuous_capacity\\PREFLIGHT.json": "315ef60d45b082cf311edc99ccf250d35b31ed60d02fece407c7b8a466cbf567",
+    "experimental\\continuous_capacity\\recorder.py": "dd87cd90fc8ffc95d4fd50a3a50971c2993677f7af7ef5c7461ef40b76b828e9",
+    "experimental\\continuous_capacity\\RECORDER_CORRECTION.md": "ae8a5644ffe76b2daec89ac5e53398c5e1616fe013d58806cbbcd1b937d6a662",
+    "experimental\\continuous_capacity\\run.py": "6ac6321ca7b1a911e353e99c0af0257e7355b51da5dfc5b9d844005c2b9110bd",
+    "experimental\\continuous_capacity\\__init__.py": "b8f853fd0314f3f94166d3510a8fea6796f069e2c196cb2c63bc7d385f434934",
+    "tests\\test_continuous_capacity_recorder.py": "915e3cbe491aa3e7e346382807b63bd7e752f01d9b0daef62a4d0d94fed2a885"
+  }
+}
