@@ -1,0 +1,4 @@
+(node:3976) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+[Minecraft] 连接 127.0.0.1:58160，第 1 次尝试。
+[Minecraft] 已进入世界：BECA_E_487ed923，坐标 {"x":-1234.5,"y":72,"z":343.5}

@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "D:\codex\project\我的世界\experimental\operative_body_real\live.py", line 140, in <module>
+    report = run(args.directory, args.port)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\codex\project\我的世界\experimental\operative_body_real\live.py", line 105, in run
+    report['events'] = [dict(row) for row in core._store.connection.execute(
+                        ^^^^^^^^^
+TypeError: cannot convert dictionary update sequence element #0 to a sequence

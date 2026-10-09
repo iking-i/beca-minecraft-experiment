@@ -1,0 +1,15 @@
+{
+  "numeric_channels": 376,
+  "unique_observed_values": 21,
+  "unique_observed_references": 64,
+  "observed_operand_count": 85,
+  "origin_units": 2,
+  "minimum_first_round_unit_count": 88,
+  "locked_unit_cap": 64,
+  "catalog_size": 47,
+  "raw_blocks": 64,
+  "raw_entities": 0,
+  "bootstrap_executed": false,
+  "world_observation_committed": 0,
+  "perform_request_count": 0
+}

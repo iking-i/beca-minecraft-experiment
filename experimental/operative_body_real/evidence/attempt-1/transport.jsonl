@@ -1,0 +1,4 @@
+{"phase": "request", "method": "start", "args": null, "monotonic": 87162.265}
+{"phase": "response", "method": "start", "result": {"state": "connecting", "connected": false, "attempt": 1, "username": "BECA_E_22154ffc", "host": "127.0.0.1", "port": 58160, "lastError": null}}
+{"phase": "request", "method": "status", "args": null, "monotonic": 87162.921}
+{"phase": "response", "method": "status", "result": {"state": "disconnected", "connected": false, "attempt": 1, "username": "BECA_E_22154ffc", "host": "127.0.0.1", "port": 58160, "lastError": {"code": "EACCES", "message": "connect EACCES 127.0.0.1:58160"}}}

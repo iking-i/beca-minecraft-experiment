@@ -1,0 +1,56 @@
+{
+  "python": "D:\\codex\\project\\我的世界\\.venv\\Scripts\\python.exe",
+  "TCL_LIBRARY": "C:\\Users\\i\\.codex\\visualizations\\2026\\10\\03\\01a10045-8063-70d3-b492-5e9242f9ab36\\formal-continuous-tk-validation-20261008\\tcl\\tcl8.6",
+  "TK_LIBRARY": "C:\\Users\\i\\.codex\\visualizations\\2026\\10\\03\\01a10045-8063-70d3-b492-5e9242f9ab36\\formal-continuous-tk-validation-20261008\\tcl\\tk8.6",
+  "tk_manifest_checked": 1265,
+  "final_receipt_mismatch_classification": "FAIL",
+  "prior_verification_preserved": "TEST_RECORDS_PRE_RECEIPT_CLASSIFICATION_FIX.json",
+  "focused": {
+    "command": [
+      "D:\\codex\\project\\我的世界\\.venv\\Scripts\\python.exe",
+      "-m",
+      "pytest",
+      "tests/test_minimal_native_expression.py",
+      "-q",
+      "--tb=short",
+      "--basetemp=D:\\codex\\project\\我的世界\\.test-tmp\\minimal-expression-focused-final"
+    ],
+    "returncode": 0,
+    "stdout": "...............                                                          [100%]\n15 passed in 6.65s\n",
+    "stderr": "",
+    "stdout_sha256": "2077172ac166c07db2dabd4dbd83ac75824092bd545d7f5079b75ae1d98bdda3"
+  },
+  "related": {
+    "command": [
+      "D:\\codex\\project\\我的世界\\.venv\\Scripts\\python.exe",
+      "-m",
+      "pytest",
+      "tests/test_native_parameter_binding_extension.py",
+      "tests/test_typed_operative_connection.py",
+      "tests/test_native_body_operands.py",
+      "tests/test_body_port_real2.py",
+      "tests/test_formal_l0.py",
+      "-q",
+      "--tb=short",
+      "--basetemp=D:\\codex\\project\\我的世界\\.test-tmp\\minimal-expression-related-final"
+    ],
+    "returncode": 0,
+    "stdout": "........................................................................ [ 78%]\n....................                                                     [100%]\n92 passed in 38.78s\n",
+    "stderr": "",
+    "stdout_sha256": "418206a7fe8bab2af418be92d7a8788af0a6c48e949047835cd5b7fff00a9a64"
+  },
+  "full": {
+    "command": [
+      "D:\\codex\\project\\我的世界\\.venv\\Scripts\\python.exe",
+      "-m",
+      "pytest",
+      "-q",
+      "--tb=short",
+      "--basetemp=D:\\codex\\project\\我的世界\\.test-tmp\\minimal-expression-full-final"
+    ],
+    "returncode": 0,
+    "stdout": "......................................................... [  8%]\n............................................................. [ 17%]\n................................................................. [ 27%]\n........................................................................ [ 38%]\n.............................................................. [ 47%]\n........................................................... [ 56%]\n........................................................................ [ 67%]\n................................................................. [ 77%]\n.......................................................... [ 85%]\n.............................................................. [ 95%]\n...............................               [100%]\n664 passed, 114 subtests passed in 398.35s (0:06:38)\n",
+    "stderr": "",
+    "stdout_sha256": "162c013104352dd5311f3ee0671815a4672152e3a6f3fd8450cddfa6ca07476c"
+  }
+}

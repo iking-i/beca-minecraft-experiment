@@ -1,0 +1,15 @@
+[
+  {
+    "event_sequence": 14,
+    "type": "SESSION_ENDED",
+    "state_version": 5,
+    "payload": {
+      "session_id": "S-f9f3a3b4-59ee-47fa-ba0f-707b08eedb62",
+      "reason": "TEST_ONLY_real_effect_bounded_close",
+      "carrier_stop": true,
+      "internal_state_preserved": true,
+      "lifetime_ended": false,
+      "physical_continuity_after_carrier_stop": "unproven"
+    }
+  }
+]

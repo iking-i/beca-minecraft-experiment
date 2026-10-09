@@ -1,0 +1,83 @@
+{
+  "focused": {
+    "command": [
+      ".venv/Scripts/python.exe",
+      "-X",
+      "utf8",
+      "-m",
+      "pytest",
+      "tests/test_body_interface_references.py",
+      "-q",
+      "--basetemp=.test-tmp/body-reference-pytest-final-frozen"
+    ],
+    "returncode": 0,
+    "stdout": ".............................                                            [100%]\n29 passed in 19.10s\n"
+  },
+  "full": {
+    "command": [
+      "D:\\codex\\project\\我的世界\\.venv\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "-m",
+      "pytest",
+      "-q",
+      "--tb=short",
+      "--basetemp=D:\\codex\\project\\我的世界\\.test-tmp\\body-reference-final-full-regression"
+    ],
+    "returncode": 0,
+    "elapsed_seconds": 389.4679899215698,
+    "source_hashes": {
+      "experimental/body_interface_references/channel.py": "23674fe31bc8a3155adef292110b50fea72749081a8202ecedead84ecc79ec98",
+      "experimental/body_interface_references/engine.py": "dc2a9b668555574ece1e7e9a50272c7540726f824ef51d642e566af64c3c70b5",
+      "experimental/body_interface_references/references.py": "6c2203e98d5a1d2925d0735c88f9f15a94696a616ac0ffc14bc0d347dbdfb1a9",
+      "experimental/body_interface_references/runner.py": "52ff5af18056a5bbf3ca7b73d5d4116d23166d7be796e629a730ee902ef9426d",
+      "experimental/body_interface_references/validation.py": "fd5004b57e34623147d2b8156eca9bf00b86a1d5ae464e9f3da69ee1a66a12ae",
+      "experimental/body_interface_references/__init__.py": "a7dd7cea9695e8e0af41715e77ccd80cc6c03364e0e72cc9ac60e491b72c4b12",
+      "tests/test_body_interface_references.py": "fc9804bbad07b6f07a42e2f591127e4e58856c6ceae9e27c95fba8cab080ca43"
+    },
+    "source_unchanged_during_run": true,
+    "tk_manifest_files_checked": 1265,
+    "TCL_LIBRARY": "C:\\Users\\i\\.codex\\visualizations\\2026\\10\\03\\01a10045-8063-70d3-b492-5e9242f9ab36\\formal-continuous-tk-validation-20261008\\tcl\\tcl8.6",
+    "TK_LIBRARY": "C:\\Users\\i\\.codex\\visualizations\\2026\\10\\03\\01a10045-8063-70d3-b492-5e9242f9ab36\\formal-continuous-tk-validation-20261008\\tcl\\tk8.6",
+    "stdout": ".............................................................. [  8%]\n........................................................... [ 17%]\n.............................................................. [ 26%]\n........................................................................ [ 36%]\n.............................................................. [ 45%]\n........................................................................ [ 56%]\n........................................................... [ 64%]\n........................................................................ [ 75%]\n................................................................. [ 84%]\n................................................ [ 91%]\n........................................................ [ 99%]\n....                                                          [100%]\n693 passed, 114 subtests passed in 388.86s (0:06:28)\n",
+    "stderr": ""
+  },
+  "pre_final_full": {
+    "command": [
+      "D:\\codex\\project\\我的世界\\.venv\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "-m",
+      "pytest",
+      "-q",
+      "--tb=short",
+      "--basetemp=D:\\codex\\project\\我的世界\\.test-tmp\\body-reference-full-regression"
+    ],
+    "returncode": 0,
+    "elapsed_seconds": 390.5243103504181,
+    "tk_manifest_files_checked": 1265,
+    "TCL_LIBRARY": "C:\\Users\\i\\.codex\\visualizations\\2026\\10\\03\\01a10045-8063-70d3-b492-5e9242f9ab36\\formal-continuous-tk-validation-20261008\\tcl\\tcl8.6",
+    "TK_LIBRARY": "C:\\Users\\i\\.codex\\visualizations\\2026\\10\\03\\01a10045-8063-70d3-b492-5e9242f9ab36\\formal-continuous-tk-validation-20261008\\tcl\\tk8.6",
+    "stdout": ".............................................................. [  8%]\n........................................................... [ 17%]\n.............................................................. [ 26%]\n........................................................................ [ 36%]\n.............................................................. [ 45%]\n........................................................................ [ 56%]\n........................................................... [ 64%]\n........................................................................ [ 75%]\n................................................................. [ 84%]\n................................................ [ 91%]\n........................................................ [ 99%]\n..                                                            [100%]\n691 passed, 114 subtests passed in 389.92s (0:06:29)\n"
+  },
+  "preservation": {
+    "old_file_count": 393,
+    "old_files_unchanged": true,
+    "frozen_hashes": {
+      "minecraft/action-space.json": true,
+      "minecraft/package.json": true,
+      "minecraft/package-lock.json": true,
+      "minecraft/src/body.js": true,
+      "minecraft/src/capabilities.js": true,
+      "minecraft/src/native_inputs.js": true,
+      "minecraft/src/index.js": true,
+      "individual/observation.py": true,
+      "individual/action_space.py": true,
+      "individual/formal_l0.py": true,
+      "individual/formal_boundary.py": true,
+      "individual/experiment.json": true,
+      "supervisor/limits.yaml": true
+    }
+  },
+  "git_diff_check_returncode": 0
+}

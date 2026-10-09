@@ -1,0 +1,1 @@
+{"classification": "NOT_READY", "individual_id": "A-12df631a-c578-4919-ba53-18e495999471", "session_id": "S-f9f3a3b4-59ee-47fa-ba0f-707b08eedb62", "formed_route_count": 0, "formed_connection_count": 0, "recursive_receipts_in_renewed_experience": [], "error": {"type": "ValueError", "message": "Observed capability declaration differs from native catalog"}}
