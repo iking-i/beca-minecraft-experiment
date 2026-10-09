@@ -1,160 +1,57 @@
 {
   "current_research_phase": {
-    "name": "CONTINUOUS_CAPACITY_TEST_ONLY",
-    "status": "BUDGET_COMPLETED",
+    "name": "OBSERVATION_SOURCE_BOUNDARY_TEST_ONLY",
+    "status": "PASS",
     "lifecycle": "COMPLETED_FROZEN",
     "completed": true,
     "frozen": true,
-    "baseline_commit": "43ef0ef97797992bf788d52c348b79be294407c0",
-    "implementation_commit": "474f3c9798b37ca2b9c3111dab4499b52e577cbf",
-    "closeout_anchor": "separate commit adding CONTINUOUS_CAPACITY_CLOSEOUT.md and CONTINUOUS_CAPACITY_CONVERSATION_HANDOFF.md",
-    "scope": "32-frame bounded real measurement of unchanged UsageRealCore/UsageRealEngine in one fresh experimental A/database/continuous Core",
-    "engine_version": "ORDINARY-PAIR-USAGE-TEST_ONLY-1",
+    "baseline_commit": "f2d66102755038dad688a20189767ded24651b0e",
+    "implementation_commit": "96ec13158531f4e521d611694f587dbb46015d2f",
+    "closeout_anchor": "separate commit adding OBSERVATION_SOURCE_BOUNDARY_CLOSEOUT.md and CONVERSATION_HANDOFF",
+    "scope": "Isolated authoritative observation source storage, exact lawful references, atomic Current State, Full History independence and demonstrated same-A continuation; original 8+8 protocol remains PARTIAL.",
     "layered_results": {
-      "real_observation_budget": "BUDGET_COMPLETED",
-      "finite_charged_structure_capacity": "LIMIT_NOT_REACHED_WITHIN_BUDGET",
-      "recursive_body_feedback_loop_this_run": "NOT_ESTABLISHED",
-      "prior_independent_controlled_feedback_loop": "PASS_UNCHANGED",
-      "unlimited_sustained_operation": "NOT_ESTABLISHED",
-      "bounded_total_state_or_runtime_memory": "NOT_ESTABLISHED"
+      "offline_32_frame_comparison": "PASS",
+      "first_real_4_frames": "PARTIAL",
+      "original_second_8_plus_8_protocol": "PARTIAL_8_PLUS_1",
+      "third_session_8_frame_supplement": "PASS",
+      "real_cross_process_Pair_reuse": "NOT_ESTABLISHED",
+      "long_run_total_memory_bound": "NOT_ESTABLISHED",
+      "formal_A_adoption": "NOT_ESTABLISHED",
+      "purpose_need_structure_unloading": "NOT_IMPLEMENTED"
     },
-    "accepted_claim": "The unchanged TEST_ONLY mechanism completed 32 real ordinary advances and 30 experiences/integrations in one continuous A; charged structures grew3/64 to31/64 and remained31/64 fromE6 toE32, while full retained observation sources and serialized InternalState continued growing. This run did not re-establish a recursive body-feedback loop.",
-    "real_evidence": {
-      "individual_id": "A-968eab84-38ed-4a07-854c-e3cb568a587a",
-      "session_id": "S-0c7dbc3b-e710-45f0-9f6b-35b08c2fdfbb",
-      "fresh_database": true,
-      "same_database_and_continuous_core": true,
-      "observations": 32,
-      "ordinary_advances": 32,
-      "experiences": 30,
-      "recursive_partial_outputs": 30,
-      "integrations": 30,
-      "last_observation_version": 39,
-      "controlled_shutdown_version": 40,
-      "final_event_sequence": 449,
-      "runtime_restarted": false,
-      "body_died": true,
-      "body_death_event": 67,
-      "body_death_version": 11,
-      "body_death_cause": "NOT_ESTABLISHED",
-      "temporal_link_unresolved": {
-        "frames": "E4-to-E5",
-        "event": 71,
-        "version": 12,
-        "reason": "carrier_epoch_or_encoding_changed",
-        "complete_experience": false
-      },
-      "external_bootstrap_count": 1,
-      "external_bootstrap": {
-        "code": 16,
-        "parameters": {
-          "slot": 0
-        }
-      },
-      "bootstrap_author": "EXPERIMENTER",
-      "bootstrap_action_id": "8550225d-f6f8-43d4-9321-a1895931c1a6",
-      "bootstrap_receipt_experience_event": 32,
-      "receipt_attribution": "temporal_observation_only",
-      "formed_effect_routes": 0,
-      "recursive_perform": 0,
-      "additional_world_interventions": 0,
-      "sampler_calls": 0,
-      "binder_calls": 0,
-      "evidence": "experimental/continuous_capacity/VALIDATION.json; evidence/run2/SUMMARY.json; exact-byte raw envelopes"
+    "continued_individual": "A-87cd4a08-65a3-4d51-81ad-49b00343e8a4",
+    "supplement_session": "S-bb0d19b9-db2f-4dfd-9962-15a39b668706",
+    "final_state_version": 32,
+    "corruption_detection_timing": "Known change: accessed dependencies/head checked ordinarily; unaccessed corruption may require later access or explicit full audit.",
+    "recorded_tests": {
+      "focused": 21,
+      "related": 88,
+      "full": 784,
+      "subtests": 114,
+      "rerun_during_closeout": false,
+      "later_external_recorders_not_claimed_covered_by_prior_full_run": true
     },
-    "capacity": {
-      "unit_cap": 64,
-      "relation_cap": 96,
-      "caps_changed": false,
-      "initial_unit_charge": 3,
-      "final_unit_charge": 31,
-      "stable_from_frame": 6,
-      "stable_through_frame": 32,
-      "final_units": 8,
-      "final_content_nodes": 23,
-      "final_pairs": 9,
-      "final_body_refs": 3,
-      "final_observation_refs": 11,
-      "final_current_effects": 0,
-      "final_current_operations": 0,
-      "final_cells": 0,
-      "final_relation_charge": 21,
-      "explicit_pair_read_operands": 0,
-      "historical_auto_wrappers": 0,
-      "retained_pairs_recomputed_in_direct_construction": 9,
-      "saved_pair_node_read_is_not_direct_recomputation": true,
-      "whole_batch_unit_or_pair_rejection": false,
-      "nonfatal_current_limit_events": 78
+    "frozen_hashes": {
+      "checked": 13,
+      "result": "MATCH"
     },
-    "persisted_footprint": {
-      "initial_internal_serialized_bytes": 236219,
-      "final_internal_serialized_bytes": 1247906,
-      "initial_observation_sources": 1,
-      "final_observation_sources": 32,
-      "source_pool_in_authoritative_internal_state": true,
-      "source_pool_unit_charged": false,
-      "serialized_size_is_not_RSS": true,
-      "RSS_measured": false,
-      "stable_charged_structure_count_is_not_total_memory_bound": true
-    },
-    "purpose_need_mechanism": "NOT_IMPLEMENTED_IN_THIS_ENGINE",
-    "verification": {
-      "pre_correction_measurement_and_related_passed": 17,
-      "post_correction_recorder_passed": 6,
-      "counts_overlap_do_not_sum": true,
-      "full_regression_rerun": false,
-      "previous_phase_full_757_subtests_114_is_historical_only": true,
-      "frozen_hash_count": 13,
-      "frozen_hash_status": "MATCH",
-      "baseline_files_unchanged_before_status_edits": 515,
-      "baseline_files_unchanged_after_status_edits": 512,
-      "authorized_current_index_edits": 3,
-      "unrelated_files_preserved": 27,
-      "source": "experimental/continuous_capacity/PREFLIGHT.json; PREFLIGHT_R2.json; evidence/related-tests.txt; evidence/recorder-corrected-tests.txt; CLOSEOUT_VALIDATION.json"
-    },
-    "first_recorder_failure_preserved": true,
-    "other_historical_evidence_preserved": true,
-    "nonclaims": [
-      "New recursive body-feedback loop in this trial",
-      "Autonomous action selection",
-      "Autonomous purpose/need or allocation",
-      "Generic world causal law",
-      "Unlimited sustained operation",
-      "Bounded total memory",
-      "Autonomous explicit Pair-read relation formation",
-      "Uninterrupted physical-body continuity",
-      "Default/formal A adoption",
-      "L1/upward recursion",
-      "Universal Perfect Recursion validation"
-    ],
-    "closeout_record": "experimental/continuous_capacity/CLOSEOUT_VALIDATION.json",
-    "handoff": "CONTINUOUS_CAPACITY_CONVERSATION_HANDOFF.md"
+    "default_runtime_changed": false,
+    "unit_cap": 64,
+    "documents": [
+      "OBSERVATION_SOURCE_BOUNDARY_CLOSEOUT.md",
+      "OBSERVATION_SOURCE_BOUNDARY_CONVERSATION_HANDOFF.md",
+      "experimental/observation_source_boundary/CLOSEOUT_VALIDATION.json"
+    ]
   },
   "next_phase_boundary": {
     "status": "NOT_STARTED",
-    "next_phase_lifecycle": "NOT_STARTED",
-    "boundary_only": true,
-    "observed_issues": [
-      "Retained full observation sources keep growing in InternalState; current running state versus external audit history boundary requires examination",
-      "Real body death and E4-to-E5 TEMPORAL_LINK_UNRESOLVED require causal checking"
-    ],
-    "starting_point": "Frozen continuous_capacity run2 raw frames/states/events and unchanged UsageRealEngine/UsageRealCore",
-    "stage_started": false,
     "design_started": false,
     "implementation_started": false,
     "experiment_started": false,
-    "runtime_implementation_authorized_by_closeout": false,
-    "forbidden": [
-      "Immediate repair from this handoff",
-      "Cap increase",
-      "Predesigned selector/forgetting/allocation/purpose mechanism",
-      "Rewriting historical evidence"
-    ]
+    "scope": "No next stage defined by this closeout; await explicit user direction."
   },
   "next_work": [
-    "Preserve bounded Continuous Capacity measurement and prior controlled-loop PASS independently",
-    "Record only the two exposed observation-source and body-death/temporal-link issues; wait for separate authorization",
-    "Next phase/design/implementation/experiment NOT_STARTED; no theory or mechanism change"
+    "No next phase started or designed; await user direction."
   ],
   "status_date": "2026-10-09",
   "operative_connection_interpretation": {
@@ -2617,5 +2514,164 @@
       "Do not predesign purpose, forgetting, allocation or higher-layer solutions"
     ],
     "prior_closeout_index_scope": "Current phase records Native Parameter Binding Extension scalar candidate construction only. TC/NBO and then-next questions remain historical; old NOT_READY records unchanged."
+  },
+  "historical_continuous_capacity_closeout_current_index": {
+    "current_research_phase": {
+      "name": "CONTINUOUS_CAPACITY_TEST_ONLY",
+      "status": "BUDGET_COMPLETED",
+      "lifecycle": "COMPLETED_FROZEN",
+      "completed": true,
+      "frozen": true,
+      "baseline_commit": "43ef0ef97797992bf788d52c348b79be294407c0",
+      "implementation_commit": "474f3c9798b37ca2b9c3111dab4499b52e577cbf",
+      "closeout_anchor": "separate commit adding CONTINUOUS_CAPACITY_CLOSEOUT.md and CONTINUOUS_CAPACITY_CONVERSATION_HANDOFF.md",
+      "scope": "32-frame bounded real measurement of unchanged UsageRealCore/UsageRealEngine in one fresh experimental A/database/continuous Core",
+      "engine_version": "ORDINARY-PAIR-USAGE-TEST_ONLY-1",
+      "layered_results": {
+        "real_observation_budget": "BUDGET_COMPLETED",
+        "finite_charged_structure_capacity": "LIMIT_NOT_REACHED_WITHIN_BUDGET",
+        "recursive_body_feedback_loop_this_run": "NOT_ESTABLISHED",
+        "prior_independent_controlled_feedback_loop": "PASS_UNCHANGED",
+        "unlimited_sustained_operation": "NOT_ESTABLISHED",
+        "bounded_total_state_or_runtime_memory": "NOT_ESTABLISHED"
+      },
+      "accepted_claim": "The unchanged TEST_ONLY mechanism completed 32 real ordinary advances and 30 experiences/integrations in one continuous A; charged structures grew3/64 to31/64 and remained31/64 fromE6 toE32, while full retained observation sources and serialized InternalState continued growing. This run did not re-establish a recursive body-feedback loop.",
+      "real_evidence": {
+        "individual_id": "A-968eab84-38ed-4a07-854c-e3cb568a587a",
+        "session_id": "S-0c7dbc3b-e710-45f0-9f6b-35b08c2fdfbb",
+        "fresh_database": true,
+        "same_database_and_continuous_core": true,
+        "observations": 32,
+        "ordinary_advances": 32,
+        "experiences": 30,
+        "recursive_partial_outputs": 30,
+        "integrations": 30,
+        "last_observation_version": 39,
+        "controlled_shutdown_version": 40,
+        "final_event_sequence": 449,
+        "runtime_restarted": false,
+        "body_died": true,
+        "body_death_event": 67,
+        "body_death_version": 11,
+        "body_death_cause": "NOT_ESTABLISHED",
+        "temporal_link_unresolved": {
+          "frames": "E4-to-E5",
+          "event": 71,
+          "version": 12,
+          "reason": "carrier_epoch_or_encoding_changed",
+          "complete_experience": false
+        },
+        "external_bootstrap_count": 1,
+        "external_bootstrap": {
+          "code": 16,
+          "parameters": {
+            "slot": 0
+          }
+        },
+        "bootstrap_author": "EXPERIMENTER",
+        "bootstrap_action_id": "8550225d-f6f8-43d4-9321-a1895931c1a6",
+        "bootstrap_receipt_experience_event": 32,
+        "receipt_attribution": "temporal_observation_only",
+        "formed_effect_routes": 0,
+        "recursive_perform": 0,
+        "additional_world_interventions": 0,
+        "sampler_calls": 0,
+        "binder_calls": 0,
+        "evidence": "experimental/continuous_capacity/VALIDATION.json; evidence/run2/SUMMARY.json; exact-byte raw envelopes"
+      },
+      "capacity": {
+        "unit_cap": 64,
+        "relation_cap": 96,
+        "caps_changed": false,
+        "initial_unit_charge": 3,
+        "final_unit_charge": 31,
+        "stable_from_frame": 6,
+        "stable_through_frame": 32,
+        "final_units": 8,
+        "final_content_nodes": 23,
+        "final_pairs": 9,
+        "final_body_refs": 3,
+        "final_observation_refs": 11,
+        "final_current_effects": 0,
+        "final_current_operations": 0,
+        "final_cells": 0,
+        "final_relation_charge": 21,
+        "explicit_pair_read_operands": 0,
+        "historical_auto_wrappers": 0,
+        "retained_pairs_recomputed_in_direct_construction": 9,
+        "saved_pair_node_read_is_not_direct_recomputation": true,
+        "whole_batch_unit_or_pair_rejection": false,
+        "nonfatal_current_limit_events": 78
+      },
+      "persisted_footprint": {
+        "initial_internal_serialized_bytes": 236219,
+        "final_internal_serialized_bytes": 1247906,
+        "initial_observation_sources": 1,
+        "final_observation_sources": 32,
+        "source_pool_in_authoritative_internal_state": true,
+        "source_pool_unit_charged": false,
+        "serialized_size_is_not_RSS": true,
+        "RSS_measured": false,
+        "stable_charged_structure_count_is_not_total_memory_bound": true
+      },
+      "purpose_need_mechanism": "NOT_IMPLEMENTED_IN_THIS_ENGINE",
+      "verification": {
+        "pre_correction_measurement_and_related_passed": 17,
+        "post_correction_recorder_passed": 6,
+        "counts_overlap_do_not_sum": true,
+        "full_regression_rerun": false,
+        "previous_phase_full_757_subtests_114_is_historical_only": true,
+        "frozen_hash_count": 13,
+        "frozen_hash_status": "MATCH",
+        "baseline_files_unchanged_before_status_edits": 515,
+        "baseline_files_unchanged_after_status_edits": 512,
+        "authorized_current_index_edits": 3,
+        "unrelated_files_preserved": 27,
+        "source": "experimental/continuous_capacity/PREFLIGHT.json; PREFLIGHT_R2.json; evidence/related-tests.txt; evidence/recorder-corrected-tests.txt; CLOSEOUT_VALIDATION.json"
+      },
+      "first_recorder_failure_preserved": true,
+      "other_historical_evidence_preserved": true,
+      "nonclaims": [
+        "New recursive body-feedback loop in this trial",
+        "Autonomous action selection",
+        "Autonomous purpose/need or allocation",
+        "Generic world causal law",
+        "Unlimited sustained operation",
+        "Bounded total memory",
+        "Autonomous explicit Pair-read relation formation",
+        "Uninterrupted physical-body continuity",
+        "Default/formal A adoption",
+        "L1/upward recursion",
+        "Universal Perfect Recursion validation"
+      ],
+      "closeout_record": "experimental/continuous_capacity/CLOSEOUT_VALIDATION.json",
+      "handoff": "CONTINUOUS_CAPACITY_CONVERSATION_HANDOFF.md"
+    },
+    "next_phase_boundary": {
+      "status": "NOT_STARTED",
+      "next_phase_lifecycle": "NOT_STARTED",
+      "boundary_only": true,
+      "observed_issues": [
+        "Retained full observation sources keep growing in InternalState; current running state versus external audit history boundary requires examination",
+        "Real body death and E4-to-E5 TEMPORAL_LINK_UNRESOLVED require causal checking"
+      ],
+      "starting_point": "Frozen continuous_capacity run2 raw frames/states/events and unchanged UsageRealEngine/UsageRealCore",
+      "stage_started": false,
+      "design_started": false,
+      "implementation_started": false,
+      "experiment_started": false,
+      "runtime_implementation_authorized_by_closeout": false,
+      "forbidden": [
+        "Immediate repair from this handoff",
+        "Cap increase",
+        "Predesigned selector/forgetting/allocation/purpose mechanism",
+        "Rewriting historical evidence"
+      ]
+    },
+    "next_work": [
+      "Preserve bounded Continuous Capacity measurement and prior controlled-loop PASS independently",
+      "Record only the two exposed observation-source and body-death/temporal-link issues; wait for separate authorization",
+      "Next phase/design/implementation/experiment NOT_STARTED; no theory or mechanism change"
+    ]
   }
 }

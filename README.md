@@ -10,7 +10,28 @@
 
 ## 当前研究状态
 
-## 当前阶段收口 — Continuous Capacity TEST_ONLY（2026-10-09）
+## 当前阶段收口 — Observation Source Boundary TEST_ONLY（2026-10-09）
+
+**OBSERVATION_SOURCE_BOUNDARY_TEST_ONLY = PASS / COMPLETED / FROZEN**，仅限已验证的来源存储、精确引用、事务提交及同一个体恢复／继续递归范围。
+实现／验证提交：`96ec13158531f4e521d611694f587dbb46015d2f`；独立收口提交以新增本阶段 closeout／handoff 为锚点。
+
+完整观察来源保存在同一个体数据库的权威来源表，不再全部嵌入活跃 InternalState；与 Current State 同事务提交，不依赖可选 Full Audit History。
+OFF 保留来源，ON 保留原 A0–A13 审计缺口。相同 A 跨真实进程恢复，正常 epoch 断层如实记录；后续稳定观察重新形成经历及 integration。
+
+**分层结论必须保留：** 离线32帧表示对照 PASS；初次真实4帧 PARTIAL；原8＋8协议实际8＋1帧，仍为 PARTIAL；第三 Session 补充8帧连续性验证 PASS。
+第三 Session 为 `S-bb0d19b9-db2f-4dfd-9962-15a39b668706`，同一 A `A-87cd4a08-65a3-4d51-81ad-49b00343e8a4` 从A19恢复，E10–E17提交至A31，正常关闭A32，形成7条经历／integration。
+不得拼成未发生的连续16帧 Session。真实跨进程 Pair 复用、长期整体内存有界、正式A采纳均 NOT_ESTABLISHED；目的／需要／结构卸载 NOT_IMPLEMENTED。
+历史损坏检测从逐轮全量检查改为当前边界及按需依赖检查，未访问损坏可能延后发现，显式完整来源审计仍检查全部；不宣称损坏检测时机等价。
+
+已有日志核对：**21专项、88相关、784完整回归／114 subtests**；本次收口未重跑测试或 Minecraft。13项冻结哈希匹配，512个受保护旧文件及27个无关文件保持原样。
+原始失败、NOT_TESTABLE、PARTIAL和所有旧冻结材料保留；实际结构继续受64 Unit限制。新实现仅适用于显式 TEST_ONLY 路径，不默认启用。
+
+收口：[OBSERVATION_SOURCE_BOUNDARY_CLOSEOUT.md](OBSERVATION_SOURCE_BOUNDARY_CLOSEOUT.md)。
+跨对话交接：[OBSERVATION_SOURCE_BOUNDARY_CONVERSATION_HANDOFF.md](OBSERVATION_SOURCE_BOUNDARY_CONVERSATION_HANDOFF.md)。
+机器证据／文件哈希：[CLOSEOUT_VALIDATION.json](experimental/observation_source_boundary/CLOSEOUT_VALIDATION.json)。
+**下一阶段：NOT_STARTED**；本轮不定义、设计或实施下一阶段，不修改理论。
+
+## 历史阶段收口 — Continuous Capacity TEST_ONLY（2026-10-09）
 
 **CONTINUOUS_CAPACITY_TEST_ONLY = BUDGET_COMPLETED / COMPLETED / FROZEN**。
 实现／验证提交：`474f3c9798b37ca2b9c3111dab4499b52e577cbf`；独立收口以新增下列 closeout／handoff 的提交为锚点。

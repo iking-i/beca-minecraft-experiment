@@ -1,0 +1,910 @@
+{
+  "name": "OBSERVATION_SOURCE_BOUNDARY_TEST_ONLY",
+  "status": "PASS",
+  "lifecycle": "COMPLETED_FROZEN",
+  "completed": true,
+  "frozen": true,
+  "baseline_commit": "f2d66102755038dad688a20189767ded24651b0e",
+  "implementation_commit": "96ec13158531f4e521d611694f587dbb46015d2f",
+  "closeout_anchor": "separate commit adding OBSERVATION_SOURCE_BOUNDARY_CLOSEOUT.md and CONVERSATION_HANDOFF",
+  "scope": "Isolated authoritative observation source storage, exact lawful references, atomic Current State, Full History independence and demonstrated same-A continuation; original 8+8 protocol remains PARTIAL.",
+  "layered_results": {
+    "offline_32_frame_comparison": "PASS",
+    "first_real_4_frames": "PARTIAL",
+    "original_second_8_plus_8_protocol": "PARTIAL_8_PLUS_1",
+    "third_session_8_frame_supplement": "PASS",
+    "real_cross_process_Pair_reuse": "NOT_ESTABLISHED",
+    "long_run_total_memory_bound": "NOT_ESTABLISHED",
+    "formal_A_adoption": "NOT_ESTABLISHED",
+    "purpose_need_structure_unloading": "NOT_IMPLEMENTED"
+  },
+  "continued_individual": "A-87cd4a08-65a3-4d51-81ad-49b00343e8a4",
+  "supplement_session": "S-bb0d19b9-db2f-4dfd-9962-15a39b668706",
+  "final_state_version": 32,
+  "corruption_detection_timing": "Known change: accessed dependencies/head checked ordinarily; unaccessed corruption may require later access or explicit full audit.",
+  "recorded_tests": {
+    "focused": 21,
+    "related": 88,
+    "full": 784,
+    "subtests": 114,
+    "rerun_during_closeout": false,
+    "later_external_recorders_not_claimed_covered_by_prior_full_run": true
+  },
+  "frozen_hashes": {
+    "checked": 13,
+    "result": "MATCH"
+  },
+  "default_runtime_changed": false,
+  "unit_cap": 64,
+  "documents": [
+    "OBSERVATION_SOURCE_BOUNDARY_CLOSEOUT.md",
+    "OBSERVATION_SOURCE_BOUNDARY_CONVERSATION_HANDOFF.md",
+    "experimental/observation_source_boundary/CLOSEOUT_VALIDATION.json"
+  ],
+  "classification": "PASS_WITH_EXPLICIT_LAYERED_PROTOCOL_LIMITS",
+  "OS_T1_TO_T10": {
+    "OS_T1": "PASS",
+    "OS_T2": "PASS",
+    "OS_T3": "PASS",
+    "OS_T4": "PASS",
+    "OS_T5": "PASS",
+    "OS_T6": "PASS",
+    "OS_T7": "PASS",
+    "OS_T8": "PASS",
+    "OS_T9": "PASS",
+    "OS_T10": "PASS"
+  },
+  "evidence_anchors": [
+    "VALIDATION.json",
+    "LIVE_VALIDATION.json",
+    "LIVE_VALIDATION_2.json",
+    "LIVE_CONTINUITY_SUPPLEMENT.json",
+    "evidence/live_raw_export/MANIFEST.json"
+  ],
+  "accepted_claims": [
+    "Complete observation source bodies persist outside active InternalState in the same lifetime authority.",
+    "Sources and Current State share the transition transaction.",
+    "Full History OFF retains authoritative sources; OFF→ON does not backfill the audit gap.",
+    "Same A/database restores across real processes and later stable observations form experience/integration.",
+    "Epoch discontinuities remain explicit, with no invented cross-epoch experience.",
+    "Historical exact references, provenance and existing lawful structures are retained."
+  ],
+  "offline_32_frame_comparison": {
+    "frames": 32,
+    "complete_input_channels": 376,
+    "complete_objects": 64,
+    "native_capabilities": 47,
+    "expanded_recursive_state_equal": true,
+    "journal_equal": true,
+    "encoded_frame_equal": true,
+    "all_sources_audited": 32,
+    "first_json_old": 236219,
+    "first_json_new": 185312,
+    "last_json_old": 1247906,
+    "last_json_new": 270011,
+    "E16_E32_new_bytes": 270011,
+    "final_units": 8,
+    "final_pairs": 9,
+    "charged_capacity": 31,
+    "locked_capacity": 64,
+    "fixture_scope": "saved checkpoints in new independent diagnostic DB, not a live A",
+    "coupled_uuid_scope": "external comparison bookkeeping only; no operands or execution/results mocked"
+  },
+  "real_runs": {
+    "first": {
+      "result": "PARTIAL",
+      "frames": 4,
+      "experiences": 3,
+      "integrations": 3
+    },
+    "second": {
+      "result": "PARTIAL",
+      "OFF_frames": 8,
+      "ON_frames": 1,
+      "original_protocol": "8+8 NOT_COMPLETED"
+    },
+    "third_supplement": {
+      "result": "PASS_FOR_THIRD_SESSION_SUPPLEMENT",
+      "frames": 8,
+      "experiences": 7,
+      "integrations": 7,
+      "from_state": 19,
+      "final_state": 32,
+      "sources": 17,
+      "source_bytes": 433942,
+      "internal_state_bytes": 214896,
+      "whole_current_state_bytes": 337793,
+      "capacity": 5,
+      "capacity_limit": 64,
+      "Pair_count": 0,
+      "perform_requests": 0,
+      "rss_initial_bytes": 31924224,
+      "rss_peak_bytes": 56393728,
+      "rss_final_bytes": 49184768,
+      "nonfatal_limits": 21
+    }
+  },
+  "closeout_checks": {
+    "old_protected_files": 512,
+    "unrelated_files": 27,
+    "frozen_hashes": 13,
+    "existing_evidence_hashes": "MATCH",
+    "original_database_bytes": "UNCHANGED",
+    "JSON": "PARSED",
+    "tests_rerun": false,
+    "Minecraft_started": false,
+    "implementation_modified_during_closeout": false,
+    "new_raw_public_evidence_exports": 56,
+    "raw_implementation_diff_check": "ORIGINAL_WHITESPACE_WARNINGS_PRESERVED",
+    "implementation_diff_check_exceptions": [
+      "experimental/observation_source_boundary/CHANGED_FILES.md",
+      "experimental/observation_source_boundary/ISOLATION.patch",
+      "experimental/observation_source_boundary/evidence/FULL_FINAL.txt"
+    ],
+    "other_implementation_and_closeout_diff_check": "PASS"
+  },
+  "file_inventory": {
+    "OBSERVATION_SOURCE_BOUNDARY_CLOSEOUT.md": {
+      "bytes": 8683,
+      "working_copy_sha256": "9844c359a17a5464672b695286f66cbdf583d9fa41a87582d810bd07a3b7c29b",
+      "lf_normalized_sha256": "9844c359a17a5464672b695286f66cbdf583d9fa41a87582d810bd07a3b7c29b"
+    },
+    "OBSERVATION_SOURCE_BOUNDARY_CONVERSATION_HANDOFF.md": {
+      "bytes": 5246,
+      "working_copy_sha256": "5c41a8a0c25dbd4015683521ebe8110ad085f4ef325078038edfe2784c73dbf4",
+      "lf_normalized_sha256": "5c41a8a0c25dbd4015683521ebe8110ad085f4ef325078038edfe2784c73dbf4"
+    },
+    "README.md": {
+      "bytes": 71612,
+      "working_copy_sha256": "67f9a37f01be51aec1d686325f319aa502ac714d7ce21996a1ef7f9933ccc75f",
+      "lf_normalized_sha256": "d9dcf9ea4bff8fc501b1c5a071672aa1abb57c2679c3f2594761548b7032f94d"
+    },
+    "RESEARCH_STATUS.json": {
+      "bytes": 125268,
+      "working_copy_sha256": "43ef00f8176572c155fcbb9238d12d8193c8316f5d6e1045ed56d314ed4f957d",
+      "lf_normalized_sha256": "4b72d548a7406a07552173bf11a3347c3650bd8266ab8dfb7d185a85959ac21b"
+    },
+    "RESEARCH_STATUS.md": {
+      "bytes": 78642,
+      "working_copy_sha256": "c302ce154aa9d452c7a273afbabcc3a4d1b1d1651d56a0588acff618e3a31b69",
+      "lf_normalized_sha256": "c2ba75e794cf3508f4c8fa93b6b14277b088e25102c8613536c7679ae9574b42"
+    },
+    "experimental/observation_source_boundary/CHANGED_FILES.md": {
+      "bytes": 2636,
+      "working_copy_sha256": "8445118bad5af6163ce8a381866a277258ffc80ed7864db27e9f6346db397a70",
+      "lf_normalized_sha256": "f2e53931d3bcbbcc78578d16e61a6dc844e632ed1afb025d39cec1c1299b52cb"
+    },
+    "experimental/observation_source_boundary/INITIAL_FAILURES.json": {
+      "bytes": 1390,
+      "working_copy_sha256": "609b450f894676c35246403de1b9cf972f9137835d29389271ee6787d7fd6702",
+      "lf_normalized_sha256": "609b450f894676c35246403de1b9cf972f9137835d29389271ee6787d7fd6702"
+    },
+    "experimental/observation_source_boundary/ISOLATION.json": {
+      "bytes": 2184,
+      "working_copy_sha256": "59eed4220dea84d4119032eae80fa7206f5312644046b78e18089fd7c2e6df96",
+      "lf_normalized_sha256": "bcb83f519ee2d049608f3c0a763a4b7e33452f0af1a6cc4c0f12e75b23cb05a7"
+    },
+    "experimental/observation_source_boundary/ISOLATION.md": {
+      "bytes": 4158,
+      "working_copy_sha256": "6e1652c4098e6eff10e2517c3886b9100eb71ee556ac34de6d65625f2d9e738a",
+      "lf_normalized_sha256": "6e1652c4098e6eff10e2517c3886b9100eb71ee556ac34de6d65625f2d9e738a"
+    },
+    "experimental/observation_source_boundary/ISOLATION.patch": {
+      "bytes": 20313,
+      "working_copy_sha256": "bf9c501c31203a8a7c5d9d899b959c129c38c5d30b39b3958a60bf39281e75f3",
+      "lf_normalized_sha256": "bf9c501c31203a8a7c5d9d899b959c129c38c5d30b39b3958a60bf39281e75f3"
+    },
+    "experimental/observation_source_boundary/LIVE_CONTINUITY_SUPPLEMENT.json": {
+      "bytes": 7280,
+      "working_copy_sha256": "17460e716e0ab9839574dd17e84f6dfd175c28dd647d36cca7ae765bbb3af9ac",
+      "lf_normalized_sha256": "9a3cd014e41498f6b1e2d24e102a1fc8fa8146fb9bbb1877c26b7b648290e215"
+    },
+    "experimental/observation_source_boundary/LIVE_CONTINUITY_SUPPLEMENT.md": {
+      "bytes": 6362,
+      "working_copy_sha256": "5996a01c1a416643be1f04255199f23959f6f3db1162631cc8110eb56da1fbdd",
+      "lf_normalized_sha256": "5996a01c1a416643be1f04255199f23959f6f3db1162631cc8110eb56da1fbdd"
+    },
+    "experimental/observation_source_boundary/LIVE_VALIDATION.json": {
+      "bytes": 483502,
+      "working_copy_sha256": "102e4be3efd55a0bc05691e6b7c2ea3ad2194931c756e4c9ec8a88d08fb6c40a",
+      "lf_normalized_sha256": "6cdb2a9776b488f84bea8f1611a7fb2978e1802c0ec70e5d3b2b31b5f96b4d0e"
+    },
+    "experimental/observation_source_boundary/LIVE_VALIDATION.md": {
+      "bytes": 6435,
+      "working_copy_sha256": "f071e4ce48eafab0b3412afbe32dfcb4d280e08b6a66225d7891cf90a0591405",
+      "lf_normalized_sha256": "f071e4ce48eafab0b3412afbe32dfcb4d280e08b6a66225d7891cf90a0591405"
+    },
+    "experimental/observation_source_boundary/LIVE_VALIDATION_2.json": {
+      "bytes": 465185,
+      "working_copy_sha256": "2d71f60967844878710f66dd6e7870fd0b2559be88429ebc22110035fa4ed81e",
+      "lf_normalized_sha256": "5b842c50dd9ec3842f3296a24c1fd2302b9bf7fa9ec121a600c24fe0a0fabae5"
+    },
+    "experimental/observation_source_boundary/LIVE_VALIDATION_2.md": {
+      "bytes": 8440,
+      "working_copy_sha256": "72f190e0669a0fae8e1ecee60ccddd60afc5f79668d1c82eec29584b72d56b81",
+      "lf_normalized_sha256": "72f190e0669a0fae8e1ecee60ccddd60afc5f79668d1c82eec29584b72d56b81"
+    },
+    "experimental/observation_source_boundary/SPEC.md": {
+      "bytes": 2559,
+      "working_copy_sha256": "da3c1ead749b6460f46c798c67481e7068c1afef213948a42a1a5dbcfafada07",
+      "lf_normalized_sha256": "da3c1ead749b6460f46c798c67481e7068c1afef213948a42a1a5dbcfafada07"
+    },
+    "experimental/observation_source_boundary/VALIDATION.json": {
+      "bytes": 8576,
+      "working_copy_sha256": "41add4542a5d6c5d3aacc35e5dbcb5834066de4a773a8befd0938f7821414bfb",
+      "lf_normalized_sha256": "12266e3c5d12907d938d0d308dfa22bb855a4c9da7b71e750ff759f4475f5e9c"
+    },
+    "experimental/observation_source_boundary/VALIDATION.md": {
+      "bytes": 6100,
+      "working_copy_sha256": "d0f8c26619939aeb073312ad8e4d35745d703a6fa203dbbde3574ad4e9f0a36f",
+      "lf_normalized_sha256": "d0f8c26619939aeb073312ad8e4d35745d703a6fa203dbbde3574ad4e9f0a36f"
+    },
+    "experimental/observation_source_boundary/__init__.py": {
+      "bytes": 78,
+      "working_copy_sha256": "af029453e521bde71c30ace41982632419e7b5c1156b35c294373b1d038647dd",
+      "lf_normalized_sha256": "af029453e521bde71c30ace41982632419e7b5c1156b35c294373b1d038647dd"
+    },
+    "experimental/observation_source_boundary/audit.py": {
+      "bytes": 739,
+      "working_copy_sha256": "a960ea05476ee88e9d315f42bc519ea9b5d5272a0c7e7cc1ffe185036c87e4d0",
+      "lf_normalized_sha256": "a960ea05476ee88e9d315f42bc519ea9b5d5272a0c7e7cc1ffe185036c87e4d0"
+    },
+    "experimental/observation_source_boundary/channel.py": {
+      "bytes": 1954,
+      "working_copy_sha256": "18c620a54b1f6f8fd0fe84cd35127511b8fdb3ee6957c1df9ba01e2d7d52299f",
+      "lf_normalized_sha256": "18c620a54b1f6f8fd0fe84cd35127511b8fdb3ee6957c1df9ba01e2d7d52299f"
+    },
+    "experimental/observation_source_boundary/comparison.py": {
+      "bytes": 7271,
+      "working_copy_sha256": "42123d0b068439b28dfdec9e2b9a938715fd391bc3c3c1d8b4eae11aab57fe5e",
+      "lf_normalized_sha256": "42123d0b068439b28dfdec9e2b9a938715fd391bc3c3c1d8b4eae11aab57fe5e"
+    },
+    "experimental/observation_source_boundary/effects/__init__.py": {
+      "bytes": 0,
+      "working_copy_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "lf_normalized_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "experimental/observation_source_boundary/effects/channel.py": {
+      "bytes": 8911,
+      "working_copy_sha256": "bb69b4be696dfcdceeb1e86a50ab5e9a13df2b9a88fc253bd44f5eb598c2bc8b",
+      "lf_normalized_sha256": "bb69b4be696dfcdceeb1e86a50ab5e9a13df2b9a88fc253bd44f5eb598c2bc8b"
+    },
+    "experimental/observation_source_boundary/effects/engine.py": {
+      "bytes": 13707,
+      "working_copy_sha256": "7612c9ef89444ba0cbd22ec7e1a15a4bd7fe0d7ab1a08bebcb0c948cfad906b8",
+      "lf_normalized_sha256": "7612c9ef89444ba0cbd22ec7e1a15a4bd7fe0d7ab1a08bebcb0c948cfad906b8"
+    },
+    "experimental/observation_source_boundary/effects/native.py": {
+      "bytes": 2867,
+      "working_copy_sha256": "f19337639b1bb3bf7eeea901014c221a085a2d20cea1b84d2be659ad0f391866",
+      "lf_normalized_sha256": "f19337639b1bb3bf7eeea901014c221a085a2d20cea1b84d2be659ad0f391866"
+    },
+    "experimental/observation_source_boundary/engine.py": {
+      "bytes": 5798,
+      "working_copy_sha256": "c54073eccb264188d49d8144982b65e9f2eb721364cea7aea4421258eb584c1b",
+      "lf_normalized_sha256": "c54073eccb264188d49d8144982b65e9f2eb721364cea7aea4421258eb584c1b"
+    },
+    "experimental/observation_source_boundary/evidence/COMPARISON.json": {
+      "bytes": 23060,
+      "working_copy_sha256": "2aa267d0e5a17b2d3852731c348d58f130b3daac9ab13dafc40e64e1e6151f0a",
+      "lf_normalized_sha256": "b218e18884b29ed016609a35539be221449aa16ee3fab324899533fb40583792"
+    },
+    "experimental/observation_source_boundary/evidence/CONTROLS_R2.txt": {
+      "bytes": 102,
+      "working_copy_sha256": "fab5bb3960374c9c15a97b702a91d418414000e4fa0dffc643f6a8662050cbee",
+      "lf_normalized_sha256": "ac18fd7a9673c91ccccc9b3362d3e1a6da7aa2cab2396981dc8ba8096ee565d8"
+    },
+    "experimental/observation_source_boundary/evidence/FOCUSED.txt": {
+      "bytes": 102,
+      "working_copy_sha256": "ee6d7d4504ac8e2771cd0c965ee21573e1559730d5a8044d6b6b329894233503",
+      "lf_normalized_sha256": "702e6a3e70c62abc14d798bb5e0c1d698386b1c05e47692e4699bf824d2cff61"
+    },
+    "experimental/observation_source_boundary/evidence/FULL_FINAL.txt": {
+      "bytes": 91619,
+      "working_copy_sha256": "088fb19bb06823d707a0c5b33384dd5447e949a400f3fe2a7635f245b99f63f9",
+      "lf_normalized_sha256": "d9d45fe68b8016ef0a2c2bd3a5d1ccec47b27f760c2270e557a104116d8935f7"
+    },
+    "experimental/observation_source_boundary/evidence/FULL_INITIAL.txt": {
+      "bytes": 975,
+      "working_copy_sha256": "c05ddbac4c4847f12773b211311dc1e9df7d54be308c8d606dea49d4ee35d23f",
+      "lf_normalized_sha256": "5ff240d08449f3e0f3b2ad547d67a344a15151a20695b5b583c89c3d515a3ba1"
+    },
+    "experimental/observation_source_boundary/evidence/INITIAL_CONTROL_FAILURE.txt": {
+      "bytes": 1266,
+      "working_copy_sha256": "32bbd5b1efffc5cd4a638bcfa5e6f7aa63e55aa850cb588a58bbb979d20ee497",
+      "lf_normalized_sha256": "57c340806bfc48cf124ee535a11ccb42543f98a7db08a1c666b284772cfea0a9"
+    },
+    "experimental/observation_source_boundary/evidence/PRESERVATION.json": {
+      "bytes": 239,
+      "working_copy_sha256": "9cd59e2395b982e513c885984f09a6adf249655b6d1cee2ea0df1003e88bd28e",
+      "lf_normalized_sha256": "8847644905395b3cb5682366b2179f927c70ad0597469fc60c057aad4d7f2e32"
+    },
+    "experimental/observation_source_boundary/evidence/README.md": {
+      "bytes": 1646,
+      "working_copy_sha256": "aaec68cc1c2b4c1246fa7db3dcaf971db0fefd81bae0a37b1dc8ac9dbf1f6d4b",
+      "lf_normalized_sha256": "aaec68cc1c2b4c1246fa7db3dcaf971db0fefd81bae0a37b1dc8ac9dbf1f6d4b"
+    },
+    "experimental/observation_source_boundary/evidence/RELATED.txt": {
+      "bytes": 194,
+      "working_copy_sha256": "56e3f272a8ea767bb9c524605478a46e19a62a686e69f9d81cfe045358b205af",
+      "lf_normalized_sha256": "e95ac27c8822e52481d4e341f679cb0e3a5eba8f0632f01b7a137d58538f90fb"
+    },
+    "experimental/observation_source_boundary/evidence/RSS_NEW.json": {
+      "bytes": 8049,
+      "working_copy_sha256": "50462790ea420c2b6effd6c931c48b8318283e5525813837825d67c36dd2f423",
+      "lf_normalized_sha256": "9c3d10e6047752825b22520bb48f4dc19272be4b5b800083134cc5f7e8ce56e3"
+    },
+    "experimental/observation_source_boundary/evidence/RSS_OLD.json": {
+      "bytes": 8177,
+      "working_copy_sha256": "176770706109a0d8cbf81ba69d4c7a5f6ddb5e7c77b8b736b9350f929c29b27e",
+      "lf_normalized_sha256": "aa509b20fe3c923d9054123cb71dd175d40bc25c24f6cd78c87c27a57b425e5c"
+    },
+    "experimental/observation_source_boundary/evidence/live_raw_export/MANIFEST.json": {
+      "bytes": 25001,
+      "working_copy_sha256": "f33c5caf501efbe0d26dd5db871ab70b21cdab29ba9c37d88e386783c787c2b8",
+      "lf_normalized_sha256": "d1c4b88c94f05d9aecde157ce3a0321f2b6360765bebb3f99242483dad112bcc"
+    },
+    "experimental/observation_source_boundary/evidence/live_raw_export/README.md": {
+      "bytes": 579,
+      "working_copy_sha256": "8ad219b7f3b05c55278d39f2ff20312b749fa39160b96638a3f25349fe1995ef",
+      "lf_normalized_sha256": "796424cf1c4e52940d8a23940f9b407a768ccee9c12277c61b9e87d4e949a886"
+    },
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/LIVE_REPORT.json.gz": {
+      "bytes": 324994,
+      "working_copy_sha256": "d35cc2d003012b29f4e57921d9777e354d928110109c7e7c0f00295b1a0bca23",
+      "lf_normalized_sha256": "a43c8b6304f038d9ac9585f77a4543dded8942b0e10ff633056fb89e8f88333a"
+    },
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/OFF-stderr.log.gz": {
+      "bytes": 20,
+      "working_copy_sha256": "46b50c321b39e89a491b6727a01628c34245605a30beb3e7414c5e01cff90e6e",
+      "lf_normalized_sha256": "46b50c321b39e89a491b6727a01628c34245605a30beb3e7414c5e01cff90e6e"
+    },
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/OFF-stdout.log.gz": {
+      "bytes": 213,
+      "working_copy_sha256": "a567d31caefae9f1e3b96e4956fabd75cd81dc7e49580b3ca923f04e11612f2b",
+      "lf_normalized_sha256": "a567d31caefae9f1e3b96e4956fabd75cd81dc7e49580b3ca923f04e11612f2b"
+    },
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/OFF/REPORT.json.gz": {
+      "bytes": 160805,
+      "working_copy_sha256": "749016dda63d69dd4f87e58cb44cf0055a6d871edd0c96cb5b35d1ffb9554f13",
+      "lf_normalized_sha256": "197cdcd0073014ee89dce1d7ddb7a357c1f7826415f3ecc60454e8cf05f6d09d"
+    },
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/OFF/frame-01.json.gz": {
+      "bytes": 111409,
+      "working_copy_sha256": "a461a02383903e7325277ca45d56aec0711c998a8d24f9c9814eb06450a0ac5b",
+      "lf_normalized_sha256": "a461a02383903e7325277ca45d56aec0711c998a8d24f9c9814eb06450a0ac5b"
+    },
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/OFF/frame-02.json.gz": {
+      "bytes": 144184,
+      "working_copy_sha256": "fa8c9ed460fc34413fc10a068cd563c6564a06c660bdda897ef7811cffdc6f3e",
+      "lf_normalized_sha256": "09b5f77b06a6ee5cc14919988c9fa16c4256c1a1ee8740fae741ada4f8eaa4ac"
+    },
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/OFF/frame-03.json.gz": {
+      "bytes": 140851,
+      "working_copy_sha256": "9fa934648ca5a1ddd40975f0ea1819c31d179ffdfc38df7e2a541a99a793a284",
+      "lf_normalized_sha256": "cc57d4a239e676f59cfbe7610b0ebf54832437380874339da359a871dab76164"
+    },
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/OFF/frame-04.json.gz": {
+      "bytes": 142119,
+      "working_copy_sha256": "f180f7f19b49cff68eb7194731c94156726b951be35a95bf3a4f6a72369eaa2e",
+      "lf_normalized_sha256": "ca7ef1ce7a01837f421046a932566ae68c2b35065a4d1c8071d711ad88626904"
+    },
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/OFF/frame-05.json.gz": {
+      "bytes": 142995,
+      "working_copy_sha256": "0ad6d402185d85eddfdf0ed17696fb5dfc44d57a50dfd8ce3f963642f277d395",
+      "lf_normalized_sha256": "7fad095781ea54d57162caadd5a6a7528a34c84152d806308d60e87c2e326908"
+    },
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/OFF/frame-06.json.gz": {
+      "bytes": 143684,
+      "working_copy_sha256": "ab2aea111da4db612253c284e3c2ff4b87d13241027d249e18c3466f993a759b",
+      "lf_normalized_sha256": "3a83791bad71979a5dee56776df6f7e068474dcbde185f7c49e3d5a1574c784a"
+    },
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/OFF/frame-07.json.gz": {
+      "bytes": 145338,
+      "working_copy_sha256": "46d182a654b6fca863cc94cc0f56b62cea08106a38d491311dcf6e527a445383",
+      "lf_normalized_sha256": "ae667ab9a9d4b1bb543ffd6f36ce2c6aca4d55899d1dc334ac91c8c94683006b"
+    },
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/OFF/frame-08.json.gz": {
+      "bytes": 146084,
+      "working_copy_sha256": "49be6144db23c56fd30212bcf67b9c6806fb0d1a63a2d4f41f351743f78028f2",
+      "lf_normalized_sha256": "dee32b66341fcf08d120f162fa05472ee099c6e4d73d444129a6e2c96c002d5c"
+    },
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/OFF/rss.jsonl.gz": {
+      "bytes": 2405,
+      "working_copy_sha256": "cb966e153bb2457f7d7c55f723dbc0313503007eaaab9b788caa5884252de1f8",
+      "lf_normalized_sha256": "cb966e153bb2457f7d7c55f723dbc0313503007eaaab9b788caa5884252de1f8"
+    },
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/OFF/transitions.jsonl.gz": {
+      "bytes": 189295,
+      "working_copy_sha256": "343388202b55ea1de0902f43bff154859a9a8ca21e5c1f0a75d617477370415c",
+      "lf_normalized_sha256": "343388202b55ea1de0902f43bff154859a9a8ca21e5c1f0a75d617477370415c"
+    },
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/OFF/transport.jsonl.gz": {
+      "bytes": 22245,
+      "working_copy_sha256": "51be79218146b3ef6b62de92e47c1f4a0083a3f516e69af723e263c822c121b4",
+      "lf_normalized_sha256": "51be79218146b3ef6b62de92e47c1f4a0083a3f516e69af723e263c822c121b4"
+    },
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/ON-stderr.log.gz": {
+      "bytes": 20,
+      "working_copy_sha256": "46b50c321b39e89a491b6727a01628c34245605a30beb3e7414c5e01cff90e6e",
+      "lf_normalized_sha256": "46b50c321b39e89a491b6727a01628c34245605a30beb3e7414c5e01cff90e6e"
+    },
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/ON-stdout.log.gz": {
+      "bytes": 146,
+      "working_copy_sha256": "7cda33b9b92262555312075f3dd2f1e1ab9aeae7e7026802268eb1d2782fdcf6",
+      "lf_normalized_sha256": "7cda33b9b92262555312075f3dd2f1e1ab9aeae7e7026802268eb1d2782fdcf6"
+    },
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/ON/REPORT.json.gz": {
+      "bytes": 155143,
+      "working_copy_sha256": "b1e6ea325465ecdca95b5d302a7b0b8c707147a8ceaf8c1283ad7a678671abe8",
+      "lf_normalized_sha256": "fe0ff894cac75294db49c60d2041a04fc4dd11a418c5f227d003416fe8646fb1"
+    },
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/ON/frame-01.json.gz": {
+      "bytes": 129451,
+      "working_copy_sha256": "4d14b6be8ba1f97e11101e57ed87cd43f0ce87026db73fd6398b7c4b1b059680",
+      "lf_normalized_sha256": "5f64f970a00a65d4ef2f4d3ccddf21a8fb9c03ad2c4380bd68013fb421ee5558"
+    },
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/ON/rss.jsonl.gz": {
+      "bytes": 651,
+      "working_copy_sha256": "b2a3d9e1cea19cc8fc4c1b9aade1052cc18c4ad880c55380cb47ebadca80c011",
+      "lf_normalized_sha256": "b2a3d9e1cea19cc8fc4c1b9aade1052cc18c4ad880c55380cb47ebadca80c011"
+    },
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/ON/transitions.jsonl.gz": {
+      "bytes": 17106,
+      "working_copy_sha256": "36b79db9098191a44f0328840e38831b5f814f54266bd284a059ffe1285bc202",
+      "lf_normalized_sha256": "36b79db9098191a44f0328840e38831b5f814f54266bd284a059ffe1285bc202"
+    },
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/ON/transport.jsonl.gz": {
+      "bytes": 3418,
+      "working_copy_sha256": "f545073e1f5a8295e3badff328705faaccd476190469f06936806a07f7a3a532",
+      "lf_normalized_sha256": "f545073e1f5a8295e3badff328705faaccd476190469f06936806a07f7a3a532"
+    },
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/ON_SUPPLEMENT/REPORT.json.gz": {
+      "bytes": 205075,
+      "working_copy_sha256": "60a31323d6e760fe40cbe47b78101f92861a607ac70ae95bf0812b2c914689fa",
+      "lf_normalized_sha256": "d24bde58f8b5d2969f104db1aac716f4a37aef2cacd1afbe0cefc1725cae9ee6"
+    },
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/ON_SUPPLEMENT/frame-01.json.gz": {
+      "bytes": 125364,
+      "working_copy_sha256": "f7a5250e761c65516b2adecd23558345f5c48e361e96128848bfba009454ba9e",
+      "lf_normalized_sha256": "36be4ac76e368ce7fe48800ed92d05b3b75f893ffec129da62dc6cb9d5dcc780"
+    },
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/ON_SUPPLEMENT/frame-02.json.gz": {
+      "bytes": 142217,
+      "working_copy_sha256": "494c54abff6f083835905b3b511614c571c3088fe74eb3219304015529e67975",
+      "lf_normalized_sha256": "dc9c2acf5493b90c489c33b2dd7ca1a97b65d38d2c6af9e57a03b6a8c164e680"
+    },
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/ON_SUPPLEMENT/frame-03.json.gz": {
+      "bytes": 147348,
+      "working_copy_sha256": "fbbe1a260295b0241f7baca2b0f4fb1788e9728a8e687132bee6f9bb99c56203",
+      "lf_normalized_sha256": "bb5acbf129348db2e1e10bf644883997ce25ebea541939f6197bba282f55b00c"
+    },
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/ON_SUPPLEMENT/frame-04.json.gz": {
+      "bytes": 148005,
+      "working_copy_sha256": "beaf4e96847d5004792c349531c0a0d6726a26728e78b7ae02db7d01a0f4adeb",
+      "lf_normalized_sha256": "933adb8afd7765bda83ef1e9de2ac940677b842f4380f15b9dba9a680a154ba3"
+    },
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/ON_SUPPLEMENT/frame-05.json.gz": {
+      "bytes": 148152,
+      "working_copy_sha256": "00d1c795bee45d5b93850a881380a1902fe2b2fb89db0949651bbc57c104b07c",
+      "lf_normalized_sha256": "7b5dab25b435bd7d746e517ca305dabf4fb38688925a601f24cc71d07cca5d83"
+    },
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/ON_SUPPLEMENT/frame-06.json.gz": {
+      "bytes": 148159,
+      "working_copy_sha256": "01b1086b6219c16f9d3136347300804ba02cf0f3254f0c7726b29cd0d791f6a8",
+      "lf_normalized_sha256": "948f3ab3a32a25c8ef75a01df59950a080ef50ef19df6dd0b4444d6460b96764"
+    },
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/ON_SUPPLEMENT/frame-07.json.gz": {
+      "bytes": 148142,
+      "working_copy_sha256": "076eb0444ed5ed4034e21d09280f7630373b9c0d7f14a89445d80f04fece243c",
+      "lf_normalized_sha256": "601269148b4c90a539e7b6c81e26cdd31e6b05da17d3bcec4b43bd32b6166bb4"
+    },
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/ON_SUPPLEMENT/frame-08.json.gz": {
+      "bytes": 148136,
+      "working_copy_sha256": "13ae1873e2babcfb84568aeea7a88c515859393094b024336b8188fb6817c8d0",
+      "lf_normalized_sha256": "1d2d2a01b81a6ca386d3b33c10f69056710dbf2dcd5a87bfdbfd255d48088611"
+    },
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/ON_SUPPLEMENT/rss.jsonl.gz": {
+      "bytes": 2991,
+      "working_copy_sha256": "b14c1fed1bd925321ab696fe738e017d003094778c6993e152d63e6bad299063",
+      "lf_normalized_sha256": "b14c1fed1bd925321ab696fe738e017d003094778c6993e152d63e6bad299063"
+    },
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/ON_SUPPLEMENT/transitions.jsonl.gz": {
+      "bytes": 177119,
+      "working_copy_sha256": "0b8a527dbd080619e45453dd31b21a7d29a06a9d0c925b015ae8405de9f22a3d",
+      "lf_normalized_sha256": "0f368cd479ad0a6f119e9e9dff1f489da511320771995d17f529c01e3d82783a"
+    },
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/ON_SUPPLEMENT/transport.jsonl.gz": {
+      "bytes": 22250,
+      "working_copy_sha256": "bf7596a4afaacef0d89a000b4a348eca18d09c3310d192729786f454d0865859",
+      "lf_normalized_sha256": "bf7596a4afaacef0d89a000b4a348eca18d09c3310d192729786f454d0865859"
+    },
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/PREFLIGHT.json.gz": {
+      "bytes": 7305,
+      "working_copy_sha256": "d2039d84401adc6a5a01504d4d4d8190415a70cd8d5644c7cbb57b09e594a403",
+      "lf_normalized_sha256": "472f92aa822ca071dbaf8d234b98104071be9562241fc4408e0e3357a0490429"
+    },
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-run1/LIVE_REPORT.json.gz": {
+      "bytes": 354,
+      "working_copy_sha256": "4d87220ebac7380b1d4983ddf37e2e127c7d2b604caf1354971306d992e17d5e",
+      "lf_normalized_sha256": "4d87220ebac7380b1d4983ddf37e2e127c7d2b604caf1354971306d992e17d5e"
+    },
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-run1/OFF-stderr.log.gz": {
+      "bytes": 160,
+      "working_copy_sha256": "0bffe54e89e4d7fc1d9c8e8ac42cd53f2561ed1ac9460a53b532142a50bbdf1c",
+      "lf_normalized_sha256": "0bffe54e89e4d7fc1d9c8e8ac42cd53f2561ed1ac9460a53b532142a50bbdf1c"
+    },
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-run1/OFF-stdout.log.gz": {
+      "bytes": 20,
+      "working_copy_sha256": "46b50c321b39e89a491b6727a01628c34245605a30beb3e7414c5e01cff90e6e",
+      "lf_normalized_sha256": "46b50c321b39e89a491b6727a01628c34245605a30beb3e7414c5e01cff90e6e"
+    },
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-run2/LIVE_REPORT.json.gz": {
+      "bytes": 15096,
+      "working_copy_sha256": "22e3140465476d395e69fe80b39a3147ad585d6bef223373269aa8cff92e8537",
+      "lf_normalized_sha256": "4d3fc48a72c9a04738d83c8417afec6533d4084a8361137ad4d7f1ae1dd1af54"
+    },
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-run2/OFF-stderr.log.gz": {
+      "bytes": 20,
+      "working_copy_sha256": "46b50c321b39e89a491b6727a01628c34245605a30beb3e7414c5e01cff90e6e",
+      "lf_normalized_sha256": "46b50c321b39e89a491b6727a01628c34245605a30beb3e7414c5e01cff90e6e"
+    },
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-run2/OFF-stdout.log.gz": {
+      "bytes": 56,
+      "working_copy_sha256": "f51501b22a3d4768d556161bc9bdcb9d20156fd4ec0a9bd6ea294973c8b544d9",
+      "lf_normalized_sha256": "f51501b22a3d4768d556161bc9bdcb9d20156fd4ec0a9bd6ea294973c8b544d9"
+    },
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-run2/OFF/REPORT.json.gz": {
+      "bytes": 14634,
+      "working_copy_sha256": "1d3b5a45206e0221b1c5ce5b0b39ada93269835916f3a9ff198d56ddee8f7c6a",
+      "lf_normalized_sha256": "1d3b5a45206e0221b1c5ce5b0b39ada93269835916f3a9ff198d56ddee8f7c6a"
+    },
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-run2/OFF/rss.jsonl.gz": {
+      "bytes": 267,
+      "working_copy_sha256": "5bd3629627e417b22bde8210ad5994497759348e48c57d0b65b1d22cae7e8733",
+      "lf_normalized_sha256": "5bd3629627e417b22bde8210ad5994497759348e48c57d0b65b1d22cae7e8733"
+    },
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-run2/OFF/transitions.jsonl.gz": {
+      "bytes": 644,
+      "working_copy_sha256": "f0ae20d7d64a64676d2f02f3caab4468a323bc2a1b706b0a55355c7e7d74cddd",
+      "lf_normalized_sha256": "f0ae20d7d64a64676d2f02f3caab4468a323bc2a1b706b0a55355c7e7d74cddd"
+    },
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-run2/OFF/transport.jsonl.gz": {
+      "bytes": 305,
+      "working_copy_sha256": "d604fa3a2e1362940f585aacbfea16604813688f9e60cdc7f773aff10038028a",
+      "lf_normalized_sha256": "d604fa3a2e1362940f585aacbfea16604813688f9e60cdc7f773aff10038028a"
+    },
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-run3/LIVE_REPORT.json.gz": {
+      "bytes": 158023,
+      "working_copy_sha256": "62911cd701e2ae3c19ed46f1ced7d2958fffecbe523fc47cbaa6d1a4d17b282a",
+      "lf_normalized_sha256": "d81bf95c9766b380cecd14f827d68ec34aeec5257f22f58c5dc99bf59983ca13"
+    },
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-run3/OFF-stderr.log.gz": {
+      "bytes": 20,
+      "working_copy_sha256": "46b50c321b39e89a491b6727a01628c34245605a30beb3e7414c5e01cff90e6e",
+      "lf_normalized_sha256": "46b50c321b39e89a491b6727a01628c34245605a30beb3e7414c5e01cff90e6e"
+    },
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-run3/OFF-stdout.log.gz": {
+      "bytes": 183,
+      "working_copy_sha256": "15f6bf1de45212bb45d97f89aa312abf99a5d6e0498bdad11219808910b9ef4a",
+      "lf_normalized_sha256": "15f6bf1de45212bb45d97f89aa312abf99a5d6e0498bdad11219808910b9ef4a"
+    },
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-run3/OFF/REPORT.json.gz": {
+      "bytes": 153913,
+      "working_copy_sha256": "2ad46019b92c0b770f852c1d952671fba552c2a0be2e9acc8c1161609d805836",
+      "lf_normalized_sha256": "82b3580b64c3a0d6babd6e78b8bca294cbc8066e97ec517d17aaec4d328c0851"
+    },
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-run3/OFF/frame-01.json.gz": {
+      "bytes": 111507,
+      "working_copy_sha256": "ac81361fe01a5b0f4a71268ed1bb18f81aeac3b82a5fcdca6cfe0de6eeadb95c",
+      "lf_normalized_sha256": "4d3630b350328e77536f324827c837e9c50c1bb4b56a98d4dfd6fde40d0a3f93"
+    },
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-run3/OFF/frame-02.json.gz": {
+      "bytes": 146642,
+      "working_copy_sha256": "ae6f80825f9245f4830d80cf95eafbef480ded4961bc047ca2a262e667b2e5d0",
+      "lf_normalized_sha256": "0e036769f07a56a56aceb2e50d4292804c4790402008f8e192a7f80986be7911"
+    },
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-run3/OFF/frame-03.json.gz": {
+      "bytes": 147987,
+      "working_copy_sha256": "f14f79ac516053ed8b890123efe4e1674386241c0844c38b311630d0e418c65e",
+      "lf_normalized_sha256": "4266c5fc9adeb827a83783617bd96c9323f8f41afa21dae35508f4db782cd078"
+    },
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-run3/OFF/frame-04.json.gz": {
+      "bytes": 159276,
+      "working_copy_sha256": "731b386cb45fa868b07505f54e83f1f49bf2c78524a8da5f9141992654babee6",
+      "lf_normalized_sha256": "76c55d91de93db108846e0b6caced81414cc75fc3351f87b2f37fc5ae36b089f"
+    },
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-run3/OFF/rss.jsonl.gz": {
+      "bytes": 2319,
+      "working_copy_sha256": "bc06358f863fd06a362dde3901685d6fa47baa2db4f8a182547979f54da7f14d",
+      "lf_normalized_sha256": "bc06358f863fd06a362dde3901685d6fa47baa2db4f8a182547979f54da7f14d"
+    },
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-run3/OFF/transitions.jsonl.gz": {
+      "bytes": 102217,
+      "working_copy_sha256": "0a83ec8c82ffeb3c49da320aafed1fb029896fade5747175a57acc7b44f1b1b9",
+      "lf_normalized_sha256": "0a83ec8c82ffeb3c49da320aafed1fb029896fade5747175a57acc7b44f1b1b9"
+    },
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-run3/OFF/transport.jsonl.gz": {
+      "bytes": 12254,
+      "working_copy_sha256": "409502f973ffedd5469fed7e26aa73803b9218469595fdc906ebd12dcbc2ef2f",
+      "lf_normalized_sha256": "409502f973ffedd5469fed7e26aa73803b9218469595fdc906ebd12dcbc2ef2f"
+    },
+    "experimental/observation_source_boundary/lifecycle.py": {
+      "bytes": 4636,
+      "working_copy_sha256": "ba3dba0aa26ee8f4e6473035b49b1fafd39eb7f2bd7e97ccc301923fd7959870",
+      "lf_normalized_sha256": "ba3dba0aa26ee8f4e6473035b49b1fafd39eb7f2bd7e97ccc301923fd7959870"
+    },
+    "experimental/observation_source_boundary/live.py": {
+      "bytes": 15790,
+      "working_copy_sha256": "cc1e2e2063d67415e9b4e241b9b19a1bb8580c329971e803352784740a8d54b5",
+      "lf_normalized_sha256": "cc1e2e2063d67415e9b4e241b9b19a1bb8580c329971e803352784740a8d54b5"
+    },
+    "experimental/observation_source_boundary/live_evidence/MEASUREMENTS.json": {
+      "bytes": 454936,
+      "working_copy_sha256": "1807cbf8b0e4dbae778e93946e643b6b1b9ac44fc61e38803c8c0b06e42fbcb3",
+      "lf_normalized_sha256": "6b26831cdcac2c330fba2a78ff6b3db440aff52b923928875d817b717ec42e52"
+    },
+    "experimental/observation_source_boundary/live_evidence/SOURCES.json": {
+      "bytes": 195484,
+      "working_copy_sha256": "8bc4c6211ef4b7b2fd5082d0b5d1739617631a0a984258810f1ce724a6bd707b",
+      "lf_normalized_sha256": "af926bc85826489a1b0f66997b724ff1258cd8b7c9687e2cbfab4c48b6e49800"
+    },
+    "experimental/observation_source_boundary/live_evidence/TRANSITIONS.json": {
+      "bytes": 1554225,
+      "working_copy_sha256": "52ce7ae56d11cdd5c149a77748f1cf097c2fce60fd8e746ea262d09ea0217e2e",
+      "lf_normalized_sha256": "6fd9f48fcaaf2cfd1619d669aa9e7da6ff7f4f233da7c0f279edb32fe85d5458"
+    },
+    "experimental/observation_source_boundary/live_evidence_2/LIFECYCLE.json": {
+      "bytes": 2637,
+      "working_copy_sha256": "e4400d87fa8c4ce09bb09327615f85b048750f0b35d750c404eea69c7d247193",
+      "lf_normalized_sha256": "38d51e8f70d8d9580778c7570ca83c4d2cc0d089da75b4bfb27252510a780cbc"
+    },
+    "experimental/observation_source_boundary/live_evidence_2/MEASUREMENTS.json": {
+      "bytes": 430129,
+      "working_copy_sha256": "e01d871c4e9e87eb69a3cb2ae13bb2a1afe1b8a1128e265c63b6170d9e790800",
+      "lf_normalized_sha256": "472e62b066904c1f4b4c8fe412951fbd79cb196e76793a083713ca87704379a1"
+    },
+    "experimental/observation_source_boundary/live_evidence_2/REFERENCE_PROBES.json": {
+      "bytes": 1050,
+      "working_copy_sha256": "e0f1b1b4167a451985f82d0ecf605be3f2f56fb1a65568f263002f19e29d15b1",
+      "lf_normalized_sha256": "a3f5c18e2c5f0eb5c5a1134d5c8e86ef3f6ae970318c9b1ee9a40f69b56a59ef"
+    },
+    "experimental/observation_source_boundary/live_evidence_2/SOURCES.json": {
+      "bytes": 436674,
+      "working_copy_sha256": "c8e03ea7db3c0e36029fa39dabc45c0da8bfe50ffbe2268ee8bc8b49a9dfa8a4",
+      "lf_normalized_sha256": "38b8ce0f7ee9ef68800908fabd2a6411899d888777445471822552a5ac9048e7"
+    },
+    "experimental/observation_source_boundary/live_evidence_2/TRANSITIONS.json": {
+      "bytes": 3238155,
+      "working_copy_sha256": "e7e8f398ec5ea349e3dc83ec5775e490aac125324cbb73536b208168320972cc",
+      "lf_normalized_sha256": "8d57f912546c19a02a10d7f97696705dd8adc669b59662c97cb9d994aafa169b"
+    },
+    "experimental/observation_source_boundary/live_evidence_3/LIFECYCLE.json": {
+      "bytes": 1108,
+      "working_copy_sha256": "8002950687577bc599211fd9497796c0041f5e26b2e8d4b74b4b3459c08514d9",
+      "lf_normalized_sha256": "0ccce9449ef1d3218459bd3ab1915162dff2bcab6c383fa5f1e1aa133617e455"
+    },
+    "experimental/observation_source_boundary/live_evidence_3/MEASUREMENTS.json": {
+      "bytes": 469565,
+      "working_copy_sha256": "76a087adfdfccb971350f2fee6803b87f4d50a34e4bbcbdac10152ae19e85b4b",
+      "lf_normalized_sha256": "ae7d7a9d2bf6c07933847561e1737b908fe0c5174a40a14c26da25b9119dd26c"
+    },
+    "experimental/observation_source_boundary/live_evidence_3/NEW_SOURCES.json": {
+      "bytes": 388179,
+      "working_copy_sha256": "9928882fbac361da7eedc85116041161c04258a9450c91b2ab86622f439094b0",
+      "lf_normalized_sha256": "5eced703b0ab939cb59b3744707ee83d0f8cc76371ba7c0df6f9c3c5c1ccfcd1"
+    },
+    "experimental/observation_source_boundary/live_evidence_3/REFERENCE_PROBE.json": {
+      "bytes": 397,
+      "working_copy_sha256": "bd097b61a2091393db0fa245e876801699cbe8e313e11f0ad2362969bc48531f",
+      "lf_normalized_sha256": "4727e26646717607891f2ac2c68979adc2f9b2b13dbbbe27ec62bf0f64520b02"
+    },
+    "experimental/observation_source_boundary/live_evidence_3/TRANSITIONS.json": {
+      "bytes": 2767452,
+      "working_copy_sha256": "04071106ed45148e6fdd23ac99c7406521626734f34c2dadc4dc3259382cf058",
+      "lf_normalized_sha256": "98207b256632298eca8dffbca0e84bf748a5ef0b472087eaa3d1350ea144bc1a"
+    },
+    "experimental/observation_source_boundary/live_supplement.py": {
+      "bytes": 13001,
+      "working_copy_sha256": "964443cbbfec0998e8e2b13f1695a1ec0cce3dc8bd40de9be9816309e3ed6c5e",
+      "lf_normalized_sha256": "c834b1d67a632b46e4c345f22e48208a934fb5e44d4ecbba57be87d9a18b6e50"
+    },
+    "experimental/observation_source_boundary/measure.py": {
+      "bytes": 3704,
+      "working_copy_sha256": "4c82308980a6b272a5776bc6bf5a4e27e660bae91e45085b76dc3f538f4eb8e4",
+      "lf_normalized_sha256": "4c82308980a6b272a5776bc6bf5a4e27e660bae91e45085b76dc3f538f4eb8e4"
+    },
+    "experimental/observation_source_boundary/real/__init__.py": {
+      "bytes": 0,
+      "working_copy_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "lf_normalized_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "experimental/observation_source_boundary/real/adapter.py": {
+      "bytes": 7475,
+      "working_copy_sha256": "55578d700ea3bc562b10943b711ea9ec46cf79bd548e3f01d2a1a9c5fce88ba3",
+      "lf_normalized_sha256": "55578d700ea3bc562b10943b711ea9ec46cf79bd548e3f01d2a1a9c5fce88ba3"
+    },
+    "experimental/observation_source_boundary/real/channel.py": {
+      "bytes": 7135,
+      "working_copy_sha256": "51ba955776da1f33a202b36a5f8fc9435ee606d88a25a9f823f8c91a73b10072",
+      "lf_normalized_sha256": "51ba955776da1f33a202b36a5f8fc9435ee606d88a25a9f823f8c91a73b10072"
+    },
+    "experimental/observation_source_boundary/reference/__init__.py": {
+      "bytes": 0,
+      "working_copy_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "lf_normalized_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "experimental/observation_source_boundary/reference/channel.py": {
+      "bytes": 6118,
+      "working_copy_sha256": "d09638e470c71772228532db69bcd5fa534a1916b5b06fd183761db8ae7d5a95",
+      "lf_normalized_sha256": "d09638e470c71772228532db69bcd5fa534a1916b5b06fd183761db8ae7d5a95"
+    },
+    "experimental/observation_source_boundary/reference/engine.py": {
+      "bytes": 18621,
+      "working_copy_sha256": "f0f2e329a83af7b4b999a55c3e411ca4f0d97d15a84d6d1ea267321a8e8980a1",
+      "lf_normalized_sha256": "f0f2e329a83af7b4b999a55c3e411ca4f0d97d15a84d6d1ea267321a8e8980a1"
+    },
+    "experimental/observation_source_boundary/reference/references.py": {
+      "bytes": 7921,
+      "working_copy_sha256": "a6efb9e2fc9cee132f52bd7d98f283dc87aff9633597345ef7aaa7ea366cace0",
+      "lf_normalized_sha256": "a6efb9e2fc9cee132f52bd7d98f283dc87aff9633597345ef7aaa7ea366cace0"
+    },
+    "experimental/observation_source_boundary/store.py": {
+      "bytes": 12242,
+      "working_copy_sha256": "13297e1bccfaf4c3a5f5886f8ba412c05a933b2da557dda0897d46ef6309cc12",
+      "lf_normalized_sha256": "13297e1bccfaf4c3a5f5886f8ba412c05a933b2da557dda0897d46ef6309cc12"
+    },
+    "experimental/observation_source_boundary/worker.py": {
+      "bytes": 1514,
+      "working_copy_sha256": "2d12baf051cac47242a23529daa51ecce7d1d4021e82a79ce5a2895ee1066418",
+      "lf_normalized_sha256": "2d12baf051cac47242a23529daa51ecce7d1d4021e82a79ce5a2895ee1066418"
+    },
+    "tests/test_observation_source_boundary.py": {
+      "bytes": 15741,
+      "working_copy_sha256": "4b795eea8acfb15ba93358400b8643aca6ea0acdb6c8b3f72b72bc1363922da1",
+      "lf_normalized_sha256": "4b795eea8acfb15ba93358400b8643aca6ea0acdb6c8b3f72b72bc1363922da1"
+    }
+  },
+  "inventory_convention": "SHA256 raw working-copy bytes and CRLF-to-LF normalized bytes; full inventory excludes this self-describing JSON and COMMITTED_FILES.md to avoid self-hash recursion. Those two files are anchored by closeout Git commit. Gzip raw manifest preserves original byte hashes.",
+  "all_committed_stage_paths": [
+    "OBSERVATION_SOURCE_BOUNDARY_CLOSEOUT.md",
+    "OBSERVATION_SOURCE_BOUNDARY_COMMITTED_FILES.md",
+    "OBSERVATION_SOURCE_BOUNDARY_CONVERSATION_HANDOFF.md",
+    "README.md",
+    "RESEARCH_STATUS.json",
+    "RESEARCH_STATUS.md",
+    "experimental/observation_source_boundary/CHANGED_FILES.md",
+    "experimental/observation_source_boundary/CLOSEOUT_VALIDATION.json",
+    "experimental/observation_source_boundary/INITIAL_FAILURES.json",
+    "experimental/observation_source_boundary/ISOLATION.json",
+    "experimental/observation_source_boundary/ISOLATION.md",
+    "experimental/observation_source_boundary/ISOLATION.patch",
+    "experimental/observation_source_boundary/LIVE_CONTINUITY_SUPPLEMENT.json",
+    "experimental/observation_source_boundary/LIVE_CONTINUITY_SUPPLEMENT.md",
+    "experimental/observation_source_boundary/LIVE_VALIDATION.json",
+    "experimental/observation_source_boundary/LIVE_VALIDATION.md",
+    "experimental/observation_source_boundary/LIVE_VALIDATION_2.json",
+    "experimental/observation_source_boundary/LIVE_VALIDATION_2.md",
+    "experimental/observation_source_boundary/SPEC.md",
+    "experimental/observation_source_boundary/VALIDATION.json",
+    "experimental/observation_source_boundary/VALIDATION.md",
+    "experimental/observation_source_boundary/__init__.py",
+    "experimental/observation_source_boundary/audit.py",
+    "experimental/observation_source_boundary/channel.py",
+    "experimental/observation_source_boundary/comparison.py",
+    "experimental/observation_source_boundary/effects/__init__.py",
+    "experimental/observation_source_boundary/effects/channel.py",
+    "experimental/observation_source_boundary/effects/engine.py",
+    "experimental/observation_source_boundary/effects/native.py",
+    "experimental/observation_source_boundary/engine.py",
+    "experimental/observation_source_boundary/evidence/COMPARISON.json",
+    "experimental/observation_source_boundary/evidence/CONTROLS_R2.txt",
+    "experimental/observation_source_boundary/evidence/FOCUSED.txt",
+    "experimental/observation_source_boundary/evidence/FULL_FINAL.txt",
+    "experimental/observation_source_boundary/evidence/FULL_INITIAL.txt",
+    "experimental/observation_source_boundary/evidence/INITIAL_CONTROL_FAILURE.txt",
+    "experimental/observation_source_boundary/evidence/PRESERVATION.json",
+    "experimental/observation_source_boundary/evidence/README.md",
+    "experimental/observation_source_boundary/evidence/RELATED.txt",
+    "experimental/observation_source_boundary/evidence/RSS_NEW.json",
+    "experimental/observation_source_boundary/evidence/RSS_OLD.json",
+    "experimental/observation_source_boundary/evidence/live_raw_export/MANIFEST.json",
+    "experimental/observation_source_boundary/evidence/live_raw_export/README.md",
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/LIVE_REPORT.json.gz",
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/OFF-stderr.log.gz",
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/OFF-stdout.log.gz",
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/OFF/REPORT.json.gz",
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/OFF/frame-01.json.gz",
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/OFF/frame-02.json.gz",
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/OFF/frame-03.json.gz",
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/OFF/frame-04.json.gz",
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/OFF/frame-05.json.gz",
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/OFF/frame-06.json.gz",
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/OFF/frame-07.json.gz",
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/OFF/frame-08.json.gz",
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/OFF/rss.jsonl.gz",
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/OFF/transitions.jsonl.gz",
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/OFF/transport.jsonl.gz",
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/ON-stderr.log.gz",
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/ON-stdout.log.gz",
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/ON/REPORT.json.gz",
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/ON/frame-01.json.gz",
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/ON/rss.jsonl.gz",
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/ON/transitions.jsonl.gz",
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/ON/transport.jsonl.gz",
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/ON_SUPPLEMENT/REPORT.json.gz",
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/ON_SUPPLEMENT/frame-01.json.gz",
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/ON_SUPPLEMENT/frame-02.json.gz",
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/ON_SUPPLEMENT/frame-03.json.gz",
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/ON_SUPPLEMENT/frame-04.json.gz",
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/ON_SUPPLEMENT/frame-05.json.gz",
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/ON_SUPPLEMENT/frame-06.json.gz",
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/ON_SUPPLEMENT/frame-07.json.gz",
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/ON_SUPPLEMENT/frame-08.json.gz",
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/ON_SUPPLEMENT/rss.jsonl.gz",
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/ON_SUPPLEMENT/transitions.jsonl.gz",
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/ON_SUPPLEMENT/transport.jsonl.gz",
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-peaceful1/PREFLIGHT.json.gz",
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-run1/LIVE_REPORT.json.gz",
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-run1/OFF-stderr.log.gz",
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-run1/OFF-stdout.log.gz",
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-run2/LIVE_REPORT.json.gz",
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-run2/OFF-stderr.log.gz",
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-run2/OFF-stdout.log.gz",
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-run2/OFF/REPORT.json.gz",
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-run2/OFF/rss.jsonl.gz",
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-run2/OFF/transitions.jsonl.gz",
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-run2/OFF/transport.jsonl.gz",
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-run3/LIVE_REPORT.json.gz",
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-run3/OFF-stderr.log.gz",
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-run3/OFF-stdout.log.gz",
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-run3/OFF/REPORT.json.gz",
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-run3/OFF/frame-01.json.gz",
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-run3/OFF/frame-02.json.gz",
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-run3/OFF/frame-03.json.gz",
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-run3/OFF/frame-04.json.gz",
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-run3/OFF/rss.jsonl.gz",
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-run3/OFF/transitions.jsonl.gz",
+    "experimental/observation_source_boundary/evidence/live_raw_export/source-boundary-live-63212-20261009-run3/OFF/transport.jsonl.gz",
+    "experimental/observation_source_boundary/lifecycle.py",
+    "experimental/observation_source_boundary/live.py",
+    "experimental/observation_source_boundary/live_evidence/MEASUREMENTS.json",
+    "experimental/observation_source_boundary/live_evidence/SOURCES.json",
+    "experimental/observation_source_boundary/live_evidence/TRANSITIONS.json",
+    "experimental/observation_source_boundary/live_evidence_2/LIFECYCLE.json",
+    "experimental/observation_source_boundary/live_evidence_2/MEASUREMENTS.json",
+    "experimental/observation_source_boundary/live_evidence_2/REFERENCE_PROBES.json",
+    "experimental/observation_source_boundary/live_evidence_2/SOURCES.json",
+    "experimental/observation_source_boundary/live_evidence_2/TRANSITIONS.json",
+    "experimental/observation_source_boundary/live_evidence_3/LIFECYCLE.json",
+    "experimental/observation_source_boundary/live_evidence_3/MEASUREMENTS.json",
+    "experimental/observation_source_boundary/live_evidence_3/NEW_SOURCES.json",
+    "experimental/observation_source_boundary/live_evidence_3/REFERENCE_PROBE.json",
+    "experimental/observation_source_boundary/live_evidence_3/TRANSITIONS.json",
+    "experimental/observation_source_boundary/live_supplement.py",
+    "experimental/observation_source_boundary/measure.py",
+    "experimental/observation_source_boundary/real/__init__.py",
+    "experimental/observation_source_boundary/real/adapter.py",
+    "experimental/observation_source_boundary/real/channel.py",
+    "experimental/observation_source_boundary/reference/__init__.py",
+    "experimental/observation_source_boundary/reference/channel.py",
+    "experimental/observation_source_boundary/reference/engine.py",
+    "experimental/observation_source_boundary/reference/references.py",
+    "experimental/observation_source_boundary/store.py",
+    "experimental/observation_source_boundary/worker.py",
+    "tests/test_observation_source_boundary.py"
+  ],
+  "nonclaims": [
+    "original 8+8 PASS",
+    "real cross-process Pair reuse",
+    "long-term total RAM bounds",
+    "default/formal A adoption",
+    "purpose/need/structure unloading implementation",
+    "autonomous action or goal",
+    "world causal law",
+    "L1 or full theory proof"
+  ],
+  "historical_reports_modified": false,
+  "theory_changed": false,
+  "next_phase": "NOT_STARTED"
+}
